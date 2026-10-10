@@ -55,7 +55,7 @@ function calcLeverageLevels(stopPct) {
   }
 
   const MIN_LEV = 2;
-  const MAX_LEV = 25;
+  const MAX_LEV = 15;
   const factors = [5.0, 3.5, 2.5, 1.8];
 
   const result = factors.map((f) => {
