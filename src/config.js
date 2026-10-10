@@ -67,7 +67,7 @@ export const TIMEFRAME_PROFILES = {
 
 export const CONFIG = {
   OKX_BASE_URL: "https://www.okx.com",
-  BINANCE_BASE_URL: "https://fapi.binance.com",
+  BINANCE_BASE_URL: "https://data-api.binance.vision",
   SWEEP_ZONE_DISTANCE_ATR: 1.25,
   SWEEP_MAX_EVENT_DISTANCE_ATR: 1.5,
   RANGE_SETUP_MAX_AGE: 30,
@@ -180,8 +180,8 @@ export const CONFIG = {
     binance: {
       priority: 2,
       enabled: true,
-      maxCandles: 300,
-      marketType: "futures"
+      maxCandles: 1000,
+      marketType: "spot"
     }
   },
   SYMBOL_ALIASES: {
