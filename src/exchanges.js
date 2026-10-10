@@ -18,7 +18,6 @@ let tickersCache = {
 };
 
 const klineCache = {};
-
 const snapshotCache = {};
 
 function sleep(ms) {
@@ -112,15 +111,15 @@ export async function okxFetch(path, params = {}, options = {}) {
   throw lastError || new Error("OKX خطای ناشناخته");
 }
 
-export async function genericFetch(baseUrl, path, params = {}, options = {}) {
-  const url = new URL(baseUrl + path);
+export async function binanceFetch(path, params = {}, options = {}) {
+  const url = new URL(CONFIG.BINANCE_BASE_URL + path);
 
   for (const [key, value] of Object.entries(params)) {
     url.searchParams.set(key, value);
   }
 
   const maxAttempts = options.maxAttempts || 3;
-  const baseDelay = options.baseDelay || 700;
+  const baseDelay = options.baseDelay || 400;
   const timeoutMs = options.timeout || CONFIG.MARKET_TIMEOUT;
 
   let lastError = null;
@@ -137,13 +136,28 @@ export async function genericFetch(baseUrl, path, params = {}, options = {}) {
       });
 
       if (response.status === 429) {
-        lastError = new Error("HTTP 429");
-        await sleep(baseDelay * (attempt + 1));
+        lastError = new Error("Binance HTTP 429");
+
+        const retryAfter = response.headers.get("Retry-After");
+        const retrySeconds = parseFloat(retryAfter);
+
+        if (Number.isFinite(retrySeconds) && retrySeconds > 0) {
+          await sleep(Math.min(retrySeconds * 1000, 15000));
+        } else {
+          await sleep(baseDelay * (attempt + 1));
+        }
+
+        continue;
+      }
+
+      if (response.status === 418) {
+        lastError = new Error("Binance IP banned (418)");
+        await sleep(Math.min(5000 * (attempt + 1), 30000));
         continue;
       }
 
       if (!response.ok) {
-        const error = new Error("HTTP " + response.status);
+        const error = new Error("Binance HTTP " + response.status);
         error.status = response.status;
 
         const retryable = response.status >= 500;
@@ -164,6 +178,7 @@ export async function genericFetch(baseUrl, path, params = {}, options = {}) {
       const status = e && e.status ? e.status : 0;
       const retryable =
         status === 429 ||
+        status === 418 ||
         status >= 500 ||
         status === 0 ||
         e.name === "AbortError";
@@ -178,76 +193,7 @@ export async function genericFetch(baseUrl, path, params = {}, options = {}) {
     }
   }
 
-  throw lastError || new Error("HTTP خطای ناشناخته");
-}
-
-export async function toobitFetch(path, params = {}, options = {}) {
-  const url = new URL(CONFIG.TOOBIT_BASE_URL + path);
-
-  for (const [key, value] of Object.entries(params)) {
-    url.searchParams.set(key, value);
-  }
-
-  const maxAttempts = options.maxAttempts || 3;
-  const baseDelay = options.baseDelay || 700;
-  const timeoutMs = options.timeout || CONFIG.MARKET_TIMEOUT;
-
-  let lastError = null;
-
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), timeoutMs);
-
-    try {
-      const response = await fetch(url.toString(), {
-        method: "GET",
-        headers: { Accept: "application/json" },
-        signal: controller.signal
-      });
-
-      if (response.status === 429) {
-        lastError = new Error("Toobit HTTP 429");
-        await sleep(baseDelay * (attempt + 1));
-        continue;
-      }
-
-      if (!response.ok) {
-        const error = new Error("Toobit HTTP " + response.status);
-        error.status = response.status;
-
-        const retryable = response.status >= 500;
-        if (!retryable || attempt === maxAttempts - 1) {
-          throw error;
-        }
-
-        lastError = error;
-        await sleep(baseDelay * (attempt + 1));
-        continue;
-      }
-
-      const json = await response.json();
-      return json;
-    } catch (e) {
-      lastError = e;
-
-      const status = e && e.status ? e.status : 0;
-      const retryable =
-        status === 429 ||
-        status >= 500 ||
-        status === 0 ||
-        e.name === "AbortError";
-
-      if (!retryable || attempt === maxAttempts - 1) {
-        break;
-      }
-
-      await sleep(baseDelay * (attempt + 1));
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  throw lastError || new Error("Toobit خطای ناشناخته");
+  throw lastError || new Error("Binance خطای ناشناخته");
 }
 
 export function resolveSymbolAliases(symbol) {
@@ -303,26 +249,21 @@ export async function getExchangeSymbols(force = false) {
       }
     }
   } catch (e) {
-    console.error("OKX symbols error:", e);
+    console.error("OKX symbols error:", e.message || e);
   }
 
   try {
-    const bybitJson = await genericFetch(
-      CONFIG.BYBIT_BASE_URL,
-      "/v5/market/instruments-info",
-      { category: "linear", limit: "1000" }
+    const binanceJson = await binanceFetch(
+      "/fapi/v1/exchangeInfo"
     );
 
-    if (
-      bybitJson &&
-      bybitJson.result &&
-      Array.isArray(bybitJson.result.list)
-    ) {
-      for (const item of bybitJson.result.list) {
-        if (item.status !== "Trading") continue;
-        if (item.quoteCoin !== "USDT") continue;
+    if (binanceJson && Array.isArray(binanceJson.symbols)) {
+      for (const item of binanceJson.symbols) {
+        if (item.status !== "TRADING") continue;
+        if (item.quoteAsset !== "USDT") continue;
+        if (item.contractType !== "PERPETUAL") continue;
 
-        const base = String(item.baseCoin || "").toUpperCase();
+        const base = String(item.baseAsset || "").toUpperCase();
         if (!base) continue;
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (/^X[A-Z]{4,}$/.test(base)) continue;
@@ -334,49 +275,13 @@ export async function getExchangeSymbols(force = false) {
             symbol: symbol,
             base: base,
             quote: "USDT",
-            exchange: "bybit"
+            exchange: "binance"
           });
         }
       }
     }
   } catch (e) {
-    console.error("Bybit symbols error:", e);
-  }
-
-  try {
-    const toobitJson = await toobitFetch("/quote/v1/exchangeInfo");
-
-    const rows = Array.isArray(toobitJson)
-      ? toobitJson
-      : toobitJson?.data || toobitJson?.result || toobitJson?.symbols || [];
-
-    if (Array.isArray(rows)) {
-      for (const item of rows) {
-        const base = String(item.baseAsset || item.baseCoin || "").toUpperCase();
-        const quote = String(item.quoteAsset || item.quoteCoin || "").toUpperCase();
-
-        if (!base || quote !== "USDT") continue;
-
-        const status = String(item.status || "").toUpperCase();
-        if (status && status !== "TRADING" && status !== "1") continue;
-
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (/^X[A-Z]{4,}$/.test(base)) continue;
-
-        const symbol = base + "USDT";
-
-        if (!allSymbols.has(symbol)) {
-          allSymbols.set(symbol, {
-            symbol: symbol,
-            base: base,
-            quote: "USDT",
-            exchange: "toobit"
-          });
-        }
-      }
-    }
-  } catch (e) {
-    console.error("Toobit symbols error:", e);
+    console.error("Binance symbols error:", e.message || e);
   }
 
   const result = Array.from(allSymbols.values());
@@ -449,30 +354,18 @@ export async function getTickers(force = false) {
       }
     }
   } catch (e) {
-    console.error("OKX tickers error:", e);
+    console.error("OKX tickers error:", e.message || e);
   }
 
   try {
-    const bybitJson = await genericFetch(
-      CONFIG.BYBIT_BASE_URL,
-      "/v5/market/tickers",
-      { category: "linear" }
+    const binanceJson = await binanceFetch(
+      "/fapi/v1/ticker/24hr"
     );
 
-    let tickersArray = null;
-
-    if (
-      bybitJson &&
-      bybitJson.result &&
-      Array.isArray(bybitJson.result.list)
-    ) {
-      tickersArray = bybitJson.result.list;
-    }
-
-    if (tickersArray) {
+    if (Array.isArray(binanceJson)) {
       const seen = new Set(result.map((t) => t.symbol));
 
-      for (const item of tickersArray) {
+      for (const item of binanceJson) {
         const symbol = String(item.symbol || "").toUpperCase();
         if (!symbol.endsWith("USDT")) continue;
 
@@ -485,8 +378,8 @@ export async function getTickers(force = false) {
         if (!validSet.has(symbol)) continue;
 
         const last = parseFloat(item.lastPrice || "0");
-        const open24h = parseFloat(item.prevPrice24h || "0");
-        const quoteVolume = parseFloat(item.turnover24h || "0");
+        const open24h = parseFloat(item.openPrice || "0");
+        const quoteVolume = parseFloat(item.quoteVolume || "0");
 
         if (!Number.isFinite(last) || last <= 0) continue;
 
@@ -508,56 +401,7 @@ export async function getTickers(force = false) {
       }
     }
   } catch (e) {
-    console.error("Bybit tickers error:", e);
-  }
-
-  try {
-    const toobitJson = await toobitFetch("/quote/v1/tickers");
-
-    const rows = Array.isArray(toobitJson)
-      ? toobitJson
-      : toobitJson?.data || [];
-
-    if (Array.isArray(rows)) {
-      const seen = new Set(result.map((t) => t.symbol));
-
-      for (const item of rows) {
-        const symbol = String(item.symbol || "").toUpperCase();
-        if (!symbol.endsWith("USDT")) continue;
-
-        const base = symbol.replace(/USDT$/, "");
-
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (base.includes("TEST")) continue;
-
-        if (seen.has(symbol)) continue;
-        if (!validSet.has(symbol)) continue;
-
-        const last = parseFloat(item.lastPrice || item.last || "0");
-        const open24h = parseFloat(item.open || item.open24h || "0");
-        const quoteVolume = parseFloat(item.quoteVolume || item.volume || "0");
-
-        if (!Number.isFinite(last) || last <= 0) continue;
-
-        let changePercent = 0;
-        if (Number.isFinite(open24h) && open24h > 0) {
-          changePercent = ((last - open24h) / open24h) * 100;
-        }
-
-        result.push({
-          symbol: symbol,
-          base: base,
-          quote: "USDT",
-          price: last,
-          change: changePercent,
-          quote_volume: quoteVolume
-        });
-
-        seen.add(symbol);
-      }
-    }
-  } catch (e) {
-    console.error("Toobit tickers error:", e);
+    console.error("Binance tickers error:", e.message || e);
   }
 
   result.sort((a, b) => b.quote_volume - a.quote_volume);
@@ -646,7 +490,6 @@ export function normalizeCandles(rawCandles, interval) {
 
   if (incompleteCandles.length > 0) {
     const openCandle = incompleteCandles[0];
-
     const latestPrice = openCandle.close;
 
     if (Number.isFinite(latestPrice) && latestPrice > 0) {
@@ -738,99 +581,30 @@ async function getKlinesOKX(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-async function getKlinesBybit(symbol, interval, limit) {
-  const bybitSymbol = symbol.toUpperCase();
-  const bybitInterval = CONFIG.BYBIT_INTERVAL_MAP[interval];
+async function getKlinesBinance(symbol, interval, limit) {
+  const binanceSymbol = symbol.toUpperCase();
+  const binanceInterval = CONFIG.BINANCE_INTERVAL_MAP[interval];
 
-  if (!bybitInterval) {
-    throw new Error("Bybit interval unsupported: " + interval);
+  if (!binanceInterval) {
+    throw new Error("Binance interval unsupported: " + interval);
   }
 
-  const size = Math.min(limit, CONFIG.EXCHANGES.bybit.maxCandles);
+  const size = Math.min(limit, CONFIG.EXCHANGES.binance.maxCandles);
 
-  const json = await genericFetch(
-    CONFIG.BYBIT_BASE_URL,
-    "/v5/market/kline",
-    {
-      category: "linear",
-      symbol: bybitSymbol,
-      interval: bybitInterval,
-      limit: String(size)
-    }
-  );
-
-  let dataArray = null;
-
-  if (
-    json &&
-    json.result &&
-    Array.isArray(json.result.list)
-  ) {
-    dataArray = json.result.list;
-  }
-
-  if (!dataArray) {
-    throw new Error("Bybit klines پاسخ نامعتبر");
-  }
-
-  const rawCandles = [];
-
-  for (const row of dataArray) {
-    if (!Array.isArray(row) || row.length < 6) continue;
-
-    const openTime = parseInt(row[0], 10);
-    const open = parseFloat(row[1]);
-    const high = parseFloat(row[2]);
-    const low = parseFloat(row[3]);
-    const close = parseFloat(row[4]);
-    const volume = parseFloat(row[5]);
-    const quoteVolume = parseFloat(row[6] || "0");
-
-    rawCandles.push({
-      time: openTime,
-      open,
-      high,
-      low,
-      close,
-      volume,
-      quoteVolume,
-      confirm: "1"
-    });
-  }
-
-  rawCandles.reverse();
-
-  return normalizeCandles(rawCandles, interval);
-}
-
-async function getKlinesToobit(symbol, interval, limit) {
-  const toobitSymbol = symbol.toUpperCase();
-  const toobitInterval = CONFIG.TOOBIT_INTERVAL_MAP[interval];
-
-  if (!toobitInterval) {
-    throw new Error("Toobit interval unsupported: " + interval);
-  }
-
-  const size = Math.min(limit, CONFIG.EXCHANGES.toobit.maxCandles);
-
-  const json = await toobitFetch("/quote/v1/klines", {
-    symbol: toobitSymbol,
-    interval: toobitInterval,
+  const json = await binanceFetch("/fapi/v1/klines", {
+    symbol: binanceSymbol,
+    interval: binanceInterval,
     limit: String(size)
   });
 
-  const dataArray = Array.isArray(json)
-    ? json
-    : json?.data || json?.result;
-
-  if (!dataArray) {
-    throw new Error("Toobit klines پاسخ نامعتبر");
+  if (!Array.isArray(json)) {
+    throw new Error("Binance klines پاسخ نامعتبر");
   }
 
   const rawCandles = [];
 
-  for (const row of dataArray) {
-    if (!Array.isArray(row) || row.length < 6) continue;
+  for (const row of json) {
+    if (!Array.isArray(row) || row.length < 7) continue;
 
     const openTime = parseInt(row[0], 10);
     const open = parseFloat(row[1]);
@@ -838,7 +612,9 @@ async function getKlinesToobit(symbol, interval, limit) {
     const low = parseFloat(row[3]);
     const close = parseFloat(row[4]);
     const volume = parseFloat(row[5]);
+    const closeTime = parseInt(row[6], 10);
     const quoteVolume = parseFloat(row[7] || "0");
+    const isClosed = Date.now() > closeTime;
 
     rawCandles.push({
       time: openTime,
@@ -848,7 +624,7 @@ async function getKlinesToobit(symbol, interval, limit) {
       close,
       volume,
       quoteVolume,
-      confirm: "1"
+      confirm: isClosed ? "1" : "0"
     });
   }
 
@@ -870,11 +646,8 @@ export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit
         case "okx":
           candles = await getKlinesOKX(alias, interval, limit);
           break;
-        case "bybit":
-          candles = await getKlinesBybit(alias, interval, limit);
-          break;
-        case "toobit":
-          candles = await getKlinesToobit(alias, interval, limit);
+        case "binance":
+          candles = await getKlinesBinance(alias, interval, limit);
           break;
         default:
           throw new Error("Unknown exchange: " + exchangeKey);
