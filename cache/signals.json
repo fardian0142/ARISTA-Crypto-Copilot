@@ -1,4 +1,12 @@
 {
-  "lastUpdated": "2026-10-10T08:05:03.203Z",
-  "signals": {}
+  "lastUpdated": "2026-10-10T08:11:59.910Z",
+  "signals": {
+    "MSTRUSDT": {
+      "sentAt": "2026-10-10T08:11:58.408Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 154.5,
+      "stop": 153.10823908959028
+    }
+  }
 }
