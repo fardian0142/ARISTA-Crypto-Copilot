@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T09:25:01.764Z",
+  "lastUpdated": "2026-10-10T11:41:25.828Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -98,6 +98,27 @@
       "score": 14,
       "entry": 10.531500000000001,
       "stop": 10.305860465274588
+    },
+    "MSTRBUSDT": {
+      "sentAt": "2026-10-10T11:41:20.945Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 154.405,
+      "stop": 153.05059003615304
+    },
+    "SAPIENUSDT": {
+      "sentAt": "2026-10-10T11:41:22.626Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07105106564806621,
+      "stop": 0.06959878211649577
+    },
+    "AWEUSDT": {
+      "sentAt": "2026-10-10T11:41:24.326Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06550132,
+      "stop": 0.064096912
     }
   }
 }
