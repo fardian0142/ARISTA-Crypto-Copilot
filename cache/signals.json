@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T08:52:44.357Z",
+  "lastUpdated": "2026-10-10T09:13:36.628Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -56,6 +56,48 @@
       "score": 14,
       "entry": 0.154,
       "stop": 0.14851619217236067
+    },
+    "MERLUSDT": {
+      "sentAt": "2026-10-10T09:13:26.445Z",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.03086,
+      "stop": 0.031798103252693034
+    },
+    "BREVUSDT": {
+      "sentAt": "2026-10-10T09:13:28.195Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08878904032001479,
+      "stop": 0.08345538249141166
+    },
+    "DOSUSDT": {
+      "sentAt": "2026-10-10T09:13:29.976Z",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.22947661204295983,
+      "stop": 0.23742958623661736
+    },
+    "RADUSDT": {
+      "sentAt": "2026-10-10T09:13:31.698Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.318,
+      "stop": 0.28694960177877893
+    },
+    "SNXUSDT": {
+      "sentAt": "2026-10-10T09:13:33.420Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2426,
+      "stop": 0.2371994065292533
+    },
+    "AVAXUSDT": {
+      "sentAt": "2026-10-10T09:13:35.127Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 10.531500000000001,
+      "stop": 10.305860465274588
     }
   }
 }
