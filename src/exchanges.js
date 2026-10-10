@@ -253,15 +253,13 @@ export async function getExchangeSymbols(force = false) {
   }
 
   try {
-    const binanceJson = await binanceFetch(
-      "/fapi/v1/exchangeInfo"
-    );
+    const binanceJson = await binanceFetch("/api/v3/exchangeInfo");
 
     if (binanceJson && Array.isArray(binanceJson.symbols)) {
       for (const item of binanceJson.symbols) {
         if (item.status !== "TRADING") continue;
         if (item.quoteAsset !== "USDT") continue;
-        if (item.contractType !== "PERPETUAL") continue;
+        if (item.isSpotTradingAllowed !== true) continue;
 
         const base = String(item.baseAsset || "").toUpperCase();
         if (!base) continue;
@@ -358,9 +356,7 @@ export async function getTickers(force = false) {
   }
 
   try {
-    const binanceJson = await binanceFetch(
-      "/fapi/v1/ticker/24hr"
-    );
+    const binanceJson = await binanceFetch("/api/v3/ticker/24hr");
 
     if (Array.isArray(binanceJson)) {
       const seen = new Set(result.map((t) => t.symbol));
@@ -591,7 +587,7 @@ async function getKlinesBinance(symbol, interval, limit) {
 
   const size = Math.min(limit, CONFIG.EXCHANGES.binance.maxCandles);
 
-  const json = await binanceFetch("/fapi/v1/klines", {
+  const json = await binanceFetch("/api/v3/klines", {
     symbol: binanceSymbol,
     interval: binanceInterval,
     limit: String(size)
