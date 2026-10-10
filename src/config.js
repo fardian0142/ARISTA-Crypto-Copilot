@@ -67,8 +67,7 @@ export const TIMEFRAME_PROFILES = {
 
 export const CONFIG = {
   OKX_BASE_URL: "https://www.okx.com",
-  BYBIT_BASE_URL: "https://api.bybit.com",
-  TOOBIT_BASE_URL: "https://api.toobit.com",
+  BINANCE_BASE_URL: "https://fapi.binance.com",
   SWEEP_ZONE_DISTANCE_ATR: 1.25,
   SWEEP_MAX_EVENT_DISTANCE_ATR: 1.5,
   RANGE_SETUP_MAX_AGE: 30,
@@ -178,17 +177,11 @@ export const CONFIG = {
       maxCandles: 300,
       marketType: "swap"
     },
-    bybit: {
+    binance: {
       priority: 2,
       enabled: true,
       maxCandles: 300,
-      marketType: "linear"
-    },
-    toobit: {
-      priority: 3,
-      enabled: true,
-      maxCandles: 300,
-      marketType: "spot"
+      marketType: "futures"
     }
   },
   SYMBOL_ALIASES: {
@@ -233,17 +226,7 @@ export const CONFIG = {
     "12h": "12H",
     "24h": "1D"
   },
-  BYBIT_INTERVAL_MAP: {
-    "15m": "15",
-    "30m": "30",
-    "1h": "60",
-    "2h": "120",
-    "4h": "240",
-    "6h": "360",
-    "12h": "720",
-    "24h": "D"
-  },
-  TOOBIT_INTERVAL_MAP: {
+  BINANCE_INTERVAL_MAP: {
     "15m": "15m",
     "30m": "30m",
     "1h": "1h",
