@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T11:41:25.828Z",
+  "lastUpdated": "2026-10-10T17:10:08.440Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -119,6 +119,41 @@
       "score": 14,
       "entry": 0.06550132,
       "stop": 0.064096912
+    },
+    "RUNEUSDT": {
+      "sentAt": "2026-10-10T17:09:59.966Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.69635,
+      "stop": 0.679985366242212
+    },
+    "USUALUSDT": {
+      "sentAt": "2026-10-10T17:10:01.741Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01277808,
+      "stop": 0.012446482598467076
+    },
+    "ONGUSDT": {
+      "sentAt": "2026-10-10T17:10:03.452Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08761,
+      "stop": 0.08689596809556453
+    },
+    "LSKUSDT": {
+      "sentAt": "2026-10-10T17:10:05.230Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.239,
+      "stop": 0.23179561826219078
+    },
+    "AIOTUSDT": {
+      "sentAt": "2026-10-10T17:10:06.938Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04668607109285254,
+      "stop": 0.04424015368470243
     }
   }
 }
