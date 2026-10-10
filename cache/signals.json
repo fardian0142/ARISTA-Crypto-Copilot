@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T08:30:04.941Z",
+  "lastUpdated": "2026-10-10T08:42:34.210Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -21,6 +21,20 @@
       "score": 14,
       "entry": 0.44274,
       "stop": 0.4325598808340815
+    },
+    "SEIUSDT": {
+      "sentAt": "2026-10-10T08:42:30.983Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06723,
+      "stop": 0.06572119317628417
+    },
+    "HIVEUSDT": {
+      "sentAt": "2026-10-10T08:42:32.710Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05414804648496441,
+      "stop": 0.05341651830289782
     }
   }
 }
