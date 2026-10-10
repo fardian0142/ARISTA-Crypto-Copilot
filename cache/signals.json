@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T08:11:59.910Z",
+  "lastUpdated": "2026-10-10T08:21:48.364Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -7,6 +7,20 @@
       "score": 14,
       "entry": 154.5,
       "stop": 153.10823908959028
+    },
+    "MEUSDT": {
+      "sentAt": "2026-10-10T08:21:45.154Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07281499999999999,
+      "stop": 0.06968944285680675
+    },
+    "REUSDT": {
+      "sentAt": "2026-10-10T08:21:46.862Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.44274,
+      "stop": 0.4325598808340815
     }
   }
 }
