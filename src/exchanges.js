@@ -24,8 +24,8 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function okxFetch(path, params = {}, options = {}) {
-  const url = new URL(CONFIG.OKX_BASE_URL + path);
+async function genericFetch(baseUrl, path, params = {}, options = {}) {
+  const url = new URL(baseUrl + path);
 
   for (const [key, value] of Object.entries(params)) {
     url.searchParams.set(key, value);
@@ -34,6 +34,7 @@ export async function okxFetch(path, params = {}, options = {}) {
   const maxAttempts = options.maxAttempts || 3;
   const baseDelay = options.baseDelay || 400;
   const timeoutMs = options.timeout || CONFIG.MARKET_TIMEOUT;
+  const label = options.label || "HTTP";
 
   let lastError = null;
 
@@ -49,94 +50,7 @@ export async function okxFetch(path, params = {}, options = {}) {
       });
 
       if (response.status === 429) {
-        lastError = new Error("OKX HTTP 429");
-
-        const retryAfter = response.headers.get("Retry-After");
-        const retrySeconds = parseFloat(retryAfter);
-
-        if (Number.isFinite(retrySeconds) && retrySeconds > 0) {
-          await sleep(Math.min(retrySeconds * 1000, 15000));
-        } else {
-          await sleep(baseDelay * (attempt + 1));
-        }
-
-        continue;
-      }
-
-      if (!response.ok) {
-        const error = new Error("OKX HTTP " + response.status);
-        error.status = response.status;
-
-        const retryable = response.status >= 500;
-        if (!retryable || attempt === maxAttempts - 1) {
-          throw error;
-        }
-
-        lastError = error;
-        await sleep(baseDelay * (attempt + 1));
-        continue;
-      }
-
-      const json = await response.json();
-
-      if (json.code !== "0") {
-        const error = new Error(
-          "OKX error: " + (json.msg || json.code || "unknown")
-        );
-        error.code = json.code;
-        throw error;
-      }
-
-      return json;
-    } catch (e) {
-      lastError = e;
-
-      const status = e && e.status ? e.status : 0;
-      const retryable =
-        status === 429 ||
-        status >= 500 ||
-        status === 0 ||
-        e.name === "AbortError";
-
-      if (!retryable || attempt === maxAttempts - 1) {
-        break;
-      }
-
-      await sleep(baseDelay * (attempt + 1));
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  throw lastError || new Error("OKX خطای ناشناخته");
-}
-
-export async function binanceFetch(path, params = {}, options = {}) {
-  const url = new URL(CONFIG.BINANCE_BASE_URL + path);
-
-  for (const [key, value] of Object.entries(params)) {
-    url.searchParams.set(key, value);
-  }
-
-  const maxAttempts = options.maxAttempts || 3;
-  const baseDelay = options.baseDelay || 400;
-  const timeoutMs = options.timeout || CONFIG.MARKET_TIMEOUT;
-
-  let lastError = null;
-
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), timeoutMs);
-
-    try {
-      const response = await fetch(url.toString(), {
-        method: "GET",
-        headers: { Accept: "application/json" },
-        signal: controller.signal
-      });
-
-      if (response.status === 429) {
-        lastError = new Error("Binance HTTP 429");
+        lastError = new Error(label + " HTTP 429");
 
         const retryAfter = response.headers.get("Retry-After");
         const retrySeconds = parseFloat(retryAfter);
@@ -151,13 +65,13 @@ export async function binanceFetch(path, params = {}, options = {}) {
       }
 
       if (response.status === 418) {
-        lastError = new Error("Binance IP banned (418)");
+        lastError = new Error(label + " IP banned (418)");
         await sleep(Math.min(5000 * (attempt + 1), 30000));
         continue;
       }
 
       if (!response.ok) {
-        const error = new Error("Binance HTTP " + response.status);
+        const error = new Error(label + " HTTP " + response.status);
         error.status = response.status;
 
         const retryable = response.status >= 500;
@@ -193,7 +107,60 @@ export async function binanceFetch(path, params = {}, options = {}) {
     }
   }
 
-  throw lastError || new Error("Binance خطای ناشناخته");
+  throw lastError || new Error(label + " خطای ناشناخته");
+}
+
+export function okxFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.OKX_BASE_URL, path, params, {
+    ...options,
+    label: "OKX"
+  }).then((json) => {
+    if (json.code !== "0") {
+      const error = new Error(
+        "OKX error: " + (json.msg || json.code || "unknown")
+      );
+      error.code = json.code;
+      throw error;
+    }
+    return json;
+  });
+}
+
+export function binanceFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.BINANCE_BASE_URL, path, params, {
+    ...options,
+    label: "Binance"
+  });
+}
+
+export function mexcFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.MEXC_BASE_URL, path, params, {
+    ...options,
+    label: "MEXC"
+  }).then((json) => {
+    if (json && json.success === false) {
+      const error = new Error(
+        "MEXC error: " + (json.message || json.code || "unknown")
+      );
+      error.code = json.code;
+      throw error;
+    }
+    return json;
+  });
+}
+
+export function kucoinFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.KUCOIN_BASE_URL, path, params, {
+    ...options,
+    label: "KuCoin"
+  });
+}
+
+export function gateFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.GATE_BASE_URL, path, params, {
+    ...options,
+    label: "Gate"
+  });
 }
 
 export function resolveSymbolAliases(symbol) {
@@ -280,6 +247,98 @@ export async function getExchangeSymbols(force = false) {
     }
   } catch (e) {
     console.error("Binance symbols error:", e.message || e);
+  }
+
+  try {
+    const mexcJson = await mexcFetch("/api/v1/contract/detail");
+
+    if (mexcJson && mexcJson.success && Array.isArray(mexcJson.data)) {
+      for (const item of mexcJson.data) {
+        if (item.state !== 0 && item.state !== "0") continue;
+        if (item.quoteCoin !== "USDT") continue;
+
+        const base = String(item.baseCoin || "").toUpperCase();
+        if (!base) continue;
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (/^X[A-Z]{4,}$/.test(base)) continue;
+
+        const symbol = base + "USDT";
+
+        if (!allSymbols.has(symbol)) {
+          allSymbols.set(symbol, {
+            symbol: symbol,
+            base: base,
+            quote: "USDT",
+            exchange: "mexc"
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("MEXC symbols error:", e.message || e);
+  }
+
+  try {
+    const kucoinJson = await kucoinFetch("/api/v1/contracts/active");
+
+    if (kucoinJson && kucoinJson.code === "200000" && Array.isArray(kucoinJson.data)) {
+      for (const item of kucoinJson.data) {
+        if (item.status !== "Open") continue;
+        if (item.quoteCurrency !== "USDT") continue;
+        if (item.settleCurrency !== "USDT") continue;
+
+        const symbolRaw = String(item.symbol || "").toUpperCase();
+        const match = symbolRaw.match(/^([A-Z0-9]+)USDTM$/);
+        if (!match) continue;
+
+        const base = match[1];
+        if (!base) continue;
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (/^X[A-Z]{4,}$/.test(base)) continue;
+
+        const symbol = base + "USDT";
+
+        if (!allSymbols.has(symbol)) {
+          allSymbols.set(symbol, {
+            symbol: symbol,
+            base: base,
+            quote: "USDT",
+            exchange: "kucoin"
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("KuCoin symbols error:", e.message || e);
+  }
+
+  try {
+    const gateJson = await gateFetch("/api/v4/futures/usdt/contracts");
+
+    if (Array.isArray(gateJson)) {
+      for (const item of gateJson) {
+        const contract = String(item.name || "").toUpperCase();
+        if (!contract.endsWith("_USDT")) continue;
+
+        const base = contract.replace(/_USDT$/, "");
+        if (!base) continue;
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (/^X[A-Z]{4,}$/.test(base)) continue;
+
+        const symbol = base + "USDT";
+
+        if (!allSymbols.has(symbol)) {
+          allSymbols.set(symbol, {
+            symbol: symbol,
+            base: base,
+            quote: "USDT",
+            exchange: "gate"
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("Gate symbols error:", e.message || e);
   }
 
   const result = Array.from(allSymbols.values());
@@ -398,6 +457,140 @@ export async function getTickers(force = false) {
     }
   } catch (e) {
     console.error("Binance tickers error:", e.message || e);
+  }
+
+  try {
+    const mexcJson = await mexcFetch("/api/v1/contract/ticker");
+
+    if (mexcJson && mexcJson.success && Array.isArray(mexcJson.data)) {
+      const seen = new Set(result.map((t) => t.symbol));
+
+      for (const item of mexcJson.data) {
+        const symbol = String(item.symbol || "").toUpperCase();
+        if (!symbol.endsWith("_USDT")) continue;
+
+        const base = symbol.replace(/_USDT$/, "");
+
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (base.includes("TEST")) continue;
+
+        const normalized = base + "USDT";
+        if (seen.has(normalized)) continue;
+        if (!validSet.has(normalized)) continue;
+
+        const last = parseFloat(item.lastPrice || "0");
+        const quoteVolume = parseFloat(item.amount24 || item.volume24 || "0");
+
+        if (!Number.isFinite(last) || last <= 0) continue;
+
+        let changePercent = 0;
+        if (Number.isFinite(item.riseFallRate) && item.riseFallRate !== null) {
+          changePercent = parseFloat(item.riseFallRate) * 100;
+        }
+
+        result.push({
+          symbol: normalized,
+          base: base,
+          quote: "USDT",
+          price: last,
+          change: changePercent,
+          quote_volume: quoteVolume
+        });
+
+        seen.add(normalized);
+      }
+    }
+  } catch (e) {
+    console.error("MEXC tickers error:", e.message || e);
+  }
+
+  try {
+    const kucoinJson = await kucoinFetch("/api/v1/contracts/active");
+
+    if (kucoinJson && kucoinJson.code === "200000" && Array.isArray(kucoinJson.data)) {
+      const seen = new Set(result.map((t) => t.symbol));
+
+      for (const item of kucoinJson.data) {
+        if (item.status !== "Open") continue;
+        if (item.quoteCurrency !== "USDT") continue;
+
+        const symbolRaw = String(item.symbol || "").toUpperCase();
+        const match = symbolRaw.match(/^([A-Z0-9]+)USDTM$/);
+        if (!match) continue;
+
+        const base = match[1];
+        const normalized = base + "USDT";
+
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (base.includes("TEST")) continue;
+
+        if (seen.has(normalized)) continue;
+        if (!validSet.has(normalized)) continue;
+
+        const last = parseFloat(item.lastTradePrice || "0");
+        const quoteVolume = parseFloat(item.turnoverOf24h || "0");
+
+        if (!Number.isFinite(last) || last <= 0) continue;
+
+        result.push({
+          symbol: normalized,
+          base: base,
+          quote: "USDT",
+          price: last,
+          change: 0,
+          quote_volume: quoteVolume
+        });
+
+        seen.add(normalized);
+      }
+    }
+  } catch (e) {
+    console.error("KuCoin tickers error:", e.message || e);
+  }
+
+  try {
+    const gateJson = await gateFetch("/api/v4/futures/usdt/tickers");
+
+    if (Array.isArray(gateJson)) {
+      const seen = new Set(result.map((t) => t.symbol));
+
+      for (const item of gateJson) {
+        const contract = String(item.contract || "").toUpperCase();
+        if (!contract.endsWith("_USDT")) continue;
+
+        const base = contract.replace(/_USDT$/, "");
+        const normalized = base + "USDT";
+
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (base.includes("TEST")) continue;
+
+        if (seen.has(normalized)) continue;
+        if (!validSet.has(normalized)) continue;
+
+        const last = parseFloat(item.last || "0");
+        const quoteVolume = parseFloat(item.volume_24h_quote || item.volume_24h_settle || "0");
+
+        if (!Number.isFinite(last) || last <= 0) continue;
+
+        let changePercent = 0;
+        if (Number.isFinite(item.change_percentage)) {
+          changePercent = parseFloat(item.change_percentage);
+        }
+
+        result.push({
+          symbol: normalized,
+          base: base,
+          quote: "USDT",
+          price: last,
+          change: changePercent,
+          quote_volume: quoteVolume
+        });
+
+        seen.add(normalized);
+      }
+    }
+  } catch (e) {
+    console.error("Gate tickers error:", e.message || e);
   }
 
   result.sort((a, b) => b.quote_volume - a.quote_volume);
@@ -629,6 +822,227 @@ async function getKlinesBinance(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
+async function getKlinesMEXC(symbol, interval, limit) {
+  const base = symbol.replace(/USDT$/, "");
+  const mexcSymbol = base + "_USDT";
+  const mexcInterval = CONFIG.MEXC_INTERVAL_MAP[interval];
+
+  if (!mexcInterval) {
+    throw new Error("MEXC interval unsupported: " + interval);
+  }
+
+  const size = Math.min(limit, CONFIG.EXCHANGES.mexc.maxCandles);
+
+  const now = Math.floor(Date.now() / 1000);
+  const intervalSec = Math.floor((INTERVAL_MS[interval] || 3600000) / 1000);
+  const start = now - (size * intervalSec);
+
+  const json = await mexcFetch("/api/v1/contract/kline/" + mexcSymbol, {
+    interval: mexcInterval,
+    start: String(start),
+    end: String(now)
+  });
+
+  if (!json || !json.success || !json.data) {
+    throw new Error("MEXC klines پاسخ نامعتبر");
+  }
+
+  const data = json.data;
+
+  if (
+    !Array.isArray(data.time) ||
+    !Array.isArray(data.open) ||
+    !Array.isArray(data.high) ||
+    !Array.isArray(data.low) ||
+    !Array.isArray(data.close) ||
+    !Array.isArray(data.vol)
+  ) {
+    throw new Error("MEXC klines ساختار نامعتبر");
+  }
+
+  const length = Math.min(
+    data.time.length,
+    data.open.length,
+    data.high.length,
+    data.low.length,
+    data.close.length,
+    data.vol.length
+  );
+
+  const rawCandles = [];
+  const nowMs = Date.now();
+
+  for (let i = 0; i < length; i++) {
+    const openTimeMs = data.time[i] * 1000;
+    const open = parseFloat(data.open[i]);
+    const high = parseFloat(data.high[i]);
+    const low = parseFloat(data.low[i]);
+    const close = parseFloat(data.close[i]);
+    const volume = parseFloat(data.vol[i]);
+
+    if (
+      !Number.isFinite(openTimeMs) ||
+      !Number.isFinite(open) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(low) ||
+      !Number.isFinite(close)
+    ) {
+      continue;
+    }
+
+    const closeTime = openTimeMs + (intervalSec * 1000) - 1;
+    const isClosed = nowMs > closeTime;
+
+    rawCandles.push({
+      time: openTimeMs,
+      open,
+      high,
+      low,
+      close,
+      volume,
+      quoteVolume: 0,
+      confirm: isClosed ? "1" : "0"
+    });
+  }
+
+  rawCandles.sort((a, b) => a.time - b.time);
+
+  return normalizeCandles(rawCandles, interval);
+}
+
+async function getKlinesKuCoin(symbol, interval, limit) {
+  const base = symbol.replace(/USDT$/, "");
+  const kucoinSymbol = base + "USDTM";
+  const granularity = CONFIG.KUCOIN_INTERVAL_MAP[interval];
+
+  if (!granularity) {
+    throw new Error("KuCoin interval unsupported: " + interval);
+  }
+
+  const now = Date.now();
+  const intervalMs = INTERVAL_MS[interval] || 3600000;
+  const size = Math.min(limit, CONFIG.EXCHANGES.kucoin.maxCandles);
+  const from = now - (size * intervalMs);
+
+  const json = await kucoinFetch("/api/v1/kline/query", {
+    symbol: kucoinSymbol,
+    granularity: granularity,
+    from: String(from)
+  });
+
+  if (!json || json.code !== "200000" || !Array.isArray(json.data)) {
+    throw new Error("KuCoin klines پاسخ نامعتبر");
+  }
+
+  const rawCandles = [];
+  const nowMs = Date.now();
+
+  for (const row of json.data) {
+    if (!Array.isArray(row) || row.length < 5) continue;
+
+    const openTimeMs = parseInt(row[0], 10);
+    const open = parseFloat(row[1]);
+    const high = parseFloat(row[2]);
+    const low = parseFloat(row[3]);
+    const close = parseFloat(row[4]);
+    const volume = parseFloat(row[5] || "0");
+
+    if (
+      !Number.isFinite(openTimeMs) ||
+      !Number.isFinite(open) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(low) ||
+      !Number.isFinite(close)
+    ) {
+      continue;
+    }
+
+    const closeTime = openTimeMs + intervalMs - 1;
+    const isClosed = nowMs > closeTime;
+
+    rawCandles.push({
+      time: openTimeMs,
+      open,
+      high,
+      low,
+      close,
+      volume,
+      quoteVolume: 0,
+      confirm: isClosed ? "1" : "0"
+    });
+  }
+
+  rawCandles.sort((a, b) => a.time - b.time);
+
+  return normalizeCandles(rawCandles, interval);
+}
+
+async function getKlinesGate(symbol, interval, limit) {
+  const base = symbol.replace(/USDT$/, "");
+  const gateContract = base + "_USDT";
+  const gateInterval = CONFIG.GATE_INTERVAL_MAP[interval];
+
+  if (!gateInterval) {
+    throw new Error("Gate interval unsupported: " + interval);
+  }
+
+  const size = Math.min(limit, CONFIG.EXCHANGES.gate.maxCandles);
+
+  const json = await gateFetch("/api/v4/futures/usdt/candlesticks", {
+    contract: gateContract,
+    interval: gateInterval,
+    limit: String(size)
+  });
+
+  if (!Array.isArray(json)) {
+    throw new Error("Gate klines پاسخ نامعتبر");
+  }
+
+  const rawCandles = [];
+  const nowMs = Date.now();
+  const intervalMs = INTERVAL_MS[interval] || 3600000;
+
+  for (const row of json) {
+    if (!row || typeof row !== "object") continue;
+
+    const openTimeSec = Number(row.t);
+    const open = parseFloat(row.o);
+    const high = parseFloat(row.h);
+    const low = parseFloat(row.l);
+    const close = parseFloat(row.c);
+    const volume = parseFloat(row.v || "0");
+
+    if (
+      !Number.isFinite(openTimeSec) ||
+      !Number.isFinite(open) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(low) ||
+      !Number.isFinite(close)
+    ) {
+      continue;
+    }
+
+    const openTimeMs = openTimeSec * 1000;
+    const closeTime = openTimeMs + intervalMs - 1;
+    const isClosed = nowMs > closeTime;
+
+    rawCandles.push({
+      time: openTimeMs,
+      open,
+      high,
+      low,
+      close,
+      volume,
+      quoteVolume: 0,
+      confirm: isClosed ? "1" : "0"
+    });
+  }
+
+  rawCandles.sort((a, b) => a.time - b.time);
+
+  return normalizeCandles(rawCandles, interval);
+}
+
 export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit) {
   const aliases = resolveSymbolAliases(symbol);
 
@@ -644,6 +1058,15 @@ export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit
           break;
         case "binance":
           candles = await getKlinesBinance(alias, interval, limit);
+          break;
+        case "mexc":
+          candles = await getKlinesMEXC(alias, interval, limit);
+          break;
+        case "kucoin":
+          candles = await getKlinesKuCoin(alias, interval, limit);
+          break;
+        case "gate":
+          candles = await getKlinesGate(alias, interval, limit);
           break;
         default:
           throw new Error("Unknown exchange: " + exchangeKey);
