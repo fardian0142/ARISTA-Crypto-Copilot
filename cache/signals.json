@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T08:42:34.210Z",
+  "lastUpdated": "2026-10-10T08:52:44.357Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -35,6 +35,27 @@
       "score": 14,
       "entry": 0.05414804648496441,
       "stop": 0.05341651830289782
+    },
+    "FETUSDT": {
+      "sentAt": "2026-10-10T08:52:39.460Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.222,
+      "stop": 0.21698429947331938
+    },
+    "PROMUSDT": {
+      "sentAt": "2026-10-10T08:52:41.194Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 5.49056075885382,
+      "stop": 5.150644847024205
+    },
+    "IOUSDT": {
+      "sentAt": "2026-10-10T08:52:42.856Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.154,
+      "stop": 0.14851619217236067
     }
   }
 }
