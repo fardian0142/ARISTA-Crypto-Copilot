@@ -24,6 +24,10 @@ const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
 const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
 
+const TELEGRAM_MAX_ATTEMPTS = 5;
+const TELEGRAM_BASE_RETRY_MS = 3000;
+const TELEGRAM_MAX_RETRY_MS = 90000;
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -34,40 +38,110 @@ function getTimeframePriority(tf) {
     : 99;
 }
 
+function parseRetryAfter(data, fallbackMs) {
+  if (data && Number.isFinite(data.retry_after) && data.retry_after > 0) {
+    return Math.min(data.retry_after * 1000 + 1000, TELEGRAM_MAX_RETRY_MS);
+  }
+
+  if (data && typeof data.description === "string") {
+    const match = data.description.match(/retry after (\d+)/i);
+
+    if (match) {
+      const seconds = parseInt(match[1], 10);
+
+      if (Number.isFinite(seconds) && seconds > 0) {
+        return Math.min(seconds * 1000 + 1000, TELEGRAM_MAX_RETRY_MS);
+      }
+    }
+  }
+
+  return Math.min(fallbackMs, TELEGRAM_MAX_RETRY_MS);
+}
+
 async function sendTelegramMessage(token, chatId, text) {
   const url = "https://api.telegram.org/bot" + token + "/sendMessage";
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text,
-      parse_mode: "HTML",
-      disable_web_page_preview: true
-    })
-  });
+  let lastError = null;
 
-  const responseText = await response.text();
+  for (let attempt = 1; attempt <= TELEGRAM_MAX_ATTEMPTS; attempt++) {
+    let response;
 
-  let data = null;
+    try {
+      response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "HTML",
+          disable_web_page_preview: true
+        })
+      });
+    } catch (e) {
+      lastError = e;
 
-  try {
-    data = JSON.parse(responseText);
-  } catch {
-    data = null;
-  }
+      if (attempt === TELEGRAM_MAX_ATTEMPTS) {
+        throw e;
+      }
 
-  if (!response.ok || !data || data.ok !== true) {
+      const backoff = Math.min(
+        TELEGRAM_BASE_RETRY_MS * attempt,
+        TELEGRAM_MAX_RETRY_MS
+      );
+
+      await sleep(backoff);
+      continue;
+    }
+
+    const responseText = await response.text();
+
+    let data = null;
+
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      data = null;
+    }
+
+    if (response.ok && data && data.ok === true) {
+      return data;
+    }
+
     const description =
       data && data.description
         ? data.description
         : "Telegram API error (HTTP " + response.status + ")";
 
-    throw new Error(description);
+    const isRateLimit =
+      response.status === 429 ||
+      (typeof description === "string" &&
+        description.toLowerCase().includes("too many requests"));
+
+    lastError = new Error(description);
+
+    if (!isRateLimit || attempt === TELEGRAM_MAX_ATTEMPTS) {
+      throw lastError;
+    }
+
+    const waitMs = parseRetryAfter(
+      data,
+      TELEGRAM_BASE_RETRY_MS * attempt
+    );
+
+    console.log(
+      "⏳ Telegram rate limit — waiting " +
+        Math.ceil(waitMs / 1000) +
+        "s before retry (attempt " +
+        attempt +
+        "/" +
+        TELEGRAM_MAX_ATTEMPTS +
+        ")"
+    );
+
+    await sleep(waitMs);
   }
 
-  return data;
+  throw lastError || new Error("Telegram send failed");
 }
 
 async function runWithConcurrency(items, concurrency, worker) {
@@ -111,6 +185,7 @@ function logSummary(summary) {
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
   console.log("🔎 Analyzed             : " + summary.analyzed);
   console.log("📤 Sent                 : " + summary.sent);
+  console.log("⚠️  Failed               : " + summary.failed);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
@@ -135,6 +210,7 @@ async function main() {
     skipped: 0,
     analyzed: 0,
     sent: 0,
+    failed: 0,
     cacheEntries: 0,
     elapsedMs: 0
   };
@@ -310,6 +386,8 @@ async function main() {
           "/14)"
       );
     } catch (e) {
+      summary.failed++;
+
       console.error(
         "❌ Failed to send " + symbol + " [" + timeframe + "]:",
         (e && e.message) || e
