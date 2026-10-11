@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-11T20:04:39.739Z",
+  "lastUpdated": "2026-10-11T20:13:20.225Z",
   "signals": {
     "GUNUSDT": {
       "sentAt": "2026-10-10T23:22:35.374Z",
@@ -257,6 +257,51 @@
       "score": 14,
       "entry": 0.12880537947478427,
       "stop": 0.12607956631453227
+    },
+    "DOGEUSDT:2h": {
+      "sentAt": "2026-10-11T20:13:11.361Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08612,
+      "stop": 0.08559755874499773
+    },
+    "1000CHEEMSUSDT:2h": {
+      "sentAt": "2026-10-11T20:13:13.221Z",
+      "symbol": "1000CHEEMSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0005271753745073165,
+      "stop": 0.000517513857705924
+    },
+    "PAIDUSDT:30m": {
+      "sentAt": "2026-10-11T20:13:15.064Z",
+      "symbol": "PAIDUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004086449393190125,
+      "stop": 0.0037532006934969993
+    },
+    "TOSHIUSDT:30m": {
+      "sentAt": "2026-10-11T20:13:16.884Z",
+      "symbol": "TOSHIUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.00011522,
+      "stop": 0.00011621392312060473
+    },
+    "ZBCNUSDT:2h": {
+      "sentAt": "2026-10-11T20:13:18.723Z",
+      "symbol": "ZBCNUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0023048499999999998,
+      "stop": 0.00227910747931942
     }
   }
 }
