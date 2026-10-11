@@ -10,6 +10,10 @@ async function ensureCacheDir() {
   await fs.mkdir(CACHE_DIR, { recursive: true });
 }
 
+function makeKey(symbol, timeframe) {
+  return symbol + ":" + timeframe;
+}
+
 export async function readCache() {
   try {
     await ensureCacheDir();
@@ -43,7 +47,7 @@ export function cleanOldSignals(signals, maxAgeMs = MAX_AGE_MS) {
   const now = Date.now();
   const cleaned = {};
 
-  for (const [symbol, entry] of Object.entries(signals || {})) {
+  for (const [key, entry] of Object.entries(signals || {})) {
     if (!entry || !entry.sentAt) continue;
 
     const sentAt = new Date(entry.sentAt).getTime();
@@ -51,16 +55,17 @@ export function cleanOldSignals(signals, maxAgeMs = MAX_AGE_MS) {
     if (!Number.isFinite(sentAt)) continue;
     if (now - sentAt > maxAgeMs) continue;
 
-    cleaned[symbol] = entry;
+    cleaned[key] = entry;
   }
 
   return cleaned;
 }
 
-export function hasRecentSignal(signals, symbol, maxAgeMs = MAX_AGE_MS) {
-  if (!signals || !symbol) return false;
+export function hasRecentSignal(signals, symbol, timeframe, maxAgeMs = MAX_AGE_MS) {
+  if (!signals || !symbol || !timeframe) return false;
 
-  const entry = signals[symbol];
+  const key = makeKey(symbol, timeframe);
+  const entry = signals[key];
   if (!entry || !entry.sentAt) return false;
 
   const sentAt = new Date(entry.sentAt).getTime();
@@ -69,11 +74,15 @@ export function hasRecentSignal(signals, symbol, maxAgeMs = MAX_AGE_MS) {
   return Date.now() - sentAt <= maxAgeMs;
 }
 
-export function addSignal(signals, symbol, data) {
+export function addSignal(signals, symbol, timeframe, data) {
   const result = { ...(signals || {}) };
 
-  result[symbol] = {
+  const key = makeKey(symbol, timeframe);
+
+  result[key] = {
     sentAt: new Date().toISOString(),
+    symbol: symbol,
+    timeframe: timeframe,
     direction: data && data.direction ? data.direction : null,
     score: data && Number.isFinite(data.score) ? data.score : null,
     entry: data && Number.isFinite(data.entry) ? data.entry : null,
