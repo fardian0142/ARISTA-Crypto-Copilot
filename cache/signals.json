@@ -1,104 +1,6 @@
 {
-  "lastUpdated": "2026-10-11T04:54:17.824Z",
+  "lastUpdated": "2026-10-11T11:01:56.471Z",
   "signals": {
-    "MSTRUSDT": {
-      "sentAt": "2026-10-10T08:11:58.408Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 154.5,
-      "stop": 153.10823908959028
-    },
-    "MEUSDT": {
-      "sentAt": "2026-10-10T08:21:45.154Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07281499999999999,
-      "stop": 0.06968944285680675
-    },
-    "REUSDT": {
-      "sentAt": "2026-10-10T08:21:46.862Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.44274,
-      "stop": 0.4325598808340815
-    },
-    "SEIUSDT": {
-      "sentAt": "2026-10-10T08:42:30.983Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06723,
-      "stop": 0.06572119317628417
-    },
-    "HIVEUSDT": {
-      "sentAt": "2026-10-10T08:42:32.710Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05414804648496441,
-      "stop": 0.05341651830289782
-    },
-    "FETUSDT": {
-      "sentAt": "2026-10-10T08:52:39.460Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.222,
-      "stop": 0.21698429947331938
-    },
-    "PROMUSDT": {
-      "sentAt": "2026-10-10T08:52:41.194Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 5.49056075885382,
-      "stop": 5.150644847024205
-    },
-    "IOUSDT": {
-      "sentAt": "2026-10-10T08:52:42.856Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.154,
-      "stop": 0.14851619217236067
-    },
-    "MERLUSDT": {
-      "sentAt": "2026-10-10T09:13:26.445Z",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.03086,
-      "stop": 0.031798103252693034
-    },
-    "BREVUSDT": {
-      "sentAt": "2026-10-10T09:13:28.195Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08878904032001479,
-      "stop": 0.08345538249141166
-    },
-    "DOSUSDT": {
-      "sentAt": "2026-10-10T09:13:29.976Z",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.22947661204295983,
-      "stop": 0.23742958623661736
-    },
-    "RADUSDT": {
-      "sentAt": "2026-10-10T09:13:31.698Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.318,
-      "stop": 0.28694960177877893
-    },
-    "SNXUSDT": {
-      "sentAt": "2026-10-10T09:13:33.420Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2426,
-      "stop": 0.2371994065292533
-    },
-    "AVAXUSDT": {
-      "sentAt": "2026-10-10T09:13:35.127Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 10.531500000000001,
-      "stop": 10.305860465274588
-    },
     "MSTRBUSDT": {
       "sentAt": "2026-10-10T11:41:20.945Z",
       "direction": "bullish",
@@ -189,6 +91,34 @@
       "score": 14,
       "entry": 0.028595000000000002,
       "stop": 0.028268731128123618
+    },
+    "ROBOUSDT": {
+      "sentAt": "2026-10-11T11:01:49.639Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00804,
+      "stop": 0.007886071918715412
+    },
+    "IOUSDT": {
+      "sentAt": "2026-10-11T11:01:51.413Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15725,
+      "stop": 0.15395878218162665
+    },
+    "RPLUSDT": {
+      "sentAt": "2026-10-11T11:01:53.221Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.8275000000000001,
+      "stop": 1.8057169104450932
+    },
+    "TOSHIUSDT": {
+      "sentAt": "2026-10-11T11:01:54.969Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00011553453371143335,
+      "stop": 0.00011298910432979045
     }
   }
 }
