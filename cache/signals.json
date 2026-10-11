@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-11T20:13:20.225Z",
+  "lastUpdated": "2026-10-11T20:24:27.164Z",
   "signals": {
     "GUNUSDT": {
       "sentAt": "2026-10-10T23:22:35.374Z",
@@ -302,6 +302,60 @@
       "score": 14,
       "entry": 0.0023048499999999998,
       "stop": 0.00227910747931942
+    },
+    "ROBOUSDT:2h": {
+      "sentAt": "2026-10-11T20:24:16.599Z",
+      "symbol": "ROBOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008316447183835977,
+      "stop": 0.008045488932758882
+    },
+    "XRPUSDT:2h": {
+      "sentAt": "2026-10-11T20:24:18.415Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.4119,
+      "stop": 1.3967091917771133
+    },
+    "RESOLVUSDT:2h": {
+      "sentAt": "2026-10-11T20:24:20.260Z",
+      "symbol": "RESOLVUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.018345,
+      "stop": 0.01816582785380068
+    },
+    "STABLEUSDT:30m": {
+      "sentAt": "2026-10-11T20:24:22.125Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02737,
+      "stop": 0.027513937702519396
+    },
+    "ASTRUSDT:2h": {
+      "sentAt": "2026-10-11T20:24:23.898Z",
+      "symbol": "ASTRUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.007036234759785721,
+      "stop": 0.006900588845959176
+    },
+    "WAXPUSDT:2h": {
+      "sentAt": "2026-10-11T20:24:25.662Z",
+      "symbol": "WAXPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00579,
+      "stop": 0.005746928596510264
     }
   }
 }
