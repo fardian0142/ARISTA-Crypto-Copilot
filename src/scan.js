@@ -10,7 +10,15 @@ import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
 import { formatAnalysis } from "./format.js";
 
-const TIMEFRAME = "2h";
+const TIMEFRAMES = Array.isArray(CONFIG.SIGNAL_TIMEFRAMES) && CONFIG.SIGNAL_TIMEFRAMES.length > 0
+  ? CONFIG.SIGNAL_TIMEFRAMES
+  : ["2h"];
+
+const TIMEFRAME_PRIORITY = {
+  "30m": 1,
+  "2h": 2
+};
+
 const MAX_SCORE = 14;
 const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
@@ -18,6 +26,12 @@ const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function getTimeframePriority(tf) {
+  return Object.prototype.hasOwnProperty.call(TIMEFRAME_PRIORITY, tf)
+    ? TIMEFRAME_PRIORITY[tf]
+    : 99;
 }
 
 async function sendTelegramMessage(token, chatId, text) {
@@ -91,7 +105,7 @@ function logSummary(summary) {
   console.log("═══════════════════════════════════════════");
   console.log("📊 SCAN SUMMARY");
   console.log("═══════════════════════════════════════════");
-  console.log("⏱  Timeframe            : " + TIMEFRAME);
+  console.log("⏱  Timeframes           : " + TIMEFRAMES.join(" , "));
   console.log("🎯 Required Score       : " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("📈 Total symbols        : " + summary.total);
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
@@ -127,7 +141,7 @@ async function main() {
 
   console.log("");
   console.log("🚀 Starting crypto scan...");
-  console.log("⏱  Timeframe: " + TIMEFRAME);
+  console.log("⏱  Timeframes: " + TIMEFRAMES.join(" , "));
   console.log("🎯 Required score: " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("");
 
@@ -165,40 +179,69 @@ async function main() {
         return { symbol, status: "timeout" };
       }
 
-      if (hasRecentSignal(cache.signals, symbol)) {
-        return { symbol, status: "skipped" };
-      }
+      const candidates = [];
 
-      let analysis;
+      for (const timeframe of TIMEFRAMES) {
+        if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
+          break;
+        }
 
-      try {
-        analysis = await analyze(symbol, TIMEFRAME);
-      } catch (e) {
-        return {
+        if (hasRecentSignal(cache.signals, symbol, timeframe)) {
+          continue;
+        }
+
+        let analysis;
+
+        try {
+          analysis = await analyze(symbol, timeframe);
+        } catch (e) {
+          continue;
+        }
+
+        const active =
+          analysis &&
+          analysis.range_setups &&
+          analysis.range_setups.active;
+
+        if (
+          !active ||
+          !Number.isFinite(active.score) ||
+          active.score !== MAX_SCORE
+        ) {
+          continue;
+        }
+
+        candidates.push({
           symbol,
-          status: "error",
-          error: (e && e.message) || "unknown"
-        };
+          timeframe,
+          analysis,
+          active
+        });
       }
 
-      const active =
-        analysis &&
-        analysis.range_setups &&
-        analysis.range_setups.active;
+      if (candidates.length === 0) {
+        const allCached = TIMEFRAMES.every((tf) =>
+          hasRecentSignal(cache.signals, symbol, tf)
+        );
 
-      if (
-        !active ||
-        !Number.isFinite(active.score) ||
-        active.score !== MAX_SCORE
-      ) {
+        if (allCached) {
+          return { symbol, status: "skipped" };
+        }
+
         return { symbol, status: "no_signal" };
       }
+
+      candidates.sort((a, b) => {
+        const pa = getTimeframePriority(a.timeframe);
+        const pb = getTimeframePriority(b.timeframe);
+        if (pa !== pb) return pa - pb;
+        return b.active.score - a.active.score;
+      });
 
       return {
         symbol,
         status: "signal",
-        analysis,
-        active
+        winner: candidates[0]
       };
     }
   );
@@ -210,11 +253,15 @@ async function main() {
 
     if (result.status === "skipped") {
       summary.skipped++;
-    } else if (result.status === "no_signal" || result.status === "error") {
+    } else if (
+      result.status === "no_signal" ||
+      result.status === "error" ||
+      result.status === "timeout"
+    ) {
       summary.analyzed++;
     } else if (result.status === "signal") {
       summary.analyzed++;
-      signalsToSend.push(result);
+      signalsToSend.push(result.winner);
     }
   }
 
@@ -235,14 +282,14 @@ async function main() {
   }
 
   for (const signal of signalsToSend) {
-    const { symbol, analysis, active } = signal;
+    const { symbol, timeframe, analysis, active } = signal;
 
     try {
       const text = formatAnalysis(analysis);
 
       await sendTelegramMessage(token, chatId, text);
 
-      cache.signals = addSignal(cache.signals, symbol, {
+      cache.signals = addSignal(cache.signals, symbol, timeframe, {
         direction: active.direction,
         score: active.score,
         entry: active.entry,
@@ -254,7 +301,9 @@ async function main() {
       console.log(
         "📤 Sent: " +
           symbol +
-          " (" +
+          " [" +
+          timeframe +
+          "] (" +
           active.direction +
           ", score " +
           active.score +
@@ -262,7 +311,7 @@ async function main() {
       );
     } catch (e) {
       console.error(
-        "❌ Failed to send " + symbol + ":",
+        "❌ Failed to send " + symbol + " [" + timeframe + "]:",
         (e && e.message) || e
       );
     }
