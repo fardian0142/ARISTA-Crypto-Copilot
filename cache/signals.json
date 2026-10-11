@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T23:22:38.585Z",
+  "lastUpdated": "2026-10-11T04:54:17.824Z",
   "signals": {
     "MSTRUSDT": {
       "sentAt": "2026-10-10T08:11:58.408Z",
@@ -168,6 +168,27 @@
       "score": 14,
       "entry": 0.026595001266770397,
       "stop": 0.02584142712369097
+    },
+    "MINAUSDT": {
+      "sentAt": "2026-10-11T04:54:12.919Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08560379613572709,
+      "stop": 0.081332678
+    },
+    "BRUSDT": {
+      "sentAt": "2026-10-11T04:54:14.641Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.5097130831485303,
+      "stop": 0.45599746
+    },
+    "BANKUSDT": {
+      "sentAt": "2026-10-11T04:54:16.322Z",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.028595000000000002,
+      "stop": 0.028268731128123618
     }
   }
 }
