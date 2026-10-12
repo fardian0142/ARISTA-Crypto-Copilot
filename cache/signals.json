@@ -1,20 +1,6 @@
 {
-  "lastUpdated": "2026-10-12T11:12:01.119Z",
+  "lastUpdated": "2026-10-12T16:43:00.281Z",
   "signals": {
-    "GRTUSDT": {
-      "sentAt": "2026-10-11T14:48:00.217Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.027284999999999997,
-      "stop": 0.026949909440478835
-    },
-    "FFUSDT": {
-      "sentAt": "2026-10-11T14:48:02.097Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10855842828881915,
-      "stop": 0.10733751052706382
-    },
     "RVNUSDT:2h": {
       "sentAt": "2026-10-11T20:03:59.622Z",
       "symbol": "RVNUSDT",
@@ -671,6 +657,15 @@
       "score": 14,
       "entry": 0.0168395,
       "stop": 0.016739518601930115
+    },
+    "ZECUSDT:2h": {
+      "sentAt": "2026-10-12T16:42:58.780Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1240.67,
+      "stop": 1215.4243029476318
     }
   }
 }
