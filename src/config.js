@@ -5,7 +5,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 2,
     minStrength: 55,
     minRR: 1.3,
-    allowCounterMomentum: true
+    allowCounterMomentum: true,
+    slAtrMult: 0.7,
+    slNodeMinDistance: 0.9
   },
   "30m": {
     strictHTF: false,
@@ -13,7 +15,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 3,
     minStrength: 60,
     minRR: 1.4,
-    allowCounterMomentum: true
+    allowCounterMomentum: true,
+    slAtrMult: 0.8,
+    slNodeMinDistance: 1.1
   },
   "1h": {
     strictHTF: false,
@@ -21,7 +25,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 5,
     minStrength: 65,
     minRR: 1.6,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.6,
+    slNodeMinDistance: 0.8
   },
   "2h": {
     strictHTF: true,
@@ -29,7 +35,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 6,
     minStrength: 68,
     minRR: 1.7,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.5,
+    slNodeMinDistance: 0.6
   },
   "4h": {
     strictHTF: true,
@@ -37,7 +45,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 10,
     minStrength: 72,
     minRR: 1.8,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.5,
+    slNodeMinDistance: 0.6
   },
   "6h": {
     strictHTF: true,
@@ -45,7 +55,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 12,
     minStrength: 75,
     minRR: 2.0,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.5,
+    slNodeMinDistance: 0.5
   },
   "12h": {
     strictHTF: true,
@@ -53,7 +65,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 15,
     minStrength: 78,
     minRR: 2.2,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.4,
+    slNodeMinDistance: 0.5
   },
   "24h": {
     strictHTF: true,
@@ -61,7 +75,9 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 18,
     minStrength: 80,
     minRR: 2.5,
-    allowCounterMomentum: false
+    allowCounterMomentum: false,
+    slAtrMult: 0.4,
+    slNodeMinDistance: 0.5
   }
 };
 
@@ -167,7 +183,7 @@ export const CONFIG = {
   TP_MIN_STRUCTURE_GAP_BARS: 2,
   SL_MARKET_STRUCTURE_LOOKBACK: 100,
   SL_MIN_GAP: 2,
-  SL_PIP_BUFFER_PCT: 0.0002,
+  SL_PIP_BUFFER_PCT: 0.0005,
   USE_UNIFIED_TPSL: true,
   MOMENTUM_WARNING_BODY_RATIO: 0.6,
   MOMENTUM_WARNING_PENALTY: 2,
