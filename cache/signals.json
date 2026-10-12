@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T07:02:17.387Z",
+  "lastUpdated": "2026-10-12T08:18:16.739Z",
   "signals": {
     "ROBOUSDT": {
       "sentAt": "2026-10-11T11:01:49.639Z",
@@ -600,6 +600,69 @@
       "score": 14,
       "entry": 16.725,
       "stop": 16.61015099074047
+    },
+    "ENAUSDT:30m": {
+      "sentAt": "2026-10-12T08:18:04.595Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.23745,
+      "stop": 0.244021754286683
+    },
+    "CHZUSDT:2h": {
+      "sentAt": "2026-10-12T08:18:06.401Z",
+      "symbol": "CHZUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.015870295701288183,
+      "stop": 0.015553863283874024
+    },
+    "AEVOUSDT:2h": {
+      "sentAt": "2026-10-12T08:18:08.199Z",
+      "symbol": "AEVOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02667,
+      "stop": 0.026179197385055655
+    },
+    "DYMUSDT:30m": {
+      "sentAt": "2026-10-12T08:18:09.948Z",
+      "symbol": "DYMUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02115,
+      "stop": 0.021796497042261505
+    },
+    "1000BONKUSDT:30m": {
+      "sentAt": "2026-10-12T08:18:11.740Z",
+      "symbol": "1000BONKUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003466,
+      "stop": 0.0034950887136319274
+    },
+    "VELODROMEUSDT:30m": {
+      "sentAt": "2026-10-12T08:18:13.507Z",
+      "symbol": "VELODROMEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0402,
+      "stop": 0.04078879317157875
+    },
+    "POLYXUSDT:30m": {
+      "sentAt": "2026-10-12T08:18:15.238Z",
+      "symbol": "POLYXUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0413237926218823,
+      "stop": 0.04167418829284046
     }
   }
 }
