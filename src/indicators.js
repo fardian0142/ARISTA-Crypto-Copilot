@@ -2847,7 +2847,7 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
   return result;
 }
 
-export function computeUnifiedStop(candles, direction, entryZone, atrValue, swingLows, swingHighs, currentPrice) {
+export function computeUnifiedStop(candles, direction, entryZone, atrValue, swingLows, swingHighs, currentPrice, timeframe = null) {
   if (
     !candles ||
     !entryZone ||
@@ -2857,15 +2857,35 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
     return null;
   }
 
-  const slAtrBuffer = Number.isFinite(CONFIG.SL_ATR_BUFFER)
+  let profile = null;
+
+  if (timeframe && Object.prototype.hasOwnProperty.call(TIMEFRAME_PROFILES, timeframe)) {
+    profile = TIMEFRAME_PROFILES[timeframe];
+  }
+
+  const baseSlAtrBuffer = Number.isFinite(CONFIG.SL_ATR_BUFFER)
     ? Math.max(0, CONFIG.SL_ATR_BUFFER)
     : 0.2;
 
-  const minNodeDistanceATR =
+  const baseMinNodeDistanceATR =
     Number.isFinite(CONFIG.SL_MIN_NODE_DISTANCE_ATR) &&
     CONFIG.SL_MIN_NODE_DISTANCE_ATR > 0
       ? Math.max(0.3, CONFIG.SL_MIN_NODE_DISTANCE_ATR)
       : 0.5;
+
+  const slAtrBuffer =
+    profile &&
+    Number.isFinite(profile.slAtrMult) &&
+    profile.slAtrMult > 0
+      ? profile.slAtrMult
+      : baseSlAtrBuffer;
+
+  const minNodeDistanceATR =
+    profile &&
+    Number.isFinite(profile.slNodeMinDistance) &&
+    profile.slNodeMinDistance > 0
+      ? Math.max(0.3, profile.slNodeMinDistance)
+      : baseMinNodeDistanceATR;
 
   if (direction === "bullish") {
     const node = findNearestImportantNodeBelow(
@@ -4809,7 +4829,8 @@ export function detectRangeTradeSetups(
       atrValue,
       swingLows,
       swingHighs,
-      currentPrice
+      currentPrice,
+      timeframe
     );
 
     if (Number.isFinite(stop)) {
