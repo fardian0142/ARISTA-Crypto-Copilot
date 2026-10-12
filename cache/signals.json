@@ -1,20 +1,6 @@
 {
-  "lastUpdated": "2026-10-11T20:24:27.164Z",
+  "lastUpdated": "2026-10-12T00:17:27.200Z",
   "signals": {
-    "GUNUSDT": {
-      "sentAt": "2026-10-10T23:22:35.374Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0029669136786422464,
-      "stop": 0.002859408
-    },
-    "SQDUSDT": {
-      "sentAt": "2026-10-10T23:22:37.084Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026595001266770397,
-      "stop": 0.02584142712369097
-    },
     "MINAUSDT": {
       "sentAt": "2026-10-11T04:54:12.919Z",
       "direction": "bullish",
@@ -356,6 +342,132 @@
       "score": 14,
       "entry": 0.00579,
       "stop": 0.005746928596510264
+    },
+    "SENTUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:02.434Z",
+      "symbol": "SENTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02213974846283954,
+      "stop": 0.020437430328183383
+    },
+    "ANIMEUSDT:30m": {
+      "sentAt": "2026-10-12T00:17:04.203Z",
+      "symbol": "ANIMEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003235,
+      "stop": 0.0032561353402296204
+    },
+    "FLOCKUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:05.944Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05552750746495044,
+      "stop": 0.054492848611485206
+    },
+    "MANAUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:07.794Z",
+      "symbol": "MANAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09645,
+      "stop": 0.09487323767981506
+    },
+    "KAITOUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:09.565Z",
+      "symbol": "KAITOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3206,
+      "stop": 0.315101693882804
+    },
+    "ZRXUSDT:30m": {
+      "sentAt": "2026-10-12T00:17:11.342Z",
+      "symbol": "ZRXUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.12853,
+      "stop": 0.12923381432487888
+    },
+    "COAIUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:13.113Z",
+      "symbol": "COAIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2965,
+      "stop": 0.293966369069632
+    },
+    "AWEUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:14.867Z",
+      "symbol": "AWEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06663,
+      "stop": 0.06530022174607161
+    },
+    "SAMSUNGEMUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:16.635Z",
+      "symbol": "SAMSUNGEMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1141.25,
+      "stop": 1133.8927156043421
+    },
+    "REDUSDT:30m": {
+      "sentAt": "2026-10-12T00:17:18.403Z",
+      "symbol": "REDUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.15142614644113117,
+      "stop": 0.15253026
+    },
+    "1000CATUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:20.260Z",
+      "symbol": "1000CATUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0020543106030678306,
+      "stop": 0.0020236450250653362
+    },
+    "PORTALUSDT:30m": {
+      "sentAt": "2026-10-12T00:17:22.115Z",
+      "symbol": "PORTALUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.01668984758622013,
+      "stop": 0.016834459901462706
+    },
+    "1MBABYDOGEUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:23.870Z",
+      "symbol": "1MBABYDOGEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0003909621425226147,
+      "stop": 0.00038605755140272603
+    },
+    "INUSDT:2h": {
+      "sentAt": "2026-10-12T00:17:25.698Z",
+      "symbol": "INUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.032835,
+      "stop": 0.03263043750543072
     }
   }
 }
