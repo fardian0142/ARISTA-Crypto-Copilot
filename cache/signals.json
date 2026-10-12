@@ -1,34 +1,6 @@
 {
-  "lastUpdated": "2026-10-12T08:18:16.739Z",
+  "lastUpdated": "2026-10-12T11:12:01.119Z",
   "signals": {
-    "ROBOUSDT": {
-      "sentAt": "2026-10-11T11:01:49.639Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00804,
-      "stop": 0.007886071918715412
-    },
-    "IOUSDT": {
-      "sentAt": "2026-10-11T11:01:51.413Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15725,
-      "stop": 0.15395878218162665
-    },
-    "RPLUSDT": {
-      "sentAt": "2026-10-11T11:01:53.221Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.8275000000000001,
-      "stop": 1.8057169104450932
-    },
-    "TOSHIUSDT": {
-      "sentAt": "2026-10-11T11:01:54.969Z",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00011553453371143335,
-      "stop": 0.00011298910432979045
-    },
     "GRTUSDT": {
       "sentAt": "2026-10-11T14:48:00.217Z",
       "direction": "bullish",
@@ -663,6 +635,42 @@
       "score": 14,
       "entry": 0.0413237926218823,
       "stop": 0.04167418829284046
+    },
+    "SKYUSDT:30m": {
+      "sentAt": "2026-10-12T11:11:54.198Z",
+      "symbol": "SKYUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07980000000000001,
+      "stop": 0.0814898020115491
+    },
+    "SPCXBUSDT:2h": {
+      "sentAt": "2026-10-12T11:11:55.977Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 164.235,
+      "stop": 165.15127600000002
+    },
+    "PDDUSDT:2h": {
+      "sentAt": "2026-10-12T11:11:57.826Z",
+      "symbol": "PDDUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 81.12489743288398,
+      "stop": 81.65489883369895
+    },
+    "SUNUSDT:2h": {
+      "sentAt": "2026-10-12T11:11:59.617Z",
+      "symbol": "SUNUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0168395,
+      "stop": 0.016739518601930115
     }
   }
 }
