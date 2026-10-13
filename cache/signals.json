@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T17:11:29.222Z",
+  "lastUpdated": "2026-10-13T20:09:07.771Z",
   "signals": {
     "MANAUSDT:15m": {
       "sentAt": "2026-10-13T10:04:19.930Z",
@@ -846,6 +846,33 @@
       "score": 13,
       "entry": 3.787,
       "stop": 3.8026804341462372
+    },
+    "SKHYBUSDT:15m": {
+      "sentAt": "2026-10-13T20:09:02.711Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 157.02,
+      "stop": 154.87002321406305
+    },
+    "DRAMBUSDT:30m": {
+      "sentAt": "2026-10-13T20:09:04.545Z",
+      "symbol": "DRAMBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 52.66,
+      "stop": 51.92338288763986
+    },
+    "DRAMUSDT:30m": {
+      "sentAt": "2026-10-13T20:09:06.270Z",
+      "symbol": "DRAMUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 52.72,
+      "stop": 51.38975826359531
     }
   }
 }
