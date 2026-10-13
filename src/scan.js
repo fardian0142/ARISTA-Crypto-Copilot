@@ -282,7 +282,7 @@ async function main() {
 
         if (
           !Number.isFinite(active.score) ||
-          active.score < 12
+          active.score < 14
         ) {
           continue;
         }
