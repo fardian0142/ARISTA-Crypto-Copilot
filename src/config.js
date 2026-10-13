@@ -190,7 +190,7 @@ export const CONFIG = {
   MOMENTUM_WARNING_PENALTY: 2,
   MOMENTUM_RSI_OVERBOUGHT: 68,
   MOMENTUM_RSI_OVERSOLD: 32,
-  SIGNAL_TIMEFRAMES: ["30m", "2h"],
+  SIGNAL_TIMEFRAMES: ["30m", "15m"],
   EXCHANGES: {
     okx: {
       priority: 1,
