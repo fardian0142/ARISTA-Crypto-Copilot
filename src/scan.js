@@ -12,14 +12,13 @@ import { formatAnalysis } from "./format.js";
 
 const TIMEFRAMES = Array.isArray(CONFIG.SIGNAL_TIMEFRAMES) && CONFIG.SIGNAL_TIMEFRAMES.length > 0
   ? CONFIG.SIGNAL_TIMEFRAMES
-  : ["15m"];
+  : ["2h"];
 
 const TIMEFRAME_PRIORITY = {
-  "15m": 1,
-  "30m": 2
+  "30m": 1,
+  "2h": 2
 };
 
-const MAX_SCORE = 14;
 const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
 const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
@@ -180,7 +179,6 @@ function logSummary(summary) {
   console.log("📊 SCAN SUMMARY");
   console.log("═══════════════════════════════════════════");
   console.log("⏱  Timeframes           : " + TIMEFRAMES.join(" , "));
-  console.log("🎯 Required Score       : " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("📈 Total symbols        : " + summary.total);
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
   console.log("🔎 Analyzed             : " + summary.analyzed);
@@ -218,7 +216,6 @@ async function main() {
   console.log("");
   console.log("🚀 Starting crypto scan...");
   console.log("⏱  Timeframes: " + TIMEFRAMES.join(" , "));
-  console.log("🎯 Required score: " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("");
 
   let cache = await readCache();
@@ -279,10 +276,13 @@ async function main() {
           analysis.range_setups &&
           analysis.range_setups.active;
 
+        if (!active) {
+          continue;
+        }
+
         if (
-          !active ||
           !Number.isFinite(active.score) ||
-          active.score !== MAX_SCORE
+          active.score < CONFIG.MIN_RANGE_SETUP_SCORE
         ) {
           continue;
         }
