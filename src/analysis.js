@@ -649,7 +649,8 @@ export async function analyze(symbol, timeframe) {
       htfStructure,
       event,
       sweep,
-      displacement    );
+      displacement
+    );
 
   if (
     direction !== "bullish" &&
