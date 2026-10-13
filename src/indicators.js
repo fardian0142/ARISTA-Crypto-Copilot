@@ -2322,6 +2322,24 @@ function applyConservativeBuffer(level, direction, currentPrice, atrValue, tickS
   return level - buffer;
 }
 
+export function applyPipBuffer(level, direction, currentPrice) {
+  if (
+    !Number.isFinite(level) ||
+    !Number.isFinite(currentPrice) ||
+    currentPrice <= 0
+  ) {
+    return level;
+  }
+
+  const pipBuffer = currentPrice * CONFIG.TP_BUFFER_PCT;
+
+  if (direction === "bearish") {
+    return level + pipBuffer;
+  }
+
+  return level - pipBuffer;
+}
+
 function collectSetupNodes(candles, event, sweep, displacement, direction, obs, fvgs, swingLows, swingHighs, atrValue) {
   const nodes = [];
 
@@ -2574,306 +2592,6 @@ function computeBestStop(entry, direction, candles, event, sweep, displacement, 
   }
 
   return bestNode.price + buffer;
-}
-
-export function findNearestImportantNodeBelow(candles, currentPrice, swingLows, atrValue, maxLookback = CONFIG.SL_MARKET_STRUCTURE_LOOKBACK) {
-  if (!candles || candles.length < 10) {
-    return null;
-  }
-
-  const lookback = Math.min(
-    candles.length - 1,
-    maxLookback
-  );
-
-  const start = Math.max(0, candles.length - lookback);
-
-  const belowZones = [];
-
-  for (let i = start; i < candles.length - 1; i++) {
-    const candle = candles[i];
-    const high = cHigh(candle);
-
-    if (high >= currentPrice) continue;
-
-    const range = cRange(candle);
-    if (range <= 0) continue;
-
-    const body = cBody(candle);
-    const bodyRatio = body / range;
-
-    const upperWick = high - Math.max(cOpen(candle), cClose(candle));
-    const lowerWick = Math.min(cOpen(candle), cClose(candle)) - cLow(candle);
-    const upperWickRatio = upperWick / range;
-    const lowerWickRatio = lowerWick / range;
-
-    const avgVol = averageVolume(candles, i);
-    const volumeRatio = avgVol > 0 ? cVol(candle) / avgVol : 1;
-
-    const isRejection =
-      (upperWickRatio >= 0.4 || lowerWickRatio >= 0.4) &&
-      bodyRatio >= 0.2;
-
-    const isDisplacement =
-      range >= atrValue * CONFIG.DISPLACEMENT_ATR &&
-      bodyRatio >= CONFIG.DISPLACEMENT_BODY &&
-      volumeRatio >= CONFIG.DISPLACEMENT_VOLUME;
-
-    const isSwing =
-      swingLows &&
-      swingLows.some(
-        (s) => Math.abs(s.index - i) <= 2
-      );
-
-    if (isRejection || isDisplacement || isSwing) {
-      const strength =
-        (upperWickRatio + lowerWickRatio) * volumeRatio +
-        (isDisplacement ? 2 : 0) +
-        (isSwing ? 1.5 : 0);
-
-      belowZones.push({
-        index: i,
-        high,
-        low: cLow(candle),
-        mid: (high + cLow(candle)) / 2,
-        strength,
-        isRejection,
-        isDisplacement,
-        isSwing,
-        volumeRatio,
-        range,
-        bodyRatio,
-        distance: currentPrice - high
-      });
-    }
-  }
-
-  if (belowZones.length === 0) {
-    return null;
-  }
-
-  belowZones.sort((a, b) => {
-    if (a.distance !== b.distance) return a.distance - b.distance;
-    return b.strength - a.strength;
-  });
-
-  return belowZones[0];
-}
-
-export function findNearestImportantNodeAbove(candles, currentPrice, swingHighs, atrValue, maxLookback = CONFIG.SL_MARKET_STRUCTURE_LOOKBACK) {
-  if (!candles || candles.length < 10) {
-    return null;
-  }
-
-  const lookback = Math.min(
-    candles.length - 1,
-    maxLookback
-  );
-
-  const start = Math.max(0, candles.length - lookback);
-
-  const aboveZones = [];
-
-  for (let i = start; i < candles.length - 1; i++) {
-    const candle = candles[i];
-    const low = cLow(candle);
-
-    if (low <= currentPrice) continue;
-
-    const range = cRange(candle);
-    if (range <= 0) continue;
-
-    const body = cBody(candle);
-    const bodyRatio = body / range;
-
-    const upperWick = cHigh(candle) - Math.max(cOpen(candle), cClose(candle));
-    const lowerWick = Math.min(cOpen(candle), cClose(candle)) - low;
-    const upperWickRatio = upperWick / range;
-    const lowerWickRatio = lowerWick / range;
-
-    const avgVol = averageVolume(candles, i);
-    const volumeRatio = avgVol > 0 ? cVol(candle) / avgVol : 1;
-
-    const isRejection =
-      (upperWickRatio >= 0.4 || lowerWickRatio >= 0.4) &&
-      bodyRatio >= 0.2;
-
-    const isDisplacement =
-      range >= atrValue * CONFIG.DISPLACEMENT_ATR &&
-      bodyRatio >= CONFIG.DISPLACEMENT_BODY &&
-      volumeRatio >= CONFIG.DISPLACEMENT_VOLUME;
-
-    const isSwing =
-      swingHighs &&
-      swingHighs.some(
-        (s) => Math.abs(s.index - i) <= 2
-      );
-
-    if (isRejection || isDisplacement || isSwing) {
-      const strength =
-        (upperWickRatio + lowerWickRatio) * volumeRatio +
-        (isDisplacement ? 2 : 0) +
-        (isSwing ? 1.5 : 0);
-
-      aboveZones.push({
-        index: i,
-        high: cHigh(candle),
-        low,
-        mid: (cHigh(candle) + low) / 2,
-        strength,
-        isRejection,
-        isDisplacement,
-        isSwing,
-        volumeRatio,
-        range,
-        bodyRatio,
-        distance: low - currentPrice
-      });
-    }
-  }
-
-  if (aboveZones.length === 0) {
-    return null;
-  }
-
-  aboveZones.sort((a, b) => {
-    if (a.distance !== b.distance) return a.distance - b.distance;
-    return b.strength - a.strength;
-  });
-
-  return aboveZones[0];
-}
-
-export function applyStructureBuffer(level, direction, atrValue, currentPrice) {
-  if (
-    !Number.isFinite(level) ||
-    !Number.isFinite(atrValue) ||
-    atrValue <= 0 ||
-    !Number.isFinite(currentPrice) ||
-    currentPrice <= 0
-  ) {
-    return level;
-  }
-
-  const atrBuffer = atrValue * CONFIG.TP_BUFFER_ATR_MULT;
-  const pctBuffer = currentPrice * CONFIG.TP_BUFFER_MIN_PCT;
-  const minBuffer = Math.max(atrBuffer, pctBuffer);
-  const maxBuffer = currentPrice * CONFIG.TP_BUFFER_MAX_PCT;
-  const buffer = Math.min(minBuffer, maxBuffer);
-
-  return direction === "bearish"
-    ? level + buffer
-    : level - buffer;
-}
-
-export function applyPipBuffer(level, direction, currentPrice) {
-  if (
-    !Number.isFinite(level) ||
-    !Number.isFinite(currentPrice) ||
-    currentPrice <= 0
-  ) {
-    return level;
-  }
-
-  const pipBuffer = currentPrice * CONFIG.TP_BUFFER_PCT;
-
-  if (direction === "bearish") {
-    return level + pipBuffer;
-  }
-
-  return level - pipBuffer;
-}
-
-export function detectCounterMomentum(candles, direction, currentIndex, currentPrice, timeframe) {
-  if (!candles || candles.length < 20 || !Number.isFinite(currentIndex)) {
-    return { warning: false, reason: null, severe: false };
-  }
-
-  const currentCandle = candles[currentIndex];
-
-  if (!currentCandle) {
-    return { warning: false, reason: null, severe: false };
-  }
-
-  const range = cRange(currentCandle);
-  const body = cBody(currentCandle);
-
-  if (!Number.isFinite(range) || range <= 0) {
-    return { warning: false, reason: null, severe: false };
-  }
-
-  const bodyRatio = body / range;
-  const rsiValue = rsiCalc(candles);
-  const emaTrend = emaTrendCalc(candles);
-
-  const reasons = [];
-  let warningLevel = 0;
-
-  if (direction === "bearish") {
-    if (
-      isBull(currentCandle) &&
-      bodyRatio >= CONFIG.MOMENTUM_WARNING_BODY_RATIO
-    ) {
-      reasons.push("کندل جاری صعودی قوی");
-      warningLevel += 1;
-    }
-
-    if (
-      Number.isFinite(rsiValue) &&
-      rsiValue >= CONFIG.MOMENTUM_RSI_OVERBOUGHT
-    ) {
-      reasons.push("RSI در ناحیه اشباع خرید");
-      warningLevel += 1;
-    }
-
-    if (
-      emaTrend &&
-      emaTrend.trend === "bullish" &&
-      emaTrend.price_side === "bullish"
-    ) {
-      reasons.push("EMA و قیمت هم‌جهت صعودی");
-      warningLevel += 1;
-    }
-  } else if (direction === "bullish") {
-    if (
-      isBear(currentCandle) &&
-      bodyRatio >= CONFIG.MOMENTUM_WARNING_BODY_RATIO
-    ) {
-      reasons.push("کندل جاری نزولی قوی");
-      warningLevel += 1;
-    }
-
-    if (
-      Number.isFinite(rsiValue) &&
-      rsiValue <= CONFIG.MOMENTUM_RSI_OVERSOLD
-    ) {
-      reasons.push("RSI در ناحیه اشباع فروش");
-      warningLevel += 1;
-    }
-
-    if (
-      emaTrend &&
-      emaTrend.trend === "bearish" &&
-      emaTrend.price_side === "bearish"
-    ) {
-      reasons.push("EMA و قیمت هم‌جهت نزولی");
-      warningLevel += 1;
-    }
-  }
-
-  if (reasons.length === 0) {
-    return { warning: false, reason: null, severe: false };
-  }
-
-  const profile = TIMEFRAME_PROFILES[timeframe] || TIMEFRAME_PROFILES["1h"];
-  const severe = warningLevel >= 3 && profile.strictHTF;
-
-  return {
-    warning: true,
-    reason: reasons.join(" + "),
-    severe: severe,
-    warningLevel: warningLevel
-  };
 }
 
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
@@ -3224,7 +2942,10 @@ export function detectRangeTradeSetups(
   bullishBreakout,
   bearishBreakdown,
   swings = null,
-  timeframe = "1h"
+  timeframe = "1h",
+  tickSize = null,
+  event = null,
+  fvgs = null
 ) {
   const emptyResult = {
     bullish: [],
@@ -4915,10 +4636,12 @@ export function detectRangeTradeSetups(
     const buffered = [];
 
     for (const target of rawTargets) {
-      let bufferedPrice = applyPipBuffer(
+      let bufferedPrice = applyConservativeBuffer(
         target.price,
         direction,
-        currentPrice
+        currentPrice,
+        atrValue,
+        tickSize
       );
 
       if (!Number.isFinite(bufferedPrice)) {
@@ -5085,7 +4808,7 @@ export function detectRangeTradeSetups(
     return best;
   }
 
-  function buildStopFromStructure(direction, zoneLow, zoneHigh) {
+  function buildStopFromStructure(direction, zoneLow, zoneHigh, matchingOB, sweep, displacement) {
     const entryZone = {
       low: zoneLow,
       high: zoneHigh
@@ -5099,7 +4822,13 @@ export function detectRangeTradeSetups(
       swingLows,
       swingHighs,
       currentPrice,
-      timeframe
+      timeframe,
+      tickSize,
+      event,
+      sweep,
+      displacement,
+      matchingOB ? [matchingOB] : bullishOBs.concat(bearishOBs),
+      fvgs
     );
 
     if (Number.isFinite(stop)) {
@@ -5134,56 +4863,74 @@ export function detectRangeTradeSetups(
   }
 
   function isCandidateLifecycleValid(candidate) {
-  if (!candidate) {
-    return false;
-  }
-
-  const { entry, stop, tp1, direction } = candidate;
-
-  if (
-    !Number.isFinite(entry) ||
-    !Number.isFinite(stop) ||
-    !Number.isFinite(tp1) ||
-    !Number.isFinite(currentPrice) ||
-    !Number.isFinite(atrValue) ||
-    !Number.isFinite(lifecycleToleranceAtr) ||
-    !Number.isFinite(lifecycleMinRemainingR) ||
-    entry <= 0 ||
-    stop <= 0 ||
-    tp1 <= 0 ||
-    atrValue <= 0 ||
-    lifecycleToleranceAtr < 0 ||
-    lifecycleMinRemainingR < 0
-  ) {
-    return false;
-  }
-
-  if (direction !== "bullish" && direction !== "bearish") {
-    return false;
-  }
-
-  const risk =
-    direction === "bullish"
-      ? entry - stop
-      : stop - entry;
-
-  if (!Number.isFinite(risk) || risk <= 0) {
-    return false;
-  }
-
-  const tolerance = atrValue * lifecycleToleranceAtr;
-
-  if (!Number.isFinite(tolerance)) {
-    return false;
-  }
-
-  if (direction === "bullish") {
-    if (stop >= entry || tp1 <= entry || currentPrice >= tp1) {
+    if (!candidate) {
       return false;
     }
 
-    if (currentPrice > entry + tolerance) {
-      const remainingR = (tp1 - currentPrice) / risk;
+    const { entry, stop, tp1, direction } = candidate;
+
+    if (
+      !Number.isFinite(entry) ||
+      !Number.isFinite(stop) ||
+      !Number.isFinite(tp1) ||
+      !Number.isFinite(currentPrice) ||
+      !Number.isFinite(atrValue) ||
+      !Number.isFinite(lifecycleToleranceAtr) ||
+      !Number.isFinite(lifecycleMinRemainingR) ||
+      entry <= 0 ||
+      stop <= 0 ||
+      tp1 <= 0 ||
+      atrValue <= 0 ||
+      lifecycleToleranceAtr < 0 ||
+      lifecycleMinRemainingR < 0
+    ) {
+      return false;
+    }
+
+    if (direction !== "bullish" && direction !== "bearish") {
+      return false;
+    }
+
+    const risk =
+      direction === "bullish"
+        ? entry - stop
+        : stop - entry;
+
+    if (!Number.isFinite(risk) || risk <= 0) {
+      return false;
+    }
+
+    const tolerance = atrValue * lifecycleToleranceAtr;
+
+    if (!Number.isFinite(tolerance)) {
+      return false;
+    }
+
+    if (direction === "bullish") {
+      if (stop >= entry || tp1 <= entry || currentPrice >= tp1) {
+        return false;
+      }
+
+      if (currentPrice > entry + tolerance) {
+        const remainingR = (tp1 - currentPrice) / risk;
+
+        if (
+          !Number.isFinite(remainingR) ||
+          remainingR < lifecycleMinRemainingR
+        ) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    if (stop <= entry || tp1 >= entry || currentPrice <= tp1) {
+      return false;
+    }
+
+    if (currentPrice < entry - tolerance) {
+      const remainingR = (currentPrice - tp1) / risk;
 
       if (
         !Number.isFinite(remainingR) ||
@@ -5195,24 +4942,6 @@ export function detectRangeTradeSetups(
 
     return true;
   }
-
-  if (stop <= entry || tp1 >= entry || currentPrice <= tp1) {
-    return false;
-  }
-
-  if (currentPrice < entry - tolerance) {
-    const remainingR = (currentPrice - tp1) / risk;
-
-    if (
-      !Number.isFinite(remainingR) ||
-      remainingR < lifecycleMinRemainingR
-    ) {
-      return false;
-    }
-  }
-
-  return true;
-}
 
   function finalizeCandidate(candidate) {
     if (
@@ -5377,7 +5106,10 @@ export function detectRangeTradeSetups(
     const stop = buildStopFromStructure(
       "bullish",
       Math.min(zoneLow, precisionEntry.zoneLow),
-      Math.min(zone.price, precisionEntry.zoneHigh)
+      Math.min(zone.price, precisionEntry.zoneHigh),
+      matchingOB,
+      sweep,
+      displacement
     );
 
     const risk = entry - stop;
@@ -5398,7 +5130,8 @@ export function detectRangeTradeSetups(
       stop,
       atrValue,
       currentPrice,
-      minRR
+      minRR,
+      tickSize
     );
 
     if (
@@ -5605,7 +5338,10 @@ export function detectRangeTradeSetups(
     const stop = buildStopFromStructure(
       "bearish",
       Math.max(zone.price, precisionEntry.zoneLow),
-      Math.max(zoneHigh, precisionEntry.zoneHigh)
+      Math.max(zoneHigh, precisionEntry.zoneHigh),
+      matchingOB,
+      sweep,
+      displacement
     );
 
     const risk = stop - entry;
@@ -5626,7 +5362,8 @@ export function detectRangeTradeSetups(
       stop,
       atrValue,
       currentPrice,
-      minRR
+      minRR,
+      tickSize
     );
 
     if (
@@ -6845,4 +6582,96 @@ export function fmtPercent(value) {
   const v = parseFloat(value);
   if (!Number.isFinite(v)) return "-";
   return (v * 100).toFixed(2) + "%";
+}
+
+export function detectCounterMomentum(candles, direction, currentIndex, currentPrice, timeframe) {
+  if (!candles || candles.length < 20 || !Number.isFinite(currentIndex)) {
+    return { warning: false, reason: null, severe: false };
+  }
+
+  const currentCandle = candles[currentIndex];
+
+  if (!currentCandle) {
+    return { warning: false, reason: null, severe: false };
+  }
+
+  const range = cRange(currentCandle);
+  const body = cBody(currentCandle);
+
+  if (!Number.isFinite(range) || range <= 0) {
+    return { warning: false, reason: null, severe: false };
+  }
+
+  const bodyRatio = body / range;
+  const rsiValue = rsiCalc(candles);
+  const emaTrend = emaTrendCalc(candles);
+
+  const reasons = [];
+  let warningLevel = 0;
+
+  if (direction === "bearish") {
+    if (
+      isBull(currentCandle) &&
+      bodyRatio >= CONFIG.MOMENTUM_WARNING_BODY_RATIO
+    ) {
+      reasons.push("کندل جاری صعودی قوی");
+      warningLevel += 1;
+    }
+
+    if (
+      Number.isFinite(rsiValue) &&
+      rsiValue >= CONFIG.MOMENTUM_RSI_OVERBOUGHT
+    ) {
+      reasons.push("RSI در ناحیه اشباع خرید");
+      warningLevel += 1;
+    }
+
+    if (
+      emaTrend &&
+      emaTrend.trend === "bullish" &&
+      emaTrend.price_side === "bullish"
+    ) {
+      reasons.push("EMA و قیمت هم‌جهت صعودی");
+      warningLevel += 1;
+    }
+  } else if (direction === "bullish") {
+    if (
+      isBear(currentCandle) &&
+      bodyRatio >= CONFIG.MOMENTUM_WARNING_BODY_RATIO
+    ) {
+      reasons.push("کندل جاری نزولی قوی");
+      warningLevel += 1;
+    }
+
+    if (
+      Number.isFinite(rsiValue) &&
+      rsiValue <= CONFIG.MOMENTUM_RSI_OVERSOLD
+    ) {
+      reasons.push("RSI در ناحیه اشباع فروش");
+      warningLevel += 1;
+    }
+
+    if (
+      emaTrend &&
+      emaTrend.trend === "bearish" &&
+      emaTrend.price_side === "bearish"
+    ) {
+      reasons.push("EMA و قیمت هم‌جهت نزولی");
+      warningLevel += 1;
+    }
+  }
+
+  if (reasons.length === 0) {
+    return { warning: false, reason: null, severe: false };
+  }
+
+  const profile = TIMEFRAME_PROFILES[timeframe] || TIMEFRAME_PROFILES["1h"];
+  const severe = warningLevel >= 3 && profile.strictHTF;
+
+  return {
+    warning: true,
+    reason: reasons.join(" + "),
+    severe: severe,
+    warningLevel: warningLevel
+  };
 }
