@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T09:13:33.676Z",
+  "lastUpdated": "2026-10-13T10:04:23.209Z",
   "signals": {
     "SKYUSDT:30m": {
       "sentAt": "2026-10-12T11:11:54.198Z",
@@ -45,6 +45,24 @@
       "score": 14,
       "entry": 1240.67,
       "stop": 1215.4243029476318
+    },
+    "MANAUSDT:15m": {
+      "sentAt": "2026-10-13T10:04:19.930Z",
+      "symbol": "MANAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09189,
+      "stop": 0.09147650901991251
+    },
+    "DODOUSDT:15m": {
+      "sentAt": "2026-10-13T10:04:21.707Z",
+      "symbol": "DODOUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.020069999999999998,
+      "stop": 0.01940476300319099
     }
   }
 }
