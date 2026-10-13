@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T11:14:13.462Z",
+  "lastUpdated": "2026-10-13T13:07:19.216Z",
   "signals": {
     "ZECUSDT:2h": {
       "sentAt": "2026-10-12T16:42:58.780Z",
@@ -711,6 +711,87 @@
       "score": 8,
       "entry": 174.17,
       "stop": 172.40749150539733
+    },
+    "BIGTIMEUSDT:30m": {
+      "sentAt": "2026-10-13T13:07:03.350Z",
+      "symbol": "BIGTIMEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.0075758470959312795,
+      "stop": 0.007416174747507109
+    },
+    "ARCUSDT:15m": {
+      "sentAt": "2026-10-13T13:07:05.077Z",
+      "symbol": "ARCUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 13,
+      "entry": 0.027405,
+      "stop": 0.027726193741409264
+    },
+    "KCSUSDT:30m": {
+      "sentAt": "2026-10-13T13:07:06.930Z",
+      "symbol": "KCSUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 7.807545996076537,
+      "stop": 7.854259430813408
+    },
+    "VTHOUSDT:30m": {
+      "sentAt": "2026-10-13T13:07:08.681Z",
+      "symbol": "VTHOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.0006847301237132723,
+      "stop": 0.0006736970721638445
+    },
+    "LQTYUSDT:30m": {
+      "sentAt": "2026-10-13T13:07:10.452Z",
+      "symbol": "LQTYUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.21715,
+      "stop": 0.2136
+    },
+    "AUDIOUSDT:15m": {
+      "sentAt": "2026-10-13T13:07:12.233Z",
+      "symbol": "AUDIOUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.015655,
+      "stop": 0.015606904134059237
+    },
+    "USUALUSDT:15m": {
+      "sentAt": "2026-10-13T13:07:14.123Z",
+      "symbol": "USUALUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.011254451963358536,
+      "stop": 0.011072054899018817
+    },
+    "TSTUSDT:15m": {
+      "sentAt": "2026-10-13T13:07:15.865Z",
+      "symbol": "TSTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.01612,
+      "stop": 0.015824285121247485
+    },
+    "BONERUSDT:30m": {
+      "sentAt": "2026-10-13T13:07:17.714Z",
+      "symbol": "BONERUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 12,
+      "entry": 0.020859093684193253,
+      "stop": 0.019010517894746712
     }
   }
 }
