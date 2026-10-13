@@ -282,7 +282,7 @@ async function main() {
 
         if (
           !Number.isFinite(active.score) ||
-          active.score < CONFIG.MIN_RANGE_SETUP_SCORE
+          active.score < 12
         ) {
           continue;
         }
