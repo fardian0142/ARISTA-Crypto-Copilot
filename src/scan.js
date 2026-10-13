@@ -12,11 +12,11 @@ import { formatAnalysis } from "./format.js";
 
 const TIMEFRAMES = Array.isArray(CONFIG.SIGNAL_TIMEFRAMES) && CONFIG.SIGNAL_TIMEFRAMES.length > 0
   ? CONFIG.SIGNAL_TIMEFRAMES
-  : ["2h"];
+  : ["15m"];
 
 const TIMEFRAME_PRIORITY = {
-  "30m": 1,
-  "2h": 2
+  "15m": 1,
+  "30m": 2
 };
 
 const MAX_SCORE = 14;
