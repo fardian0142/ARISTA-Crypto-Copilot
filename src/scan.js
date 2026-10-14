@@ -16,7 +16,8 @@ const TIMEFRAMES = Array.isArray(CONFIG.SIGNAL_TIMEFRAMES) && CONFIG.SIGNAL_TIME
 
 const TIMEFRAME_PRIORITY = {
   "30m": 1,
-  "15m": 2
+  "1h": 2,
+  "15m": 3
 };
 
 const CONCURRENCY = 5;
