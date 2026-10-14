@@ -608,7 +608,7 @@ export async function analyze(symbol, timeframe) {
   if (
     !event ||
     !Number.isFinite(event.index) ||
-    !Number.isFinite(event.direction)
+    (event.direction !== "bullish" && event.direction !== "bearish")
   ) {
     result.setup_active = false;
     result.strength = 0;
