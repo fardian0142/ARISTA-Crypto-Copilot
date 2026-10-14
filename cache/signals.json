@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T00:12:23.710Z",
+  "lastUpdated": "2026-10-14T05:09:55.544Z",
   "signals": {
     "MANAUSDT:15m": {
       "sentAt": "2026-10-13T10:04:19.930Z",
@@ -882,6 +882,33 @@
       "score": 14,
       "entry": 0.00048617039520710604,
       "stop": 0.0004816624054775931
+    },
+    "FOGOUSDT:15m": {
+      "sentAt": "2026-10-14T05:09:50.480Z",
+      "symbol": "FOGOUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004671954393928289,
+      "stop": 0.0046945
+    },
+    "MRNABUSDT:15m": {
+      "sentAt": "2026-10-14T05:09:52.282Z",
+      "symbol": "MRNABUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 217.1289793590006,
+      "stop": 218.1397378754279
+    },
+    "LASERTECSTOCKUSDT:15m": {
+      "sentAt": "2026-10-14T05:09:54.043Z",
+      "symbol": "LASERTECSTOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 291.46111653264614,
+      "stop": 289.84364769563075
     }
   }
 }
