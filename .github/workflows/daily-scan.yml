@@ -5,7 +5,7 @@ on:
 
 concurrency:
   group: crypto-scan
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   scan:
