@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T22:05:20.029Z",
+  "lastUpdated": "2026-10-14T23:05:12.780Z",
   "signals": {
     "1000CHEEMSUSDT:30m": {
       "sentAt": "2026-10-14T00:12:22.209Z",
@@ -216,6 +216,15 @@
       "score": 14,
       "entry": 0.005145,
       "stop": 0.00511376136015111
+    },
+    "UBERUSDT:15m": {
+      "sentAt": "2026-10-14T23:05:11.279Z",
+      "symbol": "UBERUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 69.24,
+      "stop": 68.52104568512831
     }
   }
 }
