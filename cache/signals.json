@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T20:09:07.771Z",
+  "lastUpdated": "2026-10-14T00:12:23.710Z",
   "signals": {
     "MANAUSDT:15m": {
       "sentAt": "2026-10-13T10:04:19.930Z",
@@ -873,6 +873,15 @@
       "score": 14,
       "entry": 52.72,
       "stop": 51.38975826359531
+    },
+    "1000CHEEMSUSDT:30m": {
+      "sentAt": "2026-10-14T00:12:22.209Z",
+      "symbol": "1000CHEEMSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00048617039520710604,
+      "stop": 0.0004816624054775931
     }
   }
 }
