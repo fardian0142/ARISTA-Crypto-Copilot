@@ -2566,33 +2566,72 @@ function collectSetupNodes(candles, event, sweep, displacement, direction, obs, 
   return deduped;
 }
 
-function computeBestStop(entry, direction, candles, event, sweep, displacement, atr, tickSize, obs, fvgs, swingLows, swingHighs, timeframe) {
+function computeBestStop(
+  entry,
+  direction,
+  candles,
+  event,
+  sweep,
+  displacement,
+  atr,
+  tickSize,
+  obs,
+  fvgs,
+  swingLows,
+  swingHighs,
+  timeframe
+) {
+  if (
+    !Number.isFinite(entry) ||
+    entry <= 0 ||
+    !Number.isFinite(atr) ||
+    atr <= 0
+  ) {
+    return null;
+  }
+
+  if (direction !== "bullish" && direction !== "bearish") {
+    return null;
+  }
+
   const fallbackStop =
     direction === "bullish"
-      ? entry - atr * 1.5
-      : entry + atr * 1.5;
+      ? entry - atr * 1.8
+      : entry + atr * 1.8;
 
-  const nodes = collectSetupNodes(
-    candles,
-    event,
-    sweep,
-    displacement,
-    direction,
-    obs,
-    fvgs,
-    swingLows,
-    swingHighs,
-    atr
-  );
+  let nodes;
 
-  if (!nodes || nodes.length === 0) {
+  try {
+    nodes = collectSetupNodes(
+      candles,
+      event,
+      sweep,
+      displacement,
+      direction,
+      obs,
+      fvgs,
+      swingLows,
+      swingHighs,
+      atr
+    );
+  } catch (error) {
     return fallbackStop;
   }
 
-  const validNodes = nodes.filter((n) => {
-    if (!Number.isFinite(n.price)) return false;
-    if (direction === "bullish") return n.price < entry;
-    return n.price > entry;
+  if (!Array.isArray(nodes) || nodes.length === 0) {
+    return fallbackStop;
+  }
+
+  const validNodes = nodes.filter((node) => {
+    if (!node || !Number.isFinite(node.price)) {
+      return false;
+    }
+
+    if (direction === "bullish") {
+      return node.price > 0 && node.price < entry;
+    }
+
+    return node.price > entry;
   });
 
   if (validNodes.length === 0) {
@@ -2600,52 +2639,102 @@ function computeBestStop(entry, direction, candles, event, sweep, displacement, 
   }
 
   const scored = validNodes.map((node) => {
-    const distance = Math.abs(node.price - entry);
+    const distance = Math.abs(entry - node.price);
     const distanceAtr = distance / atr;
 
     const proximityScore = 1 / Math.max(distanceAtr, 0.05);
-    const qualityScore = node.quality || 1;
+
+    const qualityScore =
+      Number.isFinite(node.quality) && node.quality > 0
+        ? node.quality
+        : 1;
 
     const freshnessBonus = node.isFresh ? 2 : 1;
 
-    const combined = proximityScore * qualityScore * freshnessBonus;
+    const combined =
+      proximityScore *
+      qualityScore *
+      freshnessBonus;
 
-    return { node, distance, distanceAtr, combined };
+    return {
+      node,
+      distance,
+      distanceAtr,
+      combined
+    };
   });
 
   scored.sort((a, b) => b.combined - a.combined);
 
   const profile =
-    timeframe && Object.prototype.hasOwnProperty.call(TIMEFRAME_PROFILES, timeframe)
+    timeframe &&
+    typeof TIMEFRAME_PROFILES !== "undefined" &&
+    Object.prototype.hasOwnProperty.call(
+      TIMEFRAME_PROFILES,
+      timeframe
+    )
       ? TIMEFRAME_PROFILES[timeframe]
       : null;
 
-  const minNodeDistanceAtr =
-    profile && Number.isFinite(profile.slNodeMinDistance) && profile.slNodeMinDistance > 0
+  const profileMinDistance =
+    profile &&
+    Number.isFinite(profile.slNodeMinDistance) &&
+    profile.slNodeMinDistance > 0
       ? profile.slNodeMinDistance
-      : 0.3;
+      : 1.3;
 
-  let bestNode = null;
+  const minNodeDistanceAtr = Math.max(
+    1.0,
+    profileMinDistance
+  );
 
-  for (const item of scored) {
-    if (item.distanceAtr < minNodeDistanceAtr) continue;
-    if (item.distanceAtr > 5) continue;
+  const eligibleNodes = scored.filter(
+    (item) =>
+      item.distanceAtr >= minNodeDistanceAtr &&
+      item.distanceAtr <= 4
+  );
 
-    bestNode = item.node;
-    break;
+  if (eligibleNodes.length === 0) {
+    return fallbackStop;
   }
 
-  if (!bestNode) {
-    bestNode = scored[0].node;
+  const bestItem = eligibleNodes[0];
+  const bestNode = bestItem.node;
+
+  let buffer;
+
+  try {
+    buffer = computeStopBuffer(
+      entry,
+      atr,
+      tickSize
+    );
+  } catch (error) {
+    return fallbackStop;
   }
 
-  const buffer = computeStopBuffer(entry, atr, tickSize);
-
-  if (direction === "bullish") {
-    return bestNode.price - buffer;
+  if (!Number.isFinite(buffer) || buffer < 0) {
+    return fallbackStop;
   }
 
-  return bestNode.price + buffer;
+  const stop =
+    direction === "bullish"
+      ? bestNode.price - buffer
+      : bestNode.price + buffer;
+
+  if (!Number.isFinite(stop) || stop <= 0) {
+    return fallbackStop;
+  }
+
+  if (direction === "bullish" && stop >= entry) {
+    return fallbackStop;
+  }
+
+  if (direction === "bearish" && stop <= entry) {
+    return fallbackStop;
+  }
+
+  return stop;
 }
 
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
