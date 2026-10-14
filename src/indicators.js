@@ -879,8 +879,8 @@ export function buildConfirmedSwingTimeline(swings, candlesLength) {
       lIdx++;
     }
 
-    timelineHighs[i] = cumulativeHighs;
-    timelineLows[i] = cumulativeLows;
+    timelineHighs[i] = cumulativeHighs.slice();
+    timelineLows[i] = cumulativeLows.slice();
   }
 
   return {
@@ -1013,10 +1013,23 @@ export function detectBosChoch(candles, swings, structure) {
     swings = detectSwings(candles);
   }
 
+  const lastClosedIndex =
+    candles[candles.length - 1]?.incomplete === true
+      ? candles.length - 2
+      : candles.length - 1;
+
+  if (lastClosedIndex < 0) {
+    return null;
+  }
+
   const start = Math.max(
     CONFIG.SWING_LEFT + CONFIG.SWING_RIGHT,
     candles.length - CONFIG.BOS_LOOKBACK
   );
+
+  if (start > lastClosedIndex) {
+    return null;
+  }
 
   const events = [];
   const brokenLevels = new Set();
@@ -1048,7 +1061,7 @@ export function detectBosChoch(candles, swings, structure) {
     }
   }
 
-  for (let i = start; i < candles.length; i++) {
+  for (let i = start; i <= lastClosedIndex; i++) {
     const closePrice = cClose(candles[i]);
     const confirmedHighs = timeline.highs[i] || [];
     const confirmedLows = timeline.lows[i] || [];
@@ -1221,6 +1234,11 @@ export function detectDisplacement(candles, atrValue, index) {
   }
 
   const candle = candles[i];
+
+  if (candle.incomplete === true) {
+    return null;
+  }
+
   const candleRange = cRange(candle);
 
   if (candleRange <= 0) {
@@ -1264,26 +1282,62 @@ export function detectDisplacement(candles, atrValue, index) {
 }
 
 export function findEventDisplacement(candles, atrValue, event, sweep, lookback = 16) {
-  if (!event) {
+  if (!Array.isArray(candles) || candles.length < 2) {
+    return null;
+  }
+
+  if (
+    !event ||
+    !Number.isInteger(event.index) ||
+    event.index < 1 ||
+    event.index >= candles.length ||
+    (event.direction !== "bullish" && event.direction !== "bearish")
+  ) {
     return null;
   }
 
   const eventIndex = event.index;
   const direction = event.direction;
 
+  if (sweep && eventIndex <= sweep.index) {
+    return null;
+  }
+
+  const eventCandleDisplacement = detectDisplacement(
+    candles,
+    atrValue,
+    eventIndex
+  );
+
+  if (
+    eventCandleDisplacement &&
+    eventCandleDisplacement.direction === direction
+  ) {
+    return eventCandleDisplacement;
+  }
+
   const minimumIndex = sweep
-    ? Math.max(eventIndex, sweep.index + 1)
-    : eventIndex;
+    ? Math.max(eventIndex + 1, sweep.index + 1)
+    : eventIndex + 1;
 
   const forwardWindow = Math.max(
     3,
     Math.min(Math.floor(lookback / 2), 6)
   );
 
+  const lastClosedIndex =
+    candles[candles.length - 1]?.incomplete === true
+      ? candles.length - 2
+      : candles.length - 1;
+
   const end = Math.min(
-    candles.length - 1,
+    lastClosedIndex,
     eventIndex + forwardWindow
   );
+
+  if (minimumIndex > end) {
+    return null;
+  }
 
   const candidates = [];
 
