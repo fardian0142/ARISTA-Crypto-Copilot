@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T21:05:29.232Z",
+  "lastUpdated": "2026-10-14T22:05:20.029Z",
   "signals": {
     "1000CHEEMSUSDT:30m": {
       "sentAt": "2026-10-14T00:12:22.209Z",
@@ -207,6 +207,15 @@
       "score": 14,
       "entry": 0.005744,
       "stop": 0.005686795036884608
+    },
+    "WAXPUSDT:1h": {
+      "sentAt": "2026-10-14T22:05:18.528Z",
+      "symbol": "WAXPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005145,
+      "stop": 0.00511376136015111
     }
   }
 }
