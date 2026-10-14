@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T17:50:23.115Z",
+  "lastUpdated": "2026-10-14T20:05:14.896Z",
   "signals": {
     "SKHYBUSDT:15m": {
       "sentAt": "2026-10-13T20:09:02.711Z",
@@ -198,6 +198,24 @@
       "score": 14,
       "entry": 4.751185669327631,
       "stop": 4.7749999999999995
+    },
+    "2ZUSDT:1h": {
+      "sentAt": "2026-10-14T20:05:11.492Z",
+      "symbol": "2ZUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03362,
+      "stop": 0.03324796731628508
+    },
+    "AGRIPPAUSDT:30m": {
+      "sentAt": "2026-10-14T20:05:13.395Z",
+      "symbol": "AGRIPPAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000007492596842462033,
+      "stop": 0.000006934230375735981
     }
   }
 }
