@@ -7,7 +7,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 1.3,
     allowCounterMomentum: true,
     slAtrMult: 0.7,
-    slNodeMinDistance: 0.9
+    slNodeMinDistance: 1.3
   },
   "30m": {
     strictHTF: false,
@@ -17,7 +17,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 1.4,
     allowCounterMomentum: true,
     slAtrMult: 0.8,
-    slNodeMinDistance: 1.1
+    slNodeMinDistance: 1.4
   },
   "1h": {
     strictHTF: false,
@@ -27,7 +27,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 1.6,
     allowCounterMomentum: false,
     slAtrMult: 0.6,
-    slNodeMinDistance: 0.8
+    slNodeMinDistance: 1.5
   },
   "2h": {
     strictHTF: true,
@@ -37,7 +37,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 1.7,
     allowCounterMomentum: false,
     slAtrMult: 0.5,
-    slNodeMinDistance: 0.6
+    slNodeMinDistance: 1.5
   },
   "4h": {
     strictHTF: true,
@@ -47,7 +47,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 1.8,
     allowCounterMomentum: false,
     slAtrMult: 0.5,
-    slNodeMinDistance: 0.6
+    slNodeMinDistance: 1.6
   },
   "6h": {
     strictHTF: true,
@@ -57,7 +57,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 2.0,
     allowCounterMomentum: false,
     slAtrMult: 0.5,
-    slNodeMinDistance: 0.5
+    slNodeMinDistance: 1.6
   },
   "12h": {
     strictHTF: true,
@@ -67,7 +67,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 2.2,
     allowCounterMomentum: false,
     slAtrMult: 0.4,
-    slNodeMinDistance: 0.5
+    slNodeMinDistance: 1.7
   },
   "24h": {
     strictHTF: true,
@@ -77,7 +77,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 2.5,
     allowCounterMomentum: false,
     slAtrMult: 0.4,
-    slNodeMinDistance: 0.5
+    slNodeMinDistance: 1.8
   }
 };
 
