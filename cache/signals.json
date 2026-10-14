@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-14T20:05:14.896Z",
+  "lastUpdated": "2026-10-14T21:05:29.232Z",
   "signals": {
-    "SKHYBUSDT:15m": {
-      "sentAt": "2026-10-13T20:09:02.711Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 157.02,
-      "stop": 154.87002321406305
-    },
-    "DRAMBUSDT:30m": {
-      "sentAt": "2026-10-13T20:09:04.545Z",
-      "symbol": "DRAMBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 52.66,
-      "stop": 51.92338288763986
-    },
-    "DRAMUSDT:30m": {
-      "sentAt": "2026-10-13T20:09:06.270Z",
-      "symbol": "DRAMUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 52.72,
-      "stop": 51.38975826359531
-    },
     "1000CHEEMSUSDT:30m": {
       "sentAt": "2026-10-14T00:12:22.209Z",
       "symbol": "1000CHEEMSUSDT",
@@ -216,6 +189,24 @@
       "score": 14,
       "entry": 0.000007492596842462033,
       "stop": 0.000006934230375735981
+    },
+    "AVGOBUSDT:1h": {
+      "sentAt": "2026-10-14T21:05:25.968Z",
+      "symbol": "AVGOBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 345.21500000000003,
+      "stop": 342.8859836060147
+    },
+    "PIXELUSDT:15m": {
+      "sentAt": "2026-10-14T21:05:27.732Z",
+      "symbol": "PIXELUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005744,
+      "stop": 0.005686795036884608
     }
   }
 }
