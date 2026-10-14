@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T16:37:58.983Z",
+  "lastUpdated": "2026-10-14T17:50:23.115Z",
   "signals": {
     "SKHYBUSDT:15m": {
       "sentAt": "2026-10-13T20:09:02.711Z",
@@ -171,6 +171,33 @@
       "score": 14,
       "entry": 0.3138,
       "stop": 0.31111791801702154
+    },
+    "BREVUSDT:30m": {
+      "sentAt": "2026-10-14T17:50:17.822Z",
+      "symbol": "BREVUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08006746629709277,
+      "stop": 0.07870860994617969
+    },
+    "SONICUSDT:30m": {
+      "sentAt": "2026-10-14T17:50:19.743Z",
+      "symbol": "SONICUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0224,
+      "stop": 0.02216
+    },
+    "SHEINUSDT:15m": {
+      "sentAt": "2026-10-14T17:50:21.610Z",
+      "symbol": "SHEINUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 4.751185669327631,
+      "stop": 4.7749999999999995
     }
   }
 }
