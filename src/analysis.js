@@ -258,9 +258,6 @@ export async function analyze(symbol, timeframe) {
     );
   }
 
-  const tickSize =
-    snapshot.tickSize || null;
-
   const hasRealHtf =
     !!(
       snapshot.htf &&
@@ -509,6 +506,79 @@ export async function analyze(symbol, timeframe) {
   result.bos_choch =
     event || null;
 
+  const scenario =
+    scenarioCalc(
+      candles,
+      timeframe,
+      swings
+    );
+
+  result.scenario =
+    scenario || null;
+
+  const scenarioBullFinite =
+    !!(
+      scenario &&
+      Number.isFinite(
+        scenario.bull_level
+      ) &&
+      scenario.bull_level > 0
+    );
+
+  const scenarioBearFinite =
+    !!(
+      scenario &&
+      Number.isFinite(
+        scenario.bear_level
+      ) &&
+      scenario.bear_level > 0
+    );
+
+  if (
+    scenarioBullFinite &&
+    scenarioBearFinite
+  ) {
+    try {
+      result.range_setups =
+        detectRangeTradeSetups(
+          candles,
+          currentPrice,
+          currentAtr,
+          scenario.bull_level,
+          scenario.bear_level,
+          swings,
+          timeframe
+        );
+    } catch (e) {
+      console.error(
+        "detectRangeTradeSetups error:",
+        e
+      );
+
+      result.range_setups =
+        null;
+    }
+  } else {
+    result.range_setups =
+      null;
+  }
+
+  if (
+    !event ||
+    !Number.isFinite(event.index) ||
+    !Number.isFinite(event.direction)
+  ) {
+    result.setup_active = false;
+    result.strength = 0;
+    result.risk = "HIGH";
+    result._noTradeReason =
+      "BOS یا CHoCH معتبر در محدوده اخیر مشاهده نشد";
+    result.reasons.push(
+      "BOS یا CHoCH معتبر در محدوده اخیر مشاهده نشد."
+    );
+    return result;
+  }
+
   const sweeps =
     detectLiquiditySweeps(
       candles,
@@ -524,103 +594,6 @@ export async function analyze(symbol, timeframe) {
   result.sweep =
     sweep || null;
 
-  const displacement =
-    (event && sweep)
-      ? findEventDisplacement(
-          candles,
-          currentAtr,
-          event,
-          sweep
-        )
-      : null;
-
-  result.displacement =
-    displacement || null;
-
-  let fvgs = [];
-  let obs = [];
-
-  if (event && sweep && displacement) {
-    fvgs = detectFvgs(
-      candles,
-      currentAtr,
-      event,
-      sweep,
-      displacement
-    );
-
-    obs = detectOrderBlocks(
-      candles,
-      currentAtr,
-      event,
-      displacement,
-      sweep
-    );
-  }
-
-  const scenario =
-    scenarioCalc(
-      candles,
-      timeframe,
-      swings
-    );
-
-  result.scenario =
-    scenario || null;
-
-  const scenarioBullFinite =
-    !!(
-      scenario &&
-      Number.isFinite(scenario.bull_level) &&
-      scenario.bull_level > 0
-    );
-
-  const scenarioBearFinite =
-    !!(
-      scenario &&
-      Number.isFinite(scenario.bear_level) &&
-      scenario.bear_level > 0
-    );
-
-  if (scenarioBullFinite && scenarioBearFinite) {
-    try {
-      result.range_setups =
-        detectRangeTradeSetups(
-          candles,
-          currentPrice,
-          currentAtr,
-          scenario.bull_level,
-          scenario.bear_level,
-          swings,
-          timeframe,
-          tickSize,
-          event,
-          fvgs
-        );
-    } catch (e) {
-      console.error("detectRangeTradeSetups error:", e);
-      result.range_setups = null;
-    }
-  } else {
-    result.range_setups = null;
-  }
-
-  if (
-    !event ||
-    !Number.isFinite(event.index) ||
-    (event.direction !== "bullish" && event.direction !== "bearish")
-  ) {
-    result.setup_active = false;
-    result.strength = 0;
-    result.risk = "HIGH";
-    result._noTradeReason =
-      "BOS یا CHoCH معتبر در محدوده اخیر مشاهده نشد";
-    result.reasons.push(
-      "BOS یا CHoCH معتبر در محدوده اخیر مشاهده نشد."
-    );
-    return result;
-  }
-
   if (
     !sweep ||
     !Number.isFinite(sweep.index)
@@ -630,6 +603,17 @@ export async function analyze(symbol, timeframe) {
       "Liquidity Sweep هم‌جهت و معتبر قبل از شکست ساختاری پیدا نشد."
     );
   }
+
+  const displacement =
+    findEventDisplacement(
+      candles,
+      currentAtr,
+      event,
+      sweep
+    );
+
+  result.displacement =
+    displacement || null;
 
   if (
     !displacement ||
@@ -841,6 +825,24 @@ export async function analyze(symbol, timeframe) {
     }
   }
 
+  const fvgs =
+    detectFvgs(
+      candles,
+      currentAtr,
+      event,
+      sweep,
+      displacement
+    );
+
+  const obs =
+    detectOrderBlocks(
+      candles,
+      currentAtr,
+      event,
+      displacement,
+      sweep
+    );
+
   const zone =
     selectBestZone(
       obs,
@@ -922,14 +924,7 @@ export async function analyze(symbol, timeframe) {
       currentAtr,
       swingLowsStructure,
       swingHighsStructure,
-      currentPrice,
-      timeframe,
-      tickSize,
-      event,
-      sweep,
-      displacement,
-      obs,
-      fvgs
+      currentPrice
     );
 
   if (
@@ -1002,8 +997,7 @@ export async function analyze(symbol, timeframe) {
       stop,
       currentAtr,
       currentPrice,
-      minRr,
-      tickSize
+      minRr
     );
 
   let targets = [];
@@ -1038,8 +1032,7 @@ export async function analyze(symbol, timeframe) {
         swings,
         currentAtr,
         4,
-        minRr,
-        tickSize
+        minRr
       );
 
     const filteredTargets =
