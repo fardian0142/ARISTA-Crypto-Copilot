@@ -165,7 +165,7 @@ async function main() {
         return { symbol, status: "timeout" };
       }
 
-      if (hasRecentSignal(cache.signals, symbol)) {
+      if (hasRecentSignal(cache.signals, symbol, TIMEFRAME)) {
         return { symbol, status: "skipped" };
       }
 
@@ -242,12 +242,21 @@ async function main() {
 
       await sendTelegramMessage(token, chatId, text);
 
-      cache.signals = addSignal(cache.signals, symbol, {
+      cache.signals = addSignal(cache.signals, symbol, TIMEFRAME, {
         direction: active.direction,
         score: active.score,
         entry: active.entry,
         stop: active.stop
       });
+
+      try {
+        await writeCache(cache);
+      } catch (e) {
+        console.error(
+          "⚠️ Failed to write cache after send:",
+          (e && e.message) || e
+        );
+      }
 
       summary.sent++;
 
