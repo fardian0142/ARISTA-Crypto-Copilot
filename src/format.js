@@ -1,3 +1,5 @@
+import { CONFIG } from "./config.js";
+
 function fmtPrice(value) {
   if (value === null || value === undefined) {
     return "-";
@@ -630,46 +632,46 @@ export function formatAnalysis(r) {
   }
 
   const activeSetupForLeverage =
-    (rangeActive && r.range_setups.active) ||
-    null;
+  (rangeActive && r.range_setups.active) ||
+  null;
 
-  const setupEntry = activeSetupForLeverage
-    ? activeSetupForLeverage.entry
-    : r.entry;
+const setupEntry = activeSetupForLeverage
+  ? activeSetupForLeverage.entry
+  : r.entry;
 
-  const setupStop = activeSetupForLeverage
-    ? activeSetupForLeverage.stop
-    : r.stop_loss;
+const setupStop = activeSetupForLeverage
+  ? activeSetupForLeverage.stop
+  : r.stop_loss;
 
-  if (
-    r.status === "LONG" ||
-    r.status === "SHORT" ||
-    r.status === "WAIT" ||
-    rangeActive
-  ) {
-    const hasValidSetup =
-      Number.isFinite(setupEntry) &&
-      Number.isFinite(setupStop) &&
-      setupEntry > 0 &&
-      setupStop > 0 &&
-      setupEntry !== setupStop;
+if (
+  r.status === "LONG" ||
+  r.status === "SHORT" ||
+  r.status === "WAIT" ||
+  rangeActive
+) {
+  const hasValidSetup =
+    Number.isFinite(setupEntry) &&
+    Number.isFinite(setupStop) &&
+    setupEntry > 0 &&
+    setupStop > 0 &&
+    setupEntry !== setupStop;
 
-    if (hasValidSetup) {
-      const stopPct = Math.abs(setupEntry - setupStop) / setupEntry * 100;
-      const levels = calcLeverageLevels(stopPct);
+  if (hasValidSetup) {
+  const stopPct = Math.abs(setupEntry - setupStop) / setupEntry * 100;
+  const levels = calcLeverageLevels(stopPct);
 
-      lines.push("");
-      lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-      lines.push(
-        "🎚 اهرم پیشنهادی : <b>" +
-        levels[0] + "X , " +
-        levels[1] + "X , " +
-        levels[2] + "X , " +
-        levels[3] + "X</b>"
-      );
-      lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-    }
-  }
+  lines.push("");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push(
+    "🎚 اهرم پیشنهادی : <b>" +
+    levels[0] + "X , " +
+    levels[1] + "X , " +
+    levels[2] + "X , " +
+    levels[3] + "X</b>"
+  );
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+}
+}
 
   if (
     r.status === "NO_TRADE" &&
