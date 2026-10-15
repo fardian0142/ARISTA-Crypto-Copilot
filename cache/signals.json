@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-15T22:03:02.820Z",
+  "lastUpdated": "2026-10-15T23:02:54.594Z",
   "signals": {
-    "WAXPUSDT:1h": {
-      "sentAt": "2026-10-14T22:05:18.528Z",
-      "symbol": "WAXPUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005145,
-      "stop": 0.00511376136015111
-    },
     "UBERUSDT:15m": {
       "sentAt": "2026-10-14T23:05:11.279Z",
       "symbol": "UBERUSDT",
@@ -1588,6 +1579,60 @@
       "score": 14,
       "entry": 0.009786596987953738,
       "stop": 0.009621603442338585
+    },
+    "HBARUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:44.079Z",
+      "symbol": "HBARUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08423,
+      "stop": 0.08291454231162236
+    },
+    "KMNOUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:45.900Z",
+      "symbol": "KMNOUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.03834489941667706,
+      "stop": 0.04062725780951193
+    },
+    "KAITOUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:47.733Z",
+      "symbol": "KAITOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.29664999999999997,
+      "stop": 0.28704006000000004
+    },
+    "ETCUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:49.508Z",
+      "symbol": "ETCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.880000000000001,
+      "stop": 7.788396
+    },
+    "MUUBUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:51.311Z",
+      "symbol": "MUUBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 26.73,
+      "stop": 25.264564
+    },
+    "USTCUSDT:2h": {
+      "sentAt": "2026-10-15T23:02:53.093Z",
+      "symbol": "USTCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0050100000000000006,
+      "stop": 0.004946184792484077
     }
   }
 }
