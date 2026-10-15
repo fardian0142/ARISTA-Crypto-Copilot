@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T12:05:24.906Z",
+  "lastUpdated": "2026-10-15T13:05:27.339Z",
   "signals": {
     "BREVUSDT:30m": {
       "sentAt": "2026-10-14T17:50:17.822Z",
@@ -180,6 +180,15 @@
       "score": 14,
       "entry": 509.41999999999996,
       "stop": 512.4167478833922
+    },
+    "AIOTUSDT:15m": {
+      "sentAt": "2026-10-15T13:05:25.837Z",
+      "symbol": "AIOTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05294,
+      "stop": 0.051863371668430885
     }
   }
 }
