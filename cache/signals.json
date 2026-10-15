@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-15T21:03:08.377Z",
+  "lastUpdated": "2026-10-15T22:03:02.820Z",
   "signals": {
-    "AVGOBUSDT:1h": {
-      "sentAt": "2026-10-14T21:05:25.968Z",
-      "symbol": "AVGOBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 345.21500000000003,
-      "stop": 342.8859836060147
-    },
-    "PIXELUSDT:15m": {
-      "sentAt": "2026-10-14T21:05:27.732Z",
-      "symbol": "PIXELUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005744,
-      "stop": 0.005686795036884608
-    },
     "WAXPUSDT:1h": {
       "sentAt": "2026-10-14T22:05:18.528Z",
       "symbol": "WAXPUSDT",
@@ -1507,6 +1489,105 @@
       "score": 14,
       "entry": 0.0599,
       "stop": 0.05819825519811405
+    },
+    "PENGUUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:43.214Z",
+      "symbol": "PENGUUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.007568898977701744,
+      "stop": 0.007481057727027574
+    },
+    "MINAUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:45.013Z",
+      "symbol": "MINAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07464269059607308,
+      "stop": 0.07106549646163075
+    },
+    "SNXXBUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:46.898Z",
+      "symbol": "SNXXBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 10.195,
+      "stop": 9.745734589155342
+    },
+    "OPENUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:48.718Z",
+      "symbol": "OPENUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0978224,
+      "stop": 0.09415081714548285
+    },
+    "SAPIENUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:50.477Z",
+      "symbol": "SAPIENUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.065275,
+      "stop": 0.06465039109706167
+    },
+    "THETAUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:52.257Z",
+      "symbol": "THETAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.19594490582521087,
+      "stop": 0.19156044
+    },
+    "PROVEUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:54.033Z",
+      "symbol": "PROVEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18864245061328722,
+      "stop": 0.18712291358481462
+    },
+    "PROSUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:55.812Z",
+      "symbol": "PROSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.597276,
+      "stop": 0.5775651888601163
+    },
+    "VANAUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:57.660Z",
+      "symbol": "VANAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0095,
+      "stop": 0.9807956
+    },
+    "LYNUSDT:2h": {
+      "sentAt": "2026-10-15T22:02:59.488Z",
+      "symbol": "LYNUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01551,
+      "stop": 0.015063879566606151
+    },
+    "CHILLGUYUSDT:2h": {
+      "sentAt": "2026-10-15T22:03:01.318Z",
+      "symbol": "CHILLGUYUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009786596987953738,
+      "stop": 0.009621603442338585
     }
   }
 }
