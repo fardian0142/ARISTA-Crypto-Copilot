@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-15T09:05:20.942Z",
+  "lastUpdated": "2026-10-15T10:05:17.512Z",
   "signals": {
-    "ARBUSDT:15m": {
-      "sentAt": "2026-10-14T09:45:58.354Z",
-      "symbol": "ARBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.18834492057810037,
-      "stop": 0.19060580505359961
-    },
-    "REUSDT:15m": {
-      "sentAt": "2026-10-14T09:46:00.112Z",
-      "symbol": "REUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.42953453254733376,
-      "stop": 0.43216169568723783
-    },
-    "GSBUSDT:30m": {
-      "sentAt": "2026-10-14T09:46:01.853Z",
-      "symbol": "GSBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 894.975,
-      "stop": 891.404024
-    },
-    "XCUUSDT:30m": {
-      "sentAt": "2026-10-14T09:46:03.599Z",
-      "symbol": "XCUUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 6.7385,
-      "stop": 6.725065596422535
-    },
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-14T11:16:42.985Z",
       "symbol": "ZORAUSDT",
