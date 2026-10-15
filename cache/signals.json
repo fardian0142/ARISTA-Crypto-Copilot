@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T04:05:14.808Z",
+  "lastUpdated": "2026-10-15T05:05:20.731Z",
   "signals": {
     "FOGOUSDT:15m": {
       "sentAt": "2026-10-14T05:09:50.480Z",
@@ -243,6 +243,24 @@
       "score": 14,
       "entry": 0.01188,
       "stop": 0.011500621811424867
+    },
+    "ACHUSDT:30m": {
+      "sentAt": "2026-10-15T05:05:17.482Z",
+      "symbol": "ACHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0053195,
+      "stop": 0.005149150291222521
+    },
+    "TOWNSUSDT:30m": {
+      "sentAt": "2026-10-15T05:05:19.228Z",
+      "symbol": "TOWNSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.001603,
+      "stop": 0.001527586627052188
     }
   }
 }
