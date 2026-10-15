@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-15T11:05:18.512Z",
+  "lastUpdated": "2026-10-15T12:05:24.906Z",
   "signals": {
-    "ZORAUSDT:30m": {
-      "sentAt": "2026-10-14T11:16:42.985Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00669,
-      "stop": 0.0066295050909119645
-    },
-    "FRAXUSDT:15m": {
-      "sentAt": "2026-10-14T11:16:44.751Z",
-      "symbol": "FRAXUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3138,
-      "stop": 0.31111791801702154
-    },
     "BREVUSDT:30m": {
       "sentAt": "2026-10-14T17:50:17.822Z",
       "symbol": "BREVUSDT",
@@ -171,6 +153,33 @@
       "score": 14,
       "entry": 0.0338466397567525,
       "stop": 0.03366955456371143
+    },
+    "GOOGLSTOCKUSDT:15m": {
+      "sentAt": "2026-10-15T12:05:19.746Z",
+      "symbol": "GOOGLSTOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 344.1308547382951,
+      "stop": 341.8575945848056
+    },
+    "PROVEUSDT:15m": {
+      "sentAt": "2026-10-15T12:05:21.516Z",
+      "symbol": "PROVEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18321135122081414,
+      "stop": 0.181358455747641
+    },
+    "VRTXSTOCKUSDT:15m": {
+      "sentAt": "2026-10-15T12:05:23.404Z",
+      "symbol": "VRTXSTOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 509.41999999999996,
+      "stop": 512.4167478833922
     }
   }
 }
