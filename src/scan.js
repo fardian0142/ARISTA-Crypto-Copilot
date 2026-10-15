@@ -10,138 +10,50 @@ import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
 import { formatAnalysis } from "./format.js";
 
-const TIMEFRAMES = Array.isArray(CONFIG.SIGNAL_TIMEFRAMES) && CONFIG.SIGNAL_TIMEFRAMES.length > 0
-  ? CONFIG.SIGNAL_TIMEFRAMES
-  : ["30m"];
-
-const TIMEFRAME_PRIORITY = {
-  "30m": 1,
-  "1h": 2,
-  "15m": 3
-};
-
+const TIMEFRAME = "2h";
+const MAX_SCORE = 14;
 const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
 const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
-
-const TELEGRAM_MAX_ATTEMPTS = 5;
-const TELEGRAM_BASE_RETRY_MS = 3000;
-const TELEGRAM_MAX_RETRY_MS = 90000;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function getTimeframePriority(tf) {
-  return Object.prototype.hasOwnProperty.call(TIMEFRAME_PRIORITY, tf)
-    ? TIMEFRAME_PRIORITY[tf]
-    : 99;
-}
-
-function parseRetryAfter(data, fallbackMs) {
-  if (data && Number.isFinite(data.retry_after) && data.retry_after > 0) {
-    return Math.min(data.retry_after * 1000 + 1000, TELEGRAM_MAX_RETRY_MS);
-  }
-
-  if (data && typeof data.description === "string") {
-    const match = data.description.match(/retry after (\d+)/i);
-
-    if (match) {
-      const seconds = parseInt(match[1], 10);
-
-      if (Number.isFinite(seconds) && seconds > 0) {
-        return Math.min(seconds * 1000 + 1000, TELEGRAM_MAX_RETRY_MS);
-      }
-    }
-  }
-
-  return Math.min(fallbackMs, TELEGRAM_MAX_RETRY_MS);
-}
-
 async function sendTelegramMessage(token, chatId, text) {
   const url = "https://api.telegram.org/bot" + token + "/sendMessage";
 
-  let lastError = null;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text,
+      parse_mode: "HTML",
+      disable_web_page_preview: true
+    })
+  });
 
-  for (let attempt = 1; attempt <= TELEGRAM_MAX_ATTEMPTS; attempt++) {
-    let response;
+  const responseText = await response.text();
 
-    try {
-      response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text,
-          parse_mode: "HTML",
-          disable_web_page_preview: true
-        })
-      });
-    } catch (e) {
-      lastError = e;
+  let data = null;
 
-      if (attempt === TELEGRAM_MAX_ATTEMPTS) {
-        throw e;
-      }
+  try {
+    data = JSON.parse(responseText);
+  } catch {
+    data = null;
+  }
 
-      const backoff = Math.min(
-        TELEGRAM_BASE_RETRY_MS * attempt,
-        TELEGRAM_MAX_RETRY_MS
-      );
-
-      await sleep(backoff);
-      continue;
-    }
-
-    const responseText = await response.text();
-
-    let data = null;
-
-    try {
-      data = JSON.parse(responseText);
-    } catch {
-      data = null;
-    }
-
-    if (response.ok && data && data.ok === true) {
-      return data;
-    }
-
+  if (!response.ok || !data || data.ok !== true) {
     const description =
       data && data.description
         ? data.description
         : "Telegram API error (HTTP " + response.status + ")";
 
-    const isRateLimit =
-      response.status === 429 ||
-      (typeof description === "string" &&
-        description.toLowerCase().includes("too many requests"));
-
-    lastError = new Error(description);
-
-    if (!isRateLimit || attempt === TELEGRAM_MAX_ATTEMPTS) {
-      throw lastError;
-    }
-
-    const waitMs = parseRetryAfter(
-      data,
-      TELEGRAM_BASE_RETRY_MS * attempt
-    );
-
-    console.log(
-      "⏳ Telegram rate limit — waiting " +
-        Math.ceil(waitMs / 1000) +
-        "s before retry (attempt " +
-        attempt +
-        "/" +
-        TELEGRAM_MAX_ATTEMPTS +
-        ")"
-    );
-
-    await sleep(waitMs);
+    throw new Error(description);
   }
 
-  throw lastError || new Error("Telegram send failed");
+  return data;
 }
 
 async function runWithConcurrency(items, concurrency, worker) {
@@ -179,12 +91,12 @@ function logSummary(summary) {
   console.log("═══════════════════════════════════════════");
   console.log("📊 SCAN SUMMARY");
   console.log("═══════════════════════════════════════════");
-  console.log("⏱  Timeframes           : " + TIMEFRAMES.join(" , "));
+  console.log("⏱  Timeframe            : " + TIMEFRAME);
+  console.log("🎯 Required Score       : " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("📈 Total symbols        : " + summary.total);
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
   console.log("🔎 Analyzed             : " + summary.analyzed);
   console.log("📤 Sent                 : " + summary.sent);
-  console.log("⚠️  Failed               : " + summary.failed);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
@@ -209,14 +121,14 @@ async function main() {
     skipped: 0,
     analyzed: 0,
     sent: 0,
-    failed: 0,
     cacheEntries: 0,
     elapsedMs: 0
   };
 
   console.log("");
   console.log("🚀 Starting crypto scan...");
-  console.log("⏱  Timeframes: " + TIMEFRAMES.join(" , "));
+  console.log("⏱  Timeframe: " + TIMEFRAME);
+  console.log("🎯 Required score: " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("");
 
   let cache = await readCache();
@@ -253,72 +165,40 @@ async function main() {
         return { symbol, status: "timeout" };
       }
 
-      const candidates = [];
-
-      for (const timeframe of TIMEFRAMES) {
-        if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
-          break;
-        }
-
-        if (hasRecentSignal(cache.signals, symbol, timeframe)) {
-          continue;
-        }
-
-        let analysis;
-
-        try {
-          analysis = await analyze(symbol, timeframe);
-        } catch (e) {
-          continue;
-        }
-
-        const active =
-          analysis &&
-          analysis.range_setups &&
-          analysis.range_setups.active;
-
-        if (!active) {
-          continue;
-        }
-
-        if (
-          !Number.isFinite(active.score) ||
-          active.score < 14
-        ) {
-          continue;
-        }
-
-        candidates.push({
-          symbol,
-          timeframe,
-          analysis,
-          active
-        });
+      if (hasRecentSignal(cache.signals, symbol)) {
+        return { symbol, status: "skipped" };
       }
 
-      if (candidates.length === 0) {
-        const allCached = TIMEFRAMES.every((tf) =>
-          hasRecentSignal(cache.signals, symbol, tf)
-        );
+      let analysis;
 
-        if (allCached) {
-          return { symbol, status: "skipped" };
-        }
+      try {
+        analysis = await analyze(symbol, TIMEFRAME);
+      } catch (e) {
+        return {
+          symbol,
+          status: "error",
+          error: (e && e.message) || "unknown"
+        };
+      }
 
+      const active =
+        analysis &&
+        analysis.range_setups &&
+        analysis.range_setups.active;
+
+      if (
+        !active ||
+        !Number.isFinite(active.score) ||
+        active.score !== MAX_SCORE
+      ) {
         return { symbol, status: "no_signal" };
       }
-
-      candidates.sort((a, b) => {
-        const pa = getTimeframePriority(a.timeframe);
-        const pb = getTimeframePriority(b.timeframe);
-        if (pa !== pb) return pa - pb;
-        return b.active.score - a.active.score;
-      });
 
       return {
         symbol,
         status: "signal",
-        winner: candidates[0]
+        analysis,
+        active
       };
     }
   );
@@ -330,15 +210,11 @@ async function main() {
 
     if (result.status === "skipped") {
       summary.skipped++;
-    } else if (
-      result.status === "no_signal" ||
-      result.status === "error" ||
-      result.status === "timeout"
-    ) {
+    } else if (result.status === "no_signal" || result.status === "error") {
       summary.analyzed++;
     } else if (result.status === "signal") {
       summary.analyzed++;
-      signalsToSend.push(result.winner);
+      signalsToSend.push(result);
     }
   }
 
@@ -359,14 +235,14 @@ async function main() {
   }
 
   for (const signal of signalsToSend) {
-    const { symbol, timeframe, analysis, active } = signal;
+    const { symbol, analysis, active } = signal;
 
     try {
       const text = formatAnalysis(analysis);
 
       await sendTelegramMessage(token, chatId, text);
 
-      cache.signals = addSignal(cache.signals, symbol, timeframe, {
+      cache.signals = addSignal(cache.signals, symbol, {
         direction: active.direction,
         score: active.score,
         entry: active.entry,
@@ -378,19 +254,15 @@ async function main() {
       console.log(
         "📤 Sent: " +
           symbol +
-          " [" +
-          timeframe +
-          "] (" +
+          " (" +
           active.direction +
           ", score " +
           active.score +
           "/14)"
       );
     } catch (e) {
-      summary.failed++;
-
       console.error(
-        "❌ Failed to send " + symbol + " [" + timeframe + "]:",
+        "❌ Failed to send " + symbol + ":",
         (e && e.message) || e
       );
     }
