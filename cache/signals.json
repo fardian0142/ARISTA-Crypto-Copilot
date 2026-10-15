@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T07:05:19.187Z",
+  "lastUpdated": "2026-10-15T08:05:14.793Z",
   "signals": {
     "ARBUSDT:15m": {
       "sentAt": "2026-10-14T09:45:58.354Z",
@@ -180,6 +180,15 @@
       "score": 14,
       "entry": 0.001603,
       "stop": 0.001527586627052188
+    },
+    "ARXUSDT:30m": {
+      "sentAt": "2026-10-15T08:05:13.291Z",
+      "symbol": "ARXUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2259,
+      "stop": 0.21170871444929662
     }
   }
 }
