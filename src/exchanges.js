@@ -19,7 +19,6 @@ let tickersCache = {
 
 const klineCache = {};
 const snapshotCache = {};
-const tickSizeCache = {};
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -1044,85 +1043,6 @@ async function getKlinesGate(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-export async function getTickSize(symbol, exchangeKey) {
-  const cacheKey = exchangeKey + ":" + symbol;
-
-  if (tickSizeCache[cacheKey] !== undefined) {
-    return tickSizeCache[cacheKey];
-  }
-
-  try {
-    if (exchangeKey === "okx") {
-      const base = symbol.replace(/USDT$/, "");
-      const json = await okxFetch("/api/v5/public/instruments", {
-        instType: "SWAP",
-        instId: base + "-USDT-SWAP"
-      });
-      const item = json.data && json.data[0];
-      if (item && item.tickSz) {
-        const tick = parseFloat(item.tickSz);
-        tickSizeCache[cacheKey] = tick;
-        return tick;
-      }
-    }
-
-    if (exchangeKey === "binance") {
-      const json = await binanceFetch("/api/v3/exchangeInfo", {
-        symbol: symbol
-      });
-      const item = json && json.symbols && json.symbols[0];
-      if (item && Array.isArray(item.filters)) {
-        for (const filter of item.filters) {
-          if (filter.filterType === "PRICE_FILTER" && filter.tickSize) {
-            const tick = parseFloat(filter.tickSize);
-            tickSizeCache[cacheKey] = tick;
-            return tick;
-          }
-        }
-      }
-    }
-
-    if (exchangeKey === "mexc") {
-      const base = symbol.replace(/USDT$/, "");
-      const json = await mexcFetch("/api/v1/contract/detail", {
-        symbol: base + "_USDT"
-      });
-      const item = json && json.data && json.data[0];
-      if (item && item.priceUnit) {
-        const tick = parseFloat(item.priceUnit);
-        tickSizeCache[cacheKey] = tick;
-        return tick;
-      }
-    }
-
-    if (exchangeKey === "kucoin") {
-      const base = symbol.replace(/USDT$/, "");
-      const json = await kucoinFetch("/api/v1/contracts/" + base + "USDTM");
-      const item = json && json.data;
-      if (item && item.tickSize) {
-        const tick = parseFloat(item.tickSize);
-        tickSizeCache[cacheKey] = tick;
-        return tick;
-      }
-    }
-
-    if (exchangeKey === "gate") {
-      const base = symbol.replace(/USDT$/, "");
-      const json = await gateFetch("/api/v4/futures/usdt/contracts/" + base + "_USDT");
-      if (json && json.order_price_round) {
-        const tick = parseFloat(json.order_price_round);
-        tickSizeCache[cacheKey] = tick;
-        return tick;
-      }
-    }
-  } catch (e) {
-    // silent fallback
-  }
-
-  tickSizeCache[cacheKey] = null;
-  return null;
-}
-
 export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit) {
   const aliases = resolveSymbolAliases(symbol);
 
@@ -1249,24 +1169,13 @@ export async function getMarketSnapshot(symbol, timeframe) {
       : Promise.resolve([])
   ]);
 
-  const cacheEntry = klineCache[symbol + ":" + timeframe];
-  const exchange = cacheEntry ? cacheEntry.exchange : null;
-
-  let tickSize = null;
-
-  if (exchange) {
-    tickSize = await getTickSize(symbol, exchange);
-  }
-
   const snapshot = {
     current,
     higher,
     higher2,
     timeframe,
     htf,
-    htf2,
-    exchange,
-    tickSize
+    htf2
   };
 
   snapshotCache[snapshotKey] = {
