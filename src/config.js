@@ -5,9 +5,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 2,
     minStrength: 55,
     minRR: 1.3,
-    allowCounterMomentum: true,
-    slAtrMult: 0.7,
-    slNodeMinDistance: 1.3
+    allowCounterMomentum: true
   },
   "30m": {
     strictHTF: false,
@@ -15,9 +13,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 3,
     minStrength: 60,
     minRR: 1.4,
-    allowCounterMomentum: true,
-    slAtrMult: 0.8,
-    slNodeMinDistance: 1.4
+    allowCounterMomentum: true
   },
   "1h": {
     strictHTF: false,
@@ -25,9 +21,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 5,
     minStrength: 65,
     minRR: 1.6,
-    allowCounterMomentum: false,
-    slAtrMult: 0.6,
-    slNodeMinDistance: 1.5
+    allowCounterMomentum: false
   },
   "2h": {
     strictHTF: true,
@@ -35,9 +29,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 6,
     minStrength: 68,
     minRR: 1.7,
-    allowCounterMomentum: false,
-    slAtrMult: 0.5,
-    slNodeMinDistance: 1.5
+    allowCounterMomentum: false
   },
   "4h": {
     strictHTF: true,
@@ -45,9 +37,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 10,
     minStrength: 72,
     minRR: 1.8,
-    allowCounterMomentum: false,
-    slAtrMult: 0.5,
-    slNodeMinDistance: 1.6
+    allowCounterMomentum: false
   },
   "6h": {
     strictHTF: true,
@@ -55,9 +45,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 12,
     minStrength: 75,
     minRR: 2.0,
-    allowCounterMomentum: false,
-    slAtrMult: 0.5,
-    slNodeMinDistance: 1.6
+    allowCounterMomentum: false
   },
   "12h": {
     strictHTF: true,
@@ -65,9 +53,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 15,
     minStrength: 78,
     minRR: 2.2,
-    allowCounterMomentum: false,
-    slAtrMult: 0.4,
-    slNodeMinDistance: 1.7
+    allowCounterMomentum: false
   },
   "24h": {
     strictHTF: true,
@@ -75,9 +61,7 @@ export const TIMEFRAME_PROFILES = {
     momentumPenalty: 18,
     minStrength: 80,
     minRR: 2.5,
-    allowCounterMomentum: false,
-    slAtrMult: 0.4,
-    slNodeMinDistance: 1.8
+    allowCounterMomentum: false
   }
 };
 
@@ -125,10 +109,10 @@ export const CONFIG = {
   SWEEP_MIN_REJECTION: 0.25,
   MIN_TP_DISTANCE: 0.005,
   MIN_TP_DISTANCE_ATR: 0.4,
+  TP_SURFACE_BUFFER: 0.15,
   STRUCTURE_SWINGS: 3,
   SYMBOL_CACHE_SECONDS: 3600,
   KLINE_CACHE_SECONDS: 15,
-  MARKET_TOP50_LIMIT: 50,
   MARKET_MAX_SYMBOLS: 1000,
   MARKET_PAGE_SIZE: 20,
   MARKET_TOP_LIMIT: 1000,
@@ -174,23 +158,21 @@ export const CONFIG = {
   MAX_TP_RR: 6.0,
   MIN_VALID_TP_COUNT: 2,
   MAX_VALID_TP_COUNT: 4,
-  TP_BUFFER_TICK_MULT: 3,
   TP_BUFFER_ATR_MULT: 0.15,
-  TP_BUFFER_PCT: 0.0005,
-  TP_BUFFER_MAX_ATR_MULT: 0.30,
+  TP_BUFFER_MIN_PCT: 0.002,
+  TP_BUFFER_MAX_PCT: 0.005,
   TP_STRUCTURE_LOOKBACK_BARS: 100,
+  TP_STRUCTURE_MIN_GAP: 2,
+  TP_PIP_BUFFER_PCT: 0.0002,
   TP_MIN_STRUCTURE_GAP_BARS: 2,
-  SL_BUFFER_TICK_MULT: 5,
-  SL_BUFFER_ATR_MULT: 0.20,
-  SL_BUFFER_PCT: 0.0008,
-  SL_BUFFER_MAX_ATR_MULT: 0.40,
   SL_MARKET_STRUCTURE_LOOKBACK: 100,
-  DEFAULT_TICK_PCT: 0.00001,
+  SL_MIN_GAP: 2,
+  SL_PIP_BUFFER_PCT: 0.0002,
+  USE_UNIFIED_TPSL: true,
   MOMENTUM_WARNING_BODY_RATIO: 0.6,
   MOMENTUM_WARNING_PENALTY: 2,
   MOMENTUM_RSI_OVERBOUGHT: 68,
   MOMENTUM_RSI_OVERSOLD: 32,
-  SIGNAL_TIMEFRAMES: ["30m", "1h", "15m"],
   EXCHANGES: {
     okx: {
       priority: 1,
