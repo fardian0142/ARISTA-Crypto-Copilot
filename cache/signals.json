@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T01:05:22.908Z",
+  "lastUpdated": "2026-10-15T02:05:22.634Z",
   "signals": {
     "FOGOUSDT:15m": {
       "sentAt": "2026-10-14T05:09:50.480Z",
@@ -234,6 +234,15 @@
       "score": 14,
       "entry": 0.33211,
       "stop": 0.33326906583361193
+    },
+    "SIGNUSDT:1h": {
+      "sentAt": "2026-10-15T02:05:21.132Z",
+      "symbol": "SIGNUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01188,
+      "stop": 0.011500621811424867
     }
   }
 }
