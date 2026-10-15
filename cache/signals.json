@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T10:05:17.512Z",
+  "lastUpdated": "2026-10-15T11:05:18.512Z",
   "signals": {
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-14T11:16:42.985Z",
@@ -153,6 +153,24 @@
       "score": 14,
       "entry": 0.2259,
       "stop": 0.21170871444929662
+    },
+    "RVNUSDT:30m": {
+      "sentAt": "2026-10-15T11:05:15.225Z",
+      "symbol": "RVNUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0015095,
+      "stop": 0.001456
+    },
+    "XDCUSDT:15m": {
+      "sentAt": "2026-10-15T11:05:17.012Z",
+      "symbol": "XDCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0338466397567525,
+      "stop": 0.03366955456371143
     }
   }
 }
