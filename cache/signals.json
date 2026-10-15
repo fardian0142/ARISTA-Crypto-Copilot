@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T23:05:12.780Z",
+  "lastUpdated": "2026-10-15T00:05:24.332Z",
   "signals": {
     "1000CHEEMSUSDT:30m": {
       "sentAt": "2026-10-14T00:12:22.209Z",
@@ -225,6 +225,15 @@
       "score": 14,
       "entry": 69.24,
       "stop": 68.52104568512831
+    },
+    "SAHARAUSDT:30m": {
+      "sentAt": "2026-10-15T00:05:22.829Z",
+      "symbol": "SAHARAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008099466550049204,
+      "stop": 0.007847752514229483
     }
   }
 }
