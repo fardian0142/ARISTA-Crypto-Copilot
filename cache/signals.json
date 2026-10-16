@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T06:02:51.594Z",
+  "lastUpdated": "2026-10-16T07:02:45.749Z",
   "signals": {
     "ARXUSDT:30m": {
       "sentAt": "2026-10-15T08:05:13.291Z",
@@ -1876,6 +1876,33 @@
       "score": 14,
       "entry": 0.02166,
       "stop": 0.02090971344352052
+    },
+    "ZORAUSDT:2h": {
+      "sentAt": "2026-10-16T07:02:40.660Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006772922502563173,
+      "stop": 0.006631517139927803
+    },
+    "IOTAUSDT:2h": {
+      "sentAt": "2026-10-16T07:02:42.494Z",
+      "symbol": "IOTAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04825,
+      "stop": 0.0459903
+    },
+    "ENJUSDT:2h": {
+      "sentAt": "2026-10-16T07:02:44.248Z",
+      "symbol": "ENJUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.029679999999999998,
+      "stop": 0.02892014423376938
     }
   }
 }
