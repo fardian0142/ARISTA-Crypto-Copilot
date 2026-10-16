@@ -126,40 +126,40 @@ export function okxFetch(path, params = {}, options = {}) {
   });
 }
 
-export function binanceFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.BINANCE_BASE_URL, path, params, {
+export function bybitFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.BYBIT_BASE_URL, path, params, {
     ...options,
-    label: "Binance"
-  });
-}
-
-export function mexcFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.MEXC_BASE_URL, path, params, {
-    ...options,
-    label: "MEXC"
+    label: "Bybit"
   }).then((json) => {
-    if (json && json.success === false) {
+    if (json && json.retCode !== 0) {
       const error = new Error(
-        "MEXC error: " + (json.message || json.code || "unknown")
+        "Bybit error: " + (json.retMsg || json.retCode || "unknown")
       );
-      error.code = json.code;
+      error.code = json.retCode;
       throw error;
     }
     return json;
   });
 }
 
-export function kucoinFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.KUCOIN_BASE_URL, path, params, {
+export function toobitFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.TOOBIT_BASE_URL, path, params, {
     ...options,
-    label: "KuCoin"
-  });
-}
-
-export function gateFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.GATE_BASE_URL, path, params, {
-    ...options,
-    label: "Gate"
+    label: "Toobit"
+  }).then((json) => {
+    if (
+      json &&
+      json.code !== undefined &&
+      json.code !== 0 &&
+      json.code !== "0"
+    ) {
+      const error = new Error(
+        "Toobit error: " + (json.message || json.code || "unknown")
+      );
+      error.code = json.code;
+      throw error;
+    }
+    return json;
   });
 }
 
@@ -220,42 +220,20 @@ export async function getExchangeSymbols(force = false) {
   }
 
   try {
-    const binanceJson = await binanceFetch("/api/v3/exchangeInfo");
+    const bybitJson = await bybitFetch(
+      "/v5/market/instruments-info",
+      { category: "linear", limit: "1000" }
+    );
 
-    if (binanceJson && Array.isArray(binanceJson.symbols)) {
-      for (const item of binanceJson.symbols) {
-        if (item.status !== "TRADING") continue;
-        if (item.quoteAsset !== "USDT") continue;
-        if (item.isSpotTradingAllowed !== true) continue;
-
-        const base = String(item.baseAsset || "").toUpperCase();
-        if (!base) continue;
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (/^X[A-Z]{4,}$/.test(base)) continue;
-
-        const symbol = base + "USDT";
-
-        if (!allSymbols.has(symbol)) {
-          allSymbols.set(symbol, {
-            symbol: symbol,
-            base: base,
-            quote: "USDT",
-            exchange: "binance"
-          });
-        }
-      }
-    }
-  } catch (e) {
-    console.error("Binance symbols error:", e.message || e);
-  }
-
-  try {
-    const mexcJson = await mexcFetch("/api/v1/contract/detail");
-
-    if (mexcJson && mexcJson.success && Array.isArray(mexcJson.data)) {
-      for (const item of mexcJson.data) {
-        if (item.state !== 0 && item.state !== "0") continue;
+    if (
+      bybitJson &&
+      bybitJson.result &&
+      Array.isArray(bybitJson.result.list)
+    ) {
+      for (const item of bybitJson.result.list) {
+        if (item.status !== "Trading") continue;
         if (item.quoteCoin !== "USDT") continue;
+        if (item.settleCoin !== "USDT") continue;
 
         const base = String(item.baseCoin || "").toUpperCase();
         if (!base) continue;
@@ -269,29 +247,26 @@ export async function getExchangeSymbols(force = false) {
             symbol: symbol,
             base: base,
             quote: "USDT",
-            exchange: "mexc"
+            exchange: "bybit"
           });
         }
       }
     }
   } catch (e) {
-    console.error("MEXC symbols error:", e.message || e);
+    console.error("Bybit symbols error:", e.message || e);
   }
 
   try {
-    const kucoinJson = await kucoinFetch("/api/v1/contracts/active");
+    const toobitJson = await toobitFetch(
+      "/api/v1/public/futures/exchangeInfo"
+    );
 
-    if (kucoinJson && kucoinJson.code === "200000" && Array.isArray(kucoinJson.data)) {
-      for (const item of kucoinJson.data) {
-        if (item.status !== "Open") continue;
-        if (item.quoteCurrency !== "USDT") continue;
-        if (item.settleCurrency !== "USDT") continue;
+    if (toobitJson && Array.isArray(toobitJson.symbols)) {
+      for (const item of toobitJson.symbols) {
+        if (item.status && item.status !== "TRADING") continue;
+        if (item.quoteAsset !== "USDT") continue;
 
-        const symbolRaw = String(item.symbol || "").toUpperCase();
-        const match = symbolRaw.match(/^([A-Z0-9]+)USDTM$/);
-        if (!match) continue;
-
-        const base = match[1];
+        const base = String(item.baseAsset || "").toUpperCase();
         if (!base) continue;
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (/^X[A-Z]{4,}$/.test(base)) continue;
@@ -303,42 +278,13 @@ export async function getExchangeSymbols(force = false) {
             symbol: symbol,
             base: base,
             quote: "USDT",
-            exchange: "kucoin"
+            exchange: "toobit"
           });
         }
       }
     }
   } catch (e) {
-    console.error("KuCoin symbols error:", e.message || e);
-  }
-
-  try {
-    const gateJson = await gateFetch("/api/v4/futures/usdt/contracts");
-
-    if (Array.isArray(gateJson)) {
-      for (const item of gateJson) {
-        const contract = String(item.name || "").toUpperCase();
-        if (!contract.endsWith("_USDT")) continue;
-
-        const base = contract.replace(/_USDT$/, "");
-        if (!base) continue;
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (/^X[A-Z]{4,}$/.test(base)) continue;
-
-        const symbol = base + "USDT";
-
-        if (!allSymbols.has(symbol)) {
-          allSymbols.set(symbol, {
-            symbol: symbol,
-            base: base,
-            quote: "USDT",
-            exchange: "gate"
-          });
-        }
-      }
-    }
-  } catch (e) {
-    console.error("Gate symbols error:", e.message || e);
+    console.error("Toobit symbols error:", e.message || e);
   }
 
   const result = Array.from(allSymbols.values());
@@ -391,9 +337,12 @@ export async function getTickers(force = false) {
 
         if (!Number.isFinite(last) || last <= 0) continue;
 
-        const quoteVolume = Number.isFinite(volCcy24h) && volCcy24h > 0
-          ? volCcy24h
-          : (Number.isFinite(vol24h) ? vol24h * last : 0);
+        const quoteVolume =
+          Number.isFinite(volCcy24h) && volCcy24h > 0
+            ? volCcy24h
+            : Number.isFinite(vol24h)
+              ? vol24h * last
+              : 0;
 
         let changePercent = 0;
         if (Number.isFinite(open24h) && open24h > 0) {
@@ -415,26 +364,33 @@ export async function getTickers(force = false) {
   }
 
   try {
-    const binanceJson = await binanceFetch("/api/v3/ticker/24hr");
+    const bybitJson = await bybitFetch(
+      "/v5/market/tickers",
+      { category: "linear" }
+    );
 
-    if (Array.isArray(binanceJson)) {
+    if (
+      bybitJson &&
+      bybitJson.result &&
+      Array.isArray(bybitJson.result.list)
+    ) {
       const seen = new Set(result.map((t) => t.symbol));
 
-      for (const item of binanceJson) {
-        const symbol = String(item.symbol || "").toUpperCase();
-        if (!symbol.endsWith("USDT")) continue;
+      for (const item of bybitJson.result.list) {
+        const raw = String(item.symbol || "").toUpperCase();
+        if (!raw.endsWith("USDT")) continue;
 
-        const base = symbol.replace(/USDT$/, "");
+        const base = raw.replace(/USDT$/, "");
+        const symbol = base + "USDT";
 
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (base.includes("TEST")) continue;
-
         if (seen.has(symbol)) continue;
         if (!validSet.has(symbol)) continue;
 
         const last = parseFloat(item.lastPrice || "0");
-        const open24h = parseFloat(item.openPrice || "0");
-        const quoteVolume = parseFloat(item.quoteVolume || "0");
+        const open24h = parseFloat(item.prevPrice24h || "0");
+        const quoteVolume = parseFloat(item.turnover24h || "0");
 
         if (!Number.isFinite(last) || last <= 0) continue;
 
@@ -456,40 +412,41 @@ export async function getTickers(force = false) {
       }
     }
   } catch (e) {
-    console.error("Binance tickers error:", e.message || e);
+    console.error("Bybit tickers error:", e.message || e);
   }
 
   try {
-    const mexcJson = await mexcFetch("/api/v1/contract/ticker");
+    const toobitJson = await toobitFetch("/api/v1/public/futures/tickers");
 
-    if (mexcJson && mexcJson.success && Array.isArray(mexcJson.data)) {
+    if (toobitJson && Array.isArray(toobitJson.data)) {
       const seen = new Set(result.map((t) => t.symbol));
 
-      for (const item of mexcJson.data) {
-        const symbol = String(item.symbol || "").toUpperCase();
-        if (!symbol.endsWith("_USDT")) continue;
+      for (const item of toobitJson.data) {
+        const raw = String(item.symbol || "").toUpperCase();
+        if (!raw.endsWith("USDT")) continue;
 
-        const base = symbol.replace(/_USDT$/, "");
+        const base = raw.replace(/USDT$/, "");
+        const symbol = base + "USDT";
 
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (base.includes("TEST")) continue;
-
-        const normalized = base + "USDT";
-        if (seen.has(normalized)) continue;
-        if (!validSet.has(normalized)) continue;
+        if (seen.has(symbol)) continue;
+        if (!validSet.has(symbol)) continue;
 
         const last = parseFloat(item.lastPrice || "0");
-        const quoteVolume = parseFloat(item.amount24 || item.volume24 || "0");
+        const quoteVolume = parseFloat(
+          item.quoteVolume || item.volume24h || "0"
+        );
 
         if (!Number.isFinite(last) || last <= 0) continue;
 
         let changePercent = 0;
-        if (Number.isFinite(item.riseFallRate) && item.riseFallRate !== null) {
-          changePercent = parseFloat(item.riseFallRate) * 100;
+        if (Number.isFinite(parseFloat(item.priceChangePercent))) {
+          changePercent = parseFloat(item.priceChangePercent);
         }
 
         result.push({
-          symbol: normalized,
+          symbol: symbol,
           base: base,
           quote: "USDT",
           price: last,
@@ -497,100 +454,11 @@ export async function getTickers(force = false) {
           quote_volume: quoteVolume
         });
 
-        seen.add(normalized);
+        seen.add(symbol);
       }
     }
   } catch (e) {
-    console.error("MEXC tickers error:", e.message || e);
-  }
-
-  try {
-    const kucoinJson = await kucoinFetch("/api/v1/contracts/active");
-
-    if (kucoinJson && kucoinJson.code === "200000" && Array.isArray(kucoinJson.data)) {
-      const seen = new Set(result.map((t) => t.symbol));
-
-      for (const item of kucoinJson.data) {
-        if (item.status !== "Open") continue;
-        if (item.quoteCurrency !== "USDT") continue;
-
-        const symbolRaw = String(item.symbol || "").toUpperCase();
-        const match = symbolRaw.match(/^([A-Z0-9]+)USDTM$/);
-        if (!match) continue;
-
-        const base = match[1];
-        const normalized = base + "USDT";
-
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (base.includes("TEST")) continue;
-
-        if (seen.has(normalized)) continue;
-        if (!validSet.has(normalized)) continue;
-
-        const last = parseFloat(item.lastTradePrice || "0");
-        const quoteVolume = parseFloat(item.turnoverOf24h || "0");
-
-        if (!Number.isFinite(last) || last <= 0) continue;
-
-        result.push({
-          symbol: normalized,
-          base: base,
-          quote: "USDT",
-          price: last,
-          change: 0,
-          quote_volume: quoteVolume
-        });
-
-        seen.add(normalized);
-      }
-    }
-  } catch (e) {
-    console.error("KuCoin tickers error:", e.message || e);
-  }
-
-  try {
-    const gateJson = await gateFetch("/api/v4/futures/usdt/tickers");
-
-    if (Array.isArray(gateJson)) {
-      const seen = new Set(result.map((t) => t.symbol));
-
-      for (const item of gateJson) {
-        const contract = String(item.contract || "").toUpperCase();
-        if (!contract.endsWith("_USDT")) continue;
-
-        const base = contract.replace(/_USDT$/, "");
-        const normalized = base + "USDT";
-
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (base.includes("TEST")) continue;
-
-        if (seen.has(normalized)) continue;
-        if (!validSet.has(normalized)) continue;
-
-        const last = parseFloat(item.last || "0");
-        const quoteVolume = parseFloat(item.volume_24h_quote || item.volume_24h_settle || "0");
-
-        if (!Number.isFinite(last) || last <= 0) continue;
-
-        let changePercent = 0;
-        if (Number.isFinite(item.change_percentage)) {
-          changePercent = parseFloat(item.change_percentage);
-        }
-
-        result.push({
-          symbol: normalized,
-          base: base,
-          quote: "USDT",
-          price: last,
-          change: changePercent,
-          quote_volume: quoteVolume
-        });
-
-        seen.add(normalized);
-      }
-    }
-  } catch (e) {
-    console.error("Gate tickers error:", e.message || e);
+    console.error("Toobit tickers error:", e.message || e);
   }
 
   result.sort((a, b) => b.quote_volume - a.quote_volume);
@@ -770,30 +638,32 @@ async function getKlinesOKX(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-async function getKlinesBinance(symbol, interval, limit) {
-  const binanceSymbol = symbol.toUpperCase();
-  const binanceInterval = CONFIG.BINANCE_INTERVAL_MAP[interval];
+async function getKlinesBybit(symbol, interval, limit) {
+  const bybitSymbol = symbol.toUpperCase();
+  const bybitInterval = CONFIG.BYBIT_INTERVAL_MAP[interval];
 
-  if (!binanceInterval) {
-    throw new Error("Binance interval unsupported: " + interval);
+  if (!bybitInterval) {
+    throw new Error("Bybit interval unsupported: " + interval);
   }
 
-  const size = Math.min(limit, CONFIG.EXCHANGES.binance.maxCandles);
+  const size = Math.min(limit, CONFIG.EXCHANGES.bybit.maxCandles);
 
-  const json = await binanceFetch("/api/v3/klines", {
-    symbol: binanceSymbol,
-    interval: binanceInterval,
+  const json = await bybitFetch("/v5/market/kline", {
+    category: "linear",
+    symbol: bybitSymbol,
+    interval: bybitInterval,
     limit: String(size)
   });
 
-  if (!Array.isArray(json)) {
-    throw new Error("Binance klines پاسخ نامعتبر");
+  if (!json || !json.result || !Array.isArray(json.result.list)) {
+    throw new Error("Bybit klines پاسخ نامعتبر");
   }
 
   const rawCandles = [];
+  const intervalMs = INTERVAL_MS[interval] || 3600000;
 
-  for (const row of json) {
-    if (!Array.isArray(row) || row.length < 7) continue;
+  for (const row of json.result.list) {
+    if (!Array.isArray(row) || row.length < 6) continue;
 
     const openTime = parseInt(row[0], 10);
     const open = parseFloat(row[1]);
@@ -801,8 +671,19 @@ async function getKlinesBinance(symbol, interval, limit) {
     const low = parseFloat(row[3]);
     const close = parseFloat(row[4]);
     const volume = parseFloat(row[5]);
-    const closeTime = parseInt(row[6], 10);
-    const quoteVolume = parseFloat(row[7] || "0");
+    const turnover = parseFloat(row[6] || "0");
+
+    if (
+      !Number.isFinite(openTime) ||
+      !Number.isFinite(open) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(low) ||
+      !Number.isFinite(close)
+    ) {
+      continue;
+    }
+
+    const closeTime = openTime + intervalMs - 1;
     const isClosed = Date.now() > closeTime;
 
     rawCandles.push({
@@ -812,7 +693,7 @@ async function getKlinesBinance(symbol, interval, limit) {
       low,
       close,
       volume,
-      quoteVolume,
+      quoteVolume: turnover,
       confirm: isClosed ? "1" : "0"
     });
   }
@@ -822,198 +703,40 @@ async function getKlinesBinance(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-async function getKlinesMEXC(symbol, interval, limit) {
+async function getKlinesToobit(symbol, interval, limit) {
   const base = symbol.replace(/USDT$/, "");
-  const mexcSymbol = base + "_USDT";
-  const mexcInterval = CONFIG.MEXC_INTERVAL_MAP[interval];
+  const toobitSymbol = base + "-USDT";
+  const toobitInterval = CONFIG.TOOBIT_INTERVAL_MAP[interval];
 
-  if (!mexcInterval) {
-    throw new Error("MEXC interval unsupported: " + interval);
+  if (!toobitInterval) {
+    throw new Error("Toobit interval unsupported: " + interval);
   }
 
-  const size = Math.min(limit, CONFIG.EXCHANGES.mexc.maxCandles);
+  const size = Math.min(limit, CONFIG.EXCHANGES.toobit.maxCandles);
 
-  const now = Math.floor(Date.now() / 1000);
-  const intervalSec = Math.floor((INTERVAL_MS[interval] || 3600000) / 1000);
-  const start = now - (size * intervalSec);
-
-  const json = await mexcFetch("/api/v1/contract/kline/" + mexcSymbol, {
-    interval: mexcInterval,
-    start: String(start),
-    end: String(now)
-  });
-
-  if (!json || !json.success || !json.data) {
-    throw new Error("MEXC klines پاسخ نامعتبر");
-  }
-
-  const data = json.data;
-
-  if (
-    !Array.isArray(data.time) ||
-    !Array.isArray(data.open) ||
-    !Array.isArray(data.high) ||
-    !Array.isArray(data.low) ||
-    !Array.isArray(data.close) ||
-    !Array.isArray(data.vol)
-  ) {
-    throw new Error("MEXC klines ساختار نامعتبر");
-  }
-
-  const length = Math.min(
-    data.time.length,
-    data.open.length,
-    data.high.length,
-    data.low.length,
-    data.close.length,
-    data.vol.length
-  );
-
-  const rawCandles = [];
-  const nowMs = Date.now();
-
-  for (let i = 0; i < length; i++) {
-    const openTimeMs = data.time[i] * 1000;
-    const open = parseFloat(data.open[i]);
-    const high = parseFloat(data.high[i]);
-    const low = parseFloat(data.low[i]);
-    const close = parseFloat(data.close[i]);
-    const volume = parseFloat(data.vol[i]);
-
-    if (
-      !Number.isFinite(openTimeMs) ||
-      !Number.isFinite(open) ||
-      !Number.isFinite(high) ||
-      !Number.isFinite(low) ||
-      !Number.isFinite(close)
-    ) {
-      continue;
-    }
-
-    const closeTime = openTimeMs + (intervalSec * 1000) - 1;
-    const isClosed = nowMs > closeTime;
-
-    rawCandles.push({
-      time: openTimeMs,
-      open,
-      high,
-      low,
-      close,
-      volume,
-      quoteVolume: 0,
-      confirm: isClosed ? "1" : "0"
-    });
-  }
-
-  rawCandles.sort((a, b) => a.time - b.time);
-
-  return normalizeCandles(rawCandles, interval);
-}
-
-async function getKlinesKuCoin(symbol, interval, limit) {
-  const base = symbol.replace(/USDT$/, "");
-  const kucoinSymbol = base + "USDTM";
-  const granularity = CONFIG.KUCOIN_INTERVAL_MAP[interval];
-
-  if (!granularity) {
-    throw new Error("KuCoin interval unsupported: " + interval);
-  }
-
-  const now = Date.now();
-  const intervalMs = INTERVAL_MS[interval] || 3600000;
-  const size = Math.min(limit, CONFIG.EXCHANGES.kucoin.maxCandles);
-  const from = now - (size * intervalMs);
-
-  const json = await kucoinFetch("/api/v1/kline/query", {
-    symbol: kucoinSymbol,
-    granularity: granularity,
-    from: String(from)
-  });
-
-  if (!json || json.code !== "200000" || !Array.isArray(json.data)) {
-    throw new Error("KuCoin klines پاسخ نامعتبر");
-  }
-
-  const rawCandles = [];
-  const nowMs = Date.now();
-
-  for (const row of json.data) {
-    if (!Array.isArray(row) || row.length < 5) continue;
-
-    const openTimeMs = parseInt(row[0], 10);
-    const open = parseFloat(row[1]);
-    const high = parseFloat(row[2]);
-    const low = parseFloat(row[3]);
-    const close = parseFloat(row[4]);
-    const volume = parseFloat(row[5] || "0");
-
-    if (
-      !Number.isFinite(openTimeMs) ||
-      !Number.isFinite(open) ||
-      !Number.isFinite(high) ||
-      !Number.isFinite(low) ||
-      !Number.isFinite(close)
-    ) {
-      continue;
-    }
-
-    const closeTime = openTimeMs + intervalMs - 1;
-    const isClosed = nowMs > closeTime;
-
-    rawCandles.push({
-      time: openTimeMs,
-      open,
-      high,
-      low,
-      close,
-      volume,
-      quoteVolume: 0,
-      confirm: isClosed ? "1" : "0"
-    });
-  }
-
-  rawCandles.sort((a, b) => a.time - b.time);
-
-  return normalizeCandles(rawCandles, interval);
-}
-
-async function getKlinesGate(symbol, interval, limit) {
-  const base = symbol.replace(/USDT$/, "");
-  const gateContract = base + "_USDT";
-  const gateInterval = CONFIG.GATE_INTERVAL_MAP[interval];
-
-  if (!gateInterval) {
-    throw new Error("Gate interval unsupported: " + interval);
-  }
-
-  const size = Math.min(limit, CONFIG.EXCHANGES.gate.maxCandles);
-
-  const json = await gateFetch("/api/v4/futures/usdt/candlesticks", {
-    contract: gateContract,
-    interval: gateInterval,
+  const json = await toobitFetch("/api/v1/public/futures/klines", {
+    symbol: toobitSymbol,
+    interval: toobitInterval,
     limit: String(size)
   });
 
-  if (!Array.isArray(json)) {
-    throw new Error("Gate klines پاسخ نامعتبر");
+  if (!json || !Array.isArray(json.data)) {
+    throw new Error("Toobit klines پاسخ نامعتبر");
   }
 
   const rawCandles = [];
-  const nowMs = Date.now();
   const intervalMs = INTERVAL_MS[interval] || 3600000;
 
-  for (const row of json) {
-    if (!row || typeof row !== "object") continue;
-
-    const openTimeSec = Number(row.t);
-    const open = parseFloat(row.o);
-    const high = parseFloat(row.h);
-    const low = parseFloat(row.l);
-    const close = parseFloat(row.c);
-    const volume = parseFloat(row.v || "0");
+  for (const row of json.data) {
+    const openTime = parseInt(row[0] ?? row.openTime, 10);
+    const open = parseFloat(row[1] ?? row.open);
+    const high = parseFloat(row[2] ?? row.high);
+    const low = parseFloat(row[3] ?? row.low);
+    const close = parseFloat(row[4] ?? row.close);
+    const volume = parseFloat(row[5] ?? row.volume ?? "0");
 
     if (
-      !Number.isFinite(openTimeSec) ||
+      !Number.isFinite(openTime) ||
       !Number.isFinite(open) ||
       !Number.isFinite(high) ||
       !Number.isFinite(low) ||
@@ -1022,12 +745,11 @@ async function getKlinesGate(symbol, interval, limit) {
       continue;
     }
 
-    const openTimeMs = openTimeSec * 1000;
-    const closeTime = openTimeMs + intervalMs - 1;
-    const isClosed = nowMs > closeTime;
+    const closeTime = openTime + intervalMs - 1;
+    const isClosed = Date.now() > closeTime;
 
     rawCandles.push({
-      time: openTimeMs,
+      time: openTime,
       open,
       high,
       low,
@@ -1056,17 +778,11 @@ export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit
         case "okx":
           candles = await getKlinesOKX(alias, interval, limit);
           break;
-        case "binance":
-          candles = await getKlinesBinance(alias, interval, limit);
+        case "bybit":
+          candles = await getKlinesBybit(alias, interval, limit);
           break;
-        case "mexc":
-          candles = await getKlinesMEXC(alias, interval, limit);
-          break;
-        case "kucoin":
-          candles = await getKlinesKuCoin(alias, interval, limit);
-          break;
-        case "gate":
-          candles = await getKlinesGate(alias, interval, limit);
+        case "toobit":
+          candles = await getKlinesToobit(alias, interval, limit);
           break;
         default:
           throw new Error("Unknown exchange: " + exchangeKey);
@@ -1117,7 +833,11 @@ export async function getKlines(
 
     if (!candles || candles.length < CONFIG.MIN_CANDLES) {
       throw new Error(
-        "Not enough candles from " + exchangeKey + " (" + (candles ? candles.length : 0) + ")"
+        "Not enough candles from " +
+          exchangeKey +
+          " (" +
+          (candles ? candles.length : 0) +
+          ")"
       );
     }
 
