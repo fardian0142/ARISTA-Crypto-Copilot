@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-15T23:02:54.594Z",
+  "lastUpdated": "2026-10-16T00:03:00.798Z",
   "signals": {
-    "UBERUSDT:15m": {
-      "sentAt": "2026-10-14T23:05:11.279Z",
-      "symbol": "UBERUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 69.24,
-      "stop": 68.52104568512831
-    },
     "SAHARAUSDT:30m": {
       "sentAt": "2026-10-15T00:05:22.829Z",
       "symbol": "SAHARAUSDT",
@@ -1633,6 +1624,69 @@
       "score": 14,
       "entry": 0.0050100000000000006,
       "stop": 0.004946184792484077
+    },
+    "NOTUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:48.785Z",
+      "symbol": "NOTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004109,
+      "stop": 0.00039847380067329534
+    },
+    "SANDUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:50.514Z",
+      "symbol": "SANDUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.055474738765353075,
+      "stop": 0.05423315569673934
+    },
+    "MONUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:52.266Z",
+      "symbol": "MONUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02291,
+      "stop": 0.02234827374557801
+    },
+    "LUNCUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:54.004Z",
+      "symbol": "LUNCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00004783429503531043,
+      "stop": 0.000047242234245359505
+    },
+    "ZENUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:55.732Z",
+      "symbol": "ZENUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 5.959153489760713,
+      "stop": 5.851787
+    },
+    "CITYUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:57.484Z",
+      "symbol": "CITYUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.333,
+      "stop": 0.3272733161022018
+    },
+    "BPUSDT:2h": {
+      "sentAt": "2026-10-16T00:02:59.296Z",
+      "symbol": "BPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.1305,
+      "stop": 1.0829030854997426
     }
   }
 }
