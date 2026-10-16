@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-16T08:02:49.897Z",
+  "lastUpdated": "2026-10-16T09:02:51.689Z",
   "signals": {
-    "ARXUSDT:30m": {
-      "sentAt": "2026-10-15T08:05:13.291Z",
-      "symbol": "ARXUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2259,
-      "stop": 0.21170871444929662
-    },
     "RVNUSDT:30m": {
       "sentAt": "2026-10-15T11:05:15.225Z",
       "symbol": "RVNUSDT",
