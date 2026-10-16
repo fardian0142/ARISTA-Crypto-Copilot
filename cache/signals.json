@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T04:02:45.154Z",
+  "lastUpdated": "2026-10-16T05:02:45.652Z",
   "signals": {
     "ACHUSDT:30m": {
       "sentAt": "2026-10-15T05:05:17.482Z",
@@ -1813,6 +1813,33 @@
       "score": 14,
       "entry": 0.0582,
       "stop": 0.05732717077923846
+    },
+    "RENDERUSDT:2h": {
+      "sentAt": "2026-10-16T05:02:40.745Z",
+      "symbol": "RENDERUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.906848953085421,
+      "stop": 1.8788005982369025
+    },
+    "ARUSDT:2h": {
+      "sentAt": "2026-10-16T05:02:42.445Z",
+      "symbol": "ARUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3.9135,
+      "stop": 3.8372052
+    },
+    "TENCENTUSDT:2h": {
+      "sentAt": "2026-10-16T05:02:44.150Z",
+      "symbol": "TENCENTUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 53.86691402202545,
+      "stop": 54.48352683197091
     }
   }
 }
