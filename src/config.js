@@ -67,10 +67,8 @@ export const TIMEFRAME_PROFILES = {
 
 export const CONFIG = {
   OKX_BASE_URL: "https://www.okx.com",
-  BINANCE_BASE_URL: "https://data-api.binance.vision",
-  MEXC_BASE_URL: "https://contract.mexc.com",
-  KUCOIN_BASE_URL: "https://api-futures.kucoin.com",
-  GATE_BASE_URL: "https://api.gateio.ws",
+  BYBIT_BASE_URL: "https://api.bybit.com",
+  TOOBIT_BASE_URL: "https://api.toobit.com",
   SWEEP_ZONE_DISTANCE_ATR: 1.25,
   SWEEP_MAX_EVENT_DISTANCE_ATR: 1.5,
   RANGE_SETUP_MAX_AGE: 30,
@@ -180,29 +178,17 @@ export const CONFIG = {
       maxCandles: 300,
       marketType: "swap"
     },
-    binance: {
+    bybit: {
       priority: 2,
       enabled: true,
       maxCandles: 1000,
-      marketType: "spot"
+      marketType: "linear"
     },
-    mexc: {
+    toobit: {
       priority: 3,
       enabled: true,
       maxCandles: 1000,
       marketType: "swap"
-    },
-    kucoin: {
-      priority: 4,
-      enabled: true,
-      maxCandles: 200,
-      marketType: "futures"
-    },
-    gate: {
-      priority: 5,
-      enabled: true,
-      maxCandles: 1000,
-      marketType: "futures"
     }
   },
   SYMBOL_ALIASES: {
@@ -247,27 +233,7 @@ export const CONFIG = {
     "12h": "12H",
     "24h": "1D"
   },
-  BINANCE_INTERVAL_MAP: {
-    "15m": "15m",
-    "30m": "30m",
-    "1h": "1h",
-    "2h": "2h",
-    "4h": "4h",
-    "6h": "6h",
-    "12h": "12h",
-    "24h": "1d"
-  },
-  MEXC_INTERVAL_MAP: {
-    "15m": "Min15",
-    "30m": "Min30",
-    "1h": "Min60",
-    "2h": "Min120",
-    "4h": "Hour4",
-    "6h": "Hour6",
-    "12h": "Hour12",
-    "24h": "Day1"
-  },
-  KUCOIN_INTERVAL_MAP: {
+  BYBIT_INTERVAL_MAP: {
     "15m": "15",
     "30m": "30",
     "1h": "60",
@@ -275,9 +241,9 @@ export const CONFIG = {
     "4h": "240",
     "6h": "360",
     "12h": "720",
-    "24h": "1440"
+    "24h": "D"
   },
-  GATE_INTERVAL_MAP: {
+  TOOBIT_INTERVAL_MAP: {
     "15m": "15m",
     "30m": "30m",
     "1h": "1h",
