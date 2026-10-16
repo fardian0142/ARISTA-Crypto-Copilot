@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-16T01:02:49.504Z",
+  "lastUpdated": "2026-10-16T02:03:00.880Z",
   "signals": {
-    "TRXUSDT:15m": {
-      "sentAt": "2026-10-15T01:05:21.405Z",
-      "symbol": "TRXUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.33211,
-      "stop": 0.33326906583361193
-    },
     "SIGNUSDT:1h": {
       "sentAt": "2026-10-15T02:05:21.132Z",
       "symbol": "SIGNUSDT",
@@ -1723,6 +1714,78 @@
       "score": 14,
       "entry": 3.606746985041896,
       "stop": 3.5465748742378334
+    },
+    "IOSTUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:47.434Z",
+      "symbol": "IOSTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0007775,
+      "stop": 0.0007628991262895972
+    },
+    "SOLUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:49.138Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 104.15966718540247,
+      "stop": 103.27609464525432
+    },
+    "IMXUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:50.885Z",
+      "symbol": "IMXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1598,
+      "stop": 0.15620921093206674
+    },
+    "CSOPSKHYNIX2LUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:52.568Z",
+      "symbol": "CSOPSKHYNIX2LUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2.5705,
+      "stop": 2.3362066398810364
+    },
+    "VTHOUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:54.272Z",
+      "symbol": "VTHOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00063885,
+      "stop": 0.0006315998476219456
+    },
+    "OKBUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:55.984Z",
+      "symbol": "OKBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 116.95,
+      "stop": 114.41016738934009
+    },
+    "ILVUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:57.683Z",
+      "symbol": "ILVUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3.3425000000000002,
+      "stop": 3.2743792730225367
+    },
+    "AIAUSDT:2h": {
+      "sentAt": "2026-10-16T02:02:59.377Z",
+      "symbol": "AIAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.076455,
+      "stop": 0.07382126083506553
     }
   }
 }
