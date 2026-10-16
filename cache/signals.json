@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T15:01:53.151Z",
+  "lastUpdated": "2026-10-16T16:01:49.468Z",
   "signals": {
     "MEMEUSDT:[object Object]": {
       "sentAt": "2026-10-15T17:02:46.709Z",
@@ -2056,6 +2056,24 @@
       "score": 14,
       "entry": 44.261559999999996,
       "stop": 43.18899701492454
+    },
+    "XLEUSDT:2h": {
+      "sentAt": "2026-10-16T16:01:46.206Z",
+      "symbol": "XLEUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 67.76873229784424,
+      "stop": 67.993502
+    },
+    "ZMUSDT:2h": {
+      "sentAt": "2026-10-16T16:01:47.966Z",
+      "symbol": "ZMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 93.89680618720169,
+      "stop": 93.06507864319808
     }
   }
 }
