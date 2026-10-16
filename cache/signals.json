@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T10:02:48.137Z",
+  "lastUpdated": "2026-10-16T11:02:50.352Z",
   "signals": {
     "RVNUSDT:30m": {
       "sentAt": "2026-10-15T11:05:15.225Z",
@@ -1921,6 +1921,42 @@
       "score": 14,
       "entry": 0.0026214999999999997,
       "stop": 0.0025810317121123983
+    },
+    "XLMUSDT:2h": {
+      "sentAt": "2026-10-16T11:02:43.225Z",
+      "symbol": "XLMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1825,
+      "stop": 0.18075421718339202
+    },
+    "AEVOUSDT:2h": {
+      "sentAt": "2026-10-16T11:02:45.247Z",
+      "symbol": "AEVOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.024100000000000003,
+      "stop": 0.023345194
+    },
+    "LDOUSDT:2h": {
+      "sentAt": "2026-10-16T11:02:47.070Z",
+      "symbol": "LDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.41370568879453656,
+      "stop": 0.3993220699491011
+    },
+    "FLUIDUSDT:2h": {
+      "sentAt": "2026-10-16T11:02:48.849Z",
+      "symbol": "FLUIDUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 2.2869188320725846,
+      "stop": 2.3858070490599035
     }
   }
 }
