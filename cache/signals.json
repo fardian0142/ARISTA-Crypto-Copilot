@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T18:01:55.482Z",
+  "lastUpdated": "2026-10-16T19:01:42.975Z",
   "signals": {
     "MINAUSDT:[object Object]": {
       "sentAt": "2026-10-15T19:02:53.138Z",
@@ -155,34 +155,6 @@
       "entry": null,
       "stop": null
     },
-    "CHZUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:02:51.720Z",
-      "symbol": "CHZUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.014119339369501788,
-        "stop": 0.013907897863426527
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "OFCUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:02:53.636Z",
-      "symbol": "OFCUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.006364,
-        "stop": 0.006094985082767162
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
     "FLOCKUSDT:[object Object]": {
       "sentAt": "2026-10-15T19:02:56.692Z",
       "symbol": "FLOCKUSDT",
@@ -191,48 +163,6 @@
         "score": 14,
         "entry": 0.04615716882786365,
         "stop": 0.044681807053870114
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "DOSUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:02:57.192Z",
-      "symbol": "DOSUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.1890513189025093,
-        "stop": 0.17675563553998935
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "LUNAUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:00.689Z",
-      "symbol": "LUNAUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.0435,
-        "stop": 0.042591159999999996
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "RIVERUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:04.353Z",
-      "symbol": "RIVERUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 1.008504,
-        "stop": 0.9470141680595572
       },
       "direction": null,
       "score": null,
@@ -253,48 +183,6 @@
       "entry": null,
       "stop": null
     },
-    "SYNUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:08.114Z",
-      "symbol": "SYNUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.16941,
-        "stop": 0.16228221946486504
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "MSFTBUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:11.671Z",
-      "symbol": "MSFTBUSDT",
-      "timeframe": {
-        "direction": "bearish",
-        "score": 14,
-        "entry": 540.6091200000001,
-        "stop": 545.8493647337269
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "VTHOUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:13.520Z",
-      "symbol": "VTHOUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.0006355,
-        "stop": 0.0006132926725545129
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
     "PDDUSDT:[object Object]": {
       "sentAt": "2026-10-15T19:03:22.214Z",
       "symbol": "PDDUSDT",
@@ -309,20 +197,6 @@
       "entry": null,
       "stop": null
     },
-    "CITYUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:22.564Z",
-      "symbol": "CITYUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 0.333,
-        "stop": 0.32702836697386933
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
     "VANAUSDT:[object Object]": {
       "sentAt": "2026-10-15T20:03:28.083Z",
       "symbol": "VANAUSDT",
@@ -331,20 +205,6 @@
         "score": 14,
         "entry": 1.0095,
         "stop": 0.9807948
-      },
-      "direction": null,
-      "score": null,
-      "entry": null,
-      "stop": null
-    },
-    "CRWVUSDT:[object Object]": {
-      "sentAt": "2026-10-15T18:03:26.227Z",
-      "symbol": "CRWVUSDT",
-      "timeframe": {
-        "direction": "bullish",
-        "score": 14,
-        "entry": 66.09,
-        "stop": 63.29141422665897
       },
       "direction": null,
       "score": null,
@@ -1442,6 +1302,15 @@
       "score": 14,
       "entry": 8.14091192730513,
       "stop": 7.974957797365567
+    },
+    "TTWOUSDT:2h": {
+      "sentAt": "2026-10-16T19:01:41.473Z",
+      "symbol": "TTWOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 204.84956805360758,
+      "stop": 201.69763651016277
     }
   }
 }
