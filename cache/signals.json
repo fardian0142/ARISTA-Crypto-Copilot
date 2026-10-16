@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-16T05:02:45.652Z",
+  "lastUpdated": "2026-10-16T06:02:51.594Z",
   "signals": {
-    "ACHUSDT:30m": {
-      "sentAt": "2026-10-15T05:05:17.482Z",
-      "symbol": "ACHUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0053195,
-      "stop": 0.005149150291222521
-    },
-    "TOWNSUSDT:30m": {
-      "sentAt": "2026-10-15T05:05:19.228Z",
-      "symbol": "TOWNSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.001603,
-      "stop": 0.001527586627052188
-    },
     "ARXUSDT:30m": {
       "sentAt": "2026-10-15T08:05:13.291Z",
       "symbol": "ARXUSDT",
@@ -1840,6 +1822,60 @@
       "score": 14,
       "entry": 53.86691402202545,
       "stop": 54.48352683197091
+    },
+    "CFXUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:41.305Z",
+      "symbol": "CFXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05585,
+      "stop": 0.054791268165867865
+    },
+    "CROUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:43.053Z",
+      "symbol": "CROUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05786,
+      "stop": 0.057235089898679765
+    },
+    "0GUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:44.810Z",
+      "symbol": "0GUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.25455102987826733,
+      "stop": 0.242049666
+    },
+    "LIGHTUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:46.570Z",
+      "symbol": "LIGHTUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2007632,
+      "stop": 0.2119291065672737
+    },
+    "HAEDALUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:48.303Z",
+      "symbol": "HAEDALUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.018670241365987193,
+      "stop": 0.018202581296014635
+    },
+    "SQDUSDT:2h": {
+      "sentAt": "2026-10-16T06:02:50.093Z",
+      "symbol": "SQDUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02166,
+      "stop": 0.02090971344352052
     }
   }
 }
