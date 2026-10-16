@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T14:01:49.097Z",
+  "lastUpdated": "2026-10-16T15:01:53.151Z",
   "signals": {
     "MEMEUSDT:[object Object]": {
       "sentAt": "2026-10-15T17:02:46.709Z",
@@ -2029,6 +2029,33 @@
       "score": 14,
       "entry": 1649.8,
       "stop": 1632.8237776903477
+    },
+    "FLOWUSDT:2h": {
+      "sentAt": "2026-10-16T15:01:48.161Z",
+      "symbol": "FLOWUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.032555,
+      "stop": 0.031185177886961728
+    },
+    "AAVEUSDT:2h": {
+      "sentAt": "2026-10-16T15:01:49.907Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 160.20758534965972,
+      "stop": 154.50803399999998
+    },
+    "URNMUSDT:2h": {
+      "sentAt": "2026-10-16T15:01:51.648Z",
+      "symbol": "URNMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 44.261559999999996,
+      "stop": 43.18899701492454
     }
   }
 }
