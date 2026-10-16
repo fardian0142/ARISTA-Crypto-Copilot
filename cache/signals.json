@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T07:02:45.749Z",
+  "lastUpdated": "2026-10-16T08:02:49.897Z",
   "signals": {
     "ARXUSDT:30m": {
       "sentAt": "2026-10-15T08:05:13.291Z",
@@ -1903,6 +1903,33 @@
       "score": 14,
       "entry": 0.029679999999999998,
       "stop": 0.02892014423376938
+    },
+    "BILLUSDT:2h": {
+      "sentAt": "2026-10-16T08:02:44.793Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00739,
+      "stop": 0.006975980666528494
+    },
+    "TUTUSDT:2h": {
+      "sentAt": "2026-10-16T08:02:46.577Z",
+      "symbol": "TUTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.019941532947949574,
+      "stop": 0.019752533773771914
+    },
+    "XVGUSDT:2h": {
+      "sentAt": "2026-10-16T08:02:48.390Z",
+      "symbol": "XVGUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0026214999999999997,
+      "stop": 0.0025810317121123983
     }
   }
 }
