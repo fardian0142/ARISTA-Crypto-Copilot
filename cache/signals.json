@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-16T13:01:58.686Z",
+  "lastUpdated": "2026-10-16T14:01:49.097Z",
   "signals": {
-    "AIOTUSDT:15m": {
-      "sentAt": "2026-10-15T13:05:25.837Z",
-      "symbol": "AIOTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05294,
-      "stop": 0.051863371668430885
-    },
     "MEMEUSDT:[object Object]": {
       "sentAt": "2026-10-15T17:02:46.709Z",
       "symbol": "MEMEUSDT",
@@ -1993,6 +1984,51 @@
       "score": 14,
       "entry": 16.12516,
       "stop": 15.753020152527206
+    },
+    "TURBOUSDT:2h": {
+      "sentAt": "2026-10-16T14:01:40.445Z",
+      "symbol": "TURBOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0009074191375437062,
+      "stop": 0.0008864175399999999
+    },
+    "ZETAUSDT:2h": {
+      "sentAt": "2026-10-16T14:01:42.233Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04411085037304468,
+      "stop": 0.04300617100223466
+    },
+    "SOFTBANKUSDT:2h": {
+      "sentAt": "2026-10-16T14:01:44.005Z",
+      "symbol": "SOFTBANKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 31.369999999999997,
+      "stop": 30.196962390515697
+    },
+    "RIOTUSDT:2h": {
+      "sentAt": "2026-10-16T14:01:45.777Z",
+      "symbol": "RIOTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 14.68,
+      "stop": 14.460971084789316
+    },
+    "XPTUSDT:2h": {
+      "sentAt": "2026-10-16T14:01:47.596Z",
+      "symbol": "XPTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1649.8,
+      "stop": 1632.8237776903477
     }
   }
 }
