@@ -1,93 +1,90 @@
-import { promises as fs } from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
+import { CACHE_FILE, CACHE_TTL_HOURS } from "./config.js";
 
-const CACHE_DIR = path.join(process.cwd(), "cache");
-const CACHE_FILE = path.join(CACHE_DIR, "signals.json");
+const TTL_MS = CACHE_TTL_HOURS * 60 * 60 * 1000;
 
-const MAX_AGE_MS = 24 * 60 * 60 * 1000;
-
-async function ensureCacheDir() {
-  await fs.mkdir(CACHE_DIR, { recursive: true });
+function ensureDir(filePath) {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
 }
 
-function makeKey(symbol, timeframe) {
-  return symbol + ":" + timeframe;
-}
-
-export async function readCache() {
+export function loadCache() {
   try {
-    await ensureCacheDir();
-    const content = await fs.readFile(CACHE_FILE, "utf-8");
-    const data = JSON.parse(content);
-
-    if (!data || typeof data !== "object") {
-      return { lastUpdated: new Date().toISOString(), signals: {} };
+    if (!fs.existsSync(CACHE_FILE)) {
+      return {};
     }
 
-    if (!data.signals || typeof data.signals !== "object") {
-      data.signals = {};
+    const raw = fs.readFileSync(CACHE_FILE, "utf8");
+    const parsed = JSON.parse(raw);
+
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return {};
     }
 
-    return data;
+    const now = Date.now();
+    const cleaned = {};
+
+    for (const [key, value] of Object.entries(parsed)) {
+      if (!value || typeof value !== "object") continue;
+
+      const ts = Number(value.cached_at);
+      if (!Number.isFinite(ts)) continue;
+
+      if (now - ts < TTL_MS) {
+        cleaned[key] = value;
+      }
+    }
+
+    return cleaned;
   } catch (e) {
-    return { lastUpdated: new Date().toISOString(), signals: {} };
+    console.error("loadCache error:", e && e.message);
+    return {};
   }
 }
 
-export async function writeCache(data) {
-  await ensureCacheDir();
-  const payload = {
-    lastUpdated: new Date().toISOString(),
-    signals: data && data.signals ? data.signals : {}
-  };
-  await fs.writeFile(CACHE_FILE, JSON.stringify(payload, null, 2), "utf-8");
+export function saveCache(cache) {
+  try {
+    ensureDir(CACHE_FILE);
+    fs.writeFileSync(
+      CACHE_FILE,
+      JSON.stringify(cache, null, 2),
+      "utf8"
+    );
+  } catch (e) {
+    console.error("saveCache error:", e && e.message);
+  }
 }
 
-export function cleanOldSignals(signals, maxAgeMs = MAX_AGE_MS) {
-  const now = Date.now();
-  const cleaned = {};
-
-  for (const [key, entry] of Object.entries(signals || {})) {
-    if (!entry || !entry.sentAt) continue;
-
-    const sentAt = new Date(entry.sentAt).getTime();
-
-    if (!Number.isFinite(sentAt)) continue;
-    if (now - sentAt > maxAgeMs) continue;
-
-    cleaned[key] = entry;
+export function isCached(cache, symbol) {
+  if (!cache || typeof cache !== "object") {
+    return false;
   }
 
-  return cleaned;
+  const entry = cache[symbol];
+  if (!entry || typeof entry !== "object") {
+    return false;
+  }
+
+  const ts = Number(entry.cached_at);
+  if (!Number.isFinite(ts)) {
+    return false;
+  }
+
+  return Date.now() - ts < TTL_MS;
 }
 
-export function hasRecentSignal(signals, symbol, timeframe, maxAgeMs = MAX_AGE_MS) {
-  if (!signals || !symbol || !timeframe) return false;
-
-  const key = makeKey(symbol, timeframe);
-  const entry = signals[key];
-  if (!entry || !entry.sentAt) return false;
-
-  const sentAt = new Date(entry.sentAt).getTime();
-  if (!Number.isFinite(sentAt)) return false;
-
-  return Date.now() - sentAt <= maxAgeMs;
-}
-
-export function addSignal(signals, symbol, timeframe, data) {
-  const result = { ...(signals || {}) };
-
-  const key = makeKey(symbol, timeframe);
-
-  result[key] = {
-    sentAt: new Date().toISOString(),
-    symbol: symbol,
-    timeframe: timeframe,
-    direction: data && data.direction ? data.direction : null,
-    score: data && Number.isFinite(data.score) ? data.score : null,
-    entry: data && Number.isFinite(data.entry) ? data.entry : null,
-    stop: data && Number.isFinite(data.stop) ? data.stop : null
+export function addToCache(cache, symbol, payload) {
+  cache[symbol] = {
+    cached_at: Date.now(),
+    timeframe: payload.timeframe,
+    direction: payload.direction,
+    entry: payload.entry,
+    stop_loss: payload.stop_loss,
+    targets: payload.targets,
+    strength: payload.strength,
+    risk: payload.risk
   };
-
-  return result;
 }
