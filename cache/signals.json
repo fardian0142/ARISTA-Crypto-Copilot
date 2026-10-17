@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T13:01:35.975Z",
+  "lastUpdated": "2026-10-17T14:01:47.749Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -81,6 +81,24 @@
       "score": 14,
       "entry": 0.30255,
       "stop": 0.2983786933324781
+    },
+    "KAITOUSDT:2h": {
+      "sentAt": "2026-10-17T14:01:44.524Z",
+      "symbol": "KAITOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.287514293868652,
+      "stop": 0.27959794986439773
+    },
+    "GRAMUSDT:2h": {
+      "sentAt": "2026-10-17T14:01:46.248Z",
+      "symbol": "GRAMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.3490501659001255,
+      "stop": 1.3243712389712852
     }
   }
 }
