@@ -1,3 +1,9 @@
+export const SCAN_TIMEFRAME = "2h";
+
+export const CACHE_FILE = "cache/signals.json";
+
+export const CACHE_TTL_HOURS = 24;
+
 export const TIMEFRAME_PROFILES = {
   "15m": {
     strictHTF: false,
@@ -107,7 +113,6 @@ export const CONFIG = {
   SWEEP_MIN_REJECTION: 0.25,
   MIN_TP_DISTANCE: 0.005,
   MIN_TP_DISTANCE_ATR: 0.4,
-  TP_SURFACE_BUFFER: 0.15,
   STRUCTURE_SWINGS: 3,
   SYMBOL_CACHE_SECONDS: 3600,
   KLINE_CACHE_SECONDS: 15,
@@ -160,13 +165,10 @@ export const CONFIG = {
   TP_BUFFER_MIN_PCT: 0.002,
   TP_BUFFER_MAX_PCT: 0.005,
   TP_STRUCTURE_LOOKBACK_BARS: 100,
-  TP_STRUCTURE_MIN_GAP: 2,
   TP_PIP_BUFFER_PCT: 0.0002,
   TP_MIN_STRUCTURE_GAP_BARS: 2,
   SL_MARKET_STRUCTURE_LOOKBACK: 100,
-  SL_MIN_GAP: 2,
   SL_PIP_BUFFER_PCT: 0.0002,
-  USE_UNIFIED_TPSL: true,
   MOMENTUM_WARNING_BODY_RATIO: 0.6,
   MOMENTUM_WARNING_PENALTY: 2,
   MOMENTUM_RSI_OVERBOUGHT: 68,
@@ -181,14 +183,14 @@ export const CONFIG = {
     bybit: {
       priority: 2,
       enabled: true,
-      maxCandles: 1000,
+      maxCandles: 300,
       marketType: "linear"
     },
     toobit: {
       priority: 3,
       enabled: true,
-      maxCandles: 1000,
-      marketType: "swap"
+      maxCandles: 300,
+      marketType: "spot"
     }
   },
   SYMBOL_ALIASES: {
@@ -267,6 +269,13 @@ export const CONFIG = {
   HTF_SHORT_PENALTY_SCORE: 10
 };
 
+export const CACHE_TTL = {
+  SYMBOLS: CONFIG.SYMBOL_CACHE_SECONDS,
+  TICKERS: 300,
+  KLINES: CONFIG.KLINE_CACHE_SECONDS,
+  SNAPSHOT: 60
+};
+
 export const INTERVAL_MS = {
   "15m": 15 * 60 * 1000,
   "30m": 30 * 60 * 1000,
@@ -277,3 +286,17 @@ export const INTERVAL_MS = {
   "12h": 12 * 60 * 60 * 1000,
   "24h": 24 * 60 * 60 * 1000
 };
+
+export function isValidSymbol(symbol) {
+  return (
+    typeof symbol === "string" &&
+    /^[A-Z0-9]{2,20}USDT$/.test(symbol)
+  );
+}
+
+export function isValidTimeframe(timeframe) {
+  return Object.prototype.hasOwnProperty.call(
+    CONFIG.TIMEFRAMES,
+    timeframe
+  );
+}
