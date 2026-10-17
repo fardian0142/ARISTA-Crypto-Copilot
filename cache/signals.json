@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T15:01:36.955Z",
+  "lastUpdated": "2026-10-17T16:01:32.925Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -99,6 +99,24 @@
       "score": 14,
       "entry": 1.3490501659001255,
       "stop": 1.3243712389712852
+    },
+    "APEUSDT:2h": {
+      "sentAt": "2026-10-17T16:01:29.566Z",
+      "symbol": "APEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.14619508374793339,
+      "stop": 0.14097419000236183
+    },
+    "ZMUSDT:2h": {
+      "sentAt": "2026-10-17T16:01:31.424Z",
+      "symbol": "ZMUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 93.755,
+      "stop": 93.23504790713353
     }
   }
 }
