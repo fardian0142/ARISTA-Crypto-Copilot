@@ -1,0 +1,14 @@
+{
+  "lastUpdated": "2026-10-17T07:32:41.500Z",
+  "signals": {
+    "EPICUSDT:2h": {
+      "sentAt": "2026-10-17T07:32:39.998Z",
+      "symbol": "EPICUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2518,
+      "stop": 0.2269094505190641
+    }
+  }
+}
