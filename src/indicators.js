@@ -2433,6 +2433,28 @@ export function findNearestImportantNodeAbove(candles, currentPrice, swingHighs,
   return aboveZones[0];
 }
 
+export function applyStructureBuffer(level, direction, atrValue, currentPrice) {
+  if (
+    !Number.isFinite(level) ||
+    !Number.isFinite(atrValue) ||
+    atrValue <= 0 ||
+    !Number.isFinite(currentPrice) ||
+    currentPrice <= 0
+  ) {
+    return level;
+  }
+
+  const atrBuffer = atrValue * CONFIG.TP_BUFFER_ATR_MULT;
+  const pctBuffer = currentPrice * CONFIG.TP_BUFFER_MIN_PCT;
+  const minBuffer = Math.max(atrBuffer, pctBuffer);
+  const maxBuffer = currentPrice * CONFIG.TP_BUFFER_MAX_PCT;
+  const buffer = Math.min(minBuffer, maxBuffer);
+
+  return direction === "bearish"
+    ? level + buffer
+    : level - buffer;
+}
+
 export function applyPipBuffer(level, direction, currentPrice) {
   if (
     !Number.isFinite(level) ||
@@ -3099,6 +3121,12 @@ export function detectRangeTradeSetups(
     Number.isFinite(CONFIG.RANGE_LIFECYCLE_MIN_REMAINING_R)
       ? Math.max(0.1, CONFIG.RANGE_LIFECYCLE_MIN_REMAINING_R)
       : 0.5;
+
+  const maxStopPct =
+    Number.isFinite(CONFIG.MAX_SL_PCT) &&
+    CONFIG.MAX_SL_PCT > 0
+      ? CONFIG.MAX_SL_PCT
+      : Infinity;
 
   const rangeHigh = bullishBreakout;
   const rangeLow = bearishBreakdown;
@@ -4816,74 +4844,56 @@ export function detectRangeTradeSetups(
   }
 
   function isCandidateLifecycleValid(candidate) {
-    if (!candidate) {
+  if (!candidate) {
+    return false;
+  }
+
+  const { entry, stop, tp1, direction } = candidate;
+
+  if (
+    !Number.isFinite(entry) ||
+    !Number.isFinite(stop) ||
+    !Number.isFinite(tp1) ||
+    !Number.isFinite(currentPrice) ||
+    !Number.isFinite(atrValue) ||
+    !Number.isFinite(lifecycleToleranceAtr) ||
+    !Number.isFinite(lifecycleMinRemainingR) ||
+    entry <= 0 ||
+    stop <= 0 ||
+    tp1 <= 0 ||
+    atrValue <= 0 ||
+    lifecycleToleranceAtr < 0 ||
+    lifecycleMinRemainingR < 0
+  ) {
+    return false;
+  }
+
+  if (direction !== "bullish" && direction !== "bearish") {
+    return false;
+  }
+
+  const risk =
+    direction === "bullish"
+      ? entry - stop
+      : stop - entry;
+
+  if (!Number.isFinite(risk) || risk <= 0) {
+    return false;
+  }
+
+  const tolerance = atrValue * lifecycleToleranceAtr;
+
+  if (!Number.isFinite(tolerance)) {
+    return false;
+  }
+
+  if (direction === "bullish") {
+    if (stop >= entry || tp1 <= entry || currentPrice >= tp1) {
       return false;
     }
 
-    const { entry, stop, tp1, direction } = candidate;
-
-    if (
-      !Number.isFinite(entry) ||
-      !Number.isFinite(stop) ||
-      !Number.isFinite(tp1) ||
-      !Number.isFinite(currentPrice) ||
-      !Number.isFinite(atrValue) ||
-      !Number.isFinite(lifecycleToleranceAtr) ||
-      !Number.isFinite(lifecycleMinRemainingR) ||
-      entry <= 0 ||
-      stop <= 0 ||
-      tp1 <= 0 ||
-      atrValue <= 0 ||
-      lifecycleToleranceAtr < 0 ||
-      lifecycleMinRemainingR < 0
-    ) {
-      return false;
-    }
-
-    if (direction !== "bullish" && direction !== "bearish") {
-      return false;
-    }
-
-    const risk =
-      direction === "bullish"
-        ? entry - stop
-        : stop - entry;
-
-    if (!Number.isFinite(risk) || risk <= 0) {
-      return false;
-    }
-
-    const tolerance = atrValue * lifecycleToleranceAtr;
-
-    if (!Number.isFinite(tolerance)) {
-      return false;
-    }
-
-    if (direction === "bullish") {
-      if (stop >= entry || tp1 <= entry || currentPrice >= tp1) {
-        return false;
-      }
-
-      if (currentPrice > entry + tolerance) {
-        const remainingR = (tp1 - currentPrice) / risk;
-
-        if (
-          !Number.isFinite(remainingR) ||
-          remainingR < lifecycleMinRemainingR
-        ) {
-          return false;
-        }
-      }
-
-      return true;
-    }
-
-    if (stop <= entry || tp1 >= entry || currentPrice <= tp1) {
-      return false;
-    }
-
-    if (currentPrice < entry - tolerance) {
-      const remainingR = (currentPrice - tp1) / risk;
+    if (currentPrice > entry + tolerance) {
+      const remainingR = (tp1 - currentPrice) / risk;
 
       if (
         !Number.isFinite(remainingR) ||
@@ -4895,6 +4905,24 @@ export function detectRangeTradeSetups(
 
     return true;
   }
+
+  if (stop <= entry || tp1 >= entry || currentPrice <= tp1) {
+    return false;
+  }
+
+  if (currentPrice < entry - tolerance) {
+    const remainingR = (currentPrice - tp1) / risk;
+
+    if (
+      !Number.isFinite(remainingR) ||
+      remainingR < lifecycleMinRemainingR
+    ) {
+      return false;
+    }
+  }
+
+  return true;
+}
 
   function finalizeCandidate(candidate) {
     if (
@@ -5068,7 +5096,8 @@ export function detectRangeTradeSetups(
       !Number.isFinite(stop) ||
       !Number.isFinite(risk) ||
       risk <= 0 ||
-      stop >= entry
+      stop >= entry ||
+      risk / entry * 100 > maxStopPct
     ) {
       return null;
     }
@@ -5296,7 +5325,8 @@ export function detectRangeTradeSetups(
       !Number.isFinite(stop) ||
       !Number.isFinite(risk) ||
       risk <= 0 ||
-      stop <= entry
+      stop <= entry ||
+      risk / entry * 100 > maxStopPct
     ) {
       return null;
     }
@@ -5735,7 +5765,7 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
   };
 }
 
-export function mergeLevelsWithFrvp(obLevels, frvpLevels, atrValue, currentPrice, direction) {
+function mergeLevelsWithFrvp(obLevels, frvpLevels, atrValue, currentPrice, direction) {
   const merged = [...obLevels];
 
   for (const frvp of frvpLevels) {
@@ -6526,145 +6556,4 @@ export function fmtPercent(value) {
   const v = parseFloat(value);
   if (!Number.isFinite(v)) return "-";
   return (v * 100).toFixed(2) + "%";
-}
-
-export function fmtPrice(value) {
-  if (value === null || value === undefined) {
-    return "-";
-  }
-
-  const v = parseFloat(value);
-
-  if (!Number.isFinite(v)) {
-    return "-";
-  }
-
-  if (v >= 1000) {
-    return v.toLocaleString("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
-
-  if (v >= 1) {
-    return v.toFixed(4);
-  }
-
-  if (v >= 0.01) {
-    return v.toFixed(5);
-  }
-
-  return v.toFixed(8).replace(/0+$/, "").replace(/\.$/, "");
-}
-
-export function fmtRR(value) {
-  return (parseFloat(value) || 0).toFixed(2) + "R";
-}
-
-export function statusIcon(s) {
-  if (s === "LONG") return "🟢";
-  if (s === "SHORT") return "🔴";
-  if (s === "WAIT") return "🟡";
-  return "⚪";
-}
-
-export function statusText(s) {
-  return {
-    LONG: "خرید",
-    SHORT: "فروش",
-    WAIT: "صبر",
-    NO_TRADE: "بدون معامله"
-  }[s] || s;
-}
-
-export function calcLeverageLevels(stopPct) {
-  if (!Number.isFinite(stopPct) || stopPct <= 0) {
-    return [5, 10, 15, 20];
-  }
-
-  const MIN_LEV = 2;
-  const MAX_LEV = 15;
-  const factors = [5.0, 3.5, 2.5, 1.8];
-
-  const result = factors.map((f) => {
-    const value = Math.floor(100 / (stopPct * f));
-    return Math.max(MIN_LEV, Math.min(MAX_LEV, value));
-  });
-
-  for (let i = 1; i < result.length; i++) {
-    if (result[i] <= result[i - 1]) {
-      result[i] = result[i - 1] + 1;
-    }
-  }
-
-  for (let i = result.length - 1; i >= 0; i--) {
-    if (result[i] > MAX_LEV) {
-      result[i] = MAX_LEV - (result.length - 1 - i);
-    }
-  }
-
-  for (let i = result.length - 1; i >= 1; i--) {
-    if (result[i] <= result[i - 1]) {
-      result[i - 1] = Math.max(MIN_LEV, result[i] - 1);
-    }
-  }
-
-  for (let i = 0; i < result.length; i++) {
-    if (result[i] < MIN_LEV) {
-      result[i] = MIN_LEV + i;
-    }
-  }
-
-  for (let i = 1; i < result.length; i++) {
-    if (result[i] <= result[i - 1]) {
-      result[i] = result[i - 1] + 1;
-    }
-  }
-
-  return result;
-}
-
-export function formatScoreBar(score, maxScore = 14) {
-  if (!Number.isFinite(score) || !Number.isFinite(maxScore) || maxScore <= 0) {
-    return {
-      percentage: 0,
-      bar: "▱▱▱▱▱▱▱▱▱▱",
-      icon: "🔴",
-      label: "ضعیف",
-      text: "🔴 0% ▱▱▱▱▱▱▱▱▱▱ (0/14)"
-    };
-  }
-
-  const safeScore = Math.max(0, Math.min(maxScore, score));
-  const percentage = Math.round((safeScore / maxScore) * 100);
-
-  const filled = Math.max(0, Math.min(10, Math.round((safeScore / maxScore) * 10)));
-  const empty = 10 - filled;
-
-  const bar = "▰".repeat(filled) + "▱".repeat(empty);
-
-  let icon;
-  let label;
-
-  if (percentage >= 90) {
-    icon = "🟢";
-    label = "عالی";
-  } else if (percentage >= 75) {
-    icon = "🟡";
-    label = "قوی";
-  } else if (percentage >= 60) {
-    icon = "🟠";
-    label = "متوسط";
-  } else {
-    icon = "🔴";
-    label = "ضعیف";
-  }
-
-  return {
-    percentage,
-    bar,
-    icon,
-    label,
-    text: `${icon} ${percentage}% ${bar} (${safeScore}/${maxScore})`
-  };
 }
