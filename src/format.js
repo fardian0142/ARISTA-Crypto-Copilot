@@ -1,159 +1,20 @@
-import { CONFIG } from "./config.js";
+import { TIMEFRAME_PROFILES } from "./config.js";
+import {
+  fmtPrice,
+  fmtRR,
+  fmtPercent,
+  statusIcon,
+  statusText,
+  calcLeverageLevels,
+  formatScoreBar
+} from "./indicators.js";
 
-function fmtPrice(value) {
-  if (value === null || value === undefined) {
-    return "-";
-  }
-
-  const v = parseFloat(value);
-
-  if (!Number.isFinite(v)) {
-    return "-";
-  }
-
-  if (v >= 1000) {
-    return v.toLocaleString("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
-
-  if (v >= 1) {
-    return v.toFixed(4);
-  }
-
-  if (v >= 0.01) {
-    return v.toFixed(5);
-  }
-
-  return v.toFixed(8).replace(/0+$/, "").replace(/\.$/, "");
-}
-
-function fmtRR(value) {
-  return (parseFloat(value) || 0).toFixed(2) + "R";
-}
-
-function statusIcon(s) {
-  if (s === "LONG") return "🟢";
-  if (s === "SHORT") return "🔴";
-  if (s === "WAIT") return "🟡";
-  return "⚪";
-}
-
-function statusText(s) {
-  return {
-    LONG: "خرید",
-    SHORT: "فروش",
-    WAIT: "صبر",
-    NO_TRADE: "بدون معامله"
-  }[s] || s;
-}
-
-function calcLeverageLevels(stopPct) {
-  if (!Number.isFinite(stopPct) || stopPct <= 0) {
-    return [5, 10, 15, 20];
-  }
-
-  const MIN_LEV = 2;
-  const MAX_LEV = 15;
-  const factors = [5.0, 3.5, 2.5, 1.8];
-
-  const result = factors.map((f) => {
-    const value = Math.floor(100 / (stopPct * f));
-    return Math.max(MIN_LEV, Math.min(MAX_LEV, value));
-  });
-
-  for (let i = 1; i < result.length; i++) {
-    if (result[i] <= result[i - 1]) {
-      result[i] = result[i - 1] + 1;
-    }
-  }
-
-  for (let i = result.length - 1; i >= 0; i--) {
-    if (result[i] > MAX_LEV) {
-      result[i] = MAX_LEV - (result.length - 1 - i);
-    }
-  }
-
-  for (let i = result.length - 1; i >= 1; i--) {
-    if (result[i] <= result[i - 1]) {
-      result[i - 1] = Math.max(MIN_LEV, result[i] - 1);
-    }
-  }
-
-  for (let i = 0; i < result.length; i++) {
-    if (result[i] < MIN_LEV) {
-      result[i] = MIN_LEV + i;
-    }
-  }
-
-  for (let i = 1; i < result.length; i++) {
-    if (result[i] <= result[i - 1]) {
-      result[i] = result[i - 1] + 1;
-    }
-  }
-
-  return result;
-}
-
-function formatScoreBar(score, maxScore = 14) {
-  if (!Number.isFinite(score) || !Number.isFinite(maxScore) || maxScore <= 0) {
-    return {
-      percentage: 0,
-      bar: "▱▱▱▱▱▱▱▱▱▱",
-      icon: "🔴",
-      label: "ضعیف",
-      text: "🔴 0% ▱▱▱▱▱▱▱▱▱▱ (0/14)"
-    };
-  }
-
-  const safeScore = Math.max(0, Math.min(maxScore, score));
-  const percentage = Math.round((safeScore / maxScore) * 100);
-
-  const filled = Math.max(0, Math.min(10, Math.round((safeScore / maxScore) * 10)));
-  const empty = 10 - filled;
-
-  const bar = "▰".repeat(filled) + "▱".repeat(empty);
-
-  let icon;
-  let label;
-
-  if (percentage >= 90) {
-    icon = "🟢";
-    label = "عالی";
-  } else if (percentage >= 75) {
-    icon = "🟡";
-    label = "قوی";
-  } else if (percentage >= 60) {
-    icon = "🟠";
-    label = "متوسط";
-  } else {
-    icon = "🔴";
-    label = "ضعیف";
-  }
-
-  return {
-    percentage,
-    bar,
-    icon,
-    label,
-    text: `${icon} ${percentage}% ${bar} (${safeScore}/${maxScore})`
-  };
-}
-
-function escapeHtml(value) {
+export function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-}
-
-function fmtPercent(value) {
-  if (value === null || value === undefined) return "-";
-  const v = parseFloat(value);
-  if (!Number.isFinite(v)) return "-";
-  return (v * 100).toFixed(2) + "%";
 }
 
 export function formatAnalysis(r) {
@@ -308,7 +169,66 @@ export function formatAnalysis(r) {
     );
 
     lines.push("🎯 ورود: <b>" + fmtPrice(rs.entry) + "</b>");
-    lines.push("🛑 حد ضرر: <b>" + fmtPrice(rs.stop) + "</b>");
+
+    if (
+      rs.entry !== null &&
+      rs.entry !== undefined &&
+      Number.isFinite(rs.entry) &&
+      rs.entry > 0 &&
+      r.current_price !== null &&
+      r.current_price !== undefined &&
+      Number.isFinite(r.current_price) &&
+      r.current_price > 0
+    ) {
+      const gapPct = (Math.abs(r.current_price - rs.entry) / r.current_price) * 100;
+
+      if (gapPct >= 0.5) {
+        const isAbove = r.current_price > rs.entry;
+        const dirIcon = isAbove ? "⬇️" : "⬆️";
+        const dirText = isAbove
+          ? "بالاتر از ناحیه ورود"
+          : "پایین‌تر از ناحیه ورود";
+
+        const distanceLabel =
+          gapPct >= 5
+            ? " (منتظر پولبک)"
+            : gapPct >= 2
+              ? " (نزدیک به ورود)"
+              : " (آماده ورود)";
+
+        lines.push(
+          "📏 فاصله از ورود: <b>" +
+          gapPct.toFixed(2) +
+          "%</b> " +
+          dirIcon +
+          " " +
+          dirText +
+          distanceLabel
+        );
+
+        if (gapPct >= 10) {
+          lines.push(
+            "   ⚠️ قیمت خیلی دور از ورود است — صبر کن تا پولبک بزنه."
+          );
+        }
+      } else {
+        lines.push("📏 فاصله از ورود: <b>در ناحیه ورود ✅</b>");
+      }
+    }
+
+    if (rs.stop !== null && rs.stop !== undefined && Number.isFinite(rs.stop)) {
+      const stopPct =
+        Number.isFinite(rs.entry) && rs.entry > 0
+          ? (Math.abs(rs.entry - rs.stop) / rs.entry) * 100
+          : null;
+
+      lines.push(
+        "🛑 حد ضرر: <b>" +
+        fmtPrice(rs.stop) +
+        "</b>" +
+        (stopPct !== null ? " (ریسک " + stopPct.toFixed(2) + "%)" : "")
+      );
+    }
 
     if (
       (rs.tp1 !== null && rs.tp1 !== undefined) ||
@@ -396,8 +316,66 @@ export function formatAnalysis(r) {
 
     lines.push("📍 ورود: <b>" + fmtPrice(r.entry) + "</b>");
 
+    if (
+      r.entry !== null &&
+      r.entry !== undefined &&
+      Number.isFinite(r.entry) &&
+      r.entry > 0 &&
+      r.current_price !== null &&
+      r.current_price !== undefined &&
+      Number.isFinite(r.current_price) &&
+      r.current_price > 0
+    ) {
+      const gapPct = (Math.abs(r.current_price - r.entry) / r.current_price) * 100;
+
+      if (gapPct >= 0.5) {
+        const isAbove = r.current_price > r.entry;
+        const dirIcon = isAbove ? "⬇️" : "⬆️";
+        const dirText = isAbove
+          ? "بالاتر از ناحیه ورود"
+          : "پایین‌تر از ناحیه ورود";
+
+        const distanceLabel =
+          gapPct >= 5
+            ? " (منتظر پولبک)"
+            : gapPct >= 2
+              ? " (نزدیک به ورود)"
+              : " (آماده ورود)";
+
+        lines.push(
+          "📏 فاصله از ورود: <b>" +
+          gapPct.toFixed(2) +
+          "%</b> " +
+          dirIcon +
+          " " +
+          dirText +
+          distanceLabel
+        );
+
+        if (gapPct >= 10) {
+          lines.push(
+            "   ⚠️ قیمت خیلی دور از ورود است — صبر کن تا پولبک بزنه."
+          );
+        }
+      } else {
+        lines.push("📏 فاصله از ورود: <b>در ناحیه ورود ✅</b>");
+      }
+    }
+
     if (r.stop_loss !== null && r.stop_loss !== undefined) {
-      lines.push("🛑 حد ضرر: <b>" + fmtPrice(r.stop_loss) + "</b>");
+      const stopPct =
+        Number.isFinite(r.stop_loss) &&
+        Number.isFinite(r.entry) &&
+        r.entry > 0
+          ? (Math.abs(r.entry - r.stop_loss) / r.entry) * 100
+          : null;
+
+      lines.push(
+        "🛑 حد ضرر: <b>" +
+        fmtPrice(r.stop_loss) +
+        "</b>" +
+        (stopPct !== null ? " (ریسک " + stopPct.toFixed(2) + "%)" : "")
+      );
     }
 
     if (r.targets && r.targets.length > 0) {
@@ -632,46 +610,46 @@ export function formatAnalysis(r) {
   }
 
   const activeSetupForLeverage =
-  (rangeActive && r.range_setups.active) ||
-  null;
+    (rangeActive && r.range_setups.active) ||
+    null;
 
-const setupEntry = activeSetupForLeverage
-  ? activeSetupForLeverage.entry
-  : r.entry;
+  const setupEntry = activeSetupForLeverage
+    ? activeSetupForLeverage.entry
+    : r.entry;
 
-const setupStop = activeSetupForLeverage
-  ? activeSetupForLeverage.stop
-  : r.stop_loss;
+  const setupStop = activeSetupForLeverage
+    ? activeSetupForLeverage.stop
+    : r.stop_loss;
 
-if (
-  r.status === "LONG" ||
-  r.status === "SHORT" ||
-  r.status === "WAIT" ||
-  rangeActive
-) {
-  const hasValidSetup =
-    Number.isFinite(setupEntry) &&
-    Number.isFinite(setupStop) &&
-    setupEntry > 0 &&
-    setupStop > 0 &&
-    setupEntry !== setupStop;
+  if (
+    r.status === "LONG" ||
+    r.status === "SHORT" ||
+    r.status === "WAIT" ||
+    rangeActive
+  ) {
+    const hasValidSetup =
+      Number.isFinite(setupEntry) &&
+      Number.isFinite(setupStop) &&
+      setupEntry > 0 &&
+      setupStop > 0 &&
+      setupEntry !== setupStop;
 
-  if (hasValidSetup) {
-  const stopPct = Math.abs(setupEntry - setupStop) / setupEntry * 100;
-  const levels = calcLeverageLevels(stopPct);
+    if (hasValidSetup) {
+      const stopPct = Math.abs(setupEntry - setupStop) / setupEntry * 100;
+      const levels = calcLeverageLevels(stopPct);
 
-  lines.push("");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push(
-    "🎚 اهرم پیشنهادی : <b>" +
-    levels[0] + "X , " +
-    levels[1] + "X , " +
-    levels[2] + "X , " +
-    levels[3] + "X</b>"
-  );
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-}
-}
+      lines.push("");
+      lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+      lines.push(
+        "🎚 اهرم پیشنهادی : <b>" +
+        levels[0] + "X , " +
+        levels[1] + "X , " +
+        levels[2] + "X , " +
+        levels[3] + "X</b>"
+      );
+      lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+    }
+  }
 
   if (
     r.status === "NO_TRADE" &&
@@ -680,6 +658,43 @@ if (
   ) {
     lines.push("");
     lines.push("💡 <b>دلیل:</b> " + escapeHtml(r._noTradeReason));
+
+    const profile =
+      r._profile ||
+      TIMEFRAME_PROFILES[r.timeframe] ||
+      TIMEFRAME_PROFILES["1h"];
+
+    const minStrength =
+      Number.isFinite(profile.minStrength)
+        ? profile.minStrength
+        : 65;
+
+    const strength =
+      Number.isFinite(r.strength)
+        ? r.strength
+        : 0;
+
+    if (
+      strength > 0 &&
+      strength < minStrength &&
+      minStrength - strength <= 10
+    ) {
+      const gap = minStrength - strength;
+
+      lines.push("");
+      lines.push(
+        "📊 <b>نزدیک به آستانه:</b> " +
+        strength +
+        "/" +
+        minStrength +
+        " (فقط " +
+        gap +
+        " امتیاز کم)"
+      );
+      lines.push(
+        "   ⚠️ اگر تهاجمی هستی، این ستاپ را با احتیاط و حجم کم بررسی کن."
+      );
+    }
   }
 
   lines.push("");
