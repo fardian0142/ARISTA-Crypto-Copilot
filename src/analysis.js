@@ -1,4 +1,4 @@
-import { CONFIG, TIMEFRAME_PROFILES, isValidSymbol, isValidTimeframe } from "./config.js";
+import { CONFIG, TIMEFRAME_PROFILES } from "./config.js";
 import { getMarketSnapshot } from "./exchanges.js";
 import {
   atrCalc,
@@ -10,9 +10,11 @@ import {
   volumeRatioCalc,
   emaTrendCalc,
   detectSwings,
+  getConfirmedSwings,
   marketStructure,
   detectBosChoch,
   detectLiquiditySweeps,
+  detectDisplacement,
   findEventDisplacement,
   detectFvgs,
   detectOrderBlocks,
@@ -22,18 +24,30 @@ import {
   computeUnifiedTargets,
   structuralTargets,
   targetFilter,
-  selectCausalSweep,
-  determineDirection,
-  strengthScore,
-  entryState,
   fibLevelsCalc,
   fibOverlapCheck,
   scenarioCalc,
-  getConfirmedSwings,
+  strengthScore,
+  determineDirection,
+  selectCausalSweep,
+  entryState,
   collectNearbyLevels,
-  detectRangeTradeSetups,
-  fmtPercent
+  detectRangeTradeSetups
 } from "./indicators.js";
+
+function isValidSymbol(symbol) {
+  return (
+    typeof symbol === "string" &&
+    /^[A-Z0-9]{2,20}USDT$/.test(symbol)
+  );
+}
+
+function isValidTimeframe(timeframe) {
+  return Object.prototype.hasOwnProperty.call(
+    CONFIG.TIMEFRAMES,
+    timeframe
+  );
+}
 
 export async function analyze(symbol, timeframe) {
   const result = {
@@ -538,7 +552,7 @@ export async function analyze(symbol, timeframe) {
     } catch (e) {
       console.error(
         "detectRangeTradeSetups error:",
-        e && e.message
+        e
       );
 
       result.range_setups =
@@ -828,12 +842,6 @@ export async function analyze(symbol, timeframe) {
       displacement,
       sweep
     );
-
-  result._fvgs =
-    Array.isArray(fvgs) ? fvgs : [];
-
-  result._orderBlocks =
-    Array.isArray(obs) ? obs : [];
 
   const zone =
     selectBestZone(
