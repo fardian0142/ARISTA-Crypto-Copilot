@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T22:01:32.117Z",
+  "lastUpdated": "2026-10-17T23:01:32.871Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -162,6 +162,15 @@
       "score": 14,
       "entry": 2.37045,
       "stop": 2.34825994271925
+    },
+    "HBARUSDT:2h": {
+      "sentAt": "2026-10-17T23:01:31.368Z",
+      "symbol": "HBARUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08415,
+      "stop": 0.08205192327480317
     }
   }
 }
