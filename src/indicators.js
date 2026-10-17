@@ -1,4 +1,4 @@
-import { CONFIG, INTERVAL_MS } from "./config.js";
+import { CONFIG, INTERVAL_MS, TIMEFRAME_PROFILES } from "./config.js";
 
 export function emaSeries(values, period) {
   if (!Array.isArray(values) || values.length < period) {
