@@ -1,7 +1,10 @@
 {
-  "name": "crypto-scanner",
+  "name": "crypto-scan-2h",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
+  "description": "Crypto 2h timeframe scanner with GitHub Actions",
+  "main": "src/scan.js",
   "scripts": {
     "scan": "node src/scan.js"
   },
