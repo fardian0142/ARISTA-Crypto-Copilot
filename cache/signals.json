@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T10:01:38.050Z",
+  "lastUpdated": "2026-10-17T11:01:29.290Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 0.07763,
       "stop": 0.07551937983884269
+    },
+    "CHZUSDT:2h": {
+      "sentAt": "2026-10-17T11:01:27.788Z",
+      "symbol": "CHZUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.014252350903384817,
+      "stop": 0.013797313253274495
     }
   }
 }
