@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T16:01:32.925Z",
+  "lastUpdated": "2026-10-17T17:01:36.412Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -117,6 +117,24 @@
       "score": 14,
       "entry": 93.755,
       "stop": 93.23504790713353
+    },
+    "FILUSDT:2h": {
+      "sentAt": "2026-10-17T17:01:33.183Z",
+      "symbol": "FILUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0742531248106022,
+      "stop": 1.0171964287878832
+    },
+    "MOONSHOTUSDT:2h": {
+      "sentAt": "2026-10-17T17:01:34.910Z",
+      "symbol": "MOONSHOTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 66.35499999999999,
+      "stop": 65.89380248294198
     }
   }
 }
