@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-10-16T23:01:29.945Z",
+  "lastUpdated": "2026-10-17T00:01:36.784Z",
   "signals": {
-    "HBARUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:44.079Z",
-      "symbol": "HBARUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08423,
-      "stop": 0.08291454231162236
-    },
-    "KMNOUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:45.900Z",
-      "symbol": "KMNOUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.03834489941667706,
-      "stop": 0.04062725780951193
-    },
-    "KAITOUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:47.733Z",
-      "symbol": "KAITOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.29664999999999997,
-      "stop": 0.28704006000000004
-    },
-    "ETCUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:49.508Z",
-      "symbol": "ETCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.880000000000001,
-      "stop": 7.788396
-    },
-    "MUUBUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:51.311Z",
-      "symbol": "MUUBUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 26.73,
-      "stop": 25.264564
-    },
-    "USTCUSDT:2h": {
-      "sentAt": "2026-10-15T23:02:53.093Z",
-      "symbol": "USTCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0050100000000000006,
-      "stop": 0.004946184792484077
-    },
     "NOTUSDT:2h": {
       "sentAt": "2026-10-16T00:02:48.785Z",
       "symbol": "NOTUSDT",
@@ -729,6 +675,15 @@
       "score": 14,
       "entry": 0.19517292778793505,
       "stop": 0.19126048
+    },
+    "CHZUSDT:2h": {
+      "sentAt": "2026-10-17T00:01:35.283Z",
+      "symbol": "CHZUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.014379707122157956,
+      "stop": 0.013988906146105195
     }
   }
 }
