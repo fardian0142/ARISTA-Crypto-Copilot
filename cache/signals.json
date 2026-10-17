@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-17T01:01:30.813Z",
+  "lastUpdated": "2026-10-17T02:01:33.270Z",
   "signals": {
-    "RSRUSDT:2h": {
-      "sentAt": "2026-10-16T01:02:40.774Z",
-      "symbol": "RSRUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0019460063272922715,
-      "stop": 0.0016646130000000001
-    },
-    "FARTCOINUSDT:2h": {
-      "sentAt": "2026-10-16T01:02:42.559Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15626223071164494,
-      "stop": 0.15070316490097724
-    },
-    "CGPTUSDT:2h": {
-      "sentAt": "2026-10-16T01:02:44.339Z",
-      "symbol": "CGPTUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02395,
-      "stop": 0.024597003165490045
-    },
-    "BANANAUSDT:2h": {
-      "sentAt": "2026-10-16T01:02:46.129Z",
-      "symbol": "BANANAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3.633,
-      "stop": 3.5432648
-    },
-    "EGLDUSDT:2h": {
-      "sentAt": "2026-10-16T01:02:47.993Z",
-      "symbol": "EGLDUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3.606746985041896,
-      "stop": 3.5465748742378334
-    },
     "IOSTUSDT:2h": {
       "sentAt": "2026-10-16T02:02:47.434Z",
       "symbol": "IOSTUSDT",
@@ -621,6 +576,15 @@
       "score": 14,
       "entry": 0.014379707122157956,
       "stop": 0.013988906146105195
+    },
+    "BLENDUSDT:2h": {
+      "sentAt": "2026-10-17T02:01:31.767Z",
+      "symbol": "BLENDUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05823,
+      "stop": 0.056468212255046904
     }
   }
 }
