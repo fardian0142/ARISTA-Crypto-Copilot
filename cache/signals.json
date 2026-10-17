@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T09:01:42.069Z",
+  "lastUpdated": "2026-10-17T10:01:38.050Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -18,6 +18,24 @@
       "score": 14,
       "entry": 142.0759939483334,
       "stop": 139.32457834476182
+    },
+    "RLSUSDT:2h": {
+      "sentAt": "2026-10-17T10:01:34.813Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0019595626363876576,
+      "stop": 0.0019122141298426772
+    },
+    "MINAUSDT:2h": {
+      "sentAt": "2026-10-17T10:01:36.548Z",
+      "symbol": "MINAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07763,
+      "stop": 0.07551937983884269
     }
   }
 }
