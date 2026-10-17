@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T11:01:29.290Z",
+  "lastUpdated": "2026-10-17T12:01:43.219Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -45,6 +45,33 @@
       "score": 14,
       "entry": 0.014252350903384817,
       "stop": 0.013797313253274495
+    },
+    "TIAUSDT:2h": {
+      "sentAt": "2026-10-17T12:01:38.199Z",
+      "symbol": "TIAUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.688,
+      "stop": 0.7118336
+    },
+    "DOODUSDT:2h": {
+      "sentAt": "2026-10-17T12:01:39.984Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0013771595997002601,
+      "stop": 0.001352960457485417
+    },
+    "BSBUSDT:2h": {
+      "sentAt": "2026-10-17T12:01:41.717Z",
+      "symbol": "BSBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.087715,
+      "stop": 0.084952288
     }
   }
 }
