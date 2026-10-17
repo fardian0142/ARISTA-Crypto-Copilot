@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T19:01:23.107Z",
+  "lastUpdated": "2026-10-17T20:01:26.392Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -144,6 +144,15 @@
       "score": 14,
       "entry": 28.059106850820672,
       "stop": 27.586735027633516
+    },
+    "GRVTUSDT:2h": {
+      "sentAt": "2026-10-17T20:01:24.890Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.21444000000000002,
+      "stop": 0.21133060182577848
     }
   }
 }
