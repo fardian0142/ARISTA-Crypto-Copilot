@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-17T03:01:35.853Z",
+  "lastUpdated": "2026-10-17T04:01:40.470Z",
   "signals": {
-    "GRASSUSDT:2h": {
-      "sentAt": "2026-10-16T03:02:41.076Z",
-      "symbol": "GRASSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.6478,
-      "stop": 0.6137579813246172
-    },
-    "AVAXUSDT:2h": {
-      "sentAt": "2026-10-16T03:02:42.816Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.830480906012568,
-      "stop": 9.735439482278533
-    },
     "JSTUSDT:2h": {
       "sentAt": "2026-10-16T04:02:41.893Z",
       "symbol": "JSTUSDT",
@@ -513,6 +495,15 @@
       "score": 14,
       "entry": 0.05823,
       "stop": 0.056468212255046904
+    },
+    "YGGUSDT:2h": {
+      "sentAt": "2026-10-17T04:01:38.968Z",
+      "symbol": "YGGUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02624,
+      "stop": 0.025658223567346806
     }
   }
 }
