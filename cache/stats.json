@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2026-10-18T18:15:30.808Z",
+  "allTime": {
+    "total": 0,
+    "tp1Hit": 0,
+    "tp2Hit": 0,
+    "tp3Hit": 0,
+    "stopped": 0,
+    "active": 0,
+    "tp1Rate": 0,
+    "tp2Rate": 0,
+    "tp3Rate": 0,
+    "stopRate": 0
+  },
+  "byTimeframe": {
+    "15m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "30m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "1h": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "2h": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
+  },
+  "byDirection": {
+    "bullish": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "bearish": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
+  },
+  "weekly": {
+    "week": "2026-W42",
+    "startDate": "2026-10-11",
+    "endDate": "2026-10-18",
+    "total": 0,
+    "tp1Hit": 0,
+    "tp2Hit": 0,
+    "tp3Hit": 0,
+    "stopped": 0,
+    "active": 0,
+    "bestTrade": null,
+    "worstTrade": null
+  },
+  "recentSignals": []
+}
