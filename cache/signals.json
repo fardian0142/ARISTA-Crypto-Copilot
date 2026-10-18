@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T07:01:15.515Z",
+  "lastUpdated": "2026-10-18T08:01:22.601Z",
   "signals": {
-    "EPICUSDT:2h": {
-      "sentAt": "2026-10-17T07:32:39.998Z",
-      "symbol": "EPICUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2518,
-      "stop": 0.2269094505190641
-    },
     "NOWUSDT:2h": {
       "sentAt": "2026-10-17T09:01:40.567Z",
       "symbol": "NOWUSDT",
@@ -225,6 +216,24 @@
       "score": 14,
       "entry": 81793.68702185681,
       "stop": 81261.28626073507
+    },
+    "ARXUSDT:2h": {
+      "sentAt": "2026-10-18T08:01:19.368Z",
+      "symbol": "ARXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2329,
+      "stop": 0.22825294000000002
+    },
+    "CVXUSDT:2h": {
+      "sentAt": "2026-10-18T08:01:21.100Z",
+      "symbol": "CVXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.948953056786582,
+      "stop": 1.8926072
     }
   }
 }
