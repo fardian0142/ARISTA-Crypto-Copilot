@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T17:04:40.836Z",
+  "lastUpdated": "2026-10-18T18:04:53.899Z",
   "signals": {
-    "HIMSUSDT:2h": {
-      "sentAt": "2026-10-17T18:01:38.573Z",
-      "symbol": "HIMSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 28.059106850820672,
-      "stop": 27.586735027633516
-    },
     "GRVTUSDT:2h": {
       "sentAt": "2026-10-17T20:01:24.890Z",
       "symbol": "GRVTUSDT",
@@ -171,6 +162,42 @@
       "score": 14,
       "entry": 0.3208831193953717,
       "stop": 0.30642948830555
+    },
+    "TRXUSDT:1h": {
+      "sentAt": "2026-10-18T18:04:48.882Z",
+      "symbol": "TRXUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.33242654519797693,
+      "stop": 0.3338033777229561
+    },
+    "QNTUSDT:2h": {
+      "sentAt": "2026-10-18T18:04:50.668Z",
+      "symbol": "QNTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 36.32,
+      "stop": 35.49473782405403
+    },
+    "QNTUSDT:30m": {
+      "sentAt": "2026-10-18T18:04:50.668Z",
+      "symbol": "QNTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 36.327267523953225,
+      "stop": 36.13273
+    },
+    "GMEUSDT:2h": {
+      "sentAt": "2026-10-18T18:04:52.396Z",
+      "symbol": "GMEUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 26.94,
+      "stop": 27.407595395669087
     }
   }
 }
