@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T08:01:22.601Z",
+  "lastUpdated": "2026-10-18T09:01:24.281Z",
   "signals": {
     "NOWUSDT:2h": {
       "sentAt": "2026-10-17T09:01:40.567Z",
@@ -234,6 +234,15 @@
       "score": 14,
       "entry": 1.948953056786582,
       "stop": 1.8926072
+    },
+    "PROSUSDT:2h": {
+      "sentAt": "2026-10-18T09:01:22.779Z",
+      "symbol": "PROSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.62495,
+      "stop": 0.5981727658921815
     }
   }
 }
