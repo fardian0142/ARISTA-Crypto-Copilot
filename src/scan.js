@@ -3,12 +3,15 @@ import {
   writeCache,
   cleanOldSignals,
   hasRecentSignal,
-  addSignal
+  addSignal,
+  readStats,
+  writeStats
 } from "./cache.js";
 import { CONFIG } from "./config.js";
 import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
-import { formatAnalysis } from "./format.js";
+import { formatAnalysis, formatWeeklyReport, formatSignalResult } from "./format.js";
+import { updateSignalStatus, computeStats, computeWeeklyStats } from "./tracker.js";
 
 const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
 const PRIMARY_TIMEFRAME = "1h";
@@ -17,6 +20,7 @@ const MAX_SCORE = 14;
 const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
 const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
+const MAX_RECENT_SIGNALS = 200;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -101,6 +105,7 @@ function logSummary(summary) {
   console.log("🔎 Analyzed             : " + summary.analyzed);
   console.log("✨ Signals detected     : " + summary.signals);
   console.log("📤 Sent (after merge)   : " + summary.sent);
+  console.log("🔄 Tracked (updated)    : " + summary.tracked);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
@@ -170,6 +175,7 @@ async function main() {
     analyzed: 0,
     signals: 0,
     sent: 0,
+    tracked: 0,
     cacheEntries: 0,
     elapsedMs: 0
   };
@@ -184,9 +190,61 @@ async function main() {
   let cache = await readCache();
   cache.signals = cleanOldSignals(cache.signals);
 
+  let stats = await readStats();
+
   console.log(
     "📥 Loaded cache: " + Object.keys(cache.signals).length + " active signal(s)"
   );
+  console.log(
+    "📊 Loaded stats: " + (stats.recentSignals ? stats.recentSignals.length : 0) + " tracked signal(s)"
+  );
+
+  if (!Array.isArray(stats.recentSignals)) {
+    stats.recentSignals = [];
+  }
+
+  console.log("");
+  console.log("🔄 Updating existing signal statuses...");
+
+  const trackingTasks = stats.recentSignals
+    .map((sig, idx) => ({ sig, idx }))
+    .filter(({ sig }) => sig && (sig.status === "active" || sig.status === "tp1_hit" || sig.status === "tp2_hit"));
+
+  const trackedResults = await runWithConcurrency(trackingTasks, 3, async ({ sig, idx }) => {
+    if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
+      return { idx, status: sig.status, maxR: sig.maxR || 0, skipped: true };
+    }
+    const result = await updateSignalStatus(sig);
+    return { idx, ...result };
+  });
+
+  for (const r of trackedResults) {
+    if (!r || r.skipped) continue;
+    const sig = stats.recentSignals[r.idx];
+    if (!sig) continue;
+    
+    if (sig.status !== r.status) {
+      summary.tracked++;
+      console.log(
+        "   📊 " + sig.symbol + " [" + sig.timeframe + "] → " + r.status +
+        (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
+      );
+      
+      try {
+        const resultText = formatSignalResult(sig, r.status);
+        await sendTelegramMessage(token, chatId, resultText);
+        await sleep(MESSAGE_DELAY_MS);
+      } catch (e) {
+        console.error("❌ Failed to send result for " + sig.symbol + ":", (e && e.message) || e);
+      }
+    }
+    sig.status = r.status;
+    if (Number.isFinite(r.maxR)) sig.maxR = Math.round(r.maxR * 100) / 100;
+    sig.statusUpdatedAt = new Date().toISOString();
+  }
+
+  console.log("✅ Tracking complete: " + summary.tracked + " status change(s)");
+  console.log("");
 
   let symbols = [];
 
@@ -366,6 +424,23 @@ async function main() {
         }
       }
 
+      stats.recentSignals.push({
+        symbol,
+        timeframe,
+        direction: active.direction,
+        entry: active.entry,
+        stop: active.stop,
+        tp1: active.tp1,
+        tp2: active.tp2,
+        tp3: active.tp3,
+        rr1: active.rr1,
+        score: active.score,
+        sentAt: new Date().toISOString(),
+        status: "active",
+        statusUpdatedAt: new Date().toISOString(),
+        maxR: 0
+      });
+
       try {
         await writeCache(cache);
       } catch (e) {
@@ -402,10 +477,39 @@ async function main() {
 
   cache.signals = cleanOldSignals(cache.signals);
 
+  if (stats.recentSignals.length > MAX_RECENT_SIGNALS) {
+    stats.recentSignals = stats.recentSignals.slice(-MAX_RECENT_SIGNALS);
+  }
+
+  const computed = computeStats(stats.recentSignals);
+  stats.allTime = computed.allTime;
+  stats.byTimeframe = computed.byTimeframe;
+  stats.byDirection = computed.byDirection;
+  stats.weekly = computeWeeklyStats(stats.recentSignals);
+
   try {
     await writeCache(cache);
   } catch (e) {
     console.error("❌ Failed to write cache:", (e && e.message) || e);
+  }
+
+  try {
+    await writeStats(stats);
+  } catch (e) {
+    console.error("❌ Failed to write stats:", (e && e.message) || e);
+  }
+
+  const isFriday = new Date().getUTCDay() === 5;
+  if (isFriday && stats.weekly && stats.weekly.total > 0) {
+    console.log("");
+    console.log("📊 Sending weekly report...");
+    try {
+      const report = formatWeeklyReport(stats);
+      await sendTelegramMessage(token, chatId, report);
+      console.log("✅ Weekly report sent");
+    } catch (e) {
+      console.error("❌ Failed to send weekly report:", (e && e.message) || e);
+    }
   }
 
   summary.cacheEntries = Object.keys(cache.signals).length;
