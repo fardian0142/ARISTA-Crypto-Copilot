@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T16:08:02.139Z",
+  "lastUpdated": "2026-10-18T16:22:50.470Z",
   "signals": {
     "FILUSDT:2h": {
       "sentAt": "2026-10-17T17:01:33.183Z",
@@ -171,6 +171,15 @@
       "score": 14,
       "entry": 27.967573301383702,
       "stop": 27.88472773771767
+    },
+    "ZKUSDT:15m": {
+      "sentAt": "2026-10-18T16:22:48.967Z",
+      "symbol": "ZKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0146885,
+      "stop": 0.014437186471793973
     }
   }
 }
