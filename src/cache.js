@@ -3,6 +3,7 @@ import path from "path";
 
 const CACHE_DIR = path.join(process.cwd(), "cache");
 const CACHE_FILE = path.join(CACHE_DIR, "signals.json");
+const STATS_FILE = path.join(CACHE_DIR, "stats.json");
 
 const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
@@ -90,4 +91,59 @@ export function addSignal(signals, symbol, timeframe, data) {
   };
 
   return result;
+}
+
+function createEmptyStats() {
+  return {
+    lastUpdated: new Date().toISOString(),
+    allTime: {
+      total: 0,
+      tp1Hit: 0,
+      tp2Hit: 0,
+      tp3Hit: 0,
+      stopped: 0,
+      active: 0,
+      tp1Rate: 0,
+      tp2Rate: 0,
+      tp3Rate: 0,
+      stopRate: 0
+    },
+    byTimeframe: {
+      "15m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
+      "30m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
+      "1h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
+      "2h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
+    },
+    byDirection: {
+      bullish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
+      bearish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
+    },
+    weekly: null,
+    recentSignals: []
+  };
+}
+
+export async function readStats() {
+  try {
+    await ensureCacheDir();
+    const content = await fs.readFile(STATS_FILE, "utf-8");
+    const data = JSON.parse(content);
+
+    if (!data || typeof data !== "object") {
+      return createEmptyStats();
+    }
+
+    return data;
+  } catch (e) {
+    return createEmptyStats();
+  }
+}
+
+export async function writeStats(data) {
+  await ensureCacheDir();
+  const payload = {
+    ...data,
+    lastUpdated: new Date().toISOString()
+  };
+  await fs.writeFile(STATS_FILE, JSON.stringify(payload, null, 2), "utf-8");
 }
