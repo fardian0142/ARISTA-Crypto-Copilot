@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T13:01:20.972Z",
+  "lastUpdated": "2026-10-18T14:01:17.964Z",
   "signals": {
-    "SOONUSDT:2h": {
-      "sentAt": "2026-10-17T13:01:34.472Z",
-      "symbol": "SOONUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.30255,
-      "stop": 0.2983786933324781
-    },
     "KAITOUSDT:2h": {
       "sentAt": "2026-10-17T14:01:44.524Z",
       "symbol": "KAITOUSDT",
@@ -198,6 +189,15 @@
       "score": 14,
       "entry": 49.12,
       "stop": 46.969893756221666
+    },
+    "WENUSDT:2h": {
+      "sentAt": "2026-10-18T14:01:16.462Z",
+      "symbol": "WENUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 6.6665,
+      "stop": 6.736525873376599
     }
   }
 }
