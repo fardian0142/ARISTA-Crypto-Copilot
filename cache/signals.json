@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T23:01:32.871Z",
+  "lastUpdated": "2026-10-18T00:01:38.092Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -171,6 +171,24 @@
       "score": 14,
       "entry": 0.08415,
       "stop": 0.08205192327480317
+    },
+    "EWZUSDT:2h": {
+      "sentAt": "2026-10-18T00:01:34.861Z",
+      "symbol": "EWZUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 42.35482,
+      "stop": 41.98739633959418
+    },
+    "APPUSDT:2h": {
+      "sentAt": "2026-10-18T00:01:36.591Z",
+      "symbol": "APPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 262.93766426932353,
+      "stop": 260.197222
     }
   }
 }
