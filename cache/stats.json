@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-18T20:04:13.835Z",
+  "lastUpdated": "2026-10-18T21:04:50.850Z",
   "allTime": {
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -14,7 +14,7 @@
   },
   "byTimeframe": {
     "15m": {
-      "total": 0,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 0,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,14 +56,31 @@
     "week": "2026-W42",
     "startDate": "2026-10-11",
     "endDate": "2026-10-18",
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "bestTrade": null,
     "worstTrade": null
   },
-  "recentSignals": []
+  "recentSignals": [
+    {
+      "symbol": "FLNCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "entry": 5.7805,
+      "stop": 5.750072258007101,
+      "tp1": 5.845845000000001,
+      "tp2": 5.881845,
+      "tp3": null,
+      "rr1": 2.1475468017065187,
+      "score": 14,
+      "sentAt": "2026-10-18T21:04:49.343Z",
+      "status": "active",
+      "statusUpdatedAt": "2026-10-18T21:04:49.343Z",
+      "maxR": 0
+    }
+  ]
 }

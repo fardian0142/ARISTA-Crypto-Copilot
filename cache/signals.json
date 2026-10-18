@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T20:04:13.816Z",
+  "lastUpdated": "2026-10-18T21:04:50.849Z",
   "signals": {
-    "MORPHOUSDT:2h": {
-      "sentAt": "2026-10-17T21:01:23.532Z",
-      "symbol": "MORPHOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2.37045,
-      "stop": 2.34825994271925
-    },
     "HBARUSDT:2h": {
       "sentAt": "2026-10-17T23:01:31.368Z",
       "symbol": "HBARUSDT",
@@ -189,6 +180,15 @@
       "score": 14,
       "entry": 26.94,
       "stop": 27.407595395669087
+    },
+    "FLNCUSDT:15m": {
+      "sentAt": "2026-10-18T21:04:49.343Z",
+      "symbol": "FLNCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 5.7805,
+      "stop": 5.750072258007101
     }
   }
 }
