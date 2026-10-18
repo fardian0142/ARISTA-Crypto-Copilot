@@ -10,7 +10,9 @@ import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
 import { formatAnalysis } from "./format.js";
 
-const TIMEFRAME = "2h";
+const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
+const PRIMARY_TIMEFRAME = "1h";
+
 const MAX_SCORE = 14;
 const CONCURRENCY = 5;
 const MESSAGE_DELAY_MS = 1500;
@@ -91,16 +93,62 @@ function logSummary(summary) {
   console.log("═══════════════════════════════════════════");
   console.log("📊 SCAN SUMMARY");
   console.log("═══════════════════════════════════════════");
-  console.log("⏱  Timeframe            : " + TIMEFRAME);
+  console.log("⏱  Timeframes           : " + SCAN_TIMEFRAMES.join(", "));
+  console.log("🎯 Primary TF (multi)   : " + PRIMARY_TIMEFRAME);
   console.log("🎯 Required Score       : " + MAX_SCORE + "/" + MAX_SCORE);
-  console.log("📈 Total symbols        : " + summary.total);
+  console.log("📈 Total symbol×TF      : " + summary.total);
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
   console.log("🔎 Analyzed             : " + summary.analyzed);
-  console.log("📤 Sent                 : " + summary.sent);
+  console.log("✨ Signals detected     : " + summary.signals);
+  console.log("📤 Sent (after merge)   : " + summary.sent);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
   console.log("");
+}
+
+function selectSignalForSymbol(signalsByTF) {
+  const tfs = Object.keys(signalsByTF);
+
+  if (tfs.length === 0) return null;
+
+  if (tfs.length === 1) {
+    const tf = tfs[0];
+    return { timeframe: tf, ...signalsByTF[tf] };
+  }
+
+  if (signalsByTF[PRIMARY_TIMEFRAME]) {
+    return {
+      timeframe: PRIMARY_TIMEFRAME,
+      ...signalsByTF[PRIMARY_TIMEFRAME]
+    };
+  }
+
+  let best = null;
+
+  for (const tf of tfs) {
+    const s = signalsByTF[tf];
+    if (!best) {
+      best = { timeframe: tf, ...s };
+      continue;
+    }
+
+    const bestScore = best.active.score || 0;
+    const curScore = s.active.score || 0;
+
+    if (curScore > bestScore) {
+      best = { timeframe: tf, ...s };
+      continue;
+    }
+
+    if (curScore === bestScore) {
+      const bestRR = best.active.rr1 || 0;
+      const curRR = s.active.rr1 || 0;
+      if (curRR > bestRR) best = { timeframe: tf, ...s };
+    }
+  }
+
+  return best;
 }
 
 async function main() {
@@ -120,6 +168,7 @@ async function main() {
     total: 0,
     skipped: 0,
     analyzed: 0,
+    signals: 0,
     sent: 0,
     cacheEntries: 0,
     elapsedMs: 0
@@ -127,18 +176,16 @@ async function main() {
 
   console.log("");
   console.log("🚀 Starting crypto scan...");
-  console.log("⏱  Timeframe: " + TIMEFRAME);
+  console.log("⏱  Timeframes: " + SCAN_TIMEFRAMES.join(", "));
+  console.log("🎯 Primary TF for multi-signal: " + PRIMARY_TIMEFRAME);
   console.log("🎯 Required score: " + MAX_SCORE + "/" + MAX_SCORE);
   console.log("");
 
   let cache = await readCache();
-
   cache.signals = cleanOldSignals(cache.signals);
 
   console.log(
-    "📥 Loaded cache: " +
-      Object.keys(cache.signals).length +
-      " active signal(s)"
+    "📥 Loaded cache: " + Object.keys(cache.signals).length + " active signal(s)"
   );
 
   let symbols = [];
@@ -150,60 +197,71 @@ async function main() {
     process.exit(1);
   }
 
-  summary.total = symbols.length;
+  summary.total = symbols.length * SCAN_TIMEFRAMES.length;
 
-  console.log("📈 Fetched " + symbols.length + " symbols to scan");
+  console.log(
+    "📈 Fetched " +
+      symbols.length +
+      " symbols × " +
+      SCAN_TIMEFRAMES.length +
+      " timeframes = " +
+      summary.total +
+      " tasks"
+  );
   console.log("");
 
-  const results = await runWithConcurrency(
-    symbols,
-    CONCURRENCY,
-    async (item) => {
-      const symbol = item.symbol;
+  const tasks = [];
+  for (const item of symbols) {
+    for (const tf of SCAN_TIMEFRAMES) {
+      tasks.push({ symbol: item.symbol, timeframe: tf });
+    }
+  }
 
-      if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
-        return { symbol, status: "timeout" };
-      }
+  const results = await runWithConcurrency(tasks, CONCURRENCY, async (task) => {
+    const { symbol, timeframe } = task;
 
-      if (hasRecentSignal(cache.signals, symbol, TIMEFRAME)) {
-        return { symbol, status: "skipped" };
-      }
+    if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
+      return { symbol, timeframe, status: "timeout" };
+    }
 
-      let analysis;
+    if (hasRecentSignal(cache.signals, symbol, timeframe)) {
+      return { symbol, timeframe, status: "skipped" };
+    }
 
-      try {
-        analysis = await analyze(symbol, TIMEFRAME);
-      } catch (e) {
-        return {
-          symbol,
-          status: "error",
-          error: (e && e.message) || "unknown"
-        };
-      }
+    let analysis;
 
-      const active =
-        analysis &&
-        analysis.range_setups &&
-        analysis.range_setups.active;
-
-      if (
-        !active ||
-        !Number.isFinite(active.score) ||
-        active.score !== MAX_SCORE
-      ) {
-        return { symbol, status: "no_signal" };
-      }
-
+    try {
+      analysis = await analyze(symbol, timeframe);
+    } catch (e) {
       return {
         symbol,
-        status: "signal",
-        analysis,
-        active
+        timeframe,
+        status: "error",
+        error: (e && e.message) || "unknown"
       };
     }
-  );
 
-  const signalsToSend = [];
+    const active =
+      analysis && analysis.range_setups && analysis.range_setups.active;
+
+    if (
+      !active ||
+      !Number.isFinite(active.score) ||
+      active.score !== MAX_SCORE
+    ) {
+      return { symbol, timeframe, status: "no_signal" };
+    }
+
+    return {
+      symbol,
+      timeframe,
+      status: "signal",
+      analysis,
+      active
+    };
+  });
+
+  const signalsBySymbol = new Map();
 
   for (const result of results) {
     if (!result) continue;
@@ -214,7 +272,15 @@ async function main() {
       summary.analyzed++;
     } else if (result.status === "signal") {
       summary.analyzed++;
-      signalsToSend.push(result);
+      summary.signals++;
+
+      if (!signalsBySymbol.has(result.symbol)) {
+        signalsBySymbol.set(result.symbol, {});
+      }
+      signalsBySymbol.get(result.symbol)[result.timeframe] = {
+        analysis: result.analysis,
+        active: result.active
+      };
     }
   }
 
@@ -223,31 +289,82 @@ async function main() {
       summary.analyzed +
       " analyzed, " +
       summary.skipped +
-      " skipped"
+      " skipped, " +
+      summary.signals +
+      " raw signal(s)"
   );
 
-  if (signalsToSend.length > 0) {
+  const toSend = [];
+
+  for (const [symbol, tfMap] of signalsBySymbol.entries()) {
+    const selected = selectSignalForSymbol(tfMap);
+    if (!selected) continue;
+
+    const tfCount = Object.keys(tfMap).length;
+
+    if (tfCount > 1) {
+      console.log(
+        "🔀 " +
+          symbol +
+          " → " +
+          tfCount +
+          " TFs signaled (" +
+          Object.keys(tfMap).join(", ") +
+          ") → sending " +
+          selected.timeframe
+      );
+    }
+
+    toSend.push({
+      symbol,
+      timeframe: selected.timeframe,
+      analysis: selected.analysis,
+      active: selected.active,
+      multiTF: tfCount > 1
+    });
+  }
+
+  if (toSend.length > 0) {
     console.log("");
-    console.log(
-      "📨 " + signalsToSend.length + " qualifying signal(s) to send"
-    );
+    console.log("📨 " + toSend.length + " final message(s) to send");
     console.log("");
   }
 
-  for (const signal of signalsToSend) {
-    const { symbol, analysis, active } = signal;
+  for (const signal of toSend) {
+    const { symbol, timeframe, analysis, active, multiTF } = signal;
 
     try {
       const text = formatAnalysis(analysis);
 
       await sendTelegramMessage(token, chatId, text);
 
-      cache.signals = addSignal(cache.signals, symbol, TIMEFRAME, {
+      cache.signals = addSignal(cache.signals, symbol, timeframe, {
         direction: active.direction,
         score: active.score,
         entry: active.entry,
         stop: active.stop
       });
+
+      if (multiTF) {
+        const tfMap = signalsBySymbol.get(symbol);
+        if (tfMap) {
+          for (const otherTF of Object.keys(tfMap)) {
+            if (otherTF === timeframe) continue;
+            const otherActive = tfMap[otherTF].active;
+            cache.signals = addSignal(
+              cache.signals,
+              symbol,
+              otherTF,
+              {
+                direction: otherActive.direction,
+                score: otherActive.score,
+                entry: otherActive.entry,
+                stop: otherActive.stop
+              }
+            );
+          }
+        }
+      }
 
       try {
         await writeCache(cache);
@@ -263,15 +380,19 @@ async function main() {
       console.log(
         "📤 Sent: " +
           symbol +
-          " (" +
+          " [" +
+          timeframe +
+          "] (" +
           active.direction +
           ", score " +
           active.score +
-          "/14)"
+          "/14" +
+          (multiTF ? ", merged" : "") +
+          ")"
       );
     } catch (e) {
       console.error(
-        "❌ Failed to send " + symbol + ":",
+        "❌ Failed to send " + symbol + " [" + timeframe + "]:",
         (e && e.message) || e
       );
     }
