@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T21:04:50.849Z",
+  "lastUpdated": "2026-10-18T22:04:44.970Z",
   "signals": {
     "HBARUSDT:2h": {
       "sentAt": "2026-10-17T23:01:31.368Z",
@@ -189,6 +189,33 @@
       "score": 14,
       "entry": 5.7805,
       "stop": 5.750072258007101
+    },
+    "SNXXUSDT:1h": {
+      "sentAt": "2026-10-18T22:04:39.638Z",
+      "symbol": "SNXXUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.71,
+      "stop": 8.486864601759947
+    },
+    "SNDKUSDT:1h": {
+      "sentAt": "2026-10-18T22:04:41.531Z",
+      "symbol": "SNDKUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1272.05,
+      "stop": 1254.9785621782564
+    },
+    "AAOIUSDT:30m": {
+      "sentAt": "2026-10-18T22:04:43.466Z",
+      "symbol": "AAOIUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 73.405,
+      "stop": 72.55872630453979
     }
   }
 }

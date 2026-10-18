@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-18T21:04:50.850Z",
+  "lastUpdated": "2026-10-18T22:04:44.970Z",
   "allTime": {
-    "total": 1,
-    "tp1Hit": 0,
+    "total": 4,
+    "tp1Hit": 1,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 1,
-    "tp1Rate": 0,
+    "active": 3,
+    "tp1Rate": 100,
     "tp2Rate": 0,
     "tp3Rate": 0,
     "stopRate": 0
@@ -15,18 +15,18 @@
   "byTimeframe": {
     "15m": {
       "total": 1,
-      "tp1Hit": 0,
+      "tp1Hit": 1,
       "stopped": 0,
-      "tp1Rate": 0
+      "tp1Rate": 100
     },
     "30m": {
-      "total": 0,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
     },
     "1h": {
-      "total": 0,
+      "total": 2,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,10 +40,10 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 1,
-      "tp1Hit": 0,
+      "total": 4,
+      "tp1Hit": 1,
       "stopped": 0,
-      "tp1Rate": 0
+      "tp1Rate": 100
     },
     "bearish": {
       "total": 0,
@@ -56,12 +56,12 @@
     "week": "2026-W42",
     "startDate": "2026-10-11",
     "endDate": "2026-10-18",
-    "total": 1,
-    "tp1Hit": 0,
+    "total": 4,
+    "tp1Hit": 1,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 1,
+    "active": 3,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -78,8 +78,56 @@
       "rr1": 2.1475468017065187,
       "score": 14,
       "sentAt": "2026-10-18T21:04:49.343Z",
+      "status": "tp1_hit",
+      "statusUpdatedAt": "2026-10-18T22:00:22.739Z",
+      "maxR": 2.15
+    },
+    {
+      "symbol": "SNXXUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 8.71,
+      "stop": 8.486864601759947,
+      "tp1": 9.138218,
+      "tp2": 9.988218,
+      "tp3": null,
+      "rr1": 1.9190948786140778,
+      "score": 14,
+      "sentAt": "2026-10-18T22:04:39.638Z",
       "status": "active",
-      "statusUpdatedAt": "2026-10-18T21:04:49.343Z",
+      "statusUpdatedAt": "2026-10-18T22:04:39.638Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "SNDKUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 1272.05,
+      "stop": 1254.9785621782564,
+      "tp1": 1303.04226,
+      "tp2": 1357.54226,
+      "tp3": null,
+      "rr1": 1.8154452087524697,
+      "score": 14,
+      "sentAt": "2026-10-18T22:04:41.531Z",
+      "status": "active",
+      "statusUpdatedAt": "2026-10-18T22:04:41.531Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "AAOIUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 73.405,
+      "stop": 72.55872630453979,
+      "tp1": 75.005198,
+      "tp2": 75.745198,
+      "tp3": 76.435198,
+      "rr1": 1.8908752671673057,
+      "score": 14,
+      "sentAt": "2026-10-18T22:04:43.467Z",
+      "status": "active",
+      "statusUpdatedAt": "2026-10-18T22:04:43.467Z",
       "maxR": 0
     }
   ]
