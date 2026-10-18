@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T09:01:24.281Z",
+  "lastUpdated": "2026-10-18T10:01:24.700Z",
   "signals": {
-    "NOWUSDT:2h": {
-      "sentAt": "2026-10-17T09:01:40.567Z",
-      "symbol": "NOWUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 142.0759939483334,
-      "stop": 139.32457834476182
-    },
     "RLSUSDT:2h": {
       "sentAt": "2026-10-17T10:01:34.813Z",
       "symbol": "RLSUSDT",
@@ -243,6 +234,15 @@
       "score": 14,
       "entry": 0.62495,
       "stop": 0.5981727658921815
+    },
+    "AAVEUSDT:2h": {
+      "sentAt": "2026-10-18T10:01:23.197Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 152.59,
+      "stop": 147.70076089427798
     }
   }
 }
