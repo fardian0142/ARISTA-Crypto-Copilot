@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T03:01:33.909Z",
+  "lastUpdated": "2026-10-18T04:01:31.275Z",
   "signals": {
     "EPICUSDT:2h": {
       "sentAt": "2026-10-17T07:32:39.998Z",
@@ -189,6 +189,24 @@
       "score": 14,
       "entry": 262.93766426932353,
       "stop": 260.197222
+    },
+    "BNBUSDT:2h": {
+      "sentAt": "2026-10-18T04:01:28.039Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 720.5676084535036,
+      "stop": 716.5084474817102
+    },
+    "FWDIUSDT:2h": {
+      "sentAt": "2026-10-18T04:01:29.774Z",
+      "symbol": "FWDIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.9079999999999995,
+      "stop": 6.847347133568734
     }
   }
 }
