@@ -310,6 +310,27 @@ export function formatAnalysis(r) {
     lines.push("🎯 ورود: <b>" + fmtPrice(rs.entry) + "</b>");
     lines.push("🛑 حد ضرر: <b>" + fmtPrice(rs.stop) + "</b>");
 
+    const isBullish = rs.direction === "bullish";
+    const currentPrice = r.current_price;
+    const zoneLow = rs.zone_low;
+    const zoneHigh = rs.zone_high;
+    
+    let isFarFromZone = false;
+    
+    if (Number.isFinite(currentPrice)) {
+      if (isBullish && currentPrice > zoneHigh) {
+        isFarFromZone = true;
+      } else if (!isBullish && currentPrice < zoneLow) {
+        isFarFromZone = true;
+      }
+    }
+
+    if (isFarFromZone) {
+      lines.push("");
+      lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
+      lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+    }
+
     if (
       (rs.tp1 !== null && rs.tp1 !== undefined) ||
       (rs.tp2 !== null && rs.tp2 !== undefined) ||
@@ -395,6 +416,27 @@ export function formatAnalysis(r) {
     );
 
     lines.push("📍 ورود: <b>" + fmtPrice(r.entry) + "</b>");
+
+    const isBullish = r.direction === "bullish";
+    const currentPrice = r.current_price;
+    const zoneLow = r.entry_zone.low;
+    const zoneHigh = r.entry_zone.high;
+    
+    let isFarFromZone = false;
+    
+    if (Number.isFinite(currentPrice)) {
+      if (isBullish && currentPrice > zoneHigh) {
+        isFarFromZone = true;
+      } else if (!isBullish && currentPrice < zoneLow) {
+        isFarFromZone = true;
+      }
+    }
+
+    if (isFarFromZone) {
+      lines.push("");
+      lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
+      lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+    }
 
     if (r.stop_loss !== null && r.stop_loss !== undefined) {
       lines.push("🛑 حد ضرر: <b>" + fmtPrice(r.stop_loss) + "</b>");
@@ -680,6 +722,19 @@ if (
   ) {
     lines.push("");
     lines.push("💡 <b>دلیل:</b> " + escapeHtml(r._noTradeReason));
+  }
+
+  const hasActiveTrade =
+    (rangeActive && r.range_setups.active) ||
+    (r.entry_zone && (r.status === "LONG" || r.status === "SHORT" || r.status === "WAIT"));
+
+  if (hasActiveTrade) {
+    lines.push("");
+    lines.push("💡 <b>مدیریت ریسک و سرمایه:</b>");
+    lines.push("🔸 با تاچ شدن TP1، حد ضرر (Stop) را به نقطه ورود (Breakeven) منتقل کنید.");
+    lines.push("🔸 با تاچ شدن TP2، حد ضرر را به TP1 منتقل کنید.");
+    lines.push("🔸 با تاچ شدن TP3، حد ضرر را به TP2 منتقل کنید.");
+    lines.push("🔸 در صورت نیاز به خروج زودهنگام، به ساختار بازار در تایم‌فریم بالاتر دقت کنید.");
   }
 
   lines.push("");
