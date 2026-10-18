@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T19:04:48.904Z",
+  "lastUpdated": "2026-10-18T20:04:13.816Z",
   "signals": {
-    "GRVTUSDT:2h": {
-      "sentAt": "2026-10-17T20:01:24.890Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.21444000000000002,
-      "stop": 0.21133060182577848
-    },
     "MORPHOUSDT:2h": {
       "sentAt": "2026-10-17T21:01:23.532Z",
       "symbol": "MORPHOUSDT",
