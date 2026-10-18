@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-18T14:01:17.964Z",
+  "lastUpdated": "2026-10-18T15:01:19.745Z",
   "signals": {
-    "KAITOUSDT:2h": {
-      "sentAt": "2026-10-17T14:01:44.524Z",
-      "symbol": "KAITOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.287514293868652,
-      "stop": 0.27959794986439773
-    },
-    "GRAMUSDT:2h": {
-      "sentAt": "2026-10-17T14:01:46.248Z",
-      "symbol": "GRAMUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.3490501659001255,
-      "stop": 1.3243712389712852
-    },
     "APEUSDT:2h": {
       "sentAt": "2026-10-17T16:01:29.566Z",
       "symbol": "APEUSDT",
