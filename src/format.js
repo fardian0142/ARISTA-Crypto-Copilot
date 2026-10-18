@@ -742,3 +742,99 @@ if (
 
   return lines.join("\n");
 }
+
+export function formatSignalResult(sig, newStatus) {
+  const isBullish = sig.direction === "bullish";
+  
+  if (newStatus === "stopped") {
+    return (
+      "🛑 <b>حد ضرر فعال شد</b>\n" +
+      "━━━━━━━━━━━━━━━━━━━━━━\n" +
+      "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
+      "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
+      "📌 جهت: " + (isBullish ? "🟢 خرید (Long)" : "🔴 فروش (Short)") + "\n\n" +
+      "💡 مدیریت سرمایه را رعایت کنید. بازار همیشه فرصت‌های جدیدی دارد."
+    );
+  }
+  
+  let hitLevel = "";
+  let emoji = "";
+  
+  if (newStatus === "tp1_hit") { hitLevel = "TP1 (هدف اول)"; emoji = "🥇"; }
+  else if (newStatus === "tp2_hit") { hitLevel = "TP2 (هدف دوم)"; emoji = "🥈"; }
+  else if (newStatus === "tp3_hit") { hitLevel = "TP3 (هدف سوم)"; emoji = "🥉"; }
+  
+  return (
+    "✅ <b>هدف با موفقیت لمس شد!</b>\n" +
+    "━━━━━━━━━━━━━━━━━━━━━━\n" +
+    "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
+    "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
+    "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
+    emoji + " هدف لمس شده: <b>" + hitLevel + "</b>\n" +
+    "💰 حداکثر سود (R): <b>" + (sig.maxR || 0) + "R</b>\n\n" +
+    "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
+  );
+}
+
+export function formatWeeklyReport(stats) {
+  const { allTime, byTimeframe, byDirection, weekly } = stats;
+  const lines = [];
+
+  lines.push("📊 <b>گزارش عملکرد هفتگی ربات</b>");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push("📅 بازه: <b>" + escapeHtml(weekly.startDate) + " تا " + escapeHtml(weekly.endDate) + "</b>");
+  lines.push("");
+  lines.push("📈 <b>آمار هفته گذشته:</b>");
+  lines.push("   📤 کل سیگنال: <b>" + weekly.total + "</b>");
+  lines.push("   🥇 رسیده به TP1: <b>" + weekly.tp1Hit + "</b>");
+  lines.push("   🥈 رسیده به TP2: <b>" + weekly.tp2Hit + "</b>");
+  lines.push("   🥉 رسیده به TP3: <b>" + weekly.tp3Hit + "</b>");
+  lines.push("   🛑 استاپ خورده: <b>" + weekly.stopped + "</b>");
+  lines.push("   ⏳ در جریان: <b>" + weekly.active + "</b>");
+
+  if (weekly.bestTrade) {
+    lines.push("");
+    lines.push("🏆 بهترین معامله: <b>" + escapeHtml(weekly.bestTrade.symbol) + "</b> [" + escapeHtml(weekly.bestTrade.timeframe) + "] با <b>" + weekly.bestTrade.rr + "R</b>");
+  }
+
+  const totalDone = allTime.total - allTime.active;
+  if (totalDone > 0) {
+    lines.push("");
+    lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+    lines.push("📊 <b>آمار کل (از ابتدا):</b>");
+    lines.push("   📤 کل سیگنال: <b>" + allTime.total + "</b>");
+    lines.push("");
+    lines.push("🎯 <b>نرخ موفقیت:</b>");
+    lines.push("   🥇 TP1: <b>" + allTime.tp1Rate + "%</b> (" + allTime.tp1Hit + "/" + totalDone + ")");
+    lines.push("   🥈 TP2: <b>" + allTime.tp2Rate + "%</b> (" + allTime.tp2Hit + "/" + totalDone + ")");
+    lines.push("   🥉 TP3: <b>" + allTime.tp3Rate + "%</b> (" + allTime.tp3Hit + "/" + totalDone + ")");
+    lines.push("   🛑 Stop: <b>" + allTime.stopRate + "%</b> (" + allTime.stopped + "/" + totalDone + ")");
+  }
+
+  lines.push("");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push("⏱ <b>عملکرد به تفکیک تایم‌فریم:</b>");
+  for (const tf of ["15m", "30m", "1h", "2h"]) {
+    const t = byTimeframe[tf];
+    if (t && t.total > 0) {
+      lines.push("   <b>" + tf + "</b> → " + t.total + " سیگنال | TP1: <b>" + t.tp1Rate + "%</b>");
+    }
+  }
+
+  lines.push("");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push("📊 <b>عملکرد به تفکیک جهت:</b>");
+  for (const dir of ["bullish", "bearish"]) {
+    const d = byDirection[dir];
+    if (d && d.total > 0) {
+      const label = dir === "bullish" ? "🟢 Long" : "🔴 Short";
+      lines.push("   " + label + " → " + d.total + " سیگنال | TP1: <b>" + d.tp1Rate + "%</b>");
+    }
+  }
+
+  lines.push("");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push("⚠️ آمار بر اساس تحلیل الگوریتمی است و تضمین سود نیست.");
+
+  return lines.join("\n");
+}
