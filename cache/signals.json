@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T05:05:15.651Z",
+  "lastUpdated": "2026-10-19T06:05:37.676Z",
   "signals": {
-    "PROVEUSDT:2h": {
-      "sentAt": "2026-10-18T06:01:20.286Z",
-      "symbol": "PROVEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1835,
-      "stop": 0.18036991487968468
-    },
-    "BTCUSDT:2h": {
-      "sentAt": "2026-10-18T06:01:22.031Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 81793.68702185681,
-      "stop": 81261.28626073507
-    },
     "ARXUSDT:2h": {
       "sentAt": "2026-10-18T08:01:19.368Z",
       "symbol": "ARXUSDT",
@@ -1188,6 +1170,114 @@
       "score": 14,
       "entry": 57.62,
       "stop": 56.92933738688849
+    },
+    "LINEAUSDT:30m": {
+      "sentAt": "2026-10-19T06:05:18.982Z",
+      "symbol": "LINEAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002668,
+      "stop": 0.0026304664000000003
+    },
+    "BASEDUSDT:30m": {
+      "sentAt": "2026-10-19T06:05:20.674Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04852,
+      "stop": 0.04710970950109295
+    },
+    "FOGOUSDT:15m": {
+      "sentAt": "2026-10-19T06:05:22.379Z",
+      "symbol": "FOGOUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00382446628067766,
+      "stop": 0.003753715939952886
+    },
+    "POLUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:24.084Z",
+      "symbol": "POLUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.092085,
+      "stop": 0.08971094687716141
+    },
+    "AIXBTUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:25.787Z",
+      "symbol": "AIXBTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.018584999999999997,
+      "stop": 0.018066080515835404
+    },
+    "ZETAUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:27.502Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04164,
+      "stop": 0.04044017889436269
+    },
+    "0GUSDT:30m": {
+      "sentAt": "2026-10-19T06:05:29.290Z",
+      "symbol": "0GUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2276729868996931,
+      "stop": 0.22374434185845823
+    },
+    "RIVERUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:31.011Z",
+      "symbol": "RIVERUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0325,
+      "stop": 1.007792
+    },
+    "RIVERUSDT:30m": {
+      "sentAt": "2026-10-19T06:05:31.011Z",
+      "symbol": "RIVERUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.037,
+      "stop": 1.0081575212729548
+    },
+    "ETHWUSDT:30m": {
+      "sentAt": "2026-10-19T06:05:32.708Z",
+      "symbol": "ETHWUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2351,
+      "stop": 0.2328528
+    },
+    "LTCUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:34.457Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 59.39,
+      "stop": 57.93899428714093
+    },
+    "SOFTBANKUSDT:2h": {
+      "sentAt": "2026-10-19T06:05:36.169Z",
+      "symbol": "SOFTBANKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 30.26774,
+      "stop": 28.93784919260116
     }
   }
 }
