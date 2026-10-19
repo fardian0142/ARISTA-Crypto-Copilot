@@ -106,10 +106,38 @@ function logSummary(summary) {
   console.log("✨ Signals detected     : " + summary.signals);
   console.log("📤 Sent (after merge)   : " + summary.sent);
   console.log("🔄 Tracked (updated)    : " + summary.tracked);
+  console.log("🚫 Missed/Invalidated   : " + summary.missed);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
   console.log("");
+}
+
+function isSetupValid(active, currentPrice) {
+  if (!active || !Number.isFinite(currentPrice)) return false;
+
+  const direction = active.direction;
+  const entry = active.entry;
+  const stop = active.stop;
+  const zoneLow = active.zone_low;
+  const zoneHigh = active.zone_high;
+
+  if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(zoneLow) || !Number.isFinite(zoneHigh)) {
+    return false;
+  }
+
+  const isBullish = direction === "bullish";
+
+  if (isBullish && currentPrice <= stop) return false;
+  if (!isBullish && currentPrice >= stop) return false;
+
+  const riskDist = Math.abs(entry - stop);
+  const tolerance = riskDist * 0.30;
+
+  if (isBullish && currentPrice > zoneHigh + tolerance) return false;
+  if (!isBullish && currentPrice < zoneLow - tolerance) return false;
+
+  return true;
 }
 
 function selectSignalForSymbol(signalsByTF) {
@@ -176,6 +204,7 @@ async function main() {
     signals: 0,
     sent: 0,
     tracked: 0,
+    missed: 0,
     cacheEntries: 0,
     elapsedMs: 0
   };
@@ -310,6 +339,18 @@ async function main() {
       return { symbol, timeframe, status: "no_signal" };
     }
 
+    const currentPrice = analysis.current_price;
+    const isValid = isSetupValid(active, currentPrice);
+
+    if (!isValid) {
+      return { 
+        symbol, 
+        timeframe, 
+        status: "missed",
+        reason: "فرصت ورود از دست رفته یا ستاپ باطل شده"
+      };
+    }
+
     return {
       symbol,
       timeframe,
@@ -326,6 +367,10 @@ async function main() {
 
     if (result.status === "skipped") {
       summary.skipped++;
+    } else if (result.status === "missed") {
+      summary.analyzed++;
+      summary.missed++;
+      console.log("   🚫 " + result.symbol + " [" + result.timeframe + "] — " + result.reason);
     } else if (result.status === "no_signal" || result.status === "error") {
       summary.analyzed++;
     } else if (result.status === "signal") {
@@ -349,7 +394,9 @@ async function main() {
       summary.skipped +
       " skipped, " +
       summary.signals +
-      " raw signal(s)"
+      " raw signal(s), " +
+      summary.missed +
+      " missed/invalidated"
   );
 
   const toSend = [];
