@@ -237,11 +237,11 @@ async function main() {
 
   const trackingTasks = stats.recentSignals
     .map((sig, idx) => ({ sig, idx }))
-    .filter(({ sig }) => sig && (sig.status === "active" || sig.status === "tp1_hit" || sig.status === "tp2_hit"));
+    .filter(({ sig }) => sig && (sig.status === "active" || sig.status === "pending" || sig.status === "tp1_hit" || sig.status === "tp2_hit"));
 
   const trackedResults = await runWithConcurrency(trackingTasks, 3, async ({ sig, idx }) => {
     if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
-      return { idx, status: sig.status, maxR: sig.maxR || 0, skipped: true };
+      return { idx, status: sig.status, maxR: sig.maxR || 0, activated: sig.activated, skipped: true };
     }
     const result = await updateSignalStatus(sig);
     return { idx, ...result };
@@ -259,15 +259,18 @@ async function main() {
         (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
       );
       
-      try {
-        const resultText = formatSignalResult(sig, r.status);
-        await sendTelegramMessage(token, chatId, resultText);
-        await sleep(MESSAGE_DELAY_MS);
-      } catch (e) {
-        console.error("❌ Failed to send result for " + sig.symbol + ":", (e && e.message) || e);
+      if (r.status !== "pending") {
+        try {
+          const resultText = formatSignalResult(sig, r.status);
+          await sendTelegramMessage(token, chatId, resultText);
+          await sleep(MESSAGE_DELAY_MS);
+        } catch (e) {
+          console.error("❌ Failed to send result for " + sig.symbol + ":", (e && e.message) || e);
+        }
       }
     }
     sig.status = r.status;
+    if (typeof r.activated === "boolean") sig.activated = r.activated;
     if (Number.isFinite(r.maxR)) sig.maxR = Math.round(r.maxR * 100) / 100;
     sig.statusUpdatedAt = new Date().toISOString();
   }
@@ -471,6 +474,15 @@ async function main() {
         }
       }
 
+      const currentPrice = analysis.current_price;
+      const isBullish = active.direction === "bullish";
+      
+      let isActivatedNow = false;
+      if (Number.isFinite(currentPrice)) {
+        if (isBullish && currentPrice <= active.entry) isActivatedNow = true;
+        else if (!isBullish && currentPrice >= active.entry) isActivatedNow = true;
+      }
+
       stats.recentSignals.push({
         symbol,
         timeframe,
@@ -483,7 +495,8 @@ async function main() {
         rr1: active.rr1,
         score: active.score,
         sentAt: new Date().toISOString(),
-        status: "active",
+        status: isActivatedNow ? "active" : "pending",
+        activated: isActivatedNow,
         statusUpdatedAt: new Date().toISOString(),
         maxR: 0
       });
@@ -510,6 +523,7 @@ async function main() {
           active.score +
           "/14" +
           (multiTF ? ", merged" : "") +
+          (isActivatedNow ? ", activated" : ", pending") +
           ")"
       );
     } catch (e) {
