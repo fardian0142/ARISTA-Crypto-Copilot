@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T21:01:17.105Z",
+  "lastUpdated": "2026-10-19T22:02:01.349Z",
   "allTime": {
     "total": 5,
     "tp1Hit": 0,
@@ -80,8 +80,8 @@
       "sentAt": "2026-10-19T16:02:07.715Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T21:00:45.367Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-19T22:00:43.717Z",
+      "maxR": 0.3
     },
     {
       "symbol": "NOTUSDT",
@@ -97,8 +97,8 @@
       "sentAt": "2026-10-19T17:02:08.835Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T21:00:45.367Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
+      "maxR": 0.05
     },
     {
       "symbol": "PARTIUSDT",
@@ -114,7 +114,7 @@
       "sentAt": "2026-10-19T18:02:09.941Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T21:00:45.367Z",
+      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
       "maxR": 0
     },
     {
@@ -131,7 +131,7 @@
       "sentAt": "2026-10-19T19:02:06.419Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T21:00:45.367Z",
+      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
       "maxR": 0
     },
     {
@@ -148,7 +148,7 @@
       "sentAt": "2026-10-19T21:01:15.600Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T21:01:15.600Z",
+      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
       "maxR": 0
     }
   ]
