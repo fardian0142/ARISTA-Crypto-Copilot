@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-19T18:02:11.446Z",
+  "lastUpdated": "2026-10-19T19:02:07.922Z",
   "allTime": {
-    "total": 3,
+    "total": 4,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 3,
+    "active": 4,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -20,7 +20,7 @@
       "tp1Rate": 0
     },
     "30m": {
-      "total": 1,
+      "total": 2,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 3,
+      "total": 4,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,12 +56,12 @@
     "week": "2026-W43",
     "startDate": "2026-10-12",
     "endDate": "2026-10-19",
-    "total": 3,
+    "total": 4,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 3,
+    "active": 4,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -80,7 +80,7 @@
       "sentAt": "2026-10-19T16:02:07.715Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T18:00:45.805Z",
+      "statusUpdatedAt": "2026-10-19T19:00:44.481Z",
       "maxR": 0
     },
     {
@@ -97,7 +97,7 @@
       "sentAt": "2026-10-19T17:02:08.835Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T18:00:45.805Z",
+      "statusUpdatedAt": "2026-10-19T19:00:44.481Z",
       "maxR": 0
     },
     {
@@ -114,7 +114,24 @@
       "sentAt": "2026-10-19T18:02:09.941Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T18:02:09.941Z",
+      "statusUpdatedAt": "2026-10-19T19:00:44.481Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "SATSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 1.0216500000000001e-8,
+      "stop": 1.0133947000000001e-8,
+      "tp1": 1.0424947e-8,
+      "tp2": 1.0499947000000001e-8,
+      "tp3": 1.0577947e-8,
+      "rr1": 2.5250081765653642,
+      "score": 14,
+      "sentAt": "2026-10-19T19:02:06.419Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T19:02:06.419Z",
       "maxR": 0
     }
   ]
