@@ -5,26 +5,44 @@ export async function updateSignalStatus(signal) {
     const analysis = await analyze(signal.symbol, signal.timeframe);
 
     if (!analysis || !Number.isFinite(analysis.current_price)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0 };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
     }
 
     const price = analysis.current_price;
     const { direction, entry, stop, tp1, tp2, tp3 } = signal;
 
     if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(tp1)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0 };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
     }
 
     const risk = Math.abs(entry - stop);
     if (risk <= 0) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0 };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
     }
 
     const isBull = direction === "bullish";
 
+    let isActivated = signal.activated === true;
+
+    if (!isActivated) {
+      if (isBull) {
+        isActivated = price <= entry;
+      } else {
+        isActivated = price >= entry;
+      }
+    }
+
+    if (!isActivated) {
+      return {
+        status: "pending",
+        maxR: 0,
+        activated: false
+      };
+    }
+
     const stopHit = isBull ? price <= stop : price >= stop;
     if (stopHit) {
-      return { status: "stopped", maxR: -1, final: true };
+      return { status: "stopped", maxR: 0, final: true, activated: true };
     }
 
     const tp3Hit = Number.isFinite(tp3) && (isBull ? price >= tp3 : price <= tp3);
@@ -35,13 +53,13 @@ export async function updateSignalStatus(signal) {
     const prevMaxR = Number.isFinite(signal.maxR) ? signal.maxR : 0;
     const newMaxR = Math.max(prevMaxR, maxR);
 
-    if (tp3Hit) return { status: "tp3_hit", maxR: newMaxR, final: true };
-    if (tp2Hit) return { status: "tp2_hit", maxR: newMaxR };
-    if (tp1Hit) return { status: "tp1_hit", maxR: newMaxR };
+    if (tp3Hit) return { status: "tp3_hit", maxR: newMaxR, final: true, activated: true };
+    if (tp2Hit) return { status: "tp2_hit", maxR: newMaxR, activated: true };
+    if (tp1Hit) return { status: "tp1_hit", maxR: newMaxR, activated: true };
 
-    return { status: "active", maxR: newMaxR };
+    return { status: "active", maxR: newMaxR, activated: true };
   } catch (e) {
-    return { status: signal.status || "active", maxR: signal.maxR || 0 };
+    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
   }
 }
 
