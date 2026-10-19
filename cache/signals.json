@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T22:02:01.348Z",
+  "lastUpdated": "2026-10-19T23:01:58.237Z",
   "signals": {
-    "SNXXUSDT:1h": {
-      "sentAt": "2026-10-18T22:04:39.638Z",
-      "symbol": "SNXXUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.71,
-      "stop": 8.486864601759947
-    },
-    "SNDKUSDT:1h": {
-      "sentAt": "2026-10-18T22:04:41.531Z",
-      "symbol": "SNDKUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1272.05,
-      "stop": 1254.9785621782564
-    },
-    "AAOIUSDT:30m": {
-      "sentAt": "2026-10-18T22:04:43.466Z",
-      "symbol": "AAOIUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 73.405,
-      "stop": 72.55872630453979
-    },
     "BONKUSDT:1h": {
       "sentAt": "2026-10-18T23:04:38.738Z",
       "symbol": "BONKUSDT",
@@ -1755,6 +1728,15 @@
       "score": 14,
       "entry": 0.0004092,
       "stop": 0.00040231814
+    },
+    "SAHARAUSDT:1h": {
+      "sentAt": "2026-10-19T23:01:56.734Z",
+      "symbol": "SAHARAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.007449,
+      "stop": 0.0073385064
     }
   }
 }

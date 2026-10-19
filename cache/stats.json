@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-19T22:02:01.349Z",
+  "lastUpdated": "2026-10-19T23:01:58.238Z",
   "allTime": {
-    "total": 5,
+    "total": 6,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 5,
+    "active": 6,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -26,7 +26,7 @@
       "tp1Rate": 0
     },
     "1h": {
-      "total": 2,
+      "total": 3,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 5,
+      "total": 6,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,12 +56,12 @@
     "week": "2026-W43",
     "startDate": "2026-10-12",
     "endDate": "2026-10-19",
-    "total": 5,
+    "total": 6,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 5,
+    "active": 6,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -80,8 +80,8 @@
       "sentAt": "2026-10-19T16:02:07.715Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T22:00:43.717Z",
-      "maxR": 0.3
+      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "maxR": 0.96
     },
     {
       "symbol": "NOTUSDT",
@@ -97,8 +97,8 @@
       "sentAt": "2026-10-19T17:02:08.835Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
-      "maxR": 0.05
+      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "maxR": 0.76
     },
     {
       "symbol": "PARTIUSDT",
@@ -114,7 +114,7 @@
       "sentAt": "2026-10-19T18:02:09.941Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
+      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
       "maxR": 0
     },
     {
@@ -131,7 +131,7 @@
       "sentAt": "2026-10-19T19:02:06.419Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
+      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
       "maxR": 0
     },
     {
@@ -148,7 +148,24 @@
       "sentAt": "2026-10-19T21:01:15.600Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T22:00:43.718Z",
+      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "SAHARAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 0.007449,
+      "stop": 0.0073385064,
+      "tp1": 0.007879506400000002,
+      "tp2": 0.008016506400000002,
+      "tp3": null,
+      "rr1": 3.8962111832721713,
+      "score": 14,
+      "sentAt": "2026-10-19T23:01:56.734Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T23:01:56.734Z",
       "maxR": 0
     }
   ]
