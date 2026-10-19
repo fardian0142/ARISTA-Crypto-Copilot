@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2026-10-19T10:04:40.815Z",
+  "lastUpdated": "2026-10-19T11:05:12.073Z",
   "allTime": {
-    "total": 30,
+    "total": 40,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
-    "stopped": 0,
-    "active": 30,
+    "stopped": 4,
+    "active": 36,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
-    "stopRate": 0
+    "stopRate": 100
   },
   "byTimeframe": {
     "15m": {
-      "total": 13,
+      "total": 19,
       "tp1Hit": 0,
-      "stopped": 0,
+      "stopped": 4,
       "tp1Rate": 0
     },
     "30m": {
-      "total": 10,
+      "total": 12,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -32,7 +32,7 @@
       "tp1Rate": 0
     },
     "2h": {
-      "total": 3,
+      "total": 5,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,15 +40,15 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 17,
+      "total": 19,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
     },
     "bearish": {
-      "total": 13,
+      "total": 21,
       "tp1Hit": 0,
-      "stopped": 0,
+      "stopped": 4,
       "tp1Rate": 0
     }
   },
@@ -56,14 +56,18 @@
     "week": "2026-W43",
     "startDate": "2026-10-12",
     "endDate": "2026-10-19",
-    "total": 30,
+    "total": 40,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
-    "stopped": 0,
-    "active": 30,
+    "stopped": 4,
+    "active": 36,
     "bestTrade": null,
-    "worstTrade": null
+    "worstTrade": {
+      "symbol": "CRDOUSDT",
+      "timeframe": "15m",
+      "loss": -1
+    }
   },
   "recentSignals": [
     {
@@ -80,8 +84,8 @@
       "sentAt": "2026-10-19T08:04:56.092Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.659Z",
-      "maxR": 0.03
+      "statusUpdatedAt": "2026-10-19T11:00:47.736Z",
+      "maxR": 0.07
     },
     {
       "symbol": "WALUSDT",
@@ -97,7 +101,7 @@
       "sentAt": "2026-10-19T08:04:57.824Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:47.736Z",
       "maxR": 0
     },
     {
@@ -114,7 +118,7 @@
       "sentAt": "2026-10-19T08:04:59.585Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:47.736Z",
       "maxR": 0
     },
     {
@@ -129,9 +133,9 @@
       "rr1": 2.3464868859545174,
       "score": 14,
       "sentAt": "2026-10-19T08:05:01.333Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T11:00:47.736Z",
       "maxR": 0
     },
     {
@@ -148,7 +152,7 @@
       "sentAt": "2026-10-19T08:05:03.057Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:47.736Z",
       "maxR": 0
     },
     {
@@ -163,10 +167,10 @@
       "rr1": 4.386745673011631,
       "score": 14,
       "sentAt": "2026-10-19T08:05:04.780Z",
-      "status": "active",
+      "status": "stopped",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
-      "maxR": 0.29
+      "statusUpdatedAt": "2026-10-19T11:00:49.799Z",
+      "maxR": 0
     },
     {
       "symbol": "AEHRUSDT",
@@ -180,9 +184,9 @@
       "rr1": 1.8290206341942457,
       "score": 14,
       "sentAt": "2026-10-19T08:05:06.597Z",
-      "status": "active",
+      "status": "stopped",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -199,7 +203,7 @@
       "sentAt": "2026-10-19T09:04:25.282Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -216,7 +220,7 @@
       "sentAt": "2026-10-19T09:04:27.083Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -233,7 +237,7 @@
       "sentAt": "2026-10-19T09:04:28.903Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -250,7 +254,7 @@
       "sentAt": "2026-10-19T09:04:30.723Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0.39
     },
     {
@@ -267,7 +271,7 @@
       "sentAt": "2026-10-19T09:04:37.288Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -282,9 +286,9 @@
       "rr1": 1.4241260445811113,
       "score": 14,
       "sentAt": "2026-10-19T09:04:39.051Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -301,7 +305,7 @@
       "sentAt": "2026-10-19T09:04:40.821Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:51.532Z",
       "maxR": 0
     },
     {
@@ -316,9 +320,9 @@
       "rr1": 1.8118017129997743,
       "score": 14,
       "sentAt": "2026-10-19T09:04:42.585Z",
-      "status": "active",
+      "status": "stopped",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:53.296Z",
       "maxR": 0
     },
     {
@@ -333,9 +337,9 @@
       "rr1": 4.617425921678156,
       "score": 14,
       "sentAt": "2026-10-19T09:04:44.429Z",
-      "status": "active",
+      "status": "stopped",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.319Z",
       "maxR": 0
     },
     {
@@ -352,7 +356,7 @@
       "sentAt": "2026-10-19T09:04:46.217Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.319Z",
       "maxR": 0
     },
     {
@@ -369,8 +373,8 @@
       "sentAt": "2026-10-19T09:04:47.984Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:00:47.660Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-19T11:00:55.319Z",
+      "maxR": 0.08
     },
     {
       "symbol": "APTUSDT",
@@ -384,9 +388,9 @@
       "rr1": 1.6196565563441165,
       "score": 14,
       "sentAt": "2026-10-19T10:04:19.164Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:19.164Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -403,7 +407,7 @@
       "sentAt": "2026-10-19T10:04:20.935Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:20.935Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -420,7 +424,7 @@
       "sentAt": "2026-10-19T10:04:22.713Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:04:22.713Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -437,7 +441,7 @@
       "sentAt": "2026-10-19T10:04:24.512Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:04:24.512Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -454,7 +458,7 @@
       "sentAt": "2026-10-19T10:04:26.307Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:26.307Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -471,7 +475,7 @@
       "sentAt": "2026-10-19T10:04:28.115Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:28.115Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -486,9 +490,9 @@
       "rr1": 1.8424205762096337,
       "score": 14,
       "sentAt": "2026-10-19T10:04:29.941Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:29.941Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -505,7 +509,7 @@
       "sentAt": "2026-10-19T10:04:31.818Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:31.818Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -522,7 +526,7 @@
       "sentAt": "2026-10-19T10:04:33.607Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:33.607Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -537,9 +541,9 @@
       "rr1": 2.0491662203216765,
       "score": 14,
       "sentAt": "2026-10-19T10:04:35.693Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:35.693Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -556,7 +560,7 @@
       "sentAt": "2026-10-19T10:04:37.536Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T10:04:37.536Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
       "maxR": 0
     },
     {
@@ -573,7 +577,177 @@
       "sentAt": "2026-10-19T10:04:39.309Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T10:04:39.309Z",
+      "statusUpdatedAt": "2026-10-19T11:00:55.320Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "PUMPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 0.0044765,
+      "stop": 0.004548710063248983,
+      "tp1": 0.0043048912,
+      "tp2": 0.0042338912,
+      "tp3": 0.0041538912,
+      "rr1": 2.37652194553942,
+      "score": 14,
+      "sentAt": "2026-10-19T11:04:54.419Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:04:54.419Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "PENGUUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "entry": 0.007506,
+      "stop": 0.007623740119064465,
+      "tp1": 0.0072234948,
+      "tp2": 0.0070454948,
+      "tp3": null,
+      "rr1": 2.399396248659484,
+      "score": 14,
+      "sentAt": "2026-10-19T11:04:56.217Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:04:56.217Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "GRASSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 0.5993428879584745,
+      "stop": 0.608173337320824,
+      "tp1": 0.5763195600000001,
+      "tp2": 0.56881956,
+      "tp3": 0.5561195600000001,
+      "rr1": 2.6072657249628883,
+      "score": 14,
+      "sentAt": "2026-10-19T11:04:57.950Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:04:57.950Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "LINKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 12.052,
+      "stop": 11.724434685800976,
+      "tp1": 12.7665864,
+      "tp2": 13.0635864,
+      "tp3": 13.4715864,
+      "rr1": 2.181508142116132,
+      "score": 14,
+      "sentAt": "2026-10-19T11:04:59.742Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:04:59.742Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "entry": 2428.711525651379,
+      "stop": 2450.616318636947,
+      "tp1": 2397.934414,
+      "tp2": 2367.144414,
+      "tp3": 2328.484414,
+      "rr1": 1.405040060029611,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:01.595Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:01.595Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "ENSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 5.468580665528125,
+      "stop": 5.5410828620223205,
+      "tp1": 5.3740898,
+      "tp2": 5.3420898,
+      "tp3": 5.2330898,
+      "rr1": 1.3032827982761932,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:03.401Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:03.401Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "MSTRUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 139.335,
+      "stop": 140.90614468562765,
+      "tp1": 135.357772,
+      "tp2": 134.177772,
+      "tp3": null,
+      "rr1": 2.5314205855020706,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:05.152Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:05.152Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "COMPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 21.553805759529958,
+      "stop": 21.762261030585893,
+      "tp1": 20.924310000000002,
+      "tp2": 20.80431,
+      "tp3": 20.60431,
+      "rr1": 3.019812146467816,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:06.922Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:06.922Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "NOKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 9.258,
+      "stop": 9.098256970108395,
+      "tp1": 9.8281364,
+      "tp2": 9.9081364,
+      "tp3": 10.0481364,
+      "rr1": 3.5690846754745644,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:08.702Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:08.702Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "MSTUUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 31.741,
+      "stop": 32.30800933102701,
+      "tp1": 30.761304,
+      "tp2": 30.023304,
+      "tp3": 29.745304,
+      "rr1": 1.727830471899824,
+      "score": 14,
+      "sentAt": "2026-10-19T11:05:10.567Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T11:05:10.567Z",
       "maxR": 0
     }
   ]
