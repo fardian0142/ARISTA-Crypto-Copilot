@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T06:05:37.676Z",
+  "lastUpdated": "2026-10-19T07:05:18.007Z",
   "signals": {
     "ARXUSDT:2h": {
       "sentAt": "2026-10-18T08:01:19.368Z",
@@ -1278,6 +1278,87 @@
       "score": 14,
       "entry": 30.26774,
       "stop": 28.93784919260116
+    },
+    "BRETTUSDT:1h": {
+      "sentAt": "2026-10-19T07:05:02.463Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004675,
+      "stop": 0.0045470608
+    },
+    "MOVEUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:04.228Z",
+      "symbol": "MOVEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0073095,
+      "stop": 0.007226476613051574
+    },
+    "ENJUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:05.973Z",
+      "symbol": "ENJUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.027305249325305942,
+      "stop": 0.02682036003440311
+    },
+    "SUSHIUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:07.732Z",
+      "symbol": "SUSHIUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2168,
+      "stop": 0.21345019241786273
+    },
+    "PROVEUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:09.474Z",
+      "symbol": "PROVEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18165,
+      "stop": 0.17993224883083095
+    },
+    "PIEVERSEUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:11.219Z",
+      "symbol": "PIEVERSEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0732942,
+      "stop": 1.05177034968266
+    },
+    "AAPLUSDT:1h": {
+      "sentAt": "2026-10-19T07:05:12.977Z",
+      "symbol": "AAPLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 344.30207743629387,
+      "stop": 342.58109670159763
+    },
+    "CGNXUSDT:15m": {
+      "sentAt": "2026-10-19T07:05:14.731Z",
+      "symbol": "CGNXUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 54.62491624976796,
+      "stop": 55.02893035813729
+    },
+    "BWETUSDT:30m": {
+      "sentAt": "2026-10-19T07:05:16.504Z",
+      "symbol": "BWETUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 880.3275959265115,
+      "stop": 861.4245888863793
     }
   }
 }
