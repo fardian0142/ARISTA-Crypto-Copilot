@@ -319,7 +319,6 @@ export function formatAnalysis(r) {
 
     let isInsideZone = false;
     let isInvalidated = false;
-    let hasMissedOpportunity = false;
     let isApproaching = false;
 
     if (Number.isFinite(currentPrice)) {
@@ -331,12 +330,6 @@ export function formatAnalysis(r) {
         isInvalidated = true;
       } else if (!isBullish && currentPrice >= stopLoss) {
         isInvalidated = true;
-      }
-
-      if (isBullish && currentPrice > zoneHigh) {
-        hasMissedOpportunity = true;
-      } else if (!isBullish && currentPrice < zoneLow) {
-        hasMissedOpportunity = true;
       }
 
       if (isBullish && currentPrice < zoneLow) {
@@ -354,10 +347,6 @@ export function formatAnalysis(r) {
       lines.push("");
       lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
       lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
-    } else if (hasMissedOpportunity) {
-      lines.push("");
-      lines.push("🚀 <b>هشدار:</b> قیمت از ناحیه ورود عبور کرده و فرصت ورود از دست رفته است.");
-      lines.push("⏳ <b>پیشنهاد:</b> در قیمت فعلی وارد نشوید. منتظر ستاپ جدید یا پولبک عمیق‌تر باشید.");
     } else if (isApproaching) {
       lines.push("");
       lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
@@ -460,7 +449,6 @@ export function formatAnalysis(r) {
 
     let isInsideZone = false;
     let isInvalidated = false;
-    let hasMissedOpportunity = false;
     let isApproaching = false;
 
     if (Number.isFinite(currentPrice)) {
@@ -474,12 +462,6 @@ export function formatAnalysis(r) {
         } else if (!isBullish && currentPrice >= stopLoss) {
           isInvalidated = true;
         }
-      }
-
-      if (isBullish && currentPrice > zoneHigh) {
-        hasMissedOpportunity = true;
-      } else if (!isBullish && currentPrice < zoneLow) {
-        hasMissedOpportunity = true;
       }
 
       if (isBullish && currentPrice < zoneLow) {
@@ -497,10 +479,6 @@ export function formatAnalysis(r) {
       lines.push("");
       lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
       lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
-    } else if (hasMissedOpportunity) {
-      lines.push("");
-      lines.push("🚀 <b>هشدار:</b> قیمت از ناحیه ورود عبور کرده و فرصت ورود از دست رفته است.");
-      lines.push("⏳ <b>پیشنهاد:</b> در قیمت فعلی وارد نشوید. منتظر ستاپ جدید یا پولبک عمیق‌تر باشید.");
     } else if (isApproaching) {
       lines.push("");
       lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
