@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T07:05:18.007Z",
+  "lastUpdated": "2026-10-19T08:05:08.101Z",
   "signals": {
-    "ARXUSDT:2h": {
-      "sentAt": "2026-10-18T08:01:19.368Z",
-      "symbol": "ARXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2329,
-      "stop": 0.22825294000000002
-    },
-    "CVXUSDT:2h": {
-      "sentAt": "2026-10-18T08:01:21.100Z",
-      "symbol": "CVXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.948953056786582,
-      "stop": 1.8926072
-    },
     "PROSUSDT:2h": {
       "sentAt": "2026-10-18T09:01:22.779Z",
       "symbol": "PROSUSDT",
@@ -1359,6 +1341,69 @@
       "score": 14,
       "entry": 880.3275959265115,
       "stop": 861.4245888863793
+    },
+    "BATUSDT:1h": {
+      "sentAt": "2026-10-19T08:04:56.092Z",
+      "symbol": "BATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1816,
+      "stop": 0.1682783470642535
+    },
+    "WALUSDT:30m": {
+      "sentAt": "2026-10-19T08:04:57.824Z",
+      "symbol": "WALUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03963562319426588,
+      "stop": 0.03826018631028906
+    },
+    "ZORAUSDT:15m": {
+      "sentAt": "2026-10-19T08:04:59.585Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0064265,
+      "stop": 0.0063547136
+    },
+    "TRUMPUSDT:30m": {
+      "sentAt": "2026-10-19T08:05:01.333Z",
+      "symbol": "TRUMPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.709,
+      "stop": 1.6946566
+    },
+    "ZECUSDT:15m": {
+      "sentAt": "2026-10-19T08:05:03.057Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1164.0925521678719,
+      "stop": 1180.5404907091215
+    },
+    "CRDOUSDT:15m": {
+      "sentAt": "2026-10-19T08:05:04.780Z",
+      "symbol": "CRDOUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 176.0084963302179,
+      "stop": 177.39751834891055
+    },
+    "AEHRUSDT:15m": {
+      "sentAt": "2026-10-19T08:05:06.597Z",
+      "symbol": "AEHRUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 63.81958358244548,
+      "stop": 64.93321321809078
     }
   }
 }

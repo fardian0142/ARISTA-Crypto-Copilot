@@ -1,27 +1,189 @@
 {
-  "lastUpdated": "2026-10-19T07:30:00.000Z",
+  "lastUpdated": "2026-10-19T08:05:08.102Z",
   "allTime": {
-    "total": 0,
+    "total": 7,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 7,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
     "stopRate": 0
   },
   "byTimeframe": {
-    "15m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "30m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "1h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "2h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "15m": {
+      "total": 4,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "30m": {
+      "total": 2,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "1h": {
+      "total": 1,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "2h": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
   "byDirection": {
-    "bullish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "bearish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "bullish": {
+      "total": 4,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "bearish": {
+      "total": 3,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
-  "weekly": null,
-  "recentSignals": []
+  "weekly": {
+    "week": "2026-W43",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-19",
+    "total": 7,
+    "tp1Hit": 0,
+    "tp2Hit": 0,
+    "tp3Hit": 0,
+    "stopped": 0,
+    "active": 7,
+    "bestTrade": null,
+    "worstTrade": null
+  },
+  "recentSignals": [
+    {
+      "symbol": "BATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 0.1816,
+      "stop": 0.1682783470642535,
+      "tp1": 0.21075343200000002,
+      "tp2": 0.22446343200000002,
+      "tp3": null,
+      "rr1": 2.188424525140678,
+      "score": 14,
+      "sentAt": "2026-10-19T08:04:56.092Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:04:56.092Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "WALUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 0.03963562319426588,
+      "stop": 0.03826018631028906,
+      "tp1": 0.041862064,
+      "tp2": 0.042632064,
+      "tp3": 0.043362064,
+      "rr1": 1.6187153563141117,
+      "score": 14,
+      "sentAt": "2026-10-19T08:04:57.824Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:04:57.824Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "ZORAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "entry": 0.0064265,
+      "stop": 0.0063547136,
+      "tp1": 0.0065607136,
+      "tp2": 0.0065967136,
+      "tp3": null,
+      "rr1": 1.8696243299566542,
+      "score": 14,
+      "sentAt": "2026-10-19T08:04:59.585Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:04:59.585Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "TRUMPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 1.709,
+      "stop": 1.6946566,
+      "tp1": 1.7426566000000001,
+      "tp2": 1.7596566,
+      "tp3": null,
+      "rr1": 2.3464868859545174,
+      "score": 14,
+      "sentAt": "2026-10-19T08:05:01.333Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:05:01.333Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 1164.0925521678719,
+      "stop": 1180.5404907091215,
+      "tp1": 1124.952176,
+      "tp2": 1104.052176,
+      "tp3": 1086.232176,
+      "rr1": 2.3796523843831285,
+      "score": 14,
+      "sentAt": "2026-10-19T08:05:03.057Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:05:03.057Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "CRDOUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 176.0084963302179,
+      "stop": 177.39751834891055,
+      "tp1": 169.91521,
+      "tp2": 168.58521000000002,
+      "tp3": null,
+      "rr1": 4.386745673011631,
+      "score": 14,
+      "sentAt": "2026-10-19T08:05:04.780Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-19T08:05:04.780Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "AEHRUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 63.81958358244548,
+      "stop": 64.93321321809078,
+      "tp1": 61.782732,
+      "tp2": 61.142732,
+      "tp3": 60.362732,
+      "rr1": 1.8290206341942457,
+      "score": 14,
+      "sentAt": "2026-10-19T08:05:06.597Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T08:05:06.597Z",
+      "maxR": 0
+    }
+  ]
 }
