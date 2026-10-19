@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-19T15:01:42.868Z",
+  "lastUpdated": "2026-10-19T16:02:09.217Z",
   "allTime": {
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -20,7 +20,7 @@
       "tp1Rate": 0
     },
     "30m": {
-      "total": 0,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 0,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,14 +56,32 @@
     "week": "2026-W43",
     "startDate": "2026-10-12",
     "endDate": "2026-10-19",
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "bestTrade": null,
     "worstTrade": null
   },
-  "recentSignals": []
+  "recentSignals": [
+    {
+      "symbol": "TIAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 0.6076447699243256,
+      "stop": 0.5971784,
+      "tp1": 0.6392783999999999,
+      "tp2": 0.6510784,
+      "tp3": 0.6655783999999999,
+      "rr1": 3.0224070336127222,
+      "score": 14,
+      "sentAt": "2026-10-19T16:02:07.715Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-19T16:02:07.715Z",
+      "maxR": 0
+    }
+  ]
 }

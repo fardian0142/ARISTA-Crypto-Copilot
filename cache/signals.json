@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T15:01:42.866Z",
+  "lastUpdated": "2026-10-19T16:02:09.217Z",
   "signals": {
     "TMFUSDT:30m": {
       "sentAt": "2026-10-18T16:08:00.637Z",
@@ -1782,6 +1782,15 @@
       "score": 14,
       "entry": 0.10461000000000001,
       "stop": 0.09748726305088996
+    },
+    "TIAUSDT:30m": {
+      "sentAt": "2026-10-19T16:02:07.715Z",
+      "symbol": "TIAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.6076447699243256,
+      "stop": 0.5971784
     }
   }
 }
