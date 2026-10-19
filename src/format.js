@@ -345,8 +345,16 @@ export function formatAnalysis(r) {
       lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
-      lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
-      lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
+      
+      const entryIsBetter = isBullish ? (entryPoint < currentPrice) : (entryPoint > currentPrice);
+      
+      if (entryIsBetter) {
+        lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد معامله شوید.");
+      } else {
+        lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده وارد شوید.");
+      }
     } else if (isApproaching) {
       lines.push("");
       lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
@@ -477,8 +485,16 @@ export function formatAnalysis(r) {
       lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
-      lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
-      lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
+      
+      const entryIsBetter = isBullish ? (entryPoint < currentPrice) : (entryPoint > currentPrice);
+      
+      if (entryIsBetter) {
+        lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد معامله شوید.");
+      } else {
+        lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده وارد شوید.");
+      }
     } else if (isApproaching) {
       lines.push("");
       lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
