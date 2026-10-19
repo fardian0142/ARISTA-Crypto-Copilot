@@ -835,6 +835,10 @@ export function formatSignalResult(sig, newStatus) {
     hitLevel = "TP3";
   }
   
+  if (!title) {
+    return "";
+  }
+  
   return (
     "✅ <b>" + title + "</b>\n" +
     "━━━━━━━━━━━━━━━━━━━━━━\n" +
