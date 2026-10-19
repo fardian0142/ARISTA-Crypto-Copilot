@@ -259,7 +259,7 @@ async function main() {
         (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
       );
       
-      if (r.status !== "pending") {
+      if (r.status === "tp1_hit" || r.status === "tp2_hit" || r.status === "tp3_hit" || r.status === "stopped") {
         try {
           const resultText = formatSignalResult(sig, r.status);
           await sendTelegramMessage(token, chatId, resultText);
