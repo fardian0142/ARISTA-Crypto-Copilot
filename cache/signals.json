@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T16:02:09.217Z",
+  "lastUpdated": "2026-10-19T17:02:10.337Z",
   "signals": {
-    "TMFUSDT:30m": {
-      "sentAt": "2026-10-18T16:08:00.637Z",
-      "symbol": "TMFUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 27.967573301383702,
-      "stop": 27.88472773771767
-    },
-    "ZKUSDT:15m": {
-      "sentAt": "2026-10-18T16:22:48.967Z",
-      "symbol": "ZKUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0146885,
-      "stop": 0.014437186471793973
-    },
     "CTUSDT:30m": {
       "sentAt": "2026-10-18T17:04:39.334Z",
       "symbol": "CTUSDT",
@@ -1791,6 +1773,15 @@
       "score": 14,
       "entry": 0.6076447699243256,
       "stop": 0.5971784
+    },
+    "NOTUSDT:1h": {
+      "sentAt": "2026-10-19T17:02:08.835Z",
+      "symbol": "NOTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0003840636700715155,
+      "stop": 0.00037742344
     }
   }
 }
