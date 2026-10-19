@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T11:05:12.072Z",
+  "lastUpdated": "2026-10-19T12:05:09.057Z",
   "signals": {
     "WENUSDT:2h": {
       "sentAt": "2026-10-18T14:01:16.462Z",
@@ -1674,6 +1674,96 @@
       "score": 14,
       "entry": 31.741,
       "stop": 32.30800933102701
+    },
+    "LDOUSDT:2h": {
+      "sentAt": "2026-10-19T12:04:51.195Z",
+      "symbol": "LDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.39459999999999995,
+      "stop": 0.37932188
+    },
+    "ZRXUSDT:15m": {
+      "sentAt": "2026-10-19T12:04:52.955Z",
+      "symbol": "ZRXUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.10586315244172895,
+      "stop": 0.10734220382116169
+    },
+    "SOXLUSDT:2h": {
+      "sentAt": "2026-10-19T12:04:54.735Z",
+      "symbol": "SOXLUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 102.2636222304105,
+      "stop": 97.46733329824069
+    },
+    "SOXSUSDT:2h": {
+      "sentAt": "2026-10-19T12:04:56.612Z",
+      "symbol": "SOXSUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 44.93763577851782,
+      "stop": 47.32870380635217
+    },
+    "TSLAUSDT:2h": {
+      "sentAt": "2026-10-19T12:04:58.456Z",
+      "symbol": "TSLAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 354.59314077253345,
+      "stop": 346.4993966891423
+    },
+    "IRENUSDT:2h": {
+      "sentAt": "2026-10-19T12:05:00.202Z",
+      "symbol": "IRENUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 28.21,
+      "stop": 27.057054982686097
+    },
+    "METAUSDT:1h": {
+      "sentAt": "2026-10-19T12:05:01.973Z",
+      "symbol": "METAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 707.2103193692321,
+      "stop": 701.2072027032909
+    },
+    "KLACUSDT:2h": {
+      "sentAt": "2026-10-19T12:05:03.793Z",
+      "symbol": "KLACUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 172.0621660198503,
+      "stop": 168.99537
+    },
+    "ADBEUSDT:1h": {
+      "sentAt": "2026-10-19T12:05:05.703Z",
+      "symbol": "ADBEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 244.08261057871653,
+      "stop": 242.60309751978633
+    },
+    "LGELECTRONICSUSDT:15m": {
+      "sentAt": "2026-10-19T12:05:07.553Z",
+      "symbol": "LGELECTRONICSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 128.635,
+      "stop": 130.21312205502463
     }
   }
 }
