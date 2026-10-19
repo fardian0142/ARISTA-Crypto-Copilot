@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T13:02:17.098Z",
+  "lastUpdated": "2026-10-19T14:02:07.153Z",
   "signals": {
-    "WENUSDT:2h": {
-      "sentAt": "2026-10-18T14:01:16.462Z",
-      "symbol": "WENUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 6.6665,
-      "stop": 6.736525873376599
-    },
     "TMFUSDT:30m": {
       "sentAt": "2026-10-18T16:08:00.637Z",
       "symbol": "TMFUSDT",
@@ -1782,6 +1773,15 @@
       "score": 14,
       "entry": 0.777,
       "stop": 0.7524445000000001
+    },
+    "CCUSDT:2h": {
+      "sentAt": "2026-10-19T14:02:05.649Z",
+      "symbol": "CCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.10461000000000001,
+      "stop": 0.09748726305088996
     }
   }
 }
