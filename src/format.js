@@ -315,38 +315,54 @@ export function formatAnalysis(r) {
     const zoneLow = rs.zone_low;
     const zoneHigh = rs.zone_high;
     const entryPoint = rs.entry;
-    
-    let isFarFromZone = false;
+    const stopLoss = rs.stop;
+
     let isInsideZone = false;
-    
+    let isInvalidated = false;
+    let hasMissedOpportunity = false;
+    let isApproaching = false;
+
     if (Number.isFinite(currentPrice)) {
-      if (isBullish && currentPrice > zoneHigh) {
-        isFarFromZone = true;
-      } else if (!isBullish && currentPrice < zoneLow) {
-        isFarFromZone = true;
-      }
-      
       if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
         isInsideZone = true;
       }
+      
+      if (isBullish && currentPrice <= stopLoss) {
+        isInvalidated = true;
+      } else if (!isBullish && currentPrice >= stopLoss) {
+        isInvalidated = true;
+      }
+
+      if (isBullish && currentPrice > zoneHigh) {
+        hasMissedOpportunity = true;
+      } else if (!isBullish && currentPrice < zoneLow) {
+        hasMissedOpportunity = true;
+      }
+
+      if (isBullish && currentPrice < zoneLow) {
+        isApproaching = true;
+      } else if (!isBullish && currentPrice > zoneHigh) {
+        isApproaching = true;
+      }
     }
 
-    if (isFarFromZone) {
+    if (isInvalidated) {
       lines.push("");
-      lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
-      lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+      lines.push("❌ <b>ستاپ باطل شده:</b> قیمت به حد ضرر رسیده یا از آن عبور کرده است.");
+      lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
       lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
-      
-      const entryDiff = Math.abs(currentPrice - entryPoint);
-      const riskDist = Math.abs(rs.entry - rs.stop);
-      
-      if (entryDiff > (riskDist * 0.15)) {
-        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد شوید یا برای ریسک کمتر، سفارش <b>Limit</b> را روی نقطه ورود تنظیم کنید.");
-      } else {
-        lines.push("💡 <b>پیشنهاد:</b> قیمت در نقطه ورود ایده‌آل قرار دارد. می‌توانید وارد شوید.");
-      }
+      lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
+    } else if (hasMissedOpportunity) {
+      lines.push("");
+      lines.push("🚀 <b>هشدار:</b> قیمت از ناحیه ورود عبور کرده و فرصت ورود از دست رفته است.");
+      lines.push("⏳ <b>پیشنهاد:</b> در قیمت فعلی وارد نشوید. منتظر ستاپ جدید یا پولبک عمیق‌تر باشید.");
+    } else if (isApproaching) {
+      lines.push("");
+      lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
+      lines.push("🎯 <b>ورود پیشنهادی:</b> " + fmtPrice(entryPoint));
+      lines.push("⏳ <b>پیشنهاد:</b> صبر کنید تا قیمت به ناحیه مشخص‌شده برسد.");
     }
 
     if (
@@ -440,39 +456,56 @@ export function formatAnalysis(r) {
     const zoneLow = r.entry_zone.low;
     const zoneHigh = r.entry_zone.high;
     const entryPoint = r.entry;
-    
-    let isFarFromZone = false;
+    const stopLoss = r.stop_loss;
+
     let isInsideZone = false;
-    
+    let isInvalidated = false;
+    let hasMissedOpportunity = false;
+    let isApproaching = false;
+
     if (Number.isFinite(currentPrice)) {
-      if (isBullish && currentPrice > zoneHigh) {
-        isFarFromZone = true;
-      } else if (!isBullish && currentPrice < zoneLow) {
-        isFarFromZone = true;
-      }
-      
       if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
         isInsideZone = true;
       }
+      
+      if (Number.isFinite(stopLoss)) {
+        if (isBullish && currentPrice <= stopLoss) {
+          isInvalidated = true;
+        } else if (!isBullish && currentPrice >= stopLoss) {
+          isInvalidated = true;
+        }
+      }
+
+      if (isBullish && currentPrice > zoneHigh) {
+        hasMissedOpportunity = true;
+      } else if (!isBullish && currentPrice < zoneLow) {
+        hasMissedOpportunity = true;
+      }
+
+      if (isBullish && currentPrice < zoneLow) {
+        isApproaching = true;
+      } else if (!isBullish && currentPrice > zoneHigh) {
+        isApproaching = true;
+      }
     }
 
-    if (isFarFromZone) {
+    if (isInvalidated) {
       lines.push("");
-      lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
-      lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+      lines.push("❌ <b>ستاپ باطل شده:</b> قیمت به حد ضرر رسیده یا از آن عبور کرده است.");
+      lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
       lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
-      
-      const stopPoint = r.stop_loss;
-      const riskDist = Number.isFinite(stopPoint) ? Math.abs(entryPoint - stopPoint) : 0;
-      const entryDiff = Math.abs(currentPrice - entryPoint);
-      
-      if (riskDist > 0 && entryDiff > (riskDist * 0.15)) {
-        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد شوید یا برای ریسک کمتر، سفارش <b>Limit</b> را روی نقطه ورود تنظیم کنید.");
-      } else {
-        lines.push("💡 <b>پیشنهاد:</b> قیمت در نقطه ورود ایده‌آل قرار دارد. می‌توانید وارد شوید.");
-      }
+      lines.push("💡 <b>پیشنهاد:</b> می‌توانید در همین محدوده (بین خطوط ناحیه) وارد شوید.");
+    } else if (hasMissedOpportunity) {
+      lines.push("");
+      lines.push("🚀 <b>هشدار:</b> قیمت از ناحیه ورود عبور کرده و فرصت ورود از دست رفته است.");
+      lines.push("⏳ <b>پیشنهاد:</b> در قیمت فعلی وارد نشوید. منتظر ستاپ جدید یا پولبک عمیق‌تر باشید.");
+    } else if (isApproaching) {
+      lines.push("");
+      lines.push("⚠️ <b>هشدار:</b> قیمت هنوز به ناحیه ورود نرسیده است.");
+      lines.push("🎯 <b>ورود پیشنهادی:</b> " + fmtPrice(entryPoint));
+      lines.push("⏳ <b>پیشنهاد:</b> صبر کنید تا قیمت به ناحیه مشخص‌شده برسد.");
     }
 
     if (r.stop_loss !== null && r.stop_loss !== undefined) {
