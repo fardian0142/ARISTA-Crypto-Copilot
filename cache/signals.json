@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-19T17:02:10.337Z",
+  "lastUpdated": "2026-10-19T18:02:11.445Z",
   "signals": {
-    "CTUSDT:30m": {
-      "sentAt": "2026-10-18T17:04:39.334Z",
-      "symbol": "CTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3208831193953717,
-      "stop": 0.30642948830555
-    },
     "TRXUSDT:1h": {
       "sentAt": "2026-10-18T18:04:48.882Z",
       "symbol": "TRXUSDT",
@@ -1782,6 +1773,15 @@
       "score": 14,
       "entry": 0.0003840636700715155,
       "stop": 0.00037742344
+    },
+    "PARTIUSDT:1h": {
+      "sentAt": "2026-10-19T18:02:09.941Z",
+      "symbol": "PARTIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.028990000000000002,
+      "stop": 0.027572792130279623
     }
   }
 }
