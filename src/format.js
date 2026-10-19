@@ -314,8 +314,10 @@ export function formatAnalysis(r) {
     const currentPrice = r.current_price;
     const zoneLow = rs.zone_low;
     const zoneHigh = rs.zone_high;
+    const entryPoint = rs.entry;
     
     let isFarFromZone = false;
+    let isInsideZone = false;
     
     if (Number.isFinite(currentPrice)) {
       if (isBullish && currentPrice > zoneHigh) {
@@ -323,12 +325,28 @@ export function formatAnalysis(r) {
       } else if (!isBullish && currentPrice < zoneLow) {
         isFarFromZone = true;
       }
+      
+      if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
+        isInsideZone = true;
+      }
     }
 
     if (isFarFromZone) {
       lines.push("");
       lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
       lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+    } else if (isInsideZone) {
+      lines.push("");
+      lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+      
+      const entryDiff = Math.abs(currentPrice - entryPoint);
+      const riskDist = Math.abs(rs.entry - rs.stop);
+      
+      if (entryDiff > (riskDist * 0.15)) {
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد شوید یا برای ریسک کمتر، سفارش <b>Limit</b> را روی نقطه ورود تنظیم کنید.");
+      } else {
+        lines.push("💡 <b>پیشنهاد:</b> قیمت در نقطه ورود ایده‌آل قرار دارد. می‌توانید وارد شوید.");
+      }
     }
 
     if (
@@ -421,8 +439,10 @@ export function formatAnalysis(r) {
     const currentPrice = r.current_price;
     const zoneLow = r.entry_zone.low;
     const zoneHigh = r.entry_zone.high;
+    const entryPoint = r.entry;
     
     let isFarFromZone = false;
+    let isInsideZone = false;
     
     if (Number.isFinite(currentPrice)) {
       if (isBullish && currentPrice > zoneHigh) {
@@ -430,12 +450,29 @@ export function formatAnalysis(r) {
       } else if (!isBullish && currentPrice < zoneLow) {
         isFarFromZone = true;
       }
+      
+      if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
+        isInsideZone = true;
+      }
     }
 
     if (isFarFromZone) {
       lines.push("");
       lines.push("⚠️ <b>هشدار ورود:</b> قیمت فعلی از ناحیه ورود فاصله دارد.");
       lines.push("⏳ <b>پیشنهاد:</b> برای کاهش ریسک، منتظر پولبک (Pullback) به ناحیه مشخص‌شده بمانید و در قیمت فعلی وارد نشوید.");
+    } else if (isInsideZone) {
+      lines.push("");
+      lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
+      
+      const stopPoint = r.stop_loss;
+      const riskDist = Number.isFinite(stopPoint) ? Math.abs(entryPoint - stopPoint) : 0;
+      const entryDiff = Math.abs(currentPrice - entryPoint);
+      
+      if (riskDist > 0 && entryDiff > (riskDist * 0.15)) {
+        lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد شوید یا برای ریسک کمتر، سفارش <b>Limit</b> را روی نقطه ورود تنظیم کنید.");
+      } else {
+        lines.push("💡 <b>پیشنهاد:</b> قیمت در نقطه ورود ایده‌آل قرار دارد. می‌توانید وارد شوید.");
+      }
     }
 
     if (r.stop_loss !== null && r.stop_loss !== undefined) {
@@ -757,21 +794,28 @@ export function formatSignalResult(sig, newStatus) {
     );
   }
   
+  let title = "";
   let hitLevel = "";
-  let emoji = "";
   
-  if (newStatus === "tp1_hit") { hitLevel = "TP1 (هدف اول)"; emoji = "🥇"; }
-  else if (newStatus === "tp2_hit") { hitLevel = "TP2 (هدف دوم)"; emoji = "🥈"; }
-  else if (newStatus === "tp3_hit") { hitLevel = "TP3 (هدف سوم)"; emoji = "🥉"; }
+  if (newStatus === "tp1_hit") {
+    title = "🥇 هدف اول لمس شد!";
+    hitLevel = "TP1";
+  } else if (newStatus === "tp2_hit") {
+    title = "🥈 هدف دوم لمس شد!";
+    hitLevel = "TP2";
+  } else if (newStatus === "tp3_hit") {
+    title = "🥉 هدف سوم لمس شد!";
+    hitLevel = "TP3";
+  }
   
   return (
-    "✅ <b>هدف با موفقیت لمس شد!</b>\n" +
+    "✅ <b>" + title + "</b>\n" +
     "━━━━━━━━━━━━━━━━━━━━━━\n" +
     "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
-    emoji + " هدف لمس شده: <b>" + hitLevel + "</b>\n" +
-    "💰 حداکثر سود (R): <b>" + (sig.maxR || 0) + "R</b>\n\n" +
+    "🎯 سطح لمس شده: <b>" + hitLevel + "</b>\n" +
+    "💰 سود تا این لحظه: <b>" + (sig.maxR || 0) + "R</b>\n\n" +
     "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
   );
 }
