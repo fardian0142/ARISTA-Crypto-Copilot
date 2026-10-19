@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T12:05:09.057Z",
+  "lastUpdated": "2026-10-19T13:02:17.098Z",
   "signals": {
     "WENUSDT:2h": {
       "sentAt": "2026-10-18T14:01:16.462Z",
@@ -1764,6 +1764,24 @@
       "score": 14,
       "entry": 128.635,
       "stop": 130.21312205502463
+    },
+    "TRIAUSDT:1h": {
+      "sentAt": "2026-10-19T13:02:13.848Z",
+      "symbol": "TRIAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002414,
+      "stop": 0.00232333853074916
+    },
+    "APTUSDT:1h": {
+      "sentAt": "2026-10-19T13:02:15.596Z",
+      "symbol": "APTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.777,
+      "stop": 0.7524445000000001
     }
   }
 }
