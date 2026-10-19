@@ -1,25 +1,25 @@
 export const TIMEFRAME_PROFILES = {
   "15m": {
-    strictHTF: false,
-    htfPenalty: 5,
+    strictHTF: true,
+    htfPenalty: 15,
     momentumPenalty: 2,
-    minStrength: 55,
+    minStrength: 60,
     minRR: 1.3,
     allowCounterMomentum: true
   },
   "30m": {
-    strictHTF: false,
-    htfPenalty: 7,
+    strictHTF: true,
+    htfPenalty: 15,
     momentumPenalty: 3,
-    minStrength: 60,
+    minStrength: 65,
     minRR: 1.4,
     allowCounterMomentum: true
   },
   "1h": {
-    strictHTF: false,
-    htfPenalty: 10,
+    strictHTF: true,
+    htfPenalty: 15,
     momentumPenalty: 5,
-    minStrength: 65,
+    minStrength: 70,
     minRR: 1.6,
     allowCounterMomentum: false
   },
