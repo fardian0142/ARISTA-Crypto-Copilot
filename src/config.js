@@ -1,66 +1,66 @@
 export const TIMEFRAME_PROFILES = {
   "15m": {
     strictHTF: true,
-    htfPenalty: 15,
+    htfPenalty: 20,
     momentumPenalty: 2,
-    minStrength: 60,
-    minRR: 1.3,
-    allowCounterMomentum: true
+    minStrength: 75,
+    minRR: 2.5,
+    allowCounterMomentum: false
   },
   "30m": {
     strictHTF: true,
-    htfPenalty: 15,
+    htfPenalty: 20,
     momentumPenalty: 3,
-    minStrength: 65,
-    minRR: 1.4,
-    allowCounterMomentum: true
+    minStrength: 75,
+    minRR: 2.5,
+    allowCounterMomentum: false
   },
   "1h": {
     strictHTF: true,
     htfPenalty: 15,
     momentumPenalty: 5,
-    minStrength: 70,
-    minRR: 1.6,
+    minStrength: 72,
+    minRR: 2.2,
     allowCounterMomentum: false
   },
   "2h": {
     strictHTF: true,
     htfPenalty: 12,
     momentumPenalty: 6,
-    minStrength: 68,
-    minRR: 1.7,
+    minStrength: 72,
+    minRR: 2.2,
     allowCounterMomentum: false
   },
   "4h": {
     strictHTF: true,
     htfPenalty: 18,
     momentumPenalty: 10,
-    minStrength: 72,
-    minRR: 1.8,
+    minStrength: 75,
+    minRR: 2.0,
     allowCounterMomentum: false
   },
   "6h": {
     strictHTF: true,
     htfPenalty: 20,
     momentumPenalty: 12,
-    minStrength: 75,
-    minRR: 2.0,
+    minStrength: 78,
+    minRR: 2.2,
     allowCounterMomentum: false
   },
   "12h": {
     strictHTF: true,
     htfPenalty: 25,
     momentumPenalty: 15,
-    minStrength: 78,
-    minRR: 2.2,
+    minStrength: 80,
+    minRR: 2.4,
     allowCounterMomentum: false
   },
   "24h": {
     strictHTF: true,
     htfPenalty: 30,
     momentumPenalty: 18,
-    minStrength: 80,
-    minRR: 2.5,
+    minStrength: 82,
+    minRR: 2.6,
     allowCounterMomentum: false
   }
 };
@@ -91,10 +91,10 @@ export const CONFIG = {
   VOLUME_LOOKBACK: 20,
   OB_LOOKBACK: 50,
   FVG_LOOKBACK: 80,
-  SL_ATR_BUFFER: 1.5,
+  SL_ATR_BUFFER: 2.5,
   SL_MIN_NODE_DISTANCE_ATR: 0.5,
-  MIN_RR: 1.6,
-  MIN_STRENGTH: 65,
+  MIN_RR: 2.2,
+  MIN_STRENGTH: 75,
   MIN_TP1_RR: 2.0,
   OB_FVG_MAX_DIST_ATR: 0.4,
   ENTRY_ZONE_MAX_WIDTH_PCT: 0.02,
