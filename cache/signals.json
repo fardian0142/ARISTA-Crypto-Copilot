@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T20:01:12.727Z",
+  "lastUpdated": "2026-10-19T21:01:17.104Z",
   "signals": {
     "FLNCUSDT:15m": {
       "sentAt": "2026-10-18T21:04:49.343Z",
@@ -1755,6 +1755,15 @@
       "score": 14,
       "entry": 1.0216500000000001e-8,
       "stop": 1.0133947000000001e-8
+    },
+    "MEWUSDT:2h": {
+      "sentAt": "2026-10-19T21:01:15.600Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004092,
+      "stop": 0.00040231814
     }
   }
 }
