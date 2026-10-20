@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T14:01:34.203Z",
+  "lastUpdated": "2026-10-20T15:01:25.193Z",
   "signals": {
-    "CCUSDT:2h": {
-      "sentAt": "2026-10-19T14:02:05.649Z",
-      "symbol": "CCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10461000000000001,
-      "stop": 0.09748726305088996
-    },
     "TIAUSDT:30m": {
       "sentAt": "2026-10-19T16:02:07.715Z",
       "symbol": "TIAUSDT",
@@ -279,6 +270,24 @@
       "score": 14,
       "entry": 0.020900000000000002,
       "stop": 0.02016928587687273
+    },
+    "CHIPUSDT:2h": {
+      "sentAt": "2026-10-20T15:01:21.807Z",
+      "symbol": "CHIPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.043945,
+      "stop": 0.03962437295709208
+    },
+    "ROBOUSDT:1h": {
+      "sentAt": "2026-10-20T15:01:23.691Z",
+      "symbol": "ROBOUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0061554999999999995,
+      "stop": 0.005934142564392798
     }
   }
 }
