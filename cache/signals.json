@@ -1,96 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T11:01:59.570Z",
+  "lastUpdated": "2026-10-20T12:02:18.116Z",
   "signals": {
-    "PUMPUSDT:15m": {
-      "sentAt": "2026-10-19T11:04:54.419Z",
-      "symbol": "PUMPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0044765,
-      "stop": 0.004548710063248983
-    },
-    "PENGUUSDT:30m": {
-      "sentAt": "2026-10-19T11:04:56.217Z",
-      "symbol": "PENGUUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.007506,
-      "stop": 0.007623740119064465
-    },
-    "GRASSUSDT:15m": {
-      "sentAt": "2026-10-19T11:04:57.950Z",
-      "symbol": "GRASSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.5993428879584745,
-      "stop": 0.608173337320824
-    },
-    "LINKUSDT:2h": {
-      "sentAt": "2026-10-19T11:04:59.741Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 12.052,
-      "stop": 11.724434685800976
-    },
-    "ETHUSDT:30m": {
-      "sentAt": "2026-10-19T11:05:01.595Z",
-      "symbol": "ETHUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 2428.711525651379,
-      "stop": 2450.616318636947
-    },
-    "ENSUSDT:15m": {
-      "sentAt": "2026-10-19T11:05:03.401Z",
-      "symbol": "ENSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 5.468580665528125,
-      "stop": 5.5410828620223205
-    },
-    "MSTRUSDT:15m": {
-      "sentAt": "2026-10-19T11:05:05.152Z",
-      "symbol": "MSTRUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 139.335,
-      "stop": 140.90614468562765
-    },
-    "COMPUSDT:15m": {
-      "sentAt": "2026-10-19T11:05:06.922Z",
-      "symbol": "COMPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 21.553805759529958,
-      "stop": 21.762261030585893
-    },
-    "NOKUSDT:2h": {
-      "sentAt": "2026-10-19T11:05:08.702Z",
-      "symbol": "NOKUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.258,
-      "stop": 9.098256970108395
-    },
-    "MSTUUSDT:15m": {
-      "sentAt": "2026-10-19T11:05:10.567Z",
-      "symbol": "MSTUUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 31.741,
-      "stop": 32.30800933102701
-    },
     "LDOUSDT:2h": {
       "sentAt": "2026-10-19T12:04:51.195Z",
       "symbol": "LDOUSDT",
@@ -414,6 +324,15 @@
       "score": 14,
       "entry": 0.45445,
       "stop": 0.4664333369743764
+    },
+    "NESUSDT:30m": {
+      "sentAt": "2026-10-20T12:02:16.614Z",
+      "symbol": "NESUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11259388816576754,
+      "stop": 0.10980079881594612
     }
   }
 }
