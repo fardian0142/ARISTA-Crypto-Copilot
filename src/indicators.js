@@ -6557,3 +6557,150 @@ export function fmtPercent(value) {
   if (!Number.isFinite(v)) return "-";
   return (v * 100).toFixed(2) + "%";
 }
+
+export function detectSMCTrendFilter(
+  candles,
+  {
+    emaPeriod = 50,
+    swingLookback = 20,
+    swingStrength = 2
+  } = {}
+) {
+  const blocked = (reason) => ({
+    trend: "unknown",
+    allowLong: false,
+    allowShort: false,
+    blocked: true,
+    reason
+  });
+
+  if (
+    !Array.isArray(candles) ||
+    candles.length < emaPeriod + swingLookback + swingStrength * 2 + 5
+  ) {
+    return blocked("داده کافی برای تشخیص روند وجود ندارد");
+  }
+
+  const closedCandles = candles.slice(0, -1);
+
+  if (closedCandles.length < emaPeriod + swingLookback + swingStrength * 2) {
+    return blocked("تعداد کندل‌های بسته‌شده کافی نیست");
+  }
+
+  for (const candle of closedCandles) {
+    if (
+      !Number.isFinite(Number(candle.open)) ||
+      !Number.isFinite(Number(candle.high)) ||
+      !Number.isFinite(Number(candle.low)) ||
+      !Number.isFinite(Number(candle.close)) ||
+      Number(candle.high) < Number(candle.low)
+    ) {
+      return blocked("داده کندل نامعتبر است");
+    }
+  }
+
+  const closes = closedCandles.map(c => Number(c.close));
+
+  const calculateEMA = (values, period) => {
+    const multiplier = 2 / (period + 1);
+    let ema = values[0];
+
+    for (let i = 1; i < values.length; i++) {
+      ema = values[i] * multiplier + ema * (1 - multiplier);
+    }
+
+    return ema;
+  };
+
+  const ema = calculateEMA(closes, emaPeriod);
+
+  const previousCloses = closes.slice(0, -swingLookback);
+
+  if (previousCloses.length < emaPeriod) {
+    return blocked("داده کافی برای بررسی شیب EMA وجود ندارد");
+  }
+
+  const previousEMA = calculateEMA(previousCloses, emaPeriod);
+  const lastClose = closes[closes.length - 1];
+
+  const emaRising = ema > previousEMA;
+  const emaFalling = ema < previousEMA;
+
+  const swings = [];
+  const start = Math.max(
+    swingStrength,
+    closedCandles.length - swingLookback - swingStrength
+  );
+  const end = closedCandles.length - swingStrength;
+
+  for (let i = start; i < end; i++) {
+    const candle = closedCandles[i];
+    const high = Number(candle.high);
+    const low = Number(candle.low);
+
+    let isSwingHigh = true;
+    let isSwingLow = true;
+
+    for (let j = 1; j <= swingStrength; j++) {
+      if (
+        high <= Number(closedCandles[i - j].high) ||
+        high <= Number(closedCandles[i + j].high)
+      ) {
+        isSwingHigh = false;
+      }
+
+      if (
+        low >= Number(closedCandles[i - j].low) ||
+        low >= Number(closedCandles[i + j].low)
+      ) {
+        isSwingLow = false;
+      }
+    }
+
+    if (isSwingHigh) swings.push({ type: "high", price: high, index: i });
+    if (isSwingLow) swings.push({ type: "low", price: low, index: i });
+  }
+
+  const highs = swings.filter(s => s.type === "high");
+  const lows = swings.filter(s => s.type === "low");
+
+  if (highs.length < 2 || lows.length < 2) {
+    return blocked("سقف و کف نوسانی کافی برای تشخیص ساختار بازار وجود ندارد");
+  }
+
+  const lastTwoHighs = highs.slice(-2);
+  const lastTwoLows = lows.slice(-2);
+
+  const higherHigh = lastTwoHighs[1].price > lastTwoHighs[0].price;
+  const lowerHigh = lastTwoHighs[1].price < lastTwoHighs[0].price;
+  const higherLow = lastTwoLows[1].price > lastTwoLows[0].price;
+  const lowerLow = lastTwoLows[1].price < lastTwoLows[0].price;
+
+  if (higherHigh && higherLow && lastClose > ema && emaRising) {
+    return {
+      trend: "bullish",
+      allowLong: true,
+      allowShort: false,
+      blocked: false,
+      reason: "ساختار صعودی تأیید شد؛ ورود SHORT مسدود است"
+    };
+  }
+
+  if (lowerHigh && lowerLow && lastClose < ema && emaFalling) {
+    return {
+      trend: "bearish",
+      allowLong: false,
+      allowShort: true,
+      blocked: false,
+      reason: "ساختار نزولی تأیید شد؛ ورود LONG مسدود است"
+    };
+  }
+
+  return {
+    trend: "neutral",
+    allowLong: true,
+    allowShort: true,
+    blocked: false,
+    reason: "روند قطعی نیست؛ بررسی ستاپ SMC ادامه می‌یابد"
+  };
+}
