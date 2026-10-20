@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T16:01:29.030Z",
+  "lastUpdated": "2026-10-20T17:01:39.386Z",
   "signals": {
-    "TIAUSDT:30m": {
-      "sentAt": "2026-10-19T16:02:07.715Z",
-      "symbol": "TIAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.6076447699243256,
-      "stop": 0.5971784
-    },
     "NOTUSDT:1h": {
       "sentAt": "2026-10-19T17:02:08.835Z",
       "symbol": "NOTUSDT",
@@ -288,6 +279,15 @@
       "score": 14,
       "entry": 0.0061554999999999995,
       "stop": 0.005934142564392798
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-10-20T17:01:37.884Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00568314809072938,
+      "stop": 0.005373227923361574
     }
   }
 }
