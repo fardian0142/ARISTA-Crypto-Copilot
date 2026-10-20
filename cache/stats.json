@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-10-20T13:02:16.171Z",
+  "lastUpdated": "2026-10-20T13:05:00.000Z",
   "allTime": {
-    "total": 8,
+    "total": 7,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
-    "stopped": 1,
+    "stopped": 0,
     "active": 7,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
-    "stopRate": 100
+    "stopRate": 0
   },
   "byTimeframe": {
     "15m": {
@@ -20,9 +20,9 @@
       "tp1Rate": 0
     },
     "30m": {
-      "total": 3,
+      "total": 2,
       "tp1Hit": 0,
-      "stopped": 1,
+      "stopped": 0,
       "tp1Rate": 0
     },
     "1h": {
@@ -46,9 +46,9 @@
       "tp1Rate": 0
     },
     "bearish": {
-      "total": 1,
+      "total": 0,
       "tp1Hit": 0,
-      "stopped": 1,
+      "stopped": 0,
       "tp1Rate": 0
     }
   },
@@ -56,18 +56,14 @@
     "week": "2026-W43",
     "startDate": "2026-10-13",
     "endDate": "2026-10-20",
-    "total": 8,
+    "total": 7,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
-    "stopped": 1,
+    "stopped": 0,
     "active": 7,
     "bestTrade": null,
-    "worstTrade": {
-      "symbol": "JTOUSDT",
-      "timeframe": "30m",
-      "loss": -1
-    }
+    "worstTrade": null
   },
   "recentSignals": [
     {
@@ -170,23 +166,6 @@
       "status": "pending",
       "activated": false,
       "statusUpdatedAt": "2026-10-20T13:00:46.040Z",
-      "maxR": 0
-    },
-    {
-      "symbol": "JTOUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "entry": 0.45445,
-      "stop": 0.4664333369743764,
-      "tp1": 0.42389058,
-      "tp2": 0.41409058,
-      "tp3": null,
-      "rr1": 2.5501594476850937,
-      "score": 14,
-      "sentAt": "2026-10-20T10:02:10.321Z",
-      "status": "stopped",
-      "activated": true,
-      "statusUpdatedAt": "2026-10-20T13:00:48.003Z",
       "maxR": 0
     },
     {
