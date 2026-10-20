@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T22:01:31.842Z",
+  "lastUpdated": "2026-10-20T23:01:33.599Z",
   "signals": {
     "SAHARAUSDT:1h": {
       "sentAt": "2026-10-19T23:01:56.734Z",
@@ -270,6 +270,15 @@
       "score": 14,
       "entry": 0.0014339,
       "stop": 0.0013232374494788334
+    },
+    "CTUSDT:15m": {
+      "sentAt": "2026-10-20T23:01:32.097Z",
+      "symbol": "CTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3130720377430403,
+      "stop": 0.30568544469256925
     }
   }
 }
