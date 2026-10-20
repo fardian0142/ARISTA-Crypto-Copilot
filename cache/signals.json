@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T17:01:39.386Z",
+  "lastUpdated": "2026-10-20T18:01:37.368Z",
   "signals": {
-    "NOTUSDT:1h": {
-      "sentAt": "2026-10-19T17:02:08.835Z",
-      "symbol": "NOTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0003840636700715155,
-      "stop": 0.00037742344
-    },
     "PARTIUSDT:1h": {
       "sentAt": "2026-10-19T18:02:09.941Z",
       "symbol": "PARTIUSDT",
@@ -288,6 +279,15 @@
       "score": 14,
       "entry": 0.00568314809072938,
       "stop": 0.005373227923361574
+    },
+    "ROBOUSDT:2h": {
+      "sentAt": "2026-10-20T18:01:35.864Z",
+      "symbol": "ROBOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006181,
+      "stop": 0.005839607750823761
     }
   }
 }
