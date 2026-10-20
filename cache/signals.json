@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T20:01:32.593Z",
+  "lastUpdated": "2026-10-20T21:01:33.725Z",
   "signals": {
-    "MEWUSDT:2h": {
-      "sentAt": "2026-10-19T21:01:15.600Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0004092,
-      "stop": 0.00040231814
-    },
     "SAHARAUSDT:1h": {
       "sentAt": "2026-10-19T23:01:56.734Z",
       "symbol": "SAHARAUSDT",
@@ -270,6 +261,15 @@
       "score": 14,
       "entry": 0.006181,
       "stop": 0.005839607750823761
+    },
+    "ONEUSDT:2h": {
+      "sentAt": "2026-10-20T21:01:32.222Z",
+      "symbol": "ONEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0014339,
+      "stop": 0.0013232374494788334
     }
   }
 }
