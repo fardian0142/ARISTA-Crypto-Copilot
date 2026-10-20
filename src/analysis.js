@@ -32,7 +32,8 @@ import {
   selectCausalSweep,
   entryState,
   collectNearbyLevels,
-  detectRangeTradeSetups
+  detectRangeTradeSetups,
+  detectSMCTrendFilter
 } from "./indicators.js";
 
 function isValidSymbol(symbol) {
@@ -648,6 +649,29 @@ export async function analyze(symbol, timeframe) {
 
   result.direction =
     direction;
+
+  const smcTrendFilter = detectSMCTrendFilter(candles);
+
+  if (smcTrendFilter.blocked) {
+    return fail(
+      "فیلتر روند: " + smcTrendFilter.reason,
+      "فیلتر روند: " + smcTrendFilter.reason
+    );
+  }
+
+  if (direction === "bullish" && !smcTrendFilter.allowLong) {
+    return fail(
+      "فیلتر روند: ورود Long در روند نزولی مسدود است",
+      "فیلتر روند: " + smcTrendFilter.reason
+    );
+  }
+
+  if (direction === "bearish" && !smcTrendFilter.allowShort) {
+    return fail(
+      "فیلتر روند: ورود Short در روند صعودی مسدود است",
+      "فیلتر روند: " + smcTrendFilter.reason
+    );
+  }
 
   const rsiDivergenceEffect =
     rsiDivergenceScore(
