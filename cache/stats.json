@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T10:02:11.825Z",
+  "lastUpdated": "2026-10-20T11:01:59.571Z",
   "allTime": {
     "total": 7,
     "tp1Hit": 0,
@@ -80,7 +80,7 @@
       "sentAt": "2026-10-20T05:02:00.495Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T10:00:45.409Z",
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     },
     {
@@ -97,7 +97,7 @@
       "sentAt": "2026-10-20T06:02:04.117Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T10:00:45.409Z",
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     },
     {
@@ -114,7 +114,7 @@
       "sentAt": "2026-10-20T07:02:00.517Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T10:00:45.409Z",
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     },
     {
@@ -131,7 +131,7 @@
       "sentAt": "2026-10-20T07:02:02.360Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T10:00:45.409Z",
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     },
     {
@@ -148,8 +148,8 @@
       "sentAt": "2026-10-20T08:02:01.904Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T10:00:45.409Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
+      "maxR": 0.21
     },
     {
       "symbol": "BIGTIMEUSDT",
@@ -165,7 +165,7 @@
       "sentAt": "2026-10-20T10:02:08.531Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T10:02:08.531Z",
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     },
     {
@@ -180,9 +180,9 @@
       "rr1": 2.5501594476850937,
       "score": 14,
       "sentAt": "2026-10-20T10:02:10.321Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-20T10:02:10.321Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T11:00:45.013Z",
       "maxR": 0
     }
   ]
