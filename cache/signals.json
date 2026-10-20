@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T19:01:27.708Z",
+  "lastUpdated": "2026-10-20T20:01:32.593Z",
   "signals": {
-    "SATSUSDT:30m": {
-      "sentAt": "2026-10-19T19:02:06.419Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.0216500000000001e-8,
-      "stop": 1.0133947000000001e-8
-    },
     "MEWUSDT:2h": {
       "sentAt": "2026-10-19T21:01:15.600Z",
       "symbol": "MEWUSDT",
