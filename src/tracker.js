@@ -40,14 +40,41 @@ export async function updateSignalStatus(signal) {
       };
     }
 
-    const stopHit = isBull ? price <= stop : price >= stop;
+    let stopHit = false;
+    let tp1Hit = false;
+    let tp2Hit = false;
+    let tp3Hit = false;
+
+    const lastCandle = analysis._lastCandle;
+    if (lastCandle) {
+      if (isBull) {
+        if (Number.isFinite(lastCandle.low) && lastCandle.low <= stop) stopHit = true;
+        if (Number.isFinite(tp3) && Number.isFinite(lastCandle.high) && lastCandle.high >= tp3) tp3Hit = true;
+        else if (Number.isFinite(tp2) && Number.isFinite(lastCandle.high) && lastCandle.high >= tp2) tp2Hit = true;
+        else if (Number.isFinite(lastCandle.high) && lastCandle.high >= tp1) tp1Hit = true;
+      } else {
+        if (Number.isFinite(lastCandle.high) && lastCandle.high >= stop) stopHit = true;
+        if (Number.isFinite(tp3) && Number.isFinite(lastCandle.low) && lastCandle.low <= tp3) tp3Hit = true;
+        else if (Number.isFinite(tp2) && Number.isFinite(lastCandle.low) && lastCandle.low <= tp2) tp2Hit = true;
+        else if (Number.isFinite(lastCandle.low) && lastCandle.low <= tp1) tp1Hit = true;
+      }
+    }
+
+    if (isBull) {
+      if (price <= stop) stopHit = true;
+      if (Number.isFinite(tp3) && price >= tp3) tp3Hit = true;
+      else if (Number.isFinite(tp2) && price >= tp2) tp2Hit = true;
+      else if (price >= tp1) tp1Hit = true;
+    } else {
+      if (price >= stop) stopHit = true;
+      if (Number.isFinite(tp3) && price <= tp3) tp3Hit = true;
+      else if (Number.isFinite(tp2) && price <= tp2) tp2Hit = true;
+      else if (price <= tp1) tp1Hit = true;
+    }
+
     if (stopHit) {
       return { status: "stopped", maxR: 0, final: true, activated: true };
     }
-
-    const tp3Hit = Number.isFinite(tp3) && (isBull ? price >= tp3 : price <= tp3);
-    const tp2Hit = Number.isFinite(tp2) && (isBull ? price >= tp2 : price <= tp2);
-    const tp1Hit = isBull ? price >= tp1 : price <= tp1;
 
     const maxR = isBull ? (price - entry) / risk : (entry - price) / risk;
     const prevMaxR = Number.isFinite(signal.maxR) ? signal.maxR : 0;
