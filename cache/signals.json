@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T18:01:37.368Z",
+  "lastUpdated": "2026-10-20T19:01:27.708Z",
   "signals": {
-    "PARTIUSDT:1h": {
-      "sentAt": "2026-10-19T18:02:09.941Z",
-      "symbol": "PARTIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.028990000000000002,
-      "stop": 0.027572792130279623
-    },
     "SATSUSDT:30m": {
       "sentAt": "2026-10-19T19:02:06.419Z",
       "symbol": "SATSUSDT",
