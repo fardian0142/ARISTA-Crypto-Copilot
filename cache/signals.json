@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T13:02:16.170Z",
+  "lastUpdated": "2026-10-20T14:01:34.203Z",
   "signals": {
     "CCUSDT:2h": {
       "sentAt": "2026-10-19T14:02:05.649Z",
@@ -225,6 +225,60 @@
       "score": 14,
       "entry": 0.11259388816576754,
       "stop": 0.10980079881594612
+    },
+    "NEIROUSDT:1h": {
+      "sentAt": "2026-10-20T14:01:23.605Z",
+      "symbol": "NEIROUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00007066,
+      "stop": 0.00006863732708075698
+    },
+    "NEIROUSDT:2h": {
+      "sentAt": "2026-10-20T14:01:23.605Z",
+      "symbol": "NEIROUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00007044500000000001,
+      "stop": 0.00006739718972568191
+    },
+    "HMSTRUSDT:1h": {
+      "sentAt": "2026-10-20T14:01:25.368Z",
+      "symbol": "HMSTRUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00014485,
+      "stop": 0.00014098208988795857
+    },
+    "ANIMEUSDT:1h": {
+      "sentAt": "2026-10-20T14:01:29.042Z",
+      "symbol": "ANIMEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0026828685796177303,
+      "stop": 0.002597653002730501
+    },
+    "HOMEUSDT:2h": {
+      "sentAt": "2026-10-20T14:01:30.899Z",
+      "symbol": "HOMEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00485,
+      "stop": 0.004657607324660035
+    },
+    "MONUSDT:1h": {
+      "sentAt": "2026-10-20T14:01:32.701Z",
+      "symbol": "MONUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.020900000000000002,
+      "stop": 0.02016928587687273
     }
   }
 }
