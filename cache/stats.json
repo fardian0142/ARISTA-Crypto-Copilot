@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-20T06:02:05.622Z",
+  "lastUpdated": "2026-10-20T07:02:03.864Z",
   "allTime": {
-    "total": 2,
+    "total": 4,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 2,
+    "active": 4,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -32,7 +32,7 @@
       "tp1Rate": 0
     },
     "2h": {
-      "total": 1,
+      "total": 3,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 2,
+      "total": 4,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,12 +56,12 @@
     "week": "2026-W43",
     "startDate": "2026-10-13",
     "endDate": "2026-10-20",
-    "total": 2,
+    "total": 4,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 2,
+    "active": 4,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -80,7 +80,7 @@
       "sentAt": "2026-10-20T05:02:00.495Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T06:00:44.439Z",
+      "statusUpdatedAt": "2026-10-20T07:00:45.546Z",
       "maxR": 0
     },
     {
@@ -97,7 +97,41 @@
       "sentAt": "2026-10-20T06:02:04.117Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T06:02:04.117Z",
+      "statusUpdatedAt": "2026-10-20T07:00:45.546Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 0.4358,
+      "stop": 0.41911254000000003,
+      "tp1": 0.48841254,
+      "tp2": 0.53211254,
+      "tp3": null,
+      "rr1": 3.1528189430866065,
+      "score": 14,
+      "sentAt": "2026-10-20T07:02:00.517Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-20T07:02:00.517Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "SLXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 0.048240000000000005,
+      "stop": 0.046510402,
+      "tp1": 0.052440402,
+      "tp2": 0.053370402,
+      "tp3": 0.055140402,
+      "rr1": 2.428542354928705,
+      "score": 14,
+      "sentAt": "2026-10-20T07:02:02.360Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T07:02:02.360Z",
       "maxR": 0
     }
   ]
