@@ -1,87 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T03:02:07.529Z",
+  "lastUpdated": "2026-10-20T04:02:13.818Z",
   "signals": {
-    "RLSUSDT:15m": {
-      "sentAt": "2026-10-19T03:04:44.385Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.001794802246748474,
-      "stop": 0.0017759903710779688
-    },
-    "CELOUSDT:30m": {
-      "sentAt": "2026-10-19T03:04:46.333Z",
-      "symbol": "CELOUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08184347520558935,
-      "stop": 0.08071360799999999
-    },
-    "ZRXUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:48.106Z",
-      "symbol": "ZRXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10660290852611783,
-      "stop": 0.104608528
-    },
-    "CRDOUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:49.835Z",
-      "symbol": "CRDOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 172.74269999999999,
-      "stop": 166.49913292889696
-    },
-    "ONUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:51.613Z",
-      "symbol": "ONUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 72.2,
-      "stop": 70.175268
-    },
-    "SMHUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:53.675Z",
-      "symbol": "SMHUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 548.19422,
-      "stop": 535.9708831330378
-    },
-    "NOWUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:55.552Z",
-      "symbol": "NOWUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 142.40266,
-      "stop": 140.1336603569234
-    },
-    "BXUSDT:2h": {
-      "sentAt": "2026-10-19T03:04:57.298Z",
-      "symbol": "BXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 107.78999999999999,
-      "stop": 106.450826649309
-    },
-    "KR200USDT:2h": {
-      "sentAt": "2026-10-19T03:04:59.203Z",
-      "symbol": "KR200USDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 863.7746386598454,
-      "stop": 843.8234
-    },
     "CTUSDT:15m": {
       "sentAt": "2026-10-19T04:05:42.225Z",
       "symbol": "CTUSDT",
@@ -1080,6 +999,24 @@
       "score": 14,
       "entry": 0.033655000000000004,
       "stop": 0.03286779737246275
+    },
+    "ALGOUSDT:2h": {
+      "sentAt": "2026-10-20T04:02:10.559Z",
+      "symbol": "ALGOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11102657940093948,
+      "stop": 0.10650962107954055
+    },
+    "AEVOUSDT:1h": {
+      "sentAt": "2026-10-20T04:02:12.316Z",
+      "symbol": "AEVOUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.022248778750493952,
+      "stop": 0.0215472946393289
     }
   }
 }
