@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-20T00:02:02.038Z",
+  "lastUpdated": "2026-10-20T01:02:00.741Z",
   "allTime": {
-    "total": 8,
+    "total": 9,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 8,
+    "active": 9,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -26,7 +26,7 @@
       "tp1Rate": 0
     },
     "1h": {
-      "total": 3,
+      "total": 4,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 8,
+      "total": 9,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -56,12 +56,12 @@
     "week": "2026-W43",
     "startDate": "2026-10-13",
     "endDate": "2026-10-20",
-    "total": 8,
+    "total": 9,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 8,
+    "active": 9,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -80,7 +80,7 @@
       "sentAt": "2026-10-19T16:02:07.715Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0.96
     },
     {
@@ -97,7 +97,7 @@
       "sentAt": "2026-10-19T17:02:08.835Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0.91
     },
     {
@@ -114,7 +114,7 @@
       "sentAt": "2026-10-19T18:02:09.941Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0
     },
     {
@@ -131,7 +131,7 @@
       "sentAt": "2026-10-19T19:02:06.419Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0
     },
     {
@@ -148,7 +148,7 @@
       "sentAt": "2026-10-19T21:01:15.600Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0
     },
     {
@@ -165,7 +165,7 @@
       "sentAt": "2026-10-19T23:01:56.734Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0
     },
     {
@@ -180,9 +180,9 @@
       "rr1": 3.7617719820014868,
       "score": 14,
       "sentAt": "2026-10-20T00:01:58.701Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-20T00:01:58.701Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
       "maxR": 0
     },
     {
@@ -197,9 +197,26 @@
       "rr1": 2.648101567690001,
       "score": 14,
       "sentAt": "2026-10-20T00:02:00.535Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T01:00:46.048Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "RSRUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 0.0018625,
+      "stop": 0.0017894227906270206,
+      "tp1": 0.002048624,
+      "tp2": 0.002092624,
+      "tp3": 0.002119624,
+      "rr1": 2.546950021723466,
+      "score": 14,
+      "sentAt": "2026-10-20T01:01:59.237Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-20T00:02:00.535Z",
+      "statusUpdatedAt": "2026-10-20T01:01:59.237Z",
       "maxR": 0
     }
   ]
