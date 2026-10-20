@@ -1,27 +1,87 @@
 {
-  "lastUpdated": "2026-10-20T00:00:00.000Z",
+  "lastUpdated": "2026-10-20T05:02:01.999Z",
   "allTime": {
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
     "stopRate": 0
   },
   "byTimeframe": {
-    "15m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "30m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "1h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "2h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "15m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "30m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "1h": {
+      "total": 1,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "2h": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
   "byDirection": {
-    "bullish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "bearish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "bullish": {
+      "total": 1,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "bearish": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
-  "weekly": null,
-  "recentSignals": []
+  "weekly": {
+    "week": "2026-W43",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "total": 1,
+    "tp1Hit": 0,
+    "tp2Hit": 0,
+    "tp3Hit": 0,
+    "stopped": 0,
+    "active": 1,
+    "bestTrade": null,
+    "worstTrade": null
+  },
+  "recentSignals": [
+    {
+      "symbol": "ACTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "entry": 0.008823000000000001,
+      "stop": 0.008518885195930035,
+      "tp1": 0.009517239,
+      "tp2": 0.009769239,
+      "tp3": null,
+      "rr1": 2.282818826012426,
+      "score": 14,
+      "sentAt": "2026-10-20T05:02:00.495Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T05:02:00.495Z",
+      "maxR": 0
+    }
+  ]
 }
