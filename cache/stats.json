@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-19T23:01:58.238Z",
+  "lastUpdated": "2026-10-20T00:02:02.038Z",
   "allTime": {
-    "total": 6,
+    "total": 8,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 6,
+    "active": 8,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -20,7 +20,7 @@
       "tp1Rate": 0
     },
     "30m": {
-      "total": 2,
+      "total": 3,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -32,7 +32,7 @@
       "tp1Rate": 0
     },
     "2h": {
-      "total": 1,
+      "total": 2,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 6,
+      "total": 8,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -54,14 +54,14 @@
   },
   "weekly": {
     "week": "2026-W43",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
-    "total": 6,
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "total": 8,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 6,
+    "active": 8,
     "bestTrade": null,
     "worstTrade": null
   },
@@ -80,7 +80,7 @@
       "sentAt": "2026-10-19T16:02:07.715Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
       "maxR": 0.96
     },
     {
@@ -97,8 +97,8 @@
       "sentAt": "2026-10-19T17:02:08.835Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
-      "maxR": 0.76
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "maxR": 0.91
     },
     {
       "symbol": "PARTIUSDT",
@@ -114,7 +114,7 @@
       "sentAt": "2026-10-19T18:02:09.941Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
       "maxR": 0
     },
     {
@@ -131,7 +131,7 @@
       "sentAt": "2026-10-19T19:02:06.419Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
       "maxR": 0
     },
     {
@@ -148,7 +148,7 @@
       "sentAt": "2026-10-19T21:01:15.600Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T23:00:44.744Z",
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
       "maxR": 0
     },
     {
@@ -163,9 +163,43 @@
       "rr1": 3.8962111832721713,
       "score": 14,
       "sentAt": "2026-10-19T23:01:56.734Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-20T00:00:45.940Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "NOTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 0.0003875,
+      "stop": 0.0003696834017796208,
+      "tp1": 0.00045452198,
+      "tp2": 0.00047982198,
+      "tp3": null,
+      "rr1": 3.7617719820014868,
+      "score": 14,
+      "sentAt": "2026-10-20T00:01:58.701Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-19T23:01:56.734Z",
+      "statusUpdatedAt": "2026-10-20T00:01:58.701Z",
+      "maxR": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "entry": 0.007224,
+      "stop": 0.0071535524,
+      "tp1": 0.0074105524,
+      "tp2": 0.0075205524,
+      "tp3": null,
+      "rr1": 2.648101567690001,
+      "score": 14,
+      "sentAt": "2026-10-20T00:02:00.535Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-20T00:02:00.535Z",
       "maxR": 0
     }
   ]
