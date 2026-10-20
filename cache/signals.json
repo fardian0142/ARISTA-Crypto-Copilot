@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T05:02:01.998Z",
+  "lastUpdated": "2026-10-20T06:02:05.621Z",
   "signals": {
-    "OFCUSDT:1h": {
-      "sentAt": "2026-10-19T05:05:06.947Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005798150402129484,
-      "stop": 0.005522926848016495
-    },
-    "BABYUSDT:15m": {
-      "sentAt": "2026-10-19T05:05:08.842Z",
-      "symbol": "BABYUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.011955,
-      "stop": 0.012094113997626258
-    },
-    "LAUSDT:30m": {
-      "sentAt": "2026-10-19T05:05:10.581Z",
-      "symbol": "LAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05278,
-      "stop": 0.0522594
-    },
-    "KGENUSDT:15m": {
-      "sentAt": "2026-10-19T05:05:12.346Z",
-      "symbol": "KGENUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0862,
-      "stop": 0.08462861958621562
-    },
-    "XAGUSDT:2h": {
-      "sentAt": "2026-10-19T05:05:14.147Z",
-      "symbol": "XAGUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 57.62,
-      "stop": 56.92933738688849
-    },
     "LINEAUSDT:30m": {
       "sentAt": "2026-10-19T06:05:18.982Z",
       "symbol": "LINEAUSDT",
@@ -864,6 +819,15 @@
       "score": 14,
       "entry": 0.008823000000000001,
       "stop": 0.008518885195930035
+    },
+    "MUBARAKUSDT:2h": {
+      "sentAt": "2026-10-20T06:02:04.117Z",
+      "symbol": "MUBARAKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.054068,
+      "stop": 0.04985137648258537
     }
   }
 }
