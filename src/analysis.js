@@ -650,7 +650,8 @@ export async function analyze(symbol, timeframe) {
   result.direction =
     direction;
 
-  const smcTrendFilter = detectSMCTrendFilter(candles);
+  const smcTrendCandles = hasRealHtf ? htfCandles : candles;
+  const smcTrendFilter = detectSMCTrendFilter(smcTrendCandles);
 
   if (smcTrendFilter.blocked) {
     return fail(
