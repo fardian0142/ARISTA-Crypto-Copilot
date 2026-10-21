@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-20T23:01:33.599Z",
+  "lastUpdated": "2026-10-21T00:01:35.040Z",
   "signals": {
-    "SAHARAUSDT:1h": {
-      "sentAt": "2026-10-19T23:01:56.734Z",
-      "symbol": "SAHARAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.007449,
-      "stop": 0.0073385064
-    },
     "NOTUSDT:2h": {
       "sentAt": "2026-10-20T00:01:58.701Z",
       "symbol": "NOTUSDT",
