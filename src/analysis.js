@@ -568,6 +568,54 @@ export async function analyze(symbol, timeframe) {
   }
 
   if (
+    result.range_setups &&
+    result.range_setups.active
+  ) {
+    const smcFilterCurrentTF = detectSMCTrendFilter(candles);
+    let isRangeAllowed = true;
+
+    if (
+      result.range_setups.active.direction === "bearish" &&
+      !smcFilterCurrentTF.allowShort
+    ) {
+      isRangeAllowed = false;
+      result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم جاری مسدود شد.");
+    }
+
+    if (
+      result.range_setups.active.direction === "bullish" &&
+      !smcFilterCurrentTF.allowLong
+    ) {
+      isRangeAllowed = false;
+      result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم جاری مسدود شد.");
+    }
+
+    if (isRangeAllowed && hasRealHtf) {
+      const smcFilterHTF = detectSMCTrendFilter(htfCandles);
+
+      if (
+        result.range_setups.active.direction === "bearish" &&
+        !smcFilterHTF.allowShort
+      ) {
+        isRangeAllowed = false;
+        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم بالاتر (HTF) مسدود شد.");
+      }
+
+      if (
+        result.range_setups.active.direction === "bullish" &&
+        !smcFilterHTF.allowLong
+      ) {
+        isRangeAllowed = false;
+        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم بالاتر (HTF) مسدود شد.");
+      }
+    }
+
+    if (!isRangeAllowed) {
+      result.range_setups.active = null;
+    }
+  }
+
+  if (
     !event ||
     !Number.isFinite(event.index) ||
     !Number.isFinite(event.direction)
