@@ -5,19 +5,19 @@ export async function updateSignalStatus(signal) {
     const analysis = await analyze(signal.symbol, signal.timeframe);
 
     if (!analysis || !Number.isFinite(analysis.current_price)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
     }
 
     const price = analysis.current_price;
     const { direction, entry, stop, tp1, tp2, tp3 } = signal;
 
     if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(tp1)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
     }
 
     const risk = Math.abs(entry - stop);
     if (risk <= 0) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
     }
 
     const isBull = direction === "bullish";
@@ -25,68 +25,81 @@ export async function updateSignalStatus(signal) {
     let isActivated = signal.activated === true;
 
     if (!isActivated) {
-      if (isBull) {
-        isActivated = price <= entry;
-      } else {
-        isActivated = price >= entry;
-      }
+      if (isBull) isActivated = price <= entry;
+      else isActivated = price >= entry;
     }
 
     if (!isActivated) {
-      return {
-        status: "pending",
-        maxR: 0,
-        activated: false
-      };
+      return { status: "pending", maxR: 0, activated: false, events: [] };
     }
+
+    const recentCandles = Array.isArray(analysis._candles)
+      ? analysis._candles.slice(-10)
+      : (analysis._lastCandle ? [analysis._lastCandle] : []);
 
     let stopHit = false;
     let tp1Hit = false;
     let tp2Hit = false;
     let tp3Hit = false;
+    let stopIndex = -1;
+    let tp1Index = -1;
+    let tp2Index = -1;
+    let tp3Index = -1;
 
-    const lastCandle = analysis._lastCandle;
-    if (lastCandle) {
+    for (let i = 0; i < recentCandles.length; i++) {
+      const candle = recentCandles[i];
+      if (!candle) continue;
+
       if (isBull) {
-        if (Number.isFinite(lastCandle.low) && lastCandle.low <= stop) stopHit = true;
-        if (Number.isFinite(tp3) && Number.isFinite(lastCandle.high) && lastCandle.high >= tp3) tp3Hit = true;
-        else if (Number.isFinite(tp2) && Number.isFinite(lastCandle.high) && lastCandle.high >= tp2) tp2Hit = true;
-        else if (Number.isFinite(lastCandle.high) && lastCandle.high >= tp1) tp1Hit = true;
+        if (Number.isFinite(candle.low) && candle.low <= stop && stopIndex === -1) { stopHit = true; stopIndex = i; }
+        if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = i; }
+        else if (Number.isFinite(tp2) && Number.isFinite(candle.high) && candle.high >= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = i; }
+        else if (Number.isFinite(candle.high) && candle.high >= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = i; }
       } else {
-        if (Number.isFinite(lastCandle.high) && lastCandle.high >= stop) stopHit = true;
-        if (Number.isFinite(tp3) && Number.isFinite(lastCandle.low) && lastCandle.low <= tp3) tp3Hit = true;
-        else if (Number.isFinite(tp2) && Number.isFinite(lastCandle.low) && lastCandle.low <= tp2) tp2Hit = true;
-        else if (Number.isFinite(lastCandle.low) && lastCandle.low <= tp1) tp1Hit = true;
+        if (Number.isFinite(candle.high) && candle.high >= stop && stopIndex === -1) { stopHit = true; stopIndex = i; }
+        if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = i; }
+        else if (Number.isFinite(tp2) && Number.isFinite(candle.low) && candle.low <= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = i; }
+        else if (Number.isFinite(candle.low) && candle.low <= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = i; }
       }
     }
 
     if (isBull) {
-      if (price <= stop) stopHit = true;
-      if (Number.isFinite(tp3) && price >= tp3) tp3Hit = true;
-      else if (Number.isFinite(tp2) && price >= tp2) tp2Hit = true;
-      else if (price >= tp1) tp1Hit = true;
+      if (price <= stop && stopIndex === -1) { stopHit = true; stopIndex = recentCandles.length; }
+      if (Number.isFinite(tp3) && price >= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = recentCandles.length; }
+      else if (Number.isFinite(tp2) && price >= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = recentCandles.length; }
+      else if (price >= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = recentCandles.length; }
     } else {
-      if (price >= stop) stopHit = true;
-      if (Number.isFinite(tp3) && price <= tp3) tp3Hit = true;
-      else if (Number.isFinite(tp2) && price <= tp2) tp2Hit = true;
-      else if (price <= tp1) tp1Hit = true;
+      if (price >= stop && stopIndex === -1) { stopHit = true; stopIndex = recentCandles.length; }
+      if (Number.isFinite(tp3) && price <= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = recentCandles.length; }
+      else if (Number.isFinite(tp2) && price <= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = recentCandles.length; }
+      else if (price <= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = recentCandles.length; }
     }
 
-    if (stopHit) {
-      return { status: "stopped", maxR: 0, final: true, activated: true };
+    const events = [];
+    if (tp1Hit) events.push({ type: "tp1_hit", index: tp1Index });
+    if (tp2Hit) events.push({ type: "tp2_hit", index: tp2Index });
+    if (tp3Hit) events.push({ type: "tp3_hit", index: tp3Index });
+    if (stopHit) events.push({ type: "stopped", index: stopIndex });
+
+    events.sort((a, b) => a.index - b.index);
+
+    let finalStatus = signal.status || "active";
+    if (events.length > 0) {
+      finalStatus = events[events.length - 1].type;
     }
 
     const maxR = isBull ? (price - entry) / risk : (entry - price) / risk;
     const prevMaxR = Number.isFinite(signal.maxR) ? signal.maxR : 0;
     const newMaxR = Math.max(prevMaxR, maxR);
 
-    if (tp3Hit) return { status: "tp3_hit", maxR: newMaxR, final: true, activated: true };
-    if (tp2Hit) return { status: "tp2_hit", maxR: newMaxR, activated: true };
-    if (tp1Hit) return { status: "tp1_hit", maxR: newMaxR, activated: true };
-
-    return { status: "active", maxR: newMaxR, activated: true };
+    return {
+      status: finalStatus,
+      maxR: newMaxR,
+      activated: true,
+      events: events
+    };
   } catch (e) {
-    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false };
+    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
   }
 }
 
