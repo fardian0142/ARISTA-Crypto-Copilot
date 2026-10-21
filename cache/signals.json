@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T03:01:57.171Z",
+  "lastUpdated": "2026-10-21T04:02:06.005Z",
   "signals": {
     "ALGOUSDT:2h": {
       "sentAt": "2026-10-20T04:02:10.559Z",
@@ -207,6 +207,15 @@
       "score": 14,
       "entry": 1.02905,
       "stop": 1.0435087314303881
+    },
+    "FOGOUSDT:15m": {
+      "sentAt": "2026-10-21T04:02:04.503Z",
+      "symbol": "FOGOUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004225,
+      "stop": 0.004317221966904678
     }
   }
 }
