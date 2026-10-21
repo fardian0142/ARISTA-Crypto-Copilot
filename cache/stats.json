@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-21T15:01:20.815Z",
+  "lastUpdated": "2026-10-21T15:25:52.266Z",
   "allTime": {
-    "total": 6,
+    "total": 5,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 6,
+    "active": 5,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -14,7 +14,7 @@
   },
   "byTimeframe": {
     "15m": {
-      "total": 1,
+      "total": 0,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -46,7 +46,7 @@
       "tp1Rate": 0
     },
     "bearish": {
-      "total": 2,
+      "total": 1,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -68,7 +68,7 @@
       "sentAt": "2026-10-21T05:02:07.604Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-21T15:00:45.756Z",
+      "statusUpdatedAt": "2026-10-21T15:25:16.945Z",
       "maxR": 0
     },
     {
@@ -85,8 +85,8 @@
       "sentAt": "2026-10-21T08:02:08.491Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T15:00:45.757Z",
-      "maxR": 0.32
+      "statusUpdatedAt": "2026-10-21T15:25:16.946Z",
+      "maxR": 0.39
     },
     {
       "symbol": "ZILUSDT",
@@ -102,25 +102,8 @@
       "sentAt": "2026-10-21T08:02:10.252Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-21T15:00:45.757Z",
+      "statusUpdatedAt": "2026-10-21T15:25:16.946Z",
       "maxR": 0
-    },
-    {
-      "symbol": "LINEAUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "entry": 0.0027909763935659053,
-      "stop": 0.0028225971888149633,
-      "tp1": 0.0027025584,
-      "tp2": 0.0026845584000000002,
-      "tp3": null,
-      "rr1": 2.796197656304651,
-      "score": 14,
-      "sentAt": "2026-10-21T08:02:12.031Z",
-      "status": "active",
-      "activated": true,
-      "statusUpdatedAt": "2026-10-21T15:00:45.757Z",
-      "maxR": 0.63
     },
     {
       "symbol": "FILUSDT",
@@ -136,8 +119,8 @@
       "sentAt": "2026-10-21T08:02:13.879Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T15:00:45.757Z",
-      "maxR": 0.23
+      "statusUpdatedAt": "2026-10-21T15:25:18.984Z",
+      "maxR": 0.4
     },
     {
       "symbol": "LABUSDT",
@@ -153,7 +136,7 @@
       "sentAt": "2026-10-21T12:01:16.248Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T15:00:45.757Z",
+      "statusUpdatedAt": "2026-10-21T15:25:18.984Z",
       "maxR": 0.31
     }
   ]
