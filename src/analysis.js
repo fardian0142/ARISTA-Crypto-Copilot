@@ -571,31 +571,12 @@ export async function analyze(symbol, timeframe) {
     result.range_setups &&
     result.range_setups.active
   ) {
-    const smcFilterCurrentTF = detectSMCTrendFilter(candles);
     let isRangeAllowed = true;
 
-    if (
-      result.range_setups.active.direction === "bearish" &&
-      !smcFilterCurrentTF.allowShort
-    ) {
-      isRangeAllowed = false;
-      result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم جاری مسدود شد.");
-    }
-
-    if (
-      result.range_setups.active.direction === "bullish" &&
-      !smcFilterCurrentTF.allowLong
-    ) {
-      isRangeAllowed = false;
-      result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم جاری مسدود شد.");
-    }
-
-    if (isRangeAllowed && hasRealHtf) {
-      const smcFilterHTF = detectSMCTrendFilter(htfCandles);
-
+    if (hasRealHtf) {
       if (
         result.range_setups.active.direction === "bearish" &&
-        !smcFilterHTF.allowShort
+        htfStructure.trend === "bullish"
       ) {
         isRangeAllowed = false;
         result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم بالاتر (HTF) مسدود شد.");
@@ -603,10 +584,28 @@ export async function analyze(symbol, timeframe) {
 
       if (
         result.range_setups.active.direction === "bullish" &&
-        !smcFilterHTF.allowLong
+        htfStructure.trend === "bearish"
       ) {
         isRangeAllowed = false;
         result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم بالاتر (HTF) مسدود شد.");
+      }
+    }
+
+    if (isRangeAllowed && hasRealHtf2) {
+      if (
+        result.range_setups.active.direction === "bearish" &&
+        htf2Structure.trend === "bullish"
+      ) {
+        isRangeAllowed = false;
+        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم بالاتر دوم (HTF2) مسدود شد.");
+      }
+
+      if (
+        result.range_setups.active.direction === "bullish" &&
+        htf2Structure.trend === "bearish"
+      ) {
+        isRangeAllowed = false;
+        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم بالاتر دوم (HTF2) مسدود شد.");
       }
     }
 
