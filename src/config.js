@@ -4,64 +4,56 @@ export const TIMEFRAME_PROFILES = {
     htfPenalty: 20,
     momentumPenalty: 2,
     minStrength: 75,
-    minRR: 2.5,
-    allowCounterMomentum: false
+    minRR: 2.5
   },
   "30m": {
     strictHTF: true,
     htfPenalty: 20,
     momentumPenalty: 3,
     minStrength: 75,
-    minRR: 2.5,
-    allowCounterMomentum: false
+    minRR: 2.5
   },
   "1h": {
     strictHTF: true,
     htfPenalty: 15,
     momentumPenalty: 5,
     minStrength: 72,
-    minRR: 2.2,
-    allowCounterMomentum: false
+    minRR: 2.2
   },
   "2h": {
     strictHTF: true,
     htfPenalty: 12,
     momentumPenalty: 6,
     minStrength: 72,
-    minRR: 2.2,
-    allowCounterMomentum: false
+    minRR: 2.2
   },
   "4h": {
     strictHTF: true,
     htfPenalty: 18,
     momentumPenalty: 10,
     minStrength: 75,
-    minRR: 2.0,
-    allowCounterMomentum: false
+    minRR: 2.0
   },
   "6h": {
     strictHTF: true,
     htfPenalty: 20,
     momentumPenalty: 12,
     minStrength: 78,
-    minRR: 2.2,
-    allowCounterMomentum: false
+    minRR: 2.2
   },
   "12h": {
     strictHTF: true,
     htfPenalty: 25,
     momentumPenalty: 15,
     minStrength: 80,
-    minRR: 2.4,
-    allowCounterMomentum: false
+    minRR: 2.4
   },
   "24h": {
     strictHTF: true,
     htfPenalty: 30,
     momentumPenalty: 18,
     minStrength: 82,
-    minRR: 2.6,
-    allowCounterMomentum: false
+    minRR: 2.6
   }
 };
 
@@ -93,9 +85,8 @@ export const CONFIG = {
   FVG_LOOKBACK: 80,
   SL_ATR_BUFFER: 2.5,
   SL_MIN_NODE_DISTANCE_ATR: 0.5,
-  MIN_RR: 2.2,
-  MIN_STRENGTH: 75,
   MIN_TP1_RR: 2.0,
+  TP1_MIN_RR: 0.5,
   OB_FVG_MAX_DIST_ATR: 0.4,
   ENTRY_ZONE_MAX_WIDTH_PCT: 0.02,
   HTF_SECOND_LEVEL: true,
@@ -107,7 +98,6 @@ export const CONFIG = {
   SWEEP_MIN_REJECTION: 0.25,
   MIN_TP_DISTANCE: 0.005,
   MIN_TP_DISTANCE_ATR: 1.0,
-  TP_SURFACE_BUFFER: 0.15,
   STRUCTURE_SWINGS: 3,
   SYMBOL_CACHE_SECONDS: 3600,
   KLINE_CACHE_SECONDS: 15,
@@ -116,7 +106,6 @@ export const CONFIG = {
   MARKET_TOP_LIMIT: 1000,
   MIN_QUOTE_VOLUME_24H: 50000000,
   EMA_TREND_SCORE: 6,
-  EMA_TREND_NEUTRAL_MIN: 0.0015,
   FIB_LEVELS: [0.5, 0.618],
   FIB_SCORE: 8,
   FIB_TOLERANCE: 0.15,
@@ -160,15 +149,11 @@ export const CONFIG = {
   TP_BUFFER_MIN_PCT: 0.002,
   TP_BUFFER_MAX_PCT: 0.005,
   TP_STRUCTURE_LOOKBACK_BARS: 100,
-  TP_STRUCTURE_MIN_GAP: 2,
   TP_PIP_BUFFER_PCT: 0.0002,
   TP_MIN_STRUCTURE_GAP_BARS: 2,
   SL_MARKET_STRUCTURE_LOOKBACK: 100,
-  SL_MIN_GAP: 2,
   SL_PIP_BUFFER_PCT: 0.0002,
-  USE_UNIFIED_TPSL: true,
   MOMENTUM_WARNING_BODY_RATIO: 0.6,
-  MOMENTUM_WARNING_PENALTY: 2,
   MOMENTUM_RSI_OVERBOUGHT: 68,
   MOMENTUM_RSI_OVERSOLD: 32,
   EXCHANGES: {
