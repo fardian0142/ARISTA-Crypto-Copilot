@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T05:02:09.109Z",
+  "lastUpdated": "2026-10-21T06:02:01.166Z",
   "signals": {
     "CHIPUSDT:2h": {
       "sentAt": "2026-10-21T05:02:07.604Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.043945,
       "stop": 0.039858316006672743
+    },
+    "FLOKIUSDT:30m": {
+      "sentAt": "2026-10-21T06:01:59.663Z",
+      "symbol": "FLOKIUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.000024639750077615378,
+      "stop": 0.000025028928017033013
     }
   }
 }
