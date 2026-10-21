@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T20:01:50.564Z",
+  "lastUpdated": "2026-10-21T21:01:55.523Z",
   "allTime": {
     "total": 5,
     "tp1Hit": 0,
@@ -68,7 +68,7 @@
       "sentAt": "2026-10-21T05:02:07.604Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-21T20:00:42.413Z",
+      "statusUpdatedAt": "2026-10-21T21:00:43.364Z",
       "maxR": 0
     },
     {
@@ -85,7 +85,7 @@
       "sentAt": "2026-10-21T08:02:08.491Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T20:00:42.413Z",
+      "statusUpdatedAt": "2026-10-21T21:00:43.364Z",
       "maxR": 0.54
     },
     {
@@ -102,7 +102,7 @@
       "sentAt": "2026-10-21T08:02:10.252Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-21T20:00:42.413Z",
+      "statusUpdatedAt": "2026-10-21T21:00:43.364Z",
       "maxR": 0
     },
     {
@@ -119,8 +119,8 @@
       "sentAt": "2026-10-21T08:02:13.879Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T20:00:42.413Z",
-      "maxR": 0.53
+      "statusUpdatedAt": "2026-10-21T21:00:43.364Z",
+      "maxR": 0.54
     },
     {
       "symbol": "LABUSDT",
@@ -136,7 +136,7 @@
       "sentAt": "2026-10-21T12:01:16.248Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-21T20:00:42.413Z",
+      "statusUpdatedAt": "2026-10-21T21:00:43.364Z",
       "maxR": 0.31
     }
   ]
