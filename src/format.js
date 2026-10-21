@@ -325,7 +325,7 @@ export function formatAnalysis(r) {
       if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
         isInsideZone = true;
       }
-      
+
       if (isBullish && currentPrice <= stopLoss) {
         isInvalidated = true;
       } else if (!isBullish && currentPrice >= stopLoss) {
@@ -345,9 +345,9 @@ export function formatAnalysis(r) {
       lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
-      
+
       const entryIsBetter = isBullish ? (entryPoint < currentPrice) : (entryPoint > currentPrice);
-      
+
       if (entryIsBetter) {
         lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
         lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد معامله شوید.");
@@ -463,7 +463,7 @@ export function formatAnalysis(r) {
       if (currentPrice >= zoneLow && currentPrice <= zoneHigh) {
         isInsideZone = true;
       }
-      
+
       if (Number.isFinite(stopLoss)) {
         if (isBullish && currentPrice <= stopLoss) {
           isInvalidated = true;
@@ -485,9 +485,9 @@ export function formatAnalysis(r) {
       lines.push("⛔️ <b>پیشنهاد:</b> از ورود به این معامله خودداری کنید.");
     } else if (isInsideZone) {
       lines.push("");
-      
+
       const entryIsBetter = isBullish ? (entryPoint < currentPrice) : (entryPoint > currentPrice);
-      
+
       if (entryIsBetter) {
         lines.push("🔥 <b>فرصت ورود:</b> قیمت هم‌اکنون داخل ناحیه ورود قرار دارد.");
         lines.push("💡 <b>پیشنهاد:</b> می‌توانید همین حالا (Market) وارد معامله شوید.");
@@ -809,7 +809,7 @@ if (
 
 export function formatSignalResult(sig, newStatus) {
   const isBullish = sig.direction === "bullish";
-  
+
   if (newStatus === "stopped") {
     return (
       "🛑 <b>حد ضرر فعال شد</b>\n" +
@@ -820,10 +820,10 @@ export function formatSignalResult(sig, newStatus) {
       "💡 مدیریت سرمایه را رعایت کنید. بازار همیشه فرصت‌های جدیدی دارد."
     );
   }
-  
+
   let title = "";
   let hitLevel = "";
-  
+
   if (newStatus === "tp1_hit") {
     title = "🥇 هدف اول لمس شد!";
     hitLevel = "TP1";
@@ -834,11 +834,11 @@ export function formatSignalResult(sig, newStatus) {
     title = "🥉 هدف سوم لمس شد!";
     hitLevel = "TP3";
   }
-  
+
   if (!title) {
     return "";
   }
-  
+
   return (
     "✅ <b>" + title + "</b>\n" +
     "━━━━━━━━━━━━━━━━━━━━━━\n" +
@@ -848,6 +848,27 @@ export function formatSignalResult(sig, newStatus) {
     "🎯 سطح لمس شده: <b>" + hitLevel + "</b>\n" +
     "💰 سود تا این لحظه: <b>" + (sig.maxR || 0) + "R</b>\n\n" +
     "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
+  );
+}
+
+export function formatTradeClosed(sig, lastTpHit, totalR) {
+  const isBullish = sig.direction === "bullish";
+
+  const tpLabels = {
+    "tp1_hit": "TP1 (هدف اول)",
+    "tp2_hit": "TP2 (هدف دوم)",
+    "tp3_hit": "TP3 (هدف سوم)"
+  };
+
+  return (
+    "🏁 <b>معامله با موفقیت بسته شد</b>\n" +
+    "━━━━━━━━━━━━━━━━━━━━━━\n" +
+    "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
+    "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
+    "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
+    "✅ آخرین هدف لمس شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>\n" +
+    "💰 سود کل: <b>" + (totalR || 0) + "R</b>\n\n" +
+    "💡 مدیریت سرمایه را رعایت کنید. منتظر سیگنال بعدی باشید."
   );
 }
 
