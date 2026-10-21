@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-21T02:02:02.494Z",
+  "lastUpdated": "2026-10-21T03:01:57.171Z",
   "signals": {
-    "BOMEUSDT:30m": {
-      "sentAt": "2026-10-20T02:02:07.887Z",
-      "symbol": "BOMEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.000605,
-      "stop": 0.0005895677764523822
-    },
-    "RSRUSDT:2h": {
-      "sentAt": "2026-10-20T02:02:09.651Z",
-      "symbol": "RSRUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0018644999999999998,
-      "stop": 0.0017460717860443625
-    },
-    "SPACEUSDT:2h": {
-      "sentAt": "2026-10-20T02:02:11.485Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.003584959718568212,
-      "stop": 0.0032818591530842
-    },
-    "BERAUSDT:30m": {
-      "sentAt": "2026-10-20T02:02:13.226Z",
-      "symbol": "BERAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.16420483157012183,
-      "stop": 0.1592940602134156
-    },
-    "WCTUSDT:30m": {
-      "sentAt": "2026-10-20T02:02:14.973Z",
-      "symbol": "WCTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.033655000000000004,
-      "stop": 0.03286779737246275
-    },
     "ALGOUSDT:2h": {
       "sentAt": "2026-10-20T04:02:10.559Z",
       "symbol": "ALGOUSDT",
@@ -243,6 +198,15 @@
       "score": 14,
       "entry": 0.3130720377430403,
       "stop": 0.30568544469256925
+    },
+    "SUIUSDT:15m": {
+      "sentAt": "2026-10-21T03:01:55.668Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1.02905,
+      "stop": 1.0435087314303881
     }
   }
 }
