@@ -241,13 +241,16 @@ export async function analyze(symbol, timeframe) {
     lastCandle.close;
 
   result.current_price =
-    currentPrice;
+  currentPrice;
 
   result._lastCandle =
-    lastCandle;
+  lastCandle;
+
+  result._candles =
+  candles;
 
   const currentAtr =
-    atrCalc(candles);
+  atrCalc(candles);
 
   if (
     !Number.isFinite(currentAtr) ||
