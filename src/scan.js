@@ -10,8 +10,8 @@ import {
 import { CONFIG } from "./config.js";
 import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
-import { formatAnalysis, formatWeeklyReport, formatSignalResult, formatTradeClosed } from "./format.js";
-import { updateSignalStatus, computeStats, computeWeeklyStats } from "./tracker.js";
+import { formatAnalysis, formatSignalResult, formatTradeClosed } from "./format.js";
+import { updateSignalStatus, computeStats } from "./tracker.js";
 
 const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
 const PRIMARY_TIMEFRAME = "1h";
@@ -107,6 +107,7 @@ function logSummary(summary) {
   console.log("📤 Sent (after merge)   : " + summary.sent);
   console.log("🔄 Tracked (updated)    : " + summary.tracked);
   console.log("🚫 Missed/Invalidated   : " + summary.missed);
+  console.log("🧹 Cleaned (completed)  : " + summary.cleaned);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
@@ -205,6 +206,7 @@ async function main() {
     sent: 0,
     tracked: 0,
     missed: 0,
+    cleaned: 0,
     cacheEntries: 0,
     elapsedMs: 0
   };
@@ -296,6 +298,16 @@ async function main() {
     sig.statusUpdatedAt = new Date().toISOString();
   }
 
+  const beforeCleanup = stats.recentSignals.length;
+  stats.recentSignals = stats.recentSignals.filter(
+    (sig) => sig && sig.status !== "tp3_hit" && sig.status !== "stopped"
+  );
+  summary.cleaned = beforeCleanup - stats.recentSignals.length;
+
+  if (summary.cleaned > 0) {
+    console.log("🧹 Removed " + summary.cleaned + " completed signal(s)");
+  }
+
   console.log("✅ Tracking complete: " + summary.tracked + " status change(s)");
   console.log("");
 
@@ -367,9 +379,9 @@ async function main() {
     const isValid = isSetupValid(active, currentPrice);
 
     if (!isValid) {
-      return { 
-        symbol, 
-        timeframe, 
+      return {
+        symbol,
+        timeframe,
         status: "missed",
         reason: "فرصت ورود از دست رفته یا ستاپ باطل شده"
       };
@@ -497,7 +509,7 @@ async function main() {
 
       const currentPrice = analysis.current_price;
       const isBullish = active.direction === "bullish";
-      
+
       let isActivatedNow = false;
       if (Number.isFinite(currentPrice)) {
         if (isBullish && currentPrice <= active.entry) isActivatedNow = true;
@@ -567,7 +579,6 @@ async function main() {
   stats.allTime = computed.allTime;
   stats.byTimeframe = computed.byTimeframe;
   stats.byDirection = computed.byDirection;
-  stats.weekly = computeWeeklyStats(stats.recentSignals);
 
   try {
     await writeCache(cache);
@@ -579,19 +590,6 @@ async function main() {
     await writeStats(stats);
   } catch (e) {
     console.error("❌ Failed to write stats:", (e && e.message) || e);
-  }
-
-  const isFriday = new Date().getUTCDay() === 5;
-  if (isFriday && stats.weekly && stats.weekly.total > 0) {
-    console.log("");
-    console.log("📊 Sending weekly report...");
-    try {
-      const report = formatWeeklyReport(stats);
-      await sendTelegramMessage(token, chatId, report);
-      console.log("✅ Weekly report sent");
-    } catch (e) {
-      console.error("❌ Failed to send weekly report:", (e && e.message) || e);
-    }
   }
 
   summary.cacheEntries = Object.keys(cache.signals).length;
