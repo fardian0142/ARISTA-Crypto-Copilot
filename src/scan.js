@@ -10,7 +10,7 @@ import {
 import { CONFIG } from "./config.js";
 import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
-import { formatAnalysis, formatWeeklyReport, formatSignalResult } from "./format.js";
+import { formatAnalysis, formatWeeklyReport, formatSignalResult, formatTradeClosed } from "./format.js";
 import { updateSignalStatus, computeStats, computeWeeklyStats } from "./tracker.js";
 
 const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
@@ -241,7 +241,7 @@ async function main() {
 
   const trackedResults = await runWithConcurrency(trackingTasks, 3, async ({ sig, idx }) => {
     if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
-      return { idx, status: sig.status, maxR: sig.maxR || 0, activated: sig.activated, skipped: true };
+      return { idx, status: sig.status, maxR: sig.maxR || 0, activated: sig.activated, skipped: true, events: [] };
     }
     const result = await updateSignalStatus(sig);
     return { idx, ...result };
@@ -251,24 +251,45 @@ async function main() {
     if (!r || r.skipped) continue;
     const sig = stats.recentSignals[r.idx];
     if (!sig) continue;
-    
+
+    const events = Array.isArray(r.events) ? r.events : [];
+
+    for (const event of events) {
+      if (event.type === "tp1_hit" || event.type === "tp2_hit" || event.type === "tp3_hit" || event.type === "stopped") {
+        try {
+          const resultText = formatSignalResult(sig, event.type);
+          if (resultText && resultText.trim() !== "") {
+            await sendTelegramMessage(token, chatId, resultText);
+            await sleep(MESSAGE_DELAY_MS);
+            console.log("   📤 Sent: " + sig.symbol + " → " + event.type);
+          }
+
+          const isLastTp =
+            (event.type === "tp3_hit" && sig.tp3) ||
+            (event.type === "tp2_hit" && !sig.tp3) ||
+            (event.type === "tp1_hit" && !sig.tp2 && !sig.tp3);
+
+          if (isLastTp) {
+            const totalR = event.type === "tp3_hit" ? sig.rr3 : event.type === "tp2_hit" ? sig.rr2 : sig.rr1;
+            const closeText = formatTradeClosed(sig, event.type, totalR);
+            await sendTelegramMessage(token, chatId, closeText);
+            await sleep(MESSAGE_DELAY_MS);
+            console.log("   🏁 Trade closed: " + sig.symbol + " at " + event.type);
+          }
+        } catch (e) {
+          console.error("❌ Failed to send result for " + sig.symbol + " (" + event.type + "):", (e && e.message) || e);
+        }
+      }
+    }
+
     if (sig.status !== r.status) {
       summary.tracked++;
       console.log(
         "   📊 " + sig.symbol + " [" + sig.timeframe + "] → " + r.status +
         (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
       );
-      
-      if (r.status === "tp1_hit" || r.status === "tp2_hit" || r.status === "tp3_hit" || r.status === "stopped") {
-        try {
-          const resultText = formatSignalResult(sig, r.status);
-          await sendTelegramMessage(token, chatId, resultText);
-          await sleep(MESSAGE_DELAY_MS);
-        } catch (e) {
-          console.error("❌ Failed to send result for " + sig.symbol + ":", (e && e.message) || e);
-        }
-      }
     }
+
     sig.status = r.status;
     if (typeof r.activated === "boolean") sig.activated = r.activated;
     if (Number.isFinite(r.maxR)) sig.maxR = Math.round(r.maxR * 100) / 100;
