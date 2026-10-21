@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-10-21T05:00:00.000Z",
-  "signals": {}
+  "lastUpdated": "2026-10-21T05:02:09.109Z",
+  "signals": {
+    "CHIPUSDT:2h": {
+      "sentAt": "2026-10-21T05:02:07.604Z",
+      "symbol": "CHIPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.043945,
+      "stop": 0.039858316006672743
+    }
+  }
 }

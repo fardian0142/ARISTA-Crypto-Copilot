@@ -1,27 +1,75 @@
 {
-  "lastUpdated": "2026-10-21T04:30:00.000Z",
+  "lastUpdated": "2026-10-21T05:02:09.110Z",
   "allTime": {
-    "total": 0,
+    "total": 1,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
     "stopRate": 0
   },
   "byTimeframe": {
-    "15m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "30m": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "1h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "2h":  { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "15m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "30m": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "1h": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "2h": {
+      "total": 1,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
   "byDirection": {
-    "bullish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 },
-    "bearish": { "total": 0, "tp1Hit": 0, "stopped": 0, "tp1Rate": 0 }
+    "bullish": {
+      "total": 1,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    },
+    "bearish": {
+      "total": 0,
+      "tp1Hit": 0,
+      "stopped": 0,
+      "tp1Rate": 0
+    }
   },
   "weekly": null,
-  "recentSignals": []
+  "recentSignals": [
+    {
+      "symbol": "CHIPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 0.043945,
+      "stop": 0.039858316006672743,
+      "tp1": 0.05888106,
+      "tp2": 0.06103106,
+      "tp3": null,
+      "rr1": 3.6548115842545275,
+      "score": 14,
+      "sentAt": "2026-10-21T05:02:07.604Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-10-21T05:02:07.604Z",
+      "maxR": 0
+    }
+  ]
 }
