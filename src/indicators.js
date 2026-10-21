@@ -2757,6 +2757,8 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
 
   const candidates = [];
 
+  const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 0.5;
+
   for (const level of levels) {
     const adjusted = applyPipBuffer(level.price, direction, currentPrice);
 
@@ -2772,7 +2774,11 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     if (distance <= 0) continue;
 
     const rr = distance / risk;
-    if (!Number.isFinite(rr) || rr < effectiveMinRR) continue;
+
+    const isFirstCandidate = candidates.length === 0;
+    const requiredRR = isFirstCandidate ? tp1MinRR : effectiveMinRR;
+
+    if (!Number.isFinite(rr) || rr < requiredRR) continue;
     if (rr > maxRR) continue;
 
     candidates.push({
@@ -2790,13 +2796,7 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
   }
 
   candidates.sort((a, b) => {
-    if (a.priority !== b.priority) return a.priority - b.priority;
-
-    if (direction === "bullish") {
-      return a.price - b.price;
-    }
-
-    return b.price - a.price;
+    return a.distance - b.distance;
   });
 
   const selected = [];
@@ -4663,9 +4663,13 @@ export function detectRangeTradeSetups(
       const distance = Math.abs(bufferedPrice - entry);
       const rr = distance / risk;
 
+      const isFirstTarget = selected.length === 0;
+      const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 0.5;
+      const requiredRR = isFirstTarget ? tp1MinRR : minRR;
+
       if (
         !Number.isFinite(rr) ||
-        rr < minRR ||
+        rr < requiredRR ||
         rr > maxTPRR
       ) {
         continue;
@@ -4704,14 +4708,6 @@ export function detectRangeTradeSetups(
     }
 
     buffered.sort((a, b) => {
-      if (Math.abs(a.rr - b.rr) > 0.15) {
-        return a.rr - b.rr;
-      }
-
-      if (a.priority !== b.priority) {
-        return a.priority - b.priority;
-      }
-
       return a.distance - b.distance;
     });
 
