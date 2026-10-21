@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-21T01:01:35.190Z",
+  "lastUpdated": "2026-10-21T02:02:02.494Z",
   "signals": {
-    "RSRUSDT:1h": {
-      "sentAt": "2026-10-20T01:01:59.237Z",
-      "symbol": "RSRUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0018625,
-      "stop": 0.0017894227906270206
-    },
     "BOMEUSDT:30m": {
       "sentAt": "2026-10-20T02:02:07.887Z",
       "symbol": "BOMEUSDT",
