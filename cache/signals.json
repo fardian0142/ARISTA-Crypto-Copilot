@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-21T00:01:35.040Z",
+  "lastUpdated": "2026-10-21T01:01:35.190Z",
   "signals": {
-    "NOTUSDT:2h": {
-      "sentAt": "2026-10-20T00:01:58.701Z",
-      "symbol": "NOTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0003875,
-      "stop": 0.0003696834017796208
-    },
-    "GMTUSDT:30m": {
-      "sentAt": "2026-10-20T00:02:00.535Z",
-      "symbol": "GMTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.007224,
-      "stop": 0.0071535524
-    },
     "RSRUSDT:1h": {
       "sentAt": "2026-10-20T01:01:59.237Z",
       "symbol": "RSRUSDT",
