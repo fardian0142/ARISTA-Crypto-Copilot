@@ -3102,10 +3102,7 @@ export function detectRangeTradeSetups(
       ? Math.trunc(CONFIG.OBS_DISPLAY_COUNT)
       : 2;
 
-  const maxSetupAge =
-    Number.isFinite(CONFIG.RANGE_SETUP_MAX_AGE)
-      ? Math.max(5, Math.trunc(CONFIG.RANGE_SETUP_MAX_AGE))
-      : Math.max(sweepLookbackConfig + 8, 30);
+  const maxSetupAge = 100;
 
   const externalFreshness =
     Number.isFinite(CONFIG.RANGE_EXTERNAL_FRESHNESS)
@@ -3247,7 +3244,7 @@ export function detectRangeTradeSetups(
     Math.min(candles.length - 2, sweepLookbackConfig)
   );
 
-  const displacementWindow = 3;
+  const displacementWindow = 5;
 
   function distanceToAtr(price) {
     return Number.isFinite(price)
