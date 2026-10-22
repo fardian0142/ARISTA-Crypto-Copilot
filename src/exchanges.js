@@ -128,7 +128,7 @@ export function okxFetch(path, params = {}, options = {}) {
 }
 
 export function binanceFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.BINANCE_FUTURES_URL, path, params, {
+  return genericFetch(CONFIG.BINANCE_SPOT_URL, path, params, {
     ...options,
     label: "Binance"
   });
@@ -192,14 +192,13 @@ export async function getExchangeSymbols(force = false) {
 
   try {
     const binanceJson = await binanceFetch(
-      "/fapi/v1/exchangeInfo"
+      "/api/v3/exchangeInfo"
     );
 
     if (binanceJson && Array.isArray(binanceJson.symbols)) {
       for (const item of binanceJson.symbols) {
         if (item.status !== "TRADING") continue;
         if (item.quoteAsset !== "USDT") continue;
-        if (item.contractType !== "PERPETUAL") continue;
 
         const base = String(item.baseAsset || "").toUpperCase();
         if (!base) continue;
@@ -309,7 +308,7 @@ export async function getTickers(force = false) {
 
   try {
     const binanceJson = await binanceFetch(
-      "/fapi/v1/ticker/24hr"
+      "/api/v3/ticker/24hr"
     );
 
     if (Array.isArray(binanceJson)) {
@@ -582,21 +581,11 @@ async function getKlinesBinance(symbol, interval, limit) {
 
   const size = Math.min(limit, CONFIG.EXCHANGES.binance.maxCandles);
 
-  let json;
-
-  try {
-    json = await binanceFetch("/fapi/v1/klines", {
-      symbol: binanceSymbol,
-      interval: binanceInterval,
-      limit: String(size)
-    });
-  } catch (e) {
-    json = await binanceSpotFetch("/api/v3/klines", {
-      symbol: binanceSymbol,
-      interval: binanceInterval,
-      limit: String(size)
-    });
-  }
+  const json = await binanceSpotFetch("/api/v3/klines", {
+    symbol: binanceSymbol,
+    interval: binanceInterval,
+    limit: String(size)
+  });
 
   if (!Array.isArray(json)) {
     throw new Error("Binance klines پاسخ نامعتبر");
