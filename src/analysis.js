@@ -591,24 +591,6 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
-    if (isRangeAllowed && hasRealHtf2) {
-      if (
-        result.range_setups.active.direction === "bearish" &&
-        htf2Structure.trend === "bullish"
-      ) {
-        isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم بالاتر دوم (HTF2) مسدود شد.");
-      }
-
-      if (
-        result.range_setups.active.direction === "bullish" &&
-        htf2Structure.trend === "bearish"
-      ) {
-        isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم بالاتر دوم (HTF2) مسدود شد.");
-      }
-    }
-
     if (!isRangeAllowed) {
       result.range_setups.active = null;
     }
