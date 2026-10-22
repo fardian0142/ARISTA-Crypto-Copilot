@@ -35,9 +35,12 @@ export async function updateSignalStatus(signal) {
 
     const sentTime = signal.sentAt ? new Date(signal.sentAt).getTime() : 0;
 
-    const signalCandles = Array.isArray(analysis._candles)
-      ? analysis._candles.filter(c => c && c.time >= sentTime)
-      : (analysis._lastCandle ? [analysis._lastCandle] : []);
+    const allCandles = Array.isArray(analysis._candles) ? analysis._candles : (analysis._lastCandle ? [analysis._lastCandle] : []);
+    const signalCandles = allCandles.filter(c => c && c.time >= sentTime);
+
+    if (signalCandles.length === 0 && analysis._lastCandle) {
+      signalCandles.push(analysis._lastCandle);
+    }
 
     let stopHit = false;
     let tp1Hit = false;
@@ -53,28 +56,72 @@ export async function updateSignalStatus(signal) {
       if (!candle) continue;
 
       if (isBull) {
-        if (Number.isFinite(candle.low) && candle.low <= stop && stopIndex === -1) { stopHit = true; stopIndex = i; }
-        if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = i; }
-        else if (Number.isFinite(tp2) && Number.isFinite(candle.high) && candle.high >= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = i; }
-        else if (Number.isFinite(candle.high) && candle.high >= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = i; }
+        if (Number.isFinite(candle.low) && candle.low <= stop && stopIndex === -1) {
+          stopHit = true;
+          stopIndex = i;
+        }
+        if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) {
+          tp3Hit = true;
+          tp3Index = i;
+        }
+        if (Number.isFinite(tp2) && Number.isFinite(candle.high) && candle.high >= tp2 && tp2Index === -1) {
+          tp2Hit = true;
+          tp2Index = i;
+        }
+        if (Number.isFinite(candle.high) && candle.high >= tp1 && tp1Index === -1) {
+          tp1Hit = true;
+          tp1Index = i;
+        }
       } else {
-        if (Number.isFinite(candle.high) && candle.high >= stop && stopIndex === -1) { stopHit = true; stopIndex = i; }
-        if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = i; }
-        else if (Number.isFinite(tp2) && Number.isFinite(candle.low) && candle.low <= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = i; }
-        else if (Number.isFinite(candle.low) && candle.low <= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = i; }
+        if (Number.isFinite(candle.high) && candle.high >= stop && stopIndex === -1) {
+          stopHit = true;
+          stopIndex = i;
+        }
+        if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) {
+          tp3Hit = true;
+          tp3Index = i;
+        }
+        if (Number.isFinite(tp2) && Number.isFinite(candle.low) && candle.low <= tp2 && tp2Index === -1) {
+          tp2Hit = true;
+          tp2Index = i;
+        }
+        if (Number.isFinite(candle.low) && candle.low <= tp1 && tp1Index === -1) {
+          tp1Hit = true;
+          tp1Index = i;
+        }
       }
     }
 
     if (isBull) {
-      if (price <= stop && stopIndex === -1) { stopHit = true; stopIndex = signalCandles.length; }
-      if (Number.isFinite(tp3) && price >= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = signalCandles.length; }
-      else if (Number.isFinite(tp2) && price >= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = signalCandles.length; }
-      else if (price >= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = signalCandles.length; }
+      if (price <= stop && stopIndex === -1) {
+        stopHit = true;
+        stopIndex = signalCandles.length;
+      }
+      if (Number.isFinite(tp3) && price >= tp3 && tp3Index === -1) {
+        tp3Hit = true;
+        tp3Index = signalCandles.length;
+      } else if (Number.isFinite(tp2) && price >= tp2 && tp2Index === -1) {
+        tp2Hit = true;
+        tp2Index = signalCandles.length;
+      } else if (price >= tp1 && tp1Index === -1) {
+        tp1Hit = true;
+        tp1Index = signalCandles.length;
+      }
     } else {
-      if (price >= stop && stopIndex === -1) { stopHit = true; stopIndex = signalCandles.length; }
-      if (Number.isFinite(tp3) && price <= tp3 && tp3Index === -1) { tp3Hit = true; tp3Index = signalCandles.length; }
-      else if (Number.isFinite(tp2) && price <= tp2 && tp2Index === -1) { tp2Hit = true; tp2Index = signalCandles.length; }
-      else if (price <= tp1 && tp1Index === -1) { tp1Hit = true; tp1Index = signalCandles.length; }
+      if (price >= stop && stopIndex === -1) {
+        stopHit = true;
+        stopIndex = signalCandles.length;
+      }
+      if (Number.isFinite(tp3) && price <= tp3 && tp3Index === -1) {
+        tp3Hit = true;
+        tp3Index = signalCandles.length;
+      } else if (Number.isFinite(tp2) && price <= tp2 && tp2Index === -1) {
+        tp2Hit = true;
+        tp2Index = signalCandles.length;
+      } else if (price <= tp1 && tp1Index === -1) {
+        tp1Hit = true;
+        tp1Index = signalCandles.length;
+      }
     }
 
     const events = [];
