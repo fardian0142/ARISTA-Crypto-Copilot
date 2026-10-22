@@ -1,13 +1,13 @@
 export const TIMEFRAME_PROFILES = {
   "15m": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 20,
     momentumPenalty: 2,
     minStrength: 75,
     minRR: 2.5
   },
   "30m": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 20,
     momentumPenalty: 3,
     minStrength: 75,
