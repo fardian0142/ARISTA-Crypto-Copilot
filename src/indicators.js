@@ -2753,10 +2753,6 @@ export function buildTp1Candidate(candles, direction, entry, currentPrice, risk,
     return null;
   }
 
-  const minTp1DistancePct = Number.isFinite(CONFIG.MIN_TP1_DISTANCE_PCT)
-    ? CONFIG.MIN_TP1_DISTANCE_PCT
-    : 0.003;
-
   let nearest = null;
 
   for (let i = 0; i < candles.length; i++) {
@@ -2766,10 +2762,6 @@ export function buildTp1Candidate(candles, direction, entry, currentPrice, risk,
       const h = cHigh(c);
       if (!Number.isFinite(h)) continue;
       if (h <= entry) continue;
-
-      const distPct = (h - entry) / entry;
-      if (distPct < minTp1DistancePct) continue;
-
       if (!nearest || h < nearest) {
         nearest = h;
       }
@@ -2777,10 +2769,6 @@ export function buildTp1Candidate(candles, direction, entry, currentPrice, risk,
       const l = cLow(c);
       if (!Number.isFinite(l)) continue;
       if (l >= entry) continue;
-
-      const distPct = (entry - l) / entry;
-      if (distPct < minTp1DistancePct) continue;
-
       if (!nearest || l > nearest) {
         nearest = l;
       }
@@ -4722,10 +4710,6 @@ export function detectRangeTradeSetups(
   function findNearestRangeTp1(direction, entry) {
     let nearest = null;
 
-    const minTp1DistancePct = Number.isFinite(CONFIG.MIN_TP1_DISTANCE_PCT)
-      ? CONFIG.MIN_TP1_DISTANCE_PCT
-      : 0.003;
-
     for (let i = recentStart; i < currentIndex; i++) {
       const c = candles[i];
 
@@ -4734,10 +4718,6 @@ export function detectRangeTradeSetups(
         if (!Number.isFinite(h)) continue;
         if (h <= entry) continue;
         if (h >= rangeHigh) continue;
-
-        const distPct = (h - entry) / entry;
-        if (distPct < minTp1DistancePct) continue;
-
         if (!nearest || h < nearest) {
           nearest = h;
         }
@@ -4746,10 +4726,6 @@ export function detectRangeTradeSetups(
         if (!Number.isFinite(l)) continue;
         if (l >= entry) continue;
         if (l <= rangeLow) continue;
-
-        const distPct = (entry - l) / entry;
-        if (distPct < minTp1DistancePct) continue;
-
         if (!nearest || l > nearest) {
           nearest = l;
         }
