@@ -1,4 +1,4 @@
-name: Test Exchanges
+name: Test Binance Domains
 
 on:
   workflow_dispatch:
@@ -7,22 +7,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Test Binance & MEXC
+      - name: Test Binance Domains
         run: |
-          echo "=== Testing Binance ==="
-          curl -s -o /dev/null -w "Binance Status: %{http_code}\n" "https://api.binance.com/api/v3/ping"
-          curl -s -o /dev/null -w "Binance Futures Status: %{http_code}\n" "https://fapi.binance.com/fapi/v1/ping"
+          echo "=== Testing Binance Domains ==="
+          curl -s -o /dev/null -w "api1.binance.com: %{http_code}\n" "https://api1.binance.com/api/v3/ping"
+          curl -s -o /dev/null -w "api2.binance.com: %{http_code}\n" "https://api2.binance.com/api/v3/ping"
+          curl -s -o /dev/null -w "api3.binance.com: %{http_code}\n" "https://api3.binance.com/api/v3/ping"
+          curl -s -o /dev/null -w "api4.binance.com: %{http_code}\n" "https://api4.binance.com/api/v3/ping"
+          curl -s -o /dev/null -w "data-api.binance.vision: %{http_code}\n" "https://data-api.binance.vision/api/v3/ping"
+          curl -s -o /dev/null -w "api.binance.us: %{http_code}\n" "https://api.binance.us/api/v3/ping"
           
-          echo "=== Testing MEXC ==="
-          curl -s -o /dev/null -w "MEXC Status: %{http_code}\n" "https://contract.mexc.com/api/v1/contract/ping"
-          
-          echo "=== Testing Bybit (for comparison) ==="
-          curl -s -o /dev/null -w "Bybit Status: %{http_code}\n" "https://api.bybit.com/v5/market/time"
-          
-          echo "=== Testing Toobit (for comparison) ==="
-          curl -s -o /dev/null -w "Toobit Status: %{http_code}\n" "https://api.toobit.com/api/v1/public/time"
+          echo "=== Testing Binance Futures Domains ==="
+          curl -s -o /dev/null -w "fapi.binance.com: %{http_code}\n" "https://fapi.binance.com/fapi/v1/ping"
+          curl -s -o /dev/null -w "fapi1.binance.com: %{http_code}\n" "https://fapi1.binance.com/fapi/v1/ping"
+          curl -s -o /dev/null -w "fapi2.binance.com: %{http_code}\n" "https://fapi2.binance.com/fapi/v1/ping"
+          curl -s -o /dev/null -w "fapi3.binance.com: %{http_code}\n" "https://fapi3.binance.com/fapi/v1/ping"
