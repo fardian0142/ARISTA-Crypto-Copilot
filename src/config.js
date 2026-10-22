@@ -59,8 +59,9 @@ export const TIMEFRAME_PROFILES = {
 
 export const CONFIG = {
   OKX_BASE_URL: "https://www.okx.com",
-  BYBIT_BASE_URL: "https://api.bybit.com",
-  TOOBIT_BASE_URL: "https://api.toobit.com",
+  BINANCE_FUTURES_URL: "https://fapi1.binance.com",
+  BINANCE_SPOT_URL: "https://data-api.binance.vision",
+  MEXC_BASE_URL: "https://contract.mexc.com",
   SWEEP_ZONE_DISTANCE_ATR: 1.25,
   SWEEP_MAX_EVENT_DISTANCE_ATR: 1.5,
   RANGE_SETUP_MAX_AGE: 30,
@@ -157,19 +158,19 @@ export const CONFIG = {
   MOMENTUM_RSI_OVERBOUGHT: 68,
   MOMENTUM_RSI_OVERSOLD: 32,
   EXCHANGES: {
-    okx: {
+    binance: {
       priority: 1,
+      enabled: true,
+      maxCandles: 1000,
+      marketType: "futures"
+    },
+    okx: {
+      priority: 2,
       enabled: true,
       maxCandles: 300,
       marketType: "swap"
     },
-    bybit: {
-      priority: 2,
-      enabled: true,
-      maxCandles: 1000,
-      marketType: "linear"
-    },
-    toobit: {
+    mexc: {
       priority: 3,
       enabled: true,
       maxCandles: 1000,
@@ -218,17 +219,7 @@ export const CONFIG = {
     "12h": "12H",
     "24h": "1D"
   },
-  BYBIT_INTERVAL_MAP: {
-    "15m": "15",
-    "30m": "30",
-    "1h": "60",
-    "2h": "120",
-    "4h": "240",
-    "6h": "360",
-    "12h": "720",
-    "24h": "D"
-  },
-  TOOBIT_INTERVAL_MAP: {
+  BINANCE_INTERVAL_MAP: {
     "15m": "15m",
     "30m": "30m",
     "1h": "1h",
@@ -237,6 +228,16 @@ export const CONFIG = {
     "6h": "6h",
     "12h": "12h",
     "24h": "1d"
+  },
+  MEXC_INTERVAL_MAP: {
+    "15m": "Min15",
+    "30m": "Min30",
+    "1h": "Min60",
+    "2h": "Hour2",
+    "4h": "Hour4",
+    "6h": "Hour6",
+    "12h": "Hour12",
+    "24h": "Day1"
   },
   EXCLUDED_BASE_ASSETS: [
     "USDT", "USDC", "FDUSD", "TUSD", "BUSD", "DAI",
