@@ -124,6 +124,12 @@ export async function analyze(symbol, timeframe) {
       ? CONFIG.SL_ATR_BUFFER
       : 0.2;
 
+  const minTp1Rr =
+    Number.isFinite(CONFIG.MIN_TP1_RR) &&
+    CONFIG.MIN_TP1_RR >= 0
+      ? CONFIG.MIN_TP1_RR
+      : 1;
+
   const minRr =
     Number.isFinite(profile.minRR) && profile.minRR >= 0
       ? profile.minRR
@@ -235,16 +241,16 @@ export async function analyze(symbol, timeframe) {
     lastCandle.close;
 
   result.current_price =
-    currentPrice;
+  currentPrice;
 
   result._lastCandle =
-    lastCandle;
+  lastCandle;
 
   result._candles =
-    candles;
+  candles;
 
   const currentAtr =
-    atrCalc(candles);
+  atrCalc(candles);
 
   if (
     !Number.isFinite(currentAtr) ||
@@ -665,16 +671,16 @@ export async function analyze(symbol, timeframe) {
   }
 
   if (direction === "bearish" && !smcTrendFilter.allowShort) {
-    const rangeSetupActive = result.range_setups && result.range_setups.active;
-    const isScore14 = rangeSetupActive && result.range_setups.active.score === 14;
-
-    if (!isScore14) {
-      return fail(
-        "فیلتر روند: ورود Short در روند صعودی مسدود است",
-        "فیلتر روند: " + smcTrendFilter.reason
-      );
-    }
+  const rangeSetupActive = result.range_setups && result.range_setups.active;
+  const isScore14 = rangeSetupActive && result.range_setups.active.score === 14;
+  
+  if (!isScore14) {
+    return fail(
+      "فیلتر روند: ورود Short در روند صعودی مسدود است",
+      "فیلتر روند: " + smcTrendFilter.reason
+    );
   }
+}
 
   const rsiDivergenceEffect =
     rsiDivergenceScore(
@@ -1032,7 +1038,7 @@ export async function analyze(symbol, timeframe) {
   if (
     unifiedTargets &&
     Array.isArray(unifiedTargets.targets) &&
-    unifiedTargets.targets.length >= 1
+    unifiedTargets.targets.length >= CONFIG.MIN_VALID_TP_COUNT
   ) {
     targets = unifiedTargets.targets
       .filter(
@@ -1041,7 +1047,7 @@ export async function analyze(symbol, timeframe) {
           Number.isFinite(t.price) &&
           Number.isFinite(t.rr) &&
           t.price > 0 &&
-          t.rr > 0
+          t.rr >= minTp1Rr
       )
       .map((t) => ({
         price: t.price,
@@ -1050,7 +1056,7 @@ export async function analyze(symbol, timeframe) {
       }));
   }
 
-  if (targets.length < 1) {
+  if (targets.length < 2) {
     const rawTargets =
       structuralTargets(
         candles,
@@ -1058,7 +1064,7 @@ export async function analyze(symbol, timeframe) {
         entry,
         swings,
         currentAtr,
-        5,
+        4,
         minRr
       );
 
@@ -1080,14 +1086,18 @@ export async function analyze(symbol, timeframe) {
           Number.isFinite(t.price) &&
           Number.isFinite(t.rr) &&
           t.price > 0 &&
-          t.rr > 0
+          t.rr >= minTp1Rr
       );
   }
 
-  if (targets.length < 1) {
+  if (
+    targets.length < 2
+  ) {
     return fail(
-      "هیچ هدف معتبری برای این معامله یافت نشد",
-      "هیچ سطح ساختاری معتبری بالای/زیر قیمت ورود برای تعیین هدف پیدا نشد."
+      "حداقل دو هدف با R/R معتبر وجود ندارد",
+      "حداقل دو هدف با R/R معتبر (>= " +
+        minTp1Rr.toFixed(2) +
+        ") وجود ندارد."
     );
   }
 
@@ -1099,7 +1109,6 @@ export async function analyze(symbol, timeframe) {
       : 0;
 
   const rr2 =
-    targets.length >= 2 &&
     Number.isFinite(
       targets[1].rr
     )
@@ -1115,7 +1124,6 @@ export async function analyze(symbol, timeframe) {
       : 0;
 
   if (
-    targets.length >= 2 &&
     rr2 < minRr
   ) {
     return fail(
