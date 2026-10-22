@@ -229,6 +229,21 @@ function computeTotalR(sig, eventType, maxR) {
   return maxR || 0;
 }
 
+function isNotified(sig, eventType) {
+  if (eventType === "tp1_hit") return sig._tp1Notified === true;
+  if (eventType === "tp2_hit") return sig._tp2Notified === true;
+  if (eventType === "tp3_hit") return sig._tp3Notified === true;
+  if (eventType === "stopped") return sig._stoppedNotified === true;
+  return false;
+}
+
+function markNotified(sig, eventType) {
+  if (eventType === "tp1_hit") sig._tp1Notified = true;
+  else if (eventType === "tp2_hit") sig._tp2Notified = true;
+  else if (eventType === "tp3_hit") sig._tp3Notified = true;
+  else if (eventType === "stopped") sig._stoppedNotified = true;
+}
+
 async function main() {
   const startTime = Date.now();
 
@@ -306,12 +321,17 @@ async function main() {
 
     for (const event of events) {
       if (event.type === "tp1_hit" || event.type === "tp2_hit" || event.type === "tp3_hit" || event.type === "stopped") {
+        if (isNotified(sig, event.type)) {
+          continue;
+        }
+
         try {
           const resultText = formatSignalResult(sig, event.type);
           if (resultText && resultText.trim() !== "") {
             await sendTelegramMessage(token, chatId, resultText);
             await sleep(MESSAGE_DELAY_MS);
             console.log("   📤 Sent: " + sig.symbol + " → " + event.type);
+            markNotified(sig, event.type);
           }
 
           if (shouldCloseTrade(sig, event.type, r.maxR)) {
@@ -580,7 +600,11 @@ async function main() {
         maxR: 0,
         tp1Reached: false,
         tp2Reached: false,
-        tp3Reached: false
+        tp3Reached: false,
+        _tp1Notified: false,
+        _tp2Notified: false,
+        _tp3Notified: false,
+        _stoppedNotified: false
       });
 
       try {
