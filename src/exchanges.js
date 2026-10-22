@@ -46,7 +46,8 @@ async function genericFetch(baseUrl, path, params = {}, options = {}) {
       const response = await fetch(url.toString(), {
         method: "GET",
         headers: { Accept: "application/json" },
-        signal: controller.signal
+        signal: controller.signal,
+        redirect: "follow"
       });
 
       if (response.status === 429) {
@@ -126,35 +127,34 @@ export function okxFetch(path, params = {}, options = {}) {
   });
 }
 
-export function bybitFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.BYBIT_BASE_URL, path, params, {
+export function binanceFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.BINANCE_FUTURES_URL, path, params, {
     ...options,
-    label: "Bybit"
-  }).then((json) => {
-    if (json && json.retCode !== 0) {
-      const error = new Error(
-        "Bybit error: " + (json.retMsg || json.retCode || "unknown")
-      );
-      error.code = json.retCode;
-      throw error;
-    }
-    return json;
+    label: "Binance"
   });
 }
 
-export function toobitFetch(path, params = {}, options = {}) {
-  return genericFetch(CONFIG.TOOBIT_BASE_URL, path, params, {
+export function binanceSpotFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.BINANCE_SPOT_URL, path, params, {
     ...options,
-    label: "Toobit"
+    label: "BinanceSpot"
+  });
+}
+
+export function mexcFetch(path, params = {}, options = {}) {
+  return genericFetch(CONFIG.MEXC_BASE_URL, path, params, {
+    ...options,
+    label: "MEXC"
   }).then((json) => {
     if (
       json &&
       json.code !== undefined &&
       json.code !== 0 &&
-      json.code !== "0"
+      json.code !== "0" &&
+      json.code !== 200
     ) {
       const error = new Error(
-        "Toobit error: " + (json.message || json.code || "unknown")
+        "MEXC error: " + (json.message || json.code || "unknown")
       );
       error.code = json.code;
       throw error;
@@ -191,6 +191,34 @@ export async function getExchangeSymbols(force = false) {
   const allSymbols = new Map();
 
   try {
+    const binanceJson = await binanceFetch(
+      "/fapi/v1/exchangeInfo"
+    );
+
+    if (binanceJson && Array.isArray(binanceJson.symbols)) {
+      for (const item of binanceJson.symbols) {
+        if (item.status !== "TRADING") continue;
+        if (item.quoteAsset !== "USDT") continue;
+        if (item.contractType !== "PERPETUAL") continue;
+
+        const base = String(item.baseAsset || "").toUpperCase();
+        if (!base) continue;
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (/^X[A-Z]{4,}$/.test(base)) continue;
+
+        allSymbols.set(base + "USDT", {
+          symbol: base + "USDT",
+          base: base,
+          quote: "USDT",
+          exchange: "binance"
+        });
+      }
+    }
+  } catch (e) {
+    console.error("Binance symbols error:", e.message || e);
+  }
+
+  try {
     const okxJson = await okxFetch(
       "/api/v5/public/instruments",
       { instType: "SWAP" }
@@ -207,12 +235,16 @@ export async function getExchangeSymbols(force = false) {
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (/^X[A-Z]{4,}$/.test(base)) continue;
 
-        allSymbols.set(base + "USDT", {
-          symbol: base + "USDT",
-          base: base,
-          quote: "USDT",
-          exchange: "okx"
-        });
+        const symbol = base + "USDT";
+
+        if (!allSymbols.has(symbol)) {
+          allSymbols.set(symbol, {
+            symbol: symbol,
+            base: base,
+            quote: "USDT",
+            exchange: "okx"
+          });
+        }
       }
     }
   } catch (e) {
@@ -220,20 +252,14 @@ export async function getExchangeSymbols(force = false) {
   }
 
   try {
-    const bybitJson = await bybitFetch(
-      "/v5/market/instruments-info",
-      { category: "linear", limit: "1000" }
+    const mexcJson = await mexcFetch(
+      "/api/v1/contract/detail"
     );
 
-    if (
-      bybitJson &&
-      bybitJson.result &&
-      Array.isArray(bybitJson.result.list)
-    ) {
-      for (const item of bybitJson.result.list) {
-        if (item.status !== "Trading") continue;
+    if (mexcJson && Array.isArray(mexcJson.data)) {
+      for (const item of mexcJson.data) {
+        if (item.state !== 0) continue;
         if (item.quoteCoin !== "USDT") continue;
-        if (item.settleCoin !== "USDT") continue;
 
         const base = String(item.baseCoin || "").toUpperCase();
         if (!base) continue;
@@ -247,44 +273,13 @@ export async function getExchangeSymbols(force = false) {
             symbol: symbol,
             base: base,
             quote: "USDT",
-            exchange: "bybit"
+            exchange: "mexc"
           });
         }
       }
     }
   } catch (e) {
-    console.error("Bybit symbols error:", e.message || e);
-  }
-
-  try {
-    const toobitJson = await toobitFetch(
-      "/api/v1/public/futures/exchangeInfo"
-    );
-
-    if (toobitJson && Array.isArray(toobitJson.symbols)) {
-      for (const item of toobitJson.symbols) {
-        if (item.status && item.status !== "TRADING") continue;
-        if (item.quoteAsset !== "USDT") continue;
-
-        const base = String(item.baseAsset || "").toUpperCase();
-        if (!base) continue;
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (/^X[A-Z]{4,}$/.test(base)) continue;
-
-        const symbol = base + "USDT";
-
-        if (!allSymbols.has(symbol)) {
-          allSymbols.set(symbol, {
-            symbol: symbol,
-            base: base,
-            quote: "USDT",
-            exchange: "toobit"
-          });
-        }
-      }
-    }
-  } catch (e) {
-    console.error("Toobit symbols error:", e.message || e);
+    console.error("MEXC symbols error:", e.message || e);
   }
 
   const result = Array.from(allSymbols.values());
@@ -313,12 +308,56 @@ export async function getTickers(force = false) {
   const result = [];
 
   try {
+    const binanceJson = await binanceFetch(
+      "/fapi/v1/ticker/24hr"
+    );
+
+    if (Array.isArray(binanceJson)) {
+      for (const item of binanceJson) {
+        const raw = String(item.symbol || "").toUpperCase();
+        if (!raw.endsWith("USDT")) continue;
+
+        const base = raw.replace(/USDT$/, "");
+        const symbol = base + "USDT";
+
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (base.includes("TEST")) continue;
+        if (!validSet.has(symbol)) continue;
+
+        const last = parseFloat(item.lastPrice || "0");
+        const open24h = parseFloat(item.openPrice || "0");
+        const quoteVolume = parseFloat(item.quoteVolume || "0");
+
+        if (!Number.isFinite(last) || last <= 0) continue;
+
+        let changePercent = 0;
+        if (Number.isFinite(open24h) && open24h > 0) {
+          changePercent = ((last - open24h) / open24h) * 100;
+        }
+
+        result.push({
+          symbol: symbol,
+          base: base,
+          quote: "USDT",
+          price: last,
+          change: changePercent,
+          quote_volume: quoteVolume
+        });
+      }
+    }
+  } catch (e) {
+    console.error("Binance tickers error:", e.message || e);
+  }
+
+  try {
     const okxJson = await okxFetch(
       "/api/v5/market/tickers",
       { instType: "SWAP" }
     );
 
     if (Array.isArray(okxJson.data)) {
+      const seen = new Set(result.map((t) => t.symbol));
+
       for (const item of okxJson.data) {
         if (!item.instId || !item.instId.endsWith("-USDT-SWAP")) continue;
 
@@ -329,6 +368,7 @@ export async function getTickers(force = false) {
 
         const symbol = base + "USDT";
         if (!validSet.has(symbol)) continue;
+        if (seen.has(symbol)) continue;
 
         const last = parseFloat(item.last || "0");
         const open24h = parseFloat(item.open24h || "0");
@@ -357,6 +397,8 @@ export async function getTickers(force = false) {
           change: changePercent,
           quote_volume: quoteVolume
         });
+
+        seen.add(symbol);
       }
     }
   } catch (e) {
@@ -364,39 +406,31 @@ export async function getTickers(force = false) {
   }
 
   try {
-    const bybitJson = await bybitFetch(
-      "/v5/market/tickers",
-      { category: "linear" }
-    );
+    const mexcJson = await mexcFetch("/api/v1/contract/ticker");
 
-    if (
-      bybitJson &&
-      bybitJson.result &&
-      Array.isArray(bybitJson.result.list)
-    ) {
+    if (mexcJson && Array.isArray(mexcJson.data)) {
       const seen = new Set(result.map((t) => t.symbol));
 
-      for (const item of bybitJson.result.list) {
+      for (const item of mexcJson.data) {
         const raw = String(item.symbol || "").toUpperCase();
         if (!raw.endsWith("USDT")) continue;
 
-        const base = raw.replace(/USDT$/, "");
+        const base = raw.replace(/USDT_/, "").replace(/USDT$/, "");
         const symbol = base + "USDT";
 
         if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
         if (base.includes("TEST")) continue;
-        if (seen.has(symbol)) continue;
         if (!validSet.has(symbol)) continue;
+        if (seen.has(symbol)) continue;
 
         const last = parseFloat(item.lastPrice || "0");
-        const open24h = parseFloat(item.prevPrice24h || "0");
-        const quoteVolume = parseFloat(item.turnover24h || "0");
+        const quoteVolume = parseFloat(item.amount24 || item.volume24 || "0");
 
         if (!Number.isFinite(last) || last <= 0) continue;
 
         let changePercent = 0;
-        if (Number.isFinite(open24h) && open24h > 0) {
-          changePercent = ((last - open24h) / open24h) * 100;
+        if (Number.isFinite(parseFloat(item.riseFallRate))) {
+          changePercent = parseFloat(item.riseFallRate) * 100;
         }
 
         result.push({
@@ -412,53 +446,7 @@ export async function getTickers(force = false) {
       }
     }
   } catch (e) {
-    console.error("Bybit tickers error:", e.message || e);
-  }
-
-  try {
-    const toobitJson = await toobitFetch("/api/v1/public/futures/tickers");
-
-    if (toobitJson && Array.isArray(toobitJson.data)) {
-      const seen = new Set(result.map((t) => t.symbol));
-
-      for (const item of toobitJson.data) {
-        const raw = String(item.symbol || "").toUpperCase();
-        if (!raw.endsWith("USDT")) continue;
-
-        const base = raw.replace(/USDT$/, "");
-        const symbol = base + "USDT";
-
-        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
-        if (base.includes("TEST")) continue;
-        if (seen.has(symbol)) continue;
-        if (!validSet.has(symbol)) continue;
-
-        const last = parseFloat(item.lastPrice || "0");
-        const quoteVolume = parseFloat(
-          item.quoteVolume || item.volume24h || "0"
-        );
-
-        if (!Number.isFinite(last) || last <= 0) continue;
-
-        let changePercent = 0;
-        if (Number.isFinite(parseFloat(item.priceChangePercent))) {
-          changePercent = parseFloat(item.priceChangePercent);
-        }
-
-        result.push({
-          symbol: symbol,
-          base: base,
-          quote: "USDT",
-          price: last,
-          change: changePercent,
-          quote_volume: quoteVolume
-        });
-
-        seen.add(symbol);
-      }
-    }
-  } catch (e) {
-    console.error("Toobit tickers error:", e.message || e);
+    console.error("MEXC tickers error:", e.message || e);
   }
 
   result.sort((a, b) => b.quote_volume - a.quote_volume);
@@ -584,6 +572,80 @@ export function normalizeCandles(rawCandles, interval) {
   return unique;
 }
 
+async function getKlinesBinance(symbol, interval, limit) {
+  const binanceSymbol = symbol.toUpperCase();
+  const binanceInterval = CONFIG.BINANCE_INTERVAL_MAP[interval];
+
+  if (!binanceInterval) {
+    throw new Error("Binance interval unsupported: " + interval);
+  }
+
+  const size = Math.min(limit, CONFIG.EXCHANGES.binance.maxCandles);
+
+  let json;
+
+  try {
+    json = await binanceFetch("/fapi/v1/klines", {
+      symbol: binanceSymbol,
+      interval: binanceInterval,
+      limit: String(size)
+    });
+  } catch (e) {
+    json = await binanceSpotFetch("/api/v3/klines", {
+      symbol: binanceSymbol,
+      interval: binanceInterval,
+      limit: String(size)
+    });
+  }
+
+  if (!Array.isArray(json)) {
+    throw new Error("Binance klines پاسخ نامعتبر");
+  }
+
+  const rawCandles = [];
+  const intervalMs = INTERVAL_MS[interval] || 3600000;
+
+  for (const row of json) {
+    if (!Array.isArray(row) || row.length < 6) continue;
+
+    const openTime = parseInt(row[0], 10);
+    const open = parseFloat(row[1]);
+    const high = parseFloat(row[2]);
+    const low = parseFloat(row[3]);
+    const close = parseFloat(row[4]);
+    const volume = parseFloat(row[5]);
+    const turnover = parseFloat(row[7] || "0");
+
+    if (
+      !Number.isFinite(openTime) ||
+      !Number.isFinite(open) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(low) ||
+      !Number.isFinite(close)
+    ) {
+      continue;
+    }
+
+    const closeTime = openTime + intervalMs - 1;
+    const isClosed = Date.now() > closeTime;
+
+    rawCandles.push({
+      time: openTime,
+      open,
+      high,
+      low,
+      close,
+      volume,
+      quoteVolume: turnover,
+      confirm: isClosed ? "1" : "0"
+    });
+  }
+
+  rawCandles.sort((a, b) => a.time - b.time);
+
+  return normalizeCandles(rawCandles, interval);
+}
+
 async function getKlinesOKX(symbol, interval, limit) {
   const base = symbol.replace(/USDT$/, "");
   const okxSymbol = base + "-USDT-SWAP";
@@ -638,102 +700,44 @@ async function getKlinesOKX(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-async function getKlinesBybit(symbol, interval, limit) {
-  const bybitSymbol = symbol.toUpperCase();
-  const bybitInterval = CONFIG.BYBIT_INTERVAL_MAP[interval];
-
-  if (!bybitInterval) {
-    throw new Error("Bybit interval unsupported: " + interval);
-  }
-
-  const size = Math.min(limit, CONFIG.EXCHANGES.bybit.maxCandles);
-
-  const json = await bybitFetch("/v5/market/kline", {
-    category: "linear",
-    symbol: bybitSymbol,
-    interval: bybitInterval,
-    limit: String(size)
-  });
-
-  if (!json || !json.result || !Array.isArray(json.result.list)) {
-    throw new Error("Bybit klines پاسخ نامعتبر");
-  }
-
-  const rawCandles = [];
-  const intervalMs = INTERVAL_MS[interval] || 3600000;
-
-  for (const row of json.result.list) {
-    if (!Array.isArray(row) || row.length < 6) continue;
-
-    const openTime = parseInt(row[0], 10);
-    const open = parseFloat(row[1]);
-    const high = parseFloat(row[2]);
-    const low = parseFloat(row[3]);
-    const close = parseFloat(row[4]);
-    const volume = parseFloat(row[5]);
-    const turnover = parseFloat(row[6] || "0");
-
-    if (
-      !Number.isFinite(openTime) ||
-      !Number.isFinite(open) ||
-      !Number.isFinite(high) ||
-      !Number.isFinite(low) ||
-      !Number.isFinite(close)
-    ) {
-      continue;
-    }
-
-    const closeTime = openTime + intervalMs - 1;
-    const isClosed = Date.now() > closeTime;
-
-    rawCandles.push({
-      time: openTime,
-      open,
-      high,
-      low,
-      close,
-      volume,
-      quoteVolume: turnover,
-      confirm: isClosed ? "1" : "0"
-    });
-  }
-
-  rawCandles.reverse();
-
-  return normalizeCandles(rawCandles, interval);
-}
-
-async function getKlinesToobit(symbol, interval, limit) {
+async function getKlinesMEXC(symbol, interval, limit) {
   const base = symbol.replace(/USDT$/, "");
-  const toobitSymbol = base + "-USDT";
-  const toobitInterval = CONFIG.TOOBIT_INTERVAL_MAP[interval];
+  const mexcSymbol = base + "_USDT";
+  const mexcInterval = CONFIG.MEXC_INTERVAL_MAP[interval];
 
-  if (!toobitInterval) {
-    throw new Error("Toobit interval unsupported: " + interval);
+  if (!mexcInterval) {
+    throw new Error("MEXC interval unsupported: " + interval);
   }
 
-  const size = Math.min(limit, CONFIG.EXCHANGES.toobit.maxCandles);
+  const size = Math.min(limit, CONFIG.EXCHANGES.mexc.maxCandles);
 
-  const json = await toobitFetch("/api/v1/public/futures/klines", {
-    symbol: toobitSymbol,
-    interval: toobitInterval,
+  const json = await mexcFetch("/api/v1/contract/kline/" + mexcSymbol, {
+    interval: mexcInterval,
     limit: String(size)
   });
 
-  if (!json || !Array.isArray(json.data)) {
-    throw new Error("Toobit klines پاسخ نامعتبر");
+  if (!json || !json.data) {
+    throw new Error("MEXC klines پاسخ نامعتبر");
   }
 
+  const data = json.data;
   const rawCandles = [];
   const intervalMs = INTERVAL_MS[interval] || 3600000;
 
-  for (const row of json.data) {
-    const openTime = parseInt(row[0] ?? row.openTime, 10);
-    const open = parseFloat(row[1] ?? row.open);
-    const high = parseFloat(row[2] ?? row.high);
-    const low = parseFloat(row[3] ?? row.low);
-    const close = parseFloat(row[4] ?? row.close);
-    const volume = parseFloat(row[5] ?? row.volume ?? "0");
+  const times = Array.isArray(data.time) ? data.time : [];
+  const opens = Array.isArray(data.open) ? data.open : [];
+  const highs = Array.isArray(data.high) ? data.high : [];
+  const lows = Array.isArray(data.low) ? data.low : [];
+  const closes = Array.isArray(data.close) ? data.close : [];
+  const volumes = Array.isArray(data.vol) ? data.vol : [];
+
+  for (let i = 0; i < times.length; i++) {
+    const openTime = parseInt(times[i], 10) * 1000;
+    const open = parseFloat(opens[i]);
+    const high = parseFloat(highs[i]);
+    const low = parseFloat(lows[i]);
+    const close = parseFloat(closes[i]);
+    const volume = parseFloat(volumes[i]);
 
     if (
       !Number.isFinite(openTime) ||
@@ -775,14 +779,14 @@ export async function getKlinesFromExchange(exchangeKey, symbol, interval, limit
       let candles;
 
       switch (exchangeKey) {
+        case "binance":
+          candles = await getKlinesBinance(alias, interval, limit);
+          break;
         case "okx":
           candles = await getKlinesOKX(alias, interval, limit);
           break;
-        case "bybit":
-          candles = await getKlinesBybit(alias, interval, limit);
-          break;
-        case "toobit":
-          candles = await getKlinesToobit(alias, interval, limit);
+        case "mexc":
+          candles = await getKlinesMEXC(alias, interval, limit);
           break;
         default:
           throw new Error("Unknown exchange: " + exchangeKey);
