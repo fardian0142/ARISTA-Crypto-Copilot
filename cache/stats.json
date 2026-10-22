@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-22T19:05:30.395Z",
+  "lastUpdated": "2026-10-22T20:05:41.286Z",
   "allTime": {
     "total": 46,
-    "tp1Hit": 8,
+    "tp1Hit": 13,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 38,
+    "active": 33,
     "tp1Rate": 100,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -15,7 +15,7 @@
   "byTimeframe": {
     "15m": {
       "total": 9,
-      "tp1Hit": 1,
+      "tp1Hit": 2,
       "stopped": 0,
       "tp1Rate": 100
     },
@@ -27,7 +27,7 @@
     },
     "1h": {
       "total": 14,
-      "tp1Hit": 2,
+      "tp1Hit": 6,
       "stopped": 0,
       "tp1Rate": 100
     },
@@ -41,13 +41,13 @@
   "byDirection": {
     "bullish": {
       "total": 40,
-      "tp1Hit": 7,
+      "tp1Hit": 11,
       "stopped": 0,
       "tp1Rate": 100
     },
     "bearish": {
       "total": 6,
-      "tp1Hit": 1,
+      "tp1Hit": 2,
       "stopped": 0,
       "tp1Rate": 100
     }
@@ -68,8 +68,11 @@
       "sentAt": "2026-10-21T05:02:07.604Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:51.686Z",
-      "maxR": 0.08
+      "statusUpdatedAt": "2026-10-22T20:01:10.179Z",
+      "maxR": 0.08,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "LABUSDT",
@@ -85,8 +88,11 @@
       "sentAt": "2026-10-21T12:01:16.248Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:53.816Z",
-      "maxR": 2.26
+      "statusUpdatedAt": "2026-10-22T20:01:10.179Z",
+      "maxR": 2.26,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "NXPCUSDT",
@@ -102,8 +108,11 @@
       "sentAt": "2026-10-22T12:28:02.861Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:53.816Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:10.179Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ENAUSDT",
@@ -119,8 +128,11 @@
       "sentAt": "2026-10-22T18:04:35.721Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:53.816Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:10.179Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "RUNEUSDT",
@@ -136,8 +148,12 @@
       "sentAt": "2026-10-22T18:04:37.539Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:57.367Z",
-      "maxR": 0.08
+      "statusUpdatedAt": "2026-10-22T20:01:14.064Z",
+      "maxR": 0.1,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "MASKUSDT",
@@ -153,8 +169,12 @@
       "sentAt": "2026-10-22T18:04:39.350Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:59.149Z",
-      "maxR": 0.18
+      "statusUpdatedAt": "2026-10-22T20:01:15.852Z",
+      "maxR": 0.18,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "ERAUSDT",
@@ -170,8 +190,11 @@
       "sentAt": "2026-10-22T18:04:41.204Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:00:59.149Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:15.852Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ZENUSDT",
@@ -187,8 +210,11 @@
       "sentAt": "2026-10-22T18:04:42.988Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:02.751Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:15.852Z",
+      "maxR": 0.01,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "SAGAUSDT",
@@ -204,8 +230,11 @@
       "sentAt": "2026-10-22T18:04:44.819Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:02.751Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:15.852Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "TSMBUSDT",
@@ -221,8 +250,11 @@
       "sentAt": "2026-10-22T18:04:46.610Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:02.751Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:15.852Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "BEAMXUSDT",
@@ -236,10 +268,14 @@
       "rr1": 0.02503702055585496,
       "score": 14,
       "sentAt": "2026-10-22T18:04:48.399Z",
-      "status": "active",
+      "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:02.751Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:19.498Z",
+      "maxR": 0,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "ACUUSDT",
@@ -255,8 +291,12 @@
       "sentAt": "2026-10-22T18:04:50.168Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:06.455Z",
-      "maxR": 0.06
+      "statusUpdatedAt": "2026-10-22T20:01:22.991Z",
+      "maxR": 0.08,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "AXLUSDT",
@@ -272,8 +312,11 @@
       "sentAt": "2026-10-22T18:04:52.007Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:06.455Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:22.991Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "SOPHUSDT",
@@ -287,10 +330,14 @@
       "rr1": 0.038222625258866896,
       "score": 14,
       "sentAt": "2026-10-22T18:04:53.801Z",
-      "status": "active",
+      "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:06.455Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:26.615Z",
+      "maxR": 0,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "ETHWUSDT",
@@ -306,8 +353,11 @@
       "sentAt": "2026-10-22T18:04:55.611Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:06.455Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:26.615Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ENSUSDT",
@@ -323,8 +373,12 @@
       "sentAt": "2026-10-22T18:04:57.373Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0.01
+      "statusUpdatedAt": "2026-10-22T20:01:28.375Z",
+      "maxR": 0.01,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "AIGENSYNUSDT",
@@ -340,8 +394,11 @@
       "sentAt": "2026-10-22T18:04:59.187Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:28.376Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "PIXELUSDT",
@@ -357,8 +414,11 @@
       "sentAt": "2026-10-22T18:05:01.003Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:28.376Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "IDUSDT",
@@ -374,8 +434,11 @@
       "sentAt": "2026-10-22T18:05:02.799Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:28.376Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "FOGOUSDT",
@@ -391,8 +454,11 @@
       "sentAt": "2026-10-22T18:05:04.626Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:28.376Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "KAVAUSDT",
@@ -408,8 +474,11 @@
       "sentAt": "2026-10-22T18:05:06.462Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:08.303Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:28.376Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "SAHARAUSDT",
@@ -425,8 +494,12 @@
       "sentAt": "2026-10-22T18:05:08.315Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:30.133Z",
+      "maxR": 0,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "PUNDIXUSDT",
@@ -440,10 +513,14 @@
       "rr1": 0.02894031698777027,
       "score": 14,
       "sentAt": "2026-10-22T18:05:10.164Z",
-      "status": "active",
+      "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "TRUTHUSDT",
@@ -459,8 +536,11 @@
       "sentAt": "2026-10-22T18:16:49.431Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0.12
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0.12,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "SLXUSDT",
@@ -476,8 +556,11 @@
       "sentAt": "2026-10-22T18:16:51.159Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0.02
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0.12,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "CHIPUSDT",
@@ -493,8 +576,11 @@
       "sentAt": "2026-10-22T18:16:52.914Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ACEUSDT",
@@ -510,8 +596,11 @@
       "sentAt": "2026-10-22T18:16:54.676Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "UNITREEUSDT",
@@ -527,8 +616,11 @@
       "sentAt": "2026-10-22T18:16:56.571Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:10.102Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "PROVEUSDT",
@@ -544,8 +636,11 @@
       "sentAt": "2026-10-22T18:16:58.401Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "EURIUSDT",
@@ -561,8 +656,11 @@
       "sentAt": "2026-10-22T18:17:00.163Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "QCOMBUSDT",
@@ -578,8 +676,11 @@
       "sentAt": "2026-10-22T18:17:01.951Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "GPSUSDT",
@@ -595,8 +696,11 @@
       "sentAt": "2026-10-22T18:17:03.775Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:31.918Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "COWUSDT",
@@ -610,10 +714,14 @@
       "rr1": 0.29198191650181443,
       "score": 14,
       "sentAt": "2026-10-22T18:17:05.599Z",
-      "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "status": "tp1_hit",
+      "activated": true,
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     },
     {
       "symbol": "KGSTUSDT",
@@ -629,8 +737,11 @@
       "sentAt": "2026-10-22T18:17:07.340Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "IONQUSDT",
@@ -646,8 +757,11 @@
       "sentAt": "2026-10-22T18:17:09.097Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:01:13.802Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "RLSUSDT",
@@ -663,8 +777,11 @@
       "sentAt": "2026-10-22T19:05:10.607Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:10.607Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "PARTIUSDT",
@@ -680,8 +797,11 @@
       "sentAt": "2026-10-22T19:05:12.544Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:05:12.544Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "LAUSDT",
@@ -697,8 +817,11 @@
       "sentAt": "2026-10-22T19:05:14.352Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:14.352Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "PNUTUSDT",
@@ -714,8 +837,11 @@
       "sentAt": "2026-10-22T19:05:16.164Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:05:16.164Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ONTUSDT",
@@ -730,9 +856,12 @@
       "score": 14,
       "sentAt": "2026-10-22T19:05:18.022Z",
       "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:05:18.022Z",
-      "maxR": 0
+      "activated": true,
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "PROVEUSDT",
@@ -748,8 +877,11 @@
       "sentAt": "2026-10-22T19:05:19.793Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:19.793Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0.05,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "TLMUSDT",
@@ -764,9 +896,12 @@
       "score": 14,
       "sentAt": "2026-10-22T19:05:21.563Z",
       "status": "pending",
-      "activated": false,
-      "statusUpdatedAt": "2026-10-22T19:05:21.563Z",
-      "maxR": 0
+      "activated": true,
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "XECUSDT",
@@ -782,8 +917,11 @@
       "sentAt": "2026-10-22T19:05:23.413Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:23.413Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ANIMEUSDT",
@@ -799,8 +937,11 @@
       "sentAt": "2026-10-22T19:05:25.193Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:25.193Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "HYPERUSDT",
@@ -816,8 +957,11 @@
       "sentAt": "2026-10-22T19:05:27.108Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:27.108Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:35.502Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false
     },
     {
       "symbol": "ONDSUSDT",
@@ -831,10 +975,14 @@
       "rr1": 0.09929667993640107,
       "score": 14,
       "sentAt": "2026-10-22T19:05:28.888Z",
-      "status": "active",
+      "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T19:05:28.888Z",
-      "maxR": 0
+      "statusUpdatedAt": "2026-10-22T20:01:38.986Z",
+      "maxR": 0.33,
+      "tp1Reached": true,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": true
     }
   ]
 }
