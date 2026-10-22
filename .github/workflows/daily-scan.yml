@@ -1,4 +1,4 @@
-name: Test Binance Domains
+name: Test Binance Futures Redirect
 
 on:
   workflow_dispatch:
@@ -7,18 +7,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Binance Domains
+      - name: Test with redirect follow
         run: |
-          echo "=== Testing Binance Domains ==="
-          curl -s -o /dev/null -w "api1.binance.com: %{http_code}\n" "https://api1.binance.com/api/v3/ping"
-          curl -s -o /dev/null -w "api2.binance.com: %{http_code}\n" "https://api2.binance.com/api/v3/ping"
-          curl -s -o /dev/null -w "api3.binance.com: %{http_code}\n" "https://api3.binance.com/api/v3/ping"
-          curl -s -o /dev/null -w "api4.binance.com: %{http_code}\n" "https://api4.binance.com/api/v3/ping"
-          curl -s -o /dev/null -w "data-api.binance.vision: %{http_code}\n" "https://data-api.binance.vision/api/v3/ping"
-          curl -s -o /dev/null -w "api.binance.us: %{http_code}\n" "https://api.binance.us/api/v3/ping"
+          echo "=== Testing Binance Futures (with redirect) ==="
+          curl -sL -o /dev/null -w "fapi1 (follow): %{http_code}\n" "https://fapi1.binance.com/fapi/v1/ping"
+          curl -sL -o /dev/null -w "fapi2 (follow): %{http_code}\n" "https://fapi2.binance.com/fapi/v1/ping"
+          curl -sL -o /dev/null -w "fapi3 (follow): %{http_code}\n" "https://fapi3.binance.com/fapi/v1/ping"
           
-          echo "=== Testing Binance Futures Domains ==="
-          curl -s -o /dev/null -w "fapi.binance.com: %{http_code}\n" "https://fapi.binance.com/fapi/v1/ping"
-          curl -s -o /dev/null -w "fapi1.binance.com: %{http_code}\n" "https://fapi1.binance.com/fapi/v1/ping"
-          curl -s -o /dev/null -w "fapi2.binance.com: %{http_code}\n" "https://fapi2.binance.com/fapi/v1/ping"
-          curl -s -o /dev/null -w "fapi3.binance.com: %{http_code}\n" "https://fapi3.binance.com/fapi/v1/ping"
+          echo "=== Testing Binance Futures Data ==="
+          curl -sL -o /dev/null -w "fapi1 klines: %{http_code}\n" "https://fapi1.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=10"
+          curl -sL -o /dev/null -w "fapi2 klines: %{http_code}\n" "https://fapi2.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=10"
+          
+          echo "=== Testing Spot Data API ==="
+          curl -s -o /dev/null -w "data-api klines: %{http_code}\n" "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=10"
+          curl -s -o /dev/null -w "data-api tickers: %{http_code}\n" "https://data-api.binance.vision/api/v3/ticker/24hr"
