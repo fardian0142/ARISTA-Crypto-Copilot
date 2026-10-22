@@ -574,18 +574,20 @@ export async function analyze(symbol, timeframe) {
     let isRangeAllowed = true;
 
     if (hasRealHtf) {
-      const isBearishSetup = result.range_setups.active.direction === "bearish";
-      const isBullishSetup = result.range_setups.active.direction === "bullish";
-      const isScore14 = result.range_setups.active.score === 14;
+      const htfTrend = htfStructure.trend;
+      const htfEma = emaTrendCalc(htfCandles);
 
-      if (isBearishSetup && htfStructure.trend === "bullish" && !isScore14) {
+      const htfStrongBullish = htfTrend === "bullish" && htfEma && htfEma.distance_atr > 1.5;
+      const htfStrongBearish = htfTrend === "bearish" && htfEma && htfEma.distance_atr > 1.5;
+
+      if (result.range_setups.active.direction === "bearish" && htfStrongBullish) {
         isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی HTF مسدود شد (امتیاز کمتر از ۱۴).");
+        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی قوی HTF مسدود شد.");
       }
 
-      if (isBullishSetup && htfStructure.trend === "bearish" && !isScore14) {
+      if (result.range_setups.active.direction === "bullish" && htfStrongBearish) {
         isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی HTF مسدود شد (امتیاز کمتر از ۱۴).");
+        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی قوی HTF مسدود شد.");
       }
     }
 
