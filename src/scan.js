@@ -185,6 +185,50 @@ function selectSignalForSymbol(signalsByTF) {
   return best;
 }
 
+function getClosedReason(sig, eventType, maxR) {
+  if (eventType === "stopped") {
+    if (!maxR || maxR <= 0) {
+      return "stopped_without_tp";
+    }
+    return "stopped_after_tp";
+  }
+  return eventType;
+}
+
+function shouldCloseTrade(sig, eventType, maxR) {
+  if (eventType === "stopped") {
+    return true;
+  }
+
+  if (eventType === "tp3_hit" && sig.tp3) {
+    return true;
+  }
+
+  if (eventType === "tp2_hit" && !sig.tp3) {
+    return true;
+  }
+
+  if (eventType === "tp1_hit" && !sig.tp2 && !sig.tp3) {
+    return true;
+  }
+
+  return false;
+}
+
+function computeTotalR(sig, eventType, maxR) {
+  if (eventType === "stopped") {
+    if (sig.tp2Reached && sig.rr2) return sig.rr2;
+    if (sig.tp1Reached && sig.rr1) return sig.rr1;
+    return maxR || 0;
+  }
+
+  if (eventType === "tp3_hit") return sig.rr3 || 0;
+  if (eventType === "tp2_hit") return sig.rr2 || 0;
+  if (eventType === "tp1_hit") return sig.rr1 || 0;
+
+  return maxR || 0;
+}
+
 async function main() {
   const startTime = Date.now();
 
@@ -243,7 +287,7 @@ async function main() {
 
   const trackedResults = await runWithConcurrency(trackingTasks, 3, async ({ sig, idx }) => {
     if (Date.now() - startTime > TOTAL_TIMEOUT_MS) {
-      return { idx, status: sig.status, maxR: sig.maxR || 0, activated: sig.activated, skipped: true, events: [] };
+      return { idx, status: sig.status, maxR: sig.maxR || 0, activated: sig.activated, skipped: true, events: [], tp1Reached: sig.tp1Reached || false, tp2Reached: sig.tp2Reached || false, tp3Reached: sig.tp3Reached || false };
     }
     const result = await updateSignalStatus(sig);
     return { idx, ...result };
@@ -253,6 +297,10 @@ async function main() {
     if (!r || r.skipped) continue;
     const sig = stats.recentSignals[r.idx];
     if (!sig) continue;
+
+    if (typeof r.tp1Reached === "boolean") sig.tp1Reached = r.tp1Reached;
+    if (typeof r.tp2Reached === "boolean") sig.tp2Reached = r.tp2Reached;
+    if (typeof r.tp3Reached === "boolean") sig.tp3Reached = r.tp3Reached;
 
     const events = Array.isArray(r.events) ? r.events : [];
 
@@ -266,17 +314,13 @@ async function main() {
             console.log("   📤 Sent: " + sig.symbol + " → " + event.type);
           }
 
-          const isLastTp =
-            (event.type === "tp3_hit" && sig.tp3) ||
-            (event.type === "tp2_hit" && !sig.tp3) ||
-            (event.type === "tp1_hit" && !sig.tp2 && !sig.tp3);
-
-          if (isLastTp) {
-            const totalR = event.type === "tp3_hit" ? sig.rr3 : event.type === "tp2_hit" ? sig.rr2 : sig.rr1;
-            const closeText = formatTradeClosed(sig, event.type, totalR);
+          if (shouldCloseTrade(sig, event.type, r.maxR)) {
+            const closedReason = getClosedReason(sig, event.type, r.maxR);
+            const totalR = computeTotalR(sig, event.type, r.maxR);
+            const closeText = formatTradeClosed(sig, closedReason, totalR, r.maxR);
             await sendTelegramMessage(token, chatId, closeText);
             await sleep(MESSAGE_DELAY_MS);
-            console.log("   🏁 Trade closed: " + sig.symbol + " at " + event.type);
+            console.log("   🏁 Trade closed: " + sig.symbol + " (" + closedReason + ")");
           }
         } catch (e) {
           console.error("❌ Failed to send result for " + sig.symbol + " (" + event.type + "):", (e && e.message) || e);
@@ -526,12 +570,17 @@ async function main() {
         tp2: active.tp2,
         tp3: active.tp3,
         rr1: active.rr1,
+        rr2: active.rr2,
+        rr3: active.rr3,
         score: active.score,
         sentAt: new Date().toISOString(),
         status: isActivatedNow ? "active" : "pending",
         activated: isActivatedNow,
         statusUpdatedAt: new Date().toISOString(),
-        maxR: 0
+        maxR: 0,
+        tp1Reached: false,
+        tp2Reached: false,
+        tp3Reached: false
       });
 
       try {
