@@ -825,13 +825,13 @@ export function formatSignalResult(sig, newStatus) {
   let hitLevel = "";
 
   if (newStatus === "tp1_hit") {
-    title = "🥇 هدف اول لمس شد!";
+    title = "🥇 تارگت اول زده شد!";
     hitLevel = "TP1";
   } else if (newStatus === "tp2_hit") {
-    title = "🥈 هدف دوم لمس شد!";
+    title = "🥈 تارگت دوم زده شد!";
     hitLevel = "TP2";
   } else if (newStatus === "tp3_hit") {
-    title = "🥉 هدف سوم لمس شد!";
+    title = "🥉 تارگت سوم زده شد!";
     hitLevel = "TP3";
   }
 
@@ -845,7 +845,7 @@ export function formatSignalResult(sig, newStatus) {
     "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
-    "🎯 سطح لمس شده: <b>" + hitLevel + "</b>\n" +
+    "🎯 تارگت زده شده: <b>" + hitLevel + "</b>\n" +
     "💰 سود تا این لحظه: <b>" + (sig.maxR || 0) + "R</b>\n\n" +
     "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
   );
@@ -866,7 +866,7 @@ export function formatTradeClosed(sig, lastTpHit, totalR) {
     "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
-    "✅ آخرین هدف لمس شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>\n" +
+    "✅ آخرین تارگت زده شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>\n" +
     "💰 سود کل: <b>" + (totalR || 0) + "R</b>\n\n" +
     "💡 مدیریت سرمایه را رعایت کنید. منتظر سیگنال بعدی باشید."
   );
