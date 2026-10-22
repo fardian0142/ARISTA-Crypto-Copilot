@@ -851,23 +851,46 @@ export function formatSignalResult(sig, newStatus) {
   );
 }
 
-export function formatTradeClosed(sig, lastTpHit, totalR) {
+export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
   const isBullish = sig.direction === "bullish";
+  const isStopped = lastTpHit === "stopped";
 
-  const tpLabels = {
-    "tp1_hit": "TP1 (هدف اول)",
-    "tp2_hit": "TP2 (هدف دوم)",
-    "tp3_hit": "TP3 (هدف سوم)"
-  };
+  let title = "🏁 <b>معامله بسته شد</b>";
+  let reasonText = "";
+  let resultText = "";
+
+  if (isStopped) {
+    if (!maxR || maxR <= 0) {
+      title = "🛑 <b>معامله با ضرر بسته شد</b>";
+      reasonText = "❌ <b>حد ضرر فعال شد (بدون تاچ تارگت)</b>";
+      resultText = "💰 ضرر: <b>" + (maxR || 0) + "R</b>";
+    } else {
+      title = "🏁 <b>معامله بسته شد (حد ضرر)</b>";
+      const lastTp = maxR >= (sig.rr3 || 0) && sig.tp3 ? "TP3" :
+                     maxR >= (sig.rr2 || 0) && sig.tp2 ? "TP2" :
+                     maxR >= (sig.rr1 || 0) && sig.tp1 ? "TP1" : "TP1";
+      reasonText = "🛑 <b>حد ضرر فعال شد بعد از تاچ " + lastTp + "</b>";
+      resultText = "💰 سود تا این لحظه: <b>" + (totalR || 0) + "R</b>";
+    }
+  } else {
+    const tpLabels = {
+      "tp1_hit": "TP1 (تارگت اول)",
+      "tp2_hit": "TP2 (تارگت دوم)",
+      "tp3_hit": "TP3 (تارگت سوم)"
+    };
+    title = "🏁 <b>معامله با موفقیت بسته شد</b>";
+    reasonText = "✅ آخرین تارگت زده شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>";
+    resultText = "💰 سود کل: <b>" + (totalR || 0) + "R</b>";
+  }
 
   return (
-    "🏁 <b>معامله با موفقیت بسته شد</b>\n" +
+    title + "\n" +
     "━━━━━━━━━━━━━━━━━━━━━━\n" +
     "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
-    "✅ آخرین تارگت زده شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>\n" +
-    "💰 سود کل: <b>" + (totalR || 0) + "R</b>\n\n" +
+    reasonText + "\n" +
+    resultText + "\n\n" +
     "💡 مدیریت سرمایه را رعایت کنید. منتظر سیگنال بعدی باشید."
   );
 }
