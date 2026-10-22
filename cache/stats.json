@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-22T15:05:01.274Z",
+  "lastUpdated": "2026-10-22T15:14:19.228Z",
   "allTime": {
-    "total": 4,
+    "total": 3,
     "tp1Hit": 0,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 4,
+    "active": 3,
     "tp1Rate": 0,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -26,7 +26,7 @@
       "tp1Rate": 0
     },
     "1h": {
-      "total": 1,
+      "total": 0,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -40,7 +40,7 @@
   },
   "byDirection": {
     "bullish": {
-      "total": 3,
+      "total": 2,
       "tp1Hit": 0,
       "stopped": 0,
       "tp1Rate": 0
@@ -68,25 +68,8 @@
       "sentAt": "2026-10-21T05:02:07.604Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T15:00:44.453Z",
+      "statusUpdatedAt": "2026-10-22T15:10:04.161Z",
       "maxR": 0.05
-    },
-    {
-      "symbol": "ZILUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "entry": 0.0021529293686661267,
-      "stop": 0.002079218795241952,
-      "tp1": 0.0023215635999999998,
-      "tp2": 0.0025465635999999997,
-      "tp3": null,
-      "rr1": 2.287788895135177,
-      "score": 14,
-      "sentAt": "2026-10-21T08:02:10.252Z",
-      "status": "pending",
-      "activated": true,
-      "statusUpdatedAt": "2026-10-22T15:00:44.453Z",
-      "maxR": 0.18
     },
     {
       "symbol": "LABUSDT",
@@ -102,8 +85,8 @@
       "sentAt": "2026-10-21T12:01:16.248Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T15:00:44.453Z",
-      "maxR": 1.88
+      "statusUpdatedAt": "2026-10-22T15:10:06.164Z",
+      "maxR": 2.15
     },
     {
       "symbol": "NXPCUSDT",
@@ -119,7 +102,7 @@
       "sentAt": "2026-10-22T12:28:02.861Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-10-22T15:00:44.453Z",
+      "statusUpdatedAt": "2026-10-22T15:10:06.164Z",
       "maxR": 0
     }
   ]
