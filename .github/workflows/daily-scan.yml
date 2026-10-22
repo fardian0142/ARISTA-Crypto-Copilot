@@ -1,45 +1,28 @@
-name: Crypto Scan
+name: Test Exchanges
 
 on:
   workflow_dispatch:
 
-concurrency:
-  group: crypto-scan
-  cancel-in-progress: false
-
 jobs:
-  scan:
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Run scan
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: node src/scan.js
-
-      - name: Commit cache
+      
+      - name: Test Binance & MEXC
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cache/signals.json cache/stats.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update signals & stats cache [skip ci]"
-            for i in 1 2 3; do
-              git pull --rebase origin main && git push && break
-              echo "Retry $i..."
-              sleep 5
-            done
-          fi
+          echo "=== Testing Binance ==="
+          curl -s -o /dev/null -w "Binance Status: %{http_code}\n" "https://api.binance.com/api/v3/ping"
+          curl -s -o /dev/null -w "Binance Futures Status: %{http_code}\n" "https://fapi.binance.com/fapi/v1/ping"
+          
+          echo "=== Testing MEXC ==="
+          curl -s -o /dev/null -w "MEXC Status: %{http_code}\n" "https://contract.mexc.com/api/v1/contract/ping"
+          
+          echo "=== Testing Bybit (for comparison) ==="
+          curl -s -o /dev/null -w "Bybit Status: %{http_code}\n" "https://api.bybit.com/v5/market/time"
+          
+          echo "=== Testing Toobit (for comparison) ==="
+          curl -s -o /dev/null -w "Toobit Status: %{http_code}\n" "https://api.toobit.com/api/v1/public/time"
