@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-22T07:02:36.902Z",
+  "lastUpdated": "2026-10-22T08:02:56.438Z",
   "signals": {
-    "HMSTRUSDT:2h": {
-      "sentAt": "2026-10-21T08:02:08.491Z",
-      "symbol": "HMSTRUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00014865,
-      "stop": 0.0001444682758629769
-    },
-    "ZILUSDT:1h": {
-      "sentAt": "2026-10-21T08:02:10.252Z",
-      "symbol": "ZILUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0021529293686661267,
-      "stop": 0.002079218795241952
-    },
-    "LINEAUSDT:15m": {
-      "sentAt": "2026-10-21T08:02:12.031Z",
-      "symbol": "LINEAUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0027909763935659053,
-      "stop": 0.0028225971888149633
-    },
-    "FILUSDT:2h": {
-      "sentAt": "2026-10-21T08:02:13.879Z",
-      "symbol": "FILUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.0371772170721407,
-      "stop": 0.9716484494847093
-    },
     "LABUSDT:30m": {
       "sentAt": "2026-10-21T12:01:16.248Z",
       "symbol": "LABUSDT",
