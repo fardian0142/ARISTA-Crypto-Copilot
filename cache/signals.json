@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-22T05:02:40.260Z",
+  "lastUpdated": "2026-10-22T06:03:01.246Z",
   "signals": {
-    "FLOKIUSDT:30m": {
-      "sentAt": "2026-10-21T06:01:59.663Z",
-      "symbol": "FLOKIUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.000024639750077615378,
-      "stop": 0.000025028928017033013
-    },
     "HMSTRUSDT:2h": {
       "sentAt": "2026-10-21T08:02:08.491Z",
       "symbol": "HMSTRUSDT",
