@@ -574,20 +574,18 @@ export async function analyze(symbol, timeframe) {
     let isRangeAllowed = true;
 
     if (hasRealHtf) {
-      if (
-        result.range_setups.active.direction === "bearish" &&
-        htfStructure.trend === "bullish"
-      ) {
+      const isBearishSetup = result.range_setups.active.direction === "bearish";
+      const isBullishSetup = result.range_setups.active.direction === "bullish";
+      const isScore14 = result.range_setups.active.score === 14;
+
+      if (isBearishSetup && htfStructure.trend === "bullish" && !isScore14) {
         isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی در تایم‌فریم بالاتر (HTF) مسدود شد.");
+        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی HTF مسدود شد (امتیاز کمتر از ۱۴).");
       }
 
-      if (
-        result.range_setups.active.direction === "bullish" &&
-        htfStructure.trend === "bearish"
-      ) {
+      if (isBullishSetup && htfStructure.trend === "bearish" && !isScore14) {
         isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی در تایم‌فریم بالاتر (HTF) مسدود شد.");
+        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی HTF مسدود شد (امتیاز کمتر از ۱۴).");
       }
     }
 
