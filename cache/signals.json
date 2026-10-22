@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-22T04:42:08.973Z",
+  "lastUpdated": "2026-10-22T05:02:40.260Z",
   "signals": {
-    "CHIPUSDT:2h": {
-      "sentAt": "2026-10-21T05:02:07.604Z",
-      "symbol": "CHIPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.043945,
-      "stop": 0.039858316006672743
-    },
     "FLOKIUSDT:30m": {
       "sentAt": "2026-10-21T06:01:59.663Z",
       "symbol": "FLOKIUSDT",
