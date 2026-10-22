@@ -2808,14 +2808,17 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     tp2: null,
     tp3: null,
     tp4: null,
+    tp5: null,
     rr1: 0,
     rr2: 0,
     rr3: 0,
     rr4: 0,
+    rr5: 0,
     tp1Source: null,
     tp2Source: null,
     tp3Source: null,
     tp4Source: null,
+    tp5Source: null,
     tpCount: 0
   };
 
@@ -2839,133 +2842,127 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     return emptyResult;
   }
 
-  const maxLevels = Math.max(
-    CONFIG.MIN_VALID_TP_COUNT,
-    Math.min(CONFIG.MAX_VALID_TP_COUNT + 2, 8)
-  );
+  const effectiveMinRR = Number.isFinite(minRR)
+    ? minRR
+    : (Number.isFinite(CONFIG.MIN_RR) ? CONFIG.MIN_RR : 1.6);
+
+  const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
+  const maxTPCount = Number.isFinite(CONFIG.MAX_VALID_TP_COUNT) ? CONFIG.MAX_VALID_TP_COUNT : 5;
+
+  const maxLevels = Math.max(3, Math.min(maxTPCount + 3, 8));
 
   const levels = collectImportantLevelsForTP(
-    candles,
-    direction,
-    entry,
-    atrValue,
-    maxLevels
+    candles, direction, entry, atrValue, maxLevels
   );
 
-  const effectiveMinRR = Number.isFinite(minRR) ? minRR : (Number.isFinite(CONFIG.MIN_RR) ? CONFIG.MIN_RR : 1.6);
-  const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 0.5;
+  if (!levels || levels.length === 0) {
+    return emptyResult;
+  }
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
     : currentPrice * CONFIG.MIN_TP_DISTANCE;
 
-  const candidates = [];
-
-  const tp1Candidate = buildTp1Candidate(
-    candles,
-    direction,
-    entry,
-    currentPrice,
-    risk,
-    maxRR,
-    Math.min(tp1MinRR, 0.5)
-  );
-
-  if (tp1Candidate) {
-    candidates.push(tp1Candidate);
-  }
+  const futureCandidates = [];
 
   for (const level of levels) {
     const adjusted = applyPipBuffer(level.price, direction, currentPrice);
-
     if (!Number.isFinite(adjusted)) continue;
 
-    if (direction === "bullish" && adjusted <= entry) continue;
-    if (direction === "bearish" && adjusted >= entry) continue;
-
-    if (direction === "bullish" && adjusted <= currentPrice) continue;
-    if (direction === "bearish" && adjusted >= currentPrice) continue;
-
-    if (tp1Candidate && Math.abs(adjusted - tp1Candidate.price) < spacing) {
-      continue;
+    if (direction === "bullish") {
+      if (adjusted <= entry) continue;
+      if (adjusted <= currentPrice) continue;
+    } else {
+      if (adjusted >= entry) continue;
+      if (adjusted >= currentPrice) continue;
     }
 
     const distance = Math.abs(adjusted - entry);
     if (distance <= 0) continue;
 
     const rr = distance / risk;
+    if (!Number.isFinite(rr) || rr <= 0) continue;
 
-    if (!Number.isFinite(rr) || rr < effectiveMinRR) continue;
-    if (rr > maxRR) continue;
-
-    candidates.push({
+    futureCandidates.push({
       price: adjusted,
       rawPrice: level.price,
       source: level.source,
       rr,
       distance,
-      priority: level.priority,
-      isTp1: false
+      priority: Number.isFinite(level.priority) ? level.priority : 5
     });
   }
 
-  if (!candidates.length) {
+  if (futureCandidates.length === 0) {
     return emptyResult;
   }
 
-  candidates.sort((a, b) => {
-    if (a.isTp1 && !b.isTp1) return -1;
-    if (!a.isTp1 && b.isTp1) return 1;
-    return a.distance - b.distance;
-  });
+  futureCandidates.sort((a, b) => a.distance - b.distance);
 
-  const selected = [];
+  const tp1Candidate = { ...futureCandidates[0], isTp1: true };
 
-  for (const candidate of candidates) {
+  const otherCandidates = [];
+
+  for (const c of futureCandidates) {
+    if (Math.abs(c.price - tp1Candidate.price) < spacing) continue;
+
+    if (direction === "bullish" && c.price <= tp1Candidate.price) continue;
+    if (direction === "bearish" && c.price >= tp1Candidate.price) continue;
+
+    if (c.rr < effectiveMinRR) continue;
+    if (c.rr > maxRR) continue;
+
+    otherCandidates.push({ ...c, isTp1: false });
+  }
+
+  otherCandidates.sort((a, b) => a.distance - b.distance);
+
+  const selectedOthers = [];
+
+  for (const candidate of otherCandidates) {
+    if (selectedOthers.length >= maxTPCount - 1) break;
+
     let tooClose = false;
 
-    for (const existing of selected) {
-      if (Math.abs(existing.price - candidate.price) < spacing) {
-        tooClose = true;
-        break;
+    if (Math.abs(tp1Candidate.price - candidate.price) < spacing) {
+      tooClose = true;
+    }
+
+    if (!tooClose) {
+      for (const existing of selectedOthers) {
+        if (Math.abs(existing.price - candidate.price) < spacing) {
+          tooClose = true;
+          break;
+        }
       }
     }
 
     if (tooClose) continue;
 
-    selected.push(candidate);
-
-    if (selected.length >= CONFIG.MAX_VALID_TP_COUNT) break;
+    selectedOthers.push(candidate);
   }
 
-  if (selected.length < CONFIG.MIN_VALID_TP_COUNT) {
-    return emptyResult;
-  }
+  const selected = [tp1Candidate, ...selectedOthers];
 
-  selected.sort((a, b) => {
-    if (direction === "bullish") return a.price - b.price;
-    return b.price - a.price;
-  });
-
-  const result = {
+  return {
     targets: selected,
     tp1: selected[0] ? selected[0].price : null,
     tp2: selected[1] ? selected[1].price : null,
     tp3: selected[2] ? selected[2].price : null,
     tp4: selected[3] ? selected[3].price : null,
+    tp5: selected[4] ? selected[4].price : null,
     rr1: selected[0] ? selected[0].rr : 0,
     rr2: selected[1] ? selected[1].rr : 0,
     rr3: selected[2] ? selected[2].rr : 0,
     rr4: selected[3] ? selected[3].rr : 0,
+    rr5: selected[4] ? selected[4].rr : 0,
     tp1Source: selected[0] ? selected[0].source : null,
     tp2Source: selected[1] ? selected[1].source : null,
     tp3Source: selected[2] ? selected[2].source : null,
     tp4Source: selected[3] ? selected[3].source : null,
+    tp5Source: selected[4] ? selected[4].source : null,
     tpCount: selected.length
   };
-
-  return result;
 }
 
 export function computeUnifiedStop(candles, direction, entryZone, atrValue, swingLows, swingHighs, currentPrice) {
@@ -3216,11 +3213,6 @@ export function detectRangeTradeSetups(
           )
         )
       : 5;
-
-  const tp1MinRR =
-    Number.isFinite(CONFIG.TP1_MIN_RR)
-      ? Math.min(CONFIG.TP1_MIN_RR, 0.5)
-      : 0.5;
 
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
@@ -4707,34 +4699,6 @@ export function detectRangeTradeSetups(
     return unique;
   }
 
-  function findNearestRangeTp1(direction, entry) {
-    let nearest = null;
-
-    for (let i = recentStart; i < currentIndex; i++) {
-      const c = candles[i];
-
-      if (direction === "bullish") {
-        const h = cHigh(c);
-        if (!Number.isFinite(h)) continue;
-        if (h <= entry) continue;
-        if (h >= rangeHigh) continue;
-        if (!nearest || h < nearest) {
-          nearest = h;
-        }
-      } else {
-        const l = cLow(c);
-        if (!Number.isFinite(l)) continue;
-        if (l >= entry) continue;
-        if (l <= rangeLow) continue;
-        if (!nearest || l > nearest) {
-          nearest = l;
-        }
-      }
-    }
-
-    return nearest;
-  }
-
   function selectTargets(direction, entry, stop) {
     const risk =
       direction === "bullish"
@@ -4764,13 +4728,13 @@ export function detectRangeTradeSetups(
       return emptyTargets;
     }
 
-    const rawTargets = collectPotentialTargets(
-      direction,
-      entry,
-      stop
-    );
+    const rawTargets = collectPotentialTargets(direction, entry, stop);
 
-    const buffered = [];
+    if (!rawTargets.length) {
+      return emptyTargets;
+    }
+
+    const futureCandidates = [];
 
     for (const target of rawTargets) {
       let bufferedPrice = applyPipBuffer(
@@ -4779,21 +4743,15 @@ export function detectRangeTradeSetups(
         currentPrice
       );
 
-      if (!Number.isFinite(bufferedPrice)) {
-        continue;
-      }
+      if (!Number.isFinite(bufferedPrice)) continue;
 
       if (
         target.phase === "internal" &&
-        (
-          bufferedPrice <= rangeLow ||
-          bufferedPrice >= rangeHigh
-        )
+        (bufferedPrice <= rangeLow || bufferedPrice >= rangeHigh)
       ) {
-        bufferedPrice =
-          direction === "bullish"
-            ? Math.min(bufferedPrice, rangeHigh)
-            : Math.max(bufferedPrice, rangeLow);
+        bufferedPrice = direction === "bullish"
+          ? Math.min(bufferedPrice, rangeHigh)
+          : Math.max(bufferedPrice, rangeLow);
       }
 
       if (
@@ -4810,34 +4768,19 @@ export function detectRangeTradeSetups(
       const distance = Math.abs(bufferedPrice - entry);
       const rr = distance / risk;
 
-      if (
-        !Number.isFinite(rr) ||
-        rr < minRR ||
-        rr > maxTPRR
-      ) {
-        continue;
-      }
-
-      if (distance > atrValue * 4.5) {
-        continue;
-      }
+      if (!Number.isFinite(rr) || rr <= 0) continue;
+      if (distance > atrValue * 4.5) continue;
 
       const remainingR =
         direction === "bullish"
           ? (bufferedPrice - currentPrice) / risk
           : (currentPrice - bufferedPrice) / risk;
 
-      if (
-        !isTargetAlive(
-          direction,
-          bufferedPrice,
-          remainingR
-        )
-      ) {
+      if (!isTargetAlive(direction, bufferedPrice, remainingR)) {
         continue;
       }
 
-      buffered.push({
+      futureCandidates.push({
         price: bufferedPrice,
         rawPrice: target.price,
         source: target.source,
@@ -4846,106 +4789,65 @@ export function detectRangeTradeSetups(
         eventIndex: target.eventIndex,
         distance,
         rr,
-        remainingR,
-        isTp1: false
+        remainingR
       });
     }
 
-    const nearestTp1 = findNearestRangeTp1(direction, entry);
-
-    if (Number.isFinite(nearestTp1)) {
-      const bufferedPrice = applyPipBuffer(
-        nearestTp1,
-        direction,
-        currentPrice
-      );
-
-      if (Number.isFinite(bufferedPrice)) {
-        const distance = Math.abs(bufferedPrice - entry);
-        const rr = distance / risk;
-
-        if (
-          Number.isFinite(rr) &&
-          rr >= tp1MinRR &&
-          rr <= maxTPRR &&
-          distance <= atrValue * 4.5
-        ) {
-          const remainingR =
-            direction === "bullish"
-              ? (bufferedPrice - currentPrice) / risk
-              : (currentPrice - bufferedPrice) / risk;
-
-          if (
-            isTargetAlive(
-              direction,
-              bufferedPrice,
-              remainingR
-            )
-          ) {
-            buffered.push({
-              price: bufferedPrice,
-              rawPrice: nearestTp1,
-              source:
-                direction === "bullish"
-                  ? "nearest_high"
-                  : "nearest_low",
-              priority: 0,
-              phase: "internal",
-              eventIndex: null,
-              distance,
-              rr,
-              remainingR,
-              isTp1: true
-            });
-          }
-        }
-      }
-    }
-
-    if (!buffered.length) {
+    if (!futureCandidates.length) {
       return emptyTargets;
     }
 
-    buffered.sort((a, b) => {
-      if (a.isTp1 && !b.isTp1) return -1;
-      if (!a.isTp1 && b.isTp1) return 1;
-      return a.distance - b.distance;
-    });
+    futureCandidates.sort((a, b) => a.distance - b.distance);
 
-    const selected = [];
+    const tp1Candidate = { ...futureCandidates[0], isTp1: true };
+
+    const otherCandidates = [];
 
     const effectiveSpacing = Math.max(
       atrValue * minTPDistanceATR,
       currentPrice * minTPDistancePct
     );
 
-    for (const target of buffered) {
-      if (selected.length >= maxValidTPCount) {
-        break;
-      }
+    for (const c of futureCandidates) {
+      if (Math.abs(c.price - tp1Candidate.price) < effectiveSpacing) continue;
 
-      if (
-        selected.some(
-          item =>
-            Math.abs(item.price - target.price) <
-            effectiveSpacing
-        )
-      ) {
-        continue;
-      }
+      if (direction === "bullish" && c.price <= tp1Candidate.price) continue;
+      if (direction === "bearish" && c.price >= tp1Candidate.price) continue;
 
-      selected.push(target);
+      if (c.rr < minRR) continue;
+      if (c.rr > maxTPRR) continue;
+
+      otherCandidates.push({ ...c, isTp1: false });
     }
 
-    if (selected.length < minValidTPCount) {
-      return emptyTargets;
+    otherCandidates.sort((a, b) => a.distance - b.distance);
+
+    const selectedOthers = [];
+
+    for (const candidate of otherCandidates) {
+      if (selectedOthers.length >= maxValidTPCount - 1) break;
+
+      let tooClose = false;
+
+      if (Math.abs(tp1Candidate.price - candidate.price) < effectiveSpacing) {
+        tooClose = true;
+      }
+
+      if (!tooClose) {
+        for (const existing of selectedOthers) {
+          if (Math.abs(existing.price - candidate.price) < effectiveSpacing) {
+            tooClose = true;
+            break;
+          }
+        }
+      }
+
+      if (tooClose) continue;
+
+      selectedOthers.push(candidate);
     }
 
-    selected.sort((a, b) =>
-      direction === "bullish"
-        ? a.price - b.price
-        : b.price - a.price
-    );
+    const selected = [tp1Candidate, ...selectedOthers];
 
     const result = { ...emptyTargets };
 
@@ -5313,9 +5215,8 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 <= entry ||
-      targets.rr1 < tp1MinRR ||
-      targets.rr1 > maxTPRR ||
-      targets.tpCount < minValidTPCount
+      targets.rr1 <= 0 ||
+      targets.tpCount < 1
     ) {
       return null;
     }
@@ -5542,9 +5443,8 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 >= entry ||
-      targets.rr1 < tp1MinRR ||
-      targets.rr1 > maxTPRR ||
-      targets.tpCount < minValidTPCount
+      targets.rr1 <= 0 ||
+      targets.tpCount < 1
     ) {
       return null;
     }
