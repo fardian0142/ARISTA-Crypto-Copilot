@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T22:01:03.394Z",
+  "lastUpdated": "2026-10-22T22:31:25.833Z",
   "signals": {
     "NXPCUSDT:2h": {
       "sentAt": "2026-10-22T12:28:02.861Z",
@@ -423,6 +423,15 @@
       "score": 14,
       "entry": 5.967454062688396,
       "stop": 5.710185266511459
+    },
+    "BRETTUSDT:30m": {
+      "sentAt": "2026-10-22T22:31:24.329Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004768,
+      "stop": 0.004641108501181888
     }
   }
 }
