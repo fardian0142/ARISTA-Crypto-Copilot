@@ -568,36 +568,6 @@ export async function analyze(symbol, timeframe) {
   }
 
   if (
-    result.range_setups &&
-    result.range_setups.active
-  ) {
-    let isRangeAllowed = true;
-
-    if (hasRealHtf) {
-      const htfTrend = htfStructure.trend;
-      const htfEma = emaTrendCalc(htfCandles);
-      const isScore14 = result.range_setups.active.score === 14;
-
-      const htfStrongBullish = htfTrend === "bullish" && htfEma && htfEma.distance_atr > 3.0;
-      const htfStrongBearish = htfTrend === "bearish" && htfEma && htfEma.distance_atr > 3.0;
-
-      if (result.range_setups.active.direction === "bearish" && htfStrongBullish && !isScore14) {
-        isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Short به دلیل روند صعودی قوی HTF مسدود شد.");
-      }
-
-      if (result.range_setups.active.direction === "bullish" && htfStrongBearish && !isScore14) {
-        isRangeAllowed = false;
-        result.reasons.push("⚠️ ستاپ Range Long به دلیل روند نزولی قوی HTF مسدود شد.");
-      }
-    }
-
-    if (!isRangeAllowed) {
-      result.range_setups.active = null;
-    }
-  }
-
-  if (
     !event ||
     !Number.isFinite(event.index) ||
     !Number.isFinite(event.direction)
