@@ -5,19 +5,19 @@ export async function updateSignalStatus(signal) {
     const analysis = await analyze(signal.symbol, signal.timeframe);
 
     if (!analysis || !Number.isFinite(analysis.current_price)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const price = analysis.current_price;
     const { direction, entry, stop, tp1, tp2, tp3 } = signal;
 
     if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(tp1)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const risk = Math.abs(entry - stop);
     if (risk <= 0) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const isBull = direction === "bullish";
@@ -30,7 +30,7 @@ export async function updateSignalStatus(signal) {
     }
 
     if (!isActivated) {
-      return { status: "pending", maxR: 0, activated: false, events: [] };
+      return { status: "pending", maxR: 0, activated: false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const sentTime = signal.sentAt ? new Date(signal.sentAt).getTime() : 0;
@@ -141,14 +141,21 @@ export async function updateSignalStatus(signal) {
     const prevMaxR = Number.isFinite(signal.maxR) ? signal.maxR : 0;
     const newMaxR = Math.max(prevMaxR, maxR);
 
+    const tp1Reached = signal.tp1Reached === true || tp1Hit;
+    const tp2Reached = signal.tp2Reached === true || tp2Hit;
+    const tp3Reached = signal.tp3Reached === true || tp3Hit;
+
     return {
       status: finalStatus,
       maxR: newMaxR,
       activated: true,
-      events: events
+      events: events,
+      tp1Reached: tp1Reached,
+      tp2Reached: tp2Reached,
+      tp3Reached: tp3Reached
     };
   } catch (e) {
-    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [] };
+    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
   }
 }
 
