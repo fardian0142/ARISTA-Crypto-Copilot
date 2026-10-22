@@ -2745,8 +2745,32 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
   );
 
   if (!levels.length) {
-    return emptyResult;
+  return emptyResult;
+}
+
+if (direction === "bullish") {
+  let nearestHigh = Infinity;
+  for (let i = 0; i < candles.length; i++) {
+    const h = candles[i].high;
+    if (Number.isFinite(h) && h > entry && h < nearestHigh) {
+      nearestHigh = h;
+    }
   }
+  if (Number.isFinite(nearestHigh) && nearestHigh > entry) {
+    levels.push({ price: nearestHigh, source: "nearest_high", index: null, priority: 0 });
+  }
+} else {
+  let nearestLow = -Infinity;
+  for (let i = 0; i < candles.length; i++) {
+    const l = candles[i].low;
+    if (Number.isFinite(l) && l < entry && l > nearestLow) {
+      nearestLow = l;
+    }
+  }
+  if (Number.isFinite(nearestLow) && nearestLow < entry) {
+    levels.push({ price: nearestLow, source: "nearest_low", index: null, priority: 0 });
+  }
+}
 
   const effectiveMinRR = Number.isFinite(minRR) ? minRR : (Number.isFinite(CONFIG.MIN_RR) ? CONFIG.MIN_RR : 1.6);
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
@@ -2776,7 +2800,11 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     const rr = distance / risk;
 
     const isFirstCandidate = candidates.length === 0;
-    const requiredRR = isFirstCandidate ? tp1MinRR : effectiveMinRR;
+  let requiredRR = isFirstCandidate ? tp1MinRR : effectiveMinRR;
+
+  if (isFirstCandidate && rr >= 0.8 && rr < requiredRR) {
+    requiredRR = 0.8;
+  }
 
     if (!Number.isFinite(rr) || rr < requiredRR) continue;
     if (rr > maxRR) continue;
