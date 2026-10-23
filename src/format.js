@@ -425,26 +425,6 @@ export function formatAnalysis(r) {
     lines.push("💎 امتیاز ستاپ: <b>" + scoreInfo.percentage + "%</b>");
     lines.push(scoreInfo.icon + " " + scoreInfo.bar + " " + rs.score + "/14");
 
-    const _tpCount =
-      (rs.tp1 != null ? 1 : 0) +
-      (rs.tp2 != null ? 1 : 0) +
-      (rs.tp3 != null ? 1 : 0) +
-      (rs.tp4 != null ? 1 : 0);
-
-    if (_tpCount === 1) {
-      lines.push("");
-      lines.push("ℹ️ این ستاپ <b>تنها یک هدف ساختاری</b> دارد.");
-      lines.push("💡 با رسیدن به TP1، حد ضرر را به نقطه ورود منتقل کنید.");
-    } else if (_tpCount === 2) {
-      lines.push("");
-      lines.push("ℹ️ این ستاپ <b>۲ هدف</b> دارد.");
-      lines.push("💡 با TP1 → SL به Breakeven، با TP2 → خروج کامل.");
-    } else if (_tpCount >= 3) {
-      lines.push("");
-      lines.push("ℹ️ این ستاپ <b>" + _tpCount + " هدف</b> دارد.");
-      lines.push("💡 با TP1 → SL به Breakeven، با TP2 → SL به TP1، با TP3 → خروج کامل.");
-    }
-
     if (
       rs.momentum_warning &&
       rs.momentum_reason
@@ -550,22 +530,6 @@ export function formatAnalysis(r) {
           fmtRR(r.targets[i].rr) +
           ")"
         );
-      }
-
-      const _targetsCount = r.targets.length;
-
-      if (_targetsCount === 1) {
-        lines.push("");
-        lines.push("ℹ️ این ستاپ <b>تنها یک هدف ساختاری</b> دارد.");
-        lines.push("💡 با رسیدن به TP1، حد ضرر را به نقطه ورود منتقل کنید.");
-      } else if (_targetsCount === 2) {
-        lines.push("");
-        lines.push("ℹ️ این ستاپ <b>۲ هدف</b> دارد.");
-        lines.push("💡 با TP1 → SL به Breakeven، با TP2 → خروج کامل.");
-      } else if (_targetsCount >= 3) {
-        lines.push("");
-        lines.push("ℹ️ این ستاپ <b>" + _targetsCount + " هدف</b> دارد.");
-        lines.push("💡 با TP1 → SL به Breakeven، با TP2 → SL به TP1، با TP3 → خروج کامل.");
       }
     }
 
@@ -916,17 +880,6 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
     sig.tp2Reached === true ||
     sig.tp3Reached === true;
 
-  const totalTpsAvailable =
-    (sig.tp1 != null ? 1 : 0) +
-    (sig.tp2 != null ? 1 : 0) +
-    (sig.tp3 != null ? 1 : 0);
-
-  const tpLabels = {
-    "tp1_hit": "هدف اول",
-    "tp2_hit": "هدف دوم",
-    "tp3_hit": "هدف سوم"
-  };
-
   let title = "🏁 <b>معامله بسته شد</b>";
   let reasonText = "";
   let resultText = "";
@@ -939,37 +892,47 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
       resultText =
         "💰 ضرر خالص (بدون اهرم): <b>-" + lossPct.toFixed(2) + "%</b>";
     } else {
+      const lastTp =
+        sig.tp3Reached && sig.rr3 ? "TP3" :
+        sig.tp2Reached && sig.rr2 ? "TP2" :
+        sig.tp1Reached && sig.rr1 ? "TP1" :
+        "TP1";
+
+      const hitPrice =
+        lastTp === "TP1" ? sig.tp1 :
+        lastTp === "TP2" ? sig.tp2 :
+        sig.tp3;
+
+      const profitPct = calcProfitPercent(sig.entry, hitPrice);
+
       const tpCount =
         (sig.tp1Reached ? 1 : 0) +
         (sig.tp2Reached ? 1 : 0) +
         (sig.tp3Reached ? 1 : 0);
 
-      const lastTpLabel =
-        sig.tp3Reached ? "TP3" :
-        sig.tp2Reached ? "TP2" :
-        "TP1";
-
-      const hitPrice =
-        lastTpLabel === "TP1" ? sig.tp1 :
-        lastTpLabel === "TP2" ? sig.tp2 :
-        sig.tp3;
-
-      const bestProfitPct = calcProfitPercent(sig.entry, hitPrice);
-      const finalLossPct = calcProfitPercent(sig.entry, sig.stop);
-
-      title = "🔒 <b>معامله بعد از قفل سود بسته شد</b>";
+      title = "🏁 <b>معامله با سود بسته شد</b>";
       reasonText =
-        "✅ سود تا <b>" + lastTpLabel + "</b> قفل شد (" + tpCount + " هدف زده شد) سپس حد ضرر فعال شد.";
+        "✅ سود شما تا " + lastTp + " قفل شد (" + tpCount + " هدف زده شد)";
       resultText =
-        "💰 بهترین سود ثبت‌شده: <b>+" + bestProfitPct.toFixed(2) + "%</b>\n" +
-        "🛑 ضرر نهایی (بعد از برگشت): <b>-" + finalLossPct.toFixed(2) + "%</b>\n" +
-        "💡 اگر SL را بعد از " + lastTpLabel + " به Breakeven منتقل کرده بودید، الان بدون ضرر بودید.";
+        "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
     }
   } else {
+    const tpLabels = {
+      "tp1_hit": "هدف اول",
+      "tp2_hit": "هدف دوم",
+      "tp3_hit": "هدف سوم"
+    };
+
     const tpCount =
       (sig.tp1Reached ? 1 : 0) +
       (sig.tp2Reached ? 1 : 0) +
       (sig.tp3Reached ? 1 : 0);
+
+    title = "🏁 <b>معامله با موفقیت بسته شد</b>";
+    reasonText =
+      "✅ همه اهداف زده شد (" + tpCount + " هدف) — آخرین: <b>" +
+      (tpLabels[lastTpHit] || lastTpHit) +
+      "</b>";
 
     const hitPrice =
       lastTpHit === "tp1_hit" ? sig.tp1 :
@@ -977,26 +940,6 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
       sig.tp3;
 
     const profitPct = calcProfitPercent(sig.entry, hitPrice);
-
-    if (totalTpsAvailable === 1) {
-      title = "🏁 <b>معامله با موفقیت بسته شد</b>";
-      reasonText = "✅ تنها هدف این ستاپ (TP1) زده شد";
-    } else if (totalTpsAvailable >= 2) {
-      title = "🏁 <b>معامله با موفقیت بسته شد</b>";
-      reasonText =
-        "✅ همه اهداف زده شد (" +
-        tpCount + " از " + totalTpsAvailable +
-        ") — آخرین: <b>" +
-        (tpLabels[lastTpHit] || lastTpHit) +
-        "</b>";
-    } else {
-      title = "🏁 <b>معامله با موفقیت بسته شد</b>";
-      reasonText =
-        "✅ آخرین هدف زده شد: <b>" +
-        (tpLabels[lastTpHit] || lastTpHit) +
-        "</b>";
-    }
-
     resultText =
       "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
   }
