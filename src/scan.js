@@ -326,21 +326,24 @@ async function main() {
         }
 
         try {
-          const resultText = formatSignalResult(sig, event.type);
-          if (resultText && resultText.trim() !== "") {
-            await sendTelegramMessage(token, chatId, resultText);
-            await sleep(MESSAGE_DELAY_MS);
-            console.log("   📤 Sent: " + sig.symbol + " → " + event.type);
-            markNotified(sig, event.type);
-          }
+          const willClose = shouldCloseTrade(sig, event.type, r.maxR);
 
-          if (shouldCloseTrade(sig, event.type, r.maxR)) {
+          if (willClose) {
             const closedReason = getClosedReason(sig, event.type, r.maxR);
             const totalR = computeTotalR(sig, event.type, r.maxR);
             const closeText = formatTradeClosed(sig, closedReason, totalR, r.maxR);
             await sendTelegramMessage(token, chatId, closeText);
             await sleep(MESSAGE_DELAY_MS);
             console.log("   🏁 Trade closed: " + sig.symbol + " (" + closedReason + ")");
+            markNotified(sig, event.type);
+          } else {
+            const resultText = formatSignalResult(sig, event.type);
+            if (resultText && resultText.trim() !== "") {
+              await sendTelegramMessage(token, chatId, resultText);
+              await sleep(MESSAGE_DELAY_MS);
+              console.log("   📤 Sent: " + sig.symbol + " → " + event.type);
+              markNotified(sig, event.type);
+            }
           }
         } catch (e) {
           console.error("❌ Failed to send result for " + sig.symbol + " (" + event.type + "):", (e && e.message) || e);
