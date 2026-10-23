@@ -14,7 +14,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 0.3
   },
   "1h": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 15,
     momentumPenalty: 5,
     minStrength: 72,
@@ -86,8 +86,8 @@ export const CONFIG = {
   FVG_LOOKBACK: 80,
   SL_ATR_BUFFER: 2.5,
   SL_MIN_NODE_DISTANCE_ATR: 0.5,
-  MIN_TP1_RR: 0.3,
-  TP1_MIN_RR: 0.3,
+  MIN_TP1_RR: 0.5,
+  TP1_MIN_RR: 0.5,
   OB_FVG_MAX_DIST_ATR: 0.4,
   ENTRY_ZONE_MAX_WIDTH_PCT: 0.02,
   HTF_SECOND_LEVEL: true,
