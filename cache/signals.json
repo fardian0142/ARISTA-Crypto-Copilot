@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T19:31:39.141Z",
+  "lastUpdated": "2026-10-23T20:01:18.541Z",
   "signals": {
-    "TSLABUSDT:15m": {
-      "sentAt": "2026-10-23T08:01:08.187Z",
-      "symbol": "TSLABUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 376.30999999999995,
-      "stop": 374.0082143780118
-    },
     "NEARUSDT:30m": {
       "sentAt": "2026-10-23T08:31:15.516Z",
       "symbol": "NEARUSDT",
@@ -387,6 +378,15 @@
       "score": 14,
       "entry": 147.3318327993913,
       "stop": 141.56548000434796
+    },
+    "UPUSDT:2h": {
+      "sentAt": "2026-10-23T20:01:17.039Z",
+      "symbol": "UPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13945000000000002,
+      "stop": 0.12382182861883057
     }
   }
 }
