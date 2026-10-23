@@ -1043,7 +1043,7 @@ export async function analyze(symbol, timeframe) {
   if (
     unifiedTargets &&
     Array.isArray(unifiedTargets.targets) &&
-    unifiedTargets.targets.length >= CONFIG.MIN_VALID_TP_COUNT
+    unifiedTargets.targets.length >= 1
   ) {
     targets = unifiedTargets.targets
       .filter(
@@ -1061,7 +1061,7 @@ export async function analyze(symbol, timeframe) {
       }));
   }
 
-  if (targets.length < 2) {
+  if (targets.length < 1) {
     const rawTargets =
       structuralTargets(
         candles,
@@ -1096,11 +1096,11 @@ export async function analyze(symbol, timeframe) {
   }
 
   if (
-    targets.length < 2
+    targets.length < 1
   ) {
     return fail(
-      "حداقل دو هدف با R/R معتبر وجود ندارد",
-      "حداقل دو هدف با R/R معتبر (>= " +
+      "حداقل یک هدف با R/R معتبر وجود ندارد",
+      "حداقل یک هدف با R/R معتبر (>= " +
         minTp1Rr.toFixed(2) +
         ") وجود ندارد."
     );
@@ -1129,6 +1129,7 @@ export async function analyze(symbol, timeframe) {
       : 0;
 
   if (
+    targets.length >= 2 &&
     rr2 < minRr
   ) {
     return fail(
