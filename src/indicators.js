@@ -2898,7 +2898,7 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
 
   const effectiveMinRR = Number.isFinite(minRR) ? minRR : (Number.isFinite(CONFIG.MIN_RR) ? CONFIG.MIN_RR : 1.6);
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 0.5;
+  const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 1.0;
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
@@ -2913,7 +2913,7 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     currentPrice,
     risk,
     maxRR,
-    Math.min(tp1MinRR, 0.5)
+    tp1MinRR
   );
 
   if (tp1Candidate) {
