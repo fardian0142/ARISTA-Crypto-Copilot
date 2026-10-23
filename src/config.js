@@ -4,56 +4,56 @@ export const TIMEFRAME_PROFILES = {
     htfPenalty: 20,
     momentumPenalty: 2,
     minStrength: 75,
-    minRR: 1.0
+    minRR: 0.3
   },
   "30m": {
     strictHTF: false,
     htfPenalty: 20,
     momentumPenalty: 3,
     minStrength: 75,
-    minRR: 1.0
+    minRR: 0.3
   },
   "1h": {
     strictHTF: true,
     htfPenalty: 15,
     momentumPenalty: 5,
     minStrength: 72,
-    minRR: 1.0
+    minRR: 0.3
   },
   "2h": {
     strictHTF: true,
     htfPenalty: 12,
     momentumPenalty: 6,
     minStrength: 72,
-    minRR: 1.0
+    minRR: 0.3
   },
   "4h": {
     strictHTF: true,
     htfPenalty: 18,
     momentumPenalty: 10,
     minStrength: 75,
-    minRR: 1.0
+    minRR: 0.3
   },
   "6h": {
     strictHTF: true,
     htfPenalty: 20,
     momentumPenalty: 12,
     minStrength: 78,
-    minRR: 1.0
+    minRR: 0.3
   },
   "12h": {
     strictHTF: true,
     htfPenalty: 25,
     momentumPenalty: 15,
     minStrength: 80,
-    minRR: 1.0
+    minRR: 0.3
   },
   "24h": {
     strictHTF: true,
     htfPenalty: 30,
     momentumPenalty: 18,
     minStrength: 82,
-    minRR: 1.0
+    minRR: 0.3
   }
 };
 
@@ -86,8 +86,8 @@ export const CONFIG = {
   FVG_LOOKBACK: 80,
   SL_ATR_BUFFER: 2.5,
   SL_MIN_NODE_DISTANCE_ATR: 0.5,
-  MIN_TP1_RR: 0.5,
-  TP1_MIN_RR: 0.5,
+  MIN_TP1_RR: 0.3,
+  TP1_MIN_RR: 0.3,
   OB_FVG_MAX_DIST_ATR: 0.4,
   ENTRY_ZONE_MAX_WIDTH_PCT: 0.02,
   HTF_SECOND_LEVEL: true,
