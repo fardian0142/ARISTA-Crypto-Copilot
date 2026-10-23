@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T20:01:18.541Z",
+  "lastUpdated": "2026-10-23T20:31:26.866Z",
   "signals": {
-    "NEARUSDT:30m": {
-      "sentAt": "2026-10-23T08:31:15.516Z",
-      "symbol": "NEARUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4.969100112565246,
-      "stop": 4.761856338819671
-    },
-    "NVDABUSDT:30m": {
-      "sentAt": "2026-10-23T08:31:17.298Z",
-      "symbol": "NVDABUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 214.83,
-      "stop": 212.53594928290437
-    },
-    "SNXXUSDT:30m": {
-      "sentAt": "2026-10-23T08:31:19.083Z",
-      "symbol": "SNXXUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.045,
-      "stop": 8.413774512415866
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-23T09:31:23.488Z",
       "symbol": "SATSUSDT",
@@ -387,6 +360,42 @@
       "score": 14,
       "entry": 0.13945000000000002,
       "stop": 0.12382182861883057
+    },
+    "TRIAUSDT:2h": {
+      "sentAt": "2026-10-23T20:31:19.863Z",
+      "symbol": "TRIAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0025315,
+      "stop": 0.0022414618137094095
+    },
+    "ENAUSDT:30m": {
+      "sentAt": "2026-10-23T20:31:21.604Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2074212,
+      "stop": 0.19514000051639202
+    },
+    "ZETAUSDT:30m": {
+      "sentAt": "2026-10-23T20:31:23.551Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04153,
+      "stop": 0.03998432376506602
+    },
+    "POPCATUSDT:2h": {
+      "sentAt": "2026-10-23T20:31:25.364Z",
+      "symbol": "POPCATUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.04611672371349908,
+      "stop": 0.04878340204643515
     }
   }
 }
