@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T21:01:10.954Z",
+  "lastUpdated": "2026-10-23T21:31:22.158Z",
   "signals": {
     "SATSUSDT:15m": {
       "sentAt": "2026-10-23T09:31:23.488Z",
@@ -396,6 +396,15 @@
       "score": 14,
       "entry": 0.04611672371349908,
       "stop": 0.04878340204643515
+    },
+    "MEWUSDT:1h": {
+      "sentAt": "2026-10-23T21:31:20.654Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.00048510000000000003,
+      "stop": 0.0005279756904431792
     }
   }
 }
