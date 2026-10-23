@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T08:14:59.925Z",
+  "lastUpdated": "2026-10-23T08:31:20.586Z",
   "signals": {
     "BRETTUSDT:30m": {
       "sentAt": "2026-10-22T22:31:24.329Z",
@@ -252,6 +252,33 @@
       "score": 14,
       "entry": 376.30999999999995,
       "stop": 374.0082143780118
+    },
+    "NEARUSDT:30m": {
+      "sentAt": "2026-10-23T08:31:15.516Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.969100112565246,
+      "stop": 4.761856338819671
+    },
+    "NVDABUSDT:30m": {
+      "sentAt": "2026-10-23T08:31:17.298Z",
+      "symbol": "NVDABUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 214.83,
+      "stop": 212.53594928290437
+    },
+    "SNXXUSDT:30m": {
+      "sentAt": "2026-10-23T08:31:19.083Z",
+      "symbol": "SNXXUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 9.045,
+      "stop": 8.413774512415866
     }
   }
 }
