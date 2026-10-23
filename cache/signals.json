@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T17:01:33.559Z",
+  "lastUpdated": "2026-10-23T17:31:18.437Z",
   "signals": {
-    "OLUSDT:15m": {
-      "sentAt": "2026-10-23T05:31:08.281Z",
-      "symbol": "OLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006475,
-      "stop": 0.0063426189556222
-    },
-    "TSLABUSDT:30m": {
-      "sentAt": "2026-10-23T05:31:10.073Z",
-      "symbol": "TSLABUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 376.1431837233117,
-      "stop": 369.7272591192017
-    },
     "XRPUSDT:15m": {
       "sentAt": "2026-10-23T06:01:11.217Z",
       "symbol": "XRPUSDT",
@@ -558,6 +540,15 @@
       "score": 14,
       "entry": 0.009118,
       "stop": 0.007925397555178487
+    },
+    "ZETAUSDT:1h": {
+      "sentAt": "2026-10-23T17:31:16.935Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04156957831621484,
+      "stop": 0.0398887263127511
     }
   }
 }
