@@ -826,7 +826,7 @@ export function formatSignalResult(sig, newStatus) {
       "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
       "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
       "📌 جهت: " + (isBullish ? "🟢 خرید (Long)" : "🔴 فروش (Short)") + "\n\n" +
-      "💰 ضرر خالص: <b>-" + lossPct.toFixed(2) + "%</b>\n\n" +
+      "💰 ضرر خالص (بدون اهرم): <b>-" + lossPct.toFixed(2) + "%</b>\n\n" +
       "💡 مدیریت سرمایه را رعایت کنید. بازار همیشه فرصت‌های جدیدی دارد."
     );
   }
@@ -862,7 +862,7 @@ export function formatSignalResult(sig, newStatus) {
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
     "🎯 تارگت زده شده: <b>" + hitLevel + "</b>\n" +
-    "💰 سود خالص: <b>+" + profitPct.toFixed(2) + "%</b>\n\n" +
+    "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>\n\n" +
     "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
   );
 }
@@ -880,7 +880,7 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
       const lossPct = calcProfitPercent(sig.entry, sig.stop);
       title = "🛑 <b>معامله با ضرر بسته شد</b>";
       reasonText = "❌ <b>حد ضرر فعال شد (بدون تاچ تارگت)</b>";
-      resultText = "💰 ضرر خالص: <b>-" + lossPct.toFixed(2) + "%</b>";
+      resultText = "💰 ضرر خالص (بدون اهرم): <b>-" + lossPct.toFixed(2) + "%</b>";
     } else {
       title = "🏁 <b>معامله بسته شد (حد ضرر)</b>";
       const lastTp = maxR >= (sig.rr3 || 0) && sig.tp3 ? "TP3" :
@@ -890,7 +890,7 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
 
       const hitPrice = lastTp === "TP1" ? sig.tp1 : lastTp === "TP2" ? sig.tp2 : sig.tp3;
       const profitPct = calcProfitPercent(sig.entry, hitPrice);
-      resultText = "💰 سود خالص تا این لحظه: <b>+" + profitPct.toFixed(2) + "%</b>";
+      resultText = "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
     }
   } else {
     const tpLabels = {
@@ -903,7 +903,7 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
 
     const hitPrice = lastTpHit === "tp1_hit" ? sig.tp1 : lastTpHit === "tp2_hit" ? sig.tp2 : sig.tp3;
     const profitPct = calcProfitPercent(sig.entry, hitPrice);
-    resultText = "💰 سود خالص: <b>+" + profitPct.toFixed(2) + "%</b>";
+    resultText = "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
   }
 
   return (
