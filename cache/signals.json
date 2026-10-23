@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T17:31:18.437Z",
+  "lastUpdated": "2026-10-23T18:01:12.512Z",
   "signals": {
-    "XRPUSDT:15m": {
-      "sentAt": "2026-10-23T06:01:11.217Z",
-      "symbol": "XRPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.3248,
-      "stop": 1.3110034539222943
-    },
     "DOGEUSDT:15m": {
       "sentAt": "2026-10-23T06:01:13.077Z",
       "symbol": "DOGEUSDT",
