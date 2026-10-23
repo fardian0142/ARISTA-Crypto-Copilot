@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T14:31:55.222Z",
+  "lastUpdated": "2026-10-23T15:01:12.884Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -558,6 +558,15 @@
       "score": 14,
       "entry": 66.68,
       "stop": 64.62825091892935
+    },
+    "XDPUSDT:30m": {
+      "sentAt": "2026-10-23T15:01:11.381Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.017745,
+      "stop": 0.017109077917616206
     }
   }
 }
