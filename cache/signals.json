@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T18:31:09.129Z",
+  "lastUpdated": "2026-10-23T19:01:10.871Z",
   "signals": {
-    "SUIUSDT:15m": {
-      "sentAt": "2026-10-23T06:31:10.501Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9998,
-      "stop": 0.982175467290004
-    },
-    "HYPEUSDT:15m": {
-      "sentAt": "2026-10-23T06:31:12.235Z",
-      "symbol": "HYPEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 78.17,
-      "stop": 77.23204747765968
-    },
-    "COREUSDT:1h": {
-      "sentAt": "2026-10-23T06:39:03.082Z",
-      "symbol": "COREUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.017465,
-      "stop": 0.0166739593022968
-    },
-    "ZORAUSDT:15m": {
-      "sentAt": "2026-10-23T06:39:04.853Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006402561460229966,
-      "stop": 0.006302703855500243
-    },
-    "AEONUSDT:15m": {
-      "sentAt": "2026-10-23T07:01:07.130Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03188500492290371,
-      "stop": 0.03111425055068774
-    },
     "AEONUSDT:30m": {
       "sentAt": "2026-10-23T07:09:40.204Z",
       "symbol": "AEONUSDT",
