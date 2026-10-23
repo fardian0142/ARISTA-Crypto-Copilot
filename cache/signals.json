@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T22:31:06.986Z",
+  "lastUpdated": "2026-10-23T23:01:50.462Z",
   "signals": {
-    "ZORAUSDT:30m": {
-      "sentAt": "2026-10-23T10:31:16.161Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006458852,
-      "stop": 0.006277887172222566
-    },
-    "GTCUSDT:30m": {
-      "sentAt": "2026-10-23T11:01:21.162Z",
-      "symbol": "GTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.30030587999999997,
-      "stop": 0.2590155160500799
-    },
     "MEWUSDT:15m": {
       "sentAt": "2026-10-23T11:31:17.861Z",
       "symbol": "MEWUSDT",
@@ -333,6 +315,33 @@
       "score": 14,
       "entry": 0.000004634060514359396,
       "stop": 0.000004539074
+    },
+    "IRYSUSDT:15m": {
+      "sentAt": "2026-10-23T23:01:45.398Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.086473315142005,
+      "stop": 0.044504478
+    },
+    "BRETTUSDT:30m": {
+      "sentAt": "2026-10-23T23:01:47.177Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004760693999999999,
+      "stop": 0.0045196307183941395
+    },
+    "BCHUSDT:30m": {
+      "sentAt": "2026-10-23T23:01:48.960Z",
+      "symbol": "BCHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 277,
+      "stop": 268.99836653275446
     }
   }
 }
