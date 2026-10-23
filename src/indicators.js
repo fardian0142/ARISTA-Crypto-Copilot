@@ -2626,7 +2626,7 @@ export function collectImportantLevelsForTP(candles, direction, entry, atrValue,
       }
 
       if (isLocalHigh) {
-        addLevel(h, "local_high", i, 2);
+        addLevel(h, "local_high", i, 3);
       }
     }
   } else {
@@ -2653,7 +2653,51 @@ export function collectImportantLevelsForTP(candles, direction, entry, atrValue,
       }
 
       if (isLocalLow) {
-        addLevel(l, "local_low", i, 2);
+        addLevel(l, "local_low", i, 3);
+      }
+    }
+  }
+
+  const currentPrice = candles[candles.length - 1].close;
+
+  const nearbyObs = collectNearbyOrderBlocks(
+    candles,
+    swings,
+    currentPrice,
+    atrValue,
+    5
+  );
+
+  const nearbyFrvp = volumeNodesToLevels(
+    candles,
+    currentPrice,
+    atrValue,
+    5,
+    CONFIG.FRVP_LOOKBACK_BARS
+  );
+
+  if (direction === "bullish") {
+    for (const ob of nearbyObs.bearish || []) {
+      if (Number.isFinite(ob.mid) && ob.mid > entry) {
+        addLevel(ob.mid, "nearby_ob", ob.index, 2);
+      }
+    }
+
+    for (const frvpLevel of nearbyFrvp.bearish || []) {
+      if (Number.isFinite(frvpLevel.mid) && frvpLevel.mid > entry) {
+        addLevel(frvpLevel.mid, "nearby_frvp", null, 2);
+      }
+    }
+  } else {
+    for (const ob of nearbyObs.bullish || []) {
+      if (Number.isFinite(ob.mid) && ob.mid < entry) {
+        addLevel(ob.mid, "nearby_ob", ob.index, 2);
+      }
+    }
+
+    for (const frvpLevel of nearbyFrvp.bullish || []) {
+      if (Number.isFinite(frvpLevel.mid) && frvpLevel.mid < entry) {
+        addLevel(frvpLevel.mid, "nearby_frvp", null, 2);
       }
     }
   }
@@ -2690,69 +2734,7 @@ export function collectImportantLevelsForTP(candles, direction, entry, atrValue,
     if (result.length >= maxLevels) break;
   }
 
-  const currentPrice = candles[candles.length - 1].close;
-
-  const nearbyObs = collectNearbyOrderBlocks(
-    candles,
-    swings,
-    currentPrice,
-    atrValue,
-    5
-  );
-
-  const nearbyFrvp = volumeNodesToLevels(
-    candles,
-    currentPrice,
-    atrValue,
-    5,
-    CONFIG.FRVP_LOOKBACK_BARS
-  );
-
-  if (direction === "bullish") {
-    for (const ob of nearbyObs.bearish || []) {
-      if (Number.isFinite(ob.mid) && ob.mid > entry) {
-        addLevel(ob.mid, "nearby_ob", ob.index, 1);
-      }
-    }
-
-    for (const frvpLevel of nearbyFrvp.bearish || []) {
-      if (Number.isFinite(frvpLevel.mid) && frvpLevel.mid > entry) {
-        addLevel(frvpLevel.mid, "nearby_frvp", null, 2);
-      }
-    }
-  } else {
-    for (const ob of nearbyObs.bullish || []) {
-      if (Number.isFinite(ob.mid) && ob.mid < entry) {
-        addLevel(ob.mid, "nearby_ob", ob.index, 1);
-      }
-    }
-
-    for (const frvpLevel of nearbyFrvp.bullish || []) {
-      if (Number.isFinite(frvpLevel.mid) && frvpLevel.mid < entry) {
-        addLevel(frvpLevel.mid, "nearby_frvp", null, 2);
-      }
-    }
-  }
-
-  const finalResult = [];
-  for (const level of levels) {
-    let tooClose = false;
-
-    for (const existing of finalResult) {
-      if (Math.abs(existing.price - level.price) < spacing) {
-        tooClose = true;
-        break;
-      }
-    }
-
-    if (tooClose) continue;
-
-    finalResult.push(level);
-
-    if (finalResult.length >= maxLevels) break;
-  }
-
-  return finalResult;
+  return result;
 }
 
 export function findNearestExecutableTarget(candles, direction, entry, currentPrice, minRRBase, tp1MinRR) {
