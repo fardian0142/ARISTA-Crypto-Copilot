@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T15:31:14.023Z",
+  "lastUpdated": "2026-10-23T16:01:19.624Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -567,6 +567,15 @@
       "score": 14,
       "entry": 0.017745,
       "stop": 0.017109077917616206
+    },
+    "CCUSDT:30m": {
+      "sentAt": "2026-10-23T16:01:18.122Z",
+      "symbol": "CCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.10452517953871257,
+      "stop": 0.10123586043776739
     }
   }
 }
