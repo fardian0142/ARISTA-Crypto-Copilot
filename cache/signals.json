@@ -1,78 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T18:01:12.512Z",
+  "lastUpdated": "2026-10-23T18:11:02.849Z",
   "signals": {
-    "DOGEUSDT:15m": {
-      "sentAt": "2026-10-23T06:01:13.077Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07979,
-      "stop": 0.07902084637269048
-    },
-    "KORUUSDT:30m": {
-      "sentAt": "2026-10-23T06:01:14.804Z",
-      "symbol": "KORUUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 10.496844512163735,
-      "stop": 9.81622169014208
-    },
-    "BEATUSDT:2h": {
-      "sentAt": "2026-10-23T06:05:45.426Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07176196,
-      "stop": 0.06650753195426046
-    },
-    "BRETTUSDT:15m": {
-      "sentAt": "2026-10-23T06:05:47.210Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0048515,
-      "stop": 0.004782222549537695
-    },
-    "PAXGUSDT:30m": {
-      "sentAt": "2026-10-23T06:05:48.998Z",
-      "symbol": "PAXGUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4032.41,
-      "stop": 4021.402822
-    },
-    "TAOUSDT:15m": {
-      "sentAt": "2026-10-23T06:05:50.770Z",
-      "symbol": "TAOUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 262.95,
-      "stop": 257.55157485622715
-    },
-    "GRASSUSDT:15m": {
-      "sentAt": "2026-10-23T06:05:52.539Z",
-      "symbol": "GRASSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.6493,
-      "stop": 0.631869792778252
-    },
-    "NVDABUSDT:15m": {
-      "sentAt": "2026-10-23T06:05:54.287Z",
-      "symbol": "NVDABUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 213.88641928418207,
-      "stop": 212.50557654155674
-    },
     "SUIUSDT:15m": {
       "sentAt": "2026-10-23T06:31:10.501Z",
       "symbol": "SUIUSDT",
@@ -540,6 +468,24 @@
       "score": 14,
       "entry": 0.04156957831621484,
       "stop": 0.0398887263127511
+    },
+    "TAOUSDT:30m": {
+      "sentAt": "2026-10-23T18:10:59.528Z",
+      "symbol": "TAOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 259.88939436329235,
+      "stop": 253.9757545479117
+    },
+    "LTCUSDT:30m": {
+      "sentAt": "2026-10-23T18:11:01.347Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 58.73,
+      "stop": 57.40302312924222
     }
   }
 }
