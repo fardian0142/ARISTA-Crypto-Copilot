@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T07:31:18.155Z",
+  "lastUpdated": "2026-10-23T08:01:09.689Z",
   "signals": {
     "BRETTUSDT:30m": {
       "sentAt": "2026-10-22T22:31:24.329Z",
@@ -243,6 +243,15 @@
       "score": 14,
       "entry": 1.821,
       "stop": 1.7557149391750109
+    },
+    "TSLABUSDT:15m": {
+      "sentAt": "2026-10-23T08:01:08.187Z",
+      "symbol": "TSLABUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 376.30999999999995,
+      "stop": 374.0082143780118
     }
   }
 }
