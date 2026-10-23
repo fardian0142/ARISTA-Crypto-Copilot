@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T09:31:37.867Z",
+  "lastUpdated": "2026-10-23T10:01:14.720Z",
   "signals": {
     "BRETTUSDT:30m": {
       "sentAt": "2026-10-22T22:31:24.329Z",
@@ -351,6 +351,15 @@
       "score": 14,
       "entry": 8.99696,
       "stop": 8.54158981767608
+    },
+    "GRVTUSDT:30m": {
+      "sentAt": "2026-10-23T10:01:13.217Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.237805,
+      "stop": 0.22531848611590355
     }
   }
 }
