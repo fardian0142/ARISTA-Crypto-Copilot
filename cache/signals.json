@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T07:09:43.546Z",
+  "lastUpdated": "2026-10-23T07:31:18.155Z",
   "signals": {
     "BRETTUSDT:30m": {
       "sentAt": "2026-10-22T22:31:24.329Z",
@@ -198,6 +198,51 @@
       "score": 14,
       "entry": 880.4569056508141,
       "stop": 915.583531065614
+    },
+    "WLDUSDT:15m": {
+      "sentAt": "2026-10-23T07:31:09.496Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.5475614646639712,
+      "stop": 0.5325323952573492
+    },
+    "ENAUSDT:15m": {
+      "sentAt": "2026-10-23T07:31:11.286Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2011,
+      "stop": 0.1955057063288389
+    },
+    "CRCLBUSDT:15m": {
+      "sentAt": "2026-10-23T07:31:13.089Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 87,
+      "stop": 85.93600543915821
+    },
+    "INTCBUSDT:15m": {
+      "sentAt": "2026-10-23T07:31:14.846Z",
+      "symbol": "INTCBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 87.67836465772918,
+      "stop": 86.06025244479156
+    },
+    "ZROUSDT:15m": {
+      "sentAt": "2026-10-23T07:31:16.652Z",
+      "symbol": "ZROUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.821,
+      "stop": 1.7557149391750109
     }
   }
 }
