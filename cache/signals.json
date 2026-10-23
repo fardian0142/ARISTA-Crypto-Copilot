@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T13:01:24.756Z",
+  "lastUpdated": "2026-10-23T13:31:31.819Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -459,6 +459,15 @@
       "score": 14,
       "entry": 0.12624915231129538,
       "stop": 0.1239346263478902
+    },
+    "NEARUSDT:15m": {
+      "sentAt": "2026-10-23T13:31:30.317Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.931532036806978,
+      "stop": 4.807485451378729
     }
   }
 }
