@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T11:01:22.666Z",
+  "lastUpdated": "2026-10-23T11:31:24.958Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -369,6 +369,42 @@
       "score": 14,
       "entry": 0.30030587999999997,
       "stop": 0.2590155160500799
+    },
+    "MEWUSDT:15m": {
+      "sentAt": "2026-10-23T11:31:17.861Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0004871238,
+      "stop": 0.0005153933734368493
+    },
+    "TRUTHUSDT:15m": {
+      "sentAt": "2026-10-23T11:31:19.704Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.019852,
+      "stop": 0.020553256927449873
+    },
+    "OFCUSDT:15m": {
+      "sentAt": "2026-10-23T11:31:21.692Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0057376685601278595,
+      "stop": 0.005622653141943864
+    },
+    "GRVTUSDT:15m": {
+      "sentAt": "2026-10-23T11:31:23.456Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.24024012,
+      "stop": 0.2318781428467865
     }
   }
 }
