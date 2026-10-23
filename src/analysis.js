@@ -664,23 +664,28 @@ export async function analyze(symbol, timeframe) {
   }
 
   if (direction === "bullish" && !smcTrendFilter.allowLong) {
-    return fail(
-      "فیلتر روند: ورود Long در روند نزولی مسدود است",
-      "فیلتر روند: " + smcTrendFilter.reason
-    );
+    const rangeSetupActive = result.range_setups && result.range_setups.active;
+    const isRangeScore14 = rangeSetupActive && result.range_setups.active.score === 14;
+
+    if (!isRangeScore14) {
+      return fail(
+        "فیلتر روند: ورود Long در روند نزولی مسدود است",
+        "فیلتر روند: " + smcTrendFilter.reason
+      );
+    }
   }
 
   if (direction === "bearish" && !smcTrendFilter.allowShort) {
-  const rangeSetupActive = result.range_setups && result.range_setups.active;
-  const isScore14 = rangeSetupActive && result.range_setups.active.score === 14;
-  
-  if (!isScore14) {
-    return fail(
-      "فیلتر روند: ورود Short در روند صعودی مسدود است",
-      "فیلتر روند: " + smcTrendFilter.reason
-    );
+    const rangeSetupActive = result.range_setups && result.range_setups.active;
+    const isRangeScore14 = rangeSetupActive && result.range_setups.active.score === 14;
+
+    if (!isRangeScore14) {
+      return fail(
+        "فیلتر روند: ورود Short در روند صعودی مسدود است",
+        "فیلتر روند: " + smcTrendFilter.reason
+      );
+    }
   }
-}
 
   const rsiDivergenceEffect =
     rsiDivergenceScore(
