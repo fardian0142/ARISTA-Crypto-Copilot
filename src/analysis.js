@@ -650,8 +650,52 @@ export async function analyze(symbol, timeframe) {
     );
   }
 
-  result.direction =
-    direction;
+  const confirmedSwingsForDirection =
+    getConfirmedSwings(swings, candles.length - 1) || { highs: [], lows: [] };
+
+  const lastHighs = (confirmedSwingsForDirection.highs || []).slice(-3);
+  const lastLows = (confirmedSwingsForDirection.lows || []).slice(-3);
+
+  let structuralTrend = "neutral";
+
+  if (lastHighs.length >= 2 && lastLows.length >= 2) {
+    const hh = lastHighs[lastHighs.length - 1].price > lastHighs[lastHighs.length - 2].price;
+    const lh = lastHighs[lastHighs.length - 1].price < lastHighs[lastHighs.length - 2].price;
+    const hl = lastLows[lastLows.length - 1].price > lastLows[lastLows.length - 2].price;
+    const ll = lastLows[lastLows.length - 1].price < lastLows[lastLows.length - 2].price;
+
+    if (hh && hl) structuralTrend = "bullish";
+    else if (lh && ll) structuralTrend = "bearish";
+  }
+
+  if (structuralTrend !== "neutral" && structuralTrend !== direction) {
+    return fail(
+      "جهت ستاپ با ساختار اصلی بازار مخالف است",
+      "ساختار اصلی بازار " + structuralTrend + " است ولی سیگنال " + direction + " داده شده."
+    );
+  }
+
+  if (event && event.type === "CHoCH") {
+    const eventAge = candles.length - 1 - event.index;
+    if (eventAge > 20) {
+      return fail(
+        "CHoCH بسیار قدیمی است",
+        "آخرین CHoCH بیش از 20 کندل پیش رخ داده است."
+      );
+    }
+  }
+
+  if (
+    emaTrend &&
+    emaTrend.trend !== "neutral" &&
+    emaTrend.trend !== direction &&
+    emaTrend.distance_atr > 1.0
+  ) {
+    return fail(
+      "EMA خلاف جهت ستاپ است",
+      "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ است."
+    );
+  }
 
   const recentCandles = candles.slice(-20);
   const recentHigh = Math.max(...recentCandles.map((c) => c.high));
@@ -671,6 +715,9 @@ export async function analyze(symbol, timeframe) {
       "روند کوتاه‌مدت نزولی است ولی سیگنال Long داده شده."
     );
   }
+
+  result.direction =
+    direction;
 
   const smcTrendCandles = hasRealHtf ? htfCandles : candles;
   const smcTrendFilter = detectSMCTrendFilter(smcTrendCandles);
