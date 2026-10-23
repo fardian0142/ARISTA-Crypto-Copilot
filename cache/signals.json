@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T22:01:17.447Z",
+  "lastUpdated": "2026-10-23T22:31:06.986Z",
   "signals": {
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-23T10:31:16.161Z",
@@ -324,6 +324,15 @@
       "score": 14,
       "entry": 0.00048510000000000003,
       "stop": 0.0005279756904431792
+    },
+    "PEPEUSDT:15m": {
+      "sentAt": "2026-10-23T22:31:05.483Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000004634060514359396,
+      "stop": 0.000004539074
     }
   }
 }
