@@ -22,6 +22,9 @@ const MESSAGE_DELAY_MS = 1500;
 const TOTAL_TIMEOUT_MS = 55 * 60 * 1000;
 const MAX_RECENT_SIGNALS = 200;
 
+const STICKER_SIGNAL = "CAACAgQAAxkBAAFWjMBq2xYTtgABCdl8LLHHy6gb679_fMoAAlshAAKJQtlStATVByOLQ7c9BA";
+const STICKER_UPDATE = "CAACAgQAAxkBAAFWjMVq2xZDZ25oGXqwmgaGPxZHzvL-AAPuHwACUaTYUjhywde8jk-nPQQ";
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -55,6 +58,40 @@ async function sendTelegramMessage(token, chatId, text) {
       data && data.description
         ? data.description
         : "Telegram API error (HTTP " + response.status + ")";
+
+    throw new Error(description);
+  }
+
+  return data;
+}
+
+async function sendTelegramSticker(token, chatId, stickerFileId) {
+  const url = "https://api.telegram.org/bot" + token + "/sendSticker";
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      sticker: stickerFileId
+    })
+  });
+
+  const responseText = await response.text();
+
+  let data = null;
+
+  try {
+    data = JSON.parse(responseText);
+  } catch {
+    data = null;
+  }
+
+  if (!response.ok || !data || data.ok !== true) {
+    const description =
+      data && data.description
+        ? data.description
+        : "Telegram sticker error (HTTP " + response.status + ")";
 
     throw new Error(description);
   }
@@ -308,6 +345,8 @@ async function main() {
     return { idx, ...result };
   });
 
+  let updateStickerSent = false;
+
   for (const r of trackedResults) {
     if (!r || r.skipped) continue;
     const sig = stats.recentSignals[r.idx];
@@ -318,6 +357,28 @@ async function main() {
     if (typeof r.tp3Reached === "boolean") sig.tp3Reached = r.tp3Reached;
 
     const events = Array.isArray(r.events) ? r.events : [];
+
+    const hasUnnotifiedEvent = events.some((event) => {
+      if (
+        event.type !== "tp1_hit" &&
+        event.type !== "tp2_hit" &&
+        event.type !== "tp3_hit" &&
+        event.type !== "stopped"
+      ) {
+        return false;
+      }
+      return !isNotified(sig, event.type);
+    });
+
+    if (hasUnnotifiedEvent && !updateStickerSent && STICKER_UPDATE) {
+      try {
+        await sendTelegramSticker(token, chatId, STICKER_UPDATE);
+        await sleep(MESSAGE_DELAY_MS);
+        updateStickerSent = true;
+      } catch (e) {
+        console.error("❌ Failed to send UPDATE sticker:", (e && e.message) || e);
+      }
+    }
 
     for (const event of events) {
       if (event.type === "tp1_hit" || event.type === "tp2_hit" || event.type === "tp3_hit" || event.type === "stopped") {
@@ -538,10 +599,22 @@ async function main() {
     console.log("");
   }
 
+  let signalStickerSent = false;
+
   for (const signal of toSend) {
     const { symbol, timeframe, analysis, active, multiTF } = signal;
 
     try {
+      if (!signalStickerSent && STICKER_SIGNAL) {
+        try {
+          await sendTelegramSticker(token, chatId, STICKER_SIGNAL);
+          await sleep(MESSAGE_DELAY_MS);
+          signalStickerSent = true;
+        } catch (e) {
+          console.error("❌ Failed to send SIGNAL sticker:", (e && e.message) || e);
+        }
+      }
+
       const text = formatAnalysis(analysis);
 
       await sendTelegramMessage(token, chatId, text);
