@@ -653,6 +653,25 @@ export async function analyze(symbol, timeframe) {
   result.direction =
     direction;
 
+  const recentCandles = candles.slice(-20);
+  const recentHigh = Math.max(...recentCandles.map((c) => c.high));
+  const recentLow = Math.min(...recentCandles.map((c) => c.low));
+  const recentMid = (recentHigh + recentLow) / 2;
+
+  if (direction === "bearish" && currentPrice > recentMid) {
+    return fail(
+      "سیگنال Short در روند صعودی",
+      "روند کوتاه‌مدت صعودی است ولی سیگنال Short داده شده."
+    );
+  }
+
+  if (direction === "bullish" && currentPrice < recentMid) {
+    return fail(
+      "سیگنال Long در روند نزولی",
+      "روند کوتاه‌مدت نزولی است ولی سیگنال Long داده شده."
+    );
+  }
+
   const smcTrendCandles = hasRealHtf ? htfCandles : candles;
   const smcTrendFilter = detectSMCTrendFilter(smcTrendCandles);
 
@@ -1024,6 +1043,13 @@ export async function analyze(symbol, timeframe) {
     return fail(
       "فاصله ریسک معتبر نیست",
       "فاصله ریسک معتبر نیست."
+    );
+  }
+
+  if (riskDistance / entry < 0.005) {
+    return fail(
+      "حد ضرر بسیار نزدیک است",
+      "فاصله حد ضرر تا ورود کمتر از 0.5% است."
     );
   }
 
