@@ -4818,10 +4818,6 @@ export function detectRangeTradeSetups(
         continue;
       }
 
-      if (distance > atrValue * 4.5) {
-        continue;
-      }
-
       const remainingR =
         direction === "bullish"
           ? (bufferedPrice - currentPrice) / risk
@@ -4867,8 +4863,7 @@ export function detectRangeTradeSetups(
         if (
           Number.isFinite(rr) &&
           rr >= tp1MinRR &&
-          rr <= maxTPRR &&
-          distance <= atrValue * 4.5
+          rr <= maxTPRR
         ) {
           const remainingR =
             direction === "bullish"
