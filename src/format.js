@@ -156,6 +156,14 @@ function fmtPercent(value) {
   return (v * 100).toFixed(2) + "%";
 }
 
+function calcProfitPercent(entry, targetPrice) {
+  if (!Number.isFinite(entry) || !Number.isFinite(targetPrice) || entry <= 0) {
+    return 0;
+  }
+
+  return Math.abs((targetPrice - entry) / entry) * 100;
+}
+
 export function formatAnalysis(r) {
   const lines = [];
 
@@ -811,33 +819,41 @@ export function formatSignalResult(sig, newStatus) {
   const isBullish = sig.direction === "bullish";
 
   if (newStatus === "stopped") {
+    const lossPct = calcProfitPercent(sig.entry, sig.stop);
     return (
       "🛑 <b>حد ضرر فعال شد</b>\n" +
       "━━━━━━━━━━━━━━━━━━━━━━\n" +
       "🔸 ارز: <b>" + escapeHtml(sig.symbol) + "</b>\n" +
       "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
       "📌 جهت: " + (isBullish ? "🟢 خرید (Long)" : "🔴 فروش (Short)") + "\n\n" +
+      "💰 ضرر خالص: <b>-" + lossPct.toFixed(2) + "%</b>\n\n" +
       "💡 مدیریت سرمایه را رعایت کنید. بازار همیشه فرصت‌های جدیدی دارد."
     );
   }
 
   let title = "";
   let hitLevel = "";
+  let hitPrice = null;
 
   if (newStatus === "tp1_hit") {
     title = "🥇 تارگت اول زده شد!";
     hitLevel = "TP1";
+    hitPrice = sig.tp1;
   } else if (newStatus === "tp2_hit") {
     title = "🥈 تارگت دوم زده شد!";
     hitLevel = "TP2";
+    hitPrice = sig.tp2;
   } else if (newStatus === "tp3_hit") {
     title = "🥉 تارگت سوم زده شد!";
     hitLevel = "TP3";
+    hitPrice = sig.tp3;
   }
 
   if (!title) {
     return "";
   }
+
+  const profitPct = calcProfitPercent(sig.entry, hitPrice);
 
   return (
     "✅ <b>" + title + "</b>\n" +
@@ -846,7 +862,7 @@ export function formatSignalResult(sig, newStatus) {
     "⏱ تایم‌فریم: <b>" + escapeHtml(sig.timeframe) + "</b>\n" +
     "📌 جهت: " + (isBullish ? "🟢 خرید" : "🔴 فروش") + "\n\n" +
     "🎯 تارگت زده شده: <b>" + hitLevel + "</b>\n" +
-    "💰 سود تا این لحظه: <b>" + (sig.maxR || 0) + "R</b>\n\n" +
+    "💰 سود خالص: <b>+" + profitPct.toFixed(2) + "%</b>\n\n" +
     "💡 لطفاً حد ضرر خود را مدیریت کنید (حداقل به نقطه ورود)."
   );
 }
@@ -861,16 +877,20 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
 
   if (isStopped) {
     if (!maxR || maxR <= 0) {
+      const lossPct = calcProfitPercent(sig.entry, sig.stop);
       title = "🛑 <b>معامله با ضرر بسته شد</b>";
       reasonText = "❌ <b>حد ضرر فعال شد (بدون تاچ تارگت)</b>";
-      resultText = "💰 ضرر: <b>" + (maxR || 0) + "R</b>";
+      resultText = "💰 ضرر خالص: <b>-" + lossPct.toFixed(2) + "%</b>";
     } else {
       title = "🏁 <b>معامله بسته شد (حد ضرر)</b>";
       const lastTp = maxR >= (sig.rr3 || 0) && sig.tp3 ? "TP3" :
                      maxR >= (sig.rr2 || 0) && sig.tp2 ? "TP2" :
                      maxR >= (sig.rr1 || 0) && sig.tp1 ? "TP1" : "TP1";
       reasonText = "🛑 <b>حد ضرر فعال شد بعد از تاچ " + lastTp + "</b>";
-      resultText = "💰 سود تا این لحظه: <b>" + (totalR || 0) + "R</b>";
+
+      const hitPrice = lastTp === "TP1" ? sig.tp1 : lastTp === "TP2" ? sig.tp2 : sig.tp3;
+      const profitPct = calcProfitPercent(sig.entry, hitPrice);
+      resultText = "💰 سود خالص تا این لحظه: <b>+" + profitPct.toFixed(2) + "%</b>";
     }
   } else {
     const tpLabels = {
@@ -880,7 +900,10 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
     };
     title = "🏁 <b>معامله با موفقیت بسته شد</b>";
     reasonText = "✅ آخرین تارگت زده شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>";
-    resultText = "💰 سود کل: <b>" + (totalR || 0) + "R</b>";
+
+    const hitPrice = lastTpHit === "tp1_hit" ? sig.tp1 : lastTpHit === "tp2_hit" ? sig.tp2 : sig.tp3;
+    const profitPct = calcProfitPercent(sig.entry, hitPrice);
+    resultText = "💰 سود خالص: <b>+" + profitPct.toFixed(2) + "%</b>";
   }
 
   return (
