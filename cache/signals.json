@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T16:01:19.624Z",
+  "lastUpdated": "2026-10-23T17:01:33.559Z",
   "signals": {
-    "BTCUSDT:30m": {
-      "sentAt": "2026-10-23T05:01:12.255Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 81832.87,
-      "stop": 80676.50894286967
-    },
-    "SNDKBUSDT:15m": {
-      "sentAt": "2026-10-23T05:01:14.023Z",
-      "symbol": "SNDKBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1273.6399999999999,
-      "stop": 1247.7903374588898
-    },
-    "ENAUSDT:30m": {
-      "sentAt": "2026-10-23T05:01:15.762Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.20026378735809133,
-      "stop": 0.19255866172791908
-    },
     "OLUSDT:15m": {
       "sentAt": "2026-10-23T05:31:08.281Z",
       "symbol": "OLUSDT",
@@ -576,6 +549,15 @@
       "score": 14,
       "entry": 0.10452517953871257,
       "stop": 0.10123586043776739
+    },
+    "CPUSDT:2h": {
+      "sentAt": "2026-10-23T17:01:32.056Z",
+      "symbol": "CPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009118,
+      "stop": 0.007925397555178487
     }
   }
 }
