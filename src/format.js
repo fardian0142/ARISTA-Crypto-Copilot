@@ -869,41 +869,79 @@ export function formatSignalResult(sig, newStatus) {
 
 export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
   const isBullish = sig.direction === "bullish";
-  const isStopped = lastTpHit === "stopped";
+
+  const isStopped =
+    lastTpHit === "stopped" ||
+    lastTpHit === "stopped_after_tp" ||
+    lastTpHit === "stopped_without_tp";
+
+  const hasHitTp =
+    sig.tp1Reached === true ||
+    sig.tp2Reached === true ||
+    sig.tp3Reached === true;
 
   let title = "🏁 <b>معامله بسته شد</b>";
   let reasonText = "";
   let resultText = "";
 
   if (isStopped) {
-    if (!maxR || maxR <= 0) {
+    if (!hasHitTp) {
       const lossPct = calcProfitPercent(sig.entry, sig.stop);
       title = "🛑 <b>معامله با ضرر بسته شد</b>";
-      reasonText = "❌ <b>حد ضرر فعال شد (بدون تاچ تارگت)</b>";
-      resultText = "💰 ضرر خالص (بدون اهرم): <b>-" + lossPct.toFixed(2) + "%</b>";
+      reasonText = "❌ <b>حد ضرر فعال شد (قبل از رسیدن به هدف)</b>";
+      resultText =
+        "💰 ضرر خالص (بدون اهرم): <b>-" + lossPct.toFixed(2) + "%</b>";
     } else {
-      title = "🏁 <b>معامله بسته شد (حد ضرر)</b>";
-      const lastTp = maxR >= (sig.rr3 || 0) && sig.tp3 ? "TP3" :
-                     maxR >= (sig.rr2 || 0) && sig.tp2 ? "TP2" :
-                     maxR >= (sig.rr1 || 0) && sig.tp1 ? "TP1" : "TP1";
-      reasonText = "🛑 <b>حد ضرر فعال شد بعد از تاچ " + lastTp + "</b>";
+      const lastTp =
+        sig.tp3Reached && sig.rr3 ? "TP3" :
+        sig.tp2Reached && sig.rr2 ? "TP2" :
+        sig.tp1Reached && sig.rr1 ? "TP1" :
+        "TP1";
 
-      const hitPrice = lastTp === "TP1" ? sig.tp1 : lastTp === "TP2" ? sig.tp2 : sig.tp3;
+      const hitPrice =
+        lastTp === "TP1" ? sig.tp1 :
+        lastTp === "TP2" ? sig.tp2 :
+        sig.tp3;
+
       const profitPct = calcProfitPercent(sig.entry, hitPrice);
-      resultText = "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
+
+      const tpCount =
+        (sig.tp1Reached ? 1 : 0) +
+        (sig.tp2Reached ? 1 : 0) +
+        (sig.tp3Reached ? 1 : 0);
+
+      title = "🏁 <b>معامله با سود بسته شد</b>";
+      reasonText =
+        "✅ سود شما تا " + lastTp + " قفل شد (" + tpCount + " هدف زده شد)";
+      resultText =
+        "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
     }
   } else {
     const tpLabels = {
-      "tp1_hit": "TP1 (تارگت اول)",
-      "tp2_hit": "TP2 (تارگت دوم)",
-      "tp3_hit": "TP3 (تارگت سوم)"
+      "tp1_hit": "هدف اول",
+      "tp2_hit": "هدف دوم",
+      "tp3_hit": "هدف سوم"
     };
-    title = "🏁 <b>معامله با موفقیت بسته شد</b>";
-    reasonText = "✅ آخرین تارگت زده شده: <b>" + (tpLabels[lastTpHit] || lastTpHit) + "</b>";
 
-    const hitPrice = lastTpHit === "tp1_hit" ? sig.tp1 : lastTpHit === "tp2_hit" ? sig.tp2 : sig.tp3;
+    const tpCount =
+      (sig.tp1Reached ? 1 : 0) +
+      (sig.tp2Reached ? 1 : 0) +
+      (sig.tp3Reached ? 1 : 0);
+
+    title = "🏁 <b>معامله با موفقیت بسته شد</b>";
+    reasonText =
+      "✅ همه اهداف زده شد (" + tpCount + " هدف) — آخرین: <b>" +
+      (tpLabels[lastTpHit] || lastTpHit) +
+      "</b>";
+
+    const hitPrice =
+      lastTpHit === "tp1_hit" ? sig.tp1 :
+      lastTpHit === "tp2_hit" ? sig.tp2 :
+      sig.tp3;
+
     const profitPct = calcProfitPercent(sig.entry, hitPrice);
-    resultText = "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
+    resultText =
+      "💰 سود خالص (بدون اهرم): <b>+" + profitPct.toFixed(2) + "%</b>";
   }
 
   return (
