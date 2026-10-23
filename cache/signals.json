@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T10:31:17.668Z",
+  "lastUpdated": "2026-10-23T11:01:22.666Z",
   "signals": {
-    "BRETTUSDT:30m": {
-      "sentAt": "2026-10-22T22:31:24.329Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004768,
-      "stop": 0.004641108501181888
-    },
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
       "symbol": "BTCUSDT",
@@ -369,6 +360,15 @@
       "score": 14,
       "entry": 0.006458852,
       "stop": 0.006277887172222566
+    },
+    "GTCUSDT:30m": {
+      "sentAt": "2026-10-23T11:01:21.162Z",
+      "symbol": "GTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.30030587999999997,
+      "stop": 0.2590155160500799
     }
   }
 }
