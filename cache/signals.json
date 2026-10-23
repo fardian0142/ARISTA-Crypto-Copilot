@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T13:31:31.819Z",
+  "lastUpdated": "2026-10-23T14:01:23.712Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -468,6 +468,33 @@
       "score": 14,
       "entry": 4.931532036806978,
       "stop": 4.807485451378729
+    },
+    "ETHUSDT:30m": {
+      "sentAt": "2026-10-23T14:01:18.537Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2409.55,
+      "stop": 2381.9333679119927
+    },
+    "SPACEUSDT:15m": {
+      "sentAt": "2026-10-23T14:01:20.353Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003795961645948759,
+      "stop": 0.0038621311003660067
+    },
+    "SPCXBUSDT:15m": {
+      "sentAt": "2026-10-23T14:01:22.210Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 148.0122741806664,
+      "stop": 145.019470138097
     }
   }
 }
