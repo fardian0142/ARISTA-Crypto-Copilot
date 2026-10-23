@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T05:01:17.265Z",
+  "lastUpdated": "2026-10-23T05:31:11.575Z",
   "signals": {
     "ENAUSDT:2h": {
       "sentAt": "2026-10-22T18:04:35.721Z",
@@ -450,6 +450,24 @@
       "score": 14,
       "entry": 0.20026378735809133,
       "stop": 0.19255866172791908
+    },
+    "OLUSDT:15m": {
+      "sentAt": "2026-10-23T05:31:08.281Z",
+      "symbol": "OLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006475,
+      "stop": 0.0063426189556222
+    },
+    "TSLABUSDT:30m": {
+      "sentAt": "2026-10-23T05:31:10.073Z",
+      "symbol": "TSLABUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 376.1431837233117,
+      "stop": 369.7272591192017
     }
   }
 }
