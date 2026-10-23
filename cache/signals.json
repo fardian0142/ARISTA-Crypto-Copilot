@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T12:01:23.432Z",
+  "lastUpdated": "2026-10-23T12:31:17.245Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -423,6 +423,15 @@
       "score": 14,
       "entry": 0.2471,
       "stop": 0.254995502967582
+    },
+    "BMTUSDT:2h": {
+      "sentAt": "2026-10-23T12:31:15.742Z",
+      "symbol": "BMTUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02595,
+      "stop": 0.032279032508121
     }
   }
 }
