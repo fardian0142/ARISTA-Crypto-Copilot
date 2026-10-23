@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T11:31:24.958Z",
+  "lastUpdated": "2026-10-23T12:01:23.432Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-10-23T05:01:12.255Z",
@@ -405,6 +405,24 @@
       "score": 14,
       "entry": 0.24024012,
       "stop": 0.2318781428467865
+    },
+    "WLDUSDT:1h": {
+      "sentAt": "2026-10-23T12:01:20.153Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.5421499999999999,
+      "stop": 0.5781435171360751
+    },
+    "CNPYUSDT:15m": {
+      "sentAt": "2026-10-23T12:01:21.929Z",
+      "symbol": "CNPYUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2471,
+      "stop": 0.254995502967582
     }
   }
 }
