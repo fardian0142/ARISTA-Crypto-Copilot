@@ -2896,9 +2896,9 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     maxLevels
   );
 
-  const effectiveMinRR = Number.isFinite(minRR) ? minRR : (Number.isFinite(CONFIG.MIN_RR) ? CONFIG.MIN_RR : 1.6);
+  const effectiveMinRR = 0.3;
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 1.0;
+  const tp1MinRR = 0.3;
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
@@ -3212,14 +3212,7 @@ export function detectRangeTradeSetups(
       ? CONFIG.MIN_RANGE_SETUP_SCORE
       : 8;
 
-  const minRR =
-    Number.isFinite(profile.minRR) &&
-    profile.minRR > 0
-      ? profile.minRR
-      : Number.isFinite(CONFIG.MIN_RR) &&
-          CONFIG.MIN_RR > 0
-        ? CONFIG.MIN_RR
-        : 1.6;
+  const minRR = 0.3;
 
   const maxTPRR =
     Number.isFinite(CONFIG.MAX_TP_RR) &&
@@ -3261,10 +3254,7 @@ export function detectRangeTradeSetups(
         )
       : 5;
 
-  const tp1MinRR =
-    Number.isFinite(CONFIG.TP1_MIN_RR)
-      ? Math.min(CONFIG.TP1_MIN_RR, 0.5)
-      : 0.5;
+  const tp1MinRR = 0.3;
 
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
@@ -5352,7 +5342,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 <= entry ||
-      targets.rr1 < tp1MinRR ||
+      targets.rr1 < 0.3 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5581,7 +5571,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 >= entry ||
-      targets.rr1 < tp1MinRR ||
+      targets.rr1 < 0.3 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
