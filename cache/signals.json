@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T00:01:10.707Z",
+  "lastUpdated": "2026-10-23T00:31:09.223Z",
   "signals": {
-    "NXPCUSDT:2h": {
-      "sentAt": "2026-10-22T12:28:02.861Z",
-      "symbol": "NXPCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1723,
-      "stop": 0.16022281776725794
-    },
     "ENAUSDT:2h": {
       "sentAt": "2026-10-22T18:04:35.721Z",
       "symbol": "ENAUSDT",
