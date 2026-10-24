@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T08:31:17.961Z",
+  "lastUpdated": "2026-10-24T09:01:07.863Z",
   "signals": {
-    "TRIAUSDT:2h": {
-      "sentAt": "2026-10-23T20:31:19.863Z",
-      "symbol": "TRIAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0025315,
-      "stop": 0.0022414618137094095
-    },
-    "ENAUSDT:30m": {
-      "sentAt": "2026-10-23T20:31:21.604Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2074212,
-      "stop": 0.19514000051639202
-    },
-    "ZETAUSDT:30m": {
-      "sentAt": "2026-10-23T20:31:23.551Z",
-      "symbol": "ZETAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.04153,
-      "stop": 0.03998432376506602
-    },
-    "POPCATUSDT:2h": {
-      "sentAt": "2026-10-23T20:31:25.364Z",
-      "symbol": "POPCATUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.04611672371349908,
-      "stop": 0.04878340204643515
-    },
     "MEWUSDT:1h": {
       "sentAt": "2026-10-23T21:31:20.654Z",
       "symbol": "MEWUSDT",
