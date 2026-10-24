@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T20:01:17.092Z",
+  "lastUpdated": "2026-10-24T20:31:20.681Z",
   "signals": {
-    "CCUSDT:30m": {
-      "sentAt": "2026-10-24T08:31:14.702Z",
-      "symbol": "CCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10361334158737989,
-      "stop": 0.1005161315187151
-    },
-    "EDGEUSDT:2h": {
-      "sentAt": "2026-10-24T08:31:16.459Z",
-      "symbol": "EDGEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.31576188674917555,
-      "stop": 0.27874366607731743
-    },
     "COREUSDT:1h": {
       "sentAt": "2026-10-24T09:31:19.929Z",
       "symbol": "COREUSDT",
@@ -351,6 +333,15 @@
       "score": 14,
       "entry": 0.07654766,
       "stop": 0.06784116963936915
+    },
+    "USELESSUSDT:30m": {
+      "sentAt": "2026-10-24T20:31:19.179Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.161965,
+      "stop": 0.17540895938548165
     }
   }
 }
