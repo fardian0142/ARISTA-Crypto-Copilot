@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T18:31:09.337Z",
+  "lastUpdated": "2026-10-24T19:01:19.935Z",
   "signals": {
-    "AZTECUSDT:30m": {
-      "sentAt": "2026-10-24T07:01:01.503Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01658,
-      "stop": 0.016157726088730836
-    },
-    "TRUSTUSDT:15m": {
-      "sentAt": "2026-10-24T07:01:03.223Z",
-      "symbol": "TRUSTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.05409,
-      "stop": 0.05677990235762367
-    },
     "CCUSDT:30m": {
       "sentAt": "2026-10-24T08:31:14.702Z",
       "symbol": "CCUSDT",
@@ -324,6 +306,24 @@
       "score": 14,
       "entry": 0.050254999999999994,
       "stop": 0.054841448246184844
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-10-24T19:01:16.580Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0058945,
+      "stop": 0.005434300207356819
+    },
+    "SPACEUSDT:15m": {
+      "sentAt": "2026-10-24T19:01:18.432Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.003672,
+      "stop": 0.0035966009956295724
     }
   }
 }
