@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T09:31:23.269Z",
+  "lastUpdated": "2026-10-24T09:37:20.270Z",
   "signals": {
     "PEPEUSDT:15m": {
       "sentAt": "2026-10-23T22:31:05.483Z",
@@ -243,6 +243,15 @@
       "score": 14,
       "entry": 0.30361452738862404,
       "stop": 0.2916390900812567
+    },
+    "SOONUSDT:2h": {
+      "sentAt": "2026-10-24T09:37:18.767Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.303,
+      "stop": 0.27758202663117015
     }
   }
 }
