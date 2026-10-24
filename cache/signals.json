@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T07:31:09.688Z",
+  "lastUpdated": "2026-10-24T08:01:17.689Z",
   "signals": {
-    "MSTRBUSDT:30m": {
-      "sentAt": "2026-10-23T19:31:37.638Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 147.3318327993913,
-      "stop": 141.56548000434796
-    },
-    "UPUSDT:2h": {
-      "sentAt": "2026-10-23T20:01:17.039Z",
-      "symbol": "UPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.13945000000000002,
-      "stop": 0.12382182861883057
-    },
     "TRIAUSDT:2h": {
       "sentAt": "2026-10-23T20:31:19.863Z",
       "symbol": "TRIAUSDT",
