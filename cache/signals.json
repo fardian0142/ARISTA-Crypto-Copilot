@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T00:31:06.937Z",
+  "lastUpdated": "2026-10-24T01:01:06.688Z",
   "signals": {
-    "BMTUSDT:2h": {
-      "sentAt": "2026-10-23T12:31:15.742Z",
-      "symbol": "BMTUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02595,
-      "stop": 0.032279032508121
-    },
     "CCUSDT:15m": {
       "sentAt": "2026-10-23T13:01:19.584Z",
       "symbol": "CCUSDT",
