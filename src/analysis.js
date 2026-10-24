@@ -521,10 +521,7 @@ export async function analyze(symbol, timeframe) {
     const rangeSetupActive =
       result.range_setups && result.range_setups.active;
 
-    const isRangeScore14 =
-      rangeSetupActive &&
-      Number.isFinite(rangeSetupActive.score) &&
-      rangeSetupActive.score === 14;
+    const isRangeScore14 = false;
 
     const allowDir =
       direction === "bullish"
