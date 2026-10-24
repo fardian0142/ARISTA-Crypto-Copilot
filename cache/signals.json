@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T06:31:06.766Z",
+  "lastUpdated": "2026-10-24T07:01:04.724Z",
   "signals": {
     "MSTRBUSDT:30m": {
       "sentAt": "2026-10-23T19:31:37.638Z",
@@ -252,6 +252,24 @@
       "score": 14,
       "entry": 884.5550000000001,
       "stop": 890.4593859986937
+    },
+    "AZTECUSDT:30m": {
+      "sentAt": "2026-10-24T07:01:01.503Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01658,
+      "stop": 0.016157726088730836
+    },
+    "TRUSTUSDT:15m": {
+      "sentAt": "2026-10-24T07:01:03.223Z",
+      "symbol": "TRUSTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.05409,
+      "stop": 0.05677990235762367
     }
   }
 }
