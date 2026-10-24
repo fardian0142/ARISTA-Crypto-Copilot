@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T05:01:19.737Z",
+  "lastUpdated": "2026-10-24T05:31:24.847Z",
   "signals": {
-    "CPUSDT:2h": {
-      "sentAt": "2026-10-23T17:01:32.056Z",
-      "symbol": "CPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.009118,
-      "stop": 0.007925397555178487
-    },
-    "ZETAUSDT:1h": {
-      "sentAt": "2026-10-23T17:31:16.935Z",
-      "symbol": "ZETAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.04156957831621484,
-      "stop": 0.0398887263127511
-    },
     "TAOUSDT:30m": {
       "sentAt": "2026-10-23T18:10:59.528Z",
       "symbol": "TAOUSDT",
@@ -270,6 +252,24 @@
       "score": 14,
       "entry": 0.016694649994179758,
       "stop": 0.016322500041573165
+    },
+    "IRYSUSDT:30m": {
+      "sentAt": "2026-10-24T05:31:21.596Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09061294452676165,
+      "stop": 0.04344324
+    },
+    "MUBUSDT:15m": {
+      "sentAt": "2026-10-24T05:31:23.345Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 884.5550000000001,
+      "stop": 890.4593859986937
     }
   }
 }
