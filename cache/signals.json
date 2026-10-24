@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T00:01:18.733Z",
+  "lastUpdated": "2026-10-24T00:31:06.937Z",
   "signals": {
-    "WLDUSDT:1h": {
-      "sentAt": "2026-10-23T12:01:20.153Z",
-      "symbol": "WLDUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.5421499999999999,
-      "stop": 0.5781435171360751
-    },
-    "CNPYUSDT:15m": {
-      "sentAt": "2026-10-23T12:01:21.929Z",
-      "symbol": "CNPYUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.2471,
-      "stop": 0.254995502967582
-    },
     "BMTUSDT:2h": {
       "sentAt": "2026-10-23T12:31:15.742Z",
       "symbol": "BMTUSDT",
