@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T13:31:27.448Z",
+  "lastUpdated": "2026-10-24T14:01:24.971Z",
   "signals": {
-    "BRETTUSDT:1h": {
-      "sentAt": "2026-10-24T02:01:15.630Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0048345,
-      "stop": 0.0052011599659814965
-    },
-    "CCUSDT:15m": {
-      "sentAt": "2026-10-24T02:01:17.464Z",
-      "symbol": "CCUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.10264856,
-      "stop": 0.10495442207192121
-    },
     "EDGEUSDT:15m": {
       "sentAt": "2026-10-24T02:31:11.941Z",
       "symbol": "EDGEUSDT",
@@ -315,6 +297,33 @@
       "score": 14,
       "entry": 0.006896636581818971,
       "stop": 0.0058214529870073495
+    },
+    "ZORAUSDT:2h": {
+      "sentAt": "2026-10-24T14:01:19.988Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006885649661519096,
+      "stop": 0.005849930989149315
+    },
+    "SOXLBUSDT:15m": {
+      "sentAt": "2026-10-24T14:01:21.719Z",
+      "symbol": "SOXLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 83.58500000000001,
+      "stop": 82.72531609751837
+    },
+    "EDGEUSDT:30m": {
+      "sentAt": "2026-10-24T14:01:23.468Z",
+      "symbol": "EDGEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.32109187476047435,
+      "stop": 0.30634375171089756
     }
   }
 }
