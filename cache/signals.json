@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T11:31:19.070Z",
+  "lastUpdated": "2026-10-24T12:01:13.890Z",
   "signals": {
-    "TQQQBUSDT:15m": {
-      "sentAt": "2026-10-23T23:31:19.819Z",
-      "symbol": "TQQQBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 66.4469473294072,
-      "stop": 66.076718
-    },
-    "BNBUSDT:1h": {
-      "sentAt": "2026-10-24T00:01:13.704Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 738.7728441570997,
-      "stop": 752.5396845921446
-    },
     "BCHUSDT:1h": {
       "sentAt": "2026-10-24T00:01:15.450Z",
       "symbol": "BCHUSDT",
@@ -288,6 +270,15 @@
       "score": 14,
       "entry": 0.0461,
       "stop": 0.03267874109994172
+    },
+    "AEONUSDT:1h": {
+      "sentAt": "2026-10-24T12:01:12.387Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03271086,
+      "stop": 0.028805887088420495
     }
   }
 }
