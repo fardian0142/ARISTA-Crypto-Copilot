@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T12:31:08.412Z",
+  "lastUpdated": "2026-10-24T13:01:28.076Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-24T02:01:15.630Z",
@@ -270,6 +270,42 @@
       "score": 14,
       "entry": 0.186,
       "stop": 0.14317275854324568
+    },
+    "AKEUSDT:15m": {
+      "sentAt": "2026-10-24T13:01:21.130Z",
+      "symbol": "AKEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03036,
+      "stop": 0.027070534863540954
+    },
+    "FLOCKUSDT:15m": {
+      "sentAt": "2026-10-24T13:01:22.982Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04313,
+      "stop": 0.0424323277222968
+    },
+    "ACUUSDT:30m": {
+      "sentAt": "2026-10-24T13:01:24.801Z",
+      "symbol": "ACUUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.11400055007989403,
+      "stop": 0.1252560708578998
+    },
+    "KATUSDT:30m": {
+      "sentAt": "2026-10-24T13:01:26.574Z",
+      "symbol": "KATUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004602456898572377,
+      "stop": 0.0035667364387687397
     }
   }
 }
