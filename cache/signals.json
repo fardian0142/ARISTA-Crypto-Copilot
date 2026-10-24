@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T11:01:17.149Z",
+  "lastUpdated": "2026-10-24T11:31:19.070Z",
   "signals": {
-    "IRYSUSDT:15m": {
-      "sentAt": "2026-10-23T23:01:45.398Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.086473315142005,
-      "stop": 0.044504478
-    },
-    "BRETTUSDT:30m": {
-      "sentAt": "2026-10-23T23:01:47.177Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004760693999999999,
-      "stop": 0.0045196307183941395
-    },
-    "BCHUSDT:30m": {
-      "sentAt": "2026-10-23T23:01:48.960Z",
-      "symbol": "BCHUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 277,
-      "stop": 268.99836653275446
-    },
-    "SPACEUSDT:1h": {
-      "sentAt": "2026-10-23T23:31:16.295Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0036974036118692594,
-      "stop": 0.003859259915219575
-    },
-    "MERLUSDT:2h": {
-      "sentAt": "2026-10-23T23:31:18.065Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026779999999999998,
-      "stop": 0.024672386111039703
-    },
     "TQQQBUSDT:15m": {
       "sentAt": "2026-10-23T23:31:19.819Z",
       "symbol": "TQQQBUSDT",
@@ -306,6 +261,33 @@
       "score": 14,
       "entry": 0.040385000000000004,
       "stop": 0.039627061441746145
+    },
+    "BLENDUSDT:2h": {
+      "sentAt": "2026-10-24T11:31:13.966Z",
+      "symbol": "BLENDUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06017815367865126,
+      "stop": 0.04552890229534815
+    },
+    "AEONUSDT:30m": {
+      "sentAt": "2026-10-24T11:31:15.737Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03230387620406438,
+      "stop": 0.029916598542397334
+    },
+    "TREEUSDT:2h": {
+      "sentAt": "2026-10-24T11:31:17.567Z",
+      "symbol": "TREEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0461,
+      "stop": 0.03267874109994172
     }
   }
 }
