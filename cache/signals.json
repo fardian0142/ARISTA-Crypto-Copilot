@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T09:37:20.270Z",
+  "lastUpdated": "2026-10-24T10:01:14.376Z",
   "signals": {
     "PEPEUSDT:15m": {
       "sentAt": "2026-10-23T22:31:05.483Z",
@@ -252,6 +252,42 @@
       "score": 14,
       "entry": 0.303,
       "stop": 0.27758202663117015
+    },
+    "CPUSDT:1h": {
+      "sentAt": "2026-10-24T10:01:08.732Z",
+      "symbol": "CPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009428029489697103,
+      "stop": 0.007810932216449267
+    },
+    "CPUSDT:2h": {
+      "sentAt": "2026-10-24T10:01:08.732Z",
+      "symbol": "CPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009348,
+      "stop": 0.007631677153163922
+    },
+    "ATHUSDT:2h": {
+      "sentAt": "2026-10-24T10:01:11.021Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005860778534638295,
+      "stop": 0.005328724752583607
+    },
+    "ERAUSDT:30m": {
+      "sentAt": "2026-10-24T10:01:12.874Z",
+      "symbol": "ERAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08108523859452285,
+      "stop": 0.06527312532874893
     }
   }
 }
