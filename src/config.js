@@ -21,7 +21,7 @@ export const TIMEFRAME_PROFILES = {
     minRR: 0.3
   },
   "2h": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 12,
     momentumPenalty: 6,
     minStrength: 72,
