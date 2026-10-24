@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T17:31:10.258Z",
+  "lastUpdated": "2026-10-24T18:01:13.913Z",
   "signals": {
-    "IRYSUSDT:30m": {
-      "sentAt": "2026-10-24T05:31:21.596Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09061294452676165,
-      "stop": 0.04344324
-    },
-    "MUBUSDT:15m": {
-      "sentAt": "2026-10-24T05:31:23.345Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 884.5550000000001,
-      "stop": 890.4593859986937
-    },
     "AZTECUSDT:30m": {
       "sentAt": "2026-10-24T07:01:01.503Z",
       "symbol": "AZTECUSDT",
