@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T10:01:14.376Z",
+  "lastUpdated": "2026-10-24T10:31:15.263Z",
   "signals": {
-    "PEPEUSDT:15m": {
-      "sentAt": "2026-10-23T22:31:05.483Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.000004634060514359396,
-      "stop": 0.000004539074
-    },
     "IRYSUSDT:15m": {
       "sentAt": "2026-10-23T23:01:45.398Z",
       "symbol": "IRYSUSDT",
