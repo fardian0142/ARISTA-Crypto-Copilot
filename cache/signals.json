@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T19:01:19.935Z",
+  "lastUpdated": "2026-10-24T19:31:12.225Z",
   "signals": {
     "CCUSDT:30m": {
       "sentAt": "2026-10-24T08:31:14.702Z",
@@ -324,6 +324,24 @@
       "score": 14,
       "entry": 0.003672,
       "stop": 0.0035966009956295724
+    },
+    "ZECUSDT:1h": {
+      "sentAt": "2026-10-24T19:31:08.947Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1178.28,
+      "stop": 1102.3828908796074
+    },
+    "CASHCATUSDT:1h": {
+      "sentAt": "2026-10-24T19:31:10.723Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.093875,
+      "stop": 0.08828302112345213
     }
   }
 }
