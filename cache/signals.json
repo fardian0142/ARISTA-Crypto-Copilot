@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T23:00:57.144Z",
+  "lastUpdated": "2026-10-24T23:31:13.994Z",
   "signals": {
-    "PIPPINUSDT:15m": {
-      "sentAt": "2026-10-24T11:01:12.016Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.015772813342660036,
-      "stop": 0.015576846
-    },
-    "ERAUSDT:1h": {
-      "sentAt": "2026-10-24T11:01:13.862Z",
-      "symbol": "ERAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08335000000000001,
-      "stop": 0.06124038750974045
-    },
-    "ZETAUSDT:15m": {
-      "sentAt": "2026-10-24T11:01:15.645Z",
-      "symbol": "ZETAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.040385000000000004,
-      "stop": 0.039627061441746145
-    },
-    "BLENDUSDT:2h": {
-      "sentAt": "2026-10-24T11:31:13.966Z",
-      "symbol": "BLENDUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06017815367865126,
-      "stop": 0.04552890229534815
-    },
     "AEONUSDT:30m": {
       "sentAt": "2026-10-24T11:31:15.737Z",
       "symbol": "AEONUSDT",
@@ -342,6 +306,33 @@
       "score": 14,
       "entry": 0.01663840278554054,
       "stop": 0.01635712296042471
+    },
+    "OFCUSDT:2h": {
+      "sentAt": "2026-10-24T23:31:08.977Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005830519504400259,
+      "stop": 0.004627003539998157
+    },
+    "ERAUSDT:1h": {
+      "sentAt": "2026-10-24T23:31:10.711Z",
+      "symbol": "ERAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07963708372982935,
+      "stop": 0.06359225907264751
+    },
+    "GRASSUSDT:1h": {
+      "sentAt": "2026-10-24T23:31:12.487Z",
+      "symbol": "GRASSUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.6576479347483591,
+      "stop": 0.7113576089402915
     }
   }
 }
