@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T13:01:28.076Z",
+  "lastUpdated": "2026-10-24T13:31:27.448Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-24T02:01:15.630Z",
@@ -306,6 +306,15 @@
       "score": 14,
       "entry": 0.004602456898572377,
       "stop": 0.0035667364387687397
+    },
+    "ZORAUSDT:1h": {
+      "sentAt": "2026-10-24T13:31:25.944Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006896636581818971,
+      "stop": 0.0058214529870073495
     }
   }
 }
