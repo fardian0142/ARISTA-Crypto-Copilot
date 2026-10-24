@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T19:31:12.225Z",
+  "lastUpdated": "2026-10-24T20:01:17.092Z",
   "signals": {
     "CCUSDT:30m": {
       "sentAt": "2026-10-24T08:31:14.702Z",
@@ -342,6 +342,15 @@
       "score": 14,
       "entry": 0.093875,
       "stop": 0.08828302112345213
+    },
+    "CAPUSDT:2h": {
+      "sentAt": "2026-10-24T20:01:15.590Z",
+      "symbol": "CAPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07654766,
+      "stop": 0.06784116963936915
     }
   }
 }
