@@ -1,78 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T02:31:13.443Z",
+  "lastUpdated": "2026-10-24T03:01:18.195Z",
   "signals": {
-    "PEPEUSDT:30m": {
-      "sentAt": "2026-10-23T14:31:45.060Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.000004946856225362155,
-      "stop": 0.000005276741247413179
-    },
-    "PONSUSDT:15m": {
-      "sentAt": "2026-10-23T14:31:46.780Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.25780000000000003,
-      "stop": 0.24692568477530194
-    },
-    "BRETTUSDT:2h": {
-      "sentAt": "2026-10-23T14:31:48.523Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0049505,
-      "stop": 0.004608757872492021
-    },
-    "DOTUSDT:30m": {
-      "sentAt": "2026-10-23T14:31:50.237Z",
-      "symbol": "DOTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.1244479336209279,
-      "stop": 1.075086188421944
-    },
-    "DOTUSDT:2h": {
-      "sentAt": "2026-10-23T14:31:50.238Z",
-      "symbol": "DOTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.1405,
-      "stop": 1.0400224416476422
-    },
-    "GRASSUSDT:30m": {
-      "sentAt": "2026-10-23T14:31:51.966Z",
-      "symbol": "GRASSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.656853586052642,
-      "stop": 0.6229743853382708
-    },
-    "TQQQBUSDT:30m": {
-      "sentAt": "2026-10-23T14:31:53.719Z",
-      "symbol": "TQQQBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 66.68,
-      "stop": 64.62825091892935
-    },
-    "XDPUSDT:30m": {
-      "sentAt": "2026-10-23T15:01:11.381Z",
-      "symbol": "XDPUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.017745,
-      "stop": 0.017109077917616206
-    },
     "CCUSDT:30m": {
       "sentAt": "2026-10-23T16:01:18.122Z",
       "symbol": "CCUSDT",
@@ -297,6 +225,15 @@
       "score": 14,
       "entry": 0.3313175919116108,
       "stop": 0.3460600577742085
+    },
+    "CAPUSDT:2h": {
+      "sentAt": "2026-10-24T03:01:16.691Z",
+      "symbol": "CAPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07117296,
+      "stop": 0.06273682940155716
     }
   }
 }
