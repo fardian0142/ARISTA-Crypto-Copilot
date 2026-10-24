@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T15:31:32.681Z",
+  "lastUpdated": "2026-10-24T16:01:13.719Z",
   "signals": {
-    "COREUSDT:15m": {
-      "sentAt": "2026-10-24T04:01:05.735Z",
-      "symbol": "COREUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.01809,
-      "stop": 0.018969613517341066
-    },
     "APRUSDT:1h": {
       "sentAt": "2026-10-24T04:31:02.944Z",
       "symbol": "APRUSDT",
@@ -324,6 +315,15 @@
       "score": 14,
       "entry": 0.05178,
       "stop": 0.050329746
+    },
+    "AIUSDT:1h": {
+      "sentAt": "2026-10-24T16:01:12.217Z",
+      "symbol": "AIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.019201595664266748,
+      "stop": 0.01807431668380894
     }
   }
 }
