@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T16:01:13.719Z",
+  "lastUpdated": "2026-10-24T16:31:20.694Z",
   "signals": {
-    "APRUSDT:1h": {
-      "sentAt": "2026-10-24T04:31:02.944Z",
-      "symbol": "APRUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02624,
-      "stop": 0.022150522242241764
-    },
-    "AZTECUSDT:15m": {
-      "sentAt": "2026-10-24T04:31:04.691Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016694649994179758,
-      "stop": 0.016322500041573165
-    },
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-24T05:31:21.596Z",
       "symbol": "IRYSUSDT",
@@ -324,6 +306,24 @@
       "score": 14,
       "entry": 0.019201595664266748,
       "stop": 0.01807431668380894
+    },
+    "MEWUSDT:2h": {
+      "sentAt": "2026-10-24T16:31:17.467Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004578651391794133,
+      "stop": 0.00042980914
+    },
+    "PEPEUSDT:2h": {
+      "sentAt": "2026-10-24T16:31:19.192Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000004272207884870043,
+      "stop": 0.000003848515108071123
     }
   }
 }
