@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T02:01:18.966Z",
+  "lastUpdated": "2026-10-24T02:31:13.443Z",
   "signals": {
-    "SPACEUSDT:15m": {
-      "sentAt": "2026-10-23T14:01:20.353Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.003795961645948759,
-      "stop": 0.0038621311003660067
-    },
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-10-23T14:01:22.210Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 148.0122741806664,
-      "stop": 145.019470138097
-    },
     "PEPEUSDT:30m": {
       "sentAt": "2026-10-23T14:31:45.060Z",
       "symbol": "PEPEUSDT",
@@ -306,6 +288,15 @@
       "score": 14,
       "entry": 0.10264856,
       "stop": 0.10495442207192121
+    },
+    "EDGEUSDT:15m": {
+      "sentAt": "2026-10-24T02:31:11.941Z",
+      "symbol": "EDGEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.3313175919116108,
+      "stop": 0.3460600577742085
     }
   }
 }
