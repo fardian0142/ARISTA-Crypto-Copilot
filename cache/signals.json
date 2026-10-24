@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T16:31:20.694Z",
+  "lastUpdated": "2026-10-24T17:01:18.033Z",
   "signals": {
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-24T05:31:21.596Z",
@@ -324,6 +324,15 @@
       "score": 14,
       "entry": 0.000004272207884870043,
       "stop": 0.000003848515108071123
+    },
+    "BASEDUSDT:1h": {
+      "sentAt": "2026-10-24T17:01:16.530Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05175075759982387,
+      "stop": 0.048660302858400895
     }
   }
 }
