@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T04:01:07.237Z",
+  "lastUpdated": "2026-10-24T04:31:06.193Z",
   "signals": {
-    "CCUSDT:30m": {
-      "sentAt": "2026-10-23T16:01:18.122Z",
-      "symbol": "CCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10452517953871257,
-      "stop": 0.10123586043776739
-    },
     "CPUSDT:2h": {
       "sentAt": "2026-10-23T17:01:32.056Z",
       "symbol": "CPUSDT",
@@ -261,6 +252,24 @@
       "score": 14,
       "entry": 0.01809,
       "stop": 0.018969613517341066
+    },
+    "APRUSDT:1h": {
+      "sentAt": "2026-10-24T04:31:02.944Z",
+      "symbol": "APRUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02624,
+      "stop": 0.022150522242241764
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-10-24T04:31:04.691Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.016694649994179758,
+      "stop": 0.016322500041573165
     }
   }
 }
