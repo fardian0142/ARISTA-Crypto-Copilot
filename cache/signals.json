@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T14:01:24.971Z",
+  "lastUpdated": "2026-10-24T14:31:53.562Z",
   "signals": {
-    "EDGEUSDT:15m": {
-      "sentAt": "2026-10-24T02:31:11.941Z",
-      "symbol": "EDGEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.3313175919116108,
-      "stop": 0.3460600577742085
-    },
     "CAPUSDT:2h": {
       "sentAt": "2026-10-24T03:01:16.691Z",
       "symbol": "CAPUSDT",
@@ -324,6 +315,15 @@
       "score": 14,
       "entry": 0.32109187476047435,
       "stop": 0.30634375171089756
+    },
+    "TRUSTUSDT:30m": {
+      "sentAt": "2026-10-24T14:31:52.060Z",
+      "symbol": "TRUSTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05298979059555198,
+      "stop": 0.04960957
     }
   }
 }
