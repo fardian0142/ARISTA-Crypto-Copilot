@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T12:01:13.890Z",
+  "lastUpdated": "2026-10-24T12:31:08.412Z",
   "signals": {
-    "BCHUSDT:1h": {
-      "sentAt": "2026-10-24T00:01:15.450Z",
-      "symbol": "BCHUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 281.60083147999165,
-      "stop": 293.55120371434515
-    },
-    "SKHYBUSDT:15m": {
-      "sentAt": "2026-10-24T00:01:17.230Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 136.93227226327323,
-      "stop": 138.60519811947702
-    },
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-24T02:01:15.630Z",
       "symbol": "BRETTUSDT",
@@ -279,6 +261,15 @@
       "score": 14,
       "entry": 0.03271086,
       "stop": 0.028805887088420495
+    },
+    "ARKUSDT:1h": {
+      "sentAt": "2026-10-24T12:31:06.909Z",
+      "symbol": "ARKUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.186,
+      "stop": 0.14317275854324568
     }
   }
 }
