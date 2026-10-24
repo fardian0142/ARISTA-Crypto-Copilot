@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T06:01:10.903Z",
+  "lastUpdated": "2026-10-24T06:31:06.766Z",
   "signals": {
-    "TAOUSDT:30m": {
-      "sentAt": "2026-10-23T18:10:59.528Z",
-      "symbol": "TAOUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 259.88939436329235,
-      "stop": 253.9757545479117
-    },
-    "LTCUSDT:30m": {
-      "sentAt": "2026-10-23T18:11:01.347Z",
-      "symbol": "LTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 58.73,
-      "stop": 57.40302312924222
-    },
     "MSTRBUSDT:30m": {
       "sentAt": "2026-10-23T19:31:37.638Z",
       "symbol": "MSTRBUSDT",
