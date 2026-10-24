@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T23:31:21.321Z",
+  "lastUpdated": "2026-10-24T00:01:18.733Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-10-23T11:31:21.692Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0057376685601278595,
-      "stop": 0.005622653141943864
-    },
-    "GRVTUSDT:15m": {
-      "sentAt": "2026-10-23T11:31:23.456Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.24024012,
-      "stop": 0.2318781428467865
-    },
     "WLDUSDT:1h": {
       "sentAt": "2026-10-23T12:01:20.153Z",
       "symbol": "WLDUSDT",
@@ -351,6 +333,33 @@
       "score": 14,
       "entry": 66.4469473294072,
       "stop": 66.076718
+    },
+    "BNBUSDT:1h": {
+      "sentAt": "2026-10-24T00:01:13.704Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 738.7728441570997,
+      "stop": 752.5396845921446
+    },
+    "BCHUSDT:1h": {
+      "sentAt": "2026-10-24T00:01:15.450Z",
+      "symbol": "BCHUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 281.60083147999165,
+      "stop": 293.55120371434515
+    },
+    "SKHYBUSDT:15m": {
+      "sentAt": "2026-10-24T00:01:17.230Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 136.93227226327323,
+      "stop": 138.60519811947702
     }
   }
 }
