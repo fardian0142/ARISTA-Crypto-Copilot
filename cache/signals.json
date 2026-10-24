@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T17:01:18.033Z",
+  "lastUpdated": "2026-10-24T17:31:10.258Z",
   "signals": {
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-24T05:31:21.596Z",
@@ -333,6 +333,15 @@
       "score": 14,
       "entry": 0.05175075759982387,
       "stop": 0.048660302858400895
+    },
+    "SLXUSDT:1h": {
+      "sentAt": "2026-10-24T17:31:08.755Z",
+      "symbol": "SLXUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.050254999999999994,
+      "stop": 0.054841448246184844
     }
   }
 }
