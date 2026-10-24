@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T03:01:18.195Z",
+  "lastUpdated": "2026-10-24T03:31:25.387Z",
   "signals": {
     "CCUSDT:30m": {
       "sentAt": "2026-10-23T16:01:18.122Z",
@@ -234,6 +234,24 @@
       "score": 14,
       "entry": 0.07117296,
       "stop": 0.06273682940155716
+    },
+    "GRVTUSDT:30m": {
+      "sentAt": "2026-10-24T03:31:23.884Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.23076832906563194,
+      "stop": 0.22051193524548632
+    },
+    "GRVTUSDT:15m": {
+      "sentAt": "2026-10-24T03:31:23.884Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.232015,
+      "stop": 0.2225194222560877
     }
   }
 }
