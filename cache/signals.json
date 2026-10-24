@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T08:01:17.689Z",
+  "lastUpdated": "2026-10-24T08:31:17.961Z",
   "signals": {
     "TRIAUSDT:2h": {
       "sentAt": "2026-10-23T20:31:19.863Z",
@@ -252,6 +252,24 @@
       "score": 14,
       "entry": 0.05409,
       "stop": 0.05677990235762367
+    },
+    "CCUSDT:30m": {
+      "sentAt": "2026-10-24T08:31:14.702Z",
+      "symbol": "CCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.10361334158737989,
+      "stop": 0.1005161315187151
+    },
+    "EDGEUSDT:2h": {
+      "sentAt": "2026-10-24T08:31:16.459Z",
+      "symbol": "EDGEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.31576188674917555,
+      "stop": 0.27874366607731743
     }
   }
 }
