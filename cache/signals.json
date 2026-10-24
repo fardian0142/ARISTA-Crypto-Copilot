@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T09:01:07.863Z",
+  "lastUpdated": "2026-10-24T09:31:23.269Z",
   "signals": {
-    "MEWUSDT:1h": {
-      "sentAt": "2026-10-23T21:31:20.654Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.00048510000000000003,
-      "stop": 0.0005279756904431792
-    },
     "PEPEUSDT:15m": {
       "sentAt": "2026-10-23T22:31:05.483Z",
       "symbol": "PEPEUSDT",
@@ -234,6 +225,24 @@
       "score": 14,
       "entry": 0.31576188674917555,
       "stop": 0.27874366607731743
+    },
+    "COREUSDT:1h": {
+      "sentAt": "2026-10-24T09:31:19.929Z",
+      "symbol": "COREUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01759,
+      "stop": 0.01602587294037463
+    },
+    "SOONUSDT:30m": {
+      "sentAt": "2026-10-24T09:31:21.766Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.30361452738862404,
+      "stop": 0.2916390900812567
     }
   }
 }
