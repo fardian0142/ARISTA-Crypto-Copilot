@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T17:31:11.586Z",
+  "lastUpdated": "2026-10-25T18:01:05.818Z",
   "signals": {
-    "BTCUSDT:15m": {
-      "sentAt": "2026-10-25T05:31:12.692Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 80865.62,
-      "stop": 81070.56778114242
-    },
     "DOODUSDT:15m": {
       "sentAt": "2026-10-25T06:01:16.432Z",
       "symbol": "DOODUSDT",
@@ -468,6 +459,15 @@
       "score": 14,
       "entry": 11.4525,
       "stop": 11.220699428322316
+    },
+    "OFCUSDT:15m": {
+      "sentAt": "2026-10-25T18:01:04.315Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006146,
+      "stop": 0.005865770325125294
     }
   }
 }
