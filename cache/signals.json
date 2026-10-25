@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T04:01:00.815Z",
+  "lastUpdated": "2026-10-25T04:31:12.061Z",
   "signals": {
-    "AIUSDT:1h": {
-      "sentAt": "2026-10-24T16:01:12.217Z",
-      "symbol": "AIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.019201595664266748,
-      "stop": 0.01807431668380894
-    },
     "MEWUSDT:2h": {
       "sentAt": "2026-10-24T16:31:17.467Z",
       "symbol": "MEWUSDT",
@@ -378,6 +369,15 @@
       "score": 14,
       "entry": 0.19559050061030717,
       "stop": 0.19106076
+    },
+    "ANIMEUSDT:30m": {
+      "sentAt": "2026-10-25T04:31:10.557Z",
+      "symbol": "ANIMEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0032337,
+      "stop": 0.002552816217864306
     }
   }
 }
