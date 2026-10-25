@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T07:01:11.475Z",
+  "lastUpdated": "2026-10-25T07:31:05.826Z",
   "signals": {
-    "BILLUSDT:1h": {
-      "sentAt": "2026-10-24T19:01:16.580Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0058945,
-      "stop": 0.005434300207356819
-    },
-    "SPACEUSDT:15m": {
-      "sentAt": "2026-10-24T19:01:18.432Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.003672,
-      "stop": 0.0035966009956295724
-    },
     "ZECUSDT:1h": {
       "sentAt": "2026-10-24T19:31:08.947Z",
       "symbol": "ZECUSDT",
@@ -423,6 +405,15 @@
       "score": 14,
       "entry": 249.36344208510266,
       "stop": 246.31827082069526
+    },
+    "TRXUSDT:15m": {
+      "sentAt": "2026-10-25T07:31:04.323Z",
+      "symbol": "TRXUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.32889999999999997,
+      "stop": 0.32832019589160605
     }
   }
 }
