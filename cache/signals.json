@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T13:01:11.313Z",
+  "lastUpdated": "2026-10-25T13:31:10.362Z",
   "signals": {
-    "SATSUSDT:1h": {
-      "sentAt": "2026-10-25T01:31:03.650Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.02435e-8,
-      "stop": 1.00119566e-8
-    },
-    "AEONUSDT:15m": {
-      "sentAt": "2026-10-25T01:31:05.365Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.030953575129402854,
-      "stop": 0.029851606218551045
-    },
     "BRETTUSDT:15m": {
       "sentAt": "2026-10-25T02:01:08.402Z",
       "symbol": "BRETTUSDT",
@@ -468,6 +450,15 @@
       "score": 14,
       "entry": 0.042276398511798666,
       "stop": 0.04134143920143811
+    },
+    "AZTECUSDT:30m": {
+      "sentAt": "2026-10-25T13:31:08.859Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.016614386358532445,
+      "stop": 0.016176688
     }
   }
 }
