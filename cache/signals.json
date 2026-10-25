@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T23:01:02.578Z",
+  "lastUpdated": "2026-10-25T23:31:04.855Z",
   "signals": {
-    "TRUTHUSDT:15m": {
-      "sentAt": "2026-10-25T11:31:04.745Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0196914,
-      "stop": 0.020309350956363003
-    },
-    "TRUTHUSDT:30m": {
-      "sentAt": "2026-10-25T11:31:04.745Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.019626,
-      "stop": 0.02060152992906021
-    },
     "SOLUSDT:15m": {
       "sentAt": "2026-10-25T12:01:05.713Z",
       "symbol": "SOLUSDT",
