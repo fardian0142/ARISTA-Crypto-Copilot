@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T15:31:08.426Z",
+  "lastUpdated": "2026-10-25T16:01:14.209Z",
   "signals": {
-    "ZORAUSDT:1h": {
-      "sentAt": "2026-10-25T03:31:09.206Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0068838482901591915,
-      "stop": 0.00591279792743435
-    },
-    "ZORAUSDT:2h": {
-      "sentAt": "2026-10-25T03:31:09.206Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006897800240894476,
-      "stop": 0.0057631411364680255
-    },
-    "SUIUSDT:15m": {
-      "sentAt": "2026-10-25T03:31:10.920Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.93635,
-      "stop": 0.9272453962221294
-    },
-    "KATUSDT:1h": {
-      "sentAt": "2026-10-25T03:31:12.617Z",
-      "symbol": "KATUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0044255,
-      "stop": 0.003485101308857275
-    },
-    "ENAUSDT:30m": {
-      "sentAt": "2026-10-25T04:00:59.313Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.19559050061030717,
-      "stop": 0.19106076
-    },
     "ANIMEUSDT:30m": {
       "sentAt": "2026-10-25T04:31:10.557Z",
       "symbol": "ANIMEUSDT",
@@ -450,6 +405,51 @@
       "score": 14,
       "entry": 0.016735,
       "stop": 0.015749757144499672
+    },
+    "BILLUSDT:2h": {
+      "sentAt": "2026-10-25T16:01:05.366Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00628,
+      "stop": 0.005561125709147407
+    },
+    "ETHUSDT:15m": {
+      "sentAt": "2026-10-25T16:01:07.167Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 2341.499793963674,
+      "stop": 2359.5994544413957
+    },
+    "SLXUSDT:1h": {
+      "sentAt": "2026-10-25T16:01:08.958Z",
+      "symbol": "SLXUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.050205,
+      "stop": 0.052772822415557585
+    },
+    "UNIUSDT:1h": {
+      "sentAt": "2026-10-25T16:01:10.788Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.857004517056381,
+      "stop": 6.71563
+    },
+    "LINKUSDT:15m": {
+      "sentAt": "2026-10-25T16:01:12.707Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 11.412407455215133,
+      "stop": 11.306253763363715
     }
   }
 }
