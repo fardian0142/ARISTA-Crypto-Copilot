@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T10:01:02.421Z",
+  "lastUpdated": "2026-10-25T10:31:03.470Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-10-24T22:01:15.306Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005914,
-      "stop": 0.005130980372614282
-    },
-    "BEATUSDT:15m": {
-      "sentAt": "2026-10-24T22:01:17.037Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.067765,
-      "stop": 0.06674964826774718
-    },
     "MERLUSDT:1h": {
       "sentAt": "2026-10-24T22:31:14.144Z",
       "symbol": "MERLUSDT",
@@ -432,6 +414,33 @@
       "score": 14,
       "entry": 143.11,
       "stop": 141.971308
+    },
+    "ZECUSDT:15m": {
+      "sentAt": "2026-10-25T10:30:58.476Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1184.0500000000002,
+      "stop": 1211.9355710456641
+    },
+    "STABLEUSDT:15m": {
+      "sentAt": "2026-10-25T10:31:00.202Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.026575500000000002,
+      "stop": 0.026000524286537357
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-10-25T10:31:01.968Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01527,
+      "stop": 0.015068842199754576
     }
   }
 }
