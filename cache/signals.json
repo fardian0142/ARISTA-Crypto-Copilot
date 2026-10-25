@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T05:31:14.195Z",
+  "lastUpdated": "2026-10-25T06:01:17.935Z",
   "signals": {
     "BILLUSDT:1h": {
       "sentAt": "2026-10-24T19:01:16.580Z",
@@ -369,6 +369,15 @@
       "score": 14,
       "entry": 80865.62,
       "stop": 81070.56778114242
+    },
+    "DOODUSDT:15m": {
+      "sentAt": "2026-10-25T06:01:16.432Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0015175415737145195,
+      "stop": 0.0013762744734677175
     }
   }
 }
