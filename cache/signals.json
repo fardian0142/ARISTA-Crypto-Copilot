@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T23:31:13.994Z",
+  "lastUpdated": "2026-10-25T00:01:22.752Z",
   "signals": {
-    "AEONUSDT:30m": {
-      "sentAt": "2026-10-24T11:31:15.737Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03230387620406438,
-      "stop": 0.029916598542397334
-    },
-    "TREEUSDT:2h": {
-      "sentAt": "2026-10-24T11:31:17.567Z",
-      "symbol": "TREEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0461,
-      "stop": 0.03267874109994172
-    },
-    "AEONUSDT:1h": {
-      "sentAt": "2026-10-24T12:01:12.387Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03271086,
-      "stop": 0.028805887088420495
-    },
     "ARKUSDT:1h": {
       "sentAt": "2026-10-24T12:31:06.909Z",
       "symbol": "ARKUSDT",
@@ -333,6 +306,15 @@
       "score": 14,
       "entry": 0.6576479347483591,
       "stop": 0.7113576089402915
+    },
+    "BNBUSDT:2h": {
+      "sentAt": "2026-10-25T00:01:21.250Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 737.6117738781189,
+      "stop": 753.8030437277222
     }
   }
 }
