@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T03:01:22.282Z",
+  "lastUpdated": "2026-10-25T03:31:14.119Z",
   "signals": {
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-24T15:31:27.461Z",
@@ -351,6 +351,51 @@
       "score": 14,
       "entry": 745.4170935135238,
       "stop": 757.4493320462589
+    },
+    "ORDERUSDT:30m": {
+      "sentAt": "2026-10-25T03:31:07.490Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05725,
+      "stop": 0.035648504
+    },
+    "ZORAUSDT:1h": {
+      "sentAt": "2026-10-25T03:31:09.206Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0068838482901591915,
+      "stop": 0.00591279792743435
+    },
+    "ZORAUSDT:2h": {
+      "sentAt": "2026-10-25T03:31:09.206Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006897800240894476,
+      "stop": 0.0057631411364680255
+    },
+    "SUIUSDT:15m": {
+      "sentAt": "2026-10-25T03:31:10.920Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.93635,
+      "stop": 0.9272453962221294
+    },
+    "KATUSDT:1h": {
+      "sentAt": "2026-10-25T03:31:12.617Z",
+      "symbol": "KATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0044255,
+      "stop": 0.003485101308857275
     }
   }
 }
