@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T21:31:04.600Z",
+  "lastUpdated": "2026-10-25T22:01:07.992Z",
   "signals": {
-    "MSTRBUSDT:1h": {
-      "sentAt": "2026-10-25T10:01:00.918Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 143.84,
-      "stop": 140.4834613170657
-    },
-    "MSTRBUSDT:30m": {
-      "sentAt": "2026-10-25T10:01:00.918Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 143.11,
-      "stop": 141.971308
-    },
     "ZECUSDT:15m": {
       "sentAt": "2026-10-25T10:30:58.476Z",
       "symbol": "ZECUSDT",
@@ -414,6 +396,42 @@
       "score": 14,
       "entry": 4.599222296663908,
       "stop": 4.266475871440396
+    },
+    "RLSUSDT:15m": {
+      "sentAt": "2026-10-25T22:01:00.993Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002311696937234357,
+      "stop": 0.0020471559832813263
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-10-25T22:01:02.799Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006070118,
+      "stop": 0.0054905231130625365
+    },
+    "ZECUSDT:1h": {
+      "sentAt": "2026-10-25T22:01:04.632Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1204.093202032643,
+      "stop": 1159.0105627172445
+    },
+    "NEARUSDT:30m": {
+      "sentAt": "2026-10-25T22:01:06.491Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.5407378549580875,
+      "stop": 4.403552050179626
     }
   }
 }
