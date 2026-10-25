@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T19:01:01.206Z",
+  "lastUpdated": "2026-10-25T19:31:05.696Z",
   "signals": {
-    "TRXUSDT:15m": {
-      "sentAt": "2026-10-25T07:31:04.323Z",
-      "symbol": "TRXUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.32889999999999997,
-      "stop": 0.32832019589160605
-    },
     "ATHUSDT:2h": {
       "sentAt": "2026-10-25T08:01:06.658Z",
       "symbol": "ATHUSDT",
@@ -450,6 +441,33 @@
       "score": 14,
       "entry": 0.054376038847920305,
       "stop": 0.05391840493748441
+    },
+    "TRUTHUSDT:1h": {
+      "sentAt": "2026-10-25T19:31:00.622Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.019674,
+      "stop": 0.020416108718108072
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-10-25T19:31:02.459Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1252763615090715,
+      "stop": 0.1233470221039793
+    },
+    "FLOCKUSDT:30m": {
+      "sentAt": "2026-10-25T19:31:04.195Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.041245000000000004,
+      "stop": 0.04016797009155639
     }
   }
 }
