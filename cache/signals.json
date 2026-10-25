@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T00:01:22.752Z",
+  "lastUpdated": "2026-10-25T00:31:18.419Z",
   "signals": {
-    "ARKUSDT:1h": {
-      "sentAt": "2026-10-24T12:31:06.909Z",
-      "symbol": "ARKUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.186,
-      "stop": 0.14317275854324568
-    },
     "AKEUSDT:15m": {
       "sentAt": "2026-10-24T13:01:21.130Z",
       "symbol": "AKEUSDT",
@@ -315,6 +306,51 @@
       "score": 14,
       "entry": 737.6117738781189,
       "stop": 753.8030437277222
+    },
+    "ORDERUSDT:15m": {
+      "sentAt": "2026-10-25T00:31:09.891Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.058759059891537076,
+      "stop": 0.035468311999999995
+    },
+    "OFCUSDT:30m": {
+      "sentAt": "2026-10-25T00:31:11.631Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005787527118242654,
+      "stop": 0.0050183777268381835
+    },
+    "ATHUSDT:15m": {
+      "sentAt": "2026-10-25T00:31:13.419Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005862217407300181,
+      "stop": 0.005762863228355724
+    },
+    "PIPPINUSDT:1h": {
+      "sentAt": "2026-10-25T00:31:15.154Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.015715,
+      "stop": 0.016220181904969957
+    },
+    "ANIMEUSDT:15m": {
+      "sentAt": "2026-10-25T00:31:16.916Z",
+      "symbol": "ANIMEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0033350000000000003,
+      "stop": 0.0025133766403629128
     }
   }
 }
