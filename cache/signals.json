@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T05:01:10.454Z",
+  "lastUpdated": "2026-10-25T05:31:14.195Z",
   "signals": {
-    "BASEDUSDT:1h": {
-      "sentAt": "2026-10-24T17:01:16.530Z",
-      "symbol": "BASEDUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05175075759982387,
-      "stop": 0.048660302858400895
-    },
-    "SLXUSDT:1h": {
-      "sentAt": "2026-10-24T17:31:08.755Z",
-      "symbol": "SLXUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.050254999999999994,
-      "stop": 0.054841448246184844
-    },
     "BILLUSDT:1h": {
       "sentAt": "2026-10-24T19:01:16.580Z",
       "symbol": "BILLUSDT",
@@ -378,6 +360,15 @@
       "score": 14,
       "entry": 0.1676,
       "stop": 0.15037583006132255
+    },
+    "BTCUSDT:15m": {
+      "sentAt": "2026-10-25T05:31:12.692Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 80865.62,
+      "stop": 81070.56778114242
     }
   }
 }
