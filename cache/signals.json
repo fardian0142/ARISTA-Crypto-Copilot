@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T12:31:16.450Z",
+  "lastUpdated": "2026-10-25T13:01:11.313Z",
   "signals": {
-    "ANIMEUSDT:15m": {
-      "sentAt": "2026-10-25T00:31:16.916Z",
-      "symbol": "ANIMEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0033350000000000003,
-      "stop": 0.0025133766403629128
-    },
     "SATSUSDT:1h": {
       "sentAt": "2026-10-25T01:31:03.650Z",
       "symbol": "SATSUSDT",
@@ -450,6 +441,33 @@
       "score": 14,
       "entry": 1238.71,
       "stop": 1225.0672944391022
+    },
+    "PEPEUSDT:15m": {
+      "sentAt": "2026-10-25T13:01:06.238Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.00000444808133280259,
+      "stop": 0.000004575133337124351
+    },
+    "DOGEUSDT:15m": {
+      "sentAt": "2026-10-25T13:01:08.051Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07663818862315037,
+      "stop": 0.07581150983464023
+    },
+    "POPCATUSDT:30m": {
+      "sentAt": "2026-10-25T13:01:09.810Z",
+      "symbol": "POPCATUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.042276398511798666,
+      "stop": 0.04134143920143811
     }
   }
 }
