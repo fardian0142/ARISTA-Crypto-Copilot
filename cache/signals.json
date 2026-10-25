@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T10:31:03.470Z",
+  "lastUpdated": "2026-10-25T11:01:04.281Z",
   "signals": {
-    "MERLUSDT:1h": {
-      "sentAt": "2026-10-24T22:31:14.144Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.026636319999999998,
-      "stop": 0.028195388
-    },
-    "AZTECUSDT:15m": {
-      "sentAt": "2026-10-24T22:31:15.916Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01663840278554054,
-      "stop": 0.01635712296042471
-    },
     "OFCUSDT:2h": {
       "sentAt": "2026-10-24T23:31:08.977Z",
       "symbol": "OFCUSDT",
