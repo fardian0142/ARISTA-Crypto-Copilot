@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T09:31:08.680Z",
+  "lastUpdated": "2026-10-25T10:01:02.421Z",
   "signals": {
     "OFCUSDT:15m": {
       "sentAt": "2026-10-24T22:01:15.306Z",
@@ -414,6 +414,24 @@
       "score": 14,
       "entry": 0.0021185827476912318,
       "stop": 0.0023564089450626292
+    },
+    "MSTRBUSDT:1h": {
+      "sentAt": "2026-10-25T10:01:00.918Z",
+      "symbol": "MSTRBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 143.84,
+      "stop": 140.4834613170657
+    },
+    "MSTRBUSDT:30m": {
+      "sentAt": "2026-10-25T10:01:00.918Z",
+      "symbol": "MSTRBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 143.11,
+      "stop": 141.971308
     }
   }
 }
