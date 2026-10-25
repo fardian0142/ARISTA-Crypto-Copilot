@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T18:01:05.818Z",
+  "lastUpdated": "2026-10-25T18:31:11.759Z",
   "signals": {
-    "DOODUSDT:15m": {
-      "sentAt": "2026-10-25T06:01:16.432Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0015175415737145195,
-      "stop": 0.0013762744734677175
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-25T06:31:11.894Z",
       "symbol": "SATSUSDT",
@@ -468,6 +459,42 @@
       "score": 14,
       "entry": 0.006146,
       "stop": 0.005865770325125294
+    },
+    "RLSUSDT:1h": {
+      "sentAt": "2026-10-25T18:31:06.718Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002363,
+      "stop": 0.0020235306
+    },
+    "RLSUSDT:2h": {
+      "sentAt": "2026-10-25T18:31:06.718Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002348722,
+      "stop": 0.0018560137596167546
+    },
+    "BNBUSDT:15m": {
+      "sentAt": "2026-10-25T18:31:08.465Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 742.285,
+      "stop": 745.0497031398844
+    },
+    "CROUSDT:30m": {
+      "sentAt": "2026-10-25T18:31:10.256Z",
+      "symbol": "CROUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.054376038847920305,
+      "stop": 0.05391840493748441
     }
   }
 }
