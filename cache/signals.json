@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T14:01:04.794Z",
+  "lastUpdated": "2026-10-25T14:31:14.931Z",
   "signals": {
-    "BRETTUSDT:15m": {
-      "sentAt": "2026-10-25T02:01:08.402Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004739575840036069,
-      "stop": 0.00466802971402808
-    },
-    "COREUSDT:2h": {
-      "sentAt": "2026-10-25T02:31:07.687Z",
-      "symbol": "COREUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01796,
-      "stop": 0.01593986964591402
-    },
-    "SLXUSDT:2h": {
-      "sentAt": "2026-10-25T02:31:09.382Z",
-      "symbol": "SLXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.04948756178954273,
-      "stop": 0.04519313007469482
-    },
-    "PONSUSDT:15m": {
-      "sentAt": "2026-10-25T02:31:11.092Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.23119110375083549,
-      "stop": 0.2259921160654607
-    },
-    "FLOCKUSDT:15m": {
-      "sentAt": "2026-10-25T02:31:12.799Z",
-      "symbol": "FLOCKUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.04243679977021303,
-      "stop": 0.04163000164133547
-    },
     "ZECUSDT:30m": {
       "sentAt": "2026-10-25T03:01:19.033Z",
       "symbol": "ZECUSDT",
@@ -468,6 +423,15 @@
       "score": 14,
       "entry": 0.23730690484578895,
       "stop": 0.22419353681579315
+    },
+    "LIGHTUSDT:15m": {
+      "sentAt": "2026-10-25T14:31:13.430Z",
+      "symbol": "LIGHTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.24045,
+      "stop": 0.232151
     }
   }
 }
