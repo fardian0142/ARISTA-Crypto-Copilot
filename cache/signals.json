@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T16:31:24.003Z",
+  "lastUpdated": "2026-10-25T17:01:09.876Z",
   "signals": {
-    "IRYSUSDT:30m": {
-      "sentAt": "2026-10-25T05:01:07.231Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.046285,
-      "stop": 0.02749771013139256
-    },
-    "CTUSDT:30m": {
-      "sentAt": "2026-10-25T05:01:08.952Z",
-      "symbol": "CTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1676,
-      "stop": 0.15037583006132255
-    },
     "BTCUSDT:15m": {
       "sentAt": "2026-10-25T05:31:12.692Z",
       "symbol": "BTCUSDT",
@@ -468,6 +450,15 @@
       "score": 14,
       "entry": 56.93,
       "stop": 56.19244569609126
+    },
+    "XAUTUSDT:30m": {
+      "sentAt": "2026-10-25T17:01:08.374Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3998.3050000000003,
+      "stop": 3993.4037340395093
     }
   }
 }
