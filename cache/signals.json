@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T21:00:52.841Z",
+  "lastUpdated": "2026-10-25T21:31:04.600Z",
   "signals": {
-    "RLSUSDT:15m": {
-      "sentAt": "2026-10-25T09:01:11.246Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0021185827476912318,
-      "stop": 0.0023564089450626292
-    },
     "MSTRBUSDT:1h": {
       "sentAt": "2026-10-25T10:01:00.918Z",
       "symbol": "MSTRBUSDT",
@@ -414,6 +405,15 @@
       "score": 14,
       "entry": 0.041245000000000004,
       "stop": 0.04016797009155639
+    },
+    "NEARUSDT:2h": {
+      "sentAt": "2026-10-25T21:31:03.097Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.599222296663908,
+      "stop": 4.266475871440396
     }
   }
 }
