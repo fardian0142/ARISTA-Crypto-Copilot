@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T07:31:05.826Z",
+  "lastUpdated": "2026-10-25T08:01:08.159Z",
   "signals": {
-    "ZECUSDT:1h": {
-      "sentAt": "2026-10-24T19:31:08.947Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1178.28,
-      "stop": 1102.3828908796074
-    },
-    "CASHCATUSDT:1h": {
-      "sentAt": "2026-10-24T19:31:10.723Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.093875,
-      "stop": 0.08828302112345213
-    },
     "CAPUSDT:2h": {
       "sentAt": "2026-10-24T20:01:15.590Z",
       "symbol": "CAPUSDT",
@@ -414,6 +396,15 @@
       "score": 14,
       "entry": 0.32889999999999997,
       "stop": 0.32832019589160605
+    },
+    "ATHUSDT:2h": {
+      "sentAt": "2026-10-25T08:01:06.658Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0057244321890061855,
+      "stop": 0.005293770078527248
     }
   }
 }
