@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T08:01:08.159Z",
+  "lastUpdated": "2026-10-25T08:31:10.243Z",
   "signals": {
-    "CAPUSDT:2h": {
-      "sentAt": "2026-10-24T20:01:15.590Z",
-      "symbol": "CAPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07654766,
-      "stop": 0.06784116963936915
-    },
     "USELESSUSDT:30m": {
       "sentAt": "2026-10-24T20:31:19.179Z",
       "symbol": "USELESSUSDT",
@@ -405,6 +396,51 @@
       "score": 14,
       "entry": 0.0057244321890061855,
       "stop": 0.005293770078527248
+    },
+    "APRUSDT:30m": {
+      "sentAt": "2026-10-25T08:31:01.485Z",
+      "symbol": "APRUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03615292,
+      "stop": 0.01848842523014408
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-10-25T08:31:03.310Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006122,
+      "stop": 0.005468010343556814
+    },
+    "OLUSDT:15m": {
+      "sentAt": "2026-10-25T08:31:05.103Z",
+      "symbol": "OLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006430465206133664,
+      "stop": 0.006240248527616692
+    },
+    "ENAUSDT:15m": {
+      "sentAt": "2026-10-25T08:31:06.856Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1931696,
+      "stop": 0.18817897219763993
+    },
+    "SOONUSDT:30m": {
+      "sentAt": "2026-10-25T08:31:08.741Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.30710000000000004,
+      "stop": 0.2961824093631917
     }
   }
 }
