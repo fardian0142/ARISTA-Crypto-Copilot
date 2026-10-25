@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T15:01:24.788Z",
+  "lastUpdated": "2026-10-25T15:31:08.426Z",
   "signals": {
-    "ORDERUSDT:30m": {
-      "sentAt": "2026-10-25T03:31:07.490Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05725,
-      "stop": 0.035648504
-    },
     "ZORAUSDT:1h": {
       "sentAt": "2026-10-25T03:31:09.206Z",
       "symbol": "ZORAUSDT",
@@ -450,6 +441,15 @@
       "score": 14,
       "entry": 0.2042,
       "stop": 0.200751496430815
+    },
+    "AZTECUSDT:1h": {
+      "sentAt": "2026-10-25T15:31:06.923Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.016735,
+      "stop": 0.015749757144499672
     }
   }
 }
