@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T01:31:06.867Z",
+  "lastUpdated": "2026-10-25T02:01:09.905Z",
   "signals": {
-    "ZORAUSDT:1h": {
-      "sentAt": "2026-10-24T13:31:25.944Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006896636581818971,
-      "stop": 0.0058214529870073495
-    },
     "ZORAUSDT:2h": {
       "sentAt": "2026-10-24T14:01:19.988Z",
       "symbol": "ZORAUSDT",
@@ -333,6 +324,15 @@
       "score": 14,
       "entry": 0.030953575129402854,
       "stop": 0.029851606218551045
+    },
+    "BRETTUSDT:15m": {
+      "sentAt": "2026-10-25T02:01:08.402Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004739575840036069,
+      "stop": 0.00466802971402808
     }
   }
 }
