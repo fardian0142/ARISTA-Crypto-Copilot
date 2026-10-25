@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T09:01:12.749Z",
+  "lastUpdated": "2026-10-25T09:31:08.680Z",
   "signals": {
-    "IRYSUSDT:1h": {
-      "sentAt": "2026-10-24T21:01:16.147Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0481521482679223,
-      "stop": 0.004194655229126411
-    },
-    "SLXUSDT:30m": {
-      "sentAt": "2026-10-24T21:01:17.940Z",
-      "symbol": "SLXUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.05114351437537397,
-      "stop": 0.05355489731875736
-    },
-    "USELESSUSDT:1h": {
-      "sentAt": "2026-10-24T21:01:19.722Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.1632,
-      "stop": 0.17967009214031116
-    },
     "OFCUSDT:15m": {
       "sentAt": "2026-10-24T22:01:15.306Z",
       "symbol": "OFCUSDT",
