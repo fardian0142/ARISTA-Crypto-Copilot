@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T22:31:12.011Z",
+  "lastUpdated": "2026-10-25T23:01:02.578Z",
   "signals": {
     "TRUTHUSDT:15m": {
       "sentAt": "2026-10-25T11:31:04.745Z",
@@ -423,6 +423,15 @@
       "score": 14,
       "entry": 0.0047174999999999995,
       "stop": 0.00465948746888582
+    },
+    "AEONUSDT:15m": {
+      "sentAt": "2026-10-25T23:01:01.075Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03034,
+      "stop": 0.029741040915750503
     }
   }
 }
