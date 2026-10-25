@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T13:31:10.362Z",
+  "lastUpdated": "2026-10-25T14:01:04.794Z",
   "signals": {
     "BRETTUSDT:15m": {
       "sentAt": "2026-10-25T02:01:08.402Z",
@@ -459,6 +459,15 @@
       "score": 14,
       "entry": 0.016614386358532445,
       "stop": 0.016176688
+    },
+    "PONSUSDT:30m": {
+      "sentAt": "2026-10-25T14:01:03.291Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.23730690484578895,
+      "stop": 0.22419353681579315
     }
   }
 }
