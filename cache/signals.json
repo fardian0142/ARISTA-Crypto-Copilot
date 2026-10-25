@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T02:01:09.905Z",
+  "lastUpdated": "2026-10-25T02:31:14.305Z",
   "signals": {
-    "ZORAUSDT:2h": {
-      "sentAt": "2026-10-24T14:01:19.988Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006885649661519096,
-      "stop": 0.005849930989149315
-    },
-    "SOXLBUSDT:15m": {
-      "sentAt": "2026-10-24T14:01:21.719Z",
-      "symbol": "SOXLBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 83.58500000000001,
-      "stop": 82.72531609751837
-    },
-    "EDGEUSDT:30m": {
-      "sentAt": "2026-10-24T14:01:23.468Z",
-      "symbol": "EDGEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.32109187476047435,
-      "stop": 0.30634375171089756
-    },
     "TRUSTUSDT:30m": {
       "sentAt": "2026-10-24T14:31:52.060Z",
       "symbol": "TRUSTUSDT",
@@ -333,6 +306,42 @@
       "score": 14,
       "entry": 0.004739575840036069,
       "stop": 0.00466802971402808
+    },
+    "COREUSDT:2h": {
+      "sentAt": "2026-10-25T02:31:07.687Z",
+      "symbol": "COREUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01796,
+      "stop": 0.01593986964591402
+    },
+    "SLXUSDT:2h": {
+      "sentAt": "2026-10-25T02:31:09.382Z",
+      "symbol": "SLXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04948756178954273,
+      "stop": 0.04519313007469482
+    },
+    "PONSUSDT:15m": {
+      "sentAt": "2026-10-25T02:31:11.092Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.23119110375083549,
+      "stop": 0.2259921160654607
+    },
+    "FLOCKUSDT:15m": {
+      "sentAt": "2026-10-25T02:31:12.799Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04243679977021303,
+      "stop": 0.04163000164133547
     }
   }
 }
