@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T16:01:14.209Z",
+  "lastUpdated": "2026-10-25T16:31:24.003Z",
   "signals": {
-    "ANIMEUSDT:30m": {
-      "sentAt": "2026-10-25T04:31:10.557Z",
-      "symbol": "ANIMEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0032337,
-      "stop": 0.002552816217864306
-    },
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-25T05:01:07.231Z",
       "symbol": "IRYSUSDT",
@@ -450,6 +441,33 @@
       "score": 14,
       "entry": 11.412407455215133,
       "stop": 11.306253763363715
+    },
+    "MERLUSDT:15m": {
+      "sentAt": "2026-10-25T16:31:18.938Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02664,
+      "stop": 0.026199319228249064
+    },
+    "CASHCATUSDT:30m": {
+      "sentAt": "2026-10-25T16:31:20.695Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09342500000000001,
+      "stop": 0.0913911436993705
+    },
+    "LTCUSDT:30m": {
+      "sentAt": "2026-10-25T16:31:22.501Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 56.93,
+      "stop": 56.19244569609126
     }
   }
 }
