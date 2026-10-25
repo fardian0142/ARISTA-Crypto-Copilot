@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T12:01:16.093Z",
+  "lastUpdated": "2026-10-25T12:31:16.450Z",
   "signals": {
-    "BNBUSDT:2h": {
-      "sentAt": "2026-10-25T00:01:21.250Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 737.6117738781189,
-      "stop": 753.8030437277222
-    },
-    "ORDERUSDT:15m": {
-      "sentAt": "2026-10-25T00:31:09.891Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.058759059891537076,
-      "stop": 0.035468311999999995
-    },
-    "OFCUSDT:30m": {
-      "sentAt": "2026-10-25T00:31:11.631Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005787527118242654,
-      "stop": 0.0050183777268381835
-    },
-    "ATHUSDT:15m": {
-      "sentAt": "2026-10-25T00:31:13.419Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005862217407300181,
-      "stop": 0.005762863228355724
-    },
-    "PIPPINUSDT:1h": {
-      "sentAt": "2026-10-25T00:31:15.154Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.015715,
-      "stop": 0.016220181904969957
-    },
     "ANIMEUSDT:15m": {
       "sentAt": "2026-10-25T00:31:16.916Z",
       "symbol": "ANIMEUSDT",
@@ -468,6 +423,33 @@
       "score": 14,
       "entry": 0.05452,
       "stop": 0.05405344304002933
+    },
+    "ORDERUSDT:1h": {
+      "sentAt": "2026-10-25T12:31:11.371Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.042047868741761744,
+      "stop": 0.017175223273130435
+    },
+    "POPCATUSDT:15m": {
+      "sentAt": "2026-10-25T12:31:13.152Z",
+      "symbol": "POPCATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04219460263667313,
+      "stop": 0.04143855259519193
+    },
+    "SNDKBUSDT:30m": {
+      "sentAt": "2026-10-25T12:31:14.948Z",
+      "symbol": "SNDKBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1238.71,
+      "stop": 1225.0672944391022
     }
   }
 }
