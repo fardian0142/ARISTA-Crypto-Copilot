@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T18:31:11.759Z",
+  "lastUpdated": "2026-10-25T19:01:01.206Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-10-25T06:31:11.894Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.0098441491806801e-8,
-      "stop": 1.003098e-8
-    },
-    "COREUSDT:15m": {
-      "sentAt": "2026-10-25T06:31:13.617Z",
-      "symbol": "COREUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0175837,
-      "stop": 0.017066498
-    },
-    "STABLEUSDT:2h": {
-      "sentAt": "2026-10-25T06:31:15.352Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02684,
-      "stop": 0.028898551206603913
-    },
-    "STABLEUSDT:30m": {
-      "sentAt": "2026-10-25T06:31:15.352Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02682880409003619,
-      "stop": 0.025905685071170054
-    },
-    "TAOUSDT:15m": {
-      "sentAt": "2026-10-25T06:31:17.108Z",
-      "symbol": "TAOUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 249.36344208510266,
-      "stop": 246.31827082069526
-    },
     "TRXUSDT:15m": {
       "sentAt": "2026-10-25T07:31:04.323Z",
       "symbol": "TRXUSDT",
