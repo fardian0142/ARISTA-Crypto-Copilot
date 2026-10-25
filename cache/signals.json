@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T02:31:14.305Z",
+  "lastUpdated": "2026-10-25T03:01:22.282Z",
   "signals": {
-    "TRUSTUSDT:30m": {
-      "sentAt": "2026-10-24T14:31:52.060Z",
-      "symbol": "TRUSTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05298979059555198,
-      "stop": 0.04960957
-    },
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-24T15:31:27.461Z",
       "symbol": "ZORAUSDT",
@@ -342,6 +333,24 @@
       "score": 14,
       "entry": 0.04243679977021303,
       "stop": 0.04163000164133547
+    },
+    "ZECUSDT:30m": {
+      "sentAt": "2026-10-25T03:01:19.033Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1213.9969103845617,
+      "stop": 1178.9749258245604
+    },
+    "BNBUSDT:1h": {
+      "sentAt": "2026-10-25T03:01:20.780Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 745.4170935135238,
+      "stop": 757.4493320462589
     }
   }
 }
