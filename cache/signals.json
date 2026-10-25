@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T11:01:04.281Z",
+  "lastUpdated": "2026-10-25T11:31:06.248Z",
   "signals": {
     "OFCUSDT:2h": {
       "sentAt": "2026-10-24T23:31:08.977Z",
@@ -423,6 +423,24 @@
       "score": 14,
       "entry": 0.01527,
       "stop": 0.015068842199754576
+    },
+    "TRUTHUSDT:15m": {
+      "sentAt": "2026-10-25T11:31:04.745Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0196914,
+      "stop": 0.020309350956363003
+    },
+    "TRUTHUSDT:30m": {
+      "sentAt": "2026-10-25T11:31:04.745Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.019626,
+      "stop": 0.02060152992906021
     }
   }
 }
