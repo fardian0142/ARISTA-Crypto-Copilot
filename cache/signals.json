@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T17:01:09.575Z",
+  "lastUpdated": "2026-10-26T17:31:22.672Z",
   "signals": {
-    "ATHUSDT:30m": {
-      "sentAt": "2026-10-26T05:30:58.425Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005597,
-      "stop": 0.005460838114748497
-    },
     "ZECUSDT:15m": {
       "sentAt": "2026-10-26T06:01:07.105Z",
       "symbol": "ZECUSDT",
@@ -315,6 +306,42 @@
       "score": 14,
       "entry": 7.868456403563013,
       "stop": 7.394186841872797
+    },
+    "DOODUSDT:1h": {
+      "sentAt": "2026-10-26T17:31:15.827Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0020509213153706235,
+      "stop": 0.0013440515055544709
+    },
+    "SPACEUSDT:1h": {
+      "sentAt": "2026-10-26T17:31:17.586Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00365,
+      "stop": 0.0035822510852204837
+    },
+    "BTWUSDT:15m": {
+      "sentAt": "2026-10-26T17:31:19.328Z",
+      "symbol": "BTWUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.13355,
+      "stop": 0.9068266193933568
+    },
+    "ONDOUSDT:2h": {
+      "sentAt": "2026-10-26T17:31:21.170Z",
+      "symbol": "ONDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.4094,
+      "stop": 0.3961402285907122
     }
   }
 }
