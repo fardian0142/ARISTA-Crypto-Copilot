@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T22:31:03.089Z",
+  "lastUpdated": "2026-10-26T23:01:10.759Z",
   "signals": {
-    "NEARUSDT:2h": {
-      "sentAt": "2026-10-26T10:31:05.215Z",
-      "symbol": "NEARUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4.481999999999999,
-      "stop": 4.278138045472387
-    },
-    "SUIUSDT:15m": {
-      "sentAt": "2026-10-26T10:31:06.982Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9167,
-      "stop": 0.9064221439898913
-    },
     "AZTECUSDT:1h": {
       "sentAt": "2026-10-26T12:01:08.409Z",
       "symbol": "AZTECUSDT",
