@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T13:01:09.687Z",
+  "lastUpdated": "2026-10-26T13:31:17.337Z",
   "signals": {
-    "MONUSDT:1h": {
-      "sentAt": "2026-10-26T01:31:11.223Z",
-      "symbol": "MONUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02136,
-      "stop": 0.021105722
-    },
-    "DOGEUSDT:15m": {
-      "sentAt": "2026-10-26T01:31:12.941Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07691606960795142,
-      "stop": 0.07777827310877966
-    },
-    "STABLEUSDT:30m": {
-      "sentAt": "2026-10-26T01:31:14.673Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02649363047209147,
-      "stop": 0.02604015511960799
-    },
     "MONUSDT:15m": {
       "sentAt": "2026-10-26T02:01:26.634Z",
       "symbol": "MONUSDT",
@@ -315,6 +288,15 @@
       "score": 14,
       "entry": 0.0477,
       "stop": 0.04639266585538472
+    },
+    "XAUTUSDT:30m": {
+      "sentAt": "2026-10-26T13:31:15.834Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 4015.2171263015766,
+      "stop": 4028.7123158503878
     }
   }
 }
