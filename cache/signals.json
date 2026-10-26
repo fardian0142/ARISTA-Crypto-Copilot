@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T00:01:15.152Z",
+  "lastUpdated": "2026-10-26T00:30:59.733Z",
   "signals": {
     "ORDERUSDT:1h": {
       "sentAt": "2026-10-25T12:31:11.371Z",
@@ -378,6 +378,42 @@
       "score": 14,
       "entry": 0.03847,
       "stop": 0.03764947963750754
+    },
+    "TRUTHUSDT:30m": {
+      "sentAt": "2026-10-26T00:30:52.960Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.019675816,
+      "stop": 0.020130754906674864
+    },
+    "FARTCOINUSDT:30m": {
+      "sentAt": "2026-10-26T00:30:54.701Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1248,
+      "stop": 0.12152136729491295
+    },
+    "BMTUSDT:15m": {
+      "sentAt": "2026-10-26T00:30:56.482Z",
+      "symbol": "BMTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.031146261756632054,
+      "stop": 0.029743802
+    },
+    "RAVEUSDT:15m": {
+      "sentAt": "2026-10-26T00:30:58.228Z",
+      "symbol": "RAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1367,
+      "stop": 0.13456286859799416
     }
   }
 }
