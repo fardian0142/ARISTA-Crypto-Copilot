@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T19:01:22.740Z",
+  "lastUpdated": "2026-10-26T19:31:07.287Z",
   "signals": {
-    "ZORAUSDT:30m": {
-      "sentAt": "2026-10-26T07:31:06.841Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006133212047782877,
-      "stop": 0.00591694836664481
-    },
     "PEPEUSDT:1h": {
       "sentAt": "2026-10-26T07:31:08.605Z",
       "symbol": "PEPEUSDT",
@@ -315,6 +306,33 @@
       "score": 14,
       "entry": 7.037,
       "stop": 6.779551676025818
+    },
+    "PIPPINUSDT:30m": {
+      "sentAt": "2026-10-26T19:31:02.150Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.015483472087609763,
+      "stop": 0.015143691053101017
+    },
+    "SNDKBUSDT:1h": {
+      "sentAt": "2026-10-26T19:31:03.956Z",
+      "symbol": "SNDKBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1265.166082229526,
+      "stop": 1220.6196475877466
+    },
+    "ADAUSDT:1h": {
+      "sentAt": "2026-10-26T19:31:05.786Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2045,
+      "stop": 0.20068403175415558
     }
   }
 }
