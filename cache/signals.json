@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T20:31:19.115Z",
+  "lastUpdated": "2026-10-26T21:01:05.176Z",
   "signals": {
     "COREUSDT:30m": {
       "sentAt": "2026-10-26T09:01:12.055Z",
@@ -315,6 +315,51 @@
       "score": 14,
       "entry": 0.015512168558774143,
       "stop": 0.014857849033825097
+    },
+    "SATSUSDT:1h": {
+      "sentAt": "2026-10-26T21:00:56.528Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0001999999999999e-8,
+      "stop": 9.704985518957258e-9
+    },
+    "MONUSDT:2h": {
+      "sentAt": "2026-10-26T21:00:58.315Z",
+      "symbol": "MONUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02151,
+      "stop": 0.02022177608193386
+    },
+    "GRVTUSDT:1h": {
+      "sentAt": "2026-10-26T21:01:00.072Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.20484,
+      "stop": 0.1932642143451969
+    },
+    "DOGEUSDT:1h": {
+      "sentAt": "2026-10-26T21:01:01.837Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07733,
+      "stop": 0.07575856241380939
+    },
+    "DGAIUSDT:1h": {
+      "sentAt": "2026-10-26T21:01:03.673Z",
+      "symbol": "DGAIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.8546499999999999,
+      "stop": 0.8239829930438997
     }
   }
 }
