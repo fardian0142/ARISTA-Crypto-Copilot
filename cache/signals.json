@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T06:01:12.073Z",
+  "lastUpdated": "2026-10-26T06:31:06.785Z",
   "signals": {
-    "RLSUSDT:1h": {
-      "sentAt": "2026-10-25T18:31:06.718Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.002363,
-      "stop": 0.0020235306
-    },
-    "RLSUSDT:2h": {
-      "sentAt": "2026-10-25T18:31:06.718Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.002348722,
-      "stop": 0.0018560137596167546
-    },
     "BNBUSDT:15m": {
       "sentAt": "2026-10-25T18:31:08.465Z",
       "symbol": "BNBUSDT",
@@ -351,6 +333,24 @@
       "score": 14,
       "entry": 0.06682,
       "stop": 0.0648989914399216
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-10-26T06:31:03.387Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 9.860500000000001e-9,
+      "stop": 9.767158647849189e-9
+    },
+    "PIUSDT:15m": {
+      "sentAt": "2026-10-26T06:31:05.283Z",
+      "symbol": "PIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.075695,
+      "stop": 0.07463317282009042
     }
   }
 }
