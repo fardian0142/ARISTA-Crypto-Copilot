@@ -2896,9 +2896,9 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     maxLevels
   );
 
-  const effectiveMinRR = 0.3;
+  const effectiveMinRR = 1.0;
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = 0.3;
+  const tp1MinRR = 1.0;
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
@@ -3212,7 +3212,7 @@ export function detectRangeTradeSetups(
       ? CONFIG.MIN_RANGE_SETUP_SCORE
       : 8;
 
-  const minRR = 0.3;
+  const minRR = 1.0;
 
   const maxTPRR =
     Number.isFinite(CONFIG.MAX_TP_RR) &&
@@ -3254,7 +3254,7 @@ export function detectRangeTradeSetups(
         )
       : 5;
 
-  const tp1MinRR = 0.3;
+  const tp1MinRR = 1.0;
 
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
@@ -5310,16 +5310,6 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestResistance = getNearestResistance();
-
-    if (
-      nearestResistance &&
-      Number.isFinite(nearestResistance.price) &&
-      (nearestResistance.price - entry) < (atrValue * 0.3)
-    ) {
-      return null;
-    }
-
     const stop = buildStopFromStructure(
       "bullish",
       Math.min(zoneLow, precisionEntry.zoneLow),
@@ -5333,6 +5323,7 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop >= entry ||
+      risk < atrValue * 0.5 ||
       risk / entry * 100 > maxStopPct
     ) {
       return null;
@@ -5352,7 +5343,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 <= entry ||
-      targets.rr1 < 0.3 ||
+      targets.rr1 < 1.0 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5549,16 +5540,6 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestSupport = getNearestSupport();
-
-    if (
-      nearestSupport &&
-      Number.isFinite(nearestSupport.price) &&
-      (entry - nearestSupport.price) < (atrValue * 0.3)
-    ) {
-      return null;
-    }
-
     const stop = buildStopFromStructure(
       "bearish",
       Math.max(zone.price, precisionEntry.zoneLow),
@@ -5572,6 +5553,7 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop <= entry ||
+      risk < atrValue * 0.5 ||
       risk / entry * 100 > maxStopPct
     ) {
       return null;
@@ -5591,7 +5573,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 >= entry ||
-      targets.rr1 < 0.3 ||
+      targets.rr1 < 1.0 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
