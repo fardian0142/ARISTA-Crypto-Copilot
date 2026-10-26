@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T05:30:59.928Z",
+  "lastUpdated": "2026-10-26T06:01:12.073Z",
   "signals": {
-    "LINKUSDT:1h": {
-      "sentAt": "2026-10-25T17:31:10.084Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.4525,
-      "stop": 11.220699428322316
-    },
-    "OFCUSDT:15m": {
-      "sentAt": "2026-10-25T18:01:04.315Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006146,
-      "stop": 0.005865770325125294
-    },
     "RLSUSDT:1h": {
       "sentAt": "2026-10-25T18:31:06.718Z",
       "symbol": "RLSUSDT",
@@ -342,6 +324,33 @@
       "score": 14,
       "entry": 0.005597,
       "stop": 0.005460838114748497
+    },
+    "ZECUSDT:15m": {
+      "sentAt": "2026-10-26T06:01:07.105Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1213.525389213401,
+      "stop": 1238.8097605139956
+    },
+    "XDPUSDT:15m": {
+      "sentAt": "2026-10-26T06:01:08.846Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.018066781018955883,
+      "stop": 0.018183616000000003
+    },
+    "BEATUSDT:1h": {
+      "sentAt": "2026-10-26T06:01:10.570Z",
+      "symbol": "BEATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06682,
+      "stop": 0.0648989914399216
     }
   }
 }
