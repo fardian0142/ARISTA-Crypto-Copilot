@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T17:31:22.672Z",
+  "lastUpdated": "2026-10-26T18:01:19.873Z",
   "signals": {
-    "ZECUSDT:15m": {
-      "sentAt": "2026-10-26T06:01:07.105Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1213.525389213401,
-      "stop": 1238.8097605139956
-    },
-    "XDPUSDT:15m": {
-      "sentAt": "2026-10-26T06:01:08.846Z",
-      "symbol": "XDPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.018066781018955883,
-      "stop": 0.018183616000000003
-    },
-    "BEATUSDT:1h": {
-      "sentAt": "2026-10-26T06:01:10.570Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06682,
-      "stop": 0.0648989914399216
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-26T06:31:03.387Z",
       "symbol": "SATSUSDT",
@@ -342,6 +315,15 @@
       "score": 14,
       "entry": 0.4094,
       "stop": 0.3961402285907122
+    },
+    "SNDKBUSDT:2h": {
+      "sentAt": "2026-10-26T18:01:18.371Z",
+      "symbol": "SNDKBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1270.05,
+      "stop": 1214.4850169794458
     }
   }
 }
