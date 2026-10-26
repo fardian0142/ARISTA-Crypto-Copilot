@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T04:30:58.860Z",
+  "lastUpdated": "2026-10-26T05:01:09.305Z",
   "signals": {
-    "MERLUSDT:15m": {
-      "sentAt": "2026-10-25T16:31:18.938Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02664,
-      "stop": 0.026199319228249064
-    },
-    "CASHCATUSDT:30m": {
-      "sentAt": "2026-10-25T16:31:20.695Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09342500000000001,
-      "stop": 0.0913911436993705
-    },
-    "LTCUSDT:30m": {
-      "sentAt": "2026-10-25T16:31:22.501Z",
-      "symbol": "LTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 56.93,
-      "stop": 56.19244569609126
-    },
-    "XAUTUSDT:30m": {
-      "sentAt": "2026-10-25T17:01:08.374Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3998.3050000000003,
-      "stop": 3993.4037340395093
-    },
     "LINKUSDT:1h": {
       "sentAt": "2026-10-25T17:31:10.084Z",
       "symbol": "LINKUSDT",
@@ -342,6 +306,33 @@
       "score": 14,
       "entry": 0.15391013583020938,
       "stop": 0.13934656072767415
+    },
+    "SOLUSDT:15m": {
+      "sentAt": "2026-10-26T05:01:04.339Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 100.93,
+      "stop": 102.25350496300214
+    },
+    "MERLUSDT:30m": {
+      "sentAt": "2026-10-26T05:01:06.077Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.026445,
+      "stop": 0.025879689060456578
+    },
+    "UNIUSDT:1h": {
+      "sentAt": "2026-10-26T05:01:07.802Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.859,
+      "stop": 6.665981795196197
     }
   }
 }
