@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T01:31:16.177Z",
+  "lastUpdated": "2026-10-26T02:01:31.661Z",
   "signals": {
-    "PONSUSDT:30m": {
-      "sentAt": "2026-10-25T14:01:03.291Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.23730690484578895,
-      "stop": 0.22419353681579315
-    },
     "LIGHTUSDT:15m": {
       "sentAt": "2026-10-25T14:31:13.430Z",
       "symbol": "LIGHTUSDT",
@@ -378,6 +369,42 @@
       "score": 14,
       "entry": 0.02649363047209147,
       "stop": 0.02604015511960799
+    },
+    "MONUSDT:15m": {
+      "sentAt": "2026-10-26T02:01:26.634Z",
+      "symbol": "MONUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.021249999999999998,
+      "stop": 0.021781483430158635
+    },
+    "BASEDUSDT:15m": {
+      "sentAt": "2026-10-26T02:01:28.390Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05033,
+      "stop": 0.04955007837877767
+    },
+    "UNIUSDT:2h": {
+      "sentAt": "2026-10-26T02:01:30.158Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.909,
+      "stop": 6.691624
+    },
+    "UNIUSDT:15m": {
+      "sentAt": "2026-10-26T02:01:30.158Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 6.8605,
+      "stop": 7.024495517644812
     }
   }
 }
