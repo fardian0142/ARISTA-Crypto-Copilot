@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-10-25T23:31:04.855Z",
+  "lastUpdated": "2026-10-26T00:01:15.152Z",
   "signals": {
-    "SOLUSDT:15m": {
-      "sentAt": "2026-10-25T12:01:05.713Z",
-      "symbol": "SOLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 101.28454385249108,
-      "stop": 102.3818296250637
-    },
-    "MONUSDT:15m": {
-      "sentAt": "2026-10-25T12:01:07.432Z",
-      "symbol": "MONUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.021261509122913393,
-      "stop": 0.021694934836332915
-    },
-    "PONSUSDT:1h": {
-      "sentAt": "2026-10-25T12:01:09.283Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.22949999999999998,
-      "stop": 0.21928512412813353
-    },
-    "HYPEUSDT:15m": {
-      "sentAt": "2026-10-25T12:01:11.074Z",
-      "symbol": "HYPEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 76.5563869473692,
-      "stop": 77.29695969924197
-    },
-    "RAVEUSDT:15m": {
-      "sentAt": "2026-10-25T12:01:12.837Z",
-      "symbol": "RAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.13864148471856622,
-      "stop": 0.1365026200684082
-    },
-    "CROUSDT:15m": {
-      "sentAt": "2026-10-25T12:01:14.591Z",
-      "symbol": "CROUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05452,
-      "stop": 0.05405344304002933
-    },
     "ORDERUSDT:1h": {
       "sentAt": "2026-10-25T12:31:11.371Z",
       "symbol": "ORDERUSDT",
@@ -414,6 +360,24 @@
       "score": 14,
       "entry": 0.03034,
       "stop": 0.029741040915750503
+    },
+    "PONSUSDT:15m": {
+      "sentAt": "2026-10-26T00:01:11.920Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.23994841501615985,
+      "stop": 0.24479250707360067
+    },
+    "MOODENGUSDT:30m": {
+      "sentAt": "2026-10-26T00:01:13.650Z",
+      "symbol": "MOODENGUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03847,
+      "stop": 0.03764947963750754
     }
   }
 }
