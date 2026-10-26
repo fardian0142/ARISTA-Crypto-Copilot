@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T08:01:09.825Z",
+  "lastUpdated": "2026-10-26T08:31:19.389Z",
   "signals": {
     "NEARUSDT:2h": {
       "sentAt": "2026-10-25T21:31:03.097Z",
@@ -342,6 +342,33 @@
       "score": 14,
       "entry": 0.0000044,
       "stop": 0.000004247865841485656
+    },
+    "LIGHTUSDT:1h": {
+      "sentAt": "2026-10-26T08:31:14.331Z",
+      "symbol": "LIGHTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.24875,
+      "stop": 0.20973998254473167
+    },
+    "LABUSDT:15m": {
+      "sentAt": "2026-10-26T08:31:16.095Z",
+      "symbol": "LABUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.037090047850246596,
+      "stop": 0.036314080641800306
+    },
+    "CCUSDT:15m": {
+      "sentAt": "2026-10-26T08:31:17.886Z",
+      "symbol": "CCUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.10111,
+      "stop": 0.10276585796705578
     }
   }
 }
