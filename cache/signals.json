@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T15:31:26.440Z",
+  "lastUpdated": "2026-10-26T16:01:12.965Z",
   "signals": {
-    "APRUSDT:30m": {
-      "sentAt": "2026-10-26T04:01:06.788Z",
-      "symbol": "APRUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0347472990503886,
-      "stop": 0.02751157549833459
-    },
-    "CAPUSDT:15m": {
-      "sentAt": "2026-10-26T04:01:08.514Z",
-      "symbol": "CAPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.1109079383386951,
-      "stop": 0.12238026426273531
-    },
-    "USELESSUSDT:2h": {
-      "sentAt": "2026-10-26T04:01:10.282Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15391013583020938,
-      "stop": 0.13934656072767415
-    },
     "SOLUSDT:15m": {
       "sentAt": "2026-10-26T05:01:04.339Z",
       "symbol": "SOLUSDT",
@@ -306,6 +279,42 @@
       "score": 14,
       "entry": 0.4448,
       "stop": 0.43182125647519154
+    },
+    "SOLUSDT:1h": {
+      "sentAt": "2026-10-26T16:01:06.074Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 101.535,
+      "stop": 100.1228126834134
+    },
+    "DOSUSDT:1h": {
+      "sentAt": "2026-10-26T16:01:07.854Z",
+      "symbol": "DOSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.24093686426696825,
+      "stop": 0.2179522
+    },
+    "SPCXBUSDT:2h": {
+      "sentAt": "2026-10-26T16:01:09.674Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 148.09943792580333,
+      "stop": 145.60351627558757
+    },
+    "ADAUSDT:30m": {
+      "sentAt": "2026-10-26T16:01:11.462Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2054,
+      "stop": 0.20202880729210804
     }
   }
 }
