@@ -308,9 +308,12 @@ export async function analyze(symbol, timeframe) {
 
     let htfStructure = emptyStructure();
 
+    let htfEmaTrend = null;
+
     if (hasRealHtf) {
       const htfSwings = detectSwings(htfCandles);
       htfStructure = marketStructure(htfCandles, htfSwings) || htfStructure;
+      htfEmaTrend = emaTrendCalc(htfCandles);
     }
 
     let htf2Structure = emptyStructure();
@@ -580,6 +583,18 @@ export async function analyze(symbol, timeframe) {
       ) {
         return fail(
           "ساختار تایم‌فریم بالاتر با جهت ستاپ مخالف است"
+        );
+      }
+
+      if (
+        htfTrend === "neutral" &&
+        htfEmaTrend &&
+        htfEmaTrend.trend !== "neutral" &&
+        htfEmaTrend.trend !== direction &&
+        htfEmaTrend.distance_atr > 0.5
+      ) {
+        return fail(
+          "فیلتر روند: روند تایم‌فریم بالاتر خنثی است اما EMA خلاف جهت ستاپ است"
         );
       }
 
