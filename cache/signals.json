@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T16:31:24.667Z",
+  "lastUpdated": "2026-10-26T17:01:09.575Z",
   "signals": {
-    "SOLUSDT:15m": {
-      "sentAt": "2026-10-26T05:01:04.339Z",
-      "symbol": "SOLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 100.93,
-      "stop": 102.25350496300214
-    },
-    "MERLUSDT:30m": {
-      "sentAt": "2026-10-26T05:01:06.077Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026445,
-      "stop": 0.025879689060456578
-    },
-    "UNIUSDT:1h": {
-      "sentAt": "2026-10-26T05:01:07.802Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 6.859,
-      "stop": 6.665981795196197
-    },
     "ATHUSDT:30m": {
       "sentAt": "2026-10-26T05:30:58.425Z",
       "symbol": "ATHUSDT",
@@ -324,6 +297,24 @@
       "score": 14,
       "entry": 4012.3450000000003,
       "stop": 3994.7479561646182
+    },
+    "UNIUSDT:2h": {
+      "sentAt": "2026-10-26T17:01:06.318Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.068,
+      "stop": 6.727033490544112
+    },
+    "INJUSDT:2h": {
+      "sentAt": "2026-10-26T17:01:08.072Z",
+      "symbol": "INJUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.868456403563013,
+      "stop": 7.394186841872797
     }
   }
 }
