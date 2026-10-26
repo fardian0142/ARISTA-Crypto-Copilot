@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T06:31:06.785Z",
+  "lastUpdated": "2026-10-26T07:01:12.148Z",
   "signals": {
-    "BNBUSDT:15m": {
-      "sentAt": "2026-10-25T18:31:08.465Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 742.285,
-      "stop": 745.0497031398844
-    },
-    "CROUSDT:30m": {
-      "sentAt": "2026-10-25T18:31:10.256Z",
-      "symbol": "CROUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.054376038847920305,
-      "stop": 0.05391840493748441
-    },
     "TRUTHUSDT:1h": {
       "sentAt": "2026-10-25T19:31:00.622Z",
       "symbol": "TRUTHUSDT",
@@ -351,6 +333,24 @@
       "score": 14,
       "entry": 0.075695,
       "stop": 0.07463317282009042
+    },
+    "MEWUSDT:1h": {
+      "sentAt": "2026-10-26T07:01:08.944Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004564,
+      "stop": 0.00045020796
+    },
+    "STABLEUSDT:1h": {
+      "sentAt": "2026-10-26T07:01:10.645Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.026151472564906686,
+      "stop": 0.025554761999999998
     }
   }
 }
