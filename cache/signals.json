@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T22:00:56.842Z",
+  "lastUpdated": "2026-10-26T22:31:03.089Z",
   "signals": {
-    "UPUSDT:2h": {
-      "sentAt": "2026-10-26T10:01:19.736Z",
-      "symbol": "UPUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.15592387130754007,
-      "stop": 0.17164055153911392
-    },
     "NEARUSDT:2h": {
       "sentAt": "2026-10-26T10:31:05.215Z",
       "symbol": "NEARUSDT",
@@ -369,6 +360,24 @@
       "score": 14,
       "entry": 0.4158312,
       "stop": 0.39867144526570697
+    },
+    "PONSUSDT:15m": {
+      "sentAt": "2026-10-26T22:30:59.869Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2467,
+      "stop": 0.25145478838269825
+    },
+    "UPUSDT:2h": {
+      "sentAt": "2026-10-26T22:31:01.588Z",
+      "symbol": "UPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1429,
+      "stop": 0.13234573206998435
     }
   }
 }
