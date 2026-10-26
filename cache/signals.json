@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T23:01:10.759Z",
+  "lastUpdated": "2026-10-26T23:31:17.972Z",
   "signals": {
     "AZTECUSDT:1h": {
       "sentAt": "2026-10-26T12:01:08.409Z",
@@ -360,6 +360,33 @@
       "score": 14,
       "entry": 0.1429,
       "stop": 0.13234573206998435
+    },
+    "ETHUSDT:15m": {
+      "sentAt": "2026-10-26T23:31:13.045Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2312.635,
+      "stop": 2300.1821592327547
+    },
+    "PUMPUSDT:2h": {
+      "sentAt": "2026-10-26T23:31:14.774Z",
+      "symbol": "PUMPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004189,
+      "stop": 0.0039901476
+    },
+    "AVAXUSDT:2h": {
+      "sentAt": "2026-10-26T23:31:16.469Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.870000000000001,
+      "stop": 8.637935969115956
     }
   }
 }
