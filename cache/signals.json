@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T12:01:09.913Z",
+  "lastUpdated": "2026-10-26T12:31:04.093Z",
   "signals": {
-    "PONSUSDT:15m": {
-      "sentAt": "2026-10-26T00:01:11.920Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.23994841501615985,
-      "stop": 0.24479250707360067
-    },
-    "MOODENGUSDT:30m": {
-      "sentAt": "2026-10-26T00:01:13.650Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03847,
-      "stop": 0.03764947963750754
-    },
-    "TRUTHUSDT:30m": {
-      "sentAt": "2026-10-26T00:30:52.960Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.019675816,
-      "stop": 0.020130754906674864
-    },
-    "FARTCOINUSDT:30m": {
-      "sentAt": "2026-10-26T00:30:54.701Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1248,
-      "stop": 0.12152136729491295
-    },
-    "BMTUSDT:15m": {
-      "sentAt": "2026-10-26T00:30:56.482Z",
-      "symbol": "BMTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.031146261756632054,
-      "stop": 0.029743802
-    },
-    "RAVEUSDT:15m": {
-      "sentAt": "2026-10-26T00:30:58.228Z",
-      "symbol": "RAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1367,
-      "stop": 0.13456286859799416
-    },
     "MONUSDT:1h": {
       "sentAt": "2026-10-26T01:31:11.223Z",
       "symbol": "MONUSDT",
