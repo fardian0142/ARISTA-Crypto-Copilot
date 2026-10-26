@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T03:30:59.500Z",
+  "lastUpdated": "2026-10-26T04:01:11.785Z",
   "signals": {
-    "AZTECUSDT:1h": {
-      "sentAt": "2026-10-25T15:31:06.923Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016735,
-      "stop": 0.015749757144499672
-    },
-    "BILLUSDT:2h": {
-      "sentAt": "2026-10-25T16:01:05.366Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00628,
-      "stop": 0.005561125709147407
-    },
-    "ETHUSDT:15m": {
-      "sentAt": "2026-10-25T16:01:07.167Z",
-      "symbol": "ETHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 2341.499793963674,
-      "stop": 2359.5994544413957
-    },
-    "SLXUSDT:1h": {
-      "sentAt": "2026-10-25T16:01:08.958Z",
-      "symbol": "SLXUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.050205,
-      "stop": 0.052772822415557585
-    },
-    "UNIUSDT:1h": {
-      "sentAt": "2026-10-25T16:01:10.788Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 6.857004517056381,
-      "stop": 6.71563
-    },
     "LINKUSDT:15m": {
       "sentAt": "2026-10-25T16:01:12.707Z",
       "symbol": "LINKUSDT",
@@ -369,6 +324,33 @@
       "score": 14,
       "entry": 0.016154373086947907,
       "stop": 0.01580697248450897
+    },
+    "APRUSDT:30m": {
+      "sentAt": "2026-10-26T04:01:06.788Z",
+      "symbol": "APRUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0347472990503886,
+      "stop": 0.02751157549833459
+    },
+    "CAPUSDT:15m": {
+      "sentAt": "2026-10-26T04:01:08.514Z",
+      "symbol": "CAPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.1109079383386951,
+      "stop": 0.12238026426273531
+    },
+    "USELESSUSDT:2h": {
+      "sentAt": "2026-10-26T04:01:10.282Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15391013583020938,
+      "stop": 0.13934656072767415
     }
   }
 }
