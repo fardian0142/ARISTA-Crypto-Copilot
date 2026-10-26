@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T10:01:21.238Z",
+  "lastUpdated": "2026-10-26T10:31:08.484Z",
   "signals": {
     "DOODUSDT:15m": {
       "sentAt": "2026-10-25T22:31:08.754Z",
@@ -360,6 +360,24 @@
       "score": 14,
       "entry": 0.15592387130754007,
       "stop": 0.17164055153911392
+    },
+    "NEARUSDT:2h": {
+      "sentAt": "2026-10-26T10:31:05.215Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.481999999999999,
+      "stop": 4.278138045472387
+    },
+    "SUIUSDT:15m": {
+      "sentAt": "2026-10-26T10:31:06.982Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.9167,
+      "stop": 0.9064221439898913
     }
   }
 }
