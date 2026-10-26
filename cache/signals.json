@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T05:01:09.305Z",
+  "lastUpdated": "2026-10-26T05:30:59.928Z",
   "signals": {
     "LINKUSDT:1h": {
       "sentAt": "2026-10-25T17:31:10.084Z",
@@ -333,6 +333,15 @@
       "score": 14,
       "entry": 6.859,
       "stop": 6.665981795196197
+    },
+    "ATHUSDT:30m": {
+      "sentAt": "2026-10-26T05:30:58.425Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005597,
+      "stop": 0.005460838114748497
     }
   }
 }
