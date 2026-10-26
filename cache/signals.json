@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T02:31:05.651Z",
+  "lastUpdated": "2026-10-26T03:01:11.661Z",
   "signals": {
-    "LIGHTUSDT:15m": {
-      "sentAt": "2026-10-25T14:31:13.430Z",
-      "symbol": "LIGHTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.24045,
-      "stop": 0.232151
-    },
     "COREUSDT:2h": {
       "sentAt": "2026-10-25T15:01:19.618Z",
       "symbol": "COREUSDT",
@@ -405,6 +396,15 @@
       "score": 14,
       "entry": 6.8605,
       "stop": 7.024495517644812
+    },
+    "AZTECUSDT:30m": {
+      "sentAt": "2026-10-26T03:01:10.159Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.016154373086947907,
+      "stop": 0.01580697248450897
     }
   }
 }
