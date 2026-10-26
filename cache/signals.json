@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T16:01:12.965Z",
+  "lastUpdated": "2026-10-26T16:31:24.667Z",
   "signals": {
     "SOLUSDT:15m": {
       "sentAt": "2026-10-26T05:01:04.339Z",
@@ -315,6 +315,15 @@
       "score": 14,
       "entry": 0.2054,
       "stop": 0.20202880729210804
+    },
+    "XAUTUSDT:1h": {
+      "sentAt": "2026-10-26T16:31:23.164Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4012.3450000000003,
+      "stop": 3994.7479561646182
     }
   }
 }
