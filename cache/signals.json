@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T12:31:04.093Z",
+  "lastUpdated": "2026-10-26T13:01:09.687Z",
   "signals": {
     "MONUSDT:1h": {
       "sentAt": "2026-10-26T01:31:11.223Z",
@@ -306,6 +306,15 @@
       "score": 14,
       "entry": 0.01635,
       "stop": 0.01590758039640169
+    },
+    "WETUSDT:15m": {
+      "sentAt": "2026-10-26T13:01:08.184Z",
+      "symbol": "WETUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0477,
+      "stop": 0.04639266585538472
     }
   }
 }
