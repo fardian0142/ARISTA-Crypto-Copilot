@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T07:01:12.148Z",
+  "lastUpdated": "2026-10-26T07:31:10.107Z",
   "signals": {
-    "TRUTHUSDT:1h": {
-      "sentAt": "2026-10-25T19:31:00.622Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.019674,
-      "stop": 0.020416108718108072
-    },
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-10-25T19:31:02.459Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1252763615090715,
-      "stop": 0.1233470221039793
-    },
-    "FLOCKUSDT:30m": {
-      "sentAt": "2026-10-25T19:31:04.195Z",
-      "symbol": "FLOCKUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.041245000000000004,
-      "stop": 0.04016797009155639
-    },
     "NEARUSDT:2h": {
       "sentAt": "2026-10-25T21:31:03.097Z",
       "symbol": "NEARUSDT",
@@ -351,6 +324,24 @@
       "score": 14,
       "entry": 0.026151472564906686,
       "stop": 0.025554761999999998
+    },
+    "ZORAUSDT:30m": {
+      "sentAt": "2026-10-26T07:31:06.841Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006133212047782877,
+      "stop": 0.00591694836664481
+    },
+    "PEPEUSDT:1h": {
+      "sentAt": "2026-10-26T07:31:08.605Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0000044,
+      "stop": 0.000004247865841485656
     }
   }
 }
