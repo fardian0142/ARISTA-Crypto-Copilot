@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T03:01:11.661Z",
+  "lastUpdated": "2026-10-26T03:30:59.500Z",
   "signals": {
-    "COREUSDT:2h": {
-      "sentAt": "2026-10-25T15:01:19.618Z",
-      "symbol": "COREUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01796,
-      "stop": 0.01596626836137868
-    },
-    "BEATUSDT:15m": {
-      "sentAt": "2026-10-25T15:01:21.500Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.066735,
-      "stop": 0.066456598
-    },
-    "BEATUSDT:30m": {
-      "sentAt": "2026-10-25T15:01:21.500Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06676,
-      "stop": 0.06552960453986506
-    },
-    "ADAUSDT:30m": {
-      "sentAt": "2026-10-25T15:01:23.284Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2042,
-      "stop": 0.200751496430815
-    },
     "AZTECUSDT:1h": {
       "sentAt": "2026-10-25T15:31:06.923Z",
       "symbol": "AZTECUSDT",
