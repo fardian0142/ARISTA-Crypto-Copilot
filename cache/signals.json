@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T14:31:05.512Z",
+  "lastUpdated": "2026-10-26T15:01:32.728Z",
   "signals": {
-    "AZTECUSDT:30m": {
-      "sentAt": "2026-10-26T03:01:10.159Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016154373086947907,
-      "stop": 0.01580697248450897
-    },
     "APRUSDT:30m": {
       "sentAt": "2026-10-26T04:01:06.788Z",
       "symbol": "APRUSDT",
@@ -270,6 +261,51 @@
       "score": 14,
       "entry": 0.004648,
       "stop": 0.00459861768412594
+    },
+    "BTCUSDT:30m": {
+      "sentAt": "2026-10-26T15:01:25.657Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80360.56350215814,
+      "stop": 79738.20499075089
+    },
+    "ORDERUSDT:2h": {
+      "sentAt": "2026-10-26T15:01:27.402Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03645893542077879,
+      "stop": 0.02551027676809092
+    },
+    "SUIUSDT:1h": {
+      "sentAt": "2026-10-26T15:01:29.508Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.9152499999999999,
+      "stop": 0.898141519731987
+    },
+    "SUIUSDT:30m": {
+      "sentAt": "2026-10-26T15:01:29.508Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.9190499999999999,
+      "stop": 0.9037400531317334
+    },
+    "WLDUSDT:1h": {
+      "sentAt": "2026-10-26T15:01:31.225Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.4448,
+      "stop": 0.43182125647519154
     }
   }
 }
