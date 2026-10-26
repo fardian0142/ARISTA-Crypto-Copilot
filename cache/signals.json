@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T21:01:05.176Z",
+  "lastUpdated": "2026-10-26T21:31:13.487Z",
   "signals": {
-    "COREUSDT:30m": {
-      "sentAt": "2026-10-26T09:01:12.055Z",
-      "symbol": "COREUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.017565,
-      "stop": 0.016881576177456805
-    },
-    "LABUSDT:1h": {
-      "sentAt": "2026-10-26T09:01:13.894Z",
-      "symbol": "LABUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03739,
-      "stop": 0.03591078104721656
-    },
-    "LINKUSDT:15m": {
-      "sentAt": "2026-10-26T09:01:15.658Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.429,
-      "stop": 11.27710965290127
-    },
     "UPUSDT:2h": {
       "sentAt": "2026-10-26T10:01:19.736Z",
       "symbol": "UPUSDT",
@@ -360,6 +333,42 @@
       "score": 14,
       "entry": 0.8546499999999999,
       "stop": 0.8239829930438997
+    },
+    "GRVTUSDT:15m": {
+      "sentAt": "2026-10-26T21:31:06.685Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.20956000000000002,
+      "stop": 0.21395407306034844
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-10-26T21:31:08.521Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.1265001914821031,
+      "stop": 0.12898489364812965
+    },
+    "FLOCKUSDT:30m": {
+      "sentAt": "2026-10-26T21:31:10.239Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04075594,
+      "stop": 0.03979281594605799
+    },
+    "ONDOUSDT:1h": {
+      "sentAt": "2026-10-26T21:31:11.985Z",
+      "symbol": "ONDOUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.4158312,
+      "stop": 0.39867144526570697
     }
   }
 }
