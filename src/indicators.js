@@ -5310,6 +5310,16 @@ export function detectRangeTradeSetups(
       return null;
     }
 
+    const nearestResistance = getNearestResistance();
+
+    if (
+      nearestResistance &&
+      Number.isFinite(nearestResistance.price) &&
+      (nearestResistance.price - entry) < (atrValue * 0.3)
+    ) {
+      return null;
+    }
+
     const stop = buildStopFromStructure(
       "bullish",
       Math.min(zoneLow, precisionEntry.zoneLow),
@@ -5536,6 +5546,16 @@ export function detectRangeTradeSetups(
     const entry = precisionEntry.entry;
 
     if (!Number.isFinite(entry) || !isInsideRange(entry)) {
+      return null;
+    }
+
+    const nearestSupport = getNearestSupport();
+
+    if (
+      nearestSupport &&
+      Number.isFinite(nearestSupport.price) &&
+      (entry - nearestSupport.price) < (atrValue * 0.3)
+    ) {
       return null;
     }
 
