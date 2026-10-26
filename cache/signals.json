@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T11:31:01.563Z",
+  "lastUpdated": "2026-10-26T12:01:09.913Z",
   "signals": {
     "PONSUSDT:15m": {
       "sentAt": "2026-10-26T00:01:11.920Z",
@@ -351,6 +351,15 @@
       "score": 14,
       "entry": 0.9167,
       "stop": 0.9064221439898913
+    },
+    "AZTECUSDT:1h": {
+      "sentAt": "2026-10-26T12:01:08.409Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01635,
+      "stop": 0.01590758039640169
     }
   }
 }
