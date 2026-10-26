@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T18:31:01.877Z",
+  "lastUpdated": "2026-10-26T19:01:22.740Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-10-26T06:31:03.387Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.860500000000001e-9,
-      "stop": 9.767158647849189e-9
-    },
-    "PIUSDT:15m": {
-      "sentAt": "2026-10-26T06:31:05.283Z",
-      "symbol": "PIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.075695,
-      "stop": 0.07463317282009042
-    },
-    "MEWUSDT:1h": {
-      "sentAt": "2026-10-26T07:01:08.944Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0004564,
-      "stop": 0.00045020796
-    },
-    "STABLEUSDT:1h": {
-      "sentAt": "2026-10-26T07:01:10.645Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026151472564906686,
-      "stop": 0.025554761999999998
-    },
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-26T07:31:06.841Z",
       "symbol": "ZORAUSDT",
@@ -324,6 +288,33 @@
       "score": 14,
       "entry": 1270.05,
       "stop": 1214.4850169794458
+    },
+    "BNBUSDT:30m": {
+      "sentAt": "2026-10-26T19:01:17.673Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 742.56,
+      "stop": 750.2946706188644
+    },
+    "BASEDUSDT:1h": {
+      "sentAt": "2026-10-26T19:01:19.452Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.050435,
+      "stop": 0.04900571747758564
+    },
+    "UNIUSDT:1h": {
+      "sentAt": "2026-10-26T19:01:21.237Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.037,
+      "stop": 6.779551676025818
     }
   }
 }
