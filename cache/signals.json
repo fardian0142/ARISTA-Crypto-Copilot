@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T01:01:08.722Z",
+  "lastUpdated": "2026-10-26T01:31:16.177Z",
   "signals": {
-    "POPCATUSDT:30m": {
-      "sentAt": "2026-10-25T13:01:09.810Z",
-      "symbol": "POPCATUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.042276398511798666,
-      "stop": 0.04134143920143811
-    },
-    "AZTECUSDT:30m": {
-      "sentAt": "2026-10-25T13:31:08.859Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016614386358532445,
-      "stop": 0.016176688
-    },
     "PONSUSDT:30m": {
       "sentAt": "2026-10-25T14:01:03.291Z",
       "symbol": "PONSUSDT",
@@ -369,6 +351,33 @@
       "score": 14,
       "entry": 0.1367,
       "stop": 0.13456286859799416
+    },
+    "MONUSDT:1h": {
+      "sentAt": "2026-10-26T01:31:11.223Z",
+      "symbol": "MONUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02136,
+      "stop": 0.021105722
+    },
+    "DOGEUSDT:15m": {
+      "sentAt": "2026-10-26T01:31:12.941Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07691606960795142,
+      "stop": 0.07777827310877966
+    },
+    "STABLEUSDT:30m": {
+      "sentAt": "2026-10-26T01:31:14.673Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02649363047209147,
+      "stop": 0.02604015511960799
     }
   }
 }
