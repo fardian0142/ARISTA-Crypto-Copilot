@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T17:31:14.660Z",
+  "lastUpdated": "2026-10-27T18:01:12.259Z",
   "signals": {
-    "CPUSDT:30m": {
-      "sentAt": "2026-10-27T06:00:56.007Z",
-      "symbol": "CPUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.008879,
-      "stop": 0.008555578502948987
-    },
-    "MOODENGUSDT:1h": {
-      "sentAt": "2026-10-27T06:00:57.737Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03856,
-      "stop": 0.03732416934628143
-    },
-    "PIUSDT:15m": {
-      "sentAt": "2026-10-27T06:00:59.565Z",
-      "symbol": "PIUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07617,
-      "stop": 0.07676310172173174
-    },
     "IRYSUSDT:15m": {
       "sentAt": "2026-10-27T06:31:14.145Z",
       "symbol": "IRYSUSDT",
@@ -218,7 +191,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.26225,
-      "stop": 0.29231455624832753
+      "stop": 0.29231455624832753,
+      "closedAt": "2026-10-27T18:00:36.844Z"
     },
     "PUMPUSDT:2h": {
       "sentAt": "2026-10-27T13:01:42.953Z",
@@ -282,7 +256,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.3044,
-      "stop": 0.3108043980652655
+      "stop": 0.3108043980652655,
+      "closedAt": "2026-10-27T18:00:38.709Z"
     },
     "FETUSDT:2h": {
       "sentAt": "2026-10-27T13:31:10.109Z",

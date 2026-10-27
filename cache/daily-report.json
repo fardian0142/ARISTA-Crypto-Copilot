@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T17:31:14.662Z",
+  "lastUpdated": "2026-10-27T18:01:12.262Z",
   "lastReportSentDate": null,
   "buckets": {
     "2026-10-27": {
@@ -207,6 +207,30 @@
           "profitPct": 3.62,
           "maxR": 1.18,
           "closedAt": "2026-10-27T17:00:40.519Z"
+        },
+        {
+          "symbol": "LIGHTUSDT",
+          "timeframe": "1h",
+          "direction": "bearish",
+          "entry": 0.26225,
+          "stop": 0.29231455624832753,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 11.46,
+          "maxR": 0,
+          "closedAt": "2026-10-27T18:00:36.844Z"
+        },
+        {
+          "symbol": "SOONUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.3044,
+          "stop": 0.3108043980652655,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 2.1,
+          "maxR": 0,
+          "closedAt": "2026-10-27T18:00:38.709Z"
         }
       ],
       "openSignals": [
