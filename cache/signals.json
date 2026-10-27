@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T16:01:28.914Z",
+  "lastUpdated": "2026-10-27T16:31:17.081Z",
   "signals": {
-    "IRYSUSDT:1h": {
-      "sentAt": "2026-10-27T04:31:04.729Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.031085,
-      "stop": 0.023840143246818872
-    },
-    "PONSUSDT:1h": {
-      "sentAt": "2026-10-27T04:31:06.489Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.236,
-      "stop": 0.2258969420602538
-    },
     "CPUSDT:1h": {
       "sentAt": "2026-10-27T05:01:00.485Z",
       "symbol": "CPUSDT",

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T16:01:28.916Z",
+  "lastUpdated": "2026-10-27T16:31:17.084Z",
   "lastReportSentDate": null,
   "buckets": {
     "2026-10-27": {
@@ -159,6 +159,30 @@
           "profitPct": 2.75,
           "maxR": 2.41,
           "closedAt": "2026-10-27T16:00:46.674Z"
+        },
+        {
+          "symbol": "SPCXBUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 148.09943792580333,
+          "stop": 145.60351627558757,
+          "finalStatus": "tp1_hit",
+          "lastTpHit": "tp1_hit",
+          "profitPct": 2.01,
+          "maxR": 1.2,
+          "closedAt": "2026-10-27T16:30:39.240Z"
+        },
+        {
+          "symbol": "UNIUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 7.077,
+          "stop": 7.182715289889533,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 1.49,
+          "maxR": 0.07,
+          "closedAt": "2026-10-27T16:30:44.588Z"
         }
       ],
       "openSignals": [
