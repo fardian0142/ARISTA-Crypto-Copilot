@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T09:01:20.543Z",
+  "lastUpdated": "2026-10-27T09:31:03.463Z",
   "signals": {
     "GRVTUSDT:15m": {
       "sentAt": "2026-10-26T21:31:06.685Z",
@@ -513,6 +513,24 @@
       "score": 14,
       "entry": 0.029691639175138423,
       "stop": 0.030717260677978184
+    },
+    "COREUSDT:15m": {
+      "sentAt": "2026-10-27T09:31:00.239Z",
+      "symbol": "COREUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.016805,
+      "stop": 0.016576329325694368
+    },
+    "STABLEUSDT:30m": {
+      "sentAt": "2026-10-27T09:31:01.961Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02684134,
+      "stop": 0.026227072728317483
     }
   }
 }
