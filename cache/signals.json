@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T01:31:21.422Z",
+  "lastUpdated": "2026-10-27T02:01:14.201Z",
   "signals": {
     "BRETTUSDT:15m": {
       "sentAt": "2026-10-26T14:31:04.009Z",
@@ -459,6 +459,24 @@
       "score": 14,
       "entry": 0.22660865064575514,
       "stop": 0.23044528
+    },
+    "MEWUSDT:1h": {
+      "sentAt": "2026-10-27T02:01:10.937Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00043720589189765054,
+      "stop": 0.0004188890347243549
+    },
+    "XRPUSDT:15m": {
+      "sentAt": "2026-10-27T02:01:12.699Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1.304,
+      "stop": 1.3179298408080646
     }
   }
 }
