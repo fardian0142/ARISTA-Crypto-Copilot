@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T10:01:12.569Z",
+  "lastUpdated": "2026-10-27T10:31:17.167Z",
   "signals": {
-    "PONSUSDT:15m": {
-      "sentAt": "2026-10-26T22:30:59.869Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.2467,
-      "stop": 0.25145478838269825
-    },
-    "UPUSDT:2h": {
-      "sentAt": "2026-10-26T22:31:01.588Z",
-      "symbol": "UPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1429,
-      "stop": 0.13234573206998435
-    },
     "ETHUSDT:15m": {
       "sentAt": "2026-10-26T23:31:13.045Z",
       "symbol": "ETHUSDT",
@@ -495,6 +477,15 @@
       "score": 14,
       "entry": 0.02684134,
       "stop": 0.026227072728317483
+    },
+    "UNIUSDT:1h": {
+      "sentAt": "2026-10-27T10:31:15.664Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.011947501910209,
+      "stop": 6.790653563241961
     }
   }
 }
