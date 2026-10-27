@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-26T23:31:17.972Z",
+  "lastUpdated": "2026-10-27T00:01:11.353Z",
   "signals": {
-    "AZTECUSDT:1h": {
-      "sentAt": "2026-10-26T12:01:08.409Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01635,
-      "stop": 0.01590758039640169
-    },
     "WETUSDT:15m": {
       "sentAt": "2026-10-26T13:01:08.184Z",
       "symbol": "WETUSDT",
@@ -387,6 +378,33 @@
       "score": 14,
       "entry": 8.870000000000001,
       "stop": 8.637935969115956
+    },
+    "XRPUSDT:2h": {
+      "sentAt": "2026-10-27T00:01:06.263Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.2976999999999999,
+      "stop": 1.269405603093265
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-10-27T00:01:08.090Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 135.39499999999998,
+      "stop": 134.15098005210405
+    },
+    "LTCUSDT:1h": {
+      "sentAt": "2026-10-27T00:01:09.851Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 56.72,
+      "stop": 55.39666119200433
     }
   }
 }
