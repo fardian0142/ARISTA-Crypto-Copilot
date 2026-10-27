@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T04:31:07.991Z",
+  "lastUpdated": "2026-10-27T05:01:05.547Z",
   "signals": {
-    "XAUTUSDT:1h": {
-      "sentAt": "2026-10-26T16:31:23.164Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4012.3450000000003,
-      "stop": 3994.7479561646182
-    },
     "UNIUSDT:2h": {
       "sentAt": "2026-10-26T17:01:06.318Z",
       "symbol": "UNIUSDT",
@@ -531,6 +522,33 @@
       "score": 14,
       "entry": 0.236,
       "stop": 0.2258969420602538
+    },
+    "CPUSDT:1h": {
+      "sentAt": "2026-10-27T05:01:00.485Z",
+      "symbol": "CPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008738,
+      "stop": 0.008333413449282814
+    },
+    "ZORAUSDT:30m": {
+      "sentAt": "2026-10-27T05:01:02.311Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006271,
+      "stop": 0.006035638239254853
+    },
+    "LINKUSDT:15m": {
+      "sentAt": "2026-10-27T05:01:04.045Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 11.344,
+      "stop": 11.250016596896305
     }
   }
 }
