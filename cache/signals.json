@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T01:01:07.829Z",
+  "lastUpdated": "2026-10-27T01:31:21.422Z",
   "signals": {
-    "WETUSDT:15m": {
-      "sentAt": "2026-10-26T13:01:08.184Z",
-      "symbol": "WETUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0477,
-      "stop": 0.04639266585538472
-    },
-    "XAUTUSDT:30m": {
-      "sentAt": "2026-10-26T13:31:15.834Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 4015.2171263015766,
-      "stop": 4028.7123158503878
-    },
     "BRETTUSDT:15m": {
       "sentAt": "2026-10-26T14:31:04.009Z",
       "symbol": "BRETTUSDT",
@@ -441,6 +423,42 @@
       "score": 14,
       "entry": 0.016480413137931894,
       "stop": 0.015828229408863314
+    },
+    "ORDERUSDT:30m": {
+      "sentAt": "2026-10-27T01:31:14.649Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.040485,
+      "stop": 0.03640264237107485
+    },
+    "XRPUSDT:1h": {
+      "sentAt": "2026-10-27T01:31:16.387Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.3016234738976293,
+      "stop": 1.276913683295874
+    },
+    "BLENDUSDT:30m": {
+      "sentAt": "2026-10-27T01:31:18.125Z",
+      "symbol": "BLENDUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05104,
+      "stop": 0.04972763540645579
+    },
+    "ARXUSDT:15m": {
+      "sentAt": "2026-10-27T01:31:19.919Z",
+      "symbol": "ARXUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.22660865064575514,
+      "stop": 0.23044528
     }
   }
 }
