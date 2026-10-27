@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T19:01:08.474Z",
+  "lastUpdated": "2026-10-27T19:31:11.888Z",
   "signals": {
     "UBUSDT:15m": {
       "sentAt": "2026-10-27T07:31:13.358Z",
@@ -376,6 +376,24 @@
       "score": 14,
       "entry": 0.05319900523427426,
       "stop": 0.05255426328168172
+    },
+    "CASHCATUSDT:15m": {
+      "sentAt": "2026-10-27T19:31:07.955Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0991,
+      "stop": 0.10255513435096927
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-10-27T19:31:10.386Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.015478857193140136,
+      "stop": 0.015620612029399418
     }
   }
 }
