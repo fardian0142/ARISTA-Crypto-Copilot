@@ -1,302 +1,20 @@
 {
-  "lastUpdated": "2026-10-27T20:01:13.701Z",
-  "lastReportSentDate": null,
+  "lastUpdated": "2026-10-27T20:31:16.152Z",
+  "lastReportSentDate": "2026-10-28",
   "buckets": {
-    "2026-10-27": {
+    "2026-10-28": {
       "closedSignals": [
         {
-          "symbol": "AKEUSDT",
-          "timeframe": "15m",
+          "symbol": "DOSUSDT",
+          "timeframe": "1h",
           "direction": "bullish",
-          "entry": 0.03036,
-          "stop": 0.027070534863540954,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 10.83,
-          "maxR": 0.5,
-          "closedAt": "2026-10-27T15:30:38.880Z"
-        },
-        {
-          "symbol": "BNBUSDT",
-          "timeframe": "2h",
-          "direction": "bearish",
-          "entry": 737.6117738781189,
-          "stop": 753.8030437277222,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 2.2,
-          "maxR": 0.14,
-          "closedAt": "2026-10-27T15:30:40.641Z"
-        },
-        {
-          "symbol": "APRUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.0347472990503886,
-          "stop": 0.02751157549833459,
+          "entry": 0.24093686426696825,
+          "stop": 0.2179522,
           "finalStatus": "tp3_hit",
           "lastTpHit": "tp3_hit",
-          "profitPct": 31.21,
-          "maxR": 1.46,
-          "closedAt": "2026-10-27T15:30:46.000Z"
-        },
-        {
-          "symbol": "BNBUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 742.56,
-          "stop": 750.2946706188644,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 1.04,
-          "maxR": 0.93,
-          "closedAt": "2026-10-27T15:30:49.629Z"
-        },
-        {
-          "symbol": "ORDERUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.040485,
-          "stop": 0.03640264237107485,
-          "finalStatus": "stopped_without_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 10.08,
-          "maxR": 0,
-          "closedAt": "2026-10-27T15:30:53.406Z"
-        },
-        {
-          "symbol": "BNBUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 742.5550000000001,
-          "stop": 745.4149662428047,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 0.39,
-          "maxR": 0.33,
-          "closedAt": "2026-10-27T15:30:55.296Z"
-        },
-        {
-          "symbol": "BNBUSDT",
-          "timeframe": "1h",
-          "direction": "bearish",
-          "entry": 741.6128393364693,
-          "stop": 748.9049742722744,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 0.98,
-          "maxR": 0.02,
-          "closedAt": "2026-10-27T15:30:57.036Z"
-        },
-        {
-          "symbol": "AEONUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.029691639175138423,
-          "stop": 0.030717260677978184,
-          "finalStatus": "tp2_hit",
-          "lastTpHit": "tp2_hit",
-          "profitPct": 5.17,
-          "maxR": 1.43,
-          "closedAt": "2026-10-27T15:30:58.777Z"
-        },
-        {
-          "symbol": "BNBUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 740.8484250408482,
-          "stop": 746.3538926820792,
-          "finalStatus": "stopped_without_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 0.74,
-          "maxR": 0,
-          "closedAt": "2026-10-27T15:31:02.336Z"
-        },
-        {
-          "symbol": "BTCUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 80086.265,
-          "stop": 79602.8391124579,
-          "finalStatus": "tp1_hit",
-          "lastTpHit": "tp1_hit",
-          "profitPct": 0.56,
-          "maxR": 0.85,
-          "closedAt": "2026-10-27T15:31:04.082Z"
-        },
-        {
-          "symbol": "AIUSDT",
-          "timeframe": "1h",
-          "direction": "bullish",
-          "entry": 0.019201595664266748,
-          "stop": 0.01807431668380894,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 5.87,
-          "maxR": 0.44,
-          "closedAt": "2026-10-27T16:00:39.422Z"
-        },
-        {
-          "symbol": "STABLEUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.02684134,
-          "stop": 0.026227072728317483,
-          "finalStatus": "tp2_hit",
-          "lastTpHit": "tp2_hit",
-          "profitPct": 5.25,
-          "maxR": 1.3,
-          "closedAt": "2026-10-27T16:00:43.007Z"
-        },
-        {
-          "symbol": "STABLEUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.02652549544598867,
-          "stop": 0.02606216237433428,
-          "finalStatus": "tp2_hit",
-          "lastTpHit": "tp2_hit",
-          "profitPct": 2.75,
-          "maxR": 2.41,
-          "closedAt": "2026-10-27T16:00:46.674Z"
-        },
-        {
-          "symbol": "SPCXBUSDT",
-          "timeframe": "2h",
-          "direction": "bullish",
-          "entry": 148.09943792580333,
-          "stop": 145.60351627558757,
-          "finalStatus": "tp1_hit",
-          "lastTpHit": "tp1_hit",
-          "profitPct": 2.01,
-          "maxR": 1.2,
-          "closedAt": "2026-10-27T16:30:39.240Z"
-        },
-        {
-          "symbol": "UNIUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 7.077,
-          "stop": 7.182715289889533,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 1.49,
-          "maxR": 0.07,
-          "closedAt": "2026-10-27T16:30:44.588Z"
-        },
-        {
-          "symbol": "PEPEUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.00000444808133280259,
-          "stop": 0.000004575133337124351,
-          "finalStatus": "stopped_after_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 2.86,
-          "maxR": 1.56,
-          "closedAt": "2026-10-27T17:00:33.648Z"
-        },
-        {
-          "symbol": "PEPEUSDT",
-          "timeframe": "1h",
-          "direction": "bullish",
-          "entry": 0.0000044,
-          "stop": 0.000004247865841485656,
-          "finalStatus": "tp3_hit",
-          "lastTpHit": "tp3_hit",
-          "profitPct": 3.62,
-          "maxR": 1.18,
-          "closedAt": "2026-10-27T17:00:40.519Z"
-        },
-        {
-          "symbol": "LIGHTUSDT",
-          "timeframe": "1h",
-          "direction": "bearish",
-          "entry": 0.26225,
-          "stop": 0.29231455624832753,
-          "finalStatus": "stopped_without_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 11.46,
-          "maxR": 0,
-          "closedAt": "2026-10-27T18:00:36.844Z"
-        },
-        {
-          "symbol": "SOONUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.3044,
-          "stop": 0.3108043980652655,
-          "finalStatus": "stopped_without_tp",
-          "lastTpHit": "stopped",
-          "profitPct": 2.1,
-          "maxR": 0,
-          "closedAt": "2026-10-27T18:00:38.709Z"
-        }
-      ],
-      "openSignals": [
-        {
-          "symbol": "TRUTHUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.02087414502817917,
-          "stop": 0.0213546641649464,
-          "sentAt": "2026-10-27T16:01:22.017Z"
-        },
-        {
-          "symbol": "MONUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 0.02146862877779909,
-          "stop": 0.022045876666575332,
-          "sentAt": "2026-10-27T16:01:23.815Z"
-        },
-        {
-          "symbol": "SPACEUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 0.003686252610434806,
-          "stop": 0.003738736947825969,
-          "sentAt": "2026-10-27T16:01:25.619Z"
-        },
-        {
-          "symbol": "HUMAUSDT",
-          "timeframe": "2h",
-          "direction": "bearish",
-          "entry": 0.02738,
-          "stop": 0.030405432,
-          "sentAt": "2026-10-27T16:01:27.411Z"
-        },
-        {
-          "symbol": "MONUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.021484044519970866,
-          "stop": 0.021275696,
-          "sentAt": "2026-10-27T17:01:19.065Z"
-        },
-        {
-          "symbol": "UBUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.12016746795844524,
-          "stop": 0.11591513732094899,
-          "sentAt": "2026-10-27T17:01:20.826Z"
-        },
-        {
-          "symbol": "MERLUSDT",
-          "timeframe": "1h",
-          "direction": "bullish",
-          "entry": 0.02701,
-          "stop": 0.02606629469147243,
-          "sentAt": "2026-10-27T17:31:11.372Z"
-        },
-        {
-          "symbol": "FETUSDT",
-          "timeframe": "1h",
-          "direction": "bullish",
-          "entry": 0.18014521274946152,
-          "stop": 0.17154908821659348,
-          "sentAt": "2026-10-27T17:31:13.157Z"
+          "profitPct": 11.01,
+          "maxR": 1.09,
+          "closedAt": "2026-10-27T20:30:34.127Z"
         },
         {
           "symbol": "USELESSUSDT",
@@ -304,55 +22,21 @@
           "direction": "bullish",
           "entry": 0.15549,
           "stop": 0.1492191427405869,
-          "sentAt": "2026-10-27T18:31:08.430Z"
-        },
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 3.89,
+          "maxR": 0.87,
+          "closedAt": "2026-10-27T20:30:39.225Z"
+        }
+      ],
+      "openSignals": [
         {
-          "symbol": "WLDUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.4370449390734052,
-          "stop": 0.42689311825683485,
-          "sentAt": "2026-10-27T18:31:10.221Z"
-        },
-        {
-          "symbol": "CROUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.05319900523427426,
-          "stop": 0.05255426328168172,
-          "sentAt": "2026-10-27T19:01:06.970Z"
-        },
-        {
-          "symbol": "CASHCATUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.0991,
-          "stop": 0.10255513435096927,
-          "sentAt": "2026-10-27T19:31:07.955Z"
-        },
-        {
-          "symbol": "PIPPINUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.015478857193140136,
-          "stop": 0.015620612029399418,
-          "sentAt": "2026-10-27T19:31:10.386Z"
-        },
-        {
-          "symbol": "BRETTUSDT",
+          "symbol": "PONSUSDT",
           "timeframe": "1h",
           "direction": "bullish",
-          "entry": 0.0046345,
-          "stop": 0.004488381911573389,
-          "sentAt": "2026-10-27T20:01:12.194Z"
-        },
-        {
-          "symbol": "BRETTUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.0046339677576663985,
-          "stop": 0.004578566752858289,
-          "sentAt": "2026-10-27T20:01:12.194Z"
+          "entry": 0.2535760212555951,
+          "stop": 0.23753133747602095,
+          "sentAt": "2026-10-27T20:31:14.431Z"
         }
       ]
     }

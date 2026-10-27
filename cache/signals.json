@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T20:01:13.699Z",
+  "lastUpdated": "2026-10-27T20:31:15.935Z",
   "signals": {
-    "ATHUSDT:2h": {
-      "sentAt": "2026-10-27T08:01:19.482Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005565816,
-      "stop": 0.005259150626160277
-    },
-    "BASEDUSDT:1h": {
-      "sentAt": "2026-10-27T08:31:06.238Z",
-      "symbol": "BASEDUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.051629999999999995,
-      "stop": 0.05024247679136143
-    },
-    "SOXLBUSDT:15m": {
-      "sentAt": "2026-10-27T08:31:07.937Z",
-      "symbol": "SOXLBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 90.14926112006374,
-      "stop": 92.64316662829826
-    },
     "CTUSDT:15m": {
       "sentAt": "2026-10-27T09:01:17.256Z",
       "symbol": "CTUSDT",
@@ -348,7 +321,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.15549,
-      "stop": 0.1492191427405869
+      "stop": 0.1492191427405869,
+      "closedAt": "2026-10-27T20:30:39.226Z"
     },
     "WLDUSDT:15m": {
       "sentAt": "2026-10-27T18:31:10.221Z",
@@ -403,6 +377,15 @@
       "score": 14,
       "entry": 0.0046339677576663985,
       "stop": 0.004578566752858289
+    },
+    "PONSUSDT:1h": {
+      "sentAt": "2026-10-27T20:31:14.431Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2535760212555951,
+      "stop": 0.23753133747602095
     }
   }
 }
