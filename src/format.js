@@ -164,6 +164,38 @@ function calcProfitPercent(entry, targetPrice) {
   return Math.abs((targetPrice - entry) / entry) * 100;
 }
 
+function formatTehranDateFa(dateKey) {
+  if (typeof dateKey !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(dateKey)) {
+    return dateKey || "-";
+  }
+
+  const parts = dateKey.split("-");
+  const year = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10);
+  const day = parseInt(parts[2], 10);
+
+  if (
+    !Number.isFinite(year) ||
+    !Number.isFinite(month) ||
+    !Number.isFinite(day)
+  ) {
+    return dateKey;
+  }
+
+  const formatter = new Intl.DateTimeFormat("fa-IR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: "Asia/Tehran"
+  });
+
+  try {
+    return formatter.format(new Date(Date.UTC(year, month - 1, day, 12, 0, 0)));
+  } catch (e) {
+    return dateKey;
+  }
+}
+
 export function formatAnalysis(r) {
   const lines = [];
 
@@ -956,59 +988,164 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
   );
 }
 
-export function formatWeeklyReport(stats) {
-  const { allTime, byTimeframe, byDirection, weekly } = stats;
+export function formatDailyReport(bucket, allTimeStats, tehranDateKey) {
   const lines = [];
 
-  lines.push("📊 <b>گزارش عملکرد هفتگی ربات</b>");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("📅 بازه: <b>" + escapeHtml(weekly.startDate) + " تا " + escapeHtml(weekly.endDate) + "</b>");
-  lines.push("");
-  lines.push("📈 <b>آمار هفته گذشته:</b>");
-  lines.push("   📤 کل سیگنال: <b>" + weekly.total + "</b>");
-  lines.push("   🥇 رسیده به TP1: <b>" + weekly.tp1Hit + "</b>");
-  lines.push("   🥈 رسیده به TP2: <b>" + weekly.tp2Hit + "</b>");
-  lines.push("   🥉 رسیده به TP3: <b>" + weekly.tp3Hit + "</b>");
-  lines.push("   🛑 استاپ خورده: <b>" + weekly.stopped + "</b>");
-  lines.push("   ⏳ در جریان: <b>" + weekly.active + "</b>");
+  const closedSignals = bucket && Array.isArray(bucket.closedSignals)
+    ? bucket.closedSignals
+    : [];
 
-  if (weekly.bestTrade) {
-    lines.push("");
-    lines.push("🏆 بهترین معامله: <b>" + escapeHtml(weekly.bestTrade.symbol) + "</b> [" + escapeHtml(weekly.bestTrade.timeframe) + "] با <b>" + weekly.bestTrade.rr + "R</b>");
-  }
+  const openSignals = bucket && Array.isArray(bucket.openSignals)
+    ? bucket.openSignals
+    : [];
 
-  const totalDone = allTime.total - allTime.active;
-  if (totalDone > 0) {
-    lines.push("");
-    lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-    lines.push("📊 <b>آمار کل (از ابتدا):</b>");
-    lines.push("   📤 کل سیگنال: <b>" + allTime.total + "</b>");
-    lines.push("");
-    lines.push("🎯 <b>نرخ موفقیت:</b>");
-    lines.push("   🥇 TP1: <b>" + allTime.tp1Rate + "%</b> (" + allTime.tp1Hit + "/" + totalDone + ")");
-    lines.push("   🥈 TP2: <b>" + allTime.tp2Rate + "%</b> (" + allTime.tp2Hit + "/" + totalDone + ")");
-    lines.push("   🥉 TP3: <b>" + allTime.tp3Rate + "%</b> (" + allTime.tp3Hit + "/" + totalDone + ")");
-    lines.push("   🛑 Stop: <b>" + allTime.stopRate + "%</b> (" + allTime.stopped + "/" + totalDone + ")");
-  }
+  const total = closedSignals.length;
 
-  lines.push("");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("⏱ <b>عملکرد به تفکیک تایم‌فریم:</b>");
-  for (const tf of ["15m", "30m", "1h", "2h"]) {
-    const t = byTimeframe[tf];
-    if (t && t.total > 0) {
-      lines.push("   <b>" + tf + "</b> → " + t.total + " سیگنال | TP1: <b>" + t.tp1Rate + "%</b>");
+  let tp1Count = 0;
+  let tp2Count = 0;
+  let tp3Count = 0;
+  let stoppedCount = 0;
+  let profitSum = 0;
+  let lossSum = 0;
+  let bestTrade = null;
+
+  for (const s of closedSignals) {
+    if (!s || typeof s !== "object") continue;
+
+    const status = typeof s.finalStatus === "string" ? s.finalStatus : "";
+
+    if (status === "tp1_hit") {
+      tp1Count++;
+    } else if (status === "tp2_hit") {
+      tp1Count++;
+      tp2Count++;
+    } else if (status === "tp3_hit") {
+      tp1Count++;
+      tp2Count++;
+      tp3Count++;
+    } else if (
+      status === "stopped" ||
+      status === "stopped_after_tp" ||
+      status === "stopped_without_tp"
+    ) {
+      stoppedCount++;
+    }
+
+    const profit = Number.isFinite(s.profitPct) ? s.profitPct : null;
+
+    if (profit !== null) {
+      const isStop =
+        status === "stopped" ||
+        status === "stopped_after_tp" ||
+        status === "stopped_without_tp";
+
+      if (isStop) {
+        lossSum += Math.abs(profit);
+      } else {
+        profitSum += profit;
+
+        if (!bestTrade || profit > (bestTrade.profitPct || 0)) {
+          bestTrade = {
+            symbol: s.symbol,
+            timeframe: s.timeframe,
+            profitPct: profit
+          };
+        }
+      }
     }
   }
 
-  lines.push("");
+  const finished = tp1Count + stoppedCount;
+  const tp1Rate = finished > 0 ? Math.round((tp1Count / finished) * 1000) / 10 : 0;
+  const stopRate = finished > 0 ? Math.round((stoppedCount / finished) * 1000) / 10 : 0;
+  const netProfit = Math.round((profitSum - lossSum) * 100) / 100;
+
+  const faDate = formatTehranDateFa(tehranDateKey);
+
+  lines.push("📊 <b>گزارش عملکرد روزانه ربات</b>");
   lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("📊 <b>عملکرد به تفکیک جهت:</b>");
-  for (const dir of ["bullish", "bearish"]) {
-    const d = byDirection[dir];
-    if (d && d.total > 0) {
-      const label = dir === "bullish" ? "🟢 Long" : "🔴 Short";
-      lines.push("   " + label + " → " + d.total + " سیگنال | TP1: <b>" + d.tp1Rate + "%</b>");
+  lines.push("📅 تاریخ: <b>" + escapeHtml(faDate) + "</b>");
+  lines.push("");
+
+  if (total === 0 && openSignals.length === 0) {
+    lines.push("ℹ️ <b>در این روز هیچ معامله‌ای بسته یا باز نشد.</b>");
+  } else {
+    lines.push("📈 <b>آمار معاملات بسته‌شده:</b>");
+    lines.push("   📤 کل بسته‌شده: <b>" + total + "</b>");
+    lines.push("   🥇 رسیده به TP1: <b>" + tp1Count + "</b>");
+    lines.push("   🥈 رسیده به TP2: <b>" + tp2Count + "</b>");
+    lines.push("   🥉 رسیده به TP3: <b>" + tp3Count + "</b>");
+    lines.push("   🛑 استاپ خورده: <b>" + stoppedCount + "</b>");
+
+    if (finished > 0) {
+      lines.push("");
+      lines.push("🎯 <b>نرخ موفقیت روز:</b>");
+      lines.push("   🥇 TP1: <b>" + tp1Rate + "%</b> (" + tp1Count + "/" + finished + ")");
+      lines.push("   🛑 Stop: <b>" + stopRate + "%</b> (" + stoppedCount + "/" + finished + ")");
+    }
+
+    if (profitSum > 0 || lossSum > 0) {
+      lines.push("");
+      lines.push("💰 <b>سود/ضرر خالص روز (بدون اهرم):</b>");
+      lines.push(
+        "   " +
+        (netProfit >= 0 ? "🟢 +" : "🔴 ") +
+        netProfit.toFixed(2) +
+        "%"
+      );
+    }
+
+    if (bestTrade) {
+      lines.push("");
+      lines.push(
+        "🏆 بهترین معامله روز: <b>" +
+        escapeHtml(bestTrade.symbol) +
+        "</b> [" +
+        escapeHtml(bestTrade.timeframe) +
+        "] با <b>+" +
+        bestTrade.profitPct.toFixed(2) +
+        "%</b>"
+      );
+    }
+
+    if (openSignals.length > 0) {
+      lines.push("");
+      lines.push("⏳ <b>معاملات باز (ادامه‌دار):</b>");
+      lines.push("   🔄 تعداد: <b>" + openSignals.length + "</b>");
+    }
+  }
+
+  if (
+    allTimeStats &&
+    Number.isFinite(allTimeStats.total) &&
+    allTimeStats.total > 0
+  ) {
+    const totalDone = allTimeStats.total - (allTimeStats.active || 0);
+
+    lines.push("");
+    lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+    lines.push("📊 <b>آمار کل (از ابتدا):</b>");
+    lines.push("   📤 کل سیگنال: <b>" + allTimeStats.total + "</b>");
+
+    if (totalDone > 0) {
+      lines.push("");
+      lines.push("🎯 <b>نرخ موفقیت کل:</b>");
+      lines.push(
+        "   🥇 TP1: <b>" + allTimeStats.tp1Rate + "%</b> (" +
+        allTimeStats.tp1Hit + "/" + totalDone + ")"
+      );
+      lines.push(
+        "   🥈 TP2: <b>" + allTimeStats.tp2Rate + "%</b> (" +
+        allTimeStats.tp2Hit + "/" + totalDone + ")"
+      );
+      lines.push(
+        "   🥉 TP3: <b>" + allTimeStats.tp3Rate + "%</b> (" +
+        allTimeStats.tp3Hit + "/" + totalDone + ")"
+      );
+      lines.push(
+        "   🛑 Stop: <b>" + allTimeStats.stopRate + "%</b> (" +
+        allTimeStats.stopped + "/" + totalDone + ")"
+      );
     }
   }
 
