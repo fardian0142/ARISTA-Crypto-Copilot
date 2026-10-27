@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T06:01:01.067Z",
+  "lastUpdated": "2026-10-27T06:31:17.339Z",
   "signals": {
-    "SNDKBUSDT:2h": {
-      "sentAt": "2026-10-26T18:01:18.371Z",
-      "symbol": "SNDKBUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1270.05,
-      "stop": 1214.4850169794458
-    },
     "BNBUSDT:30m": {
       "sentAt": "2026-10-26T19:01:17.673Z",
       "symbol": "BNBUSDT",
@@ -540,6 +531,24 @@
       "score": 14,
       "entry": 0.07617,
       "stop": 0.07676310172173174
+    },
+    "IRYSUSDT:15m": {
+      "sentAt": "2026-10-27T06:31:14.145Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.028434773073611884,
+      "stop": 0.026030972541663346
+    },
+    "PIUSDT:30m": {
+      "sentAt": "2026-10-27T06:31:15.838Z",
+      "symbol": "PIUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0761051541170233,
+      "stop": 0.07514362521275729
     }
   }
 }
