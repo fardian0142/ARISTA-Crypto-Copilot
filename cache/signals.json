@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T14:01:25.168Z",
+  "lastUpdated": "2026-10-27T14:31:18.110Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-10-27T02:31:12.943Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006207,
-      "stop": 0.006080323080682688
-    },
-    "BNBUSDT:15m": {
-      "sentAt": "2026-10-27T02:31:14.651Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 742.5550000000001,
-      "stop": 745.4149662428047
-    },
-    "BNBUSDT:2h": {
-      "sentAt": "2026-10-27T02:31:14.651Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 741.65,
-      "stop": 754.0791836360738
-    },
-    "UNIUSDT:30m": {
-      "sentAt": "2026-10-27T02:31:16.512Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 7.077,
-      "stop": 7.182715289889533
-    },
     "AZTECUSDT:30m": {
       "sentAt": "2026-10-27T02:31:18.219Z",
       "symbol": "AZTECUSDT",
@@ -495,6 +459,15 @@
       "score": 14,
       "entry": 0.09051576494805777,
       "stop": 0.0845852930797524
+    },
+    "SOLUSDT:1h": {
+      "sentAt": "2026-10-27T14:31:16.606Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 100.80819563293588,
+      "stop": 98.83059014456056
     }
   }
 }
