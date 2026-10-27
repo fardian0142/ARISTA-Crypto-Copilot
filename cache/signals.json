@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T14:31:18.110Z",
+  "lastUpdated": "2026-10-27T15:01:19.137Z",
   "signals": {
-    "AZTECUSDT:30m": {
-      "sentAt": "2026-10-27T02:31:18.219Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01628898324101271,
-      "stop": 0.016022928967088384
-    },
-    "XAUTUSDT:15m": {
-      "sentAt": "2026-10-27T02:31:19.933Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 4015.1162006183745,
-      "stop": 4027.8348544926807
-    },
-    "MONUSDT:1h": {
-      "sentAt": "2026-10-27T03:01:05.077Z",
-      "symbol": "MONUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02151,
-      "stop": 0.020469175426739823
-    },
-    "BNBUSDT:1h": {
-      "sentAt": "2026-10-27T03:01:06.810Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 741.6128393364693,
-      "stop": 748.9049742722744
-    },
     "SOXLBUSDT:30m": {
       "sentAt": "2026-10-27T03:31:03.727Z",
       "symbol": "SOXLBUSDT",
@@ -468,6 +432,33 @@
       "score": 14,
       "entry": 100.80819563293588,
       "stop": 98.83059014456056
+    },
+    "ETHUSDT:1h": {
+      "sentAt": "2026-10-27T15:01:13.963Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2321.79,
+      "stop": 2287.7289546878783
+    },
+    "RAVEUSDT:1h": {
+      "sentAt": "2026-10-27T15:01:15.728Z",
+      "symbol": "RAVEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1439,
+      "stop": 0.13916176625024462
+    },
+    "ADAUSDT:1h": {
+      "sentAt": "2026-10-27T15:01:17.634Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.20467449033308263,
+      "stop": 0.2004093271439315
     }
   }
 }
