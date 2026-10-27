@@ -2896,9 +2896,9 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     maxLevels
   );
 
-  const effectiveMinRR = Number.isFinite(minRR) && minRR > 0 ? minRR : 1.0;
+  const effectiveMinRR = 0.3;
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = effectiveMinRR;
+  const tp1MinRR = 0.3;
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
@@ -3032,12 +3032,6 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
       ? Math.max(0.3, CONFIG.SL_MIN_NODE_DISTANCE_ATR)
       : 0.5;
 
-  const maxSlDistanceATR =
-    Number.isFinite(CONFIG.MAX_SL_DISTANCE_ATR) &&
-    CONFIG.MAX_SL_DISTANCE_ATR > 0
-      ? CONFIG.MAX_SL_DISTANCE_ATR
-      : 4.0;
-
   if (direction === "bullish") {
     const node = findNearestImportantNodeBelow(
       candles,
@@ -3053,9 +3047,8 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
     ) {
       const distance = entryZone.low - node.high;
       const minDistance = atrValue * minNodeDistanceATR;
-      const maxDistance = atrValue * maxSlDistanceATR;
 
-      if (distance >= minDistance && distance <= maxDistance) {
+      if (distance >= minDistance) {
         const buffer = currentPrice > 0
           ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
           : 0;
@@ -3081,9 +3074,8 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
   ) {
     const distance = node.low - entryZone.high;
     const minDistance = atrValue * minNodeDistanceATR;
-    const maxDistance = atrValue * maxSlDistanceATR;
 
-    if (distance >= minDistance && distance <= maxDistance) {
+    if (distance >= minDistance) {
       const buffer = currentPrice > 0
         ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
         : 0;
@@ -3220,12 +3212,7 @@ export function detectRangeTradeSetups(
       ? CONFIG.MIN_RANGE_SETUP_SCORE
       : 8;
 
-  const minRR =
-    Number.isFinite(profile.minRR) && profile.minRR > 0
-      ? profile.minRR
-      : (Number.isFinite(CONFIG.MIN_RR) && CONFIG.MIN_RR > 0
-          ? CONFIG.MIN_RR
-          : 1.0);
+  const minRR = 0.3;
 
   const maxTPRR =
     Number.isFinite(CONFIG.MAX_TP_RR) &&
@@ -3267,7 +3254,7 @@ export function detectRangeTradeSetups(
         )
       : 5;
 
-  const tp1MinRR = minRR;
+  const tp1MinRR = 0.3;
 
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
@@ -3672,18 +3659,13 @@ export function detectRangeTradeSetups(
   const swingLows = getStructureLevels("bullish");
   const swingHighs = getStructureLevels("bearish");
 
-  function getNearestSupport(referencePrice) {
-    const ref =
-      Number.isFinite(referencePrice) && referencePrice > 0
-        ? referencePrice
-        : currentPrice;
-
+  function getNearestSupport() {
     let result = null;
 
     function consider(price, index, source) {
       if (
         !isInsideRange(price) ||
-        price >= ref
+        price >= currentPrice
       ) {
         return;
       }
@@ -3708,18 +3690,13 @@ export function detectRangeTradeSetups(
     return result;
   }
 
-  function getNearestResistance(referencePrice) {
-    const ref =
-      Number.isFinite(referencePrice) && referencePrice > 0
-        ? referencePrice
-        : currentPrice;
-
+  function getNearestResistance() {
     let result = null;
 
     function consider(price, index, source) {
       if (
         !isInsideRange(price) ||
-        price <= ref
+        price <= currentPrice
       ) {
         return;
       }
@@ -4665,7 +4642,7 @@ export function detectRangeTradeSetups(
         }
       }
 
-      const resistance = getNearestResistance(entry);
+      const resistance = getNearestResistance();
 
       if (resistance && resistance.price > entry) {
         addTarget(
@@ -4719,7 +4696,7 @@ export function detectRangeTradeSetups(
         }
       }
 
-      const support = getNearestSupport(entry);
+      const support = getNearestSupport();
 
       if (support && support.price < entry) {
         addTarget(
@@ -5333,16 +5310,6 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestResistance = getNearestResistance(entry);
-
-    if (
-      nearestResistance &&
-      Number.isFinite(nearestResistance.price) &&
-      (nearestResistance.price - entry) < (atrValue * 0.3)
-    ) {
-      return null;
-    }
-
     const stop = buildStopFromStructure(
       "bullish",
       Math.min(zoneLow, precisionEntry.zoneLow),
@@ -5356,7 +5323,6 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop >= entry ||
-      risk < atrValue * 0.5 ||
       risk / entry * 100 > maxStopPct
     ) {
       return null;
@@ -5376,7 +5342,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 <= entry ||
-      targets.rr1 < tp1MinRR ||
+      targets.rr1 < 0.3 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5573,16 +5539,6 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestSupport = getNearestSupport(entry);
-
-    if (
-      nearestSupport &&
-      Number.isFinite(nearestSupport.price) &&
-      (entry - nearestSupport.price) < (atrValue * 0.3)
-    ) {
-      return null;
-    }
-
     const stop = buildStopFromStructure(
       "bearish",
       Math.max(zone.price, precisionEntry.zoneLow),
@@ -5596,7 +5552,6 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop <= entry ||
-      risk < atrValue * 0.5 ||
       risk / entry * 100 > maxStopPct
     ) {
       return null;
@@ -5616,7 +5571,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 >= entry ||
-      targets.rr1 < tp1MinRR ||
+      targets.rr1 < 0.3 ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5665,8 +5620,8 @@ export function detectRangeTradeSetups(
     return finalizeCandidate(candidate);
   }
 
-  const support = getNearestSupport(currentPrice);
-  const resistance = getNearestResistance(currentPrice);
+  const support = getNearestSupport();
+  const resistance = getNearestResistance();
 
   if (support) {
     const candidate = buildBullishCandidate(
