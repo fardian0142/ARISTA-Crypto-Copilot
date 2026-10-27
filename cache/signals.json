@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T13:31:11.611Z",
+  "lastUpdated": "2026-10-27T14:01:25.168Z",
   "signals": {
-    "ORDERUSDT:30m": {
-      "sentAt": "2026-10-27T01:31:14.649Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.040485,
-      "stop": 0.03640264237107485
-    },
-    "XRPUSDT:1h": {
-      "sentAt": "2026-10-27T01:31:16.387Z",
-      "symbol": "XRPUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.3016234738976293,
-      "stop": 1.276913683295874
-    },
-    "BLENDUSDT:30m": {
-      "sentAt": "2026-10-27T01:31:18.125Z",
-      "symbol": "BLENDUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05104,
-      "stop": 0.04972763540645579
-    },
-    "ARXUSDT:15m": {
-      "sentAt": "2026-10-27T01:31:19.919Z",
-      "symbol": "ARXUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.22660865064575514,
-      "stop": 0.23044528
-    },
-    "MEWUSDT:1h": {
-      "sentAt": "2026-10-27T02:01:10.937Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00043720589189765054,
-      "stop": 0.0004188890347243549
-    },
-    "XRPUSDT:15m": {
-      "sentAt": "2026-10-27T02:01:12.699Z",
-      "symbol": "XRPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1.304,
-      "stop": 1.3179298408080646
-    },
     "OFCUSDT:15m": {
       "sentAt": "2026-10-27T02:31:12.943Z",
       "symbol": "OFCUSDT",
@@ -531,6 +477,24 @@
       "score": 14,
       "entry": 0.1759,
       "stop": 0.16645780836873553
+    },
+    "BTCUSDT:15m": {
+      "sentAt": "2026-10-27T14:01:21.962Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80086.265,
+      "stop": 79602.8391124579
+    },
+    "NILUSDT:15m": {
+      "sentAt": "2026-10-27T14:01:23.665Z",
+      "symbol": "NILUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09051576494805777,
+      "stop": 0.0845852930797524
     }
   }
 }
