@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T15:01:19.137Z",
+  "lastUpdated": "2026-10-27T15:31:38.655Z",
   "signals": {
-    "SOXLBUSDT:30m": {
-      "sentAt": "2026-10-27T03:31:03.727Z",
-      "symbol": "SOXLBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 91.83,
-      "stop": 94.37050752984659
-    },
-    "DOGEUSDT:15m": {
-      "sentAt": "2026-10-27T03:31:05.415Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0773982242012144,
-      "stop": 0.07797046770908111
-    },
-    "DOGEUSDT:2h": {
-      "sentAt": "2026-10-27T03:31:05.415Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07726,
-      "stop": 0.07537376992661124
-    },
-    "UBUSDT:30m": {
-      "sentAt": "2026-10-27T03:31:07.098Z",
-      "symbol": "UBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.12071308722522218,
-      "stop": 0.11836534046333344
-    },
     "AKEUSDT:30m": {
       "sentAt": "2026-10-27T04:01:03.644Z",
       "symbol": "AKEUSDT",
@@ -242,7 +206,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.029691639175138423,
-      "stop": 0.030717260677978184
+      "stop": 0.030717260677978184,
+      "closedAt": "2026-10-27T15:30:58.777Z"
     },
     "COREUSDT:15m": {
       "sentAt": "2026-10-27T09:31:00.239Z",
@@ -377,7 +342,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 740.8484250408482,
-      "stop": 746.3538926820792
+      "stop": 746.3538926820792,
+      "closedAt": "2026-10-27T15:31:02.336Z"
     },
     "GRVTUSDT:1h": {
       "sentAt": "2026-10-27T13:31:06.485Z",
@@ -413,7 +379,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 80086.265,
-      "stop": 79602.8391124579
+      "stop": 79602.8391124579,
+      "closedAt": "2026-10-27T15:31:04.082Z"
     },
     "NILUSDT:15m": {
       "sentAt": "2026-10-27T14:01:23.665Z",
