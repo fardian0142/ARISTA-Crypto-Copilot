@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T23:01:21.205Z",
+  "lastUpdated": "2026-10-27T23:31:17.757Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -123,17 +123,21 @@
           "profitPct": 6.24,
           "maxR": 1.32,
           "closedAt": "2026-10-27T23:00:38.224Z"
-        }
-      ],
-      "openSignals": [
+        },
         {
           "symbol": "PONSUSDT",
           "timeframe": "1h",
           "direction": "bullish",
           "entry": 0.2535760212555951,
           "stop": 0.23753133747602095,
-          "sentAt": "2026-10-27T20:31:14.431Z"
-        },
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 5.23,
+          "maxR": 0.71,
+          "closedAt": "2026-10-27T23:30:41.158Z"
+        }
+      ],
+      "openSignals": [
         {
           "symbol": "MONUSDT",
           "timeframe": "1h",
@@ -213,6 +217,22 @@
           "entry": 0.09883479126585855,
           "stop": 0.09740518028917765,
           "sentAt": "2026-10-27T23:01:19.699Z"
+        },
+        {
+          "symbol": "SPACEUSDT",
+          "timeframe": "2h",
+          "direction": "bearish",
+          "entry": 0.003727845595429145,
+          "stop": 0.0038157468,
+          "sentAt": "2026-10-27T23:31:14.479Z"
+        },
+        {
+          "symbol": "LTCUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 56.81,
+          "stop": 55.166119026368015,
+          "sentAt": "2026-10-27T23:31:16.252Z"
         }
       ]
     }

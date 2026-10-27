@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T23:01:21.203Z",
+  "lastUpdated": "2026-10-27T23:31:17.755Z",
   "signals": {
     "DOODUSDT:30m": {
       "sentAt": "2026-10-27T13:01:34.216Z",
@@ -322,7 +322,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.2535760212555951,
-      "stop": 0.23753133747602095
+      "stop": 0.23753133747602095,
+      "closedAt": "2026-10-27T23:30:41.158Z"
     },
     "MONUSDT:1h": {
       "sentAt": "2026-10-27T21:01:15.038Z",
@@ -413,6 +414,24 @@
       "score": 14,
       "entry": 0.09883479126585855,
       "stop": 0.09740518028917765
+    },
+    "SPACEUSDT:2h": {
+      "sentAt": "2026-10-27T23:31:14.479Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003727845595429145,
+      "stop": 0.0038157468
+    },
+    "LTCUSDT:2h": {
+      "sentAt": "2026-10-27T23:31:16.252Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 56.81,
+      "stop": 55.166119026368015
     }
   }
 }
