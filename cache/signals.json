@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T08:01:20.985Z",
+  "lastUpdated": "2026-10-27T08:31:09.441Z",
   "signals": {
     "PIPPINUSDT:2h": {
       "sentAt": "2026-10-26T20:31:17.612Z",
@@ -531,6 +531,24 @@
       "score": 14,
       "entry": 0.005565816,
       "stop": 0.005259150626160277
+    },
+    "BASEDUSDT:1h": {
+      "sentAt": "2026-10-27T08:31:06.238Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.051629999999999995,
+      "stop": 0.05024247679136143
+    },
+    "SOXLBUSDT:15m": {
+      "sentAt": "2026-10-27T08:31:07.937Z",
+      "symbol": "SOXLBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 90.14926112006374,
+      "stop": 92.64316662829826
     }
   }
 }
