@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T05:31:13.361Z",
+  "lastUpdated": "2026-10-27T06:01:01.067Z",
   "signals": {
-    "DOODUSDT:1h": {
-      "sentAt": "2026-10-26T17:31:15.827Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0020509213153706235,
-      "stop": 0.0013440515055544709
-    },
-    "SPACEUSDT:1h": {
-      "sentAt": "2026-10-26T17:31:17.586Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00365,
-      "stop": 0.0035822510852204837
-    },
-    "BTWUSDT:15m": {
-      "sentAt": "2026-10-26T17:31:19.328Z",
-      "symbol": "BTWUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.13355,
-      "stop": 0.9068266193933568
-    },
-    "ONDOUSDT:2h": {
-      "sentAt": "2026-10-26T17:31:21.170Z",
-      "symbol": "ONDOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.4094,
-      "stop": 0.3961402285907122
-    },
     "SNDKBUSDT:2h": {
       "sentAt": "2026-10-26T18:01:18.371Z",
       "symbol": "SNDKBUSDT",
@@ -549,6 +513,33 @@
       "score": 14,
       "entry": 7.040388302085725,
       "stop": 6.72547870534689
+    },
+    "CPUSDT:30m": {
+      "sentAt": "2026-10-27T06:00:56.007Z",
+      "symbol": "CPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008879,
+      "stop": 0.008555578502948987
+    },
+    "MOODENGUSDT:1h": {
+      "sentAt": "2026-10-27T06:00:57.737Z",
+      "symbol": "MOODENGUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03856,
+      "stop": 0.03732416934628143
+    },
+    "PIUSDT:15m": {
+      "sentAt": "2026-10-27T06:00:59.565Z",
+      "symbol": "PIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07617,
+      "stop": 0.07676310172173174
     }
   }
 }
