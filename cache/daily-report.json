@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T21:01:20.023Z",
+  "lastUpdated": "2026-10-27T21:31:16.064Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -51,6 +51,18 @@
           "profitPct": 0.97,
           "maxR": 0,
           "closedAt": "2026-10-27T21:00:38.303Z"
+        },
+        {
+          "symbol": "UPUSDT",
+          "timeframe": "2h",
+          "direction": "bearish",
+          "entry": 0.15592387130754007,
+          "stop": 0.17164055153911392,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 10.08,
+          "maxR": 0,
+          "closedAt": "2026-10-27T21:30:37.711Z"
         }
       ],
       "openSignals": [
@@ -85,6 +97,30 @@
           "entry": 8.856,
           "stop": 9.128546241626411,
           "sentAt": "2026-10-27T21:01:18.518Z"
+        },
+        {
+          "symbol": "TRIAUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.002976,
+          "stop": 0.0030145942000000003,
+          "sentAt": "2026-10-27T21:31:11.054Z"
+        },
+        {
+          "symbol": "CRCLBUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 81.17500000000001,
+          "stop": 80.01114448531553,
+          "sentAt": "2026-10-27T21:31:12.791Z"
+        },
+        {
+          "symbol": "SPCXBUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 149.36,
+          "stop": 150.5339429604866,
+          "sentAt": "2026-10-27T21:31:14.560Z"
         }
       ]
     }

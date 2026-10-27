@@ -1,25 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T21:01:20.021Z",
+  "lastUpdated": "2026-10-27T21:31:16.062Z",
   "signals": {
-    "COREUSDT:15m": {
-      "sentAt": "2026-10-27T09:31:00.239Z",
-      "symbol": "COREUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016805,
-      "stop": 0.016576329325694368
-    },
-    "STABLEUSDT:30m": {
-      "sentAt": "2026-10-27T09:31:01.961Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02684134,
-      "stop": 0.026227072728317483,
-      "closedAt": "2026-10-27T16:00:43.007Z"
-    },
     "UNIUSDT:1h": {
       "sentAt": "2026-10-27T10:31:15.664Z",
       "symbol": "UNIUSDT",
@@ -396,6 +377,33 @@
       "score": 14,
       "entry": 8.856,
       "stop": 9.128546241626411
+    },
+    "TRIAUSDT:15m": {
+      "sentAt": "2026-10-27T21:31:11.054Z",
+      "symbol": "TRIAUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.002976,
+      "stop": 0.0030145942000000003
+    },
+    "CRCLBUSDT:15m": {
+      "sentAt": "2026-10-27T21:31:12.791Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 81.17500000000001,
+      "stop": 80.01114448531553
+    },
+    "SPCXBUSDT:15m": {
+      "sentAt": "2026-10-27T21:31:14.560Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 149.36,
+      "stop": 150.5339429604866
     }
   }
 }
