@@ -164,6 +164,59 @@ function calcProfitPercent(entry, targetPrice) {
   return Math.abs((targetPrice - entry) / entry) * 100;
 }
 
+function toJalali(year, month, day) {
+  const g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+
+  let gy = year;
+  let gm = month;
+  let gd = day;
+
+  let jy;
+
+  if (gy > 1600) {
+    jy = 979;
+    gy -= 1600;
+  } else {
+    jy = 0;
+    gy -= 621;
+  }
+
+  const gy2 = gm > 2 ? gy + 1 : gy;
+
+  let days =
+    365 * gy +
+    Math.floor((gy2 + 3) / 4) -
+    Math.floor((gy2 + 99) / 100) +
+    Math.floor((gy2 + 399) / 400) -
+    80 +
+    gd +
+    g_d_m[gm - 1];
+
+  jy += 33 * Math.floor(days / 12053);
+  days %= 12053;
+
+  jy += 4 * Math.floor(days / 1461);
+  days %= 1461;
+
+  if (days > 365) {
+    jy += Math.floor((days - 1) / 365);
+    days = (days - 1) % 365;
+  }
+
+  let jm;
+  let jd;
+
+  if (days < 186) {
+    jm = 1 + Math.floor(days / 31);
+    jd = 1 + (days % 31);
+  } else {
+    jm = 7 + Math.floor((days - 186) / 30);
+    jd = 1 + ((days - 186) % 30);
+  }
+
+  return { year: jy, month: jm, day: jd };
+}
+
 function formatTehranDateFa(dateKey) {
   if (typeof dateKey !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(dateKey)) {
     return dateKey || "-";
@@ -177,20 +230,24 @@ function formatTehranDateFa(dateKey) {
   if (
     !Number.isFinite(year) ||
     !Number.isFinite(month) ||
-    !Number.isFinite(day)
+    !Number.isFinite(day) ||
+    year <= 0 ||
+    month < 1 ||
+    month > 12 ||
+    day < 1 ||
+    day > 31
   ) {
     return dateKey;
   }
 
-  const formatter = new Intl.DateTimeFormat("fa-IR", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    timeZone: "Asia/Tehran"
-  });
-
   try {
-    return formatter.format(new Date(Date.UTC(year, month - 1, day, 12, 0, 0)));
+    const jalali = toJalali(year, month, day);
+
+    const dd = String(jalali.day).padStart(2, "0");
+    const mm = String(jalali.month).padStart(2, "0");
+    const yyyy = String(jalali.year);
+
+    return dd + "/" + mm + "/" + yyyy;
   } catch (e) {
     return dateKey;
   }
