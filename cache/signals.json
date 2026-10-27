@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T00:01:11.353Z",
+  "lastUpdated": "2026-10-27T00:31:17.348Z",
   "signals": {
     "WETUSDT:15m": {
       "sentAt": "2026-10-26T13:01:08.184Z",
@@ -405,6 +405,15 @@
       "score": 14,
       "entry": 56.72,
       "stop": 55.39666119200433
+    },
+    "CASHCATUSDT:2h": {
+      "sentAt": "2026-10-27T00:31:15.844Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09215885828223055,
+      "stop": 0.08549060736186904
     }
   }
 }
