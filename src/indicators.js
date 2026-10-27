@@ -2896,9 +2896,9 @@ export function computeUnifiedTargets(candles, direction, entry, stop, atrValue,
     maxLevels
   );
 
-  const effectiveMinRR = 1.0;
+  const effectiveMinRR = Number.isFinite(minRR) && minRR > 0 ? minRR : 1.0;
   const maxRR = Number.isFinite(CONFIG.MAX_TP_RR) ? CONFIG.MAX_TP_RR : 3;
-  const tp1MinRR = 1.0;
+  const tp1MinRR = effectiveMinRR;
 
   const spacing = atrValue > 0
     ? Math.max(atrValue * CONFIG.MIN_TP_DISTANCE_ATR, currentPrice * CONFIG.MIN_TP_DISTANCE)
@@ -3212,7 +3212,12 @@ export function detectRangeTradeSetups(
       ? CONFIG.MIN_RANGE_SETUP_SCORE
       : 8;
 
-  const minRR = 1.0;
+  const minRR =
+    Number.isFinite(profile.minRR) && profile.minRR > 0
+      ? profile.minRR
+      : (Number.isFinite(CONFIG.MIN_RR) && CONFIG.MIN_RR > 0
+          ? CONFIG.MIN_RR
+          : 1.0);
 
   const maxTPRR =
     Number.isFinite(CONFIG.MAX_TP_RR) &&
@@ -3254,7 +3259,7 @@ export function detectRangeTradeSetups(
         )
       : 5;
 
-  const tp1MinRR = 1.0;
+  const tp1MinRR = minRR;
 
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
@@ -3659,13 +3664,18 @@ export function detectRangeTradeSetups(
   const swingLows = getStructureLevels("bullish");
   const swingHighs = getStructureLevels("bearish");
 
-  function getNearestSupport() {
+  function getNearestSupport(referencePrice) {
+    const ref =
+      Number.isFinite(referencePrice) && referencePrice > 0
+        ? referencePrice
+        : currentPrice;
+
     let result = null;
 
     function consider(price, index, source) {
       if (
         !isInsideRange(price) ||
-        price >= currentPrice
+        price >= ref
       ) {
         return;
       }
@@ -3690,13 +3700,18 @@ export function detectRangeTradeSetups(
     return result;
   }
 
-  function getNearestResistance() {
+  function getNearestResistance(referencePrice) {
+    const ref =
+      Number.isFinite(referencePrice) && referencePrice > 0
+        ? referencePrice
+        : currentPrice;
+
     let result = null;
 
     function consider(price, index, source) {
       if (
         !isInsideRange(price) ||
-        price <= currentPrice
+        price <= ref
       ) {
         return;
       }
@@ -4642,7 +4657,7 @@ export function detectRangeTradeSetups(
         }
       }
 
-      const resistance = getNearestResistance();
+      const resistance = getNearestResistance(entry);
 
       if (resistance && resistance.price > entry) {
         addTarget(
@@ -4696,7 +4711,7 @@ export function detectRangeTradeSetups(
         }
       }
 
-      const support = getNearestSupport();
+      const support = getNearestSupport(entry);
 
       if (support && support.price < entry) {
         addTarget(
@@ -5310,7 +5325,7 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestResistance = getNearestResistance();
+    const nearestResistance = getNearestResistance(entry);
 
     if (
       nearestResistance &&
@@ -5353,7 +5368,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 <= entry ||
-      targets.rr1 < 1.0 ||
+      targets.rr1 < tp1MinRR ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5550,7 +5565,7 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const nearestSupport = getNearestSupport();
+    const nearestSupport = getNearestSupport(entry);
 
     if (
       nearestSupport &&
@@ -5593,7 +5608,7 @@ export function detectRangeTradeSetups(
       !targets ||
       !Number.isFinite(targets.tp1) ||
       targets.tp1 >= entry ||
-      targets.rr1 < 1.0 ||
+      targets.rr1 < tp1MinRR ||
       targets.rr1 > maxTPRR ||
       targets.tpCount < minValidTPCount
     ) {
@@ -5642,8 +5657,8 @@ export function detectRangeTradeSetups(
     return finalizeCandidate(candidate);
   }
 
-  const support = getNearestSupport();
-  const resistance = getNearestResistance();
+  const support = getNearestSupport(currentPrice);
+  const resistance = getNearestResistance(currentPrice);
 
   if (support) {
     const candidate = buildBullishCandidate(
