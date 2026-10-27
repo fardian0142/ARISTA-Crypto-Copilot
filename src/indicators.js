@@ -3032,6 +3032,12 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
       ? Math.max(0.3, CONFIG.SL_MIN_NODE_DISTANCE_ATR)
       : 0.5;
 
+  const maxSlDistanceATR =
+    Number.isFinite(CONFIG.MAX_SL_DISTANCE_ATR) &&
+    CONFIG.MAX_SL_DISTANCE_ATR > 0
+      ? CONFIG.MAX_SL_DISTANCE_ATR
+      : 4.0;
+
   if (direction === "bullish") {
     const node = findNearestImportantNodeBelow(
       candles,
@@ -3047,8 +3053,9 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
     ) {
       const distance = entryZone.low - node.high;
       const minDistance = atrValue * minNodeDistanceATR;
+      const maxDistance = atrValue * maxSlDistanceATR;
 
-      if (distance >= minDistance) {
+      if (distance >= minDistance && distance <= maxDistance) {
         const buffer = currentPrice > 0
           ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
           : 0;
@@ -3074,8 +3081,9 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
   ) {
     const distance = node.low - entryZone.high;
     const minDistance = atrValue * minNodeDistanceATR;
+    const maxDistance = atrValue * maxSlDistanceATR;
 
-    if (distance >= minDistance) {
+    if (distance >= minDistance && distance <= maxDistance) {
       const buffer = currentPrice > 0
         ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
         : 0;
