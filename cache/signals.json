@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T17:01:22.330Z",
+  "lastUpdated": "2026-10-27T17:31:14.660Z",
   "signals": {
-    "ZORAUSDT:1h": {
-      "sentAt": "2026-10-27T05:31:10.136Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006238,
-      "stop": 0.00596564748459625
-    },
-    "UNIUSDT:2h": {
-      "sentAt": "2026-10-27T05:31:11.858Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.040388302085725,
-      "stop": 6.72547870534689
-    },
     "CPUSDT:30m": {
       "sentAt": "2026-10-27T06:00:56.007Z",
       "symbol": "CPUSDT",
@@ -419,6 +401,24 @@
       "score": 14,
       "entry": 0.12016746795844524,
       "stop": 0.11591513732094899
+    },
+    "MERLUSDT:1h": {
+      "sentAt": "2026-10-27T17:31:11.372Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02701,
+      "stop": 0.02606629469147243
+    },
+    "FETUSDT:1h": {
+      "sentAt": "2026-10-27T17:31:13.157Z",
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18014521274946152,
+      "stop": 0.17154908821659348
     }
   }
 }
