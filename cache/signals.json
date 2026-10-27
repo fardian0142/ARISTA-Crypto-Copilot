@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T18:01:12.259Z",
+  "lastUpdated": "2026-10-27T18:31:11.724Z",
   "signals": {
     "IRYSUSDT:15m": {
       "sentAt": "2026-10-27T06:31:14.145Z",
@@ -394,6 +394,24 @@
       "score": 14,
       "entry": 0.18014521274946152,
       "stop": 0.17154908821659348
+    },
+    "USELESSUSDT:30m": {
+      "sentAt": "2026-10-27T18:31:08.430Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15549,
+      "stop": 0.1492191427405869
+    },
+    "WLDUSDT:15m": {
+      "sentAt": "2026-10-27T18:31:10.221Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.4370449390734052,
+      "stop": 0.42689311825683485
     }
   }
 }

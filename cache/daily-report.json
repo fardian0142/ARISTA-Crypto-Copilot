@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T18:01:12.262Z",
+  "lastUpdated": "2026-10-27T18:31:11.726Z",
   "lastReportSentDate": null,
   "buckets": {
     "2026-10-27": {
@@ -297,6 +297,22 @@
           "entry": 0.18014521274946152,
           "stop": 0.17154908821659348,
           "sentAt": "2026-10-27T17:31:13.157Z"
+        },
+        {
+          "symbol": "USELESSUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.15549,
+          "stop": 0.1492191427405869,
+          "sentAt": "2026-10-27T18:31:08.430Z"
+        },
+        {
+          "symbol": "WLDUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.4370449390734052,
+          "stop": 0.42689311825683485,
+          "sentAt": "2026-10-27T18:31:10.221Z"
         }
       ]
     }
