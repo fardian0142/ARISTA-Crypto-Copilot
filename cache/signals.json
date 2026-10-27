@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T15:31:38.655Z",
+  "lastUpdated": "2026-10-27T16:01:28.914Z",
   "signals": {
-    "AKEUSDT:30m": {
-      "sentAt": "2026-10-27T04:01:03.644Z",
-      "symbol": "AKEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03112353791700532,
-      "stop": 0.029796266069977206
-    },
-    "OFCUSDT:30m": {
-      "sentAt": "2026-10-27T04:01:05.383Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006260999999999999,
-      "stop": 0.006029932087559265
-    },
     "IRYSUSDT:1h": {
       "sentAt": "2026-10-27T04:31:04.729Z",
       "symbol": "IRYSUSDT",
@@ -225,7 +207,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.02684134,
-      "stop": 0.026227072728317483
+      "stop": 0.026227072728317483,
+      "closedAt": "2026-10-27T16:00:43.007Z"
     },
     "UNIUSDT:1h": {
       "sentAt": "2026-10-27T10:31:15.664Z",
@@ -252,7 +235,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.02652549544598867,
-      "stop": 0.02606216237433428
+      "stop": 0.02606216237433428,
+      "closedAt": "2026-10-27T16:00:46.674Z"
     },
     "DOODUSDT:30m": {
       "sentAt": "2026-10-27T13:01:34.216Z",
@@ -426,6 +410,42 @@
       "score": 14,
       "entry": 0.20467449033308263,
       "stop": 0.2004093271439315
+    },
+    "TRUTHUSDT:15m": {
+      "sentAt": "2026-10-27T16:01:22.017Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02087414502817917,
+      "stop": 0.0213546641649464
+    },
+    "MONUSDT:30m": {
+      "sentAt": "2026-10-27T16:01:23.815Z",
+      "symbol": "MONUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02146862877779909,
+      "stop": 0.022045876666575332
+    },
+    "SPACEUSDT:30m": {
+      "sentAt": "2026-10-27T16:01:25.619Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003686252610434806,
+      "stop": 0.003738736947825969
+    },
+    "HUMAUSDT:2h": {
+      "sentAt": "2026-10-27T16:01:27.411Z",
+      "symbol": "HUMAUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02738,
+      "stop": 0.030405432
     }
   }
 }

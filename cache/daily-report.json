@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T15:31:38.658Z",
+  "lastUpdated": "2026-10-27T16:01:28.916Z",
   "lastReportSentDate": null,
   "buckets": {
     "2026-10-27": {
@@ -123,9 +123,78 @@
           "profitPct": 0.56,
           "maxR": 0.85,
           "closedAt": "2026-10-27T15:31:04.082Z"
+        },
+        {
+          "symbol": "AIUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.019201595664266748,
+          "stop": 0.01807431668380894,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 5.87,
+          "maxR": 0.44,
+          "closedAt": "2026-10-27T16:00:39.422Z"
+        },
+        {
+          "symbol": "STABLEUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.02684134,
+          "stop": 0.026227072728317483,
+          "finalStatus": "tp2_hit",
+          "lastTpHit": "tp2_hit",
+          "profitPct": 5.25,
+          "maxR": 1.3,
+          "closedAt": "2026-10-27T16:00:43.007Z"
+        },
+        {
+          "symbol": "STABLEUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.02652549544598867,
+          "stop": 0.02606216237433428,
+          "finalStatus": "tp2_hit",
+          "lastTpHit": "tp2_hit",
+          "profitPct": 2.75,
+          "maxR": 2.41,
+          "closedAt": "2026-10-27T16:00:46.674Z"
         }
       ],
-      "openSignals": []
+      "openSignals": [
+        {
+          "symbol": "TRUTHUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.02087414502817917,
+          "stop": 0.0213546641649464,
+          "sentAt": "2026-10-27T16:01:22.017Z"
+        },
+        {
+          "symbol": "MONUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.02146862877779909,
+          "stop": 0.022045876666575332,
+          "sentAt": "2026-10-27T16:01:23.815Z"
+        },
+        {
+          "symbol": "SPACEUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.003686252610434806,
+          "stop": 0.003738736947825969,
+          "sentAt": "2026-10-27T16:01:25.619Z"
+        },
+        {
+          "symbol": "HUMAUSDT",
+          "timeframe": "2h",
+          "direction": "bearish",
+          "entry": 0.02738,
+          "stop": 0.030405432,
+          "sentAt": "2026-10-27T16:01:27.411Z"
+        }
+      ]
     }
   }
 }
