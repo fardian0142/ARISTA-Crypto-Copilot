@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T12:31:01.849Z",
+  "lastUpdated": "2026-10-27T13:01:47.977Z",
   "signals": {
-    "CASHCATUSDT:2h": {
-      "sentAt": "2026-10-27T00:31:15.844Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09215885828223055,
-      "stop": 0.08549060736186904
-    },
-    "APRUSDT:15m": {
-      "sentAt": "2026-10-27T01:01:02.799Z",
-      "symbol": "APRUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.032897662899893446,
-      "stop": 0.03111144471474238
-    },
-    "TRXUSDT:1h": {
-      "sentAt": "2026-10-27T01:01:04.543Z",
-      "symbol": "TRXUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.329791,
-      "stop": 0.3281040805672898
-    },
-    "AZTECUSDT:1h": {
-      "sentAt": "2026-10-27T01:01:06.326Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.016480413137931894,
-      "stop": 0.015828229408863314
-    },
     "ORDERUSDT:30m": {
       "sentAt": "2026-10-27T01:31:14.649Z",
       "symbol": "ORDERUSDT",
@@ -450,6 +414,78 @@
       "score": 14,
       "entry": 0.02652549544598867,
       "stop": 0.02606216237433428
+    },
+    "DOODUSDT:30m": {
+      "sentAt": "2026-10-27T13:01:34.216Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0020143895627696014,
+      "stop": 0.0017556161595588516
+    },
+    "SPACEUSDT:1h": {
+      "sentAt": "2026-10-27T13:01:35.929Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00363,
+      "stop": 0.0035667949895028896
+    },
+    "PIPPINUSDT:2h": {
+      "sentAt": "2026-10-27T13:01:37.701Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.015528617254394821,
+      "stop": 0.01487306890973648
+    },
+    "CRCLBUSDT:1h": {
+      "sentAt": "2026-10-27T13:01:39.439Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80.31,
+      "stop": 78.7089077464738
+    },
+    "LIGHTUSDT:1h": {
+      "sentAt": "2026-10-27T13:01:41.166Z",
+      "symbol": "LIGHTUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.26225,
+      "stop": 0.29231455624832753
+    },
+    "PUMPUSDT:2h": {
+      "sentAt": "2026-10-27T13:01:42.953Z",
+      "symbol": "PUMPUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004224,
+      "stop": 0.003956203782975055
+    },
+    "XAUTUSDT:1h": {
+      "sentAt": "2026-10-27T13:01:44.717Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4019.98,
+      "stop": 3992.653356959654
+    },
+    "ADAUSDT:2h": {
+      "sentAt": "2026-10-27T13:01:46.475Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2047,
+      "stop": 0.19742202821964006
     }
   }
 }
