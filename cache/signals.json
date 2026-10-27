@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T04:01:06.886Z",
+  "lastUpdated": "2026-10-27T04:31:07.991Z",
   "signals": {
-    "DOSUSDT:1h": {
-      "sentAt": "2026-10-26T16:01:07.854Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.24093686426696825,
-      "stop": 0.2179522
-    },
-    "SPCXBUSDT:2h": {
-      "sentAt": "2026-10-26T16:01:09.674Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 148.09943792580333,
-      "stop": 145.60351627558757
-    },
-    "ADAUSDT:30m": {
-      "sentAt": "2026-10-26T16:01:11.462Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2054,
-      "stop": 0.20202880729210804
-    },
     "XAUTUSDT:1h": {
       "sentAt": "2026-10-26T16:31:23.164Z",
       "symbol": "XAUTUSDT",
@@ -540,6 +513,24 @@
       "score": 14,
       "entry": 0.006260999999999999,
       "stop": 0.006029932087559265
+    },
+    "IRYSUSDT:1h": {
+      "sentAt": "2026-10-27T04:31:04.729Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.031085,
+      "stop": 0.023840143246818872
+    },
+    "PONSUSDT:1h": {
+      "sentAt": "2026-10-27T04:31:06.489Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.236,
+      "stop": 0.2258969420602538
     }
   }
 }
