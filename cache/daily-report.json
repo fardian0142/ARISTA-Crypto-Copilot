@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T19:31:11.891Z",
+  "lastUpdated": "2026-10-27T20:01:13.701Z",
   "lastReportSentDate": null,
   "buckets": {
     "2026-10-27": {
@@ -337,6 +337,22 @@
           "entry": 0.015478857193140136,
           "stop": 0.015620612029399418,
           "sentAt": "2026-10-27T19:31:10.386Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.0046345,
+          "stop": 0.004488381911573389,
+          "sentAt": "2026-10-27T20:01:12.194Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.0046339677576663985,
+          "stop": 0.004578566752858289,
+          "sentAt": "2026-10-27T20:01:12.194Z"
         }
       ]
     }

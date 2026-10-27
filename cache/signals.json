@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T19:31:11.888Z",
+  "lastUpdated": "2026-10-27T20:01:13.699Z",
   "signals": {
-    "UBUSDT:15m": {
-      "sentAt": "2026-10-27T07:31:13.358Z",
-      "symbol": "UBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1201,
-      "stop": 0.11910361338911822
-    },
     "ATHUSDT:2h": {
       "sentAt": "2026-10-27T08:01:19.482Z",
       "symbol": "ATHUSDT",
@@ -394,6 +385,24 @@
       "score": 14,
       "entry": 0.015478857193140136,
       "stop": 0.015620612029399418
+    },
+    "BRETTUSDT:1h": {
+      "sentAt": "2026-10-27T20:01:12.194Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0046345,
+      "stop": 0.004488381911573389
+    },
+    "BRETTUSDT:15m": {
+      "sentAt": "2026-10-27T20:01:12.194Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0046339677576663985,
+      "stop": 0.004578566752858289
     }
   }
 }
