@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T13:01:47.977Z",
+  "lastUpdated": "2026-10-27T13:31:11.611Z",
   "signals": {
     "ORDERUSDT:30m": {
       "sentAt": "2026-10-27T01:31:14.649Z",
@@ -486,6 +486,51 @@
       "score": 14,
       "entry": 0.2047,
       "stop": 0.19742202821964006
+    },
+    "MONUSDT:2h": {
+      "sentAt": "2026-10-27T13:31:02.985Z",
+      "symbol": "MONUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02151,
+      "stop": 0.020279928532157508
+    },
+    "BNBUSDT:30m": {
+      "sentAt": "2026-10-27T13:31:04.735Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 740.8484250408482,
+      "stop": 746.3538926820792
+    },
+    "GRVTUSDT:1h": {
+      "sentAt": "2026-10-27T13:31:06.485Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.21339,
+      "stop": 0.1977435877158834
+    },
+    "SOONUSDT:15m": {
+      "sentAt": "2026-10-27T13:31:08.276Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.3044,
+      "stop": 0.3108043980652655
+    },
+    "FETUSDT:2h": {
+      "sentAt": "2026-10-27T13:31:10.109Z",
+      "symbol": "FETUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1759,
+      "stop": 0.16645780836873553
     }
   }
 }
