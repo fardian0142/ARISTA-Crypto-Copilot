@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T05:01:05.547Z",
+  "lastUpdated": "2026-10-27T05:31:13.361Z",
   "signals": {
-    "UNIUSDT:2h": {
-      "sentAt": "2026-10-26T17:01:06.318Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.068,
-      "stop": 6.727033490544112
-    },
-    "INJUSDT:2h": {
-      "sentAt": "2026-10-26T17:01:08.072Z",
-      "symbol": "INJUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.868456403563013,
-      "stop": 7.394186841872797
-    },
     "DOODUSDT:1h": {
       "sentAt": "2026-10-26T17:31:15.827Z",
       "symbol": "DOODUSDT",
@@ -549,6 +531,24 @@
       "score": 14,
       "entry": 11.344,
       "stop": 11.250016596896305
+    },
+    "ZORAUSDT:1h": {
+      "sentAt": "2026-10-27T05:31:10.136Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006238,
+      "stop": 0.00596564748459625
+    },
+    "UNIUSDT:2h": {
+      "sentAt": "2026-10-27T05:31:11.858Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.040388302085725,
+      "stop": 6.72547870534689
     }
   }
 }
