@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T10:31:17.167Z",
+  "lastUpdated": "2026-10-27T11:01:18.375Z",
   "signals": {
     "ETHUSDT:15m": {
       "sentAt": "2026-10-26T23:31:13.045Z",
@@ -486,6 +486,24 @@
       "score": 14,
       "entry": 7.011947501910209,
       "stop": 6.790653563241961
+    },
+    "FLOCKUSDT:15m": {
+      "sentAt": "2026-10-27T11:01:15.104Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.04095,
+      "stop": 0.04144867422002891
+    },
+    "STABLEUSDT:15m": {
+      "sentAt": "2026-10-27T11:01:16.873Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02652549544598867,
+      "stop": 0.02606216237433428
     }
   }
 }
