@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T22:31:12.188Z",
+  "lastUpdated": "2026-10-27T23:01:21.205Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -99,6 +99,30 @@
           "profitPct": 0.92,
           "maxR": 0.27,
           "closedAt": "2026-10-27T22:00:53.867Z"
+        },
+        {
+          "symbol": "EDGEUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.31576188674917555,
+          "stop": 0.27874366607731743,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 8.16,
+          "maxR": 0.68,
+          "closedAt": "2026-10-27T23:00:36.495Z"
+        },
+        {
+          "symbol": "EDGEUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.32109187476047435,
+          "stop": 0.30634375171089756,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 6.24,
+          "maxR": 1.32,
+          "closedAt": "2026-10-27T23:00:38.224Z"
         }
       ],
       "openSignals": [
@@ -181,6 +205,14 @@
           "entry": 0.09829,
           "stop": 0.09623814787030602,
           "sentAt": "2026-10-27T22:31:10.682Z"
+        },
+        {
+          "symbol": "CCUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.09883479126585855,
+          "stop": 0.09740518028917765,
+          "sentAt": "2026-10-27T23:01:19.699Z"
         }
       ]
     }
