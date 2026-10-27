@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T09:31:03.463Z",
+  "lastUpdated": "2026-10-27T10:01:12.569Z",
   "signals": {
-    "GRVTUSDT:15m": {
-      "sentAt": "2026-10-26T21:31:06.685Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.20956000000000002,
-      "stop": 0.21395407306034844
-    },
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-10-26T21:31:08.521Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.1265001914821031,
-      "stop": 0.12898489364812965
-    },
-    "FLOCKUSDT:30m": {
-      "sentAt": "2026-10-26T21:31:10.239Z",
-      "symbol": "FLOCKUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.04075594,
-      "stop": 0.03979281594605799
-    },
-    "ONDOUSDT:1h": {
-      "sentAt": "2026-10-26T21:31:11.985Z",
-      "symbol": "ONDOUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.4158312,
-      "stop": 0.39867144526570697
-    },
     "PONSUSDT:15m": {
       "sentAt": "2026-10-26T22:30:59.869Z",
       "symbol": "PONSUSDT",
