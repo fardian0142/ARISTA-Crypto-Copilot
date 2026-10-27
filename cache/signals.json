@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T03:01:08.313Z",
+  "lastUpdated": "2026-10-27T03:31:08.601Z",
   "signals": {
-    "BTCUSDT:30m": {
-      "sentAt": "2026-10-26T15:01:25.657Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 80360.56350215814,
-      "stop": 79738.20499075089
-    },
-    "ORDERUSDT:2h": {
-      "sentAt": "2026-10-26T15:01:27.402Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03645893542077879,
-      "stop": 0.02551027676809092
-    },
-    "SUIUSDT:1h": {
-      "sentAt": "2026-10-26T15:01:29.508Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9152499999999999,
-      "stop": 0.898141519731987
-    },
-    "SUIUSDT:30m": {
-      "sentAt": "2026-10-26T15:01:29.508Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9190499999999999,
-      "stop": 0.9037400531317334
-    },
-    "WLDUSDT:1h": {
-      "sentAt": "2026-10-26T15:01:31.225Z",
-      "symbol": "WLDUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.4448,
-      "stop": 0.43182125647519154
-    },
     "SOLUSDT:1h": {
       "sentAt": "2026-10-26T16:01:06.074Z",
       "symbol": "SOLUSDT",
@@ -540,6 +495,42 @@
       "score": 14,
       "entry": 741.6128393364693,
       "stop": 748.9049742722744
+    },
+    "SOXLBUSDT:30m": {
+      "sentAt": "2026-10-27T03:31:03.727Z",
+      "symbol": "SOXLBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 91.83,
+      "stop": 94.37050752984659
+    },
+    "DOGEUSDT:15m": {
+      "sentAt": "2026-10-27T03:31:05.415Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0773982242012144,
+      "stop": 0.07797046770908111
+    },
+    "DOGEUSDT:2h": {
+      "sentAt": "2026-10-27T03:31:05.415Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07726,
+      "stop": 0.07537376992661124
+    },
+    "UBUSDT:30m": {
+      "sentAt": "2026-10-27T03:31:07.098Z",
+      "symbol": "UBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.12071308722522218,
+      "stop": 0.11836534046333344
     }
   }
 }
