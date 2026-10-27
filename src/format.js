@@ -247,7 +247,7 @@ function formatTehranDateFa(dateKey) {
     const mm = String(jalali.month).padStart(2, "0");
     const yyyy = String(jalali.year);
 
-    return dd + "/" + mm + "/" + yyyy;
+    return yyyy + "/" + mm + "/" + dd;
   } catch (e) {
     return dateKey;
   }
