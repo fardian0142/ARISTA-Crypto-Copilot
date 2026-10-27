@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-10-27T18:31:11.724Z",
+  "lastUpdated": "2026-10-27T19:01:08.474Z",
   "signals": {
-    "IRYSUSDT:15m": {
-      "sentAt": "2026-10-27T06:31:14.145Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.028434773073611884,
-      "stop": 0.026030972541663346
-    },
-    "PIUSDT:30m": {
-      "sentAt": "2026-10-27T06:31:15.838Z",
-      "symbol": "PIUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0761051541170233,
-      "stop": 0.07514362521275729
-    },
-    "DOODUSDT:1h": {
-      "sentAt": "2026-10-27T07:00:59.120Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0021352556562917206,
-      "stop": 0.0016617614730354818
-    },
-    "ZORAUSDT:2h": {
-      "sentAt": "2026-10-27T07:01:00.862Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006329508611436569,
-      "stop": 0.005866677379557563
-    },
-    "RAVEUSDT:15m": {
-      "sentAt": "2026-10-27T07:01:02.606Z",
-      "symbol": "RAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.141,
-      "stop": 0.14289838049862189
-    },
     "UBUSDT:15m": {
       "sentAt": "2026-10-27T07:31:13.358Z",
       "symbol": "UBUSDT",
@@ -412,6 +367,15 @@
       "score": 14,
       "entry": 0.4370449390734052,
       "stop": 0.42689311825683485
+    },
+    "CROUSDT:15m": {
+      "sentAt": "2026-10-27T19:01:06.970Z",
+      "symbol": "CROUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05319900523427426,
+      "stop": 0.05255426328168172
     }
   }
 }
