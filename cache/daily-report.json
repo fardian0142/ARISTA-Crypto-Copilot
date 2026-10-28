@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T05:01:15.609Z",
+  "lastUpdated": "2026-10-28T05:31:23.454Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -411,6 +411,30 @@
           "profitPct": -3.55,
           "maxR": 0,
           "closedAt": "2026-10-28T04:30:42.895Z"
+        },
+        {
+          "symbol": "CASHCATUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.093875,
+          "stop": 0.08828302112345213,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 12.47,
+          "maxR": 2.19,
+          "closedAt": "2026-10-28T05:30:39.168Z"
+        },
+        {
+          "symbol": "BASEDUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.052172168639744824,
+          "stop": 0.053052134401093604,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.69,
+          "maxR": 0,
+          "closedAt": "2026-10-28T05:30:44.490Z"
         }
       ],
       "openSignals": [
@@ -543,14 +567,6 @@
           "sentAt": "2026-10-28T02:31:16.915Z"
         },
         {
-          "symbol": "BASEDUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.052172168639744824,
-          "stop": 0.053052134401093604,
-          "sentAt": "2026-10-28T02:31:18.657Z"
-        },
-        {
           "symbol": "ACUUSDT",
           "timeframe": "15m",
           "direction": "bearish",
@@ -621,6 +637,14 @@
           "entry": 0.24989054000061758,
           "stop": 0.2626119714259247,
           "sentAt": "2026-10-28T05:01:14.100Z"
+        },
+        {
+          "symbol": "CTUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.15987951625292665,
+          "stop": 0.14934493034460014,
+          "sentAt": "2026-10-28T05:31:21.948Z"
         }
       ]
     }

@@ -1,43 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T05:01:15.605Z",
+  "lastUpdated": "2026-10-28T05:31:23.451Z",
   "signals": {
-    "MONUSDT:15m": {
-      "sentAt": "2026-10-27T17:01:19.065Z",
-      "symbol": "MONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.021484044519970866,
-      "stop": 0.021275696,
-      "closedAt": "2026-10-27T21:00:38.304Z"
-    },
-    "UBUSDT:30m": {
-      "sentAt": "2026-10-27T17:01:20.826Z",
-      "symbol": "UBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.12016746795844524,
-      "stop": 0.11591513732094899
-    },
-    "MERLUSDT:1h": {
-      "sentAt": "2026-10-27T17:31:11.372Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02701,
-      "stop": 0.02606629469147243
-    },
-    "FETUSDT:1h": {
-      "sentAt": "2026-10-27T17:31:13.157Z",
-      "symbol": "FETUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.18014521274946152,
-      "stop": 0.17154908821659348
-    },
     "USELESSUSDT:30m": {
       "sentAt": "2026-10-27T18:31:08.430Z",
       "symbol": "USELESSUSDT",
@@ -316,7 +279,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.052172168639744824,
-      "stop": 0.053052134401093604
+      "stop": 0.053052134401093604,
+      "closedAt": "2026-10-28T05:30:44.491Z"
     },
     "ACUUSDT:15m": {
       "sentAt": "2026-10-28T02:31:20.396Z",
@@ -408,6 +372,15 @@
       "score": 14,
       "entry": 0.24989054000061758,
       "stop": 0.2626119714259247
+    },
+    "CTUSDT:30m": {
+      "sentAt": "2026-10-28T05:31:21.948Z",
+      "symbol": "CTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15987951625292665,
+      "stop": 0.14934493034460014
     }
   }
 }
