@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T08:31:27.822Z",
+  "lastUpdated": "2026-10-28T09:01:19.290Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -471,6 +471,30 @@
           "profitPct": 2.34,
           "maxR": 122.28,
           "closedAt": "2026-10-28T08:30:52.096Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.0046345,
+          "stop": 0.004488381911573389,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.9,
+          "maxR": 0.92,
+          "closedAt": "2026-10-28T09:00:39.978Z"
+        },
+        {
+          "symbol": "AAVEUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 135.35500000000002,
+          "stop": 136.80467753181725,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.07,
+          "maxR": 0.09,
+          "closedAt": "2026-10-28T09:00:41.748Z"
         }
       ],
       "openSignals": [
@@ -651,14 +675,6 @@
           "sentAt": "2026-10-28T05:01:10.672Z"
         },
         {
-          "symbol": "AAVEUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 135.35500000000002,
-          "stop": 136.80467753181725,
-          "sentAt": "2026-10-28T05:01:12.396Z"
-        },
-        {
           "symbol": "CNPYUSDT",
           "timeframe": "1h",
           "direction": "bearish",
@@ -705,6 +721,30 @@
           "entry": 0.037605,
           "stop": 0.03408637506184707,
           "sentAt": "2026-10-28T08:31:26.317Z"
+        },
+        {
+          "symbol": "SATSUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 1.0198196609127794e-8,
+          "stop": 1.0343443103738029e-8,
+          "sentAt": "2026-10-28T09:01:14.204Z"
+        },
+        {
+          "symbol": "USELESSUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.166685,
+          "stop": 0.16953212945956597,
+          "sentAt": "2026-10-28T09:01:15.982Z"
+        },
+        {
+          "symbol": "CRCLBUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 81.605,
+          "stop": 80.87199483762613,
+          "sentAt": "2026-10-28T09:01:17.784Z"
         }
       ]
     }
