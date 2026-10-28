@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T02:31:23.681Z",
+  "lastUpdated": "2026-10-28T03:01:06.320Z",
   "signals": {
     "ETHUSDT:1h": {
       "sentAt": "2026-10-27T15:01:13.963Z",
@@ -397,6 +397,15 @@
       "score": 14,
       "entry": 0.015754397585054536,
       "stop": 0.016314010349766272
+    },
+    "LIGHTUSDT:15m": {
+      "sentAt": "2026-10-28T03:01:04.816Z",
+      "symbol": "LIGHTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2956,
+      "stop": 0.3045543579061385
     }
   }
 }

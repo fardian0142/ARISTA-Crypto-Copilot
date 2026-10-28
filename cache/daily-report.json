@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T02:31:23.683Z",
+  "lastUpdated": "2026-10-28T03:01:06.322Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -267,6 +267,18 @@
           "profitPct": 9.13,
           "maxR": 0.81,
           "closedAt": "2026-10-28T02:30:34.254Z"
+        },
+        {
+          "symbol": "NILUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.09051576494805777,
+          "stop": 0.0845852930797524,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 6.55,
+          "maxR": 0.75,
+          "closedAt": "2026-10-28T03:00:36.137Z"
         }
       ],
       "openSignals": [
@@ -429,6 +441,14 @@
           "entry": 0.015754397585054536,
           "stop": 0.016314010349766272,
           "sentAt": "2026-10-28T02:31:22.178Z"
+        },
+        {
+          "symbol": "LIGHTUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.2956,
+          "stop": 0.3045543579061385,
+          "sentAt": "2026-10-28T03:01:04.816Z"
         }
       ]
     }
