@@ -1,35 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T20:32:03.908Z",
+  "lastUpdated": "2026-10-28T21:05:37.064Z",
   "signals": {
-    "SATSUSDT:30m": {
-      "sentAt": "2026-10-28T09:01:14.204Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1.0198196609127794e-8,
-      "stop": 1.0343443103738029e-8
-    },
-    "USELESSUSDT:15m": {
-      "sentAt": "2026-10-28T09:01:15.982Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.166685,
-      "stop": 0.16953212945956597,
-      "closedAt": "2026-10-28T20:00:47.403Z"
-    },
-    "CRCLBUSDT:30m": {
-      "sentAt": "2026-10-28T09:01:17.784Z",
-      "symbol": "CRCLBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 81.605,
-      "stop": 80.87199483762613,
-      "closedAt": "2026-10-28T12:30:44.263Z"
-    },
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-28T09:31:13.246Z",
       "symbol": "IRYSUSDT",
@@ -545,6 +516,51 @@
       "score": 14,
       "entry": 8.940000000000001,
       "stop": 8.628520208413292
+    },
+    "MONUSDT:30m": {
+      "sentAt": "2026-10-28T21:05:28.325Z",
+      "symbol": "MONUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02176,
+      "stop": 0.022746950073304396
+    },
+    "SUIUSDT:2h": {
+      "sentAt": "2026-10-28T21:05:30.098Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.9372237166334678,
+      "stop": 0.8991870049800686
+    },
+    "SKHYBUSDT:30m": {
+      "sentAt": "2026-10-28T21:05:31.989Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 162.305,
+      "stop": 168.02940695403763
+    },
+    "SNXXUSDT:30m": {
+      "sentAt": "2026-10-28T21:05:33.784Z",
+      "symbol": "SNXXUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 9.92,
+      "stop": 10.696006493850078
+    },
+    "ONDOUSDT:2h": {
+      "sentAt": "2026-10-28T21:05:35.562Z",
+      "symbol": "ONDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.41820215491744434,
+      "stop": 0.39925726768536574
     }
   }
 }
