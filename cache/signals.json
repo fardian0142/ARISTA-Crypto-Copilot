@@ -1,26 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T12:31:29.573Z",
+  "lastUpdated": "2026-10-28T13:01:44.434Z",
   "signals": {
-    "MEWUSDT:15m": {
-      "sentAt": "2026-10-28T01:01:16.651Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0004317,
-      "stop": 0.0004278922985373178,
-      "closedAt": "2026-10-28T08:30:45.187Z"
-    },
-    "FLOCKUSDT:15m": {
-      "sentAt": "2026-10-28T01:01:18.382Z",
-      "symbol": "FLOCKUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.042005,
-      "stop": 0.04230018465707111,
-      "closedAt": "2026-10-28T02:00:42.905Z"
-    },
     "BEATUSDT:15m": {
       "sentAt": "2026-10-28T01:31:10.503Z",
       "symbol": "BEATUSDT",
@@ -299,7 +279,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 11.805052289933748,
-      "stop": 11.611625400000001
+      "stop": 11.611625400000001,
+      "closedAt": "2026-10-28T13:00:59.279Z"
     },
     "SPCXBUSDT:15m": {
       "sentAt": "2026-10-28T11:01:18.756Z",
@@ -308,7 +289,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 149.82999999999998,
-      "stop": 150.29851130495973
+      "stop": 150.29851130495973,
+      "closedAt": "2026-10-28T13:01:01.354Z"
     },
     "PUMPUSDT:30m": {
       "sentAt": "2026-10-28T11:01:20.562Z",
@@ -344,7 +326,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 134.86,
-      "stop": 136.646952
+      "stop": 136.646952,
+      "closedAt": "2026-10-28T13:01:03.081Z"
     },
     "BILLUSDT:30m": {
       "sentAt": "2026-10-28T12:01:11.816Z",
@@ -381,6 +364,42 @@
       "score": 14,
       "entry": 296.72607534653633,
       "stop": 299.75939999999997
+    },
+    "PONSUSDT:15m": {
+      "sentAt": "2026-10-28T13:01:39.291Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2861573977615837,
+      "stop": 0.29648258102178404
+    },
+    "PEPEUSDT:15m": {
+      "sentAt": "2026-10-28T13:01:41.110Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.000004900182725585691,
+      "stop": 0.000005044931176061324
+    },
+    "ADAUSDT:1h": {
+      "sentAt": "2026-10-28T13:01:42.931Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2043,
+      "stop": 0.19885771928020043
+    },
+    "ADAUSDT:30m": {
+      "sentAt": "2026-10-28T13:01:42.931Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2037258,
+      "stop": 0.19956095941613905
     }
   }
 }
