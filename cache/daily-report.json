@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T03:01:06.322Z",
+  "lastUpdated": "2026-10-28T03:31:20.124Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -279,6 +279,42 @@
           "profitPct": 6.55,
           "maxR": 0.75,
           "closedAt": "2026-10-28T03:00:36.137Z"
+        },
+        {
+          "symbol": "PEPEUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.000004946856225362155,
+          "stop": 0.000005276741247413179,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 9.22,
+          "maxR": 0,
+          "closedAt": "2026-10-28T03:30:38.919Z"
+        },
+        {
+          "symbol": "SNDKBUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 1270.05,
+          "stop": 1214.4850169794458,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 6.72,
+          "maxR": 1.54,
+          "closedAt": "2026-10-28T03:30:40.651Z"
+        },
+        {
+          "symbol": "TRIAUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.002976,
+          "stop": 0.0030145942000000003,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 1.3,
+          "maxR": 0.93,
+          "closedAt": "2026-10-28T03:30:44.042Z"
         }
       ],
       "openSignals": [
@@ -297,14 +333,6 @@
           "entry": 0.027485,
           "stop": 0.028026136196090432,
           "sentAt": "2026-10-27T21:01:16.793Z"
-        },
-        {
-          "symbol": "TRIAUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.002976,
-          "stop": 0.0030145942000000003,
-          "sentAt": "2026-10-27T21:31:11.054Z"
         },
         {
           "symbol": "CRCLBUSDT",
