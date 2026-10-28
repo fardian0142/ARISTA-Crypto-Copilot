@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T00:01:26.139Z",
+  "lastUpdated": "2026-10-28T00:31:13.275Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -171,6 +171,30 @@
           "profitPct": 3.08,
           "maxR": 0,
           "closedAt": "2026-10-28T00:00:50.122Z"
+        },
+        {
+          "symbol": "KORUUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 10.496844512163735,
+          "stop": 9.81622169014208,
+          "finalStatus": "tp1_hit",
+          "lastTpHit": "tp1_hit",
+          "profitPct": 16.68,
+          "maxR": 2.55,
+          "closedAt": "2026-10-28T00:30:38.031Z"
+        },
+        {
+          "symbol": "IRYSUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.031085,
+          "stop": 0.023840143246818872,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 23.31,
+          "maxR": 0,
+          "closedAt": "2026-10-28T00:30:39.790Z"
         }
       ],
       "openSignals": [
