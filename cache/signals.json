@@ -1,26 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T07:31:05.698Z",
+  "lastUpdated": "2026-10-28T08:01:10.444Z",
   "signals": {
-    "CASHCATUSDT:15m": {
-      "sentAt": "2026-10-27T19:31:07.955Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0991,
-      "stop": 0.10255513435096927,
-      "closedAt": "2026-10-28T00:00:48.414Z"
-    },
-    "PIPPINUSDT:15m": {
-      "sentAt": "2026-10-27T19:31:10.386Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.015478857193140136,
-      "stop": 0.015620612029399418,
-      "closedAt": "2026-10-27T22:00:53.867Z"
-    },
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-27T20:01:12.194Z",
       "symbol": "BRETTUSDT",
@@ -369,7 +349,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.18000835622278658,
-      "stop": 0.1821499019023432
+      "stop": 0.1821499019023432,
+      "closedAt": "2026-10-28T08:00:35.294Z"
     },
     "PIUSDT:30m": {
       "sentAt": "2026-10-28T07:31:04.194Z",
@@ -379,6 +360,24 @@
       "score": 14,
       "entry": 0.07638,
       "stop": 0.07683011445262665
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-10-28T08:01:07.221Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.000010179941593156117,
+      "stop": 0.000010263107457902356
+    },
+    "ZORAUSDT:15m": {
+      "sentAt": "2026-10-28T08:01:08.940Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.006422,
+      "stop": 0.006521651277708582
     }
   }
 }

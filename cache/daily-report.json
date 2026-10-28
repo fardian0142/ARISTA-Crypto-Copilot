@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T07:31:05.701Z",
+  "lastUpdated": "2026-10-28T08:01:10.445Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -435,6 +435,18 @@
           "profitPct": -1.69,
           "maxR": 0,
           "closedAt": "2026-10-28T05:30:44.490Z"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.18000835622278658,
+          "stop": 0.1821499019023432,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.19,
+          "maxR": 0,
+          "closedAt": "2026-10-28T08:00:35.294Z"
         }
       ],
       "openSignals": [
@@ -655,20 +667,28 @@
           "sentAt": "2026-10-28T07:00:58.674Z"
         },
         {
-          "symbol": "FETUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.18000835622278658,
-          "stop": 0.1821499019023432,
-          "sentAt": "2026-10-28T07:01:00.391Z"
-        },
-        {
           "symbol": "PIUSDT",
           "timeframe": "30m",
           "direction": "bearish",
           "entry": 0.07638,
           "stop": 0.07683011445262665,
           "sentAt": "2026-10-28T07:31:04.194Z"
+        },
+        {
+          "symbol": "SATSUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.000010179941593156117,
+          "stop": 0.000010263107457902356,
+          "sentAt": "2026-10-28T08:01:07.221Z"
+        },
+        {
+          "symbol": "ZORAUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.006422,
+          "stop": 0.006521651277708582,
+          "sentAt": "2026-10-28T08:01:08.940Z"
         }
       ]
     }
