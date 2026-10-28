@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T17:01:13.500Z",
+  "lastUpdated": "2026-10-28T17:31:10.450Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -867,6 +867,30 @@
           "profitPct": 2.72,
           "maxR": 2.81,
           "closedAt": "2026-10-28T17:00:39.895Z"
+        },
+        {
+          "symbol": "LTCUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 56.72,
+          "stop": 55.39666119200433,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 5.09,
+          "maxR": 2.18,
+          "closedAt": "2026-10-28T17:30:36.255Z"
+        },
+        {
+          "symbol": "ORDERUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.038635,
+          "stop": 0.036554420768510315,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 4.9,
+          "maxR": 0.91,
+          "closedAt": "2026-10-28T17:30:39.804Z"
         }
       ],
       "openSignals": [
@@ -1101,14 +1125,6 @@
           "entry": 0.2037258,
           "stop": 0.19956095941613905,
           "sentAt": "2026-10-28T13:01:42.931Z"
-        },
-        {
-          "symbol": "ORDERUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.038635,
-          "stop": 0.036554420768510315,
-          "sentAt": "2026-10-28T13:31:15.021Z"
         },
         {
           "symbol": "MERLUSDT",

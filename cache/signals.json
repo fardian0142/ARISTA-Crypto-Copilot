@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T17:01:13.497Z",
+  "lastUpdated": "2026-10-28T17:31:10.448Z",
   "signals": {
-    "CNPYUSDT:1h": {
-      "sentAt": "2026-10-28T05:01:14.100Z",
-      "symbol": "CNPYUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.24989054000061758,
-      "stop": 0.2626119714259247
-    },
     "CTUSDT:30m": {
       "sentAt": "2026-10-28T05:31:21.948Z",
       "symbol": "CTUSDT",
@@ -263,7 +254,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.038635,
-      "stop": 0.036554420768510315
+      "stop": 0.036554420768510315,
+      "closedAt": "2026-10-28T17:30:39.804Z"
     },
     "MERLUSDT:1h": {
       "sentAt": "2026-10-28T13:31:16.734Z",
