@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T12:01:13.319Z",
+  "lastUpdated": "2026-10-28T12:31:29.573Z",
   "signals": {
-    "DOODUSDT:1h": {
-      "sentAt": "2026-10-28T00:01:24.634Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0020908377114772984,
-      "stop": 0.00163659
-    },
     "MEWUSDT:15m": {
       "sentAt": "2026-10-28T01:01:16.651Z",
       "symbol": "MEWUSDT",
@@ -280,7 +271,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 81.605,
-      "stop": 80.87199483762613
+      "stop": 80.87199483762613,
+      "closedAt": "2026-10-28T12:30:44.263Z"
     },
     "IRYSUSDT:30m": {
       "sentAt": "2026-10-28T09:31:13.246Z",
@@ -362,6 +354,33 @@
       "score": 14,
       "entry": 0.006061620764179652,
       "stop": 0.005966788000000001
+    },
+    "ZECUSDT:15m": {
+      "sentAt": "2026-10-28T12:31:24.367Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1298.11,
+      "stop": 1313.993370677783
+    },
+    "ENAUSDT:1h": {
+      "sentAt": "2026-10-28T12:31:26.254Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2038,
+      "stop": 0.2123963463861383
+    },
+    "BCHUSDT:15m": {
+      "sentAt": "2026-10-28T12:31:28.068Z",
+      "symbol": "BCHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 296.72607534653633,
+      "stop": 299.75939999999997
     }
   }
 }
