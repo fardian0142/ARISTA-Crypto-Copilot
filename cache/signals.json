@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T06:31:11.132Z",
+  "lastUpdated": "2026-10-28T07:01:01.894Z",
   "signals": {
     "CROUSDT:15m": {
       "sentAt": "2026-10-27T19:01:06.970Z",
@@ -362,6 +362,24 @@
       "score": 14,
       "entry": 0.15987951625292665,
       "stop": 0.14934493034460014
+    },
+    "TRIAUSDT:30m": {
+      "sentAt": "2026-10-28T07:00:58.674Z",
+      "symbol": "TRIAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0028935,
+      "stop": 0.0029445772
+    },
+    "FETUSDT:15m": {
+      "sentAt": "2026-10-28T07:01:00.391Z",
+      "symbol": "FETUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.18000835622278658,
+      "stop": 0.1821499019023432
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T06:31:11.135Z",
+  "lastUpdated": "2026-10-28T07:01:01.896Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -645,6 +645,22 @@
           "entry": 0.15987951625292665,
           "stop": 0.14934493034460014,
           "sentAt": "2026-10-28T05:31:21.948Z"
+        },
+        {
+          "symbol": "TRIAUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.0028935,
+          "stop": 0.0029445772,
+          "sentAt": "2026-10-28T07:00:58.674Z"
+        },
+        {
+          "symbol": "FETUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.18000835622278658,
+          "stop": 0.1821499019023432,
+          "sentAt": "2026-10-28T07:01:00.391Z"
         }
       ]
     }
