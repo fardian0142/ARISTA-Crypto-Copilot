@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T16:31:09.304Z",
+  "lastUpdated": "2026-10-28T17:01:13.500Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -855,6 +855,18 @@
           "profitPct": 2.94,
           "maxR": 2.78,
           "closedAt": "2026-10-28T16:00:37.863Z"
+        },
+        {
+          "symbol": "BCHUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 296.72607534653633,
+          "stop": 299.75939999999997,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.72,
+          "maxR": 2.81,
+          "closedAt": "2026-10-28T17:00:39.895Z"
         }
       ],
       "openSignals": [
@@ -1057,14 +1069,6 @@
           "entry": 0.2038,
           "stop": 0.2123963463861383,
           "sentAt": "2026-10-28T12:31:26.254Z"
-        },
-        {
-          "symbol": "BCHUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 296.72607534653633,
-          "stop": 299.75939999999997,
-          "sentAt": "2026-10-28T12:31:28.068Z"
         },
         {
           "symbol": "PONSUSDT",

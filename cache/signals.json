@@ -1,52 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T16:31:09.300Z",
+  "lastUpdated": "2026-10-28T17:01:13.497Z",
   "signals": {
-    "DOODUSDT:15m": {
-      "sentAt": "2026-10-28T04:31:21.764Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0020695059736840766,
-      "stop": 0.0018358315413539573
-    },
-    "UPUSDT:30m": {
-      "sentAt": "2026-10-28T04:31:23.445Z",
-      "symbol": "UPUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.18215,
-      "stop": 0.19222792823054546
-    },
-    "ATHUSDT:1h": {
-      "sentAt": "2026-10-28T05:01:08.921Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005854,
-      "stop": 0.0056605701397850205
-    },
-    "USELESSUSDT:2h": {
-      "sentAt": "2026-10-28T05:01:10.672Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.16825019831196736,
-      "stop": 0.177383818
-    },
-    "AAVEUSDT:15m": {
-      "sentAt": "2026-10-28T05:01:12.396Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 135.35500000000002,
-      "stop": 136.80467753181725,
-      "closedAt": "2026-10-28T09:00:41.749Z"
-    },
     "CNPYUSDT:1h": {
       "sentAt": "2026-10-28T05:01:14.100Z",
       "symbol": "CNPYUSDT",
@@ -263,7 +217,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 296.72607534653633,
-      "stop": 299.75939999999997
+      "stop": 299.75939999999997,
+      "closedAt": "2026-10-28T17:00:39.896Z"
     },
     "PONSUSDT:15m": {
       "sentAt": "2026-10-28T13:01:39.291Z",
