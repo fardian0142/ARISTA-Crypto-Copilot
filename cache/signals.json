@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T02:01:31.064Z",
+  "lastUpdated": "2026-10-28T02:31:23.681Z",
   "signals": {
-    "SOLUSDT:1h": {
-      "sentAt": "2026-10-27T14:31:16.606Z",
-      "symbol": "SOLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 100.80819563293588,
-      "stop": 98.83059014456056
-    },
     "ETHUSDT:1h": {
       "sentAt": "2026-10-27T15:01:13.963Z",
       "symbol": "ETHUSDT",
@@ -370,6 +361,42 @@
       "score": 14,
       "entry": 0.08675963525212489,
       "stop": 0.07813013463375046
+    },
+    "MEWUSDT:30m": {
+      "sentAt": "2026-10-28T02:31:16.915Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00043435,
+      "stop": 0.0004260232161450171
+    },
+    "BASEDUSDT:15m": {
+      "sentAt": "2026-10-28T02:31:18.657Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.052172168639744824,
+      "stop": 0.053052134401093604
+    },
+    "ACUUSDT:15m": {
+      "sentAt": "2026-10-28T02:31:20.396Z",
+      "symbol": "ACUUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.1408928004060328,
+      "stop": 0.15077599796983598
+    },
+    "PIPPINUSDT:2h": {
+      "sentAt": "2026-10-28T02:31:22.178Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.015754397585054536,
+      "stop": 0.016314010349766272
     }
   }
 }
