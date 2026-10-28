@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T04:31:24.950Z",
+  "lastUpdated": "2026-10-28T05:01:15.609Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -589,6 +589,38 @@
           "entry": 0.18215,
           "stop": 0.19222792823054546,
           "sentAt": "2026-10-28T04:31:23.445Z"
+        },
+        {
+          "symbol": "ATHUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.005854,
+          "stop": 0.0056605701397850205,
+          "sentAt": "2026-10-28T05:01:08.921Z"
+        },
+        {
+          "symbol": "USELESSUSDT",
+          "timeframe": "2h",
+          "direction": "bearish",
+          "entry": 0.16825019831196736,
+          "stop": 0.177383818,
+          "sentAt": "2026-10-28T05:01:10.672Z"
+        },
+        {
+          "symbol": "AAVEUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 135.35500000000002,
+          "stop": 136.80467753181725,
+          "sentAt": "2026-10-28T05:01:12.396Z"
+        },
+        {
+          "symbol": "CNPYUSDT",
+          "timeframe": "1h",
+          "direction": "bearish",
+          "entry": 0.24989054000061758,
+          "stop": 0.2626119714259247,
+          "sentAt": "2026-10-28T05:01:14.100Z"
         }
       ]
     }

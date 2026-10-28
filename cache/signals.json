@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T04:31:24.948Z",
+  "lastUpdated": "2026-10-28T05:01:15.605Z",
   "signals": {
     "MONUSDT:15m": {
       "sentAt": "2026-10-27T17:01:19.065Z",
@@ -372,6 +372,42 @@
       "score": 14,
       "entry": 0.18215,
       "stop": 0.19222792823054546
+    },
+    "ATHUSDT:1h": {
+      "sentAt": "2026-10-28T05:01:08.921Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005854,
+      "stop": 0.0056605701397850205
+    },
+    "USELESSUSDT:2h": {
+      "sentAt": "2026-10-28T05:01:10.672Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.16825019831196736,
+      "stop": 0.177383818
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-10-28T05:01:12.396Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 135.35500000000002,
+      "stop": 136.80467753181725
+    },
+    "CNPYUSDT:1h": {
+      "sentAt": "2026-10-28T05:01:14.100Z",
+      "symbol": "CNPYUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.24989054000061758,
+      "stop": 0.2626119714259247
     }
   }
 }
