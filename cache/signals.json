@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T20:01:50.999Z",
+  "lastUpdated": "2026-10-28T20:32:03.908Z",
   "signals": {
-    "ORDERUSDT:1h": {
-      "sentAt": "2026-10-28T08:31:26.317Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.037605,
-      "stop": 0.03408637506184707
-    },
     "SATSUSDT:30m": {
       "sentAt": "2026-10-28T09:01:14.204Z",
       "symbol": "SATSUSDT",
@@ -134,7 +125,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 1298.11,
-      "stop": 1313.993370677783
+      "stop": 1313.993370677783,
+      "closedAt": "2026-10-28T20:31:04.783Z"
     },
     "ENAUSDT:1h": {
       "sentAt": "2026-10-28T12:31:26.254Z",
@@ -143,7 +135,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.2038,
-      "stop": 0.2123963463861383
+      "stop": 0.2123963463861383,
+      "closedAt": "2026-10-28T20:31:06.546Z"
     },
     "BCHUSDT:15m": {
       "sentAt": "2026-10-28T12:31:28.068Z",
@@ -171,7 +164,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.000004900182725585691,
-      "stop": 0.000005044931176061324
+      "stop": 0.000005044931176061324,
+      "closedAt": "2026-10-28T20:31:08.323Z"
     },
     "ADAUSDT:1h": {
       "sentAt": "2026-10-28T13:01:42.931Z",
@@ -180,7 +174,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.2043,
-      "stop": 0.19885771928020043
+      "stop": 0.19885771928020043,
+      "closedAt": "2026-10-28T20:30:54.441Z"
     },
     "ADAUSDT:30m": {
       "sentAt": "2026-10-28T13:01:42.931Z",
@@ -505,6 +500,51 @@
       "score": 14,
       "entry": 0.05363,
       "stop": 0.05262174645593587
+    },
+    "SATSUSDT:2h": {
+      "sentAt": "2026-10-28T20:31:55.386Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0195734731845453e-8,
+      "stop": 9.827994006376631e-9
+    },
+    "MEWUSDT:2h": {
+      "sentAt": "2026-10-28T20:31:57.149Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000443,
+      "stop": 0.00042978434092658563
+    },
+    "ACUUSDT:15m": {
+      "sentAt": "2026-10-28T20:31:58.916Z",
+      "symbol": "ACUUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.12949166911376034,
+      "stop": 0.12685713236959856
+    },
+    "SUIUSDT:1h": {
+      "sentAt": "2026-10-28T20:32:00.663Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.9445,
+      "stop": 0.9069294497573888
+    },
+    "AVAXUSDT:2h": {
+      "sentAt": "2026-10-28T20:32:02.405Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.940000000000001,
+      "stop": 8.628520208413292
     }
   }
 }
