@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T19:01:51.417Z",
+  "lastUpdated": "2026-10-28T19:31:26.356Z",
   "signals": {
-    "PIUSDT:30m": {
-      "sentAt": "2026-10-28T07:31:04.194Z",
-      "symbol": "PIUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07638,
-      "stop": 0.07683011445262665
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-28T08:01:07.221Z",
       "symbol": "SATSUSDT",
@@ -474,6 +465,42 @@
       "score": 14,
       "entry": 0.02899200928748552,
       "stop": 0.027218531625062055
+    },
+    "BRETTUSDT:30m": {
+      "sentAt": "2026-10-28T19:31:18.346Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004686406,
+      "stop": 0.00480127279517721
+    },
+    "PIUSDT:15m": {
+      "sentAt": "2026-10-28T19:31:20.107Z",
+      "symbol": "PIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07632158,
+      "stop": 0.07706775329806863
+    },
+    "LINKUSDT:15m": {
+      "sentAt": "2026-10-28T19:31:21.865Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 11.704,
+      "stop": 11.898348886263717
+    },
+    "AVAXUSDT:15m": {
+      "sentAt": "2026-10-28T19:31:24.853Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 8.941919222361076,
+      "stop": 9.076917618452535
     }
   }
 }

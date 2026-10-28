@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T19:01:51.419Z",
+  "lastUpdated": "2026-10-28T19:31:26.360Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -1337,6 +1337,38 @@
           "entry": 0.02899200928748552,
           "stop": 0.027218531625062055,
           "sentAt": "2026-10-28T19:01:49.913Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.004686406,
+          "stop": 0.00480127279517721,
+          "sentAt": "2026-10-28T19:31:18.346Z"
+        },
+        {
+          "symbol": "PIUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.07632158,
+          "stop": 0.07706775329806863,
+          "sentAt": "2026-10-28T19:31:20.107Z"
+        },
+        {
+          "symbol": "LINKUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 11.704,
+          "stop": 11.898348886263717,
+          "sentAt": "2026-10-28T19:31:21.865Z"
+        },
+        {
+          "symbol": "AVAXUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 8.941919222361076,
+          "stop": 9.076917618452535,
+          "sentAt": "2026-10-28T19:31:24.853Z"
         }
       ]
     }
