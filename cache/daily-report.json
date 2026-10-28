@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T11:31:13.785Z",
+  "lastUpdated": "2026-10-28T12:01:13.321Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -865,6 +865,14 @@
           "entry": 134.86,
           "stop": 136.646952,
           "sentAt": "2026-10-28T11:31:12.280Z"
+        },
+        {
+          "symbol": "BILLUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.006061620764179652,
+          "stop": 0.005966788000000001,
+          "sentAt": "2026-10-28T12:01:11.816Z"
         }
       ]
     }
