@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T10:31:05.200Z",
+  "lastUpdated": "2026-10-28T11:01:22.067Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -567,6 +567,30 @@
           "profitPct": 2.18,
           "maxR": 1.71,
           "closedAt": "2026-10-28T10:30:37.044Z"
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h",
+          "direction": "bearish",
+          "entry": 745.4170935135238,
+          "stop": 757.4493320462589,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.61,
+          "maxR": 1.01,
+          "closedAt": "2026-10-28T11:00:37.261Z"
+        },
+        {
+          "symbol": "UBUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.12016746795844524,
+          "stop": 0.11591513732094899,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.6,
+          "maxR": 0.73,
+          "closedAt": "2026-10-28T11:00:40.828Z"
         }
       ],
       "openSignals": [
@@ -809,6 +833,14 @@
           "entry": 11.805052289933748,
           "stop": 11.611625400000001,
           "sentAt": "2026-10-28T10:01:11.918Z"
+        },
+        {
+          "symbol": "PUMPUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.004342,
+          "stop": 0.004433230089005437,
+          "sentAt": "2026-10-28T11:01:20.562Z"
         }
       ]
     }

@@ -1,25 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T10:31:05.197Z",
+  "lastUpdated": "2026-10-28T11:01:22.065Z",
   "signals": {
-    "CCUSDT:1h": {
-      "sentAt": "2026-10-27T22:31:10.682Z",
-      "symbol": "CCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09829,
-      "stop": 0.09623814787030602
-    },
-    "CCUSDT:30m": {
-      "sentAt": "2026-10-27T23:01:19.699Z",
-      "symbol": "CCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09883479126585855,
-      "stop": 0.09740518028917765,
-      "closedAt": "2026-10-28T09:30:35.472Z"
-    },
     "SPACEUSDT:2h": {
       "sentAt": "2026-10-27T23:31:14.479Z",
       "symbol": "SPACEUSDT",
@@ -345,6 +326,24 @@
       "score": 14,
       "entry": 11.805052289933748,
       "stop": 11.611625400000001
+    },
+    "SPCXBUSDT:15m": {
+      "sentAt": "2026-10-28T11:01:18.756Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 149.82999999999998,
+      "stop": 150.29851130495973
+    },
+    "PUMPUSDT:30m": {
+      "sentAt": "2026-10-28T11:01:20.562Z",
+      "symbol": "PUMPUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004342,
+      "stop": 0.004433230089005437
     }
   }
 }
