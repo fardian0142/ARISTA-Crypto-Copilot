@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T15:01:12.893Z",
+  "lastUpdated": "2026-10-28T15:31:30.485Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -807,6 +807,42 @@
           "profitPct": -1.43,
           "maxR": 0.96,
           "closedAt": "2026-10-28T14:30:41.677Z"
+        },
+        {
+          "symbol": "TRUTHUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.02087414502817917,
+          "stop": 0.0213546641649464,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -2.3,
+          "maxR": 0.33,
+          "closedAt": "2026-10-28T15:30:38.953Z"
+        },
+        {
+          "symbol": "TRUTHUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.021047,
+          "stop": 0.02123030414479328,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -0.87,
+          "maxR": 0.27,
+          "closedAt": "2026-10-28T15:30:42.592Z"
+        },
+        {
+          "symbol": "RLSUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.002587,
+          "stop": 0.002465516922275457,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -4.7,
+          "maxR": 0,
+          "closedAt": "2026-10-28T15:30:44.344Z"
         }
       ],
       "openSignals": [
@@ -979,14 +1015,6 @@
           "sentAt": "2026-10-28T09:31:13.246Z"
         },
         {
-          "symbol": "TRUTHUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.021047,
-          "stop": 0.02123030414479328,
-          "sentAt": "2026-10-28T09:31:15.005Z"
-        },
-        {
           "symbol": "PUMPUSDT",
           "timeframe": "30m",
           "direction": "bearish",
@@ -1100,11 +1128,43 @@
         },
         {
           "symbol": "RLSUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.002495944557400885,
+          "stop": 0.0018989518968533514,
+          "sentAt": "2026-10-28T15:31:21.801Z"
+        },
+        {
+          "symbol": "LABUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.04596,
+          "stop": 0.047729262,
+          "sentAt": "2026-10-28T15:31:23.601Z"
+        },
+        {
+          "symbol": "ZECUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 1275.74,
+          "stop": 1308.0811890618183,
+          "sentAt": "2026-10-28T15:31:25.384Z"
+        },
+        {
+          "symbol": "ENAUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.1976520964733747,
+          "stop": 0.1800995865426798,
+          "sentAt": "2026-10-28T15:31:27.203Z"
+        },
+        {
+          "symbol": "INITUSDT",
           "timeframe": "15m",
           "direction": "bullish",
-          "entry": 0.002587,
-          "stop": 0.002465516922275457,
-          "sentAt": "2026-10-28T14:31:21.023Z"
+          "entry": 0.19215168735981691,
+          "stop": 0.16790156320091537,
+          "sentAt": "2026-10-28T15:31:28.979Z"
         }
       ]
     }

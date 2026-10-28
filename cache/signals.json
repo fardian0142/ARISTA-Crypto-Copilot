@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T15:01:12.890Z",
+  "lastUpdated": "2026-10-28T15:31:30.483Z",
   "signals": {
     "OFCUSDT:30m": {
       "sentAt": "2026-10-28T04:01:26.786Z",
@@ -177,7 +177,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.021047,
-      "stop": 0.02123030414479328
+      "stop": 0.02123030414479328,
+      "closedAt": "2026-10-28T15:30:42.592Z"
     },
     "LINKUSDT:2h": {
       "sentAt": "2026-10-28T10:01:11.918Z",
@@ -352,7 +353,53 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.002587,
-      "stop": 0.002465516922275457
+      "stop": 0.002465516922275457,
+      "closedAt": "2026-10-28T15:30:44.344Z"
+    },
+    "RLSUSDT:2h": {
+      "sentAt": "2026-10-28T15:31:21.801Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002495944557400885,
+      "stop": 0.0018989518968533514
+    },
+    "LABUSDT:15m": {
+      "sentAt": "2026-10-28T15:31:23.601Z",
+      "symbol": "LABUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.04596,
+      "stop": 0.047729262
+    },
+    "ZECUSDT:30m": {
+      "sentAt": "2026-10-28T15:31:25.384Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1275.74,
+      "stop": 1308.0811890618183
+    },
+    "ENAUSDT:2h": {
+      "sentAt": "2026-10-28T15:31:27.203Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1976520964733747,
+      "stop": 0.1800995865426798
+    },
+    "INITUSDT:15m": {
+      "sentAt": "2026-10-28T15:31:28.979Z",
+      "symbol": "INITUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.19215168735981691,
+      "stop": 0.16790156320091537
     }
   }
 }
