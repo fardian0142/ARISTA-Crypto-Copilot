@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T11:01:22.065Z",
+  "lastUpdated": "2026-10-28T11:31:13.783Z",
   "signals": {
     "SPACEUSDT:2h": {
       "sentAt": "2026-10-27T23:31:14.479Z",
@@ -344,6 +344,33 @@
       "score": 14,
       "entry": 0.004342,
       "stop": 0.004433230089005437
+    },
+    "AEONUSDT:15m": {
+      "sentAt": "2026-10-28T11:31:08.679Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.028502289937678428,
+      "stop": 0.02771447169566389
+    },
+    "XDPUSDT:15m": {
+      "sentAt": "2026-10-28T11:31:10.427Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.019125,
+      "stop": 0.019263811999999998
+    },
+    "AAVEUSDT:30m": {
+      "sentAt": "2026-10-28T11:31:12.280Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 134.86,
+      "stop": 136.646952
     }
   }
 }

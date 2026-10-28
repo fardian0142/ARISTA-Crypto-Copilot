@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T11:01:22.067Z",
+  "lastUpdated": "2026-10-28T11:31:13.785Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -841,6 +841,30 @@
           "entry": 0.004342,
           "stop": 0.004433230089005437,
           "sentAt": "2026-10-28T11:01:20.562Z"
+        },
+        {
+          "symbol": "AEONUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.028502289937678428,
+          "stop": 0.02771447169566389,
+          "sentAt": "2026-10-28T11:31:08.679Z"
+        },
+        {
+          "symbol": "XDPUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.019125,
+          "stop": 0.019263811999999998,
+          "sentAt": "2026-10-28T11:31:10.427Z"
+        },
+        {
+          "symbol": "AAVEUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 134.86,
+          "stop": 136.646952,
+          "sentAt": "2026-10-28T11:31:12.280Z"
         }
       ]
     }
