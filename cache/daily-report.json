@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T10:01:13.423Z",
+  "lastUpdated": "2026-10-28T10:31:05.200Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -555,6 +555,18 @@
           "profitPct": -3.1,
           "maxR": 0.51,
           "closedAt": "2026-10-28T10:00:37.809Z"
+        },
+        {
+          "symbol": "MEWUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.00043435,
+          "stop": 0.0004260232161450171,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.18,
+          "maxR": 1.71,
+          "closedAt": "2026-10-28T10:30:37.044Z"
         }
       ],
       "openSignals": [
@@ -661,14 +673,6 @@
           "entry": 0.08675963525212489,
           "stop": 0.07813013463375046,
           "sentAt": "2026-10-28T02:01:29.561Z"
-        },
-        {
-          "symbol": "MEWUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.00043435,
-          "stop": 0.0004260232161450171,
-          "sentAt": "2026-10-28T02:31:16.915Z"
         },
         {
           "symbol": "ACUUSDT",

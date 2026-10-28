@@ -1,25 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T10:01:13.421Z",
+  "lastUpdated": "2026-10-28T10:31:05.197Z",
   "signals": {
-    "OLUSDT:15m": {
-      "sentAt": "2026-10-27T22:01:31.790Z",
-      "symbol": "OLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0059805,
-      "stop": 0.006072691669911575,
-      "closedAt": "2026-10-28T02:00:39.396Z"
-    },
-    "STABLEUSDT:30m": {
-      "sentAt": "2026-10-27T22:01:33.543Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0277099,
-      "stop": 0.02860921848983238
-    },
     "CCUSDT:1h": {
       "sentAt": "2026-10-27T22:31:10.682Z",
       "symbol": "CCUSDT",
@@ -139,7 +120,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.00043435,
-      "stop": 0.0004260232161450171
+      "stop": 0.0004260232161450171,
+      "closedAt": "2026-10-28T10:30:37.045Z"
     },
     "BASEDUSDT:15m": {
       "sentAt": "2026-10-28T02:31:18.657Z",
