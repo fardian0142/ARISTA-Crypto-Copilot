@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T23:31:17.757Z",
+  "lastUpdated": "2026-10-28T00:01:26.139Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -135,6 +135,42 @@
           "profitPct": 5.23,
           "maxR": 0.71,
           "closedAt": "2026-10-27T23:30:41.158Z"
+        },
+        {
+          "symbol": "PIUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.07617,
+          "stop": 0.07676310172173174,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 0.78,
+          "maxR": 0.69,
+          "closedAt": "2026-10-28T00:00:44.974Z"
+        },
+        {
+          "symbol": "CASHCATUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.0991,
+          "stop": 0.10255513435096927,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 3.49,
+          "maxR": 0,
+          "closedAt": "2026-10-28T00:00:48.414Z"
+        },
+        {
+          "symbol": "SNXXUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 8.856,
+          "stop": 9.128546241626411,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 3.08,
+          "maxR": 0,
+          "closedAt": "2026-10-28T00:00:50.122Z"
         }
       ],
       "openSignals": [
@@ -153,14 +189,6 @@
           "entry": 0.027485,
           "stop": 0.028026136196090432,
           "sentAt": "2026-10-27T21:01:16.793Z"
-        },
-        {
-          "symbol": "SNXXUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 8.856,
-          "stop": 9.128546241626411,
-          "sentAt": "2026-10-27T21:01:18.518Z"
         },
         {
           "symbol": "TRIAUSDT",
@@ -233,6 +261,14 @@
           "entry": 56.81,
           "stop": 55.166119026368015,
           "sentAt": "2026-10-27T23:31:16.252Z"
+        },
+        {
+          "symbol": "DOODUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.0020908377114772984,
+          "stop": 0.00163659,
+          "sentAt": "2026-10-28T00:01:24.634Z"
         }
       ]
     }

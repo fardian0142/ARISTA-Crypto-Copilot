@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T23:31:17.755Z",
+  "lastUpdated": "2026-10-28T00:01:26.137Z",
   "signals": {
     "DOODUSDT:30m": {
       "sentAt": "2026-10-27T13:01:34.216Z",
@@ -285,7 +285,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.0991,
-      "stop": 0.10255513435096927
+      "stop": 0.10255513435096927,
+      "closedAt": "2026-10-28T00:00:48.414Z"
     },
     "PIPPINUSDT:15m": {
       "sentAt": "2026-10-27T19:31:10.386Z",
@@ -350,7 +351,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 8.856,
-      "stop": 9.128546241626411
+      "stop": 9.128546241626411,
+      "closedAt": "2026-10-28T00:00:50.123Z"
     },
     "TRIAUSDT:15m": {
       "sentAt": "2026-10-27T21:31:11.054Z",
@@ -432,6 +434,15 @@
       "score": 14,
       "entry": 56.81,
       "stop": 55.166119026368015
+    },
+    "DOODUSDT:1h": {
+      "sentAt": "2026-10-28T00:01:24.634Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0020908377114772984,
+      "stop": 0.00163659
     }
   }
 }
