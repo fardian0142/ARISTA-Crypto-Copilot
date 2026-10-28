@@ -2567,12 +2567,12 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
 
 export function detectStrictMomentum(candles, direction, lookback = CONFIG.MOMENTUM_LOOKBACK_CANDLES) {
   if (!candles || candles.length < lookback + 2) {
-    return { blocked: false, reason: null };
+    return { blocked: false, penalty: 0, reason: null };
   }
 
   const recentCandles = candles.slice(-lookback - 1, -1);
   if (recentCandles.length < lookback) {
-    return { blocked: false, reason: null };
+    return { blocked: false, penalty: 0, reason: null };
   }
 
   let strongOpposingBodies = 0;
@@ -2584,7 +2584,7 @@ export function detectStrictMomentum(candles, direction, lookback = CONFIG.MOMEN
     if (!Number.isFinite(range) || range <= 0) continue;
 
     const bodyRatio = body / range;
-    if (bodyRatio < CONFIG.MOMENTUM_STRONG_BODY_RATIO) continue;
+    if (bodyRatio < 0.6) continue;
 
     if (direction === "bearish" && isBull(candle)) {
       strongOpposingBodies++;
@@ -2593,14 +2593,16 @@ export function detectStrictMomentum(candles, direction, lookback = CONFIG.MOMEN
     }
   }
 
-  if (strongOpposingBodies >= CONFIG.MOMENTUM_MIN_STRONG_BODIES) {
+  if (strongOpposingBodies >= 2) {
+    const penalty = strongOpposingBodies === 2 ? 4 : 6;
     return {
-      blocked: true,
-      reason: `مومنتوم ${strongOpposingBodies} کندلی مخالف جهت ستاپ`
+      blocked: false,
+      penalty: penalty,
+      reason: `${strongOpposingBodies} کندل مومنتوم مخالف`
     };
   }
 
-  return { blocked: false, reason: null };
+  return { blocked: false, penalty: 0, reason: null };
 }
 
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
@@ -5298,8 +5300,9 @@ export function detectRangeTradeSetups(
     confirmations.push("bullish_displacement");
 
     const strictMomentum = detectStrictMomentum(candles, "bullish");
-    if (strictMomentum.blocked) {
-      return null;
+    if (strictMomentum.penalty > 0) {
+      score = Math.max(0, score - strictMomentum.penalty);
+      confirmations.push("counter_momentum_penalty");
     }
 
     if (rangePosition <= 45) {
@@ -5532,8 +5535,9 @@ export function detectRangeTradeSetups(
     confirmations.push("bearish_displacement");
 
     const strictMomentum = detectStrictMomentum(candles, "bearish");
-    if (strictMomentum.blocked) {
-      return null;
+    if (strictMomentum.penalty > 0) {
+      score = Math.max(0, score - strictMomentum.penalty);
+      confirmations.push("counter_momentum_penalty");
     }
 
     if (rangePosition >= 55) {
