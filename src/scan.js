@@ -5,30 +5,12 @@ import {
   hasRecentSignal,
   addSignal,
   readStats,
-  writeStats,
-  readDailyReport,
-  writeDailyReport,
-  getTehranDateKey,
-  isInDailyReportWindow,
-  hasReportBeenSentToday,
-  markReportAsSent,
-  appendClosedSignal,
-  appendOpenSignal,
-  removeOpenSignal,
-  cleanOldDailyBuckets,
-  getDailyBucket,
-  removeDailyBucket,
-  markSignalClosedForThrottle
+  writeStats
 } from "./cache.js";
 import { CONFIG } from "./config.js";
 import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
-import {
-  formatAnalysis,
-  formatSignalResult,
-  formatTradeClosed,
-  formatDailyReport
-} from "./format.js";
+import { formatAnalysis, formatSignalResult, formatTradeClosed } from "./format.js";
 import { updateSignalStatus, computeStats } from "./tracker.js";
 
 const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
@@ -164,7 +146,6 @@ function logSummary(summary) {
   console.log("🚫 Missed/Invalidated   : " + summary.missed);
   console.log("🧹 Cleaned (completed)  : " + summary.cleaned);
   console.log("📥 Cache entries        : " + summary.cacheEntries);
-  console.log("📊 Daily report sent    : " + (summary.dailyReportSent ? "YES" : "NO"));
   console.log("🕐 Elapsed              : " + elapsedSec + "s");
   console.log("═══════════════════════════════════════════");
   console.log("");
@@ -300,97 +281,6 @@ function markNotified(sig, eventType) {
   else if (eventType === "stopped") sig._stoppedNotified = true;
 }
 
-function isStoppedReason(reason) {
-  return (
-    reason === "stopped" ||
-    reason === "stopped_after_tp" ||
-    reason === "stopped_without_tp"
-  );
-}
-
-function calcClosedSignalProfitPct(sig, closedReason) {
-  if (!sig || !Number.isFinite(sig.entry) || sig.entry <= 0) {
-    return null;
-  }
-
-  if (isStoppedReason(closedReason)) {
-    if (!Number.isFinite(sig.stop)) return null;
-    return -Math.abs((sig.stop - sig.entry) / sig.entry) * 100;
-  }
-
-  let hitPrice = null;
-
-  if (closedReason === "tp3_hit") hitPrice = sig.tp3;
-  else if (closedReason === "tp2_hit") hitPrice = sig.tp2;
-  else if (closedReason === "tp1_hit") hitPrice = sig.tp1;
-
-  if (!Number.isFinite(hitPrice)) return null;
-
-  return Math.abs((hitPrice - sig.entry) / sig.entry) * 100;
-}
-
-function computeEffectiveMaxR(r, sig, eventType) {
-  const trackerMaxR = Number.isFinite(r && r.maxR) ? r.maxR : 0;
-  const totalR = computeTotalR(sig, eventType, trackerMaxR);
-
-  return Math.max(
-    trackerMaxR,
-    Number.isFinite(totalR) ? totalR : 0
-  );
-}
-
-async function trySendDailyReport(token, chatId, dailyReport, stats, summary) {
-  const now = new Date();
-
-  if (!isInDailyReportWindow(now)) {
-    return dailyReport;
-  }
-
-  const todayTehran = getTehranDateKey(now);
-
-  if (!todayTehran) {
-    return dailyReport;
-  }
-
-  if (hasReportBeenSentToday(dailyReport, todayTehran)) {
-    return dailyReport;
-  }
-
-  const yesterdayDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-  const yesterdayTehran = getTehranDateKey(yesterdayDate);
-
-  if (!yesterdayTehran) {
-    return dailyReport;
-  }
-
-  const bucket = getDailyBucket(dailyReport, yesterdayTehran);
-
-  const hasClosed = bucket && Array.isArray(bucket.closedSignals) && bucket.closedSignals.length > 0;
-  const hasOpen = bucket && Array.isArray(bucket.openSignals) && bucket.openSignals.length > 0;
-
-  let nextReport = dailyReport;
-
-  if (hasClosed || hasOpen) {
-    try {
-      const text = formatDailyReport(bucket, stats.allTime, yesterdayTehran);
-      await sendTelegramMessage(token, chatId, text);
-
-      console.log("📊 Daily report sent for " + yesterdayTehran);
-
-      summary.dailyReportSent = true;
-
-      nextReport = markReportAsSent(nextReport, todayTehran);
-      nextReport = removeDailyBucket(nextReport, yesterdayTehran);
-    } catch (e) {
-      console.error("❌ Failed to send daily report:", (e && e.message) || e);
-    }
-  } else {
-    nextReport = markReportAsSent(nextReport, todayTehran);
-  }
-
-  return nextReport;
-}
-
 async function main() {
   const startTime = Date.now();
 
@@ -414,7 +304,6 @@ async function main() {
     missed: 0,
     cleaned: 0,
     cacheEntries: 0,
-    dailyReportSent: false,
     elapsedMs: 0
   };
 
@@ -430,16 +319,11 @@ async function main() {
 
   let stats = await readStats();
 
-  let dailyReport = await readDailyReport();
-
   console.log(
     "📥 Loaded cache: " + Object.keys(cache.signals).length + " active signal(s)"
   );
   console.log(
     "📊 Loaded stats: " + (stats.recentSignals ? stats.recentSignals.length : 0) + " tracked signal(s)"
-  );
-  console.log(
-    "📅 Loaded daily-report: " + Object.keys(dailyReport.buckets || {}).length + " bucket(s)"
   );
 
   if (!Array.isArray(stats.recentSignals)) {
@@ -513,48 +397,6 @@ async function main() {
             await sleep(MESSAGE_DELAY_MS);
             console.log("   🏁 Trade closed: " + sig.symbol + " (" + closedReason + ")");
             markNotified(sig, event.type);
-
-            const profitPct = calcClosedSignalProfitPct(sig, closedReason);
-            const effectiveMaxR = computeEffectiveMaxR(r, sig, event.type);
-
-            dailyReport = appendClosedSignal(dailyReport, {
-              symbol: sig.symbol,
-              timeframe: sig.timeframe,
-              direction: sig.direction,
-              entry: sig.entry,
-              stop: sig.stop,
-              finalStatus: closedReason,
-              lastTpHit: event.type,
-              profitPct: profitPct,
-              maxR: effectiveMaxR,
-              closedAt: new Date().toISOString()
-            });
-
-            const sentDateKey = sig.sentAt
-              ? getTehranDateKey(new Date(sig.sentAt))
-              : null;
-
-            if (sentDateKey) {
-              dailyReport = removeOpenSignal(
-                dailyReport,
-                sig.symbol,
-                sig.timeframe,
-                sentDateKey
-              );
-            }
-
-            cache.signals = markSignalClosedForThrottle(
-              cache.signals,
-              sig.symbol,
-              sig.timeframe,
-              new Date().toISOString()
-            );
-
-            try {
-              await writeDailyReport(dailyReport);
-            } catch (e) {
-              console.error("⚠️ Failed to write daily-report after close:", (e && e.message) || e);
-            }
           } else {
             const resultText = formatSignalResult(sig, event.type);
             if (resultText && resultText.trim() !== "") {
@@ -814,8 +656,6 @@ async function main() {
         else if (!isBullish && currentPrice >= active.entry) isActivatedNow = true;
       }
 
-      const sentAt = new Date().toISOString();
-
       stats.recentSignals.push({
         symbol,
         timeframe,
@@ -829,10 +669,10 @@ async function main() {
         rr2: active.rr2,
         rr3: active.rr3,
         score: active.score,
-        sentAt: sentAt,
+        sentAt: new Date().toISOString(),
         status: isActivatedNow ? "active" : "pending",
         activated: isActivatedNow,
-        statusUpdatedAt: sentAt,
+        statusUpdatedAt: new Date().toISOString(),
         maxR: 0,
         tp1Reached: false,
         tp2Reached: false,
@@ -843,48 +683,11 @@ async function main() {
         _stoppedNotified: false
       });
 
-      dailyReport = appendOpenSignal(dailyReport, {
-        symbol,
-        timeframe,
-        direction: active.direction,
-        entry: active.entry,
-        stop: active.stop,
-        sentAt: sentAt
-      });
-
-      if (multiTF) {
-        const tfMap = signalsBySymbol.get(symbol);
-        if (tfMap) {
-          for (const otherTF of Object.keys(tfMap)) {
-            if (otherTF === timeframe) continue;
-            const otherActive = tfMap[otherTF].active;
-
-            dailyReport = appendOpenSignal(dailyReport, {
-              symbol,
-              timeframe: otherTF,
-              direction: otherActive.direction,
-              entry: otherActive.entry,
-              stop: otherActive.stop,
-              sentAt: sentAt
-            });
-          }
-        }
-      }
-
       try {
         await writeCache(cache);
       } catch (e) {
         console.error(
           "⚠️ Failed to write cache after send:",
-          (e && e.message) || e
-        );
-      }
-
-      try {
-        await writeDailyReport(dailyReport);
-      } catch (e) {
-        console.error(
-          "⚠️ Failed to write daily-report after send:",
           (e && e.message) || e
         );
       }
@@ -936,28 +739,6 @@ async function main() {
     await writeStats(stats);
   } catch (e) {
     console.error("❌ Failed to write stats:", (e && e.message) || e);
-  }
-
-  try {
-    dailyReport = await trySendDailyReport(
-      token,
-      chatId,
-      dailyReport,
-      stats,
-      summary
-    );
-
-    dailyReport = cleanOldDailyBuckets(
-      dailyReport,
-      CONFIG.DAILY_REPORT_RETENTION_DAYS
-    );
-
-    await writeDailyReport(dailyReport);
-  } catch (e) {
-    console.error(
-      "❌ Failed daily-report pipeline:",
-      (e && e.message) || e
-    );
   }
 
   summary.cacheEntries = Object.keys(cache.signals).length;
