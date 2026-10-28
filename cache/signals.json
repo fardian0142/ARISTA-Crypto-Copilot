@@ -1,43 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T03:31:20.121Z",
+  "lastUpdated": "2026-10-28T04:01:28.290Z",
   "signals": {
-    "TRUTHUSDT:15m": {
-      "sentAt": "2026-10-27T16:01:22.017Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02087414502817917,
-      "stop": 0.0213546641649464
-    },
-    "MONUSDT:30m": {
-      "sentAt": "2026-10-27T16:01:23.815Z",
-      "symbol": "MONUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02146862877779909,
-      "stop": 0.022045876666575332
-    },
-    "SPACEUSDT:30m": {
-      "sentAt": "2026-10-27T16:01:25.619Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.003686252610434806,
-      "stop": 0.003738736947825969,
-      "closedAt": "2026-10-27T21:00:36.581Z"
-    },
-    "HUMAUSDT:2h": {
-      "sentAt": "2026-10-27T16:01:27.411Z",
-      "symbol": "HUMAUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02738,
-      "stop": 0.030405432
-    },
     "MONUSDT:15m": {
       "sentAt": "2026-10-27T17:01:19.065Z",
       "symbol": "MONUSDT",
@@ -101,7 +64,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.05319900523427426,
-      "stop": 0.05255426328168172
+      "stop": 0.05255426328168172,
+      "closedAt": "2026-10-28T04:00:51.910Z"
     },
     "CASHCATUSDT:15m": {
       "sentAt": "2026-10-27T19:31:07.955Z",
@@ -187,7 +151,7 @@
       "score": 14,
       "entry": 0.002976,
       "stop": 0.0030145942000000003,
-      "closedAt": "2026-10-28T03:30:44.043Z"
+      "closedAt": "2026-10-28T04:00:53.638Z"
     },
     "CRCLBUSDT:15m": {
       "sentAt": "2026-10-27T21:31:12.791Z",
@@ -370,7 +334,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.015754397585054536,
-      "stop": 0.016314010349766272
+      "stop": 0.016314010349766272,
+      "closedAt": "2026-10-28T04:00:48.492Z"
     },
     "LIGHTUSDT:15m": {
       "sentAt": "2026-10-28T03:01:04.816Z",
@@ -380,6 +345,15 @@
       "score": 14,
       "entry": 0.2956,
       "stop": 0.3045543579061385
+    },
+    "OFCUSDT:30m": {
+      "sentAt": "2026-10-28T04:01:26.786Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.006371,
+      "stop": 0.006568309705348877
     }
   }
 }
