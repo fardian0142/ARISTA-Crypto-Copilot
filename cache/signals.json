@@ -1,26 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T21:31:13.568Z",
+  "lastUpdated": "2026-10-28T22:01:18.412Z",
   "signals": {
-    "TRUTHUSDT:15m": {
-      "sentAt": "2026-10-28T09:31:15.005Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.021047,
-      "stop": 0.02123030414479328,
-      "closedAt": "2026-10-28T15:30:42.592Z"
-    },
-    "LINKUSDT:2h": {
-      "sentAt": "2026-10-28T10:01:11.918Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.805052289933748,
-      "stop": 11.611625400000001,
-      "closedAt": "2026-10-28T13:00:59.279Z"
-    },
     "SPCXBUSDT:15m": {
       "sentAt": "2026-10-28T11:01:18.756Z",
       "symbol": "SPCXBUSDT",
@@ -588,6 +568,24 @@
       "score": 14,
       "entry": 288.6,
       "stop": 306.44894576940385
+    },
+    "ZORAUSDT:30m": {
+      "sentAt": "2026-10-28T22:01:15.142Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.006493716580792627,
+      "stop": 0.006673310137195526
+    },
+    "MUBUSDT:15m": {
+      "sentAt": "2026-10-28T22:01:16.909Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 967.96,
+      "stop": 989.0549617942145
     }
   }
 }
