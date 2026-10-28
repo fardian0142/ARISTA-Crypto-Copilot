@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T17:31:10.448Z",
+  "lastUpdated": "2026-10-28T18:31:28.577Z",
   "signals": {
-    "CTUSDT:30m": {
-      "sentAt": "2026-10-28T05:31:21.948Z",
-      "symbol": "CTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15987951625292665,
-      "stop": 0.14934493034460014
-    },
     "TRIAUSDT:30m": {
       "sentAt": "2026-10-28T07:00:58.674Z",
       "symbol": "TRIAUSDT",
@@ -338,6 +329,69 @@
       "score": 14,
       "entry": 0.19215168735981691,
       "stop": 0.16790156320091537
+    },
+    "BTCUSDT:2h": {
+      "sentAt": "2026-10-28T18:31:16.166Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80912.2,
+      "stop": 79647.63353193284
+    },
+    "SPACEUSDT:1h": {
+      "sentAt": "2026-10-28T18:31:18.109Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0037075,
+      "stop": 0.0037881216097790907
+    },
+    "ATHUSDT:1h": {
+      "sentAt": "2026-10-28T18:31:19.902Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005860000000000001,
+      "stop": 0.00560879031658308
+    },
+    "UPUSDT:1h": {
+      "sentAt": "2026-10-28T18:31:21.692Z",
+      "symbol": "UPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15495,
+      "stop": 0.14209018333083065
+    },
+    "GRVTUSDT:2h": {
+      "sentAt": "2026-10-28T18:31:23.487Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.22210821188341434,
+      "stop": 0.19651480621393855
+    },
+    "CRCLBUSDT:15m": {
+      "sentAt": "2026-10-28T18:31:25.307Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80.12,
+      "stop": 78.83938684620045
+    },
+    "TAOUSDT:2h": {
+      "sentAt": "2026-10-28T18:31:27.074Z",
+      "symbol": "TAOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 256.037,
+      "stop": 245.85302309137617
     }
   }
 }

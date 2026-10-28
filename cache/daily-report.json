@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T17:31:10.450Z",
+  "lastUpdated": "2026-10-28T18:31:28.579Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -1189,6 +1189,54 @@
           "entry": 0.19215168735981691,
           "stop": 0.16790156320091537,
           "sentAt": "2026-10-28T15:31:28.979Z"
+        },
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 80912.2,
+          "stop": 79647.63353193284,
+          "sentAt": "2026-10-28T18:31:16.166Z"
+        },
+        {
+          "symbol": "SPACEUSDT",
+          "timeframe": "1h",
+          "direction": "bearish",
+          "entry": 0.0037075,
+          "stop": 0.0037881216097790907,
+          "sentAt": "2026-10-28T18:31:18.109Z"
+        },
+        {
+          "symbol": "UPUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.15495,
+          "stop": 0.14209018333083065,
+          "sentAt": "2026-10-28T18:31:21.692Z"
+        },
+        {
+          "symbol": "GRVTUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.22210821188341434,
+          "stop": 0.19651480621393855,
+          "sentAt": "2026-10-28T18:31:23.487Z"
+        },
+        {
+          "symbol": "CRCLBUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 80.12,
+          "stop": 78.83938684620045,
+          "sentAt": "2026-10-28T18:31:25.307Z"
+        },
+        {
+          "symbol": "TAOUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 256.037,
+          "stop": 245.85302309137617,
+          "sentAt": "2026-10-28T18:31:27.074Z"
         }
       ]
     }
