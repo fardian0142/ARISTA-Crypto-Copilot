@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T00:31:13.275Z",
+  "lastUpdated": "2026-10-28T01:01:19.886Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -195,6 +195,30 @@
           "profitPct": 23.31,
           "maxR": 0,
           "closedAt": "2026-10-28T00:30:39.790Z"
+        },
+        {
+          "symbol": "ORDERUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.05725,
+          "stop": 0.035648504,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": 37.73,
+          "maxR": 0.16,
+          "closedAt": "2026-10-28T01:00:35.885Z"
+        },
+        {
+          "symbol": "SNDKBUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 1265.166082229526,
+          "stop": 1220.6196475877466,
+          "finalStatus": "tp2_hit",
+          "lastTpHit": "tp2_hit",
+          "profitPct": 4.61,
+          "maxR": 1.31,
+          "closedAt": "2026-10-28T01:00:39.288Z"
         }
       ],
       "openSignals": [
@@ -293,6 +317,22 @@
           "entry": 0.0020908377114772984,
           "stop": 0.00163659,
           "sentAt": "2026-10-28T00:01:24.634Z"
+        },
+        {
+          "symbol": "MEWUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.0004317,
+          "stop": 0.0004278922985373178,
+          "sentAt": "2026-10-28T01:01:16.651Z"
+        },
+        {
+          "symbol": "FLOCKUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.042005,
+          "stop": 0.04230018465707111,
+          "sentAt": "2026-10-28T01:01:18.382Z"
         }
       ]
     }

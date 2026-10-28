@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T00:31:13.273Z",
+  "lastUpdated": "2026-10-28T01:01:19.884Z",
   "signals": {
     "DOODUSDT:30m": {
       "sentAt": "2026-10-27T13:01:34.216Z",
@@ -443,6 +443,24 @@
       "score": 14,
       "entry": 0.0020908377114772984,
       "stop": 0.00163659
+    },
+    "MEWUSDT:15m": {
+      "sentAt": "2026-10-28T01:01:16.651Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004317,
+      "stop": 0.0004278922985373178
+    },
+    "FLOCKUSDT:15m": {
+      "sentAt": "2026-10-28T01:01:18.382Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.042005,
+      "stop": 0.04230018465707111
     }
   }
 }
