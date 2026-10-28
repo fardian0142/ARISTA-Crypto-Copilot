@@ -1,126 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T01:01:19.884Z",
+  "lastUpdated": "2026-10-28T01:31:15.489Z",
   "signals": {
-    "DOODUSDT:30m": {
-      "sentAt": "2026-10-27T13:01:34.216Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0020143895627696014,
-      "stop": 0.0017556161595588516
-    },
-    "SPACEUSDT:1h": {
-      "sentAt": "2026-10-27T13:01:35.929Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00363,
-      "stop": 0.0035667949895028896
-    },
-    "PIPPINUSDT:2h": {
-      "sentAt": "2026-10-27T13:01:37.701Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.015528617254394821,
-      "stop": 0.01487306890973648
-    },
-    "CRCLBUSDT:1h": {
-      "sentAt": "2026-10-27T13:01:39.439Z",
-      "symbol": "CRCLBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 80.31,
-      "stop": 78.7089077464738
-    },
-    "LIGHTUSDT:1h": {
-      "sentAt": "2026-10-27T13:01:41.166Z",
-      "symbol": "LIGHTUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.26225,
-      "stop": 0.29231455624832753,
-      "closedAt": "2026-10-27T18:00:36.844Z"
-    },
-    "PUMPUSDT:2h": {
-      "sentAt": "2026-10-27T13:01:42.953Z",
-      "symbol": "PUMPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004224,
-      "stop": 0.003956203782975055
-    },
-    "XAUTUSDT:1h": {
-      "sentAt": "2026-10-27T13:01:44.717Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4019.98,
-      "stop": 3992.653356959654
-    },
-    "ADAUSDT:2h": {
-      "sentAt": "2026-10-27T13:01:46.475Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2047,
-      "stop": 0.19742202821964006
-    },
-    "MONUSDT:2h": {
-      "sentAt": "2026-10-27T13:31:02.985Z",
-      "symbol": "MONUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02151,
-      "stop": 0.020279928532157508
-    },
-    "BNBUSDT:30m": {
-      "sentAt": "2026-10-27T13:31:04.735Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 740.8484250408482,
-      "stop": 746.3538926820792,
-      "closedAt": "2026-10-27T15:31:02.336Z"
-    },
-    "GRVTUSDT:1h": {
-      "sentAt": "2026-10-27T13:31:06.485Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.21339,
-      "stop": 0.1977435877158834
-    },
-    "SOONUSDT:15m": {
-      "sentAt": "2026-10-27T13:31:08.276Z",
-      "symbol": "SOONUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.3044,
-      "stop": 0.3108043980652655,
-      "closedAt": "2026-10-27T18:00:38.709Z"
-    },
-    "FETUSDT:2h": {
-      "sentAt": "2026-10-27T13:31:10.109Z",
-      "symbol": "FETUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1759,
-      "stop": 0.16645780836873553
-    },
     "BTCUSDT:15m": {
       "sentAt": "2026-10-27T14:01:21.962Z",
       "symbol": "BTCUSDT",
@@ -461,6 +341,33 @@
       "score": 14,
       "entry": 0.042005,
       "stop": 0.04230018465707111
+    },
+    "BEATUSDT:15m": {
+      "sentAt": "2026-10-28T01:31:10.503Z",
+      "symbol": "BEATUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0892,
+      "stop": 0.09318622062937572
+    },
+    "ZORAUSDT:1h": {
+      "sentAt": "2026-10-28T01:31:12.245Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006463619683536292,
+      "stop": 0.006214487070558749
+    },
+    "CRCLBUSDT:1h": {
+      "sentAt": "2026-10-28T01:31:13.985Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 81.18773210418897,
+      "stop": 79.17829098204727
     }
   }
 }

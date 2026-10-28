@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T01:01:19.886Z",
+  "lastUpdated": "2026-10-28T01:31:15.491Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -333,6 +333,30 @@
           "entry": 0.042005,
           "stop": 0.04230018465707111,
           "sentAt": "2026-10-28T01:01:18.382Z"
+        },
+        {
+          "symbol": "BEATUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.0892,
+          "stop": 0.09318622062937572,
+          "sentAt": "2026-10-28T01:31:10.503Z"
+        },
+        {
+          "symbol": "ZORAUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.006463619683536292,
+          "stop": 0.006214487070558749,
+          "sentAt": "2026-10-28T01:31:12.245Z"
+        },
+        {
+          "symbol": "CRCLBUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 81.18773210418897,
+          "stop": 79.17829098204727,
+          "sentAt": "2026-10-28T01:31:13.985Z"
         }
       ]
     }
