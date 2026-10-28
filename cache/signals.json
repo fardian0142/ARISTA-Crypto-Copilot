@@ -1,36 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T23:01:01.648Z",
+  "lastUpdated": "2026-10-28T23:31:08.681Z",
   "signals": {
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-10-28T11:01:18.756Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 149.82999999999998,
-      "stop": 150.29851130495973,
-      "closedAt": "2026-10-28T13:30:38.462Z"
-    },
-    "PUMPUSDT:30m": {
-      "sentAt": "2026-10-28T11:01:20.562Z",
-      "symbol": "PUMPUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.004342,
-      "stop": 0.004433230089005437,
-      "closedAt": "2026-10-28T19:00:40.660Z"
-    },
-    "AEONUSDT:15m": {
-      "sentAt": "2026-10-28T11:31:08.679Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.028502289937678428,
-      "stop": 0.02771447169566389,
-      "closedAt": "2026-10-28T14:00:46.974Z"
-    },
     "XDPUSDT:15m": {
       "sentAt": "2026-10-28T11:31:10.427Z",
       "symbol": "XDPUSDT",
@@ -586,6 +556,15 @@
       "score": 14,
       "entry": 967.96,
       "stop": 989.0549617942145
+    },
+    "PIUSDT:1h": {
+      "sentAt": "2026-10-28T23:31:07.178Z",
+      "symbol": "PIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07644,
+      "stop": 0.0750242680444422
     }
   }
 }
