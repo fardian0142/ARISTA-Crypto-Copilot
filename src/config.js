@@ -1,27 +1,27 @@
 export const TIMEFRAME_PROFILES = {
   "15m": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 20,
     momentumPenalty: 2,
     minStrength: 75,
     minRR: 0.3
   },
   "30m": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 20,
     momentumPenalty: 3,
     minStrength: 75,
     minRR: 0.3
   },
   "1h": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 15,
     momentumPenalty: 5,
     minStrength: 72,
     minRR: 0.3
   },
   "2h": {
-    strictHTF: true,
+    strictHTF: false,
     htfPenalty: 12,
     momentumPenalty: 6,
     minStrength: 72,
@@ -84,7 +84,7 @@ export const CONFIG = {
   VOLUME_LOOKBACK: 20,
   OB_LOOKBACK: 50,
   FVG_LOOKBACK: 80,
-  SL_ATR_BUFFER: 1.5,
+  SL_ATR_BUFFER: 2.5,
   SL_MIN_NODE_DISTANCE_ATR: 0.5,
   MIN_TP1_RR: 0.5,
   TP1_MIN_RR: 0.5,
@@ -157,10 +157,6 @@ export const CONFIG = {
   MOMENTUM_WARNING_BODY_RATIO: 0.6,
   MOMENTUM_RSI_OVERBOUGHT: 68,
   MOMENTUM_RSI_OVERSOLD: 32,
-  TEHRAN_OFFSET_MINUTES: 210,
-  DAILY_REPORT_HOUR_TEHRAN: 0,
-  DAILY_REPORT_WINDOW_MINUTES: 60,
-  DAILY_REPORT_RETENTION_DAYS: 7,
   EXCHANGES: {
     binance: {
       priority: 1,
