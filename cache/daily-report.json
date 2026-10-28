@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T19:31:26.360Z",
+  "lastUpdated": "2026-10-28T20:01:51.001Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -927,6 +927,114 @@
           "profitPct": -3.85,
           "maxR": 0.02,
           "closedAt": "2026-10-28T19:00:45.865Z"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.9152499999999999,
+          "stop": 0.898141519731987,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 4.09,
+          "maxR": 2.3,
+          "closedAt": "2026-10-28T20:00:40.392Z"
+        },
+        {
+          "symbol": "PUMPUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.004189,
+          "stop": 0.0039901476,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 7.19,
+          "maxR": 1.85,
+          "closedAt": "2026-10-28T20:00:43.917Z"
+        },
+        {
+          "symbol": "PUMPUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.004224,
+          "stop": 0.003956203782975055,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 4.62,
+          "maxR": 1.24,
+          "closedAt": "2026-10-28T20:00:45.686Z"
+        },
+        {
+          "symbol": "USELESSUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.166685,
+          "stop": 0.16953212945956597,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.71,
+          "maxR": 3.33,
+          "closedAt": "2026-10-28T20:00:47.403Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.00464103950632397,
+          "stop": 0.00449597354432584,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.41,
+          "maxR": 1.19,
+          "closedAt": "2026-10-28T20:00:54.468Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.00469417,
+          "stop": 0.004791507224159886,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -2.07,
+          "maxR": 0,
+          "closedAt": "2026-10-28T20:01:01.500Z"
+        },
+        {
+          "symbol": "SUIUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.9353924,
+          "stop": 0.9519385740916767,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.77,
+          "maxR": 0,
+          "closedAt": "2026-10-28T20:01:03.262Z"
+        },
+        {
+          "symbol": "AAVEUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 134.36858,
+          "stop": 137.53359135851983,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -2.36,
+          "maxR": 0,
+          "closedAt": "2026-10-28T20:01:04.997Z"
+        },
+        {
+          "symbol": "BRETTUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.004686406,
+          "stop": 0.00480127279517721,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -2.45,
+          "maxR": 0,
+          "closedAt": "2026-10-28T20:01:06.744Z"
         }
       ],
       "openSignals": [
@@ -1163,14 +1271,6 @@
           "sentAt": "2026-10-28T13:31:16.734Z"
         },
         {
-          "symbol": "BRETTUSDT",
-          "timeframe": "1h",
-          "direction": "bullish",
-          "entry": 0.00464103950632397,
-          "stop": 0.00449597354432584,
-          "sentAt": "2026-10-28T14:01:20.466Z"
-        },
-        {
           "symbol": "RLSUSDT",
           "timeframe": "2h",
           "direction": "bullish",
@@ -1275,14 +1375,6 @@
           "sentAt": "2026-10-28T19:01:35.033Z"
         },
         {
-          "symbol": "BRETTUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.00469417,
-          "stop": 0.004791507224159886,
-          "sentAt": "2026-10-28T19:01:36.842Z"
-        },
-        {
           "symbol": "TRXUSDT",
           "timeframe": "2h",
           "direction": "bullish",
@@ -1297,14 +1389,6 @@
           "entry": 4031.64166952384,
           "stop": 3979.335702040687,
           "sentAt": "2026-10-28T19:01:40.396Z"
-        },
-        {
-          "symbol": "SUIUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.9353924,
-          "stop": 0.9519385740916767,
-          "sentAt": "2026-10-28T19:01:42.126Z"
         },
         {
           "symbol": "WLDUSDT",
@@ -1323,28 +1407,12 @@
           "sentAt": "2026-10-28T19:01:46.281Z"
         },
         {
-          "symbol": "AAVEUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 134.36858,
-          "stop": 137.53359135851983,
-          "sentAt": "2026-10-28T19:01:48.046Z"
-        },
-        {
           "symbol": "BMTUSDT",
           "timeframe": "15m",
           "direction": "bullish",
           "entry": 0.02899200928748552,
           "stop": 0.027218531625062055,
           "sentAt": "2026-10-28T19:01:49.913Z"
-        },
-        {
-          "symbol": "BRETTUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 0.004686406,
-          "stop": 0.00480127279517721,
-          "sentAt": "2026-10-28T19:31:18.346Z"
         },
         {
           "symbol": "PIUSDT",
@@ -1369,6 +1437,22 @@
           "entry": 8.941919222361076,
           "stop": 9.076917618452535,
           "sentAt": "2026-10-28T19:31:24.853Z"
+        },
+        {
+          "symbol": "CRCLBUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 81.305,
+          "stop": 79.52406234606799,
+          "sentAt": "2026-10-28T20:01:47.699Z"
+        },
+        {
+          "symbol": "CROUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.05363,
+          "stop": 0.05262174645593587,
+          "sentAt": "2026-10-28T20:01:49.497Z"
         }
       ]
     }

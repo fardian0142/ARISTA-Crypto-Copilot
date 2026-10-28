@@ -1,25 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T19:31:26.356Z",
+  "lastUpdated": "2026-10-28T20:01:50.999Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-10-28T08:01:07.221Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.000010179941593156117,
-      "stop": 0.000010263107457902356,
-      "closedAt": "2026-10-28T08:30:52.096Z"
-    },
-    "ZORAUSDT:15m": {
-      "sentAt": "2026-10-28T08:01:08.940Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.006422,
-      "stop": 0.006521651277708582
-    },
     "ORDERUSDT:1h": {
       "sentAt": "2026-10-28T08:31:26.317Z",
       "symbol": "ORDERUSDT",
@@ -46,7 +27,7 @@
       "score": 14,
       "entry": 0.166685,
       "stop": 0.16953212945956597,
-      "closedAt": "2026-10-28T14:00:45.266Z"
+      "closedAt": "2026-10-28T20:00:47.403Z"
     },
     "CRCLBUSDT:30m": {
       "sentAt": "2026-10-28T09:01:17.784Z",
@@ -246,7 +227,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.00464103950632397,
-      "stop": 0.00449597354432584
+      "stop": 0.00449597354432584,
+      "closedAt": "2026-10-28T20:00:54.468Z"
     },
     "RLSUSDT:15m": {
       "sentAt": "2026-10-28T14:31:21.023Z",
@@ -401,7 +383,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.00469417,
-      "stop": 0.004791507224159886
+      "stop": 0.004791507224159886,
+      "closedAt": "2026-10-28T20:01:01.501Z"
     },
     "TRXUSDT:2h": {
       "sentAt": "2026-10-28T19:01:38.610Z",
@@ -428,7 +411,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.9353924,
-      "stop": 0.9519385740916767
+      "stop": 0.9519385740916767,
+      "closedAt": "2026-10-28T20:01:03.263Z"
     },
     "WLDUSDT:15m": {
       "sentAt": "2026-10-28T19:01:43.937Z",
@@ -455,7 +439,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 134.36858,
-      "stop": 137.53359135851983
+      "stop": 137.53359135851983,
+      "closedAt": "2026-10-28T20:01:04.997Z"
     },
     "BMTUSDT:15m": {
       "sentAt": "2026-10-28T19:01:49.913Z",
@@ -473,7 +458,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.004686406,
-      "stop": 0.00480127279517721
+      "stop": 0.00480127279517721,
+      "closedAt": "2026-10-28T20:01:06.744Z"
     },
     "PIUSDT:15m": {
       "sentAt": "2026-10-28T19:31:20.107Z",
@@ -501,6 +487,24 @@
       "score": 14,
       "entry": 8.941919222361076,
       "stop": 9.076917618452535
+    },
+    "CRCLBUSDT:2h": {
+      "sentAt": "2026-10-28T20:01:47.699Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 81.305,
+      "stop": 79.52406234606799
+    },
+    "CROUSDT:2h": {
+      "sentAt": "2026-10-28T20:01:49.497Z",
+      "symbol": "CROUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05363,
+      "stop": 0.05262174645593587
     }
   }
 }
