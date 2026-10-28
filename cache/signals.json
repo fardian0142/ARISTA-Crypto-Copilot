@@ -1,16 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T07:01:01.894Z",
+  "lastUpdated": "2026-10-28T07:31:05.698Z",
   "signals": {
-    "CROUSDT:15m": {
-      "sentAt": "2026-10-27T19:01:06.970Z",
-      "symbol": "CROUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05319900523427426,
-      "stop": 0.05255426328168172,
-      "closedAt": "2026-10-28T04:00:51.910Z"
-    },
     "CASHCATUSDT:15m": {
       "sentAt": "2026-10-27T19:31:07.955Z",
       "symbol": "CASHCATUSDT",
@@ -380,6 +370,15 @@
       "score": 14,
       "entry": 0.18000835622278658,
       "stop": 0.1821499019023432
+    },
+    "PIUSDT:30m": {
+      "sentAt": "2026-10-28T07:31:04.194Z",
+      "symbol": "PIUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07638,
+      "stop": 0.07683011445262665
     }
   }
 }
