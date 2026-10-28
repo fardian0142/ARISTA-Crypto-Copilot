@@ -1,33 +1,23 @@
 import { analyze } from "./analysis.js";
 
-const EMPTY_RESULT = (signal) => ({
-  status: signal.status || "active",
-  maxR: Number.isFinite(signal.maxR) ? signal.maxR : 0,
-  activated: signal.activated === true,
-  events: [],
-  tp1Reached: signal.tp1Reached === true,
-  tp2Reached: signal.tp2Reached === true,
-  tp3Reached: signal.tp3Reached === true
-});
-
 export async function updateSignalStatus(signal) {
   try {
     const analysis = await analyze(signal.symbol, signal.timeframe);
 
     if (!analysis || !Number.isFinite(analysis.current_price)) {
-      return EMPTY_RESULT(signal);
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const price = analysis.current_price;
     const { direction, entry, stop, tp1, tp2, tp3 } = signal;
 
     if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(tp1)) {
-      return EMPTY_RESULT(signal);
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const risk = Math.abs(entry - stop);
     if (risk <= 0) {
-      return EMPTY_RESULT(signal);
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const isBull = direction === "bullish";
@@ -35,34 +25,18 @@ export async function updateSignalStatus(signal) {
     let isActivated = signal.activated === true;
 
     if (!isActivated) {
-      isActivated = isBull ? price <= entry : price >= entry;
+      if (isBull) isActivated = price <= entry;
+      else isActivated = price >= entry;
     }
 
     if (!isActivated) {
-      return {
-        status: "pending",
-        maxR: 0,
-        activated: false,
-        events: [],
-        tp1Reached: signal.tp1Reached === true,
-        tp2Reached: signal.tp2Reached === true,
-        tp3Reached: signal.tp3Reached === true
-      };
+      return { status: "pending", maxR: 0, activated: false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
     }
 
     const sentTime = signal.sentAt ? new Date(signal.sentAt).getTime() : 0;
 
-    const allCandles = Array.isArray(analysis._candles)
-      ? analysis._candles
-      : (analysis._lastCandle ? [analysis._lastCandle] : []);
-
-    const signalCandles = allCandles.filter((c) => {
-      if (!c) return false;
-      const ref = Number.isFinite(c.close_time) && c.close_time > 0
-        ? c.close_time
-        : c.time;
-      return Number.isFinite(ref) && ref >= sentTime;
-    });
+    const allCandles = Array.isArray(analysis._candles) ? analysis._candles : (analysis._lastCandle ? [analysis._lastCandle] : []);
+    const signalCandles = allCandles.filter(c => c && c.time >= sentTime);
 
     if (signalCandles.length === 0 && analysis._lastCandle) {
       signalCandles.push(analysis._lastCandle);
@@ -163,18 +137,9 @@ export async function updateSignalStatus(signal) {
       finalStatus = events[events.length - 1].type;
     }
 
-    const liveMaxR = isBull ? (price - entry) / risk : (entry - price) / risk;
+    const maxR = isBull ? (price - entry) / risk : (entry - price) / risk;
     const prevMaxR = Number.isFinite(signal.maxR) ? signal.maxR : 0;
-
-    let newMaxR = Math.max(prevMaxR, liveMaxR);
-
-    if (tp3Hit && Number.isFinite(signal.rr3)) {
-      newMaxR = Math.max(newMaxR, signal.rr3);
-    } else if (tp2Hit && Number.isFinite(signal.rr2)) {
-      newMaxR = Math.max(newMaxR, signal.rr2);
-    } else if (tp1Hit && Number.isFinite(signal.rr1)) {
-      newMaxR = Math.max(newMaxR, signal.rr1);
-    }
+    const newMaxR = Math.max(prevMaxR, maxR);
 
     const tp1Reached = signal.tp1Reached === true || tp1Hit;
     const tp2Reached = signal.tp2Reached === true || tp2Hit;
@@ -184,37 +149,24 @@ export async function updateSignalStatus(signal) {
       status: finalStatus,
       maxR: newMaxR,
       activated: true,
-      events,
-      tp1Reached,
-      tp2Reached,
-      tp3Reached
+      events: events,
+      tp1Reached: tp1Reached,
+      tp2Reached: tp2Reached,
+      tp3Reached: tp3Reached
     };
   } catch (e) {
-    return EMPTY_RESULT(signal);
+    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
   }
 }
 
 export function computeStats(recentSignals) {
-  const allTime = {
-    total: 0,
-    tp1Hit: 0,
-    tp2Hit: 0,
-    tp3Hit: 0,
-    stopped: 0,
-    active: 0,
-    tp1Rate: 0,
-    tp2Rate: 0,
-    tp3Rate: 0,
-    stopRate: 0
-  };
-
+  const allTime = { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, active: 0, tp1Rate: 0, tp2Rate: 0, tp3Rate: 0, stopRate: 0 };
   const byTimeframe = {
     "15m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
     "30m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
     "1h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
     "2h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
   };
-
   const byDirection = {
     bullish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
     bearish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
@@ -227,44 +179,28 @@ export function computeStats(recentSignals) {
     const tf = s.timeframe;
     const dir = s.direction;
 
-    const isTp1 = status === "tp1_hit";
-    const isTp2 = status === "tp2_hit";
-    const isTp3 = status === "tp3_hit";
-    const isTpHit = isTp1 || isTp2 || isTp3;
-    const isStopped = status === "stopped";
-
     allTime.total++;
 
-    if (isTp1) {
-      allTime.tp1Hit++;
-    } else if (isTp2) {
-      allTime.tp1Hit++;
-      allTime.tp2Hit++;
-    } else if (isTp3) {
-      allTime.tp1Hit++;
-      allTime.tp2Hit++;
-      allTime.tp3Hit++;
-    } else if (isStopped) {
-      allTime.stopped++;
-    } else {
-      allTime.active++;
-    }
+    if (status === "tp1_hit") allTime.tp1Hit++;
+    else if (status === "tp2_hit") { allTime.tp1Hit++; allTime.tp2Hit++; }
+    else if (status === "tp3_hit") { allTime.tp1Hit++; allTime.tp2Hit++; allTime.tp3Hit++; }
+    else if (status === "stopped") allTime.stopped++;
+    else allTime.active++;
 
     if (byTimeframe[tf]) {
       byTimeframe[tf].total++;
-      if (isTpHit) byTimeframe[tf].tp1Hit++;
-      else if (isStopped) byTimeframe[tf].stopped++;
+      if (status.includes("tp")) byTimeframe[tf].tp1Hit++;
+      else if (status === "stopped") byTimeframe[tf].stopped++;
     }
 
     if (byDirection[dir]) {
       byDirection[dir].total++;
-      if (isTpHit) byDirection[dir].tp1Hit++;
-      else if (isStopped) byDirection[dir].stopped++;
+      if (status.includes("tp")) byDirection[dir].tp1Hit++;
+      else if (status === "stopped") byDirection[dir].stopped++;
     }
   }
 
   const finished = allTime.total - allTime.active;
-
   if (finished > 0) {
     allTime.tp1Rate = Math.round((allTime.tp1Hit / finished) * 1000) / 10;
     allTime.tp2Rate = Math.round((allTime.tp2Hit / finished) * 1000) / 10;
@@ -275,18 +211,64 @@ export function computeStats(recentSignals) {
   for (const tf of Object.keys(byTimeframe)) {
     const t = byTimeframe[tf];
     const done = t.tp1Hit + t.stopped;
-    if (done > 0) {
-      t.tp1Rate = Math.round((t.tp1Hit / done) * 1000) / 10;
-    }
+    if (done > 0) t.tp1Rate = Math.round((t.tp1Hit / done) * 1000) / 10;
   }
 
   for (const dir of Object.keys(byDirection)) {
     const d = byDirection[dir];
     const done = d.tp1Hit + d.stopped;
-    if (done > 0) {
-      d.tp1Rate = Math.round((d.tp1Hit / done) * 1000) / 10;
-    }
+    if (done > 0) d.tp1Rate = Math.round((d.tp1Hit / done) * 1000) / 10;
   }
 
   return { allTime, byTimeframe, byDirection };
+}
+
+export function computeWeeklyStats(recentSignals) {
+  const now = new Date();
+  const weekStart = new Date(now);
+  weekStart.setDate(now.getDate() - 7);
+
+  const weeklySignals = recentSignals.filter((s) => {
+    if (!s || !s.sentAt) return false;
+    return new Date(s.sentAt).getTime() >= weekStart.getTime();
+  });
+
+  const week = {
+    week: getWeekLabel(now),
+    startDate: weekStart.toISOString().slice(0, 10),
+    endDate: now.toISOString().slice(0, 10),
+    total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, active: 0,
+    bestTrade: null,
+    worstTrade: null
+  };
+
+  for (const s of weeklySignals) {
+    week.total++;
+    const status = s.status || "active";
+    if (status === "tp1_hit") week.tp1Hit++;
+    else if (status === "tp2_hit") { week.tp1Hit++; week.tp2Hit++; }
+    else if (status === "tp3_hit") { week.tp1Hit++; week.tp2Hit++; week.tp3Hit++; }
+    else if (status === "stopped") week.stopped++;
+    else week.active++;
+
+    if (status === "tp2_hit" || status === "tp3_hit") {
+      const rr = Number.isFinite(s.maxR) ? s.maxR : 0;
+      if (!week.bestTrade || rr > (week.bestTrade.rr || 0)) {
+        week.bestTrade = { symbol: s.symbol, timeframe: s.timeframe, rr: Math.round(rr * 100) / 100 };
+      }
+    }
+    if (status === "stopped" && !week.worstTrade) {
+      week.worstTrade = { symbol: s.symbol, timeframe: s.timeframe, loss: -1 };
+    }
+  }
+  return week;
+}
+
+function getWeekLabel(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
+  const week1 = new Date(d.getFullYear(), 0, 4);
+  const weekNum = 1 + Math.round(((d.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+  return d.getFullYear() + "-W" + String(weekNum).padStart(2, "0");
 }
