@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T04:01:28.290Z",
+  "lastUpdated": "2026-10-28T04:31:24.948Z",
   "signals": {
     "MONUSDT:15m": {
       "sentAt": "2026-10-27T17:01:19.065Z",
@@ -335,7 +335,7 @@
       "score": 14,
       "entry": 0.015754397585054536,
       "stop": 0.016314010349766272,
-      "closedAt": "2026-10-28T04:00:48.492Z"
+      "closedAt": "2026-10-28T04:30:42.895Z"
     },
     "LIGHTUSDT:15m": {
       "sentAt": "2026-10-28T03:01:04.816Z",
@@ -354,6 +354,24 @@
       "score": 14,
       "entry": 0.006371,
       "stop": 0.006568309705348877
+    },
+    "DOODUSDT:15m": {
+      "sentAt": "2026-10-28T04:31:21.764Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0020695059736840766,
+      "stop": 0.0018358315413539573
+    },
+    "UPUSDT:30m": {
+      "sentAt": "2026-10-28T04:31:23.445Z",
+      "symbol": "UPUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.18215,
+      "stop": 0.19222792823054546
     }
   }
 }

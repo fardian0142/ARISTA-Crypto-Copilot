@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T04:01:28.292Z",
+  "lastUpdated": "2026-10-28T04:31:24.950Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -387,6 +387,30 @@
           "profitPct": 2.03,
           "maxR": 1.74,
           "closedAt": "2026-10-28T04:00:53.638Z"
+        },
+        {
+          "symbol": "TREEUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 0.0461,
+          "stop": 0.03267874109994172,
+          "finalStatus": "tp2_hit",
+          "lastTpHit": "tp2_hit",
+          "profitPct": 59.63,
+          "maxR": 2.05,
+          "closedAt": "2026-10-28T04:30:39.541Z"
+        },
+        {
+          "symbol": "PIPPINUSDT",
+          "timeframe": "2h",
+          "direction": "bearish",
+          "entry": 0.015754397585054536,
+          "stop": 0.016314010349766272,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -3.55,
+          "maxR": 0,
+          "closedAt": "2026-10-28T04:30:42.895Z"
         }
       ],
       "openSignals": [
@@ -535,14 +559,6 @@
           "sentAt": "2026-10-28T02:31:20.396Z"
         },
         {
-          "symbol": "PIPPINUSDT",
-          "timeframe": "2h",
-          "direction": "bearish",
-          "entry": 0.015754397585054536,
-          "stop": 0.016314010349766272,
-          "sentAt": "2026-10-28T02:31:22.178Z"
-        },
-        {
           "symbol": "LIGHTUSDT",
           "timeframe": "15m",
           "direction": "bearish",
@@ -557,6 +573,22 @@
           "entry": 0.006371,
           "stop": 0.006568309705348877,
           "sentAt": "2026-10-28T04:01:26.786Z"
+        },
+        {
+          "symbol": "DOODUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.0020695059736840766,
+          "stop": 0.0018358315413539573,
+          "sentAt": "2026-10-28T04:31:21.764Z"
+        },
+        {
+          "symbol": "UPUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.18215,
+          "stop": 0.19222792823054546,
+          "sentAt": "2026-10-28T04:31:23.445Z"
         }
       ]
     }
