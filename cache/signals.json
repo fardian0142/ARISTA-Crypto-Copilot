@@ -1,34 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T08:01:10.444Z",
+  "lastUpdated": "2026-10-28T08:31:27.820Z",
   "signals": {
-    "BRETTUSDT:1h": {
-      "sentAt": "2026-10-27T20:01:12.194Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0046345,
-      "stop": 0.004488381911573389
-    },
-    "BRETTUSDT:15m": {
-      "sentAt": "2026-10-27T20:01:12.194Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0046339677576663985,
-      "stop": 0.004578566752858289
-    },
-    "PONSUSDT:1h": {
-      "sentAt": "2026-10-27T20:31:14.431Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2535760212555951,
-      "stop": 0.23753133747602095,
-      "closedAt": "2026-10-27T23:30:41.158Z"
-    },
     "MONUSDT:1h": {
       "sentAt": "2026-10-27T21:01:15.038Z",
       "symbol": "MONUSDT",
@@ -156,7 +128,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.0004317,
-      "stop": 0.0004278922985373178
+      "stop": 0.0004278922985373178,
+      "closedAt": "2026-10-28T08:30:45.187Z"
     },
     "FLOCKUSDT:15m": {
       "sentAt": "2026-10-28T01:01:18.382Z",
@@ -368,7 +341,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.000010179941593156117,
-      "stop": 0.000010263107457902356
+      "stop": 0.000010263107457902356,
+      "closedAt": "2026-10-28T08:30:52.096Z"
     },
     "ZORAUSDT:15m": {
       "sentAt": "2026-10-28T08:01:08.940Z",
@@ -378,6 +352,15 @@
       "score": 14,
       "entry": 0.006422,
       "stop": 0.006521651277708582
+    },
+    "ORDERUSDT:1h": {
+      "sentAt": "2026-10-28T08:31:26.317Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.037605,
+      "stop": 0.03408637506184707
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T08:01:10.445Z",
+  "lastUpdated": "2026-10-28T08:31:27.822Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -447,6 +447,30 @@
           "profitPct": -1.19,
           "maxR": 0,
           "closedAt": "2026-10-28T08:00:35.294Z"
+        },
+        {
+          "symbol": "MEWUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.0004317,
+          "stop": 0.0004278922985373178,
+          "finalStatus": "tp2_hit",
+          "lastTpHit": "tp2_hit",
+          "profitPct": 1.9,
+          "maxR": 2.16,
+          "closedAt": "2026-10-28T08:30:45.187Z"
+        },
+        {
+          "symbol": "SATSUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.000010179941593156117,
+          "stop": 0.000010263107457902356,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.34,
+          "maxR": 122.28,
+          "closedAt": "2026-10-28T08:30:52.096Z"
         }
       ],
       "openSignals": [
@@ -529,14 +553,6 @@
           "entry": 0.0020908377114772984,
           "stop": 0.00163659,
           "sentAt": "2026-10-28T00:01:24.634Z"
-        },
-        {
-          "symbol": "MEWUSDT",
-          "timeframe": "15m",
-          "direction": "bullish",
-          "entry": 0.0004317,
-          "stop": 0.0004278922985373178,
-          "sentAt": "2026-10-28T01:01:16.651Z"
         },
         {
           "symbol": "ZORAUSDT",
@@ -675,20 +691,20 @@
           "sentAt": "2026-10-28T07:31:04.194Z"
         },
         {
-          "symbol": "SATSUSDT",
-          "timeframe": "15m",
-          "direction": "bearish",
-          "entry": 0.000010179941593156117,
-          "stop": 0.000010263107457902356,
-          "sentAt": "2026-10-28T08:01:07.221Z"
-        },
-        {
           "symbol": "ZORAUSDT",
           "timeframe": "15m",
           "direction": "bearish",
           "entry": 0.006422,
           "stop": 0.006521651277708582,
           "sentAt": "2026-10-28T08:01:08.940Z"
+        },
+        {
+          "symbol": "ORDERUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.037605,
+          "stop": 0.03408637506184707,
+          "sentAt": "2026-10-28T08:31:26.317Z"
         }
       ]
     }
