@@ -1,25 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T06:01:04.908Z",
+  "lastUpdated": "2026-10-28T06:31:11.132Z",
   "signals": {
-    "USELESSUSDT:30m": {
-      "sentAt": "2026-10-27T18:31:08.430Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15549,
-      "stop": 0.1492191427405869,
-      "closedAt": "2026-10-27T20:30:39.226Z"
-    },
-    "WLDUSDT:15m": {
-      "sentAt": "2026-10-27T18:31:10.221Z",
-      "symbol": "WLDUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.4370449390734052,
-      "stop": 0.42689311825683485
-    },
     "CROUSDT:15m": {
       "sentAt": "2026-10-27T19:01:06.970Z",
       "symbol": "CROUSDT",
