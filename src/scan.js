@@ -300,19 +300,22 @@ function markNotified(sig, eventType) {
   else if (eventType === "stopped") sig._stoppedNotified = true;
 }
 
+function isStoppedReason(reason) {
+  return (
+    reason === "stopped" ||
+    reason === "stopped_after_tp" ||
+    reason === "stopped_without_tp"
+  );
+}
+
 function calcClosedSignalProfitPct(sig, closedReason) {
   if (!sig || !Number.isFinite(sig.entry) || sig.entry <= 0) {
     return null;
   }
 
-  const isStopped =
-    closedReason === "stopped" ||
-    closedReason === "stopped_after_tp" ||
-    closedReason === "stopped_without_tp";
-
-  if (isStopped) {
+  if (isStoppedReason(closedReason)) {
     if (!Number.isFinite(sig.stop)) return null;
-    return Math.abs((sig.stop - sig.entry) / sig.entry) * 100;
+    return -Math.abs((sig.stop - sig.entry) / sig.entry) * 100;
   }
 
   let hitPrice = null;
@@ -324,6 +327,16 @@ function calcClosedSignalProfitPct(sig, closedReason) {
   if (!Number.isFinite(hitPrice)) return null;
 
   return Math.abs((hitPrice - sig.entry) / sig.entry) * 100;
+}
+
+function computeEffectiveMaxR(r, sig, eventType) {
+  const trackerMaxR = Number.isFinite(r && r.maxR) ? r.maxR : 0;
+  const totalR = computeTotalR(sig, eventType, trackerMaxR);
+
+  return Math.max(
+    trackerMaxR,
+    Number.isFinite(totalR) ? totalR : 0
+  );
 }
 
 async function trySendDailyReport(token, chatId, dailyReport, stats, summary) {
@@ -502,6 +515,7 @@ async function main() {
             markNotified(sig, event.type);
 
             const profitPct = calcClosedSignalProfitPct(sig, closedReason);
+            const effectiveMaxR = computeEffectiveMaxR(r, sig, event.type);
 
             dailyReport = appendClosedSignal(dailyReport, {
               symbol: sig.symbol,
@@ -512,7 +526,7 @@ async function main() {
               finalStatus: closedReason,
               lastTpHit: event.type,
               profitPct: profitPct,
-              maxR: Number.isFinite(r.maxR) ? r.maxR : 0,
+              maxR: effectiveMaxR,
               closedAt: new Date().toISOString()
             });
 
