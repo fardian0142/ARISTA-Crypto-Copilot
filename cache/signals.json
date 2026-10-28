@@ -1,34 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T09:01:19.288Z",
+  "lastUpdated": "2026-10-28T09:31:16.509Z",
   "signals": {
-    "TRIAUSDT:15m": {
-      "sentAt": "2026-10-27T21:31:11.054Z",
-      "symbol": "TRIAUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.002976,
-      "stop": 0.0030145942000000003,
-      "closedAt": "2026-10-28T04:00:53.638Z"
-    },
-    "CRCLBUSDT:15m": {
-      "sentAt": "2026-10-27T21:31:12.791Z",
-      "symbol": "CRCLBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 81.17500000000001,
-      "stop": 80.01114448531553
-    },
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-10-27T21:31:14.560Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 149.36,
-      "stop": 150.5339429604866
-    },
     "OLUSDT:15m": {
       "sentAt": "2026-10-27T22:01:31.790Z",
       "symbol": "OLUSDT",
@@ -64,7 +36,8 @@
       "direction": "bullish",
       "score": 14,
       "entry": 0.09883479126585855,
-      "stop": 0.09740518028917765
+      "stop": 0.09740518028917765,
+      "closedAt": "2026-10-28T09:30:35.472Z"
     },
     "SPACEUSDT:2h": {
       "sentAt": "2026-10-27T23:31:14.479Z",
@@ -286,7 +259,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.0028935,
-      "stop": 0.0029445772
+      "stop": 0.0029445772,
+      "closedAt": "2026-10-28T09:30:38.954Z"
     },
     "FETUSDT:15m": {
       "sentAt": "2026-10-28T07:01:00.391Z",
@@ -361,6 +335,24 @@
       "score": 14,
       "entry": 81.605,
       "stop": 80.87199483762613
+    },
+    "IRYSUSDT:30m": {
+      "sentAt": "2026-10-28T09:31:13.246Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02312,
+      "stop": 0.021783570550012996
+    },
+    "TRUTHUSDT:15m": {
+      "sentAt": "2026-10-28T09:31:15.005Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.021047,
+      "stop": 0.02123030414479328
     }
   }
 }

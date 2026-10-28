@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T09:01:19.290Z",
+  "lastUpdated": "2026-10-28T09:31:16.511Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -495,6 +495,30 @@
           "profitPct": -1.07,
           "maxR": 0.09,
           "closedAt": "2026-10-28T09:00:41.748Z"
+        },
+        {
+          "symbol": "CCUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.09883479126585855,
+          "stop": 0.09740518028917765,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.72,
+          "maxR": 2.37,
+          "closedAt": "2026-10-28T09:30:35.472Z"
+        },
+        {
+          "symbol": "TRIAUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.0028935,
+          "stop": 0.0029445772,
+          "finalStatus": "stopped_without_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.77,
+          "maxR": 0,
+          "closedAt": "2026-10-28T09:30:38.954Z"
         }
       ],
       "openSignals": [
@@ -545,14 +569,6 @@
           "entry": 0.09829,
           "stop": 0.09623814787030602,
           "sentAt": "2026-10-27T22:31:10.682Z"
-        },
-        {
-          "symbol": "CCUSDT",
-          "timeframe": "30m",
-          "direction": "bullish",
-          "entry": 0.09883479126585855,
-          "stop": 0.09740518028917765,
-          "sentAt": "2026-10-27T23:01:19.699Z"
         },
         {
           "symbol": "SPACEUSDT",
@@ -691,14 +707,6 @@
           "sentAt": "2026-10-28T05:31:21.948Z"
         },
         {
-          "symbol": "TRIAUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 0.0028935,
-          "stop": 0.0029445772,
-          "sentAt": "2026-10-28T07:00:58.674Z"
-        },
-        {
           "symbol": "PIUSDT",
           "timeframe": "30m",
           "direction": "bearish",
@@ -745,6 +753,22 @@
           "entry": 81.605,
           "stop": 80.87199483762613,
           "sentAt": "2026-10-28T09:01:17.784Z"
+        },
+        {
+          "symbol": "IRYSUSDT",
+          "timeframe": "30m",
+          "direction": "bullish",
+          "entry": 0.02312,
+          "stop": 0.021783570550012996,
+          "sentAt": "2026-10-28T09:31:13.246Z"
+        },
+        {
+          "symbol": "TRUTHUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.021047,
+          "stop": 0.02123030414479328,
+          "sentAt": "2026-10-28T09:31:15.005Z"
         }
       ]
     }
