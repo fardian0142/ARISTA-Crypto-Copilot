@@ -2565,46 +2565,6 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
   };
 }
 
-export function detectStrictMomentum(candles, direction, lookback = CONFIG.MOMENTUM_LOOKBACK_CANDLES) {
-  if (!candles || candles.length < lookback + 2) {
-    return { blocked: false, penalty: 0, reason: null };
-  }
-
-  const recentCandles = candles.slice(-lookback - 1, -1);
-  if (recentCandles.length < lookback) {
-    return { blocked: false, penalty: 0, reason: null };
-  }
-
-  let strongOpposingBodies = 0;
-
-  for (const candle of recentCandles) {
-    const range = cRange(candle);
-    const body = cBody(candle);
-
-    if (!Number.isFinite(range) || range <= 0) continue;
-
-    const bodyRatio = body / range;
-    if (bodyRatio < 0.6) continue;
-
-    if (direction === "bearish" && isBull(candle)) {
-      strongOpposingBodies++;
-    } else if (direction === "bullish" && isBear(candle)) {
-      strongOpposingBodies++;
-    }
-  }
-
-  if (strongOpposingBodies >= 2) {
-    const penalty = strongOpposingBodies === 2 ? 4 : 6;
-    return {
-      blocked: false,
-      penalty: penalty,
-      reason: `${strongOpposingBodies} کندل مومنتوم مخالف`
-    };
-  }
-
-  return { blocked: false, penalty: 0, reason: null };
-}
-
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
   if (!candles || candles.length < 20 || entry <= 0) {
     return [];
@@ -5299,12 +5259,6 @@ export function detectRangeTradeSetups(
     score += 4;
     confirmations.push("bullish_displacement");
 
-    const strictMomentum = detectStrictMomentum(candles, "bullish");
-    if (strictMomentum.penalty > 0) {
-      score = Math.max(0, score - strictMomentum.penalty);
-      confirmations.push("counter_momentum_penalty");
-    }
-
     if (rangePosition <= 45) {
       score += 1;
       confirmations.push("lower_range");
@@ -5533,12 +5487,6 @@ export function detectRangeTradeSetups(
 
     score += 4;
     confirmations.push("bearish_displacement");
-
-    const strictMomentum = detectStrictMomentum(candles, "bearish");
-    if (strictMomentum.penalty > 0) {
-      score = Math.max(0, score - strictMomentum.penalty);
-      confirmations.push("counter_momentum_penalty");
-    }
 
     if (rangePosition >= 55) {
       score += 1;
