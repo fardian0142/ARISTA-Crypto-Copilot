@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T09:31:16.511Z",
+  "lastUpdated": "2026-10-28T10:01:13.423Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -519,6 +519,42 @@
           "profitPct": -1.77,
           "maxR": 0,
           "closedAt": "2026-10-28T09:30:38.954Z"
+        },
+        {
+          "symbol": "CCUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.10111,
+          "stop": 0.10276585796705578,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.64,
+          "maxR": 3.1,
+          "closedAt": "2026-10-28T10:00:34.406Z"
+        },
+        {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.07733,
+          "stop": 0.07575856241380939,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 4.12,
+          "maxR": 2.03,
+          "closedAt": "2026-10-28T10:00:36.104Z"
+        },
+        {
+          "symbol": "OFCUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.006371,
+          "stop": 0.006568309705348877,
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -3.1,
+          "maxR": 0.51,
+          "closedAt": "2026-10-28T10:00:37.809Z"
         }
       ],
       "openSignals": [
@@ -651,14 +687,6 @@
           "sentAt": "2026-10-28T03:01:04.816Z"
         },
         {
-          "symbol": "OFCUSDT",
-          "timeframe": "30m",
-          "direction": "bearish",
-          "entry": 0.006371,
-          "stop": 0.006568309705348877,
-          "sentAt": "2026-10-28T04:01:26.786Z"
-        },
-        {
           "symbol": "DOODUSDT",
           "timeframe": "15m",
           "direction": "bullish",
@@ -769,6 +797,14 @@
           "entry": 0.021047,
           "stop": 0.02123030414479328,
           "sentAt": "2026-10-28T09:31:15.005Z"
+        },
+        {
+          "symbol": "LINKUSDT",
+          "timeframe": "2h",
+          "direction": "bullish",
+          "entry": 11.805052289933748,
+          "stop": 11.611625400000001,
+          "sentAt": "2026-10-28T10:01:11.918Z"
         }
       ]
     }
