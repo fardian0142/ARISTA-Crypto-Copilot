@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T14:31:22.526Z",
+  "lastUpdated": "2026-10-28T15:01:12.890Z",
   "signals": {
-    "LIGHTUSDT:15m": {
-      "sentAt": "2026-10-28T03:01:04.816Z",
-      "symbol": "LIGHTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.2956,
-      "stop": 0.3045543579061385
-    },
     "OFCUSDT:30m": {
       "sentAt": "2026-10-28T04:01:26.786Z",
       "symbol": "OFCUSDT",
