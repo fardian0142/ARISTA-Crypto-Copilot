@@ -3323,16 +3323,6 @@ export function detectRangeTradeSetups(
       ? CONFIG.MAX_SL_PCT
       : Infinity;
 
-  const momentumFilterEnabled = true;
-
-  const momentumCheck = momentumFilterEnabled
-    ? detectStrictMomentum(candles, currentPrice > previousClose ? "bearish" : "bullish")
-    : { blocked: false, reason: null };
-
-  if (momentumCheck.blocked) {
-    return emptyResult;
-  }
-
   const rangeHigh = bullishBreakout;
   const rangeLow = bearishBreakdown;
   const rangeSize = rangeHigh - rangeLow;
