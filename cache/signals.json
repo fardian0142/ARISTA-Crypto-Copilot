@@ -1,26 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T18:31:28.577Z",
+  "lastUpdated": "2026-10-28T19:01:51.417Z",
   "signals": {
-    "TRIAUSDT:30m": {
-      "sentAt": "2026-10-28T07:00:58.674Z",
-      "symbol": "TRIAUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0028935,
-      "stop": 0.0029445772,
-      "closedAt": "2026-10-28T09:30:38.954Z"
-    },
-    "FETUSDT:15m": {
-      "sentAt": "2026-10-28T07:01:00.391Z",
-      "symbol": "FETUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.18000835622278658,
-      "stop": 0.1821499019023432,
-      "closedAt": "2026-10-28T08:00:35.294Z"
-    },
     "PIUSDT:30m": {
       "sentAt": "2026-10-28T07:31:04.194Z",
       "symbol": "PIUSDT",
@@ -133,7 +113,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.004342,
-      "stop": 0.004433230089005437
+      "stop": 0.004433230089005437,
+      "closedAt": "2026-10-28T19:00:40.660Z"
     },
     "AEONUSDT:15m": {
       "sentAt": "2026-10-28T11:31:08.679Z",
@@ -264,7 +245,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.13045,
-      "stop": 0.1326131093714892
+      "stop": 0.1326131093714892,
+      "closedAt": "2026-10-28T19:00:42.436Z"
     },
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-28T14:01:20.466Z",
@@ -301,7 +283,8 @@
       "direction": "bearish",
       "score": 14,
       "entry": 0.04596,
-      "stop": 0.047729262
+      "stop": 0.047729262,
+      "closedAt": "2026-10-28T19:00:45.865Z"
     },
     "ZECUSDT:30m": {
       "sentAt": "2026-10-28T15:31:25.384Z",
@@ -392,6 +375,105 @@
       "score": 14,
       "entry": 256.037,
       "stop": 245.85302309137617
+    },
+    "MONUSDT:1h": {
+      "sentAt": "2026-10-28T19:01:31.521Z",
+      "symbol": "MONUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.021355,
+      "stop": 0.022210600051699555
+    },
+    "CASHCATUSDT:2h": {
+      "sentAt": "2026-10-28T19:01:33.303Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09961300040400808,
+      "stop": 0.09100142683996537
+    },
+    "NEARUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:35.033Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 4.685552303887935,
+      "stop": 4.766238480560325
+    },
+    "BRETTUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:36.842Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.00469417,
+      "stop": 0.004791507224159886
+    },
+    "TRXUSDT:2h": {
+      "sentAt": "2026-10-28T19:01:38.610Z",
+      "symbol": "TRXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3307876,
+      "stop": 0.3277771852302371
+    },
+    "XAUTUSDT:2h": {
+      "sentAt": "2026-10-28T19:01:40.396Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4031.64166952384,
+      "stop": 3979.335702040687
+    },
+    "SUIUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:42.126Z",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.9353924,
+      "stop": 0.9519385740916767
+    },
+    "WLDUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:43.937Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.4361812720250126,
+      "stop": 0.44590883417851734
+    },
+    "RAVEUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:46.281Z",
+      "symbol": "RAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.14745,
+      "stop": 0.15028359019517876
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:48.046Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 134.36858,
+      "stop": 137.53359135851983
+    },
+    "BMTUSDT:15m": {
+      "sentAt": "2026-10-28T19:01:49.913Z",
+      "symbol": "BMTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02899200928748552,
+      "stop": 0.027218531625062055
     }
   }
 }
