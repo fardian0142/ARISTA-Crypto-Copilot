@@ -1,63 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T14:01:21.971Z",
+  "lastUpdated": "2026-10-28T14:31:22.526Z",
   "signals": {
-    "STABLEUSDT:1h": {
-      "sentAt": "2026-10-28T02:01:27.854Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.027428728074500013,
-      "stop": 0.028575451109285655
-    },
-    "NILUSDT:1h": {
-      "sentAt": "2026-10-28T02:01:29.561Z",
-      "symbol": "NILUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08675963525212489,
-      "stop": 0.07813013463375046
-    },
-    "MEWUSDT:30m": {
-      "sentAt": "2026-10-28T02:31:16.915Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00043435,
-      "stop": 0.0004260232161450171,
-      "closedAt": "2026-10-28T10:30:37.045Z"
-    },
-    "BASEDUSDT:15m": {
-      "sentAt": "2026-10-28T02:31:18.657Z",
-      "symbol": "BASEDUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.052172168639744824,
-      "stop": 0.053052134401093604,
-      "closedAt": "2026-10-28T05:30:44.491Z"
-    },
-    "ACUUSDT:15m": {
-      "sentAt": "2026-10-28T02:31:20.396Z",
-      "symbol": "ACUUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.1408928004060328,
-      "stop": 0.15077599796983598
-    },
-    "PIPPINUSDT:2h": {
-      "sentAt": "2026-10-28T02:31:22.178Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.015754397585054536,
-      "stop": 0.016314010349766272,
-      "closedAt": "2026-10-28T04:30:42.895Z"
-    },
     "LIGHTUSDT:15m": {
       "sentAt": "2026-10-28T03:01:04.816Z",
       "symbol": "LIGHTUSDT",
@@ -410,6 +353,15 @@
       "score": 14,
       "entry": 0.00464103950632397,
       "stop": 0.00449597354432584
+    },
+    "RLSUSDT:15m": {
+      "sentAt": "2026-10-28T14:31:21.023Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002587,
+      "stop": 0.002465516922275457
     }
   }
 }

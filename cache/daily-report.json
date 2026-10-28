@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T14:01:21.972Z",
+  "lastUpdated": "2026-10-28T14:31:22.528Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -771,16 +771,30 @@
           "profitPct": -2.76,
           "maxR": 0.17,
           "closedAt": "2026-10-28T14:00:46.974Z"
-        }
-      ],
-      "openSignals": [
+        },
+        {
+          "symbol": "MONUSDT",
+          "timeframe": "30m",
+          "direction": "bearish",
+          "entry": 0.02146862877779909,
+          "stop": 0.022045876666575332,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 2.81,
+          "maxR": 1.28,
+          "closedAt": "2026-10-28T14:30:38.108Z"
+        },
         {
           "symbol": "MONUSDT",
           "timeframe": "1h",
           "direction": "bullish",
           "entry": 0.021414276013347455,
           "stop": 0.02078595994279661,
-          "sentAt": "2026-10-27T21:01:15.038Z"
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -2.93,
+          "maxR": 0.65,
+          "closedAt": "2026-10-28T14:30:39.938Z"
         },
         {
           "symbol": "CRCLBUSDT",
@@ -788,8 +802,14 @@
           "direction": "bullish",
           "entry": 81.17500000000001,
           "stop": 80.01114448531553,
-          "sentAt": "2026-10-27T21:31:12.791Z"
-        },
+          "finalStatus": "stopped_after_tp",
+          "lastTpHit": "stopped",
+          "profitPct": -1.43,
+          "maxR": 0.96,
+          "closedAt": "2026-10-28T14:30:41.677Z"
+        }
+      ],
+      "openSignals": [
         {
           "symbol": "STABLEUSDT",
           "timeframe": "30m",
@@ -1077,6 +1097,14 @@
           "entry": 0.00464103950632397,
           "stop": 0.00449597354432584,
           "sentAt": "2026-10-28T14:01:20.466Z"
+        },
+        {
+          "symbol": "RLSUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.002587,
+          "stop": 0.002465516922275457,
+          "sentAt": "2026-10-28T14:31:21.023Z"
         }
       ]
     }
