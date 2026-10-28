@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T13:01:44.436Z",
+  "lastUpdated": "2026-10-28T13:31:19.950Z",
   "lastReportSentDate": "2026-10-28",
   "buckets": {
     "2026-10-28": {
@@ -711,6 +711,18 @@
           "profitPct": 2.2,
           "maxR": 1.66,
           "closedAt": "2026-10-28T13:01:03.081Z"
+        },
+        {
+          "symbol": "SPCXBUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 149.36,
+          "stop": 150.5339429604866,
+          "finalStatus": "tp3_hit",
+          "lastTpHit": "tp3_hit",
+          "profitPct": 1.8,
+          "maxR": 2.3,
+          "closedAt": "2026-10-28T13:30:38.462Z"
         }
       ],
       "openSignals": [
@@ -1001,6 +1013,30 @@
           "entry": 0.2037258,
           "stop": 0.19956095941613905,
           "sentAt": "2026-10-28T13:01:42.931Z"
+        },
+        {
+          "symbol": "ORDERUSDT",
+          "timeframe": "15m",
+          "direction": "bullish",
+          "entry": 0.038635,
+          "stop": 0.036554420768510315,
+          "sentAt": "2026-10-28T13:31:15.021Z"
+        },
+        {
+          "symbol": "MERLUSDT",
+          "timeframe": "1h",
+          "direction": "bullish",
+          "entry": 0.026985,
+          "stop": 0.02588762431665066,
+          "sentAt": "2026-10-28T13:31:16.734Z"
+        },
+        {
+          "symbol": "FARTCOINUSDT",
+          "timeframe": "15m",
+          "direction": "bearish",
+          "entry": 0.13045,
+          "stop": 0.1326131093714892,
+          "sentAt": "2026-10-28T13:31:18.444Z"
         }
       ]
     }
