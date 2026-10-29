@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T19:01:28.563Z",
+  "lastUpdated": "2026-10-29T19:31:21.869Z",
   "signals": {
     "XAUTUSDT:2h": {
       "sentAt": "2026-10-29T07:31:23.440Z",
@@ -801,6 +801,15 @@
       "score": 14,
       "entry": 0.0028725,
       "stop": 0.002778675067912011
+    },
+    "INTCBUSDT:2h": {
+      "sentAt": "2026-10-29T19:31:20.367Z",
+      "symbol": "INTCBUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 92.21,
+      "stop": 97.04488559810179
     }
   }
 }
