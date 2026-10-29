@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T13:01:27.683Z",
+  "lastUpdated": "2026-10-29T13:31:31.697Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,24 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "SATSUSDT:1h": {
-      "sentAt": "2026-10-29T01:31:25.483Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.0180736734110428e-8,
-      "stop": 9.804451899211233e-9
-    },
-    "RAVEUSDT:2h": {
-      "sentAt": "2026-10-29T01:31:27.204Z",
-      "symbol": "RAVEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1479,
-      "stop": 0.1387577781280478
     },
     "COREUSDT:30m": {
       "sentAt": "2026-10-29T02:01:52.120Z",
@@ -693,6 +675,42 @@
       "score": 14,
       "entry": 214.445,
       "stop": 213.66953590335478
+    },
+    "PEPEUSDT:30m": {
+      "sentAt": "2026-10-29T13:31:26.707Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0000048871661978530686,
+      "stop": 0.000005170716294915421
+    },
+    "CRCLBUSDT:15m": {
+      "sentAt": "2026-10-29T13:31:28.450Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 79.83,
+      "stop": 79.29269791103586
+    },
+    "CRCLBUSDT:30m": {
+      "sentAt": "2026-10-29T13:31:28.450Z",
+      "symbol": "CRCLBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 79.73,
+      "stop": 78.80398829398798
+    },
+    "ARBUSDT:1h": {
+      "sentAt": "2026-10-29T13:31:30.194Z",
+      "symbol": "ARBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.16994492441440737,
+      "stop": 0.16305032393825422
     }
   }
 }
