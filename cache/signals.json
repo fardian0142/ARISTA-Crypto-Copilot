@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T04:31:26.914Z",
+  "lastUpdated": "2026-10-29T05:01:22.549Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -688,6 +688,33 @@
       "score": 14,
       "entry": 0.05152064,
       "stop": 0.04905295379775974
+    },
+    "AEONUSDT:1h": {
+      "sentAt": "2026-10-29T05:01:17.652Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.028444999999999998,
+      "stop": 0.02715288338139093
+    },
+    "LTCUSDT:30m": {
+      "sentAt": "2026-10-29T05:01:19.351Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 57.43878732648964,
+      "stop": 56.33376860075869
+    },
+    "CELOUSDT:2h": {
+      "sentAt": "2026-10-29T05:01:21.046Z",
+      "symbol": "CELOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07812331510999249,
+      "stop": 0.07434579238574648
     }
   }
 }
