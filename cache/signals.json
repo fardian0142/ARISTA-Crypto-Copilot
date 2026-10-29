@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T00:01:18.515Z",
+  "lastUpdated": "2026-10-29T00:31:22.312Z",
   "signals": {
     "ZECUSDT:15m": {
       "sentAt": "2026-10-28T12:31:24.367Z",
@@ -554,6 +554,24 @@
       "score": 14,
       "entry": 0.01793,
       "stop": 0.016562542206728346
+    },
+    "IRYSUSDT:15m": {
+      "sentAt": "2026-10-29T00:31:19.110Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.023411440000000002,
+      "stop": 0.022093575178964823
+    },
+    "BEATUSDT:15m": {
+      "sentAt": "2026-10-29T00:31:20.811Z",
+      "symbol": "BEATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08641499999999999,
+      "stop": 0.084582678
     }
   }
 }
