@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T18:31:18.700Z",
+  "lastUpdated": "2026-10-29T19:01:28.563Z",
   "signals": {
-    "TRIAUSDT:1h": {
-      "sentAt": "2026-10-29T07:01:20.402Z",
-      "symbol": "TRIAUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.002845,
-      "stop": 0.0029857732067568635
-    },
-    "SOONUSDT:15m": {
-      "sentAt": "2026-10-29T07:01:22.122Z",
-      "symbol": "SOONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.30940560335776074,
-      "stop": 0.29743312846673964
-    },
     "XAUTUSDT:2h": {
       "sentAt": "2026-10-29T07:31:23.440Z",
       "symbol": "XAUTUSDT",
