@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T12:01:21.681Z",
+  "lastUpdated": "2026-10-29T12:31:19.859Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,15 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "IRYSUSDT:15m": {
-      "sentAt": "2026-10-29T00:31:19.110Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.023411440000000002,
-      "stop": 0.022093575178964823
     },
     "BEATUSDT:15m": {
       "sentAt": "2026-10-29T00:31:20.811Z",
@@ -684,6 +675,33 @@
       "score": 14,
       "entry": 250.55,
       "stop": 246.92436789915777
+    },
+    "SPACEUSDT:1h": {
+      "sentAt": "2026-10-29T12:31:14.771Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.003726,
+      "stop": 0.003831151723118866
+    },
+    "FARTCOINUSDT:30m": {
+      "sentAt": "2026-10-29T12:31:16.595Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.12940746156902913,
+      "stop": 0.12717416
+    },
+    "CELOUSDT:30m": {
+      "sentAt": "2026-10-29T12:31:18.357Z",
+      "symbol": "CELOUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.08045284,
+      "stop": 0.08291840703414197
     }
   }
 }
