@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T06:01:17.599Z",
+  "lastUpdated": "2026-10-29T06:31:16.827Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,15 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "BTCUSDT:2h": {
-      "sentAt": "2026-10-28T18:31:16.166Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 80912.2,
-      "stop": 79647.63353193284
     },
     "SPACEUSDT:1h": {
       "sentAt": "2026-10-28T18:31:18.109Z",
@@ -733,6 +724,24 @@
       "score": 14,
       "entry": 0.006284,
       "stop": 0.006014646172232043
+    },
+    "SPACEUSDT:30m": {
+      "sentAt": "2026-10-29T06:31:15.324Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.003643,
+      "stop": 0.0035918411618160975
+    },
+    "SPACEUSDT:15m": {
+      "sentAt": "2026-10-29T06:31:15.324Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.003661856324355473,
+      "stop": 0.003620901467047974
     }
   }
 }
