@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T11:01:39.742Z",
+  "lastUpdated": "2026-10-29T11:31:23.027Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,15 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "PIUSDT:1h": {
-      "sentAt": "2026-10-28T23:31:07.178Z",
-      "symbol": "PIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07644,
-      "stop": 0.0750242680444422
     },
     "MONUSDT:15m": {
       "sentAt": "2026-10-29T00:01:15.247Z",
@@ -630,6 +621,51 @@
       "score": 14,
       "entry": 0.41148814390403293,
       "stop": 0.40207938326843046
+    },
+    "ZECUSDT:30m": {
+      "sentAt": "2026-10-29T11:31:14.558Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1265.2227952525873,
+      "stop": 1234.8851632031974
+    },
+    "ZORAUSDT:30m": {
+      "sentAt": "2026-10-29T11:31:16.309Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.006400869345153256,
+      "stop": 0.006553131377914617
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-10-29T11:31:18.037Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.129557936128476,
+      "stop": 0.12749455944938856
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-10-29T11:31:19.781Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0164366363778397,
+      "stop": 0.01621584409497271
+    },
+    "ARBUSDT:30m": {
+      "sentAt": "2026-10-29T11:31:21.523Z",
+      "symbol": "ARBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.16773948551904014,
+      "stop": 0.1626593477755423
     }
   }
 }
