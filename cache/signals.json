@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T07:31:24.943Z",
+  "lastUpdated": "2026-10-29T08:01:25.706Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -576,6 +576,42 @@
       "score": 14,
       "entry": 4029.14713953114,
       "stop": 3984.233687723686
+    },
+    "AEONUSDT:15m": {
+      "sentAt": "2026-10-29T08:01:18.892Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.028475,
+      "stop": 0.029541649815682337
+    },
+    "CASHCATUSDT:15m": {
+      "sentAt": "2026-10-29T08:01:20.675Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0961567813332849,
+      "stop": 0.09337093714306469
+    },
+    "ETHWUSDT:1h": {
+      "sentAt": "2026-10-29T08:01:22.419Z",
+      "symbol": "ETHWUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.22765717451770875,
+      "stop": 0.2146835377812482
+    },
+    "XAUTUSDT:1h": {
+      "sentAt": "2026-10-29T08:01:24.203Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4025.0995022265774,
+      "stop": 3989.1264190289553
     }
   }
 }
