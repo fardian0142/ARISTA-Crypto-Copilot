@@ -352,6 +352,10 @@ async function main() {
     const sig = stats.recentSignals[r.idx];
     if (!sig) continue;
 
+    if (Number.isFinite(r.exitPrice)) {
+      sig.exitPrice = r.exitPrice;
+    }
+
     if (typeof r.tp1Reached === "boolean") sig.tp1Reached = r.tp1Reached;
     if (typeof r.tp2Reached === "boolean") sig.tp2Reached = r.tp2Reached;
     if (typeof r.tp3Reached === "boolean") sig.tp3Reached = r.tp3Reached;
@@ -423,6 +427,7 @@ async function main() {
     sig.status = r.status;
     if (typeof r.activated === "boolean") sig.activated = r.activated;
     if (Number.isFinite(r.maxR)) sig.maxR = Math.round(r.maxR * 100) / 100;
+    if (Number.isFinite(r.exitPrice)) sig.exitPrice = r.exitPrice;
     sig.statusUpdatedAt = new Date().toISOString();
   }
 
