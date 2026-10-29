@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T09:01:20.622Z",
+  "lastUpdated": "2026-10-29T09:31:17.449Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,87 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "MONUSDT:30m": {
-      "sentAt": "2026-10-28T21:05:28.325Z",
-      "symbol": "MONUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02176,
-      "stop": 0.022746950073304396
-    },
-    "SUIUSDT:2h": {
-      "sentAt": "2026-10-28T21:05:30.098Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9372237166334678,
-      "stop": 0.8991870049800686
-    },
-    "SKHYBUSDT:30m": {
-      "sentAt": "2026-10-28T21:05:31.989Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 162.305,
-      "stop": 168.02940695403763
-    },
-    "SNXXUSDT:30m": {
-      "sentAt": "2026-10-28T21:05:33.784Z",
-      "symbol": "SNXXUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 9.92,
-      "stop": 10.696006493850078
-    },
-    "ONDOUSDT:2h": {
-      "sentAt": "2026-10-28T21:05:35.562Z",
-      "symbol": "ONDOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.41820215491744434,
-      "stop": 0.39925726768536574
-    },
-    "ETHUSDT:2h": {
-      "sentAt": "2026-10-28T21:31:06.757Z",
-      "symbol": "ETHUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2359.082669043364,
-      "stop": 2288.995221118827
-    },
-    "OFCUSDT:30m": {
-      "sentAt": "2026-10-28T21:31:08.532Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.006615,
-      "stop": 0.006899043622318997
-    },
-    "CROUSDT:1h": {
-      "sentAt": "2026-10-28T21:31:10.305Z",
-      "symbol": "CROUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0538,
-      "stop": 0.051893871041538024
-    },
-    "BCHUSDT:2h": {
-      "sentAt": "2026-10-28T21:31:12.066Z",
-      "symbol": "BCHUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 288.6,
-      "stop": 306.44894576940385
     },
     "ZORAUSDT:30m": {
       "sentAt": "2026-10-28T22:01:15.142Z",
