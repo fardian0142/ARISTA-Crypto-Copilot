@@ -156,12 +156,18 @@ function fmtPercent(value) {
   return (v * 100).toFixed(2) + "%";
 }
 
-function calcProfitPercent(entry, targetPrice) {
-  if (!Number.isFinite(entry) || !Number.isFinite(targetPrice) || entry <= 0) {
+function calcProfitPercent(entry, targetPrice, exitPrice = null) {
+  if (!Number.isFinite(entry) || entry <= 0) {
     return 0;
   }
 
-  return Math.abs((targetPrice - entry) / entry) * 100;
+  const effectivePrice = Number.isFinite(exitPrice) ? exitPrice : targetPrice;
+
+  if (!Number.isFinite(effectivePrice)) {
+    return 0;
+  }
+
+  return Math.abs((effectivePrice - entry) / entry) * 100;
 }
 
 export function formatAnalysis(r) {
@@ -819,7 +825,7 @@ export function formatSignalResult(sig, newStatus) {
   const isBullish = sig.direction === "bullish";
 
   if (newStatus === "stopped") {
-    const lossPct = calcProfitPercent(sig.entry, sig.stop);
+    const lossPct = calcProfitPercent(sig.entry, sig.stop, sig.exitPrice);
     return (
       "🛑 <b>حد ضرر فعال شد</b>\n" +
       "━━━━━━━━━━━━━━━━━━━━━━\n" +
@@ -886,7 +892,7 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
 
   if (isStopped) {
     if (!hasHitTp) {
-      const lossPct = calcProfitPercent(sig.entry, sig.stop);
+      const lossPct = calcProfitPercent(sig.entry, sig.stop, sig.exitPrice);
       title = "🛑 <b>معامله با ضرر بسته شد</b>";
       reasonText = "❌ <b>حد ضرر فعال شد (قبل از رسیدن به هدف)</b>";
       resultText =
