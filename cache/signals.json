@@ -1,36 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T00:31:22.312Z",
+  "lastUpdated": "2026-10-29T01:01:27.437Z",
   "signals": {
-    "ZECUSDT:15m": {
-      "sentAt": "2026-10-28T12:31:24.367Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1298.11,
-      "stop": 1313.993370677783,
-      "closedAt": "2026-10-28T20:31:04.783Z"
-    },
-    "ENAUSDT:1h": {
-      "sentAt": "2026-10-28T12:31:26.254Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.2038,
-      "stop": 0.2123963463861383,
-      "closedAt": "2026-10-28T20:31:06.546Z"
-    },
-    "BCHUSDT:15m": {
-      "sentAt": "2026-10-28T12:31:28.068Z",
-      "symbol": "BCHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 296.72607534653633,
-      "stop": 299.75939999999997,
-      "closedAt": "2026-10-28T17:00:39.896Z"
-    },
     "PONSUSDT:15m": {
       "sentAt": "2026-10-28T13:01:39.291Z",
       "symbol": "PONSUSDT",
@@ -572,6 +542,33 @@
       "score": 14,
       "entry": 0.08641499999999999,
       "stop": 0.084582678
+    },
+    "MOODENGUSDT:15m": {
+      "sentAt": "2026-10-29T01:01:22.469Z",
+      "symbol": "MOODENGUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.038570860946602045,
+      "stop": 0.03785527895284253
+    },
+    "WLDUSDT:30m": {
+      "sentAt": "2026-10-29T01:01:24.186Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.4354161445742862,
+      "stop": 0.41422753875509866
+    },
+    "FARTCOINUSDT:1h": {
+      "sentAt": "2026-10-29T01:01:25.934Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1336,
+      "stop": 0.12628408002242864
     }
   }
 }
