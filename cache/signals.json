@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T12:31:19.859Z",
+  "lastUpdated": "2026-10-29T13:01:27.683Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,42 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "BEATUSDT:15m": {
-      "sentAt": "2026-10-29T00:31:20.811Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.08641499999999999,
-      "stop": 0.084582678
-    },
-    "MOODENGUSDT:15m": {
-      "sentAt": "2026-10-29T01:01:22.469Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.038570860946602045,
-      "stop": 0.03785527895284253
-    },
-    "WLDUSDT:30m": {
-      "sentAt": "2026-10-29T01:01:24.186Z",
-      "symbol": "WLDUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.4354161445742862,
-      "stop": 0.41422753875509866
-    },
-    "FARTCOINUSDT:1h": {
-      "sentAt": "2026-10-29T01:01:25.934Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1336,
-      "stop": 0.12628408002242864
     },
     "SATSUSDT:1h": {
       "sentAt": "2026-10-29T01:31:25.483Z",
@@ -702,6 +666,33 @@
       "score": 14,
       "entry": 0.08045284,
       "stop": 0.08291840703414197
+    },
+    "USELESSUSDT:15m": {
+      "sentAt": "2026-10-29T13:01:22.548Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.154155,
+      "stop": 0.15097885293800697
+    },
+    "MOODENGUSDT:30m": {
+      "sentAt": "2026-10-29T13:01:24.433Z",
+      "symbol": "MOODENGUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0372,
+      "stop": 0.03655849619798853
+    },
+    "NVDABUSDT:15m": {
+      "sentAt": "2026-10-29T13:01:26.181Z",
+      "symbol": "NVDABUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 214.445,
+      "stop": 213.66953590335478
     }
   }
 }
