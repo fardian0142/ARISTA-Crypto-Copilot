@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T02:31:35.160Z",
+  "lastUpdated": "2026-10-29T03:01:30.381Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -617,6 +617,51 @@
       "score": 14,
       "entry": 194.56245612313126,
       "stop": 175.129599120491
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-10-29T03:01:21.985Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00000984,
+      "stop": 0.000009673696231258107
+    },
+    "SOLUSDT:1h": {
+      "sentAt": "2026-10-29T03:01:23.708Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 100.44514,
+      "stop": 97.48845840802622
+    },
+    "BNBUSDT:1h": {
+      "sentAt": "2026-10-29T03:01:25.434Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 750.25,
+      "stop": 766.622199881262
+    },
+    "USELESSUSDT:2h": {
+      "sentAt": "2026-10-29T03:01:27.152Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15689519656081158,
+      "stop": 0.13215288170848866
+    },
+    "LTCUSDT:2h": {
+      "sentAt": "2026-10-29T03:01:28.874Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 57.96,
+      "stop": 55.03086920884592
     }
   }
 }
