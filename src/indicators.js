@@ -3032,6 +3032,8 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
       ? Math.max(0.3, CONFIG.SL_MIN_NODE_DISTANCE_ATR)
       : 0.5;
 
+  const minStopDistancePct = 0.015;
+
   if (direction === "bullish") {
     const node = findNearestImportantNodeBelow(
       candles,
@@ -3039,6 +3041,8 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
       swingLows,
       atrValue
     );
+
+    let stopPrice = null;
 
     if (
       node &&
@@ -3053,11 +3057,20 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
           ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
           : 0;
 
-        return node.high - buffer;
+        stopPrice = node.high - buffer;
       }
     }
 
-    return entryZone.low - atrValue * slAtrBuffer;
+    if (stopPrice === null) {
+      stopPrice = entryZone.low - atrValue * slAtrBuffer;
+    }
+
+    const currentDistancePct = (entryZone.low - stopPrice) / entryZone.low;
+    if (currentDistancePct < minStopDistancePct) {
+      return entryZone.low * (1 - minStopDistancePct);
+    }
+
+    return stopPrice;
   }
 
   const node = findNearestImportantNodeAbove(
@@ -3066,6 +3079,8 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
     swingHighs,
     atrValue
   );
+
+  let stopPrice = null;
 
   if (
     node &&
@@ -3080,11 +3095,20 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
         ? currentPrice * CONFIG.SL_PIP_BUFFER_PCT
         : 0;
 
-      return node.low + buffer;
+      stopPrice = node.low + buffer;
     }
   }
 
-  return entryZone.high + atrValue * slAtrBuffer;
+  if (stopPrice === null) {
+    stopPrice = entryZone.high + atrValue * slAtrBuffer;
+  }
+
+  const currentDistancePct = (stopPrice - entryZone.high) / entryZone.high;
+  if (currentDistancePct < minStopDistancePct) {
+    return entryZone.high * (1 + minStopDistancePct);
+  }
+
+  return stopPrice;
 }
 
 export function detectRangeTradeSetups(
