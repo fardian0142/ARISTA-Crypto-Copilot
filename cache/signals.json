@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T22:31:13.765Z",
+  "lastUpdated": "2026-10-29T23:01:15.714Z",
   "signals": {
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-10-29T10:31:14.680Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 143.85,
-      "stop": 143.04600581823084
-    },
     "ETHUSDT:15m": {
       "sentAt": "2026-10-29T11:01:20.094Z",
       "symbol": "ETHUSDT",
