@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T16:31:58.112Z",
+  "lastUpdated": "2026-10-29T17:01:11.628Z",
   "signals": {
     "AEONUSDT:1h": {
       "sentAt": "2026-10-29T05:01:17.652Z",
@@ -801,6 +801,24 @@
       "score": 14,
       "entry": 0.42174999999999996,
       "stop": 0.39718292613718253
+    },
+    "PIPPINUSDT:1h": {
+      "sentAt": "2026-10-29T17:01:08.339Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.01588,
+      "stop": 0.016342101105903235
+    },
+    "FETUSDT:1h": {
+      "sentAt": "2026-10-29T17:01:10.125Z",
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.18415,
+      "stop": 0.19185149982147007
     }
   }
 }
