@@ -368,10 +368,17 @@ export async function analyze(symbol, timeframe) {
       result.range_setups = null;
     }
 
+    const hasRangeSetup = !!(
+      result.range_setups &&
+      result.range_setups.active &&
+      Number.isFinite(result.range_setups.active.entry) &&
+      Number.isFinite(result.range_setups.active.score) &&
+      result.range_setups.active.score === 14
+    );
+
     if (
-      !event ||
-      !Number.isFinite(event.index) ||
-      !Number.isFinite(event.direction)
+      (!event || !Number.isFinite(event.index) || !Number.isFinite(event.direction)) &&
+      !hasRangeSetup
     ) {
       result.setup_active = false;
       result.strength = 0;
@@ -449,7 +456,7 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
-    if (event.type === "BOS") {
+    if (event && event.type === "BOS") {
       const confirmedSwingsForDirection =
         getConfirmedSwings(swings, candles.length - 1) || {
           highs: [],
@@ -491,7 +498,7 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
-    if (event.type === "CHoCH") {
+    if (event && event.type === "CHoCH") {
       const eventAge = candles.length - 1 - event.index;
       if (eventAge > 20) {
         return fail(
@@ -514,6 +521,7 @@ export async function analyze(symbol, timeframe) {
     }
 
     const isVeryRecentEvent =
+      event &&
       Number.isFinite(event.index) &&
       event.index >= candles.length - 5;
 
@@ -573,27 +581,27 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
-    if (event.direction !== direction) {
+    if (event && event.direction !== direction) {
       return fail("جهت شکست ساختاری معتبر نیست");
     }
 
-    if (sweep.direction !== direction) {
+    if (sweep && sweep.direction !== direction) {
       return fail("Liquidity Sweep با جهت ستاپ هماهنگ نیست");
     }
 
-    if (displacement.direction !== direction) {
+    if (displacement && displacement.direction !== direction) {
       return fail("Displacement با جهت ستاپ هماهنگ نیست");
     }
 
-    if (sweep.index >= event.index) {
+    if (sweep && event && sweep.index >= event.index) {
       return fail("Sweep باید قبل از شکست ساختاری اتفاق افتاده باشد");
     }
 
-    if (displacement.index < event.index) {
+    if (displacement && event && displacement.index < event.index) {
       return fail("Displacement باید در Event یا بعد از آن شکل گرفته باشد");
     }
 
-    if (displacement.index < sweep.index) {
+    if (displacement && sweep && displacement.index < sweep.index) {
       return fail("Displacement باید بعد از Liquidity Sweep شکل گرفته باشد");
     }
 
@@ -1033,9 +1041,9 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
-    if (event.type === "BOS") {
+    if (event && event.type === "BOS") {
       result.reasons.push("BOS معتبر در زنجیره ساختاری ثبت شده است.");
-    } else if (event.type === "CHoCH") {
+    } else if (event && event.type === "CHoCH") {
       result.reasons.push("CHoCH معتبر و تغییر ساختار مشاهده شده است.");
     }
 
