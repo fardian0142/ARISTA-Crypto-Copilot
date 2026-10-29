@@ -420,31 +420,31 @@ export async function analyze(symbol, timeframe) {
       );
     }
 
-    if (direction === "bullish" && htfTrend === "bearish") {
+    if (direction === "bullish" && htfTrend !== "bullish") {
       return fail(
         "مخالفت با تایم‌فریم بالاتر (HTF)",
-        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی است. ورود Long در روند نزولی ممنوع است (تله گاوی)."
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی نیست. ورود Long بدون تأیید روند ممنوع است."
       );
     }
 
-    if (direction === "bearish" && htfTrend === "bullish") {
+    if (direction === "bearish" && htfTrend !== "bearish") {
       return fail(
         "مخالفت با تایم‌فریم بالاتر (HTF)",
-        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی است. ورود Short در روند صعودی ممنوع است (تله خرسی)."
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی نیست. ورود Short بدون تأیید روند ممنوع است."
       );
     }
 
     if (hasRealHtf2) {
-      if (direction === "bullish" && htf2Trend === "bearish") {
+      if (direction === "bullish" && htf2Trend !== "bullish") {
         return fail(
           "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
-          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی است. ورود Long ممنوع است."
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی نیست. ورود Long ممنوع است."
         );
       }
-      if (direction === "bearish" && htf2Trend === "bullish") {
+      if (direction === "bearish" && htf2Trend !== "bearish") {
         return fail(
           "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
-          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی است. ورود Short ممنوع است."
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی نیست. ورود Short ممنوع است."
         );
       }
     }
