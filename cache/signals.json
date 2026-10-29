@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T20:31:58.050Z",
+  "lastUpdated": "2026-10-29T21:02:12.056Z",
   "signals": {
-    "CPUSDT:1h": {
-      "sentAt": "2026-10-29T09:01:17.342Z",
-      "symbol": "CPUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.008656,
-      "stop": 0.008385322279072247
-    },
-    "BSBUSDT:30m": {
-      "sentAt": "2026-10-29T09:01:19.120Z",
-      "symbol": "BSBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.10043663573576934,
-      "stop": 0.10419156113241704
-    },
     "INJUSDT:15m": {
       "sentAt": "2026-10-29T10:01:27.037Z",
       "symbol": "INJUSDT",
@@ -810,6 +792,15 @@
       "score": 14,
       "entry": 1.6624540553392866,
       "stop": 1.576613890433666
+    },
+    "SKHYBUSDT:30m": {
+      "sentAt": "2026-10-29T21:02:10.553Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 158.3029,
+      "stop": 166.06146954110423
     }
   }
 }
