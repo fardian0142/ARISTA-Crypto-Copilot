@@ -5,19 +5,19 @@ export async function updateSignalStatus(signal) {
     const analysis = await analyze(signal.symbol, signal.timeframe);
 
     if (!analysis || !Number.isFinite(analysis.current_price)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
     }
 
     const price = analysis.current_price;
     const { direction, entry, stop, tp1, tp2, tp3 } = signal;
 
     if (!Number.isFinite(entry) || !Number.isFinite(stop) || !Number.isFinite(tp1)) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
     }
 
     const risk = Math.abs(entry - stop);
     if (risk <= 0) {
-      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
     }
 
     const isBull = direction === "bullish";
@@ -30,7 +30,7 @@ export async function updateSignalStatus(signal) {
     }
 
     if (!isActivated) {
-      return { status: "pending", maxR: 0, activated: false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
+      return { status: "pending", maxR: 0, activated: false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
     }
 
     const sentTime = signal.sentAt ? new Date(signal.sentAt).getTime() : 0;
@@ -50,6 +50,7 @@ export async function updateSignalStatus(signal) {
     let tp1Index = -1;
     let tp2Index = -1;
     let tp3Index = -1;
+    let exitPrice = null;
 
     for (let i = 0; i < signalCandles.length; i++) {
       const candle = signalCandles[i];
@@ -59,6 +60,7 @@ export async function updateSignalStatus(signal) {
         if (Number.isFinite(candle.low) && candle.low <= stop && stopIndex === -1) {
           stopHit = true;
           stopIndex = i;
+          exitPrice = Math.min(stop, candle.open);
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) {
           tp3Hit = true;
@@ -76,6 +78,7 @@ export async function updateSignalStatus(signal) {
         if (Number.isFinite(candle.high) && candle.high >= stop && stopIndex === -1) {
           stopHit = true;
           stopIndex = i;
+          exitPrice = Math.max(stop, candle.open);
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) {
           tp3Hit = true;
@@ -96,6 +99,7 @@ export async function updateSignalStatus(signal) {
       if (price <= stop && stopIndex === -1) {
         stopHit = true;
         stopIndex = signalCandles.length;
+        exitPrice = stop;
       }
       if (Number.isFinite(tp3) && price >= tp3 && tp3Index === -1) {
         tp3Hit = true;
@@ -111,6 +115,7 @@ export async function updateSignalStatus(signal) {
       if (price >= stop && stopIndex === -1) {
         stopHit = true;
         stopIndex = signalCandles.length;
+        exitPrice = stop;
       }
       if (Number.isFinite(tp3) && price <= tp3 && tp3Index === -1) {
         tp3Hit = true;
@@ -152,10 +157,11 @@ export async function updateSignalStatus(signal) {
       events: events,
       tp1Reached: tp1Reached,
       tp2Reached: tp2Reached,
-      tp3Reached: tp3Reached
+      tp3Reached: tp3Reached,
+      exitPrice: exitPrice
     };
   } catch (e) {
-    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false };
+    return { status: signal.status || "active", maxR: signal.maxR || 0, activated: signal.activated || false, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
   }
 }
 
