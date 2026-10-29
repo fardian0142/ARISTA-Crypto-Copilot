@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T03:01:30.381Z",
+  "lastUpdated": "2026-10-29T03:31:37.415Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,52 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "RLSUSDT:2h": {
-      "sentAt": "2026-10-28T15:31:21.801Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.002495944557400885,
-      "stop": 0.0018989518968533514
-    },
-    "LABUSDT:15m": {
-      "sentAt": "2026-10-28T15:31:23.601Z",
-      "symbol": "LABUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.04596,
-      "stop": 0.047729262,
-      "closedAt": "2026-10-28T19:00:45.865Z"
-    },
-    "ZECUSDT:30m": {
-      "sentAt": "2026-10-28T15:31:25.384Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1275.74,
-      "stop": 1308.0811890618183
-    },
-    "ENAUSDT:2h": {
-      "sentAt": "2026-10-28T15:31:27.203Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1976520964733747,
-      "stop": 0.1800995865426798
-    },
-    "INITUSDT:15m": {
-      "sentAt": "2026-10-28T15:31:28.979Z",
-      "symbol": "INITUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.19215168735981691,
-      "stop": 0.16790156320091537
     },
     "BTCUSDT:2h": {
       "sentAt": "2026-10-28T18:31:16.166Z",
@@ -662,6 +616,42 @@
       "score": 14,
       "entry": 57.96,
       "stop": 55.03086920884592
+    },
+    "BTCUSDT:1h": {
+      "sentAt": "2026-10-29T03:31:30.710Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 79744.305,
+      "stop": 78548.2017275382
+    },
+    "BNBUSDT:30m": {
+      "sentAt": "2026-10-29T03:31:32.438Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 748.0089800000001,
+      "stop": 734.8645941824154
+    },
+    "FETUSDT:1h": {
+      "sentAt": "2026-10-29T03:31:34.181Z",
+      "symbol": "FETUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1763904081195743,
+      "stop": 0.165925656288755
+    },
+    "CELOUSDT:1h": {
+      "sentAt": "2026-10-29T03:31:35.913Z",
+      "symbol": "CELOUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07864049883223359,
+      "stop": 0.07446643691261723
     }
   }
 }
