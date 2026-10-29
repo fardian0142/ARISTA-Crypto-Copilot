@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T05:01:22.549Z",
+  "lastUpdated": "2026-10-29T05:31:17.037Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -715,6 +715,15 @@
       "score": 14,
       "entry": 0.07812331510999249,
       "stop": 0.07434579238574648
+    },
+    "SNXXUSDT:15m": {
+      "sentAt": "2026-10-29T05:31:15.534Z",
+      "symbol": "SNXXUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 9.777534,
+      "stop": 10.12574617547933
     }
   }
 }
