@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T08:17:36.672Z",
+  "lastUpdated": "2026-10-29T08:31:12.122Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -621,6 +621,15 @@
       "score": 14,
       "entry": 0.038195,
       "stop": 0.036316980003097375
+    },
+    "DGAIUSDT:15m": {
+      "sentAt": "2026-10-29T08:31:10.619Z",
+      "symbol": "DGAIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.7923,
+      "stop": 0.8000627893455792
     }
   }
 }
