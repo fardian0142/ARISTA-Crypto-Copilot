@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T08:31:12.122Z",
+  "lastUpdated": "2026-10-29T09:01:20.622Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,51 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "SATSUSDT:2h": {
-      "sentAt": "2026-10-28T20:31:55.386Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.0195734731845453e-8,
-      "stop": 9.827994006376631e-9
-    },
-    "MEWUSDT:2h": {
-      "sentAt": "2026-10-28T20:31:57.149Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.000443,
-      "stop": 0.00042978434092658563
-    },
-    "ACUUSDT:15m": {
-      "sentAt": "2026-10-28T20:31:58.916Z",
-      "symbol": "ACUUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.12949166911376034,
-      "stop": 0.12685713236959856
-    },
-    "SUIUSDT:1h": {
-      "sentAt": "2026-10-28T20:32:00.663Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9445,
-      "stop": 0.9069294497573888
-    },
-    "AVAXUSDT:2h": {
-      "sentAt": "2026-10-28T20:32:02.405Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.940000000000001,
-      "stop": 8.628520208413292
     },
     "MONUSDT:30m": {
       "sentAt": "2026-10-28T21:05:28.325Z",
@@ -630,6 +585,24 @@
       "score": 14,
       "entry": 0.7923,
       "stop": 0.8000627893455792
+    },
+    "CPUSDT:1h": {
+      "sentAt": "2026-10-29T09:01:17.342Z",
+      "symbol": "CPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008656,
+      "stop": 0.008385322279072247
+    },
+    "BSBUSDT:30m": {
+      "sentAt": "2026-10-29T09:01:19.120Z",
+      "symbol": "BSBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.10043663573576934,
+      "stop": 0.10419156113241704
     }
   }
 }
