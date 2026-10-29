@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T03:31:37.415Z",
+  "lastUpdated": "2026-10-29T04:01:32.432Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -652,6 +652,33 @@
       "score": 14,
       "entry": 0.07864049883223359,
       "stop": 0.07446643691261723
+    },
+    "IRYSUSDT:30m": {
+      "sentAt": "2026-10-29T04:01:27.495Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.024455,
+      "stop": 0.021465968161867233
+    },
+    "ATHUSDT:2h": {
+      "sentAt": "2026-10-29T04:01:29.217Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0056833026680491025,
+      "stop": 0.005231838085363557
+    },
+    "INITUSDT:30m": {
+      "sentAt": "2026-10-29T04:01:30.930Z",
+      "symbol": "INITUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2134444616815406,
+      "stop": 0.24769527370328137
     }
   }
 }
