@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T09:31:17.449Z",
+  "lastUpdated": "2026-10-29T10:01:28.540Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,24 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "ZORAUSDT:30m": {
-      "sentAt": "2026-10-28T22:01:15.142Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.006493716580792627,
-      "stop": 0.006673310137195526
-    },
-    "MUBUSDT:15m": {
-      "sentAt": "2026-10-28T22:01:16.909Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 967.96,
-      "stop": 989.0549617942145
     },
     "PIUSDT:1h": {
       "sentAt": "2026-10-28T23:31:07.178Z",
@@ -522,6 +504,15 @@
       "score": 14,
       "entry": 0.10043663573576934,
       "stop": 0.10419156113241704
+    },
+    "INJUSDT:15m": {
+      "sentAt": "2026-10-29T10:01:27.037Z",
+      "symbol": "INJUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.774594839490122,
+      "stop": 7.620450687899477
     }
   }
 }
