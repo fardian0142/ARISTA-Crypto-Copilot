@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T19:31:21.869Z",
+  "lastUpdated": "2026-10-29T20:01:11.127Z",
   "signals": {
-    "XAUTUSDT:2h": {
-      "sentAt": "2026-10-29T07:31:23.440Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4029.14713953114,
-      "stop": 3984.233687723686
-    },
     "AEONUSDT:15m": {
       "sentAt": "2026-10-29T08:01:18.892Z",
       "symbol": "AEONUSDT",
@@ -810,6 +801,15 @@
       "score": 14,
       "entry": 92.21,
       "stop": 97.04488559810179
+    },
+    "OLUSDT:15m": {
+      "sentAt": "2026-10-29T20:01:09.623Z",
+      "symbol": "OLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0074065,
+      "stop": 0.007688456553213771
     }
   }
 }
