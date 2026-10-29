@@ -1,73 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T01:01:27.437Z",
+  "lastUpdated": "2026-10-29T01:31:28.706Z",
   "signals": {
-    "PONSUSDT:15m": {
-      "sentAt": "2026-10-28T13:01:39.291Z",
-      "symbol": "PONSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.2861573977615837,
-      "stop": 0.29648258102178404
-    },
-    "PEPEUSDT:15m": {
-      "sentAt": "2026-10-28T13:01:41.110Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.000004900182725585691,
-      "stop": 0.000005044931176061324,
-      "closedAt": "2026-10-28T20:31:08.323Z"
-    },
-    "ADAUSDT:1h": {
-      "sentAt": "2026-10-28T13:01:42.931Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2043,
-      "stop": 0.19885771928020043,
-      "closedAt": "2026-10-28T20:30:54.441Z"
-    },
-    "ADAUSDT:30m": {
-      "sentAt": "2026-10-28T13:01:42.931Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2037258,
-      "stop": 0.19956095941613905
-    },
-    "ORDERUSDT:15m": {
-      "sentAt": "2026-10-28T13:31:15.021Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.038635,
-      "stop": 0.036554420768510315,
-      "closedAt": "2026-10-28T17:30:39.804Z"
-    },
-    "MERLUSDT:1h": {
-      "sentAt": "2026-10-28T13:31:16.734Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026985,
-      "stop": 0.02588762431665066
-    },
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-10-28T13:31:18.444Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.13045,
-      "stop": 0.1326131093714892,
-      "closedAt": "2026-10-28T19:00:42.436Z"
-    },
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-28T14:01:20.466Z",
       "symbol": "BRETTUSDT",
@@ -569,6 +502,24 @@
       "score": 14,
       "entry": 0.1336,
       "stop": 0.12628408002242864
+    },
+    "SATSUSDT:1h": {
+      "sentAt": "2026-10-29T01:31:25.483Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0180736734110428e-8,
+      "stop": 9.804451899211233e-9
+    },
+    "RAVEUSDT:2h": {
+      "sentAt": "2026-10-29T01:31:27.204Z",
+      "symbol": "RAVEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1479,
+      "stop": 0.1387577781280478
     }
   }
 }
