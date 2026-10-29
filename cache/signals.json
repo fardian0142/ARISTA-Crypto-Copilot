@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T10:01:28.540Z",
+  "lastUpdated": "2026-10-29T10:31:16.182Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -513,6 +513,15 @@
       "score": 14,
       "entry": 7.774594839490122,
       "stop": 7.620450687899477
+    },
+    "SPCXBUSDT:15m": {
+      "sentAt": "2026-10-29T10:31:14.680Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 143.85,
+      "stop": 143.04600581823084
     }
   }
 }
