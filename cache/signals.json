@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T04:01:32.432Z",
+  "lastUpdated": "2026-10-29T04:31:26.914Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -679,6 +679,15 @@
       "score": 14,
       "entry": 0.2134444616815406,
       "stop": 0.24769527370328137
+    },
+    "BASEDUSDT:1h": {
+      "sentAt": "2026-10-29T04:31:25.411Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05152064,
+      "stop": 0.04905295379775974
     }
   }
 }
