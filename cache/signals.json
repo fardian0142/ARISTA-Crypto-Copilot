@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T14:31:15.852Z",
+  "lastUpdated": "2026-10-29T14:45:03.612Z",
   "signals": {
-    "XRPUSDT:2h": {
-      "sentAt": "2026-10-29T02:31:28.556Z",
-      "symbol": "XRPUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.2988825403319557,
-      "stop": 1.2420104262003169
-    },
-    "PIPPINUSDT:1h": {
-      "sentAt": "2026-10-29T02:31:30.241Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.015580792734542617,
-      "stop": 0.01501576618183845
-    },
-    "BSBUSDT:1h": {
-      "sentAt": "2026-10-29T02:31:31.964Z",
-      "symbol": "BSBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09843610164823162,
-      "stop": 0.09259927394120276
-    },
-    "QNTUSDT:2h": {
-      "sentAt": "2026-10-29T02:31:33.658Z",
-      "symbol": "QNTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 194.56245612313126,
-      "stop": 175.129599120491
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-29T03:01:21.985Z",
       "symbol": "SATSUSDT",
@@ -684,6 +648,24 @@
       "score": 14,
       "entry": 195.53767718247528,
       "stop": 190.33424064653454
+    },
+    "ZECUSDT:1h": {
+      "sentAt": "2026-10-29T14:45:00.158Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1309.063403652515,
+      "stop": 1370.9571167677498
+    },
+    "UBUSDT:15m": {
+      "sentAt": "2026-10-29T14:45:02.109Z",
+      "symbol": "UBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11366,
+      "stop": 0.11085852947353833
     }
   }
 }
