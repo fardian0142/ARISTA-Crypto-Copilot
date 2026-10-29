@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T15:01:25.480Z",
+  "lastUpdated": "2026-10-29T15:05:11.386Z",
   "signals": {
-    "USELESSUSDT:2h": {
-      "sentAt": "2026-10-29T03:01:27.152Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15689519656081158,
-      "stop": 0.13215288170848866
-    },
-    "LTCUSDT:2h": {
-      "sentAt": "2026-10-29T03:01:28.874Z",
-      "symbol": "LTCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 57.96,
-      "stop": 55.03086920884592
-    },
     "BTCUSDT:1h": {
       "sentAt": "2026-10-29T03:31:30.710Z",
       "symbol": "BTCUSDT",
@@ -684,6 +666,24 @@
       "score": 14,
       "entry": 0.0745313263034666,
       "stop": 0.07297865
+    },
+    "AKEUSDT:15m": {
+      "sentAt": "2026-10-29T15:05:08.146Z",
+      "symbol": "AKEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.021025852034122317,
+      "stop": 0.019992485470554884
+    },
+    "CTUSDT:15m": {
+      "sentAt": "2026-10-29T15:05:09.884Z",
+      "symbol": "CTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13932259187322016,
+      "stop": 0.1337672009055703
     }
   }
 }
