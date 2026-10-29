@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T11:31:23.027Z",
+  "lastUpdated": "2026-10-29T12:01:21.681Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-10-29T02:01:55.584Z",
@@ -9,24 +9,6 @@
       "score": 14,
       "entry": 0.004749,
       "stop": 0.0044441666415688036
-    },
-    "MONUSDT:15m": {
-      "sentAt": "2026-10-29T00:01:15.247Z",
-      "symbol": "MONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.021365847986649335,
-      "stop": 0.020721085809647606
-    },
-    "COREUSDT:2h": {
-      "sentAt": "2026-10-29T00:01:17.013Z",
-      "symbol": "COREUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01793,
-      "stop": 0.016562542206728346
     },
     "IRYSUSDT:15m": {
       "sentAt": "2026-10-29T00:31:19.110Z",
@@ -666,6 +648,42 @@
       "score": 14,
       "entry": 0.16773948551904014,
       "stop": 0.1626593477755423
+    },
+    "BTCUSDT:15m": {
+      "sentAt": "2026-10-29T12:01:14.889Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80212,
+      "stop": 79922.93049054437
+    },
+    "AAVEUSDT:2h": {
+      "sentAt": "2026-10-29T12:01:16.648Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 132.40131404748806,
+      "stop": 127.32865408219396
+    },
+    "ETHWUSDT:15m": {
+      "sentAt": "2026-10-29T12:01:18.444Z",
+      "symbol": "ETHWUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2275,
+      "stop": 0.22474807783084222
+    },
+    "TAOUSDT:30m": {
+      "sentAt": "2026-10-29T12:01:20.177Z",
+      "symbol": "TAOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 250.55,
+      "stop": 246.92436789915777
     }
   }
 }
