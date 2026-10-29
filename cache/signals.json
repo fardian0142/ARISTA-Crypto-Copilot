@@ -1,35 +1,6 @@
 {
-  "lastUpdated": "2026-10-28T23:31:08.681Z",
+  "lastUpdated": "2026-10-29T00:01:18.515Z",
   "signals": {
-    "XDPUSDT:15m": {
-      "sentAt": "2026-10-28T11:31:10.427Z",
-      "symbol": "XDPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.019125,
-      "stop": 0.019263811999999998
-    },
-    "AAVEUSDT:30m": {
-      "sentAt": "2026-10-28T11:31:12.280Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 134.86,
-      "stop": 136.646952,
-      "closedAt": "2026-10-28T13:01:03.081Z"
-    },
-    "BILLUSDT:30m": {
-      "sentAt": "2026-10-28T12:01:11.816Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006061620764179652,
-      "stop": 0.005966788000000001,
-      "closedAt": "2026-10-28T16:00:37.864Z"
-    },
     "ZECUSDT:15m": {
       "sentAt": "2026-10-28T12:31:24.367Z",
       "symbol": "ZECUSDT",
@@ -565,6 +536,24 @@
       "score": 14,
       "entry": 0.07644,
       "stop": 0.0750242680444422
+    },
+    "MONUSDT:15m": {
+      "sentAt": "2026-10-29T00:01:15.247Z",
+      "symbol": "MONUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.021365847986649335,
+      "stop": 0.020721085809647606
+    },
+    "COREUSDT:2h": {
+      "sentAt": "2026-10-29T00:01:17.013Z",
+      "symbol": "COREUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01793,
+      "stop": 0.016562542206728346
     }
   }
 }
