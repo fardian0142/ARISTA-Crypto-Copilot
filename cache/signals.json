@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T15:05:11.386Z",
+  "lastUpdated": "2026-10-29T15:31:35.761Z",
   "signals": {
-    "BTCUSDT:1h": {
-      "sentAt": "2026-10-29T03:31:30.710Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 79744.305,
-      "stop": 78548.2017275382
-    },
-    "BNBUSDT:30m": {
-      "sentAt": "2026-10-29T03:31:32.438Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 748.0089800000001,
-      "stop": 734.8645941824154
-    },
-    "FETUSDT:1h": {
-      "sentAt": "2026-10-29T03:31:34.181Z",
-      "symbol": "FETUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1763904081195743,
-      "stop": 0.165925656288755
-    },
     "CELOUSDT:1h": {
       "sentAt": "2026-10-29T03:31:35.913Z",
       "symbol": "CELOUSDT",
@@ -684,6 +657,51 @@
       "score": 14,
       "entry": 0.13932259187322016,
       "stop": 0.1337672009055703
+    },
+    "CPUSDT:15m": {
+      "sentAt": "2026-10-29T15:31:26.919Z",
+      "symbol": "CPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.008738373103899105,
+      "stop": 0.00849976354357782
+    },
+    "COREUSDT:15m": {
+      "sentAt": "2026-10-29T15:31:28.687Z",
+      "symbol": "COREUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.017228696454979528,
+      "stop": 0.016682168178717663
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-10-29T15:31:30.475Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.015857067053296616,
+      "stop": 0.0155236
+    },
+    "ADAUSDT:30m": {
+      "sentAt": "2026-10-29T15:31:32.483Z",
+      "symbol": "ADAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.20452125922790723,
+      "stop": 0.2107338626578056
+    },
+    "UPUSDT:15m": {
+      "sentAt": "2026-10-29T15:31:34.258Z",
+      "symbol": "UPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13864117577974097,
+      "stop": 0.1322201730018503
     }
   }
 }
