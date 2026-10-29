@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-29T22:00:59.790Z",
+  "lastUpdated": "2026-10-29T22:31:13.765Z",
   "signals": {
-    "INJUSDT:15m": {
-      "sentAt": "2026-10-29T10:01:27.037Z",
-      "symbol": "INJUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.774594839490122,
-      "stop": 7.620450687899477
-    },
     "SPCXBUSDT:15m": {
       "sentAt": "2026-10-29T10:31:14.680Z",
       "symbol": "SPCXBUSDT",
