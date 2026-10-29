@@ -328,6 +328,9 @@ export async function analyze(symbol, timeframe) {
     result.htf2 = hasRealHtf2 ? snapshot.htf2 : null;
     result.volume_ratio = Math.round(currentVolumeRatio * 100) / 100;
 
+    const htfTrend = htfStructure.trend || "neutral";
+    const htf2Trend = htf2Structure.trend || "neutral";
+
     const event = detectBosChoch(candles, swings, structure);
     result.bos_choch = event || null;
 
@@ -415,6 +418,35 @@ export async function analyze(symbol, timeframe) {
       return fail(
         "جهت Event، Sweep و Displacement هماهنگ نیست"
       );
+    }
+
+    if (direction === "bullish" && htfTrend === "bearish") {
+      return fail(
+        "مخالفت با تایم‌فریم بالاتر (HTF)",
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی است. ورود Long در روند نزولی ممنوع است (تله گاوی)."
+      );
+    }
+
+    if (direction === "bearish" && htfTrend === "bullish") {
+      return fail(
+        "مخالفت با تایم‌فریم بالاتر (HTF)",
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی است. ورود Short در روند صعودی ممنوع است (تله خرسی)."
+      );
+    }
+
+    if (hasRealHtf2) {
+      if (direction === "bullish" && htf2Trend === "bearish") {
+        return fail(
+          "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی است. ورود Long ممنوع است."
+        );
+      }
+      if (direction === "bearish" && htf2Trend === "bullish") {
+        return fail(
+          "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی است. ورود Short ممنوع است."
+        );
+      }
     }
 
     if (event.type === "BOS") {
@@ -518,17 +550,12 @@ export async function analyze(symbol, timeframe) {
       return fail("فیلتر روند: " + smcTrendFilter.reason);
     }
 
-    const rangeSetupActive =
-      result.range_setups && result.range_setups.active;
-
-    const isRangeScore14 = false;
-
     const allowDir =
       direction === "bullish"
         ? smcTrendFilter.allowLong
         : smcTrendFilter.allowShort;
 
-    if (!allowDir && !isRangeScore14) {
+    if (!allowDir) {
       return fail(
         "فیلتر روند: ورود " + direction + " مسدود است",
         "فیلتر روند: " + smcTrendFilter.reason
@@ -569,9 +596,6 @@ export async function analyze(symbol, timeframe) {
     if (displacement.index < sweep.index) {
       return fail("Displacement باید بعد از Liquidity Sweep شکل گرفته باشد");
     }
-
-    const htfTrend = htfStructure.trend || "neutral";
-    const htf2Trend = htf2Structure.trend || "neutral";
 
     if (profile.strictHTF) {
       if (
