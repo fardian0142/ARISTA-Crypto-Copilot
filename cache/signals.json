@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T21:02:12.056Z",
+  "lastUpdated": "2026-10-29T21:31:54.383Z",
   "signals": {
     "INJUSDT:15m": {
       "sentAt": "2026-10-29T10:01:27.037Z",
@@ -801,6 +801,15 @@
       "score": 14,
       "entry": 158.3029,
       "stop": 166.06146954110423
+    },
+    "CCUSDT:1h": {
+      "sentAt": "2026-10-29T21:31:52.880Z",
+      "symbol": "CCUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09600500000000001,
+      "stop": 0.09040660890810821
     }
   }
 }
