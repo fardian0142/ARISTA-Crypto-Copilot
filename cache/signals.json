@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T11:01:43.506Z",
+  "lastUpdated": "2026-10-30T11:31:23.129Z",
   "signals": {
     "SOONUSDT:15m": {
       "sentAt": "2026-10-30T02:01:11.962Z",
@@ -225,6 +225,24 @@
       "score": 14,
       "entry": 289.3,
       "stop": 304.54217971110677
+    },
+    "MEWUSDT:30m": {
+      "sentAt": "2026-10-30T11:31:19.775Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0004206,
+      "stop": 0.0004054545802529253
+    },
+    "FLOCKUSDT:15m": {
+      "sentAt": "2026-10-30T11:31:21.627Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03705,
+      "stop": 0.03607787502161157
     }
   }
 }
