@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T13:01:24.073Z",
+  "lastUpdated": "2026-10-30T13:31:16.665Z",
   "signals": {
     "SOONUSDT:15m": {
       "sentAt": "2026-10-30T02:01:11.962Z",
@@ -288,6 +288,24 @@
       "score": 14,
       "entry": 0.1938,
       "stop": 0.18289060324420164
+    },
+    "AKEUSDT:15m": {
+      "sentAt": "2026-10-30T13:31:13.424Z",
+      "symbol": "AKEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01896030220456833,
+      "stop": 0.01798355568165477
+    },
+    "DASHUSDT:15m": {
+      "sentAt": "2026-10-30T13:31:15.164Z",
+      "symbol": "DASHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 49.07252286579439,
+      "stop": 47.41055095861154
     }
   }
 }
