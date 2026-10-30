@@ -1,78 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T08:31:18.323Z",
+  "lastUpdated": "2026-10-30T09:01:22.211Z",
   "signals": {
-    "AKEUSDT:30m": {
-      "sentAt": "2026-10-29T20:31:47.558Z",
-      "symbol": "AKEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.020625,
-      "stop": 0.0194151517098992
-    },
-    "SUIUSDT:1h": {
-      "sentAt": "2026-10-29T20:31:49.384Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9233436061914785,
-      "stop": 0.8751456700608679
-    },
-    "SUIUSDT:15m": {
-      "sentAt": "2026-10-29T20:31:49.384Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9176662762756693,
-      "stop": 0.8954837408880765
-    },
-    "SUIUSDT:30m": {
-      "sentAt": "2026-10-29T20:31:49.384Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9202371656858791,
-      "stop": 0.8906916736722923
-    },
-    "ADAUSDT:15m": {
-      "sentAt": "2026-10-29T20:31:51.157Z",
-      "symbol": "ADAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.19986868272886607,
-      "stop": 0.1957174928446237
-    },
-    "LINKUSDT:1h": {
-      "sentAt": "2026-10-29T20:31:52.930Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.516947337553933,
-      "stop": 11.048947588900477
-    },
-    "DGAIUSDT:30m": {
-      "sentAt": "2026-10-29T20:31:54.678Z",
-      "symbol": "DGAIUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.7868,
-      "stop": 0.7615969827294543
-    },
-    "ZROUSDT:15m": {
-      "sentAt": "2026-10-29T20:31:56.547Z",
-      "symbol": "ZROUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.6624540553392866,
-      "stop": 1.576613890433666
-    },
     "SKHYBUSDT:30m": {
       "sentAt": "2026-10-29T21:02:10.553Z",
       "symbol": "SKHYBUSDT",
@@ -234,6 +162,15 @@
       "score": 14,
       "entry": 0.022113892577525083,
       "stop": 0.02091558
+    },
+    "SOONUSDT:30m": {
+      "sentAt": "2026-10-30T09:01:20.708Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3136884997412995,
+      "stop": 0.2960392875621466
     }
   }
 }
