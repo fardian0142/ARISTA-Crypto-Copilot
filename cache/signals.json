@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T19:01:28.243Z",
+  "lastUpdated": "2026-10-30T19:31:19.393Z",
   "signals": {
-    "MERLUSDT:15m": {
-      "sentAt": "2026-10-30T07:31:18.644Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.027703631380208694,
-      "stop": 0.029279775855652165
-    },
     "XRPUSDT:15m": {
       "sentAt": "2026-10-30T07:31:20.402Z",
       "symbol": "XRPUSDT",
