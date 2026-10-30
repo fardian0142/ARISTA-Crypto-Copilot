@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T14:31:27.395Z",
+  "lastUpdated": "2026-10-30T14:54:41.165Z",
   "signals": {
     "XPLUSDT:15m": {
       "sentAt": "2026-10-30T03:31:23.754Z",
@@ -333,6 +333,33 @@
       "score": 14,
       "entry": 0.3903877281992595,
       "stop": 0.38003051286243195
+    },
+    "GOOGLBUSDT:15m": {
+      "sentAt": "2026-10-30T14:54:36.150Z",
+      "symbol": "GOOGLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 280.90999999999997,
+      "stop": 276.2925
+    },
+    "KORUBUSDT:15m": {
+      "sentAt": "2026-10-30T14:54:37.912Z",
+      "symbol": "KORUBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 10.825,
+      "stop": 10.342371306076814
+    },
+    "PYTHUSDT:15m": {
+      "sentAt": "2026-10-30T14:54:39.663Z",
+      "symbol": "PYTHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0611,
+      "stop": 0.0591445613195834
     }
   }
 }
