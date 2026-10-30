@@ -141,6 +141,7 @@ function logSummary(summary) {
   console.log("⏭  Skipped (cached)     : " + summary.skipped);
   console.log("🔎 Analyzed             : " + summary.analyzed);
   console.log("✨ Signals detected     : " + summary.signals);
+  console.log("🛡  HTF rejected        : " + summary.htfRejected);
   console.log("📤 Sent (after merge)   : " + summary.sent);
   console.log("🔄 Tracked (updated)    : " + summary.tracked);
   console.log("🚫 Missed/Invalidated   : " + summary.missed);
@@ -176,6 +177,59 @@ function isSetupValid(active, currentPrice) {
   if (!isBullish && currentPrice < zoneLow - tolerance) return false;
 
   return true;
+}
+
+function evaluateHTFGate(analysis, active) {
+  const direction = active && active.direction;
+
+  if (direction !== "bullish" && direction !== "bearish") {
+    return { pass: false, reason: "جهت Range Setup معتبر نیست" };
+  }
+
+  const htfTrend = analysis.htf_structure;
+  const htf2Trend = analysis.htf2_structure;
+  const emaTrend = analysis.ema_trend;
+
+  if (direction === "bullish" && htfTrend !== "bullish") {
+    return {
+      pass: false,
+      reason: "HTF (" + (analysis.htf || "HTF") + ") صعودی نیست — Long ممنوع"
+    };
+  }
+
+  if (direction === "bearish" && htfTrend !== "bearish") {
+    return {
+      pass: false,
+      reason: "HTF (" + (analysis.htf || "HTF") + ") نزولی نیست — Short ممنوع"
+    };
+  }
+
+  if (
+    analysis.htf2 &&
+    htf2Trend &&
+    htf2Trend !== "neutral" &&
+    htf2Trend !== direction
+  ) {
+    return {
+      pass: false,
+      reason: "HTF2 (" + analysis.htf2 + ") با جهت Range مخالف است"
+    };
+  }
+
+  if (
+    emaTrend &&
+    emaTrend !== "neutral" &&
+    emaTrend !== direction &&
+    Number.isFinite(analysis.ema_distance_atr) &&
+    analysis.ema_distance_atr > 1.0
+  ) {
+    return {
+      pass: false,
+      reason: "EMA خلاف جهت Range Setup است"
+    };
+  }
+
+  return { pass: true, reason: null };
 }
 
 function selectSignalForSymbol(signalsByTF) {
@@ -299,6 +353,7 @@ async function main() {
     skipped: 0,
     analyzed: 0,
     signals: 0,
+    htfRejected: 0,
     sent: 0,
     tracked: 0,
     missed: 0,
@@ -508,6 +563,17 @@ async function main() {
       return { symbol, timeframe, status: "no_signal" };
     }
 
+    const htfGate = evaluateHTFGate(analysis, active);
+
+    if (!htfGate.pass) {
+      return {
+        symbol,
+        timeframe,
+        status: "htf_rejected",
+        reason: htfGate.reason
+      };
+    }
+
     const currentPrice = analysis.current_price;
     const isValid = isSetupValid(active, currentPrice);
 
@@ -536,6 +602,10 @@ async function main() {
 
     if (result.status === "skipped") {
       summary.skipped++;
+    } else if (result.status === "htf_rejected") {
+      summary.analyzed++;
+      summary.htfRejected++;
+      console.log("   🛡 " + result.symbol + " [" + result.timeframe + "] — " + result.reason);
     } else if (result.status === "missed") {
       summary.analyzed++;
       summary.missed++;
@@ -564,6 +634,8 @@ async function main() {
       " skipped, " +
       summary.signals +
       " raw signal(s), " +
+      summary.htfRejected +
+      " HTF-rejected, " +
       summary.missed +
       " missed/invalidated"
   );
