@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T18:31:29.107Z",
+  "lastUpdated": "2026-10-30T19:01:28.243Z",
   "signals": {
-    "TRXUSDT:1h": {
-      "sentAt": "2026-10-30T07:01:23.691Z",
-      "symbol": "TRXUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.33323685367945666,
-      "stop": 0.3138939022895953
-    },
-    "CROUSDT:15m": {
-      "sentAt": "2026-10-30T07:01:25.454Z",
-      "symbol": "CROUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05131,
-      "stop": 0.0504714
-    },
     "MERLUSDT:15m": {
       "sentAt": "2026-10-30T07:31:18.644Z",
       "symbol": "MERLUSDT",
