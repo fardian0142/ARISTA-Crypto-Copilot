@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T20:31:21.053Z",
+  "lastUpdated": "2026-10-30T21:01:22.262Z",
   "signals": {
-    "SOONUSDT:30m": {
-      "sentAt": "2026-10-30T09:01:20.708Z",
-      "symbol": "SOONUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3136884997412995,
-      "stop": 0.2960392875621466
-    },
     "AZTECUSDT:15m": {
       "sentAt": "2026-10-30T09:31:16.449Z",
       "symbol": "AZTECUSDT",
