@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T01:31:21.298Z",
+  "lastUpdated": "2026-10-30T02:01:13.466Z",
   "signals": {
-    "PEPEUSDT:30m": {
-      "sentAt": "2026-10-29T13:31:26.707Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0000048871661978530686,
-      "stop": 0.000005170716294915421
-    },
-    "CRCLBUSDT:15m": {
-      "sentAt": "2026-10-29T13:31:28.450Z",
-      "symbol": "CRCLBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 79.83,
-      "stop": 79.29269791103586
-    },
-    "CRCLBUSDT:30m": {
-      "sentAt": "2026-10-29T13:31:28.450Z",
-      "symbol": "CRCLBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 79.73,
-      "stop": 78.80398829398798
-    },
-    "ARBUSDT:1h": {
-      "sentAt": "2026-10-29T13:31:30.194Z",
-      "symbol": "ARBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.16994492441440737,
-      "stop": 0.16305032393825422
-    },
     "BILLUSDT:15m": {
       "sentAt": "2026-10-29T14:01:22.136Z",
       "symbol": "BILLUSDT",
@@ -549,6 +513,15 @@
       "score": 14,
       "entry": 0.09600500000000001,
       "stop": 0.09040660890810821
+    },
+    "SOONUSDT:15m": {
+      "sentAt": "2026-10-30T02:01:11.962Z",
+      "symbol": "SOONUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3117,
+      "stop": 0.29552787323125074
     }
   }
 }
