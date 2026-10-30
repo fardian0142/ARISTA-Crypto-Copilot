@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T20:01:20.219Z",
+  "lastUpdated": "2026-10-30T20:31:21.053Z",
   "signals": {
-    "IRYSUSDT:1h": {
-      "sentAt": "2026-10-30T08:01:24.490Z",
-      "symbol": "IRYSUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.022113892577525083,
-      "stop": 0.02091558
-    },
     "SOONUSDT:30m": {
       "sentAt": "2026-10-30T09:01:20.708Z",
       "symbol": "SOONUSDT",
@@ -351,6 +342,15 @@
       "score": 14,
       "entry": 9.363597765746184e-9,
       "stop": 9.091444530384398e-9
+    },
+    "FETUSDT:15m": {
+      "sentAt": "2026-10-30T20:31:19.550Z",
+      "symbol": "FETUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.16549771104396266,
+      "stop": 0.16024492111455252
     }
   }
 }
