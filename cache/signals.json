@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T22:31:13.571Z",
+  "lastUpdated": "2026-10-30T23:01:18.729Z",
   "signals": {
-    "ZORAUSDT:15m": {
-      "sentAt": "2026-10-30T10:31:15.629Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006089,
-      "stop": 0.005951274932219873
-    },
-    "PUMPUSDT:15m": {
-      "sentAt": "2026-10-30T10:31:17.356Z",
-      "symbol": "PUMPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004054896283302821,
-      "stop": 0.003921597976408422
-    },
     "CROUSDT:30m": {
       "sentAt": "2026-10-30T11:01:40.272Z",
       "symbol": "CROUSDT",
