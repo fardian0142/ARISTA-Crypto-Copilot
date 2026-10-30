@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T06:31:21.295Z",
+  "lastUpdated": "2026-10-30T07:01:26.956Z",
   "signals": {
     "INTCBUSDT:2h": {
       "sentAt": "2026-10-29T19:31:20.367Z",
@@ -180,6 +180,24 @@
       "score": 14,
       "entry": 11.34,
       "stop": 10.783623141834777
+    },
+    "TRXUSDT:1h": {
+      "sentAt": "2026-10-30T07:01:23.691Z",
+      "symbol": "TRXUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.33323685367945666,
+      "stop": 0.3138939022895953
+    },
+    "CROUSDT:15m": {
+      "sentAt": "2026-10-30T07:01:25.454Z",
+      "symbol": "CROUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05131,
+      "stop": 0.0504714
     }
   }
 }
