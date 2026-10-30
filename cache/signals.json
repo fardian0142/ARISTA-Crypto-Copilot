@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T21:31:08.795Z",
+  "lastUpdated": "2026-10-30T22:01:15.263Z",
   "signals": {
-    "AZTECUSDT:15m": {
-      "sentAt": "2026-10-30T09:31:16.449Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.014845,
-      "stop": 0.01443025
-    },
-    "DOSUSDT:15m": {
-      "sentAt": "2026-10-30T09:31:18.172Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.19590000000000002,
-      "stop": 0.1848372194486855
-    },
     "CASHCATUSDT:30m": {
       "sentAt": "2026-10-30T10:01:23.644Z",
       "symbol": "CASHCATUSDT",
