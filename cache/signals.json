@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T07:01:26.956Z",
+  "lastUpdated": "2026-10-30T07:31:27.531Z",
   "signals": {
-    "INTCBUSDT:2h": {
-      "sentAt": "2026-10-29T19:31:20.367Z",
-      "symbol": "INTCBUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 92.21,
-      "stop": 97.04488559810179
-    },
     "OLUSDT:15m": {
       "sentAt": "2026-10-29T20:01:09.623Z",
       "symbol": "OLUSDT",
@@ -198,6 +189,51 @@
       "score": 14,
       "entry": 0.05131,
       "stop": 0.0504714
+    },
+    "MERLUSDT:15m": {
+      "sentAt": "2026-10-30T07:31:18.644Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.027703631380208694,
+      "stop": 0.029279775855652165
+    },
+    "XRPUSDT:15m": {
+      "sentAt": "2026-10-30T07:31:20.402Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.2593378982376595,
+      "stop": 1.2333578697310037
+    },
+    "NEARUSDT:15m": {
+      "sentAt": "2026-10-30T07:31:22.158Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 4.274,
+      "stop": 4.17443
+    },
+    "CTUSDT:15m": {
+      "sentAt": "2026-10-30T07:31:23.906Z",
+      "symbol": "CTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1301,
+      "stop": 0.12507608314479954
+    },
+    "PONSUSDT:15m": {
+      "sentAt": "2026-10-30T07:31:26.027Z",
+      "symbol": "PONSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2393595374371627,
+      "stop": 0.22710330402026638
     }
   }
 }
