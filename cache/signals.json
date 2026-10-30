@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T06:01:18.975Z",
+  "lastUpdated": "2026-10-30T06:31:21.295Z",
   "signals": {
-    "CELOUSDT:15m": {
-      "sentAt": "2026-10-29T18:01:19.806Z",
-      "symbol": "CELOUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07957117213154112,
-      "stop": 0.07721591334613483
-    },
-    "TRIAUSDT:15m": {
-      "sentAt": "2026-10-29T18:31:17.197Z",
-      "symbol": "TRIAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0028725,
-      "stop": 0.002778675067912011
-    },
     "INTCBUSDT:2h": {
       "sentAt": "2026-10-29T19:31:20.367Z",
       "symbol": "INTCBUSDT",
@@ -171,6 +153,33 @@
       "score": 14,
       "entry": 194.09,
       "stop": 185.9611
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-10-30T06:31:16.221Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.013928613554139713,
+      "stop": 0.013498036360330833
+    },
+    "BRETTUSDT:15m": {
+      "sentAt": "2026-10-30T06:31:18.012Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004377,
+      "stop": 0.004245389471511159
+    },
+    "KORUUSDT:15m": {
+      "sentAt": "2026-10-30T06:31:19.793Z",
+      "symbol": "KORUUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 11.34,
+      "stop": 10.783623141834777
     }
   }
 }
