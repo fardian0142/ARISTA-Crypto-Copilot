@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T15:01:18.486Z",
+  "lastUpdated": "2026-10-30T15:31:49.195Z",
   "signals": {
-    "XPLUSDT:15m": {
-      "sentAt": "2026-10-30T03:31:23.754Z",
-      "symbol": "XPLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07580959873957775,
-      "stop": 0.08033000900301608
-    },
     "GRVTUSDT:15m": {
       "sentAt": "2026-10-30T04:31:15.871Z",
       "symbol": "GRVTUSDT",
@@ -396,6 +387,60 @@
       "score": 14,
       "entry": 0.03941,
       "stop": 0.03824460905520976
+    },
+    "BTCUSDT:15m": {
+      "sentAt": "2026-10-30T15:31:38.697Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 77419.9,
+      "stop": 76083.567
+    },
+    "ETHUSDT:15m": {
+      "sentAt": "2026-10-30T15:31:40.544Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2245.4799999999996,
+      "stop": 2194.0481
+    },
+    "ZECUSDT:15m": {
+      "sentAt": "2026-10-30T15:31:42.316Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1245.3204327881526,
+      "stop": 1198.8226229417673
+    },
+    "ATHUSDT:30m": {
+      "sentAt": "2026-10-30T15:31:44.047Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005116,
+      "stop": 0.0050126649999999995
+    },
+    "GOOGLBUSDT:30m": {
+      "sentAt": "2026-10-30T15:31:45.870Z",
+      "symbol": "GOOGLBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 282.35,
+      "stop": 277.5927
+    },
+    "MSTRBUSDT:15m": {
+      "sentAt": "2026-10-30T15:31:47.693Z",
+      "symbol": "MSTRBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 131.70499999999998,
+      "stop": 129.3699
     }
   }
 }
