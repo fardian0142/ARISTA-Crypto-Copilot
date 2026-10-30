@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T15:31:49.195Z",
+  "lastUpdated": "2026-10-30T16:01:22.926Z",
   "signals": {
     "GRVTUSDT:15m": {
       "sentAt": "2026-10-30T04:31:15.871Z",
@@ -441,6 +441,15 @@
       "score": 14,
       "entry": 131.70499999999998,
       "stop": 129.3699
+    },
+    "WLDUSDT:30m": {
+      "sentAt": "2026-10-30T16:01:21.423Z",
+      "symbol": "WLDUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.41192390069225077,
+      "stop": 0.4354435664839231
     }
   }
 }
