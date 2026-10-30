@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T09:01:22.211Z",
+  "lastUpdated": "2026-10-30T09:31:19.674Z",
   "signals": {
-    "SKHYBUSDT:30m": {
-      "sentAt": "2026-10-29T21:02:10.553Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 158.3029,
-      "stop": 166.06146954110423
-    },
     "CCUSDT:1h": {
       "sentAt": "2026-10-29T21:31:52.880Z",
       "symbol": "CCUSDT",
@@ -171,6 +162,24 @@
       "score": 14,
       "entry": 0.3136884997412995,
       "stop": 0.2960392875621466
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-10-30T09:31:16.449Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.014845,
+      "stop": 0.01443025
+    },
+    "DOSUSDT:15m": {
+      "sentAt": "2026-10-30T09:31:18.172Z",
+      "symbol": "DOSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.19590000000000002,
+      "stop": 0.1848372194486855
     }
   }
 }
