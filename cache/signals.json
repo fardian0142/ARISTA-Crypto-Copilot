@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T01:01:15.625Z",
+  "lastUpdated": "2026-10-30T01:31:21.298Z",
   "signals": {
-    "USELESSUSDT:15m": {
-      "sentAt": "2026-10-29T13:01:22.548Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.154155,
-      "stop": 0.15097885293800697
-    },
-    "MOODENGUSDT:30m": {
-      "sentAt": "2026-10-29T13:01:24.433Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0372,
-      "stop": 0.03655849619798853
-    },
-    "NVDABUSDT:15m": {
-      "sentAt": "2026-10-29T13:01:26.181Z",
-      "symbol": "NVDABUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 214.445,
-      "stop": 213.66953590335478
-    },
     "PEPEUSDT:30m": {
       "sentAt": "2026-10-29T13:31:26.707Z",
       "symbol": "PEPEUSDT",
