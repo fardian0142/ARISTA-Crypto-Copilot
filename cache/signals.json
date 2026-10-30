@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T09:31:19.674Z",
+  "lastUpdated": "2026-10-30T10:01:26.903Z",
   "signals": {
-    "CCUSDT:1h": {
-      "sentAt": "2026-10-29T21:31:52.880Z",
-      "symbol": "CCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09600500000000001,
-      "stop": 0.09040660890810821
-    },
     "SOONUSDT:15m": {
       "sentAt": "2026-10-30T02:01:11.962Z",
       "symbol": "SOONUSDT",
@@ -180,6 +171,24 @@
       "score": 14,
       "entry": 0.19590000000000002,
       "stop": 0.1848372194486855
+    },
+    "CASHCATUSDT:30m": {
+      "sentAt": "2026-10-30T10:01:23.644Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09343234115087519,
+      "stop": 0.08838327749374862
+    },
+    "POLUSDT:1h": {
+      "sentAt": "2026-10-30T10:01:25.401Z",
+      "symbol": "POLUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.091435,
+      "stop": 0.09577480718901746
     }
   }
 }
