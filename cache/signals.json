@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T07:31:27.531Z",
+  "lastUpdated": "2026-10-30T08:01:25.993Z",
   "signals": {
-    "OLUSDT:15m": {
-      "sentAt": "2026-10-29T20:01:09.623Z",
-      "symbol": "OLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0074065,
-      "stop": 0.007688456553213771
-    },
     "AKEUSDT:30m": {
       "sentAt": "2026-10-29T20:31:47.558Z",
       "symbol": "AKEUSDT",
@@ -234,6 +225,15 @@
       "score": 14,
       "entry": 0.2393595374371627,
       "stop": 0.22710330402026638
+    },
+    "IRYSUSDT:1h": {
+      "sentAt": "2026-10-30T08:01:24.490Z",
+      "symbol": "IRYSUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.022113892577525083,
+      "stop": 0.02091558
     }
   }
 }
