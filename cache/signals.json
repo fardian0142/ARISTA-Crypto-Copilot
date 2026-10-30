@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T14:01:29.934Z",
+  "lastUpdated": "2026-10-30T14:31:27.395Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-10-30T02:31:18.386Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.006732,
-      "stop": 0.006997697357757923
-    },
     "XPLUSDT:15m": {
       "sentAt": "2026-10-30T03:31:23.754Z",
       "symbol": "XPLUSDT",
@@ -324,6 +315,24 @@
       "score": 14,
       "entry": 898.405,
       "stop": 880.0187
+    },
+    "CTUSDT:30m": {
+      "sentAt": "2026-10-30T14:31:24.145Z",
+      "symbol": "CTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13652923268124817,
+      "stop": 0.12918460036162138
+    },
+    "ONDOUSDT:15m": {
+      "sentAt": "2026-10-30T14:31:25.892Z",
+      "symbol": "ONDOUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3903877281992595,
+      "stop": 0.38003051286243195
     }
   }
 }
