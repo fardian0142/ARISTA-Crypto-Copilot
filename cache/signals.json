@@ -1,69 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T03:01:12.710Z",
+  "lastUpdated": "2026-10-30T03:31:25.257Z",
   "signals": {
-    "ORDERUSDT:30m": {
-      "sentAt": "2026-10-29T15:01:18.739Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03438,
-      "stop": 0.03319086842628755
-    },
-    "ORDERUSDT:15m": {
-      "sentAt": "2026-10-29T15:01:18.739Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.034305,
-      "stop": 0.03353589443363206
-    },
-    "ATHUSDT:15m": {
-      "sentAt": "2026-10-29T15:01:20.481Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005795183887734921,
-      "stop": 0.0056355436590362845
-    },
-    "BRETTUSDT:15m": {
-      "sentAt": "2026-10-29T15:01:22.212Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004661639084763246,
-      "stop": 0.004540863680262521
-    },
-    "HBARUSDT:15m": {
-      "sentAt": "2026-10-29T15:01:23.979Z",
-      "symbol": "HBARUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0745313263034666,
-      "stop": 0.07297865
-    },
-    "AKEUSDT:15m": {
-      "sentAt": "2026-10-29T15:05:08.146Z",
-      "symbol": "AKEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.021025852034122317,
-      "stop": 0.019992485470554884
-    },
-    "CTUSDT:15m": {
-      "sentAt": "2026-10-29T15:05:09.884Z",
-      "symbol": "CTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.13932259187322016,
-      "stop": 0.1337672009055703
-    },
     "CPUSDT:15m": {
       "sentAt": "2026-10-29T15:31:26.919Z",
       "symbol": "CPUSDT",
@@ -459,6 +396,15 @@
       "score": 14,
       "entry": 0.006732,
       "stop": 0.006997697357757923
+    },
+    "XPLUSDT:15m": {
+      "sentAt": "2026-10-30T03:31:23.754Z",
+      "symbol": "XPLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07580959873957775,
+      "stop": 0.08033000900301608
     }
   }
 }
