@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T05:01:11.956Z",
+  "lastUpdated": "2026-10-30T05:31:12.730Z",
   "signals": {
-    "MONUSDT:15m": {
-      "sentAt": "2026-10-29T17:31:09.902Z",
-      "symbol": "MONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.021058924402631102,
-      "stop": 0.020307682838349293
-    },
-    "BNBUSDT:2h": {
-      "sentAt": "2026-10-29T17:31:11.697Z",
-      "symbol": "BNBUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 746.2354782891093,
-      "stop": 772.6965836492195
-    },
     "XRPUSDT:15m": {
       "sentAt": "2026-10-29T17:31:13.430Z",
       "symbol": "XRPUSDT",
