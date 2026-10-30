@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T13:31:16.665Z",
+  "lastUpdated": "2026-10-30T14:01:29.934Z",
   "signals": {
-    "SOONUSDT:15m": {
-      "sentAt": "2026-10-30T02:01:11.962Z",
-      "symbol": "SOONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3117,
-      "stop": 0.29552787323125074
-    },
     "OFCUSDT:15m": {
       "sentAt": "2026-10-30T02:31:18.386Z",
       "symbol": "OFCUSDT",
@@ -306,6 +297,33 @@
       "score": 14,
       "entry": 49.07252286579439,
       "stop": 47.41055095861154
+    },
+    "QNTUSDT:15m": {
+      "sentAt": "2026-10-30T14:01:26.619Z",
+      "symbol": "QNTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 193.97686767074038,
+      "stop": 200.4295166375687
+    },
+    "MUBUSDT:1h": {
+      "sentAt": "2026-10-30T14:01:28.430Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 904.96,
+      "stop": 869.0266819784249
+    },
+    "MUBUSDT:30m": {
+      "sentAt": "2026-10-30T14:01:28.430Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 898.405,
+      "stop": 880.0187
     }
   }
 }
