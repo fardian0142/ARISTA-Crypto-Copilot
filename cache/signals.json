@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T18:01:20.596Z",
+  "lastUpdated": "2026-10-30T18:31:29.107Z",
   "signals": {
-    "PIPPINUSDT:15m": {
-      "sentAt": "2026-10-30T06:31:16.221Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.013928613554139713,
-      "stop": 0.013498036360330833
-    },
-    "BRETTUSDT:15m": {
-      "sentAt": "2026-10-30T06:31:18.012Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004377,
-      "stop": 0.004245389471511159
-    },
-    "KORUUSDT:15m": {
-      "sentAt": "2026-10-30T06:31:19.793Z",
-      "symbol": "KORUUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.34,
-      "stop": 10.783623141834777
-    },
     "TRXUSDT:1h": {
       "sentAt": "2026-10-30T07:01:23.691Z",
       "symbol": "TRXUSDT",
@@ -432,6 +405,15 @@
       "score": 14,
       "entry": 0.41192390069225077,
       "stop": 0.4354435664839231
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-10-30T18:31:27.605Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 9.363597765746184e-9,
+      "stop": 9.091444530384398e-9
     }
   }
 }
