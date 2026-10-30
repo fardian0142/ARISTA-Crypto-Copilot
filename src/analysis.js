@@ -376,13 +376,10 @@ export async function analyze(symbol, timeframe) {
       result.range_setups.active.score === 14
     );
 
-    const hasValidEvent = !!(
-      event &&
-      Number.isFinite(event.index) &&
-      Number.isFinite(event.direction)
-    );
-
-    if (!hasValidEvent && !hasRangeSetup) {
+    if (
+      (!event || !Number.isFinite(event.index) || !Number.isFinite(event.direction)) &&
+      !hasRangeSetup
+    ) {
       result.setup_active = false;
       result.strength = 0;
       result.risk = "HIGH";
@@ -391,1025 +388,500 @@ export async function analyze(symbol, timeframe) {
       return result;
     }
 
-    if (hasValidEvent) {
-      const sweeps = detectLiquiditySweeps(candles, swings);
-      const sweep = selectCausalSweep(sweeps, event);
-      result.sweep = sweep || null;
-
-      if (!sweep || !Number.isFinite(sweep.index)) {
-        return fail(
-          "Liquidity Sweep معتبر قبل از شکست ساختاری شکل نگرفت"
-        );
-      }
-
-      const displacement = findEventDisplacement(
-        candles,
-        currentAtr,
-        event,
-        sweep
-      );
-
-      result.displacement = displacement || null;
-
-      if (!displacement || !Number.isFinite(displacement.index)) {
-        return fail(
-          "Displacement معتبر و مرتبط با Event شکل نگرفت"
-        );
-      }
-
-      const direction = determineDirection(
-        structure,
-        htfStructure,
-        event,
-        sweep,
-        displacement
-      );
-
-      if (direction !== "bullish" && direction !== "bearish") {
-        return fail(
-          "جهت Event، Sweep و Displacement هماهنگ نیست"
-        );
-      }
-
-      if (direction === "bullish" && htfTrend !== "bullish") {
-        return fail(
-          "مخالفت با تایم‌فریم بالاتر (HTF)",
-          "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی نیست. ورود Long بدون تأیید روند ممنوع است."
-        );
-      }
-
-      if (direction === "bearish" && htfTrend !== "bearish") {
-        return fail(
-          "مخالفت با تایم‌فریم بالاتر (HTF)",
-          "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی نیست. ورود Short بدون تأیید روند ممنوع است."
-        );
-      }
-
-      if (hasRealHtf2) {
-        if (direction === "bullish" && htf2Trend !== "bullish") {
-          return fail(
-            "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
-            "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی نیست. ورود Long ممنوع است."
-          );
-        }
-        if (direction === "bearish" && htf2Trend !== "bearish") {
-          return fail(
-            "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
-            "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی نیست. ورود Short ممنوع است."
-          );
-        }
-      }
-
-      if (event.type === "BOS") {
-        const confirmedSwingsForDirection =
-          getConfirmedSwings(swings, candles.length - 1) || {
-            highs: [],
-            lows: []
-          };
-
-        const lastHighs = (confirmedSwingsForDirection.highs || []).slice(-3);
-        const lastLows = (confirmedSwingsForDirection.lows || []).slice(-3);
-
-        let structuralTrend = "neutral";
-
-        if (lastHighs.length >= 2 && lastLows.length >= 2) {
-          const hh =
-            lastHighs[lastHighs.length - 1].price >
-            lastHighs[lastHighs.length - 2].price;
-          const lh =
-            lastHighs[lastHighs.length - 1].price <
-            lastHighs[lastHighs.length - 2].price;
-          const hl =
-            lastLows[lastLows.length - 1].price >
-            lastLows[lastLows.length - 2].price;
-          const ll =
-            lastLows[lastLows.length - 1].price <
-            lastLows[lastLows.length - 2].price;
-
-          if (hh && hl) structuralTrend = "bullish";
-          else if (lh && ll) structuralTrend = "bearish";
-        }
-
-        if (structuralTrend !== "neutral" && structuralTrend !== direction) {
-          return fail(
-            "جهت BOS با ساختار اصلی بازار مخالف است",
-            "ساختار اصلی بازار " +
-              structuralTrend +
-              " است ولی BOS در جهت " +
-              direction +
-              " داده شده."
-          );
-        }
-      }
-
-      if (event.type === "CHoCH") {
-        const eventAge = candles.length - 1 - event.index;
-        if (eventAge > 20) {
-          return fail(
-            "CHoCH بسیار قدیمی است",
-            "آخرین CHoCH بیش از 20 کندل پیش رخ داده است."
-          );
-        }
-      }
-
-      if (
-        emaTrend &&
-        emaTrend.trend !== "neutral" &&
-        emaTrend.trend !== direction &&
-        emaTrend.distance_atr > 1.0
-      ) {
-        return fail(
-          "EMA خلاف جهت ستاپ است",
-          "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ است."
-        );
-      }
-
-      const isVeryRecentEvent =
-        Number.isFinite(event.index) &&
-        event.index >= candles.length - 5;
-
-      if (
-        isVeryRecentEvent &&
-        direction === "bullish" &&
-        Number.isFinite(currentRsi) &&
-        currentRsi >= CONFIG.MOMENTUM_RSI_OVERBOUGHT
-      ) {
-        return fail(
-          "ورود Long در اشباع خرید پس از BOS اخیر",
-          "قیمت پس از BOS اخیر در ناحیه اشباع خرید است."
-        );
-      }
-
-      if (
-        isVeryRecentEvent &&
-        direction === "bearish" &&
-        Number.isFinite(currentRsi) &&
-        currentRsi <= CONFIG.MOMENTUM_RSI_OVERSOLD
-      ) {
-        return fail(
-          "ورود Short در اشباع فروش پس از BOS اخیر",
-          "قیمت پس از BOS اخیر در ناحیه اشباع فروش است."
-        );
-      }
-
-      result.direction = direction;
-
-      const smcTrendCandles = hasRealHtf ? htfCandles : candles;
-      const smcTrendFilter = detectSMCTrendFilter(smcTrendCandles);
-
-      if (smcTrendFilter.blocked) {
-        return fail("فیلتر روند: " + smcTrendFilter.reason);
-      }
-
-      const allowDir =
-        direction === "bullish"
-          ? smcTrendFilter.allowLong
-          : smcTrendFilter.allowShort;
-
-      if (!allowDir) {
-        return fail(
-          "فیلتر روند: ورود " + direction + " مسدود است",
-          "فیلتر روند: " + smcTrendFilter.reason
-        );
-      }
-
-      const rsiDivergenceEffect = rsiDivergenceScore(rsiDivergence, direction);
-      result.rsi_divergence_effect = rsiDivergenceEffect || null;
-
-      if (rsiDivergenceEffect && rsiDivergenceEffect.reason) {
-        if (rsiDivergenceEffect.aligned) {
-          result.reasons.push("✅ " + rsiDivergenceEffect.reason);
-        } else if (rsiDivergenceEffect.opposed) {
-          result.reasons.push("⚠️ " + rsiDivergenceEffect.reason);
-        }
-      }
-
-      if (event.direction !== direction) {
-        return fail("جهت شکست ساختاری معتبر نیست");
-      }
-
-      if (sweep.direction !== direction) {
-        return fail("Liquidity Sweep با جهت ستاپ هماهنگ نیست");
-      }
-
-      if (displacement.direction !== direction) {
-        return fail("Displacement با جهت ستاپ هماهنگ نیست");
-      }
-
-      if (sweep.index >= event.index) {
-        return fail("Sweep باید قبل از شکست ساختاری اتفاق افتاده باشد");
-      }
-
-      if (displacement.index < event.index) {
-        return fail("Displacement باید در Event یا بعد از آن شکل گرفته باشد");
-      }
-
-      if (displacement.index < sweep.index) {
-        return fail("Displacement باید بعد از Liquidity Sweep شکل گرفته باشد");
-      }
-
-      if (profile.strictHTF) {
-        if (
-          (htfTrend === "bullish" || htfTrend === "bearish") &&
-          htfTrend !== direction
-        ) {
-          return fail(
-            "ساختار تایم‌فریم بالاتر با جهت ستاپ مخالف است"
-          );
-        }
-
-        if (
-          hasRealHtf2 &&
-          (htf2Trend === "bullish" || htf2Trend === "bearish") &&
-          htf2Trend !== direction
-        ) {
-          return fail(
-            "ساختار تایم‌فریم بالاتر دوم با جهت ستاپ مخالف است"
-          );
-        }
-      }
-
-      const emaDirection =
-        emaTrend &&
-        (emaTrend.trend === "bullish" || emaTrend.trend === "bearish")
-          ? emaTrend.trend
-          : "neutral";
-
-      if (emaDirection !== "neutral" && emaDirection !== direction) {
-        if (profile.strictHTF) {
-          return fail(
-            "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ است"
-          );
-        }
-      }
-
-      const fvgs = detectFvgs(
-        candles,
-        currentAtr,
-        event,
-        sweep,
-        displacement
-      );
-
-      const obs = detectOrderBlocks(
-        candles,
-        currentAtr,
-        event,
-        displacement,
-        sweep
-      );
-
-      const zone = selectBestZone(obs, fvgs, direction, currentAtr);
-
-      if (!zone) {
-        return fail("ناحیه معتبر Order Block + FVG شکل نگرفت");
-      }
-
-      const entryZone = buildEntryZone(
-        zone.order_block,
-        zone.fvg,
-        currentAtr
-      );
-
-      if (
-        !entryZone ||
-        !Number.isFinite(entryZone.low) ||
-        !Number.isFinite(entryZone.high) ||
-        !Number.isFinite(entryZone.mid) ||
-        entryZone.low >= entryZone.high ||
-        entryZone.mid <= 0
-      ) {
-        return fail("هم‌پوشانی معتبر OB و FVG تشکیل نشد");
-      }
-
-      const state = entryState(currentPrice, entryZone, currentAtr, direction);
-
-      let entry;
-
-      if (state === "IN_ZONE") {
-        entry = currentPrice;
-      } else {
-        entry = entryZone.mid;
-      }
-
-      if (!Number.isFinite(entry) || entry <= 0) {
-        return fail("قیمت ورود معتبر نیست");
-      }
-
-      const confirmedSwings =
-        getConfirmedSwings(swings, candles.length - 1) || {
-          lows: [],
-          highs: []
-        };
-
-      const swingLowsStructure = Array.isArray(confirmedSwings.lows)
-        ? confirmedSwings.lows
-        : [];
-
-      const swingHighsStructure = Array.isArray(confirmedSwings.highs)
-        ? confirmedSwings.highs
-        : [];
-
-      let stop = computeUnifiedStop(
-        candles,
-        direction,
-        entryZone,
-        currentAtr,
-        swingLowsStructure,
-        swingHighsStructure,
-        currentPrice
-      );
-
-      if (!Number.isFinite(stop) || stop <= 0) {
-        if (direction === "bullish") {
-          stop = entryZone.low - currentAtr * slAtrBuffer;
-        } else {
-          stop = entryZone.high + currentAtr * slAtrBuffer;
-        }
-      }
-
-      if (!Number.isFinite(stop) || stop <= 0) {
-        return fail("Stop Loss معتبر نیست");
-      }
-
-      if (direction === "bullish" && stop >= entry) {
-        return fail("Stop Loss برای Long معتبر نیست");
-      }
-
-      if (direction === "bearish" && stop <= entry) {
-        return fail("Stop Loss برای Short معتبر نیست");
-      }
-
-      const riskDistance = Math.abs(entry - stop);
-
-      if (!Number.isFinite(riskDistance) || riskDistance <= 0) {
-        return fail("فاصله ریسک معتبر نیست");
-      }
-
-      if (riskDistance / entry < 0.005) {
-        return fail(
-          "حد ضرر بسیار نزدیک است",
-          "فاصله حد ضرر تا ورود کمتر از 0.5% است."
-        );
-      }
-
-      if (riskDistance / entry > 0.1) {
-        return fail(
-          "حد ضرر بسیار دور است",
-          "فاصله حد ضرر تا ورود بیشتر از 10% است."
-        );
-      }
-
-      const unifiedTargets = computeUnifiedTargets(
-        candles,
-        direction,
-        entry,
-        stop,
-        currentAtr,
-        currentPrice,
-        minRr
-      );
-
-      let targets = [];
-
-      if (
-        unifiedTargets &&
-        Array.isArray(unifiedTargets.targets) &&
-        unifiedTargets.targets.length >= 1
-      ) {
-        targets = unifiedTargets.targets
-          .filter(
-            (t) =>
-              t &&
-              Number.isFinite(t.price) &&
-              Number.isFinite(t.rr) &&
-              t.price > 0 &&
-              t.rr >= minTp1Rr
-          )
-          .map((t) => ({
-            price: t.price,
-            rr: t.rr,
-            source: t.source || null
-          }));
-      }
-
-      if (targets.length < 1) {
-        const rawTargets = structuralTargets(
-          candles,
-          direction,
-          entry,
-          swings,
-          currentAtr,
-          4,
-          minRr
-        );
-
-        const filteredTargets = Array.isArray(rawTargets)
-          ? targetFilter(rawTargets, entry, stop, direction, currentPrice)
-          : [];
-
-        targets = filteredTargets.filter(
-          (t) =>
-            t &&
-            Number.isFinite(t.price) &&
-            Number.isFinite(t.rr) &&
-            t.price > 0 &&
-            t.rr >= minTp1Rr
-        );
-      }
-
-      if (targets.length < 1) {
-        return fail(
-          "حداقل یک هدف با R/R معتبر وجود ندارد",
-          "حداقل یک هدف با R/R معتبر (>= " +
-            minTp1Rr.toFixed(2) +
-            ") وجود ندارد."
-        );
-      }
-
-      const rr1 = Number.isFinite(targets[0]?.rr) ? targets[0].rr : 0;
-      const rr2 = Number.isFinite(targets[1]?.rr) ? targets[1].rr : 0;
-      const rr3 =
-        targets.length >= 3 && Number.isFinite(targets[2]?.rr)
-          ? targets[2].rr
-          : 0;
-
-      if (targets.length >= 2 && rr2 < minRr) {
-        return fail(
-          "R/R هدف دوم کمتر از حداقل است",
-          "R/R هدف دوم کمتر از " + minRr.toFixed(2) + " است."
-        );
-      }
-
-      const fib = fibLevelsCalc(candles, direction);
-      result.fib = fib || null;
-
-      const fibOverlap = fibOverlapCheck(entryZone, fib);
-      result.fib_overlap = fibOverlap || null;
-
-      result.fib_labels =
-        fibOverlap && fibOverlap.overlap && Array.isArray(fibOverlap.matched)
-          ? fibOverlap.matched
-              .filter((m) => m && typeof m.label === "string")
-              .map((m) => m.label)
-              .join(" + ")
-          : "";
-
-      let strength = strengthScore(
-        direction,
-        structure,
-        null,
-        event,
-        sweep,
-        displacement,
-        zone,
-        currentVolumeRatio,
-        currentRsi,
-        rr2,
-        null,
-        fibOverlap,
-        rsiDivergence
-      );
-
-      if (!Number.isFinite(strength)) {
-        strength = 0;
-      }
-
-      strength = Math.max(0, Math.min(100, Math.round(strength)));
-
-      if (!profile.strictHTF) {
-        let htfPenalty = 0;
-
-        if (
-          (htfTrend === "bullish" || htfTrend === "bearish") &&
-          htfTrend !== direction
-        ) {
-          htfPenalty += profile.htfPenalty;
-          result.reasons.push(
-            "⚠️ HTF مخالف — جریمه " + profile.htfPenalty + " امتیاز"
-          );
-        }
-
-        if (
-          hasRealHtf2 &&
-          (htf2Trend === "bullish" || htf2Trend === "bearish") &&
-          htf2Trend !== direction
-        ) {
-          htfPenalty += profile.htfPenalty;
-          result.reasons.push(
-            "⚠️ HTF2 مخالف — جریمه " + profile.htfPenalty + " امتیاز"
-          );
-        }
-
-        if (emaDirection !== "neutral" && emaDirection !== direction) {
-          htfPenalty += profile.htfPenalty;
-          result.reasons.push(
-            "⚠️ EMA خلاف جهت ستاپ — جریمه " + profile.htfPenalty + " امتیاز"
-          );
-        }
-
-        if (htfPenalty > 0) {
-          strength = Math.max(0, strength - htfPenalty);
-        }
-      }
-
-      result.strength = strength;
-
-      if (strength >= 85) {
-        result.risk = "LOW";
-      } else if (strength >= 75) {
-        result.risk = "MEDIUM";
-      } else {
-        result.risk = "HIGH";
-      }
-
-      result.entry_zone = entryZone;
-      result.entry = entry;
-      result.stop_loss = stop;
-      result.targets = targets;
-      result.rr1 = rr1;
-      result.rr2 = rr2;
-      result.rr3 = rr3;
-
-      if (strength < minStrength) {
-        result._noTradeReason =
-          "قدرت ستاپ " +
-          strength +
-          "/100 است و به حداقل " +
-          minStrength +
-          " نرسیده";
-
-        result.reasons.push(
-          "قدرت ستاپ " +
-            strength +
-            "/100 است و به حداقل " +
-            minStrength +
-            " نرسیده."
-        );
-
-        return result;
-      }
-
-      if (state === "IN_ZONE") {
-        result.status = direction === "bullish" ? "LONG" : "SHORT";
-        result.reasons.push("قیمت داخل ناحیه ورود معتبر قرار دارد.");
-      } else if (state === "NEAR_ZONE") {
-        result.status = "WAIT";
-        result.reasons.push(
-          "قیمت نزدیک ناحیه ورود است؛ برای ورود بهتر باید به زون برسد."
-        );
-      } else {
-        result.status = "NO_TRADE";
-        result.reasons.push(
-          "قیمت از ناحیه ورود فاصله دارد؛ ورود در قیمت فعلی انجام نمی‌شود."
-        );
-      }
-
-      if (result.status === "NO_TRADE" && result._noTradeReason === null) {
-        const sc = result.scenario;
-
-        if (sc) {
-          const hasAnyScenario =
-            Number.isFinite(sc.bull_level) ||
-            Number.isFinite(sc.bear_level) ||
-            Number.isFinite(sc.near_bull_level) ||
-            Number.isFinite(sc.near_bear_level);
-
-          result._noTradeReason = hasAnyScenario
-            ? "قیمت از ناحیه ورود فاصله دارد"
-            : "سطوح شکست نزدیک‌تر از حد مجاز این تایم‌فریم هستن";
-        } else {
-          result._noTradeReason = "قیمت از ناحیه ورود فاصله دارد";
-        }
-      }
-
-      if (htfTrend === direction) {
-        result.reasons.push("ساختار تایم‌فریم بالاتر هم‌جهت است.");
-      }
-
-      if (hasRealHtf2 && htf2Trend === direction) {
-        result.reasons.push("ساختار تایم‌فریم بالاتر دوم هم‌جهت است.");
-      }
-
-      if (emaDirection === direction) {
-        if (
-          emaTrend &&
-          emaTrend.cross === "golden" &&
-          direction === "bullish"
-        ) {
-          result.reasons.push(
-            "کراس صعودی EMA " +
-              emaFastLabel +
-              "/" +
-              emaSlowLabel +
-              " تأیید شد."
-          );
-        } else if (
-          emaTrend &&
-          emaTrend.cross === "death" &&
-          direction === "bearish"
-        ) {
-          result.reasons.push(
-            "کراس نزولی EMA " +
-              emaFastLabel +
-              "/" +
-              emaSlowLabel +
-              " تأیید شد."
-          );
-        } else {
-          result.reasons.push(
-            "EMA " + emaFastLabel + "/" + emaSlowLabel + " هم‌جهت با ستاپ است."
-          );
-        }
-
-        if (emaTrend && emaTrend.price_side === direction) {
-          result.reasons.push("قیمت در سمت هم‌جهت با EMA قرار دارد.");
-        }
-      }
-
-      if (
-        fibOverlap &&
-        fibOverlap.overlap &&
-        Array.isArray(fibOverlap.matched)
-      ) {
-        const labels = fibOverlap.matched
-          .filter((m) => m && typeof m.label === "string")
-          .map((m) => m.label)
-          .join(" + ");
-
-        if (labels) {
-          result.reasons.push(
-            "ناحیه ورود با فیبو " + labels + " هم‌پوشانی دارد."
-          );
-        }
-      }
-
-      if (event.type === "BOS") {
-        result.reasons.push("BOS معتبر در زنجیره ساختاری ثبت شده است.");
-      } else if (event.type === "CHoCH") {
-        result.reasons.push("CHoCH معتبر و تغییر ساختار مشاهده شده است.");
-      }
-
-      result.reasons.push(
-        "Liquidity Sweep هم‌جهت قبل از شکست ساختاری انتخاب شد."
-      );
-
-      result.reasons.push(
-        "Displacement هم‌جهت و مرتبط با Event تأیید شد."
-      );
-
-      result.reasons.push(
-        "Order Block و FVG مرتبط با همان حرکت ساختاری انتخاب شدند."
-      );
-
-      return result;
-    }
-    
-    
-    const rangeActive = result.range_setups.active;
-
-    const rangeDirectionRaw =
-      rangeActive.direction || rangeActive.side || rangeActive.bias || null;
-
-    const rangeDirection =
-      rangeDirectionRaw === "bullish" || rangeDirectionRaw === "long"
-        ? "bullish"
-        : (rangeDirectionRaw === "bearish" || rangeDirectionRaw === "short"
-            ? "bearish"
-            : null);
-
-    if (rangeDirection !== "bullish" && rangeDirection !== "bearish") {
-      return fail("جهت Range Setup معتبر نیست");
-    }
-
-    if (rangeDirection === "bullish" && htfTrend !== "bullish") {
+    const sweeps = detectLiquiditySweeps(candles, swings);
+    const sweep = selectCausalSweep(sweeps, event);
+    result.sweep = sweep || null;
+
+    if (!sweep || !Number.isFinite(sweep.index)) {
       return fail(
-        "مخالفت با تایم‌فریم بالاتر (HTF) — Range Setup",
-        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی نیست. ورود Long از Range Setup بدون تأیید روند ممنوع است."
+        "Liquidity Sweep معتبر قبل از شکست ساختاری شکل نگرفت"
       );
     }
 
-    if (rangeDirection === "bearish" && htfTrend !== "bearish") {
+    const displacement = findEventDisplacement(
+      candles,
+      currentAtr,
+      event,
+      sweep
+    );
+
+    result.displacement = displacement || null;
+
+    if (!displacement || !Number.isFinite(displacement.index)) {
       return fail(
-        "مخالفت با تایم‌فریم بالاتر (HTF) — Range Setup",
-        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی نیست. ورود Short از Range Setup بدون تأیید روند ممنوع است."
+        "Displacement معتبر و مرتبط با Event شکل نگرفت"
+      );
+    }
+
+    const direction = determineDirection(
+      structure,
+      htfStructure,
+      event,
+      sweep,
+      displacement
+    );
+
+    if (direction !== "bullish" && direction !== "bearish") {
+      return fail(
+        "جهت Event، Sweep و Displacement هماهنگ نیست"
+      );
+    }
+
+    if (direction === "bullish" && htfTrend !== "bullish") {
+      return fail(
+        "مخالفت با تایم‌فریم بالاتر (HTF)",
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") صعودی نیست. ورود Long بدون تأیید روند ممنوع است."
+      );
+    }
+
+    if (direction === "bearish" && htfTrend !== "bearish") {
+      return fail(
+        "مخالفت با تایم‌فریم بالاتر (HTF)",
+        "ساختار تایم‌فریم بالاتر (" + (snapshot.htf || "HTF") + ") نزولی نیست. ورود Short بدون تأیید روند ممنوع است."
       );
     }
 
     if (hasRealHtf2) {
-      if (rangeDirection === "bullish" && htf2Trend !== "bullish") {
+      if (direction === "bullish" && htf2Trend !== "bullish") {
         return fail(
-          "مخالفت با تایم‌فریم بالاتر دوم (HTF2) — Range Setup",
-          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی نیست. ورود Long از Range Setup ممنوع است."
+          "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") صعودی نیست. ورود Long ممنوع است."
         );
       }
-      if (rangeDirection === "bearish" && htf2Trend !== "bearish") {
+      if (direction === "bearish" && htf2Trend !== "bearish") {
         return fail(
-          "مخالفت با تایم‌فریم بالاتر دوم (HTF2) — Range Setup",
-          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی نیست. ورود Short از Range Setup ممنوع است."
+          "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
+          "ساختار تایم‌فریم بالاتر دوم (" + (snapshot.htf2 || "HTF2") + ") نزولی نیست. ورود Short ممنوع است."
         );
       }
+    }
+
+    if (event && event.type === "BOS") {
+      const confirmedSwingsForDirection =
+        getConfirmedSwings(swings, candles.length - 1) || {
+          highs: [],
+          lows: []
+        };
+
+      const lastHighs = (confirmedSwingsForDirection.highs || []).slice(-3);
+      const lastLows = (confirmedSwingsForDirection.lows || []).slice(-3);
+
+      let structuralTrend = "neutral";
+
+      if (lastHighs.length >= 2 && lastLows.length >= 2) {
+        const hh =
+          lastHighs[lastHighs.length - 1].price >
+          lastHighs[lastHighs.length - 2].price;
+        const lh =
+          lastHighs[lastHighs.length - 1].price <
+          lastHighs[lastHighs.length - 2].price;
+        const hl =
+          lastLows[lastLows.length - 1].price >
+          lastLows[lastLows.length - 2].price;
+        const ll =
+          lastLows[lastLows.length - 1].price <
+          lastLows[lastLows.length - 2].price;
+
+        if (hh && hl) structuralTrend = "bullish";
+        else if (lh && ll) structuralTrend = "bearish";
+      }
+
+      if (structuralTrend !== "neutral" && structuralTrend !== direction) {
+        return fail(
+          "جهت BOS با ساختار اصلی بازار مخالف است",
+          "ساختار اصلی بازار " +
+            structuralTrend +
+            " است ولی BOS در جهت " +
+            direction +
+            " داده شده."
+        );
+      }
+    }
+
+    if (event && event.type === "CHoCH") {
+      const eventAge = candles.length - 1 - event.index;
+      if (eventAge > 20) {
+        return fail(
+          "CHoCH بسیار قدیمی است",
+          "آخرین CHoCH بیش از 20 کندل پیش رخ داده است."
+        );
+      }
+    }
+
+    if (
+      emaTrend &&
+      emaTrend.trend !== "neutral" &&
+      emaTrend.trend !== direction &&
+      emaTrend.distance_atr > 1.0
+    ) {
+      return fail(
+        "EMA خلاف جهت ستاپ است",
+        "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ است."
+      );
+    }
+
+    const isVeryRecentEvent =
+      event &&
+      Number.isFinite(event.index) &&
+      event.index >= candles.length - 5;
+
+    if (
+      isVeryRecentEvent &&
+      direction === "bullish" &&
+      Number.isFinite(currentRsi) &&
+      currentRsi >= CONFIG.MOMENTUM_RSI_OVERBOUGHT
+    ) {
+      return fail(
+        "ورود Long در اشباع خرید پس از BOS اخیر",
+        "قیمت پس از BOS اخیر در ناحیه اشباع خرید است."
+      );
+    }
+
+    if (
+      isVeryRecentEvent &&
+      direction === "bearish" &&
+      Number.isFinite(currentRsi) &&
+      currentRsi <= CONFIG.MOMENTUM_RSI_OVERSOLD
+    ) {
+      return fail(
+        "ورود Short در اشباع فروش پس از BOS اخیر",
+        "قیمت پس از BOS اخیر در ناحیه اشباع فروش است."
+      );
+    }
+
+    result.direction = direction;
+
+    const smcTrendCandles = hasRealHtf ? htfCandles : candles;
+    const smcTrendFilter = detectSMCTrendFilter(smcTrendCandles);
+
+    if (smcTrendFilter.blocked) {
+      return fail("فیلتر روند: " + smcTrendFilter.reason);
+    }
+
+    const allowDir =
+      direction === "bullish"
+        ? smcTrendFilter.allowLong
+        : smcTrendFilter.allowShort;
+
+    if (!allowDir) {
+      return fail(
+        "فیلتر روند: ورود " + direction + " مسدود است",
+        "فیلتر روند: " + smcTrendFilter.reason
+      );
+    }
+
+    const rsiDivergenceEffect = rsiDivergenceScore(rsiDivergence, direction);
+    result.rsi_divergence_effect = rsiDivergenceEffect || null;
+
+    if (rsiDivergenceEffect && rsiDivergenceEffect.reason) {
+      if (rsiDivergenceEffect.aligned) {
+        result.reasons.push("✅ " + rsiDivergenceEffect.reason);
+      } else if (rsiDivergenceEffect.opposed) {
+        result.reasons.push("⚠️ " + rsiDivergenceEffect.reason);
+      }
+    }
+
+    if (event && event.direction !== direction) {
+      return fail("جهت شکست ساختاری معتبر نیست");
+    }
+
+    if (sweep && sweep.direction !== direction) {
+      return fail("Liquidity Sweep با جهت ستاپ هماهنگ نیست");
+    }
+
+    if (displacement && displacement.direction !== direction) {
+      return fail("Displacement با جهت ستاپ هماهنگ نیست");
+    }
+
+    if (sweep && event && sweep.index >= event.index) {
+      return fail("Sweep باید قبل از شکست ساختاری اتفاق افتاده باشد");
+    }
+
+    if (displacement && event && displacement.index < event.index) {
+      return fail("Displacement باید در Event یا بعد از آن شکل گرفته باشد");
+    }
+
+    if (displacement && sweep && displacement.index < sweep.index) {
+      return fail("Displacement باید بعد از Liquidity Sweep شکل گرفته باشد");
     }
 
     if (profile.strictHTF) {
       if (
         (htfTrend === "bullish" || htfTrend === "bearish") &&
-        htfTrend !== rangeDirection
+        htfTrend !== direction
       ) {
         return fail(
-          "ساختار تایم‌فریم بالاتر با جهت Range Setup مخالف است"
+          "ساختار تایم‌فریم بالاتر با جهت ستاپ مخالف است"
         );
       }
 
       if (
         hasRealHtf2 &&
         (htf2Trend === "bullish" || htf2Trend === "bearish") &&
-        htf2Trend !== rangeDirection
+        htf2Trend !== direction
       ) {
         return fail(
-          "ساختار تایم‌فریم بالاتر دوم با جهت Range Setup مخالف است"
+          "ساختار تایم‌فریم بالاتر دوم با جهت ستاپ مخالف است"
         );
       }
     }
 
-    const rangeEmaDirection =
+    const emaDirection =
       emaTrend &&
       (emaTrend.trend === "bullish" || emaTrend.trend === "bearish")
         ? emaTrend.trend
         : "neutral";
 
-    if (rangeEmaDirection !== "neutral" && rangeEmaDirection !== rangeDirection) {
+    if (emaDirection !== "neutral" && emaDirection !== direction) {
       if (profile.strictHTF) {
         return fail(
-          "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت Range Setup است"
-        );
-      }
-
-      if (emaTrend && emaTrend.distance_atr > 1.0) {
-        return fail(
-          "EMA خلاف جهت Range Setup است",
-          "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ Range است."
+          "EMA " + emaFastLabel + "/" + emaSlowLabel + " خلاف جهت ستاپ است"
         );
       }
     }
 
-    result.direction = rangeDirection;
-
-    const rangeSmcTrendCandles = hasRealHtf ? htfCandles : candles;
-    const rangeSmcTrendFilter = detectSMCTrendFilter(rangeSmcTrendCandles);
-
-    if (rangeSmcTrendFilter.blocked) {
-      return fail("فیلتر روند (Range Setup): " + rangeSmcTrendFilter.reason);
-    }
-
-    const rangeAllowDir =
-      rangeDirection === "bullish"
-        ? rangeSmcTrendFilter.allowLong
-        : rangeSmcTrendFilter.allowShort;
-
-    if (!rangeAllowDir) {
-      return fail(
-        "فیلتر روند (Range Setup): ورود " + rangeDirection + " مسدود است",
-        "فیلتر روند (Range Setup): " + rangeSmcTrendFilter.reason
-      );
-    }
-
-    const rangeRsiDivergenceEffect = rsiDivergenceScore(rsiDivergence, rangeDirection);
-    result.rsi_divergence_effect = rangeRsiDivergenceEffect || null;
-
-    if (rangeRsiDivergenceEffect && rangeRsiDivergenceEffect.reason) {
-      if (rangeRsiDivergenceEffect.aligned) {
-        result.reasons.push("✅ " + rangeRsiDivergenceEffect.reason);
-      } else if (rangeRsiDivergenceEffect.opposed) {
-        result.reasons.push("⚠️ " + rangeRsiDivergenceEffect.reason);
-      }
-    }
-
-    const rangeEntryMid = Number.isFinite(rangeActive.entry)
-      ? rangeActive.entry
-      : null;
-
-    if (!Number.isFinite(rangeEntryMid) || rangeEntryMid <= 0) {
-      return fail("قیمت ورود Range Setup معتبر نیست");
-    }
-
-    const rangeZoneLowRaw =
-      Number.isFinite(rangeActive.zone_low)
-        ? rangeActive.zone_low
-        : (Number.isFinite(rangeActive.zoneLow) ? rangeActive.zoneLow : rangeEntryMid);
-
-    const rangeZoneHighRaw =
-      Number.isFinite(rangeActive.zone_high)
-        ? rangeActive.zone_high
-        : (Number.isFinite(rangeActive.zoneHigh) ? rangeActive.zoneHigh : rangeEntryMid);
-
-    const rangeEntryZone = {
-      low: Math.min(rangeZoneLowRaw, rangeZoneHighRaw),
-      high: Math.max(rangeZoneLowRaw, rangeZoneHighRaw),
-      mid: rangeEntryMid
-    };
-
-    if (
-      !Number.isFinite(rangeEntryZone.low) ||
-      !Number.isFinite(rangeEntryZone.high) ||
-      !Number.isFinite(rangeEntryZone.mid) ||
-      rangeEntryZone.low <= 0 ||
-      rangeEntryZone.high <= 0 ||
-      rangeEntryZone.low > rangeEntryZone.high
-    ) {
-      return fail("ناحیه ورود Range Setup معتبر نیست");
-    }
-
-    const rangeState = entryState(
-      currentPrice,
-      rangeEntryZone,
+    const fvgs = detectFvgs(
+      candles,
       currentAtr,
-      rangeDirection
+      event,
+      sweep,
+      displacement
     );
 
-    let rangeEntry;
+    const obs = detectOrderBlocks(
+      candles,
+      currentAtr,
+      event,
+      displacement,
+      sweep
+    );
 
-    if (rangeState === "IN_ZONE") {
-      rangeEntry = currentPrice;
+    const zone = selectBestZone(obs, fvgs, direction, currentAtr);
+
+    if (!zone) {
+      return fail("ناحیه معتبر Order Block + FVG شکل نگرفت");
+    }
+
+    const entryZone = buildEntryZone(
+      zone.order_block,
+      zone.fvg,
+      currentAtr
+    );
+
+    if (
+      !entryZone ||
+      !Number.isFinite(entryZone.low) ||
+      !Number.isFinite(entryZone.high) ||
+      !Number.isFinite(entryZone.mid) ||
+      entryZone.low >= entryZone.high ||
+      entryZone.mid <= 0
+    ) {
+      return fail("هم‌پوشانی معتبر OB و FVG تشکیل نشد");
+    }
+
+    const state = entryState(currentPrice, entryZone, currentAtr, direction);
+
+    let entry;
+
+    if (state === "IN_ZONE") {
+      entry = currentPrice;
     } else {
-      rangeEntry = rangeEntryZone.mid;
+      entry = entryZone.mid;
     }
 
-    if (!Number.isFinite(rangeEntry) || rangeEntry <= 0) {
-      return fail("قیمت ورود Range Setup معتبر نیست");
+    if (!Number.isFinite(entry) || entry <= 0) {
+      return fail("قیمت ورود معتبر نیست");
     }
 
-    let rangeStop = null;
+    const confirmedSwings =
+      getConfirmedSwings(swings, candles.length - 1) || {
+        lows: [],
+        highs: []
+      };
 
-    if (Number.isFinite(rangeActive.stop)) {
-      rangeStop = rangeActive.stop;
-    } else if (Number.isFinite(rangeActive.sl)) {
-      rangeStop = rangeActive.sl;
-    } else if (Number.isFinite(rangeActive.stop_loss)) {
-      rangeStop = rangeActive.stop_loss;
-    }
+    const swingLowsStructure = Array.isArray(confirmedSwings.lows)
+      ? confirmedSwings.lows
+      : [];
 
-    if (!Number.isFinite(rangeStop) || rangeStop <= 0) {
-      if (rangeDirection === "bullish") {
-        rangeStop = rangeEntryZone.low - currentAtr * slAtrBuffer;
+    const swingHighsStructure = Array.isArray(confirmedSwings.highs)
+      ? confirmedSwings.highs
+      : [];
+
+    let stop = computeUnifiedStop(
+      candles,
+      direction,
+      entryZone,
+      currentAtr,
+      swingLowsStructure,
+      swingHighsStructure,
+      currentPrice
+    );
+
+    if (!Number.isFinite(stop) || stop <= 0) {
+      if (direction === "bullish") {
+        stop = entryZone.low - currentAtr * slAtrBuffer;
       } else {
-        rangeStop = rangeEntryZone.high + currentAtr * slAtrBuffer;
+        stop = entryZone.high + currentAtr * slAtrBuffer;
       }
     }
 
-    if (!Number.isFinite(rangeStop) || rangeStop <= 0) {
-      return fail("Stop Loss Range Setup معتبر نیست");
+    if (!Number.isFinite(stop) || stop <= 0) {
+      return fail("Stop Loss معتبر نیست");
     }
 
-    if (rangeDirection === "bullish" && rangeStop >= rangeEntry) {
-      return fail("Stop Loss برای Long در Range Setup معتبر نیست");
+    if (direction === "bullish" && stop >= entry) {
+      return fail("Stop Loss برای Long معتبر نیست");
     }
 
-    if (rangeDirection === "bearish" && rangeStop <= rangeEntry) {
-      return fail("Stop Loss برای Short در Range Setup معتبر نیست");
+    if (direction === "bearish" && stop <= entry) {
+      return fail("Stop Loss برای Short معتبر نیست");
     }
 
-    const rangeRiskDistance = Math.abs(rangeEntry - rangeStop);
+    const riskDistance = Math.abs(entry - stop);
 
-    if (!Number.isFinite(rangeRiskDistance) || rangeRiskDistance <= 0) {
-      return fail("فاصله ریسک Range Setup معتبر نیست");
+    if (!Number.isFinite(riskDistance) || riskDistance <= 0) {
+      return fail("فاصله ریسک معتبر نیست");
     }
 
-    if (rangeRiskDistance / rangeEntry < 0.005) {
+    if (riskDistance / entry < 0.005) {
       return fail(
-        "حد ضرر Range Setup بسیار نزدیک است",
-        "فاصله حد ضرر تا ورود Range کمتر از 0.5% است."
+        "حد ضرر بسیار نزدیک است",
+        "فاصله حد ضرر تا ورود کمتر از 0.5% است."
       );
     }
 
-    if (rangeRiskDistance / rangeEntry > 0.1) {
+    if (riskDistance / entry > 0.1) {
       return fail(
-        "حد ضرر Range Setup بسیار دور است",
-        "فاصله حد ضرر تا ورود Range بیشتر از 10% است."
+        "حد ضرر بسیار دور است",
+        "فاصله حد ضرر تا ورود بیشتر از 10% است."
       );
     }
 
-    let rangeTargets = [];
+    const unifiedTargets = computeUnifiedTargets(
+      candles,
+      direction,
+      entry,
+      stop,
+      currentAtr,
+      currentPrice,
+      minRr
+    );
+
+    let targets = [];
 
     if (
-      Array.isArray(rangeActive.targets) &&
-      rangeActive.targets.length >= 1
+      unifiedTargets &&
+      Array.isArray(unifiedTargets.targets) &&
+      unifiedTargets.targets.length >= 1
     ) {
-      rangeTargets = rangeActive.targets
-        .filter((t) => t && Number.isFinite(t.price) && t.price > 0)
-        .map((t) => {
-          const rr = Number.isFinite(t.rr)
-            ? t.rr
-            : Math.abs(t.price - rangeEntry) / rangeRiskDistance;
-          return {
-            price: t.price,
-            rr: rr,
-            source: t.source || "range"
-          };
-        })
-        .filter((t) => t.rr >= minTp1Rr);
+      targets = unifiedTargets.targets
+        .filter(
+          (t) =>
+            t &&
+            Number.isFinite(t.price) &&
+            Number.isFinite(t.rr) &&
+            t.price > 0 &&
+            t.rr >= minTp1Rr
+        )
+        .map((t) => ({
+          price: t.price,
+          rr: t.rr,
+          source: t.source || null
+        }));
     }
 
-    if (rangeTargets.length < 1) {
-      const unifiedRangeTargets = computeUnifiedTargets(
+    if (targets.length < 1) {
+      const rawTargets = structuralTargets(
         candles,
-        rangeDirection,
-        rangeEntry,
-        rangeStop,
+        direction,
+        entry,
+        swings,
         currentAtr,
-        currentPrice,
+        4,
         minRr
       );
 
-      if (
-        unifiedRangeTargets &&
-        Array.isArray(unifiedRangeTargets.targets) &&
-        unifiedRangeTargets.targets.length >= 1
-      ) {
-        rangeTargets = unifiedRangeTargets.targets
-          .filter(
-            (t) =>
-              t &&
-              Number.isFinite(t.price) &&
-              Number.isFinite(t.rr) &&
-              t.price > 0 &&
-              t.rr >= minTp1Rr
-          )
-          .map((t) => ({
-            price: t.price,
-            rr: t.rr,
-            source: t.source || "range"
-          }));
-      }
+      const filteredTargets = Array.isArray(rawTargets)
+        ? targetFilter(rawTargets, entry, stop, direction, currentPrice)
+        : [];
+
+      targets = filteredTargets.filter(
+        (t) =>
+          t &&
+          Number.isFinite(t.price) &&
+          Number.isFinite(t.rr) &&
+          t.price > 0 &&
+          t.rr >= minTp1Rr
+      );
     }
 
-    if (rangeTargets.length < 1) {
+    if (targets.length < 1) {
       return fail(
-        "حداقل یک هدف با R/R معتبر برای Range Setup وجود ندارد",
+        "حداقل یک هدف با R/R معتبر وجود ندارد",
         "حداقل یک هدف با R/R معتبر (>= " +
           minTp1Rr.toFixed(2) +
-          ") برای Range Setup وجود ندارد."
+          ") وجود ندارد."
       );
     }
 
-    const rangeRr1 = Number.isFinite(rangeTargets[0]?.rr) ? rangeTargets[0].rr : 0;
-    const rangeRr2 = Number.isFinite(rangeTargets[1]?.rr) ? rangeTargets[1].rr : 0;
-    const rangeRr3 =
-      rangeTargets.length >= 3 && Number.isFinite(rangeTargets[2]?.rr)
-        ? rangeTargets[2].rr
+    const rr1 = Number.isFinite(targets[0]?.rr) ? targets[0].rr : 0;
+    const rr2 = Number.isFinite(targets[1]?.rr) ? targets[1].rr : 0;
+    const rr3 =
+      targets.length >= 3 && Number.isFinite(targets[2]?.rr)
+        ? targets[2].rr
         : 0;
 
-    if (rangeTargets.length >= 2 && rangeRr2 < minRr) {
+    if (targets.length >= 2 && rr2 < minRr) {
       return fail(
-        "R/R هدف دوم Range Setup کمتر از حداقل است",
-        "R/R هدف دوم Range Setup کمتر از " + minRr.toFixed(2) + " است."
+        "R/R هدف دوم کمتر از حداقل است",
+        "R/R هدف دوم کمتر از " + minRr.toFixed(2) + " است."
       );
     }
 
-    const rangeFib = fibLevelsCalc(candles, rangeDirection);
-    result.fib = rangeFib || null;
+    const fib = fibLevelsCalc(candles, direction);
+    result.fib = fib || null;
 
-    const rangeFibOverlap = fibOverlapCheck(rangeEntryZone, rangeFib);
-    result.fib_overlap = rangeFibOverlap || null;
+    const fibOverlap = fibOverlapCheck(entryZone, fib);
+    result.fib_overlap = fibOverlap || null;
 
     result.fib_labels =
-      rangeFibOverlap && rangeFibOverlap.overlap && Array.isArray(rangeFibOverlap.matched)
-        ? rangeFibOverlap.matched
+      fibOverlap && fibOverlap.overlap && Array.isArray(fibOverlap.matched)
+        ? fibOverlap.matched
             .filter((m) => m && typeof m.label === "string")
             .map((m) => m.label)
             .join(" + ")
         : "";
 
-    let rangeStrength = strengthScore(
-      rangeDirection,
+    let strength = strengthScore(
+      direction,
       structure,
       null,
-      null,
-      null,
-      null,
-      null,
+      event,
+      sweep,
+      displacement,
+      zone,
       currentVolumeRatio,
       currentRsi,
-      rangeRr2,
+      rr2,
       null,
-      rangeFibOverlap,
+      fibOverlap,
       rsiDivergence
     );
 
-    if (!Number.isFinite(rangeStrength)) {
-      rangeStrength = 0;
+    if (!Number.isFinite(strength)) {
+      strength = 0;
     }
 
-    rangeStrength = Math.max(0, Math.min(100, Math.round(rangeStrength)));
+    strength = Math.max(0, Math.min(100, Math.round(strength)));
 
     if (!profile.strictHTF) {
-      let rangeHtfPenalty = 0;
+      let htfPenalty = 0;
 
       if (
         (htfTrend === "bullish" || htfTrend === "bearish") &&
-        htfTrend !== rangeDirection
+        htfTrend !== direction
       ) {
-        rangeHtfPenalty += profile.htfPenalty;
+        htfPenalty += profile.htfPenalty;
         result.reasons.push(
           "⚠️ HTF مخالف — جریمه " + profile.htfPenalty + " امتیاز"
         );
@@ -1418,55 +890,55 @@ export async function analyze(symbol, timeframe) {
       if (
         hasRealHtf2 &&
         (htf2Trend === "bullish" || htf2Trend === "bearish") &&
-        htf2Trend !== rangeDirection
+        htf2Trend !== direction
       ) {
-        rangeHtfPenalty += profile.htfPenalty;
+        htfPenalty += profile.htfPenalty;
         result.reasons.push(
           "⚠️ HTF2 مخالف — جریمه " + profile.htfPenalty + " امتیاز"
         );
       }
 
-      if (rangeEmaDirection !== "neutral" && rangeEmaDirection !== rangeDirection) {
-        rangeHtfPenalty += profile.htfPenalty;
+      if (emaDirection !== "neutral" && emaDirection !== direction) {
+        htfPenalty += profile.htfPenalty;
         result.reasons.push(
           "⚠️ EMA خلاف جهت ستاپ — جریمه " + profile.htfPenalty + " امتیاز"
         );
       }
 
-      if (rangeHtfPenalty > 0) {
-        rangeStrength = Math.max(0, rangeStrength - rangeHtfPenalty);
+      if (htfPenalty > 0) {
+        strength = Math.max(0, strength - htfPenalty);
       }
     }
 
-    result.strength = rangeStrength;
+    result.strength = strength;
 
-    if (rangeStrength >= 85) {
+    if (strength >= 85) {
       result.risk = "LOW";
-    } else if (rangeStrength >= 75) {
+    } else if (strength >= 75) {
       result.risk = "MEDIUM";
     } else {
       result.risk = "HIGH";
     }
 
-    result.entry_zone = rangeEntryZone;
-    result.entry = rangeEntry;
-    result.stop_loss = rangeStop;
-    result.targets = rangeTargets;
-    result.rr1 = rangeRr1;
-    result.rr2 = rangeRr2;
-    result.rr3 = rangeRr3;
+    result.entry_zone = entryZone;
+    result.entry = entry;
+    result.stop_loss = stop;
+    result.targets = targets;
+    result.rr1 = rr1;
+    result.rr2 = rr2;
+    result.rr3 = rr3;
 
-    if (rangeStrength < minStrength) {
+    if (strength < minStrength) {
       result._noTradeReason =
         "قدرت ستاپ " +
-        rangeStrength +
+        strength +
         "/100 است و به حداقل " +
         minStrength +
         " نرسیده";
 
       result.reasons.push(
         "قدرت ستاپ " +
-          rangeStrength +
+          strength +
           "/100 است و به حداقل " +
           minStrength +
           " نرسیده."
@@ -1475,38 +947,52 @@ export async function analyze(symbol, timeframe) {
       return result;
     }
 
-    if (rangeState === "IN_ZONE") {
-      result.status = rangeDirection === "bullish" ? "LONG" : "SHORT";
-      result.reasons.push("قیمت داخل ناحیه ورود Range Setup قرار دارد.");
-    } else if (rangeState === "NEAR_ZONE") {
+    if (state === "IN_ZONE") {
+      result.status = direction === "bullish" ? "LONG" : "SHORT";
+      result.reasons.push("قیمت داخل ناحیه ورود معتبر قرار دارد.");
+    } else if (state === "NEAR_ZONE") {
       result.status = "WAIT";
       result.reasons.push(
-        "قیمت نزدیک ناحیه ورود Range Setup است؛ برای ورود بهتر باید به زون برسد."
+        "قیمت نزدیک ناحیه ورود است؛ برای ورود بهتر باید به زون برسد."
       );
     } else {
       result.status = "NO_TRADE";
       result.reasons.push(
-        "قیمت از ناحیه ورود Range Setup فاصله دارد؛ ورود در قیمت فعلی انجام نمی‌شود."
+        "قیمت از ناحیه ورود فاصله دارد؛ ورود در قیمت فعلی انجام نمی‌شود."
       );
     }
 
     if (result.status === "NO_TRADE" && result._noTradeReason === null) {
-      result._noTradeReason = "قیمت از ناحیه ورود Range Setup فاصله دارد";
+      const sc = result.scenario;
+
+      if (sc) {
+        const hasAnyScenario =
+          Number.isFinite(sc.bull_level) ||
+          Number.isFinite(sc.bear_level) ||
+          Number.isFinite(sc.near_bull_level) ||
+          Number.isFinite(sc.near_bear_level);
+
+        result._noTradeReason = hasAnyScenario
+          ? "قیمت از ناحیه ورود فاصله دارد"
+          : "سطوح شکست نزدیک‌تر از حد مجاز این تایم‌فریم هستن";
+      } else {
+        result._noTradeReason = "قیمت از ناحیه ورود فاصله دارد";
+      }
     }
 
-    if (htfTrend === rangeDirection) {
-      result.reasons.push("ساختار تایم‌فریم بالاتر با Range Setup هم‌جهت است.");
+    if (htfTrend === direction) {
+      result.reasons.push("ساختار تایم‌فریم بالاتر هم‌جهت است.");
     }
 
-    if (hasRealHtf2 && htf2Trend === rangeDirection) {
-      result.reasons.push("ساختار تایم‌فریم بالاتر دوم با Range Setup هم‌جهت است.");
+    if (hasRealHtf2 && htf2Trend === direction) {
+      result.reasons.push("ساختار تایم‌فریم بالاتر دوم هم‌جهت است.");
     }
 
-    if (rangeEmaDirection === rangeDirection) {
+    if (emaDirection === direction) {
       if (
         emaTrend &&
         emaTrend.cross === "golden" &&
-        rangeDirection === "bullish"
+        direction === "bullish"
       ) {
         result.reasons.push(
           "کراس صعودی EMA " +
@@ -1518,7 +1004,7 @@ export async function analyze(symbol, timeframe) {
       } else if (
         emaTrend &&
         emaTrend.cross === "death" &&
-        rangeDirection === "bearish"
+        direction === "bearish"
       ) {
         result.reasons.push(
           "کراس نزولی EMA " +
@@ -1529,34 +1015,48 @@ export async function analyze(symbol, timeframe) {
         );
       } else {
         result.reasons.push(
-          "EMA " + emaFastLabel + "/" + emaSlowLabel + " هم‌جهت با Range Setup است."
+          "EMA " + emaFastLabel + "/" + emaSlowLabel + " هم‌جهت با ستاپ است."
         );
       }
 
-      if (emaTrend && emaTrend.price_side === rangeDirection) {
+      if (emaTrend && emaTrend.price_side === direction) {
         result.reasons.push("قیمت در سمت هم‌جهت با EMA قرار دارد.");
       }
     }
 
     if (
-      rangeFibOverlap &&
-      rangeFibOverlap.overlap &&
-      Array.isArray(rangeFibOverlap.matched)
+      fibOverlap &&
+      fibOverlap.overlap &&
+      Array.isArray(fibOverlap.matched)
     ) {
-      const rangeFibLabels = rangeFibOverlap.matched
+      const labels = fibOverlap.matched
         .filter((m) => m && typeof m.label === "string")
         .map((m) => m.label)
         .join(" + ");
 
-      if (rangeFibLabels) {
+      if (labels) {
         result.reasons.push(
-          "ناحیه ورود Range Setup با فیبو " + rangeFibLabels + " هم‌پوشانی دارد."
+          "ناحیه ورود با فیبو " + labels + " هم‌پوشانی دارد."
         );
       }
     }
 
+    if (event && event.type === "BOS") {
+      result.reasons.push("BOS معتبر در زنجیره ساختاری ثبت شده است.");
+    } else if (event && event.type === "CHoCH") {
+      result.reasons.push("CHoCH معتبر و تغییر ساختار مشاهده شده است.");
+    }
+
     result.reasons.push(
-      "Range Setup با امتیاز " + rangeActive.score + "/14 تأیید شد."
+      "Liquidity Sweep هم‌جهت قبل از شکست ساختاری انتخاب شد."
+    );
+
+    result.reasons.push(
+      "Displacement هم‌جهت و مرتبط با Event تأیید شد."
+    );
+
+    result.reasons.push(
+      "Order Block و FVG مرتبط با همان حرکت ساختاری انتخاب شدند."
     );
 
     return result;
