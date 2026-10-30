@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T02:01:13.466Z",
+  "lastUpdated": "2026-10-30T02:31:19.890Z",
   "signals": {
-    "BILLUSDT:15m": {
-      "sentAt": "2026-10-29T14:01:22.136Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005946663996185323,
-      "stop": 0.005845868587777187
-    },
-    "SOLUSDT:15m": {
-      "sentAt": "2026-10-29T14:01:23.861Z",
-      "symbol": "SOLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 100.66,
-      "stop": 99.85877736121522
-    },
-    "MOODENGUSDT:15m": {
-      "sentAt": "2026-10-29T14:01:26.287Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.037215,
-      "stop": 0.03688334538258497
-    },
-    "MSTRBUSDT:2h": {
-      "sentAt": "2026-10-29T14:01:30.044Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 142.2606469716087,
-      "stop": 136.47865583596274
-    },
-    "MUBUSDT:30m": {
-      "sentAt": "2026-10-29T14:31:12.639Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 956.355,
-      "stop": 970.4161105323733
-    },
-    "QNTUSDT:30m": {
-      "sentAt": "2026-10-29T14:31:14.349Z",
-      "symbol": "QNTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 195.53767718247528,
-      "stop": 190.33424064653454
-    },
     "ZECUSDT:1h": {
       "sentAt": "2026-10-29T14:45:00.158Z",
       "symbol": "ZECUSDT",
@@ -522,6 +468,15 @@
       "score": 14,
       "entry": 0.3117,
       "stop": 0.29552787323125074
+    },
+    "OFCUSDT:15m": {
+      "sentAt": "2026-10-30T02:31:18.386Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.006732,
+      "stop": 0.006997697357757923
     }
   }
 }
