@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T14:54:41.165Z",
+  "lastUpdated": "2026-10-30T15:01:18.486Z",
   "signals": {
     "XPLUSDT:15m": {
       "sentAt": "2026-10-30T03:31:23.754Z",
@@ -360,6 +360,42 @@
       "score": 14,
       "entry": 0.0611,
       "stop": 0.0591445613195834
+    },
+    "ORDERUSDT:30m": {
+      "sentAt": "2026-10-30T15:01:11.494Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03496,
+      "stop": 0.03350552752740683
+    },
+    "ZORAUSDT:30m": {
+      "sentAt": "2026-10-30T15:01:13.302Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006043467354655331,
+      "stop": 0.005819233181033347
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-10-30T15:01:15.130Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1192,
+      "stop": 0.11491945406943989
+    },
+    "POPCATUSDT:15m": {
+      "sentAt": "2026-10-30T15:01:16.985Z",
+      "symbol": "POPCATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03941,
+      "stop": 0.03824460905520976
     }
   }
 }
