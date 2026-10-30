@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T16:31:13.192Z",
+  "lastUpdated": "2026-10-30T17:01:19.763Z",
   "signals": {
-    "GRVTUSDT:15m": {
-      "sentAt": "2026-10-30T04:31:15.871Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.22170122964420197,
-      "stop": 0.22898693111284318
-    },
     "QNTUSDT:2h": {
       "sentAt": "2026-10-30T06:01:17.471Z",
       "symbol": "QNTUSDT",
