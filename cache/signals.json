@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-10-30T00:01:24.472Z",
+  "lastUpdated": "2026-10-30T00:31:48.679Z",
   "signals": {
-    "SPACEUSDT:1h": {
-      "sentAt": "2026-10-29T12:31:14.771Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.003726,
-      "stop": 0.003831151723118866
-    },
-    "FARTCOINUSDT:30m": {
-      "sentAt": "2026-10-29T12:31:16.595Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.12940746156902913,
-      "stop": 0.12717416
-    },
-    "CELOUSDT:30m": {
-      "sentAt": "2026-10-29T12:31:18.357Z",
-      "symbol": "CELOUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.08045284,
-      "stop": 0.08291840703414197
-    },
     "USELESSUSDT:15m": {
       "sentAt": "2026-10-29T13:01:22.548Z",
       "symbol": "USELESSUSDT",
