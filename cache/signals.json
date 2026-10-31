@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T06:31:03.900Z",
+  "lastUpdated": "2026-10-31T07:01:03.025Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-10-30T18:31:27.605Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.363597765746184e-9,
-      "stop": 9.091444530384398e-9
-    },
     "FETUSDT:15m": {
       "sentAt": "2026-10-30T20:31:19.550Z",
       "symbol": "FETUSDT",
