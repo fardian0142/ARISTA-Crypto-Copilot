@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T00:31:09.147Z",
+  "lastUpdated": "2026-10-31T01:01:20.021Z",
   "signals": {
-    "MOODENGUSDT:15m": {
-      "sentAt": "2026-10-30T12:31:28.104Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03528,
-      "stop": 0.03457277466722305
-    },
-    "BSBUSDT:15m": {
-      "sentAt": "2026-10-30T12:31:29.847Z",
-      "symbol": "BSBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.09950377675025822,
-      "stop": 0.10120564999999998
-    },
-    "PENGUUSDT:15m": {
-      "sentAt": "2026-10-30T12:31:31.556Z",
-      "symbol": "PENGUUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00728,
-      "stop": 0.007049046813916089
-    },
-    "PENGUUSDT:30m": {
-      "sentAt": "2026-10-30T12:31:31.556Z",
-      "symbol": "PENGUUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0072105,
-      "stop": 0.006897167756548601
-    },
     "DOSUSDT:30m": {
       "sentAt": "2026-10-30T13:01:22.570Z",
       "symbol": "DOSUSDT",
