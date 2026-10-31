@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T01:01:20.021Z",
+  "lastUpdated": "2026-10-31T01:31:09.318Z",
   "signals": {
-    "DOSUSDT:30m": {
-      "sentAt": "2026-10-30T13:01:22.570Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1938,
-      "stop": 0.18289060324420164
-    },
     "AKEUSDT:15m": {
       "sentAt": "2026-10-30T13:31:13.424Z",
       "symbol": "AKEUSDT",
