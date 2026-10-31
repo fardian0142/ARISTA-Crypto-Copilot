@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T01:31:09.318Z",
+  "lastUpdated": "2026-10-31T02:01:14.777Z",
   "signals": {
-    "AKEUSDT:15m": {
-      "sentAt": "2026-10-30T13:31:13.424Z",
-      "symbol": "AKEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01896030220456833,
-      "stop": 0.01798355568165477
-    },
-    "DASHUSDT:15m": {
-      "sentAt": "2026-10-30T13:31:15.164Z",
-      "symbol": "DASHUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 49.07252286579439,
-      "stop": 47.41055095861154
-    },
     "QNTUSDT:15m": {
       "sentAt": "2026-10-30T14:01:26.619Z",
       "symbol": "QNTUSDT",
