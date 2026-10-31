@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T03:01:09.066Z",
+  "lastUpdated": "2026-10-31T03:31:09.695Z",
   "signals": {
-    "ORDERUSDT:30m": {
-      "sentAt": "2026-10-30T15:01:11.494Z",
-      "symbol": "ORDERUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03496,
-      "stop": 0.03350552752740683
-    },
-    "ZORAUSDT:30m": {
-      "sentAt": "2026-10-30T15:01:13.302Z",
-      "symbol": "ZORAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006043467354655331,
-      "stop": 0.005819233181033347
-    },
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-10-30T15:01:15.130Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1192,
-      "stop": 0.11491945406943989
-    },
-    "POPCATUSDT:15m": {
-      "sentAt": "2026-10-30T15:01:16.985Z",
-      "symbol": "POPCATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03941,
-      "stop": 0.03824460905520976
-    },
     "BTCUSDT:15m": {
       "sentAt": "2026-10-30T15:31:38.697Z",
       "symbol": "BTCUSDT",
