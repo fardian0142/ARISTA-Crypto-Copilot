@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T05:01:09.824Z",
+  "lastUpdated": "2026-10-31T05:31:11.678Z",
   "signals": {
     "SATSUSDT:15m": {
       "sentAt": "2026-10-30T18:31:27.605Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.09612,
       "stop": 0.09374805694163425
+    },
+    "CTUSDT:30m": {
+      "sentAt": "2026-10-31T05:31:10.176Z",
+      "symbol": "CTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13616170553448134,
+      "stop": 0.12907353189656187
     }
   }
 }
