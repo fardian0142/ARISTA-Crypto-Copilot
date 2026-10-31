@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T16:01:05.549Z",
+  "lastUpdated": "2026-10-31T16:31:29.920Z",
   "signals": {
-    "CCUSDT:30m": {
-      "sentAt": "2026-10-31T04:31:11.165Z",
-      "symbol": "CCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09612,
-      "stop": 0.09374805694163425
-    },
     "CTUSDT:30m": {
       "sentAt": "2026-10-31T05:31:10.176Z",
       "symbol": "CTUSDT",
