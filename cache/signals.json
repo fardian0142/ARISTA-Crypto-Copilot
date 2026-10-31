@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T04:01:05.882Z",
+  "lastUpdated": "2026-10-31T04:31:12.668Z",
   "signals": {
-    "WLDUSDT:30m": {
-      "sentAt": "2026-10-30T16:01:21.423Z",
-      "symbol": "WLDUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.41192390069225077,
-      "stop": 0.4354435664839231
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-10-30T18:31:27.605Z",
       "symbol": "SATSUSDT",
@@ -27,6 +18,15 @@
       "score": 14,
       "entry": 0.16549771104396266,
       "stop": 0.16024492111455252
+    },
+    "CCUSDT:30m": {
+      "sentAt": "2026-10-31T04:31:11.165Z",
+      "symbol": "CCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09612,
+      "stop": 0.09374805694163425
     }
   }
 }
