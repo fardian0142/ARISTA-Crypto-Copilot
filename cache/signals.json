@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-10-31T08:31:07.182Z",
+  "lastUpdated": "2026-10-31T09:01:07.563Z",
   "signals": {
-    "FETUSDT:15m": {
-      "sentAt": "2026-10-30T20:31:19.550Z",
-      "symbol": "FETUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.16549771104396266,
-      "stop": 0.16024492111455252
-    },
     "CCUSDT:30m": {
       "sentAt": "2026-10-31T04:31:11.165Z",
       "symbol": "CCUSDT",
