@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T21:00:56.822Z",
+  "lastUpdated": "2026-11-01T21:30:50.410Z",
   "signals": {
-    "ZECUSDT:30m": {
-      "sentAt": "2026-11-01T09:00:57.339Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1248.29,
-      "stop": 1226.4397055765908
-    },
-    "DOSUSDT:15m": {
-      "sentAt": "2026-11-01T09:00:59.143Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2011,
-      "stop": 0.1966375825773967
-    },
     "CPUSDT:1h": {
       "sentAt": "2026-11-01T09:30:55.061Z",
       "symbol": "CPUSDT",
