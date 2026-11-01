@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T12:31:05.852Z",
+  "lastUpdated": "2026-11-01T13:00:58.611Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -234,6 +234,33 @@
       "score": 14,
       "entry": 137.33499999999998,
       "stop": 139.81625
+    },
+    "RLSUSDT:15m": {
+      "sentAt": "2026-11-01T13:00:53.587Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0023426797820642864,
+      "stop": 0.002409430128112237
+    },
+    "LINKUSDT:1h": {
+      "sentAt": "2026-11-01T13:00:55.333Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 11.706,
+      "stop": 12.025303755259012
+    },
+    "AVAXUSDT:2h": {
+      "sentAt": "2026-11-01T13:00:57.108Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.661,
+      "stop": 8.199197172079673
     }
   }
 }
