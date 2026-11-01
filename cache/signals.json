@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T07:01:01.056Z",
+  "lastUpdated": "2026-11-01T07:31:00.155Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 87.89500000000001,
       "stop": 86.4633
+    },
+    "MEWUSDT:1h": {
+      "sentAt": "2026-11-01T07:30:58.651Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000420433624433,
+      "stop": 0.00040395982547857147
     }
   }
 }
