@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T19:01:06.874Z",
+  "lastUpdated": "2026-11-01T19:31:17.588Z",
   "signals": {
-    "MEWUSDT:1h": {
-      "sentAt": "2026-11-01T07:30:58.651Z",
-      "symbol": "MEWUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.000420433624433,
-      "stop": 0.00040395982547857147
-    },
     "BILLUSDT:1h": {
       "sentAt": "2026-11-01T08:01:04.118Z",
       "symbol": "BILLUSDT",
@@ -306,6 +297,33 @@
       "score": 14,
       "entry": 0.015041807209146815,
       "stop": 0.01448994850609418
+    },
+    "CPUSDT:15m": {
+      "sentAt": "2026-11-01T19:31:14.284Z",
+      "symbol": "CPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.007981128085622388,
+      "stop": 0.007823855000000001
+    },
+    "CPUSDT:30m": {
+      "sentAt": "2026-11-01T19:31:14.284Z",
+      "symbol": "CPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.007982653424036076,
+      "stop": 0.0077999041140280195
+    },
+    "BRETTUSDT:30m": {
+      "sentAt": "2026-11-01T19:31:16.086Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004342018030470359,
+      "stop": 0.00425914
     }
   }
 }
