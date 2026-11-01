@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T10:01:03.322Z",
+  "lastUpdated": "2026-11-01T10:31:03.452Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -171,6 +171,42 @@
       "score": 14,
       "entry": 0.013875,
       "stop": 0.0136521
+    },
+    "BTCUSDT:1h": {
+      "sentAt": "2026-11-01T10:30:56.709Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 78108.195,
+      "stop": 76682.25
+    },
+    "XDPUSDT:30m": {
+      "sentAt": "2026-11-01T10:30:58.512Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.017345,
+      "stop": 0.0170405
+    },
+    "ATHUSDT:1h": {
+      "sentAt": "2026-11-01T10:31:00.233Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005153,
+      "stop": 0.004909453354060537
+    },
+    "USELESSUSDT:30m": {
+      "sentAt": "2026-11-01T10:31:01.949Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13426012711952257,
+      "stop": 0.12779909200341022
     }
   }
 }
