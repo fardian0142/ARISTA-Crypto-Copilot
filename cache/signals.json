@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T18:00:49.582Z",
+  "lastUpdated": "2026-11-01T18:30:59.347Z",
   "signals": {
-    "BTCUSDT:30m": {
-      "sentAt": "2026-11-01T06:30:59.075Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 77834.01999999999,
-      "stop": 76642.85
-    },
     "ENAUSDT:15m": {
       "sentAt": "2026-11-01T06:31:00.760Z",
       "symbol": "ENAUSDT",
