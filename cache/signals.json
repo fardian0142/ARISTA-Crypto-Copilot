@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T13:30:59.636Z",
+  "lastUpdated": "2026-11-01T14:00:54.886Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -279,6 +279,15 @@
       "score": 14,
       "entry": 0.013305,
       "stop": 0.01280081285431496
+    },
+    "DOSUSDT:30m": {
+      "sentAt": "2026-11-01T14:00:53.385Z",
+      "symbol": "DOSUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.20550000000000002,
+      "stop": 0.214716967427942
     }
   }
 }
