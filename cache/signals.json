@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T19:31:17.588Z",
+  "lastUpdated": "2026-11-01T20:01:09.118Z",
   "signals": {
-    "BILLUSDT:1h": {
-      "sentAt": "2026-11-01T08:01:04.118Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0054885,
-      "stop": 0.005209798187122462
-    },
-    "PIPPINUSDT:30m": {
-      "sentAt": "2026-11-01T08:01:05.984Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01391,
-      "stop": 0.01364225
-    },
-    "AZTECUSDT:1h": {
-      "sentAt": "2026-11-01T08:01:07.752Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01488,
-      "stop": 0.014323123946774877
-    },
     "ZECUSDT:30m": {
       "sentAt": "2026-11-01T09:00:57.339Z",
       "symbol": "ZECUSDT",
@@ -324,6 +297,15 @@
       "score": 14,
       "entry": 0.004342018030470359,
       "stop": 0.00425914
+    },
+    "MERLUSDT:15m": {
+      "sentAt": "2026-11-01T20:01:07.615Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.029985861443763952,
+      "stop": 0.0307581325445432
     }
   }
 }
