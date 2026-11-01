@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T18:30:59.347Z",
+  "lastUpdated": "2026-11-01T19:01:06.874Z",
   "signals": {
-    "ENAUSDT:15m": {
-      "sentAt": "2026-11-01T06:31:00.760Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.18951679999999999,
-      "stop": 0.18477713533332193
-    },
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-11-01T06:31:02.467Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.12135,
-      "stop": 0.12332249999999999
-    },
-    "HYPEUSDT:15m": {
-      "sentAt": "2026-11-01T07:00:59.554Z",
-      "symbol": "HYPEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 87.89500000000001,
-      "stop": 86.4633
-    },
     "MEWUSDT:1h": {
       "sentAt": "2026-11-01T07:30:58.651Z",
       "symbol": "MEWUSDT",
@@ -315,6 +288,24 @@
       "score": 14,
       "entry": 0.07389499999999999,
       "stop": 0.07254524999999999
+    },
+    "TRUTHUSDT:1h": {
+      "sentAt": "2026-11-01T19:01:03.655Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.020113,
+      "stop": 0.019710300436894743
+    },
+    "AZTECUSDT:30m": {
+      "sentAt": "2026-11-01T19:01:05.371Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.015041807209146815,
+      "stop": 0.01448994850609418
     }
   }
 }
