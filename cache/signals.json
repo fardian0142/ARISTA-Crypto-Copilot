@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T09:31:01.723Z",
+  "lastUpdated": "2026-11-01T10:01:03.322Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -135,6 +135,42 @@
       "score": 14,
       "entry": 0.1887,
       "stop": 0.18359747081405192
+    },
+    "ETHUSDT:1h": {
+      "sentAt": "2026-11-01T10:00:56.578Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2272.99,
+      "stop": 2231.07425
+    },
+    "ZORAUSDT:15m": {
+      "sentAt": "2026-11-01T10:00:58.302Z",
+      "symbol": "ZORAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005921,
+      "stop": 0.005829267203042124
+    },
+    "BRETTUSDT:15m": {
+      "sentAt": "2026-11-01T10:01:00.087Z",
+      "symbol": "BRETTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004452,
+      "stop": 0.0045269
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-11-01T10:01:01.820Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.013875,
+      "stop": 0.0136521
     }
   }
 }
