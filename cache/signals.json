@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T20:30:55.099Z",
+  "lastUpdated": "2026-11-01T21:00:56.822Z",
   "signals": {
     "ZECUSDT:30m": {
       "sentAt": "2026-11-01T09:00:57.339Z",
@@ -306,6 +306,15 @@
       "score": 14,
       "entry": 0.029985861443763952,
       "stop": 0.0307581325445432
+    },
+    "PIUSDT:15m": {
+      "sentAt": "2026-11-01T21:00:55.318Z",
+      "symbol": "PIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.078,
+      "stop": 0.07942328973219562
     }
   }
 }
