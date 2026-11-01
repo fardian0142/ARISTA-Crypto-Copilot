@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T09:01:00.645Z",
+  "lastUpdated": "2026-11-01T09:31:01.723Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -90,6 +90,51 @@
       "score": 14,
       "entry": 0.2011,
       "stop": 0.1966375825773967
+    },
+    "CPUSDT:1h": {
+      "sentAt": "2026-11-01T09:30:55.061Z",
+      "symbol": "CPUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0080765,
+      "stop": 0.007731711964911748
+    },
+    "SPACEUSDT:15m": {
+      "sentAt": "2026-11-01T09:30:56.798Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.003571,
+      "stop": 0.00349872
+    },
+    "SPACEUSDT:30m": {
+      "sentAt": "2026-11-01T09:30:56.798Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0035694999999999998,
+      "stop": 0.0034937949999999996
+    },
+    "CASHCATUSDT:1h": {
+      "sentAt": "2026-11-01T09:30:58.506Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0938506009145086,
+      "stop": 0.0900367071002896
+    },
+    "ENAUSDT:30m": {
+      "sentAt": "2026-11-01T09:31:00.222Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1887,
+      "stop": 0.18359747081405192
     }
   }
 }
