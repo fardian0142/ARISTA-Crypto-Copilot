@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T23:00:55.738Z",
+  "lastUpdated": "2026-11-01T23:31:06.975Z",
   "signals": {
     "AVAXUSDT:15m": {
       "sentAt": "2026-11-01T12:31:02.652Z",
@@ -207,6 +207,15 @@
       "score": 14,
       "entry": 0.001975,
       "stop": 0.0020618634675408616
+    },
+    "ENAUSDT:15m": {
+      "sentAt": "2026-11-01T23:31:05.473Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1824,
+      "stop": 0.17858049999999998
     }
   }
 }
