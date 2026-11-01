@@ -349,7 +349,7 @@ export async function analyze(symbol, timeframe) {
       scenario.bear_level > 0
     );
 
-    if (scenarioBullFinite && scenarioBearFinite) {
+        if (scenarioBullFinite && scenarioBearFinite) {
   try {
     result.range_setups = detectRangeTradeSetups(
       candles,
@@ -365,8 +365,8 @@ export async function analyze(symbol, timeframe) {
       const rangeDirection = result.range_setups.active.direction;
 
       if (
-        (rangeDirection === "bullish" && htfTrend !== "bullish") ||
-        (rangeDirection === "bearish" && htfTrend !== "bearish")
+        (rangeDirection === "bullish" && htfTrend === "bearish") ||
+        (rangeDirection === "bearish" && htfTrend === "bullish")
       ) {
         result.range_setups.active = null;
         if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
