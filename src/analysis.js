@@ -350,31 +350,44 @@ export async function analyze(symbol, timeframe) {
     );
 
     if (scenarioBullFinite && scenarioBearFinite) {
-      try {
-        result.range_setups = detectRangeTradeSetups(
-          candles,
-          currentPrice,
-          currentAtr,
-          scenario.bull_level,
-          scenario.bear_level,
-          swings,
-          timeframe
-        );
-      } catch (e) {
-        console.error("detectRangeTradeSetups error:", e);
-        result.range_setups = null;
-      }
-    } else {
-      result.range_setups = null;
-    }
-
-    const hasRangeSetup = !!(
-      result.range_setups &&
-      result.range_setups.active &&
-      Number.isFinite(result.range_setups.active.entry) &&
-      Number.isFinite(result.range_setups.active.score) &&
-      result.range_setups.active.score === 14
+  try {
+    result.range_setups = detectRangeTradeSetups(
+      candles,
+      currentPrice,
+      currentAtr,
+      scenario.bull_level,
+      scenario.bear_level,
+      swings,
+      timeframe
     );
+
+    if (result.range_setups && result.range_setups.active) {
+      const rangeDirection = result.range_setups.active.direction;
+
+      if (
+        (rangeDirection === "bullish" && htfTrend !== "bullish") ||
+        (rangeDirection === "bearish" && htfTrend !== "bearish")
+      ) {
+        result.range_setups.active = null;
+        if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+        if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+      }
+    }
+  } catch (e) {
+    console.error("detectRangeTradeSetups error:", e);
+    result.range_setups = null;
+  }
+} else {
+  result.range_setups = null;
+}
+
+const hasRangeSetup = !!(
+  result.range_setups &&
+  result.range_setups.active &&
+  Number.isFinite(result.range_setups.active.entry) &&
+  Number.isFinite(result.range_setups.active.score) &&
+  result.range_setups.active.score === 14
+);
 
     if (
       (!event || !Number.isFinite(event.index) || !Number.isFinite(event.direction)) &&
