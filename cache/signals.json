@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T13:00:58.611Z",
+  "lastUpdated": "2026-11-01T13:30:59.636Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -261,6 +261,24 @@
       "score": 14,
       "entry": 8.661,
       "stop": 8.199197172079673
+    },
+    "RLSUSDT:30m": {
+      "sentAt": "2026-11-01T13:30:56.418Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.002323592443546215,
+      "stop": 0.002459625403241319
+    },
+    "COREUSDT:30m": {
+      "sentAt": "2026-11-01T13:30:58.133Z",
+      "symbol": "COREUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.013305,
+      "stop": 0.01280081285431496
     }
   }
 }
