@@ -1,4 +1,32 @@
 {
-  "lastUpdated": "2026-11-01T06:10:33.549Z",
-  "signals": {}
+  "lastUpdated": "2026-11-01T06:31:03.969Z",
+  "signals": {
+    "BTCUSDT:30m": {
+      "sentAt": "2026-11-01T06:30:59.075Z",
+      "symbol": "BTCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 77834.01999999999,
+      "stop": 76642.85
+    },
+    "ENAUSDT:15m": {
+      "sentAt": "2026-11-01T06:31:00.760Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18951679999999999,
+      "stop": 0.18477713533332193
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-11-01T06:31:02.467Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.12135,
+      "stop": 0.12332249999999999
+    }
+  }
 }
