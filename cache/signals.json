@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T21:30:50.410Z",
+  "lastUpdated": "2026-11-01T22:00:57.788Z",
   "signals": {
-    "CPUSDT:1h": {
-      "sentAt": "2026-11-01T09:30:55.061Z",
-      "symbol": "CPUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0080765,
-      "stop": 0.007731711964911748
-    },
-    "SPACEUSDT:15m": {
-      "sentAt": "2026-11-01T09:30:56.798Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.003571,
-      "stop": 0.00349872
-    },
-    "SPACEUSDT:30m": {
-      "sentAt": "2026-11-01T09:30:56.798Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0035694999999999998,
-      "stop": 0.0034937949999999996
-    },
-    "CASHCATUSDT:1h": {
-      "sentAt": "2026-11-01T09:30:58.506Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0938506009145086,
-      "stop": 0.0900367071002896
-    },
-    "ENAUSDT:30m": {
-      "sentAt": "2026-11-01T09:31:00.222Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1887,
-      "stop": 0.18359747081405192
-    },
-    "ETHUSDT:1h": {
-      "sentAt": "2026-11-01T10:00:56.578Z",
-      "symbol": "ETHUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2272.99,
-      "stop": 2231.07425
-    },
     "ZORAUSDT:15m": {
       "sentAt": "2026-11-01T10:00:58.302Z",
       "symbol": "ZORAUSDT",
@@ -297,6 +243,24 @@
       "score": 14,
       "entry": 0.078,
       "stop": 0.07942328973219562
+    },
+    "CTUSDT:30m": {
+      "sentAt": "2026-11-01T22:00:54.587Z",
+      "symbol": "CTUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.14206308608546603,
+      "stop": 0.14874938510381402
+    },
+    "PIUSDT:30m": {
+      "sentAt": "2026-11-01T22:00:56.286Z",
+      "symbol": "PIUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07775907860059021,
+      "stop": 0.07934255
     }
   }
 }
