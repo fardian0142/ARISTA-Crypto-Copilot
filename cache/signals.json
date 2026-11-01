@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T07:31:00.155Z",
+  "lastUpdated": "2026-11-01T08:01:09.254Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -45,6 +45,33 @@
       "score": 14,
       "entry": 0.000420433624433,
       "stop": 0.00040395982547857147
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-11-01T08:01:04.118Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0054885,
+      "stop": 0.005209798187122462
+    },
+    "PIPPINUSDT:30m": {
+      "sentAt": "2026-11-01T08:01:05.984Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01391,
+      "stop": 0.01364225
+    },
+    "AZTECUSDT:1h": {
+      "sentAt": "2026-11-01T08:01:07.752Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01488,
+      "stop": 0.014323123946774877
     }
   }
 }
