@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T12:00:45.311Z",
+  "lastUpdated": "2026-11-01T12:31:05.852Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -207,6 +207,33 @@
       "score": 14,
       "entry": 0.13426012711952257,
       "stop": 0.12779909200341022
+    },
+    "AVAXUSDT:15m": {
+      "sentAt": "2026-11-01T12:31:02.652Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.692701279302561,
+      "stop": 8.48873
+    },
+    "AAVEUSDT:30m": {
+      "sentAt": "2026-11-01T12:31:04.349Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 137.44,
+      "stop": 140.47237224246908
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-11-01T12:31:04.349Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 137.33499999999998,
+      "stop": 139.81625
     }
   }
 }
