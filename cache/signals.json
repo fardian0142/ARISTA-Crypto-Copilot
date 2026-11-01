@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T15:00:54.240Z",
+  "lastUpdated": "2026-11-01T15:31:01.890Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -297,6 +297,15 @@
       "score": 14,
       "entry": 0.005925828531064365,
       "stop": 0.00576791868449427
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-11-01T15:31:00.388Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 9.454e-9,
+      "stop": 9.28264e-9
     }
   }
 }
