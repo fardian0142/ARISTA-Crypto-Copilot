@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T06:31:03.969Z",
+  "lastUpdated": "2026-11-01T07:01:01.056Z",
   "signals": {
     "BTCUSDT:30m": {
       "sentAt": "2026-11-01T06:30:59.075Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.12135,
       "stop": 0.12332249999999999
+    },
+    "HYPEUSDT:15m": {
+      "sentAt": "2026-11-01T07:00:59.554Z",
+      "symbol": "HYPEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 87.89500000000001,
+      "stop": 86.4633
     }
   }
 }
