@@ -284,6 +284,19 @@ export async function analyze(symbol, timeframe) {
 
     const structure = marketStructure(candles, swings) || emptyStructure();
 
+    let momentumBlocked = false;
+    if (candles.length >= 3) {
+      const lastThree = candles.slice(-3);
+      const bullishCount = lastThree.filter(c => c.close > c.open).length;
+      const bearishCount = lastThree.filter(c => c.close < c.open).length;
+
+      if (bearishCount === 3) {
+        momentumBlocked = "bearish";
+      } else if (bullishCount === 3) {
+        momentumBlocked = "bullish";
+      }
+    }
+
     const rsiDivergence = rsiDivergenceCalc(candles, rsiValues, swings);
     result.rsi_divergence = rsiDivergence;
 
@@ -405,6 +418,18 @@ if (hasRealHtf && result.range_setups.active) {
     if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
   }
 }
+
+      if (momentumBlocked === "bearish" && rangeDirection === "bullish") {
+        result.range_setups.active = null;
+        if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+        if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+      }
+
+      if (momentumBlocked === "bullish" && rangeDirection === "bearish") {
+        result.range_setups.active = null;
+        if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+        if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+      }
     }
   } catch (e) {
     console.error("detectRangeTradeSetups error:", e);
