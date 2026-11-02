@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T16:31:00.846Z",
+  "lastUpdated": "2026-11-02T17:01:06.511Z",
   "signals": {
-    "MOODENGUSDT:15m": {
-      "sentAt": "2026-11-02T05:00:56.304Z",
-      "symbol": "MOODENGUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03549563485612881,
-      "stop": 0.0347311
-    },
-    "AVAXUSDT:30m": {
-      "sentAt": "2026-11-02T05:00:58.134Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 8.68188895664101,
-      "stop": 8.860949999999999
-    },
     "LINKUSDT:1h": {
       "sentAt": "2026-11-02T06:01:04.482Z",
       "symbol": "LINKUSDT",
