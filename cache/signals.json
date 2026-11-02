@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T13:31:18.391Z",
+  "lastUpdated": "2026-11-02T14:01:11.003Z",
   "signals": {
-    "ZECUSDT:1h": {
-      "sentAt": "2026-11-02T02:00:58.476Z",
-      "symbol": "ZECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1239.8249999999998,
-      "stop": 1198.6432422025891
-    },
-    "USELESSUSDT:15m": {
-      "sentAt": "2026-11-02T02:01:00.202Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.13126,
-      "stop": 0.1352998923001422
-    },
     "CASHCATUSDT:30m": {
       "sentAt": "2026-11-02T02:30:55.705Z",
       "symbol": "CASHCATUSDT",
@@ -315,6 +297,24 @@
       "score": 14,
       "entry": 0.00189,
       "stop": 0.0018486315726646836
+    },
+    "LABUSDT:30m": {
+      "sentAt": "2026-11-02T14:01:07.759Z",
+      "symbol": "LABUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.04502,
+      "stop": 0.043145681261321796
+    },
+    "FARTCOINUSDT:15m": {
+      "sentAt": "2026-11-02T14:01:09.501Z",
+      "symbol": "FARTCOINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.12054999999999999,
+      "stop": 0.118003
     }
   }
 }
