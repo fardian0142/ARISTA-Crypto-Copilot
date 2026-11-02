@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T09:31:17.993Z",
+  "lastUpdated": "2026-11-02T10:01:07.855Z",
   "signals": {
-    "CTUSDT:30m": {
-      "sentAt": "2026-11-01T22:00:54.587Z",
-      "symbol": "CTUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.14206308608546603,
-      "stop": 0.14874938510381402
-    },
-    "PIUSDT:30m": {
-      "sentAt": "2026-11-01T22:00:56.286Z",
-      "symbol": "PIUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07775907860059021,
-      "stop": 0.07934255
-    },
     "DOODUSDT:15m": {
       "sentAt": "2026-11-01T22:31:03.666Z",
       "symbol": "DOODUSDT",
@@ -360,6 +342,24 @@
       "score": 14,
       "entry": 133.3529963119084,
       "stop": 137.9485977720828
+    },
+    "RLSUSDT:15m": {
+      "sentAt": "2026-11-02T10:01:04.525Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002269,
+      "stop": 0.002206611417647658
+    },
+    "SNDKBUSDT:15m": {
+      "sentAt": "2026-11-02T10:01:06.353Z",
+      "symbol": "SNDKBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1184.3453457091005,
+      "stop": 1204.8862
     }
   }
 }
