@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T17:31:32.692Z",
+  "lastUpdated": "2026-11-02T18:01:21.782Z",
   "signals": {
-    "LINKUSDT:1h": {
-      "sentAt": "2026-11-02T06:01:04.482Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 11.332,
-      "stop": 11.672711668958588
-    },
     "OLUSDT:15m": {
       "sentAt": "2026-11-02T06:31:09.796Z",
       "symbol": "OLUSDT",
