@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T02:01:01.704Z",
+  "lastUpdated": "2026-11-02T02:30:57.209Z",
   "signals": {
     "OFCUSDT:15m": {
       "sentAt": "2026-11-01T15:00:52.738Z",
@@ -234,6 +234,15 @@
       "score": 14,
       "entry": 0.13126,
       "stop": 0.1352998923001422
+    },
+    "CASHCATUSDT:30m": {
+      "sentAt": "2026-11-02T02:30:55.705Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.09525,
+      "stop": 0.10016520399415552
     }
   }
 }
