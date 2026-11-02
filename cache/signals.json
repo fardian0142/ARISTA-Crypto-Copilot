@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T22:03:52.627Z",
+  "lastUpdated": "2026-11-02T22:33:46.709Z",
   "signals": {
-    "OFCUSDT:30m": {
-      "sentAt": "2026-11-02T10:31:04.255Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005877,
-      "stop": 0.005586999010627149
-    },
     "OLUSDT:30m": {
       "sentAt": "2026-11-02T11:01:52.535Z",
       "symbol": "OLUSDT",
@@ -216,6 +207,15 @@
       "score": 14,
       "entry": 0.008505,
       "stop": 0.008953478614806524
+    },
+    "EWYBUSDT:30m": {
+      "sentAt": "2026-11-02T22:33:45.207Z",
+      "symbol": "EWYBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 153.05464046355334,
+      "stop": 149.63113954604742
     }
   }
 }
