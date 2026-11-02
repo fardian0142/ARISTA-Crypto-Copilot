@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T19:42:58.983Z",
+  "lastUpdated": "2026-11-02T20:04:01.341Z",
   "signals": {
-    "OLUSDT:1h": {
-      "sentAt": "2026-11-02T08:01:18.495Z",
-      "symbol": "OLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0065045,
-      "stop": 0.0061832963687308284
-    },
-    "ETHUSDT:2h": {
-      "sentAt": "2026-11-02T08:01:20.280Z",
-      "symbol": "ETHUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2284.205564347546,
-      "stop": 2224.445968946099
-    },
-    "MERLUSDT:30m": {
-      "sentAt": "2026-11-02T08:01:22.058Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.029825,
-      "stop": 0.030855672081931806
-    },
-    "AAVEUSDT:15m": {
-      "sentAt": "2026-11-02T08:01:23.903Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 133.97670705326286,
-      "stop": 130.97545
-    },
-    "SOXLBUSDT:30m": {
-      "sentAt": "2026-11-02T08:01:25.667Z",
-      "symbol": "SOXLBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 81.3,
-      "stop": 84.10631663486826
-    },
     "UPUSDT:30m": {
       "sentAt": "2026-11-02T08:31:06.752Z",
       "symbol": "UPUSDT",
@@ -243,6 +198,15 @@
       "score": 14,
       "entry": 0.009914473894576205,
       "stop": 0.0097318
+    },
+    "GMXUSDT:15m": {
+      "sentAt": "2026-11-02T20:03:59.836Z",
+      "symbol": "GMXUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.004999999999999,
+      "stop": 7.87015
     }
   }
 }
