@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T06:01:05.987Z",
+  "lastUpdated": "2026-11-02T06:31:13.030Z",
   "signals": {
     "TRUTHUSDT:1h": {
       "sentAt": "2026-11-01T19:01:03.655Z",
@@ -324,6 +324,24 @@
       "score": 14,
       "entry": 11.332,
       "stop": 11.672711668958588
+    },
+    "OLUSDT:15m": {
+      "sentAt": "2026-11-02T06:31:09.796Z",
+      "symbol": "OLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0065085,
+      "stop": 0.00639462
+    },
+    "UNIUSDT:15m": {
+      "sentAt": "2026-11-02T06:31:11.527Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.200728,
+      "stop": 7.04669
     }
   }
 }
