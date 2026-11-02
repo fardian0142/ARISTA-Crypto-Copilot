@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T00:01:07.779Z",
+  "lastUpdated": "2026-11-02T00:30:58.343Z",
   "signals": {
     "AVAXUSDT:15m": {
       "sentAt": "2026-11-01T12:31:02.652Z",
@@ -234,6 +234,33 @@
       "score": 14,
       "entry": 78068.35,
       "stop": 76701.28829876838
+    },
+    "TRUTHUSDT:30m": {
+      "sentAt": "2026-11-02T00:30:53.375Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0200835,
+      "stop": 0.01974137
+    },
+    "ENAUSDT:30m": {
+      "sentAt": "2026-11-02T00:30:55.120Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.18314617551719395,
+      "stop": 0.18895588916290046
+    },
+    "XAUTUSDT:2h": {
+      "sentAt": "2026-11-02T00:30:56.841Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3886.66,
+      "stop": 3820.1747499999997
     }
   }
 }
