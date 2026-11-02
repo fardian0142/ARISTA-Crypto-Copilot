@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T22:33:46.709Z",
+  "lastUpdated": "2026-11-02T23:03:52.985Z",
   "signals": {
-    "OLUSDT:30m": {
-      "sentAt": "2026-11-02T11:01:52.535Z",
-      "symbol": "OLUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006492355338352136,
-      "stop": 0.006209319011770453
-    },
     "RLSUSDT:30m": {
       "sentAt": "2026-11-02T11:31:03.774Z",
       "symbol": "RLSUSDT",
@@ -216,6 +207,24 @@
       "score": 14,
       "entry": 153.05464046355334,
       "stop": 149.63113954604742
+    },
+    "SOPHUSDT:15m": {
+      "sentAt": "2026-11-02T23:03:49.735Z",
+      "symbol": "SOPHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0015172600284622318,
+      "stop": 0.0014481426538412014
+    },
+    "UMAUSDT:15m": {
+      "sentAt": "2026-11-02T23:03:51.483Z",
+      "symbol": "UMAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.336,
+      "stop": 0.328005
     }
   }
 }
