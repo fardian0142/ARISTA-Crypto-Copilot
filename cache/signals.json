@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T14:01:11.003Z",
+  "lastUpdated": "2026-11-02T14:31:05.689Z",
   "signals": {
-    "CASHCATUSDT:30m": {
-      "sentAt": "2026-11-02T02:30:55.705Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.09525,
-      "stop": 0.10016520399415552
-    },
     "NEARUSDT:30m": {
       "sentAt": "2026-11-02T03:01:04.687Z",
       "symbol": "NEARUSDT",
