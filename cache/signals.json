@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T18:01:21.782Z",
+  "lastUpdated": "2026-11-02T18:31:18.327Z",
   "signals": {
-    "OLUSDT:15m": {
-      "sentAt": "2026-11-02T06:31:09.796Z",
-      "symbol": "OLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0065085,
-      "stop": 0.00639462
-    },
-    "UNIUSDT:15m": {
-      "sentAt": "2026-11-02T06:31:11.527Z",
-      "symbol": "UNIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.200728,
-      "stop": 7.04669
-    },
     "OFCUSDT:15m": {
       "sentAt": "2026-11-02T07:01:05.657Z",
       "symbol": "OFCUSDT",
