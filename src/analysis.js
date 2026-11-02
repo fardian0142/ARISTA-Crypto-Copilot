@@ -349,7 +349,7 @@ export async function analyze(symbol, timeframe) {
       scenario.bear_level > 0
     );
 
-        if (scenarioBullFinite && scenarioBearFinite) {
+                if (scenarioBullFinite && scenarioBearFinite) {
   try {
     result.range_setups = detectRangeTradeSetups(
       candles,
@@ -371,6 +371,20 @@ export async function analyze(symbol, timeframe) {
         result.range_setups.active = null;
         if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
         if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+      }
+
+      if (hasRealHtf && result.range_setups.active) {
+        const htfEma = emaTrendCalc(htfCandles);
+        if (
+          htfEma &&
+          htfEma.trend !== "neutral" &&
+          htfEma.trend !== rangeDirection &&
+          htfEma.distance_atr > 1.0
+        ) {
+          result.range_setups.active = null;
+          if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+          if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+        }
       }
     }
   } catch (e) {
