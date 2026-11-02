@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T15:01:31.901Z",
+  "lastUpdated": "2026-11-02T15:31:16.419Z",
   "signals": {
-    "ATHUSDT:15m": {
-      "sentAt": "2026-11-02T03:31:08.279Z",
-      "symbol": "ATHUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004997,
-      "stop": 0.00489348
-    },
-    "PEPEUSDT:15m": {
-      "sentAt": "2026-11-02T03:31:10.067Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00000491,
-      "stop": 0.000004767940092670785
-    },
-    "PEPEUSDT:30m": {
-      "sentAt": "2026-11-02T03:31:10.067Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00000489,
-      "stop": 0.000004722871970463667
-    },
-    "LINKUSDT:30m": {
-      "sentAt": "2026-11-02T03:31:11.806Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 11.369,
-      "stop": 11.615589989213543
-    },
     "CAPUSDT:15m": {
       "sentAt": "2026-11-02T03:49:42.132Z",
       "symbol": "CAPUSDT",
@@ -306,6 +270,24 @@
       "score": 14,
       "entry": 0.017922146251754124,
       "stop": 0.01735752677318482
+    },
+    "TRIAUSDT:15m": {
+      "sentAt": "2026-11-02T15:31:12.983Z",
+      "symbol": "TRIAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002614,
+      "stop": 0.0025312847557374457
+    },
+    "MERLUSDT:1h": {
+      "sentAt": "2026-11-02T15:31:14.917Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.02933,
+      "stop": 0.030723432447327156
     }
   }
 }
