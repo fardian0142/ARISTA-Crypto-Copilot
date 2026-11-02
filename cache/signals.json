@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T10:31:05.758Z",
+  "lastUpdated": "2026-11-02T11:01:54.038Z",
   "signals": {
     "ENAUSDT:15m": {
       "sentAt": "2026-11-01T23:31:05.473Z",
@@ -360,6 +360,15 @@
       "score": 14,
       "entry": 0.005877,
       "stop": 0.005586999010627149
+    },
+    "OLUSDT:30m": {
+      "sentAt": "2026-11-02T11:01:52.535Z",
+      "symbol": "OLUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006492355338352136,
+      "stop": 0.006209319011770453
     }
   }
 }
