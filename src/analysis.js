@@ -374,18 +374,37 @@ export async function analyze(symbol, timeframe) {
       }
 
       if (hasRealHtf && result.range_setups.active) {
-        const htfEma = emaTrendCalc(htfCandles);
-        if (
-          htfEma &&
-          htfEma.trend !== "neutral" &&
-          htfEma.trend !== rangeDirection &&
-          htfEma.distance_atr > 1.0
-        ) {
-          result.range_setups.active = null;
-          if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
-          if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
-        }
-      }
+  const htfEma = emaTrendCalc(htfCandles);
+  if (
+    htfEma &&
+    htfEma.trend !== "neutral" &&
+    htfEma.trend !== rangeDirection &&
+    htfEma.distance_atr > 1.0
+  ) {
+    result.range_setups.active = null;
+    if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+    if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+  }
+}
+
+if (hasRealHtf && result.range_setups.active) {
+  const htfHighs = htfStructure.highs || [];
+  const htfLows = htfStructure.lows || [];
+  const lastHtfHigh = htfHighs.length > 0 ? htfHighs[htfHighs.length - 1] : null;
+  const lastHtfLow = htfLows.length > 0 ? htfLows[htfLows.length - 1] : null;
+
+  if (rangeDirection === "bullish" && lastHtfHigh && lastHtfHigh.label === "LH") {
+    result.range_setups.active = null;
+  }
+  if (rangeDirection === "bearish" && lastHtfLow && lastHtfLow.label === "HL") {
+    result.range_setups.active = null;
+  }
+
+  if (!result.range_setups.active) {
+    if (Array.isArray(result.range_setups.bullish)) result.range_setups.bullish = [];
+    if (Array.isArray(result.range_setups.bearish)) result.range_setups.bearish = [];
+  }
+}
     }
   } catch (e) {
     console.error("detectRangeTradeSetups error:", e);
