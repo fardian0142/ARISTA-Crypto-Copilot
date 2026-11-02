@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T19:03:38.457Z",
+  "lastUpdated": "2026-11-02T19:22:15.070Z",
   "signals": {
     "OLUSDT:1h": {
       "sentAt": "2026-11-02T08:01:18.495Z",
@@ -225,6 +225,24 @@
       "score": 14,
       "entry": 0.32915,
       "stop": 0.31892554906380793
+    },
+    "STABLEUSDT:30m": {
+      "sentAt": "2026-11-02T19:22:11.841Z",
+      "symbol": "STABLEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.026804845682536455,
+      "stop": 0.02615681655331103
+    },
+    "ARPAUSDT:15m": {
+      "sentAt": "2026-11-02T19:22:13.567Z",
+      "symbol": "ARPAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009914473894576205,
+      "stop": 0.0097318
     }
   }
 }
