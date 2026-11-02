@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T04:01:00.081Z",
+  "lastUpdated": "2026-11-02T04:30:59.241Z",
   "signals": {
     "BILLUSDT:30m": {
       "sentAt": "2026-11-01T17:56:30.205Z",
@@ -288,6 +288,33 @@
       "score": 14,
       "entry": 8.694,
       "stop": 8.532070000000001
+    },
+    "LINKUSDT:15m": {
+      "sentAt": "2026-11-02T04:30:56.014Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 11.368,
+      "stop": 11.17581
+    },
+    "DOGEUSDT:1h": {
+      "sentAt": "2026-11-02T04:30:57.738Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07588,
+      "stop": 0.07439704999999999
+    },
+    "DOGEUSDT:2h": {
+      "sentAt": "2026-11-02T04:30:57.738Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07584,
+      "stop": 0.07378405320150154
     }
   }
 }
