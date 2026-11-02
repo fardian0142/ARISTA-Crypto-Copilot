@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T15:31:16.419Z",
+  "lastUpdated": "2026-11-02T15:56:44.130Z",
   "signals": {
-    "CAPUSDT:15m": {
-      "sentAt": "2026-11-02T03:49:42.132Z",
-      "symbol": "CAPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0708419761902066,
-      "stop": 0.06784159864138142
-    },
     "AVAXUSDT:15m": {
       "sentAt": "2026-11-02T04:00:58.579Z",
       "symbol": "AVAXUSDT",
@@ -288,6 +279,15 @@
       "score": 14,
       "entry": 0.02933,
       "stop": 0.030723432447327156
+    },
+    "TRUSTUSDT:15m": {
+      "sentAt": "2026-11-02T15:56:42.627Z",
+      "symbol": "TRUSTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05187,
+      "stop": 0.05002181930334827
     }
   }
 }
