@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T08:31:10.137Z",
+  "lastUpdated": "2026-11-02T09:01:09.232Z",
   "signals": {
-    "PIUSDT:15m": {
-      "sentAt": "2026-11-01T21:00:55.318Z",
-      "symbol": "PIUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.078,
-      "stop": 0.07942328973219562
-    },
     "CTUSDT:30m": {
       "sentAt": "2026-11-01T22:00:54.587Z",
       "symbol": "CTUSDT",
