@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T14:31:05.689Z",
+  "lastUpdated": "2026-11-02T15:01:31.901Z",
   "signals": {
-    "NEARUSDT:30m": {
-      "sentAt": "2026-11-02T03:01:04.687Z",
-      "symbol": "NEARUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 4.297885091908062,
-      "stop": 4.418677914942418
-    },
     "ATHUSDT:15m": {
       "sentAt": "2026-11-02T03:31:08.279Z",
       "symbol": "ATHUSDT",
@@ -306,6 +297,15 @@
       "score": 14,
       "entry": 0.12054999999999999,
       "stop": 0.118003
+    },
+    "XDPUSDT:30m": {
+      "sentAt": "2026-11-02T15:01:30.398Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.017922146251754124,
+      "stop": 0.01735752677318482
     }
   }
 }
