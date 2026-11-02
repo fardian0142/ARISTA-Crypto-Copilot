@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T21:03:49.863Z",
+  "lastUpdated": "2026-11-02T21:33:24.153Z",
   "signals": {
-    "AAVEUSDT:1h": {
-      "sentAt": "2026-11-02T09:31:16.491Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 133.3529963119084,
-      "stop": 137.9485977720828
-    },
     "RLSUSDT:15m": {
       "sentAt": "2026-11-02T10:01:04.525Z",
       "symbol": "RLSUSDT",
