@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T03:01:06.189Z",
+  "lastUpdated": "2026-11-02T03:31:13.309Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-11-01T15:31:00.388Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 9.454e-9,
-      "stop": 9.28264e-9
-    },
     "BILLUSDT:30m": {
       "sentAt": "2026-11-01T17:56:30.205Z",
       "symbol": "BILLUSDT",
@@ -243,6 +234,42 @@
       "score": 14,
       "entry": 4.297885091908062,
       "stop": 4.418677914942418
+    },
+    "ATHUSDT:15m": {
+      "sentAt": "2026-11-02T03:31:08.279Z",
+      "symbol": "ATHUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004997,
+      "stop": 0.00489348
+    },
+    "PEPEUSDT:15m": {
+      "sentAt": "2026-11-02T03:31:10.067Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00000491,
+      "stop": 0.000004767940092670785
+    },
+    "PEPEUSDT:30m": {
+      "sentAt": "2026-11-02T03:31:10.067Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00000489,
+      "stop": 0.000004722871970463667
+    },
+    "LINKUSDT:30m": {
+      "sentAt": "2026-11-02T03:31:11.806Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 11.369,
+      "stop": 11.615589989213543
     }
   }
 }
