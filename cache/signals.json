@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T09:01:09.232Z",
+  "lastUpdated": "2026-11-02T09:31:17.993Z",
   "signals": {
     "CTUSDT:30m": {
       "sentAt": "2026-11-01T22:00:54.587Z",
@@ -351,6 +351,15 @@
       "score": 14,
       "entry": 0.20036999139767953,
       "stop": 0.19605434224382032
+    },
+    "AAVEUSDT:1h": {
+      "sentAt": "2026-11-02T09:31:16.491Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 133.3529963119084,
+      "stop": 137.9485977720828
     }
   }
 }
