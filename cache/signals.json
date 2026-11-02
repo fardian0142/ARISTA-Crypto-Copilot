@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T20:33:41.172Z",
+  "lastUpdated": "2026-11-02T21:03:49.863Z",
   "signals": {
     "AAVEUSDT:1h": {
       "sentAt": "2026-11-02T09:31:16.491Z",
@@ -207,6 +207,24 @@
       "score": 14,
       "entry": 0.1106,
       "stop": 0.11577950449161363
+    },
+    "LUMIAUSDT:1h": {
+      "sentAt": "2026-11-02T21:03:46.484Z",
+      "symbol": "LUMIAUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.08047364824036482,
+      "stop": 0.07683108399739415
+    },
+    "DJTBUSDT:15m": {
+      "sentAt": "2026-11-02T21:03:48.361Z",
+      "symbol": "DJTBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 5.68713400223231,
+      "stop": 5.527614269769216
     }
   }
 }
