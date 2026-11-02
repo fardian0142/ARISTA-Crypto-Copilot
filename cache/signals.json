@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T10:01:07.855Z",
+  "lastUpdated": "2026-11-02T10:31:05.758Z",
   "signals": {
-    "DOODUSDT:15m": {
-      "sentAt": "2026-11-01T22:31:03.666Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.001975,
-      "stop": 0.0020618634675408616
-    },
     "ENAUSDT:15m": {
       "sentAt": "2026-11-01T23:31:05.473Z",
       "symbol": "ENAUSDT",
@@ -360,6 +351,15 @@
       "score": 14,
       "entry": 1184.3453457091005,
       "stop": 1204.8862
+    },
+    "OFCUSDT:30m": {
+      "sentAt": "2026-11-02T10:31:04.255Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.005877,
+      "stop": 0.005586999010627149
     }
   }
 }
