@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T21:33:24.153Z",
+  "lastUpdated": "2026-11-02T22:03:52.627Z",
   "signals": {
-    "RLSUSDT:15m": {
-      "sentAt": "2026-11-02T10:01:04.525Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.002269,
-      "stop": 0.002206611417647658
-    },
-    "SNDKBUSDT:15m": {
-      "sentAt": "2026-11-02T10:01:06.353Z",
-      "symbol": "SNDKBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1184.3453457091005,
-      "stop": 1204.8862
-    },
     "OFCUSDT:30m": {
       "sentAt": "2026-11-02T10:31:04.255Z",
       "symbol": "OFCUSDT",
@@ -216,6 +198,24 @@
       "score": 14,
       "entry": 5.68713400223231,
       "stop": 5.527614269769216
+    },
+    "KORUBUSDT:15m": {
+      "sentAt": "2026-11-02T22:03:49.375Z",
+      "symbol": "KORUBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 10.495000000000001,
+      "stop": 10.022291881538575
+    },
+    "ACTUSDT:1h": {
+      "sentAt": "2026-11-02T22:03:51.125Z",
+      "symbol": "ACTUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.008505,
+      "stop": 0.008953478614806524
     }
   }
 }
