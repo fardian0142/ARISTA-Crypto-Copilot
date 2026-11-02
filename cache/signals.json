@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T06:31:13.030Z",
+  "lastUpdated": "2026-11-02T07:01:07.159Z",
   "signals": {
-    "TRUTHUSDT:1h": {
-      "sentAt": "2026-11-01T19:01:03.655Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.020113,
-      "stop": 0.019710300436894743
-    },
-    "AZTECUSDT:30m": {
-      "sentAt": "2026-11-01T19:01:05.371Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.015041807209146815,
-      "stop": 0.01448994850609418
-    },
     "CPUSDT:15m": {
       "sentAt": "2026-11-01T19:31:14.284Z",
       "symbol": "CPUSDT",
@@ -342,6 +324,15 @@
       "score": 14,
       "entry": 7.200728,
       "stop": 7.04669
+    },
+    "OFCUSDT:15m": {
+      "sentAt": "2026-11-02T07:01:05.657Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006007090302592219,
+      "stop": 0.005721069267198435
     }
   }
 }
