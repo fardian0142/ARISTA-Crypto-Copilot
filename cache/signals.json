@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T00:30:58.343Z",
+  "lastUpdated": "2026-11-02T01:00:59.508Z",
   "signals": {
-    "AVAXUSDT:15m": {
-      "sentAt": "2026-11-01T12:31:02.652Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.692701279302561,
-      "stop": 8.48873
-    },
-    "AAVEUSDT:30m": {
-      "sentAt": "2026-11-01T12:31:04.349Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 137.44,
-      "stop": 140.47237224246908
-    },
-    "AAVEUSDT:15m": {
-      "sentAt": "2026-11-01T12:31:04.349Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 137.33499999999998,
-      "stop": 139.81625
-    },
-    "RLSUSDT:15m": {
-      "sentAt": "2026-11-01T13:00:53.587Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.0023426797820642864,
-      "stop": 0.002409430128112237
-    },
-    "LINKUSDT:1h": {
-      "sentAt": "2026-11-01T13:00:55.333Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 11.706,
-      "stop": 12.025303755259012
-    },
-    "AVAXUSDT:2h": {
-      "sentAt": "2026-11-01T13:00:57.108Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.661,
-      "stop": 8.199197172079673
-    },
     "RLSUSDT:30m": {
       "sentAt": "2026-11-01T13:30:56.418Z",
       "symbol": "RLSUSDT",
@@ -261,6 +207,33 @@
       "score": 14,
       "entry": 3886.66,
       "stop": 3820.1747499999997
+    },
+    "SPACEUSDT:1h": {
+      "sentAt": "2026-11-02T01:00:54.482Z",
+      "symbol": "SPACEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.003487,
+      "stop": 0.0034070838395211713
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-11-02T01:00:56.255Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.013815,
+      "stop": 0.01356345
+    },
+    "CCUSDT:30m": {
+      "sentAt": "2026-11-02T01:00:58.005Z",
+      "symbol": "CCUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.09648,
+      "stop": 0.09884516014293877
     }
   }
 }
