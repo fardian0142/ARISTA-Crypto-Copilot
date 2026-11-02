@@ -4866,15 +4866,20 @@ export function detectRangeTradeSetups(
       }
 
       const distance = Math.abs(bufferedPrice - entry);
-      const rr = distance / risk;
+const rr = distance / risk;
 
-      if (
-        !Number.isFinite(rr) ||
-        rr < minRR ||
-        rr > maxTPRR
-      ) {
-        continue;
-      }
+let minRRRequired = minRR;
+if (buffered.length === 0 && target.phase === "internal" && target.priority <= 1) {
+  minRRRequired = 0.8;
+}
+
+if (
+  !Number.isFinite(rr) ||
+  rr < minRRRequired ||
+  rr > maxTPRR
+) {
+  continue;
+}
 
       const remainingR =
         direction === "bullish"
@@ -4919,10 +4924,10 @@ export function detectRangeTradeSetups(
         const rr = distance / risk;
 
         if (
-          Number.isFinite(rr) &&
-          rr >= tp1MinRR &&
-          rr <= maxTPRR
-        ) {
+           Number.isFinite(rr) &&
+           rr >= 0.8 &&
+           rr <= maxTPRR
+         ) {
           const remainingR =
             direction === "bullish"
               ? (bufferedPrice - currentPrice) / risk
