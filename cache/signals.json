@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T08:01:27.169Z",
+  "lastUpdated": "2026-11-02T08:31:10.137Z",
   "signals": {
     "PIUSDT:15m": {
       "sentAt": "2026-11-01T21:00:55.318Z",
@@ -342,6 +342,24 @@
       "score": 14,
       "entry": 81.3,
       "stop": 84.10631663486826
+    },
+    "UPUSDT:30m": {
+      "sentAt": "2026-11-02T08:31:06.752Z",
+      "symbol": "UPUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.13645000000000002,
+      "stop": 0.14304818136567057
+    },
+    "DOSUSDT:15m": {
+      "sentAt": "2026-11-02T08:31:08.635Z",
+      "symbol": "DOSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.20036999139767953,
+      "stop": 0.19605434224382032
     }
   }
 }
