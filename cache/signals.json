@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T01:00:59.508Z",
+  "lastUpdated": "2026-11-02T01:31:01.492Z",
   "signals": {
-    "RLSUSDT:30m": {
-      "sentAt": "2026-11-01T13:30:56.418Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.002323592443546215,
-      "stop": 0.002459625403241319
-    },
-    "COREUSDT:30m": {
-      "sentAt": "2026-11-01T13:30:58.133Z",
-      "symbol": "COREUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.013305,
-      "stop": 0.01280081285431496
-    },
     "DOSUSDT:30m": {
       "sentAt": "2026-11-01T14:00:53.385Z",
       "symbol": "DOSUSDT",
@@ -234,6 +216,15 @@
       "score": 14,
       "entry": 0.09648,
       "stop": 0.09884516014293877
+    },
+    "CCUSDT:1h": {
+      "sentAt": "2026-11-02T01:30:59.988Z",
+      "symbol": "CCUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09668894093757971,
+      "stop": 0.09306756473157345
     }
   }
 }
