@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T03:49:43.635Z",
+  "lastUpdated": "2026-11-02T04:01:00.081Z",
   "signals": {
     "BILLUSDT:30m": {
       "sentAt": "2026-11-01T17:56:30.205Z",
@@ -279,6 +279,15 @@
       "score": 14,
       "entry": 0.0708419761902066,
       "stop": 0.06784159864138142
+    },
+    "AVAXUSDT:15m": {
+      "sentAt": "2026-11-02T04:00:58.579Z",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.694,
+      "stop": 8.532070000000001
     }
   }
 }
