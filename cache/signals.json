@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T07:31:10.353Z",
+  "lastUpdated": "2026-11-02T08:01:27.169Z",
   "signals": {
-    "CPUSDT:15m": {
-      "sentAt": "2026-11-01T19:31:14.284Z",
-      "symbol": "CPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.007981128085622388,
-      "stop": 0.007823855000000001
-    },
-    "CPUSDT:30m": {
-      "sentAt": "2026-11-01T19:31:14.284Z",
-      "symbol": "CPUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.007982653424036076,
-      "stop": 0.0077999041140280195
-    },
-    "BRETTUSDT:30m": {
-      "sentAt": "2026-11-01T19:31:16.086Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004342018030470359,
-      "stop": 0.00425914
-    },
-    "MERLUSDT:15m": {
-      "sentAt": "2026-11-01T20:01:07.615Z",
-      "symbol": "MERLUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.029985861443763952,
-      "stop": 0.0307581325445432
-    },
     "PIUSDT:15m": {
       "sentAt": "2026-11-01T21:00:55.318Z",
       "symbol": "PIUSDT",
@@ -333,6 +297,51 @@
       "score": 14,
       "entry": 0.006007090302592219,
       "stop": 0.005721069267198435
+    },
+    "OLUSDT:1h": {
+      "sentAt": "2026-11-02T08:01:18.495Z",
+      "symbol": "OLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0065045,
+      "stop": 0.0061832963687308284
+    },
+    "ETHUSDT:2h": {
+      "sentAt": "2026-11-02T08:01:20.280Z",
+      "symbol": "ETHUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2284.205564347546,
+      "stop": 2224.445968946099
+    },
+    "MERLUSDT:30m": {
+      "sentAt": "2026-11-02T08:01:22.058Z",
+      "symbol": "MERLUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.029825,
+      "stop": 0.030855672081931806
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-11-02T08:01:23.903Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 133.97670705326286,
+      "stop": 130.97545
+    },
+    "SOXLBUSDT:30m": {
+      "sentAt": "2026-11-02T08:01:25.667Z",
+      "symbol": "SOXLBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 81.3,
+      "stop": 84.10631663486826
     }
   }
 }
