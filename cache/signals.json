@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T18:31:18.327Z",
+  "lastUpdated": "2026-11-02T18:40:33.725Z",
   "signals": {
     "OFCUSDT:15m": {
       "sentAt": "2026-11-02T07:01:05.657Z",
@@ -216,6 +216,15 @@
       "score": 14,
       "entry": 139.07,
       "stop": 134.50471461361244
+    },
+    "ZHONGJIUSDT:1h": {
+      "sentAt": "2026-11-02T18:40:32.223Z",
+      "symbol": "ZHONGJIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 86.64500000000001,
+      "stop": 82.13508390894765
     }
   }
 }
