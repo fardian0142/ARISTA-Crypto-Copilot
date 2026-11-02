@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T18:40:33.725Z",
+  "lastUpdated": "2026-11-02T19:03:38.457Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-11-02T07:01:05.657Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.006007090302592219,
-      "stop": 0.005721069267198435
-    },
     "OLUSDT:1h": {
       "sentAt": "2026-11-02T08:01:18.495Z",
       "symbol": "OLUSDT",
@@ -225,6 +216,15 @@
       "score": 14,
       "entry": 86.64500000000001,
       "stop": 82.13508390894765
+    },
+    "STXUSDT:30m": {
+      "sentAt": "2026-11-02T19:03:36.954Z",
+      "symbol": "STXUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.32915,
+      "stop": 0.31892554906380793
     }
   }
 }
