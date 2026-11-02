@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T02:30:57.209Z",
+  "lastUpdated": "2026-11-02T03:01:06.189Z",
   "signals": {
-    "OFCUSDT:15m": {
-      "sentAt": "2026-11-01T15:00:52.738Z",
-      "symbol": "OFCUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.005925828531064365,
-      "stop": 0.00576791868449427
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-11-01T15:31:00.388Z",
       "symbol": "SATSUSDT",
@@ -243,6 +234,15 @@
       "score": 14,
       "entry": 0.09525,
       "stop": 0.10016520399415552
+    },
+    "NEARUSDT:30m": {
+      "sentAt": "2026-11-02T03:01:04.687Z",
+      "symbol": "NEARUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 4.297885091908062,
+      "stop": 4.418677914942418
     }
   }
 }
