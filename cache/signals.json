@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T16:06:02.255Z",
+  "lastUpdated": "2026-11-02T16:31:00.846Z",
   "signals": {
-    "LINKUSDT:15m": {
-      "sentAt": "2026-11-02T04:30:56.014Z",
-      "symbol": "LINKUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 11.368,
-      "stop": 11.17581
-    },
-    "DOGEUSDT:1h": {
-      "sentAt": "2026-11-02T04:30:57.738Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07588,
-      "stop": 0.07439704999999999
-    },
-    "DOGEUSDT:2h": {
-      "sentAt": "2026-11-02T04:30:57.738Z",
-      "symbol": "DOGEUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07584,
-      "stop": 0.07378405320150154
-    },
     "MOODENGUSDT:15m": {
       "sentAt": "2026-11-02T05:00:56.304Z",
       "symbol": "MOODENGUSDT",
@@ -279,6 +252,15 @@
       "score": 14,
       "entry": 0.05187,
       "stop": 0.05002181930334827
+    },
+    "SPCXBUSDT:2h": {
+      "sentAt": "2026-11-02T16:30:59.344Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 139.07,
+      "stop": 134.50471461361244
     }
   }
 }
