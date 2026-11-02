@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T15:56:44.130Z",
+  "lastUpdated": "2026-11-02T16:01:30.354Z",
   "signals": {
-    "AVAXUSDT:15m": {
-      "sentAt": "2026-11-02T04:00:58.579Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.694,
-      "stop": 8.532070000000001
-    },
     "LINKUSDT:15m": {
       "sentAt": "2026-11-02T04:30:56.014Z",
       "symbol": "LINKUSDT",
