@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T13:01:02.564Z",
+  "lastUpdated": "2026-11-02T13:31:18.391Z",
   "signals": {
-    "CCUSDT:1h": {
-      "sentAt": "2026-11-02T01:30:59.988Z",
-      "symbol": "CCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09668894093757971,
-      "stop": 0.09306756473157345
-    },
     "ZECUSDT:1h": {
       "sentAt": "2026-11-02T02:00:58.476Z",
       "symbol": "ZECUSDT",
