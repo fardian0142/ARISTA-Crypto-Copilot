@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T05:31:00.122Z",
+  "lastUpdated": "2026-11-02T06:01:05.987Z",
   "signals": {
-    "BILLUSDT:30m": {
-      "sentAt": "2026-11-01T17:56:30.205Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0054585,
-      "stop": 0.005267680792673198
-    },
-    "CELOUSDT:1h": {
-      "sentAt": "2026-11-01T17:56:31.940Z",
-      "symbol": "CELOUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07389499999999999,
-      "stop": 0.07254524999999999
-    },
     "TRUTHUSDT:1h": {
       "sentAt": "2026-11-01T19:01:03.655Z",
       "symbol": "TRUTHUSDT",
@@ -333,6 +315,15 @@
       "score": 14,
       "entry": 8.68188895664101,
       "stop": 8.860949999999999
+    },
+    "LINKUSDT:1h": {
+      "sentAt": "2026-11-02T06:01:04.482Z",
+      "symbol": "LINKUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 11.332,
+      "stop": 11.672711668958588
     }
   }
 }
