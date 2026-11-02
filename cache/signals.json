@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T01:31:01.492Z",
+  "lastUpdated": "2026-11-02T02:01:01.704Z",
   "signals": {
-    "DOSUSDT:30m": {
-      "sentAt": "2026-11-01T14:00:53.385Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.20550000000000002,
-      "stop": 0.214716967427942
-    },
     "OFCUSDT:15m": {
       "sentAt": "2026-11-01T15:00:52.738Z",
       "symbol": "OFCUSDT",
@@ -225,6 +216,24 @@
       "score": 14,
       "entry": 0.09668894093757971,
       "stop": 0.09306756473157345
+    },
+    "ZECUSDT:1h": {
+      "sentAt": "2026-11-02T02:00:58.476Z",
+      "symbol": "ZECUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1239.8249999999998,
+      "stop": 1198.6432422025891
+    },
+    "USELESSUSDT:15m": {
+      "sentAt": "2026-11-02T02:01:00.202Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.13126,
+      "stop": 0.1352998923001422
     }
   }
 }
