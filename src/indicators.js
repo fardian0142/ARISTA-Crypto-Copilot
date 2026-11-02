@@ -5196,6 +5196,8 @@ export function detectRangeTradeSetups(
     if (!Number.isFinite(distance_atr) || distance_atr > 3.5) {
       return null;
     }
+    
+    if (rangePosition > 50) return null;
 
     const matchingOB = findMatchingOB("bullish", zone.price);
     const sweep = detectBullishSweep(zone.price);
@@ -5425,6 +5427,8 @@ export function detectRangeTradeSetups(
     if (!Number.isFinite(distance_atr) || distance_atr > 3.5) {
       return null;
     }
+    
+    if (rangePosition < 50) return null;
 
     const matchingOB = findMatchingOB("bearish", zone.price);
     const sweep = detectBearishSweep(zone.price);
