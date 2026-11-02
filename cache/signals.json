@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T12:00:57.411Z",
+  "lastUpdated": "2026-11-02T12:31:03.006Z",
   "signals": {
-    "BTCUSDT:1h": {
-      "sentAt": "2026-11-02T00:01:06.278Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 78068.35,
-      "stop": 76778.6318469387
-    },
-    "BTCUSDT:2h": {
-      "sentAt": "2026-11-02T00:01:06.278Z",
-      "symbol": "BTCUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 78068.35,
-      "stop": 76701.28829876838
-    },
-    "TRUTHUSDT:30m": {
-      "sentAt": "2026-11-02T00:30:53.375Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0200835,
-      "stop": 0.01974137
-    },
-    "ENAUSDT:30m": {
-      "sentAt": "2026-11-02T00:30:55.120Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.18314617551719395,
-      "stop": 0.18895588916290046
-    },
-    "XAUTUSDT:2h": {
-      "sentAt": "2026-11-02T00:30:56.841Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3886.66,
-      "stop": 3820.1747499999997
-    },
     "SPACEUSDT:1h": {
       "sentAt": "2026-11-02T01:00:54.482Z",
       "symbol": "SPACEUSDT",
@@ -369,6 +324,24 @@
       "score": 14,
       "entry": 0.002254227962567131,
       "stop": 0.0021853716959490616
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-11-02T12:30:59.686Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.014685,
+      "stop": 0.014437213024772492
+    },
+    "MUBUSDT:1h": {
+      "sentAt": "2026-11-02T12:31:01.504Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 905.0555235231932,
+      "stop": 886.6576
     }
   }
 }
