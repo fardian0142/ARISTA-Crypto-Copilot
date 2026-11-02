@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-02T20:04:01.341Z",
+  "lastUpdated": "2026-11-02T20:33:41.172Z",
   "signals": {
-    "UPUSDT:30m": {
-      "sentAt": "2026-11-02T08:31:06.752Z",
-      "symbol": "UPUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.13645000000000002,
-      "stop": 0.14304818136567057
-    },
-    "DOSUSDT:15m": {
-      "sentAt": "2026-11-02T08:31:08.635Z",
-      "symbol": "DOSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.20036999139767953,
-      "stop": 0.19605434224382032
-    },
     "AAVEUSDT:1h": {
       "sentAt": "2026-11-02T09:31:16.491Z",
       "symbol": "AAVEUSDT",
@@ -207,6 +189,24 @@
       "score": 14,
       "entry": 8.004999999999999,
       "stop": 7.87015
+    },
+    "AGLDUSDT:15m": {
+      "sentAt": "2026-11-02T20:33:37.863Z",
+      "symbol": "AGLDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.18507782266233608,
+      "stop": 0.1809445
+    },
+    "GLMUSDT:2h": {
+      "sentAt": "2026-11-02T20:33:39.669Z",
+      "symbol": "GLMUSDT",
+      "timeframe": "2h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.1106,
+      "stop": 0.11577950449161363
     }
   }
 }
