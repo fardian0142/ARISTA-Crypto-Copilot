@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T16:13:25.886Z",
+  "lastUpdated": "2026-11-03T16:34:58.344Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -558,6 +558,42 @@
       "score": 14,
       "entry": 0.006004,
       "stop": 0.005866070635332105
+    },
+    "THETAUSDT:15m": {
+      "sentAt": "2026-11-03T16:34:51.703Z",
+      "symbol": "THETAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15150000000000002,
+      "stop": 0.1484395
+    },
+    "IMXUSDT:15m": {
+      "sentAt": "2026-11-03T16:34:53.425Z",
+      "symbol": "IMXUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11979999999999999,
+      "stop": 0.117806
+    },
+    "USTCUSDT:15m": {
+      "sentAt": "2026-11-03T16:34:55.132Z",
+      "symbol": "USTCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00452,
+      "stop": 0.00442265
+    },
+    "ARPAUSDT:15m": {
+      "sentAt": "2026-11-03T16:34:56.841Z",
+      "symbol": "ARPAUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.009994386067446804,
+      "stop": 0.01018045
     }
   }
 }
