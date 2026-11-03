@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T20:32:14.227Z",
+  "lastUpdated": "2026-11-03T20:47:14.656Z",
   "signals": {
-    "DOLOUSDT:30m": {
-      "sentAt": "2026-11-03T08:33:33.987Z",
-      "symbol": "DOLOUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.02304837129637508,
-      "stop": 0.02234306216874945
-    },
     "INJUSDT:30m": {
       "sentAt": "2026-11-03T09:33:55.163Z",
       "symbol": "INJUSDT",
