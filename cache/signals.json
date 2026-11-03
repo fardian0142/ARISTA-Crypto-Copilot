@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T15:33:57.866Z",
+  "lastUpdated": "2026-11-03T16:00:37.292Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -477,6 +477,33 @@
       "score": 14,
       "entry": 84.61129650922135,
       "stop": 82.84835
+    },
+    "XAUTUSDT:2h": {
+      "sentAt": "2026-11-03T16:00:32.271Z",
+      "symbol": "XAUTUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3933.5148921318646,
+      "stop": 3852.14785
+    },
+    "FLNCBUSDT:30m": {
+      "sentAt": "2026-11-03T16:00:34.026Z",
+      "symbol": "FLNCBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 5.4519910014655775,
+      "stop": 5.1829214181030165
+    },
+    "IBMBUSDT:1h": {
+      "sentAt": "2026-11-03T16:00:35.790Z",
+      "symbol": "IBMBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 248.59988656680247,
+      "stop": 244.6598647247431
     }
   }
 }
