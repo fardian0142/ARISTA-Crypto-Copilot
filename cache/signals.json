@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-03T08:13:00.187Z",
-  "signals": {}
+  "lastUpdated": "2026-11-03T08:33:35.490Z",
+  "signals": {
+    "DOLOUSDT:30m": {
+      "sentAt": "2026-11-03T08:33:33.987Z",
+      "symbol": "DOLOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02304837129637508,
+      "stop": 0.02234306216874945
+    }
+  }
 }
