@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T09:03:35.292Z",
+  "lastUpdated": "2026-11-03T09:33:58.404Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -9,6 +9,24 @@
       "score": 14,
       "entry": 0.02304837129637508,
       "stop": 0.02234306216874945
+    },
+    "INJUSDT:30m": {
+      "sentAt": "2026-11-03T09:33:55.163Z",
+      "symbol": "INJUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 7.082008,
+      "stop": 6.825917516728933
+    },
+    "SYRUPUSDT:15m": {
+      "sentAt": "2026-11-03T09:33:56.902Z",
+      "symbol": "SYRUPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15465,
+      "stop": 0.151887
     }
   }
 }
