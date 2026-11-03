@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T07:04:00.610Z",
+  "lastUpdated": "2026-11-03T07:33:55.737Z",
   "signals": {
-    "STABLEUSDT:30m": {
-      "sentAt": "2026-11-02T19:22:11.841Z",
-      "symbol": "STABLEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.026804845682536455,
-      "stop": 0.02615681655331103
-    },
-    "ARPAUSDT:15m": {
-      "sentAt": "2026-11-02T19:22:13.567Z",
-      "symbol": "ARPAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.009914473894576205,
-      "stop": 0.0097318
-    },
     "GMXUSDT:15m": {
       "sentAt": "2026-11-02T20:03:59.836Z",
       "symbol": "GMXUSDT",
@@ -198,6 +180,24 @@
       "score": 14,
       "entry": 0.023033272684229514,
       "stop": 0.022308052255503488
+    },
+    "EDENUSDT:30m": {
+      "sentAt": "2026-11-03T07:33:52.496Z",
+      "symbol": "EDENUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.054601053325585444,
+      "stop": 0.05308104767438967
+    },
+    "UNITREEUSDT:15m": {
+      "sentAt": "2026-11-03T07:33:54.234Z",
+      "symbol": "UNITREEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 93.99000000000001,
+      "stop": 96.82216560016467
     }
   }
 }
