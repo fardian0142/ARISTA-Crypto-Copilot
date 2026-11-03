@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T15:20:36.143Z",
+  "lastUpdated": "2026-11-03T15:26:34.536Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -450,6 +450,24 @@
       "score": 14,
       "entry": 42.9,
       "stop": 43.77897980564417
+    },
+    "SOXLBUSDT:15m": {
+      "sentAt": "2026-11-03T15:26:31.213Z",
+      "symbol": "SOXLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 74.27187632044338,
+      "stop": 70.26954319651621
+    },
+    "LAZIOUSDT:30m": {
+      "sentAt": "2026-11-03T15:26:33.034Z",
+      "symbol": "LAZIOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3575,
+      "stop": 0.3372296437376675
     }
   }
 }
