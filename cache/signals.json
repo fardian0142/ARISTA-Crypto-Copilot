@@ -1,60 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T22:01:56.865Z",
+  "lastUpdated": "2026-11-03T22:17:05.136Z",
   "signals": {
-    "ZKPUSDT:1h": {
-      "sentAt": "2026-11-03T10:03:52.099Z",
-      "symbol": "ZKPUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.040999999999999995,
-      "stop": 0.038809214061530005
-    },
-    "BEBUSDT:1h": {
-      "sentAt": "2026-11-03T10:03:53.805Z",
-      "symbol": "BEBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 203.76999999999998,
-      "stop": 199.80724999999998
-    },
-    "GLWBUSDT:1h": {
-      "sentAt": "2026-11-03T10:03:55.609Z",
-      "symbol": "GLWBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 124.06441594027032,
-      "stop": 120.79560042664055
-    },
-    "GLWBUSDT:2h": {
-      "sentAt": "2026-11-03T10:03:55.609Z",
-      "symbol": "GLWBUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 124.30604336856891,
-      "stop": 119.8554045102221
-    },
-    "YGGUSDT:30m": {
-      "sentAt": "2026-11-03T10:03:57.316Z",
-      "symbol": "YGGUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.02385985481654507,
-      "stop": 0.024479608453249504
-    },
-    "GLMUSDT:2h": {
-      "sentAt": "2026-11-03T10:03:59.261Z",
-      "symbol": "GLMUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.1106,
-      "stop": 0.11533971928554772
-    },
     "USELESSUSDT:15m": {
       "sentAt": "2026-11-03T10:33:39.297Z",
       "symbol": "USELESSUSDT",
@@ -873,6 +819,15 @@
       "score": 14,
       "entry": 0.07661,
       "stop": 0.0749782
+    },
+    "NVDABUSDT:2h": {
+      "sentAt": "2026-11-03T22:17:03.631Z",
+      "symbol": "NVDABUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 208.36731589121084,
+      "stop": 201.8663150627798
     }
   }
 }
