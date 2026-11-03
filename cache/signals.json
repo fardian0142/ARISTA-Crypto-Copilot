@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T02:33:36.880Z",
+  "lastUpdated": "2026-11-03T03:03:20.764Z",
   "signals": {
-    "XDPUSDT:30m": {
-      "sentAt": "2026-11-02T15:01:30.398Z",
-      "symbol": "XDPUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.017922146251754124,
-      "stop": 0.01735752677318482
-    },
     "TRIAUSDT:15m": {
       "sentAt": "2026-11-02T15:31:12.983Z",
       "symbol": "TRIAUSDT",
