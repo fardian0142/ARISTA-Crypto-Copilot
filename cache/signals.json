@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T14:33:53.821Z",
+  "lastUpdated": "2026-11-03T15:03:56.643Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -351,6 +351,51 @@
       "score": 14,
       "entry": 8.53438,
       "stop": 8.34295
+    },
+    "SOXLUSDT:15m": {
+      "sentAt": "2026-11-03T15:03:47.992Z",
+      "symbol": "SOXLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 73.19999999999999,
+      "stop": 69.81899138692367
+    },
+    "KITEUSDT:15m": {
+      "sentAt": "2026-11-03T15:03:49.827Z",
+      "symbol": "KITEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11535000000000001,
+      "stop": 0.11192264451338739
+    },
+    "AAOIUSDT:15m": {
+      "sentAt": "2026-11-03T15:03:51.610Z",
+      "symbol": "AAOIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 65.4632425647159,
+      "stop": 62.282553109172206
+    },
+    "DRAMUSDT:15m": {
+      "sentAt": "2026-11-03T15:03:53.364Z",
+      "symbol": "DRAMUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 47.89,
+      "stop": 47.023900000000005
+    },
+    "COHRBUSDT:15m": {
+      "sentAt": "2026-11-03T15:03:55.139Z",
+      "symbol": "COHRBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 207.605,
+      "stop": 201.53647202965897
     }
   }
 }
