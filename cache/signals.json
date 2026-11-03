@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T22:47:06.534Z",
+  "lastUpdated": "2026-11-03T23:02:07.158Z",
   "signals": {
     "BOMEUSDT:1h": {
       "sentAt": "2026-11-03T11:03:48.430Z",
@@ -810,6 +810,15 @@
       "score": 14,
       "entry": 208.36731589121084,
       "stop": 201.8663150627798
+    },
+    "SKHYBUSDT:1h": {
+      "sentAt": "2026-11-03T23:02:05.654Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 152.565,
+      "stop": 147.47329113303206
     }
   }
 }
