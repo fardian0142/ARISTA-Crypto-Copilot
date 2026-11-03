@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T06:34:06.523Z",
+  "lastUpdated": "2026-11-03T07:04:00.610Z",
   "signals": {
-    "ZHONGJIUSDT:1h": {
-      "sentAt": "2026-11-02T18:40:32.223Z",
-      "symbol": "ZHONGJIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 86.64500000000001,
-      "stop": 82.13508390894765
-    },
-    "STXUSDT:30m": {
-      "sentAt": "2026-11-02T19:03:36.954Z",
-      "symbol": "STXUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.32915,
-      "stop": 0.31892554906380793
-    },
     "STABLEUSDT:30m": {
       "sentAt": "2026-11-02T19:22:11.841Z",
       "symbol": "STABLEUSDT",
@@ -207,6 +189,15 @@
       "score": 14,
       "entry": 0.3633320598522224,
       "stop": 0.3484852867698398
+    },
+    "DOLOUSDT:30m": {
+      "sentAt": "2026-11-03T07:03:59.108Z",
+      "symbol": "DOLOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.023033272684229514,
+      "stop": 0.022308052255503488
     }
   }
 }
