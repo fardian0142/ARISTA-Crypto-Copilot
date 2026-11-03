@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T23:02:07.158Z",
+  "lastUpdated": "2026-11-03T23:16:54.515Z",
   "signals": {
-    "BOMEUSDT:1h": {
-      "sentAt": "2026-11-03T11:03:48.430Z",
-      "symbol": "BOMEUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0005964,
-      "stop": 0.0005704469256897565
-    },
-    "GNSUSDT:15m": {
-      "sentAt": "2026-11-03T11:03:50.161Z",
-      "symbol": "GNSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3662558798840798,
-      "stop": 0.3530294293994297
-    },
     "BIGTIMEUSDT:1h": {
       "sentAt": "2026-11-03T12:03:58.681Z",
       "symbol": "BIGTIMEUSDT",
