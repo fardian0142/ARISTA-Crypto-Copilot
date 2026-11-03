@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T05:33:43.964Z",
+  "lastUpdated": "2026-11-03T06:03:55.532Z",
   "signals": {
     "ZHONGJIUSDT:1h": {
       "sentAt": "2026-11-02T18:40:32.223Z",
@@ -198,6 +198,15 @@
       "score": 14,
       "entry": 0.23195,
       "stop": 0.22674699999999998
+    },
+    "GNSUSDT:30m": {
+      "sentAt": "2026-11-03T06:03:54.029Z",
+      "symbol": "GNSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3633320598522224,
+      "stop": 0.3484852867698398
     }
   }
 }
