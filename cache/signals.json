@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T17:34:48.274Z",
+  "lastUpdated": "2026-11-03T18:05:35.774Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -684,6 +684,69 @@
       "score": 14,
       "entry": 19.39711769749792,
       "stop": 20.027730732157707
+    },
+    "ORDERUSDT:15m": {
+      "sentAt": "2026-11-03T18:05:23.595Z",
+      "symbol": "ORDERUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.035379999999999995,
+      "stop": 0.034198674271088185
+    },
+    "PAXGUSDT:1h": {
+      "sentAt": "2026-11-03T18:05:25.314Z",
+      "symbol": "PAXGUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3925.3500000000004,
+      "stop": 3859.5255
+    },
+    "KAIAUSDT:15m": {
+      "sentAt": "2026-11-03T18:05:27.068Z",
+      "symbol": "KAIAUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0328236,
+      "stop": 0.03342142377661408
+    },
+    "DOLOUSDT:2h": {
+      "sentAt": "2026-11-03T18:05:29.057Z",
+      "symbol": "DOLOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.02345,
+      "stop": 0.022625450000000002
+    },
+    "SIGNUSDT:15m": {
+      "sentAt": "2026-11-03T18:05:30.804Z",
+      "symbol": "SIGNUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.009944023124445749,
+      "stop": 0.00974165
+    },
+    "SKLUSDT:15m": {
+      "sentAt": "2026-11-03T18:05:32.533Z",
+      "symbol": "SKLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.004,
+      "stop": 0.004080299999999999
+    },
+    "XAUUSDT:1h": {
+      "sentAt": "2026-11-03T18:05:34.265Z",
+      "symbol": "XAUUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3928,
+      "stop": 3861.7909999999997
     }
   }
 }
