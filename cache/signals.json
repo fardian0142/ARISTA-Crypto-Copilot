@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T15:26:34.536Z",
+  "lastUpdated": "2026-11-03T15:33:57.866Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -468,6 +468,15 @@
       "score": 14,
       "entry": 0.3575,
       "stop": 0.3372296437376675
+    },
+    "HOODBUSDT:15m": {
+      "sentAt": "2026-11-03T15:33:56.363Z",
+      "symbol": "HOODBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 84.61129650922135,
+      "stop": 82.84835
     }
   }
 }
