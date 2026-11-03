@@ -251,6 +251,38 @@ export async function getExchangeSymbols(force = false) {
   }
 
   try {
+    const okxSpotJson = await okxFetch(
+      "/api/v5/public/instruments",
+      { instType: "SPOT" }
+    );
+
+    if (Array.isArray(okxSpotJson.data)) {
+      for (const item of okxSpotJson.data) {
+        if (item.state !== "live") continue;
+        if (!String(item.instId || "").endsWith("-USDT")) continue;
+
+        const base = String(item.baseCcy || "").toUpperCase();
+        if (!base) continue;
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (/^X[A-Z]{4,}$/.test(base)) continue;
+
+        const symbol = base + "USDT";
+
+        if (!allSymbols.has(symbol)) {
+          allSymbols.set(symbol, {
+            symbol: symbol,
+            base: base,
+            quote: "USDT",
+            exchange: "okx"
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("OKX Spot symbols error:", e.message || e);
+  }
+
+  try {
     const mexcJson = await mexcFetch(
       "/api/v1/contract/detail"
     );
@@ -402,6 +434,62 @@ export async function getTickers(force = false) {
     }
   } catch (e) {
     console.error("OKX tickers error:", e.message || e);
+  }
+
+  try {
+    const okxSpotTickers = await okxFetch(
+      "/api/v5/market/tickers",
+      { instType: "SPOT" }
+    );
+
+    if (Array.isArray(okxSpotTickers.data)) {
+      const seen = new Set(result.map((t) => t.symbol));
+
+      for (const item of okxSpotTickers.data) {
+        if (!item.instId || !item.instId.endsWith("-USDT")) continue;
+
+        const base = item.instId.split("-")[0];
+
+        if (CONFIG.EXCLUDED_BASE_ASSETS.includes(base)) continue;
+        if (base.includes("TEST")) continue;
+
+        const symbol = base + "USDT";
+        if (!validSet.has(symbol)) continue;
+        if (seen.has(symbol)) continue;
+
+        const last = parseFloat(item.last || "0");
+        const open24h = parseFloat(item.open24h || "0");
+        const volCcy24h = parseFloat(item.volCcy24h || "0");
+        const vol24h = parseFloat(item.vol24h || "0");
+
+        if (!Number.isFinite(last) || last <= 0) continue;
+
+        const quoteVolume =
+          Number.isFinite(volCcy24h) && volCcy24h > 0
+            ? volCcy24h
+            : Number.isFinite(vol24h)
+              ? vol24h * last
+              : 0;
+
+        let changePercent = 0;
+        if (Number.isFinite(open24h) && open24h > 0) {
+          changePercent = ((last - open24h) / open24h) * 100;
+        }
+
+        result.push({
+          symbol: symbol,
+          base: base,
+          quote: "USDT",
+          price: last,
+          change: changePercent,
+          quote_volume: quoteVolume
+        });
+
+        seen.add(symbol);
+      }
+    }
+  } catch (e) {
+    console.error("OKX Spot tickers error:", e.message || e);
   }
 
   try {
@@ -635,34 +723,10 @@ async function getKlinesBinance(symbol, interval, limit) {
   return normalizeCandles(rawCandles, interval);
 }
 
-async function getKlinesOKX(symbol, interval, limit) {
-  const base = symbol.replace(/USDT$/, "");
-  const okxSymbol = base + "-USDT-SWAP";
-  const okxInterval = CONFIG.OKX_INTERVAL_MAP[interval];
-
-  if (!okxInterval) {
-    throw new Error("OKX interval unsupported: " + interval);
-  }
-
-  const barLimit = Math.min(limit, CONFIG.EXCHANGES.okx.maxCandles);
-
-  const json = await okxFetch(
-    "/api/v5/market/candles",
-    {
-      instId: okxSymbol,
-      bar: okxInterval,
-      limit: String(barLimit)
-    },
-    { maxAttempts: 5, baseDelay: 400 }
-  );
-
-  if (!Array.isArray(json.data)) {
-    throw new Error("OKX klines پاسخ نامعتبر");
-  }
-
+function parseOKXCandles(data, interval) {
   const rawCandles = [];
 
-  for (const row of json.data) {
+  for (const row of data) {
     const openTime = parseInt(row[0], 10);
     const open = parseFloat(row[1]);
     const high = parseFloat(row[2]);
@@ -687,6 +751,55 @@ async function getKlinesOKX(symbol, interval, limit) {
   rawCandles.reverse();
 
   return normalizeCandles(rawCandles, interval);
+}
+
+async function getKlinesOKX(symbol, interval, limit) {
+  const base = symbol.replace(/USDT$/, "");
+  const okxInterval = CONFIG.OKX_INTERVAL_MAP[interval];
+
+  if (!okxInterval) {
+    throw new Error("OKX interval unsupported: " + interval);
+  }
+
+  const barLimit = Math.min(limit, CONFIG.EXCHANGES.okx.maxCandles);
+
+  const swapInstId = base + "-USDT-SWAP";
+
+  try {
+    const swapJson = await okxFetch(
+      "/api/v5/market/candles",
+      {
+        instId: swapInstId,
+        bar: okxInterval,
+        limit: String(barLimit)
+      },
+      { maxAttempts: 3, baseDelay: 400 }
+    );
+
+    if (Array.isArray(swapJson.data) && swapJson.data.length > 0) {
+      return parseOKXCandles(swapJson.data, interval);
+    }
+  } catch (e) {
+    // SWAP not available, fallback to Spot
+  }
+
+  const spotInstId = base + "-USDT";
+
+  const spotJson = await okxFetch(
+    "/api/v5/market/candles",
+    {
+      instId: spotInstId,
+      bar: okxInterval,
+      limit: String(barLimit)
+    },
+    { maxAttempts: 3, baseDelay: 400 }
+  );
+
+  if (!Array.isArray(spotJson.data)) {
+    throw new Error("OKX klines پاسخ نامعتبر");
+  }
+
+  return parseOKXCandles(spotJson.data, interval);
 }
 
 async function getKlinesMEXC(symbol, interval, limit) {
