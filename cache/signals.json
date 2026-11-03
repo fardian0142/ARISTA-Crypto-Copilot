@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T16:34:58.344Z",
+  "lastUpdated": "2026-11-03T17:05:08.756Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -594,6 +594,60 @@
       "score": 14,
       "entry": 0.009994386067446804,
       "stop": 0.01018045
+    },
+    "XDPUSDT:15m": {
+      "sentAt": "2026-11-03T17:04:58.229Z",
+      "symbol": "XDPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0177925,
+      "stop": 0.017494585
+    },
+    "BASEDUSDT:15m": {
+      "sentAt": "2026-11-03T17:05:00.001Z",
+      "symbol": "BASEDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.049148394862912045,
+      "stop": 0.04787289383634255
+    },
+    "NVDABUSDT:1h": {
+      "sentAt": "2026-11-03T17:05:01.897Z",
+      "symbol": "NVDABUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 208.09,
+      "stop": 204.3071405033126
+    },
+    "MINAUSDT:15m": {
+      "sentAt": "2026-11-03T17:05:03.620Z",
+      "symbol": "MINAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05571207219296744,
+      "stop": 0.0544705
+    },
+    "XEWYUSDT:2h": {
+      "sentAt": "2026-11-03T17:05:05.399Z",
+      "symbol": "XEWYUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 155.73387167223393,
+      "stop": 149.51663091261474
+    },
+    "MEMEUSDT:15m": {
+      "sentAt": "2026-11-03T17:05:07.253Z",
+      "symbol": "MEMEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0004375,
+      "stop": 0.00044558499999999997
     }
   }
 }
