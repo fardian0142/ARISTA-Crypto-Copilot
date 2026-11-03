@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T03:33:45.204Z",
+  "lastUpdated": "2026-11-03T04:03:46.166Z",
   "signals": {
-    "TRUSTUSDT:15m": {
-      "sentAt": "2026-11-02T15:56:42.627Z",
-      "symbol": "TRUSTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05187,
-      "stop": 0.05002181930334827
-    },
     "SPCXBUSDT:2h": {
       "sentAt": "2026-11-02T16:30:59.344Z",
       "symbol": "SPCXBUSDT",
