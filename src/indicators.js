@@ -4794,232 +4794,233 @@ export function detectRangeTradeSetups(
   }
 
   function selectTargets(direction, entry, stop) {
-    const risk =
-      direction === "bullish"
-        ? entry - stop
-        : stop - entry;
+  const risk =
+    direction === "bullish"
+      ? entry - stop
+      : stop - entry;
 
-    const emptyTargets = {
-      tp1: null,
-      tp2: null,
-      tp3: null,
-      tp4: null,
-      tp5: null,
-      rr1: 0,
-      rr2: 0,
-      rr3: 0,
-      rr4: 0,
-      rr5: 0,
-      tp1Source: null,
-      tp2Source: null,
-      tp3Source: null,
-      tp4Source: null,
-      tp5Source: null,
-      tpCount: 0
-    };
+  const emptyTargets = {
+    tp1: null,
+    tp2: null,
+    tp3: null,
+    tp4: null,
+    tp5: null,
+    rr1: 0,
+    rr2: 0,
+    rr3: 0,
+    rr4: 0,
+    rr5: 0,
+    tp1Source: null,
+    tp2Source: null,
+    tp3Source: null,
+    tp4Source: null,
+    tp5Source: null,
+    tpCount: 0
+  };
 
-    if (!Number.isFinite(risk) || risk <= 0) {
-      return emptyTargets;
-    }
+  if (!Number.isFinite(risk) || risk <= 0) {
+    return emptyTargets;
+  }
 
-    const rawTargets = collectPotentialTargets(
+  const rawTargets = collectPotentialTargets(
+    direction,
+    entry,
+    stop
+  );
+
+  const buffered = [];
+
+  for (const target of rawTargets) {
+    let bufferedPrice = applyPipBuffer(
+      target.price,
       direction,
-      entry,
-      stop
+      currentPrice
     );
 
-    const buffered = [];
-
-    for (const target of rawTargets) {
-      let bufferedPrice = applyPipBuffer(
-        target.price,
-        direction,
-        currentPrice
-      );
-
-      if (!Number.isFinite(bufferedPrice)) {
-        continue;
-      }
-
-      if (
-        target.phase === "internal" &&
-        (
-          bufferedPrice <= rangeLow ||
-          bufferedPrice >= rangeHigh
-        )
-      ) {
-        bufferedPrice =
-          direction === "bullish"
-            ? Math.min(bufferedPrice, rangeHigh)
-            : Math.max(bufferedPrice, rangeLow);
-      }
-
-      if (
-        !isTargetValid(
-          direction,
-          entry,
-          bufferedPrice,
-          target.phase === "external"
-        )
-      ) {
-        continue;
-      }
-
-      const distance = Math.abs(bufferedPrice - entry);
-const rr = distance / risk;
-
-let minRRRequired = minRR;
-if (buffered.length === 0 && target.phase === "internal" && target.priority <= 1) {
-  minRRRequired = 0.8;
-}
-
-if (
-  !Number.isFinite(rr) ||
-  rr < minRRRequired ||
-  rr > maxTPRR
-) {
-  continue;
-}
-
-      const remainingR =
-        direction === "bullish"
-          ? (bufferedPrice - currentPrice) / risk
-          : (currentPrice - bufferedPrice) / risk;
-
-      if (
-        !isTargetAlive(
-          direction,
-          bufferedPrice,
-          remainingR
-        )
-      ) {
-        continue;
-      }
-
-      buffered.push({
-        price: bufferedPrice,
-        rawPrice: target.price,
-        source: target.source,
-        priority: target.priority,
-        phase: target.phase,
-        eventIndex: target.eventIndex,
-        distance,
-        rr,
-        remainingR,
-        isTp1: false
-      });
+    if (!Number.isFinite(bufferedPrice)) {
+      continue;
     }
 
-    const nearestTp1 = findNearestRangeTp1(direction, entry);
+    if (
+      target.phase === "internal" &&
+      (
+        bufferedPrice <= rangeLow ||
+        bufferedPrice >= rangeHigh
+      )
+    ) {
+      bufferedPrice =
+        direction === "bullish"
+          ? Math.min(bufferedPrice, rangeHigh)
+          : Math.max(bufferedPrice, rangeLow);
+    }
 
-    if (Number.isFinite(nearestTp1)) {
-      const bufferedPrice = applyPipBuffer(
-        nearestTp1,
+    if (
+      !isTargetValid(
         direction,
-        currentPrice
-      );
+        entry,
+        bufferedPrice,
+        target.phase === "external"
+      )
+    ) {
+      continue;
+    }
 
-      if (Number.isFinite(bufferedPrice)) {
-        const distance = Math.abs(bufferedPrice - entry);
-        const rr = distance / risk;
+    const distance = Math.abs(bufferedPrice - entry);
+    const rr = distance / risk;
+
+    if (!Number.isFinite(rr) || rr <= 0) {
+      continue;
+    }
+
+    const remainingR =
+      direction === "bullish"
+        ? (bufferedPrice - currentPrice) / risk
+        : (currentPrice - bufferedPrice) / risk;
+
+    if (
+      !isTargetAlive(
+        direction,
+        bufferedPrice,
+        remainingR
+      )
+    ) {
+      continue;
+    }
+
+    buffered.push({
+      price: bufferedPrice,
+      rawPrice: target.price,
+      source: target.source,
+      priority: target.priority,
+      phase: target.phase,
+      eventIndex: target.eventIndex,
+      distance,
+      rr,
+      remainingR,
+      isTp1: false
+    });
+  }
+
+  const nearestTp1 = findNearestRangeTp1(direction, entry);
+
+  if (Number.isFinite(nearestTp1)) {
+    const bufferedPrice = applyPipBuffer(
+      nearestTp1,
+      direction,
+      currentPrice
+    );
+
+    if (Number.isFinite(bufferedPrice)) {
+      const distance = Math.abs(bufferedPrice - entry);
+      const rr = distance / risk;
+
+      if (
+        Number.isFinite(rr) &&
+        rr > 0
+      ) {
+        const remainingR =
+          direction === "bullish"
+            ? (bufferedPrice - currentPrice) / risk
+            : (currentPrice - bufferedPrice) / risk;
 
         if (
-           Number.isFinite(rr) &&
-           rr >= 0.8 &&
-           rr <= maxTPRR
-         ) {
-          const remainingR =
-            direction === "bullish"
-              ? (bufferedPrice - currentPrice) / risk
-              : (currentPrice - bufferedPrice) / risk;
-
-          if (
-            isTargetAlive(
-              direction,
-              bufferedPrice,
-              remainingR
-            )
-          ) {
-            buffered.push({
-              price: bufferedPrice,
-              rawPrice: nearestTp1,
-              source:
-                direction === "bullish"
-                  ? "nearest_high"
-                  : "nearest_low",
-              priority: 0,
-              phase: "internal",
-              eventIndex: null,
-              distance,
-              rr,
-              remainingR,
-              isTp1: true
-            });
-          }
+          isTargetAlive(
+            direction,
+            bufferedPrice,
+            remainingR
+          )
+        ) {
+          buffered.push({
+            price: bufferedPrice,
+            rawPrice: nearestTp1,
+            source:
+              direction === "bullish"
+                ? "nearest_high"
+                : "nearest_low",
+            priority: 0,
+            phase: "internal",
+            eventIndex: null,
+            distance,
+            rr,
+            remainingR,
+            isTp1: true
+          });
         }
       }
     }
-
-    if (!buffered.length) {
-      return emptyTargets;
-    }
-
-    buffered.sort((a, b) => {
-      if (a.isTp1 && !b.isTp1) return -1;
-      if (!a.isTp1 && b.isTp1) return 1;
-      return a.distance - b.distance;
-    });
-
-    const selected = [];
-
-    const effectiveSpacing = Math.max(
-      atrValue * minTPDistanceATR,
-      currentPrice * minTPDistancePct
-    );
-
-    for (const target of buffered) {
-      if (selected.length >= maxValidTPCount) {
-        break;
-      }
-
-      if (
-        selected.some(
-          item =>
-            Math.abs(item.price - target.price) <
-            effectiveSpacing
-        )
-      ) {
-        continue;
-      }
-
-      selected.push(target);
-    }
-
-    if (selected.length < minValidTPCount) {
-      return emptyTargets;
-    }
-
-    selected.sort((a, b) =>
-      direction === "bullish"
-        ? a.price - b.price
-        : b.price - a.price
-    );
-
-    const result = { ...emptyTargets };
-
-    result.tpCount = Math.min(selected.length, 5);
-
-    for (let i = 0; i < result.tpCount; i++) {
-      const target = selected[i];
-      const index = i + 1;
-
-      result[`tp${index}`] = target.price;
-      result[`rr${index}`] = target.rr;
-      result[`tp${index}Source`] = target.source || null;
-    }
-
-    return result;
   }
+
+  if (!buffered.length) {
+    return emptyTargets;
+  }
+
+  buffered.sort((a, b) => {
+    if (a.isTp1 && !b.isTp1) return -1;
+    if (!a.isTp1 && b.isTp1) return 1;
+    return a.distance - b.distance;
+  });
+
+  const selected = [];
+
+  const effectiveSpacing = Math.max(
+    atrValue * minTPDistanceATR,
+    currentPrice * minTPDistancePct
+  );
+
+  for (const target of buffered) {
+    if (selected.length >= maxValidTPCount) {
+      break;
+    }
+
+    if (
+      selected.some(
+        item =>
+          Math.abs(item.price - target.price) <
+          effectiveSpacing
+      )
+    ) {
+      continue;
+    }
+
+    selected.push(target);
+  }
+
+  if (selected.length < minValidTPCount) {
+    return emptyTargets;
+  }
+
+  const finalSelected = selected.filter((target) => {
+    if (target.isTp1) {
+      return target.rr >= 1.0;
+    }
+    return target.rr >= 1.5;
+  });
+
+  if (finalSelected.length < minValidTPCount) {
+    return emptyTargets;
+  }
+
+  finalSelected.sort((a, b) =>
+    direction === "bullish"
+      ? a.price - b.price
+      : b.price - a.price
+  );
+
+  const result = { ...emptyTargets };
+
+  result.tpCount = Math.min(finalSelected.length, 5);
+
+  for (let i = 0; i < result.tpCount; i++) {
+    const target = finalSelected[i];
+    const index = i + 1;
+
+    result[`tp${index}`] = target.price;
+    result[`rr${index}`] = target.rr;
+    result[`tp${index}Source`] = target.source || null;
+  }
+
+  return result;
+}
 
   function findMatchingOB(direction, price) {
     const list = direction === "bullish"
