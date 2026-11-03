@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T10:33:42.599Z",
+  "lastUpdated": "2026-11-03T11:03:51.662Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -99,6 +99,24 @@
       "score": 14,
       "entry": 0.05518396,
       "stop": 0.058339037773021185
+    },
+    "BOMEUSDT:1h": {
+      "sentAt": "2026-11-03T11:03:48.430Z",
+      "symbol": "BOMEUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0005964,
+      "stop": 0.0005704469256897565
+    },
+    "GNSUSDT:15m": {
+      "sentAt": "2026-11-03T11:03:50.161Z",
+      "symbol": "GNSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3662558798840798,
+      "stop": 0.3530294293994297
     }
   }
 }
