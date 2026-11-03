@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T12:04:01.989Z",
+  "lastUpdated": "2026-11-03T12:34:07.038Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -135,6 +135,60 @@
       "score": 14,
       "entry": 0.33999999999999997,
       "stop": 0.329975
+    },
+    "AAVEUSDT:15m": {
+      "sentAt": "2026-11-03T12:33:56.952Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 128.725,
+      "stop": 126.16256193207062
+    },
+    "MUBUSDT:15m": {
+      "sentAt": "2026-11-03T12:33:58.663Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 857.905,
+      "stop": 843.4554999999999
+    },
+    "CELOUSDT:30m": {
+      "sentAt": "2026-11-03T12:34:00.400Z",
+      "symbol": "CELOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0722392308189046,
+      "stop": 0.07047835129353859
+    },
+    "VETUSDT:15m": {
+      "sentAt": "2026-11-03T12:34:02.119Z",
+      "symbol": "VETUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0056665,
+      "stop": 0.005554415
+    },
+    "ACEUSDT:15m": {
+      "sentAt": "2026-11-03T12:34:03.835Z",
+      "symbol": "ACEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13135000000000002,
+      "stop": 0.12892285233121686
+    },
+    "ARMBUSDT:15m": {
+      "sentAt": "2026-11-03T12:34:05.536Z",
+      "symbol": "ARMBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 202.52499999999998,
+      "stop": 199.1276
     }
   }
 }
