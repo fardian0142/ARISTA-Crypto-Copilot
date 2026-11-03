@@ -10,7 +10,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     permissions:
       contents: write
     steps:
@@ -22,12 +22,92 @@ jobs:
         with:
           node-version: '20'
 
+      # ─────────────────────────────────────────────
+      # مرحله ۱: تست دسترسی به صرافی‌ها از GitHub Actions
+      # ─────────────────────────────────────────────
+      - name: Test exchange access & gold symbols
+        run: |
+          echo "════════════════════════════════════════════════════════"
+          echo "🌍 Runner IP Info"
+          echo "════════════════════════════════════════════════════════"
+          curl -s https://api.ipify.org || echo "(ipify failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🟡 Binance — XAUUSDT"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://data-api.binance.vision/api/v3/ticker/price?symbol=XAUUSDT" | head -c 400 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🟡 Binance — PAXGUSDT"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://data-api.binance.vision/api/v3/ticker/price?symbol=PAXGUSDT" | head -c 400 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🔵 OKX — XAU-USDT-SWAP"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://www.okx.com/api/v5/market/ticker?instId=XAU-USDT-SWAP" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🔵 OKX — XAU-USDT (Spot)"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://www.okx.com/api/v5/market/ticker?instId=XAU-USDT" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🔵 OKX — PAXG-USDT (Spot)"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://www.okx.com/api/v5/market/ticker?instId=PAXG-USDT" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🔵 OKX — XAUT-USDT (Spot)"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://www.okx.com/api/v5/market/ticker?instId=XAUT-USDT" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🔵 OKX — PAXG-USDT-SWAP"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://www.okx.com/api/v5/market/ticker?instId=PAXG-USDT-SWAP" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🟢 MEXC — PAXG_USDT"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://contract.mexc.com/api/v1/contract/ticker?symbol=PAXG_USDT" | head -c 500 || echo "(failed)"
+          echo ""
+          echo ""
+
+          echo "════════════════════════════════════════════════════════"
+          echo "🟢 MEXC — XAUT_USDT"
+          echo "════════════════════════════════════════════════════════"
+          curl -s --max-time 15 "https://contract.mexc.com/api/v1/contract/ticker?symbol=XAUT_USDT" | head -c 500 || echo "(failed)"
+          echo ""
+
+      # ─────────────────────────────────────────────
+      # مرحله ۲: اسکن واقعی
+      # ─────────────────────────────────────────────
       - name: Run scan
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node src/scan.js
 
+      # ─────────────────────────────────────────────
+      # مرحله ۳: کامیت کش
+      # ─────────────────────────────────────────────
       - name: Commit cache
         run: |
           git config user.name "github-actions[bot]"
