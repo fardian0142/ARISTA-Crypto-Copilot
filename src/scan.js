@@ -453,6 +453,42 @@ async function main() {
     process.exit(1);
   }
 
+  if (Array.isArray(CONFIG.GOLD_SYMBOLS) && CONFIG.GOLD_SYMBOLS.length > 0) {
+    try {
+      const exchangesModule = await import("./exchanges.js");
+      const getTickersFn = exchangesModule.getTickers;
+      const getExchangeSymbolsFn = exchangesModule.getExchangeSymbols;
+
+      const allExSymbols = await getExchangeSymbolsFn();
+      const tickers = await getTickersFn();
+
+      const validGoldSymbols = CONFIG.GOLD_SYMBOLS.filter((gs) =>
+        allExSymbols.some((s) => s.symbol === gs)
+      );
+
+      for (const goldSymbol of validGoldSymbols) {
+        if (symbols.some((s) => s.symbol === goldSymbol)) continue;
+
+        const t = tickers.find((x) => x.symbol === goldSymbol);
+
+        if (t) {
+          symbols.push({
+            symbol: goldSymbol,
+            base: goldSymbol.replace(/USDT$/, ""),
+            quote: "USDT",
+            price: t.price,
+            change: t.change,
+            quote_volume: t.quote_volume
+          });
+
+          console.log("🥇 Added gold symbol: " + goldSymbol);
+        }
+      }
+    } catch (e) {
+      console.error("❌ Failed to add gold symbols:", (e && e.message) || e);
+    }
+  }
+
   summary.total = symbols.length * SCAN_TIMEFRAMES.length;
 
   console.log(
