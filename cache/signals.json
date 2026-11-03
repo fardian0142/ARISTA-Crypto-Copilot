@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T22:31:58.340Z",
+  "lastUpdated": "2026-11-03T22:47:06.534Z",
   "signals": {
-    "USELESSUSDT:15m": {
-      "sentAt": "2026-11-03T10:33:39.297Z",
-      "symbol": "USELESSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.12383,
-      "stop": 0.12050056174080243
-    },
-    "EDENUSDT:1h": {
-      "sentAt": "2026-11-03T10:33:41.098Z",
-      "symbol": "EDENUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.05518396,
-      "stop": 0.058339037773021185
-    },
     "BOMEUSDT:1h": {
       "sentAt": "2026-11-03T11:03:48.430Z",
       "symbol": "BOMEUSDT",
