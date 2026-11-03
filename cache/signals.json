@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T19:47:09.616Z",
+  "lastUpdated": "2026-11-03T20:02:14.252Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -864,6 +864,15 @@
       "score": 14,
       "entry": 154.71191889874873,
       "stop": 152.01505
+    },
+    "SKHYBUSDT:30m": {
+      "sentAt": "2026-11-03T20:02:12.749Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 150.25,
+      "stop": 146.4669712316614
     }
   }
 }
