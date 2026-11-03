@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T21:16:56.061Z",
+  "lastUpdated": "2026-11-03T21:32:20.295Z",
   "signals": {
     "INJUSDT:30m": {
       "sentAt": "2026-11-03T09:33:55.163Z",
@@ -864,6 +864,24 @@
       "score": 14,
       "entry": 150.25,
       "stop": 146.4669712316614
+    },
+    "UNIUSDT:15m": {
+      "sentAt": "2026-11-03T21:32:17.051Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 7.207,
+      "stop": 7.331344999999999
+    },
+    "GRASSUSDT:30m": {
+      "sentAt": "2026-11-03T21:32:18.793Z",
+      "symbol": "GRASSUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.5717112201354657,
+      "stop": 0.5552444999999999
     }
   }
 }
