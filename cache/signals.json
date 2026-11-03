@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T18:34:49.526Z",
+  "lastUpdated": "2026-11-03T18:49:58.986Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -756,6 +756,24 @@
       "score": 14,
       "entry": 1.396,
       "stop": 1.368165
+    },
+    "AVAUSDT:15m": {
+      "sentAt": "2026-11-03T18:49:55.712Z",
+      "symbol": "AVAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.29343745689542167,
+      "stop": 0.2851324507469882
+    },
+    "XTZUSDT:15m": {
+      "sentAt": "2026-11-03T18:49:57.484Z",
+      "symbol": "XTZUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2496,
+      "stop": 0.25354699999999997
     }
   }
 }
