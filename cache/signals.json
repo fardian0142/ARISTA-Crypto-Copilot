@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T18:05:35.774Z",
+  "lastUpdated": "2026-11-03T18:20:34.662Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -747,6 +747,15 @@
       "score": 14,
       "entry": 3928,
       "stop": 3861.7909999999997
+    },
+    "DEXEUSDT:15m": {
+      "sentAt": "2026-11-03T18:20:33.159Z",
+      "symbol": "DEXEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.396,
+      "stop": 1.368165
     }
   }
 }
