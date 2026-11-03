@@ -782,22 +782,64 @@ export function cBody(c) { return Math.abs(cClose(c) - cOpen(c)); }
 export function isBull(c) { return cClose(c) > cOpen(c); }
 export function isBear(c) { return cClose(c) < cOpen(c); }
 
-export function averageVolume(candles, endIndex, lookback = CONFIG.VOLUME_LOOKBACK) {
-  const start = Math.max(0, endIndex - lookback);
-  const values = [];
-
-  for (let i = start; i < endIndex; i++) {
-    const v = cVol(candles[i]);
-    if (v > 0) {
-      values.push(v);
-    }
-  }
-
-  if (values.length === 0) {
+export function averageVolume(
+  candles,
+  endIndex,
+  lookback = CONFIG.VOLUME_LOOKBACK
+) {
+  if (
+    !Array.isArray(candles) ||
+    candles.length === 0 ||
+    !Number.isInteger(endIndex) ||
+    !Number.isInteger(lookback) ||
+    lookback <= 0
+  ) {
     return 0;
   }
 
-  return values.reduce((a, b) => a + b, 0) / values.length;
+  const safeEndIndex = Math.min(
+    Math.max(0, endIndex),
+    candles.length
+  );
+
+  if (safeEndIndex <= 0) {
+    return 0;
+  }
+
+  const start = Math.max(
+    0,
+    safeEndIndex - lookback
+  );
+
+  let totalVolume = 0;
+  let validCount = 0;
+
+  for (let i = start; i < safeEndIndex; i++) {
+    const candle = candles[i];
+
+    if (!candle) continue;
+
+    const volume = Number(cVol(candle));
+
+    if (
+      !Number.isFinite(volume) ||
+      volume <= 0
+    ) {
+      continue;
+    }
+
+    totalVolume += volume;
+    validCount++;
+  }
+
+  if (
+    validCount === 0 ||
+    !Number.isFinite(totalVolume)
+  ) {
+    return 0;
+  }
+
+  return totalVolume / validCount;
 }
 
 export function detectSwings(candles, left = CONFIG.SWING_LEFT, right = CONFIG.SWING_RIGHT) {
@@ -838,20 +880,109 @@ export function detectSwings(candles, left = CONFIG.SWING_LEFT, right = CONFIG.S
 }
 
 export function isSwingConfirmed(swing, candleIndex) {
-  if (!swing) {
+  if (!swing || typeof swing !== "object") {
     return false;
   }
 
-  const confirmationIndex = Number.isFinite(swing.confirmed_index)
-    ? swing.confirmed_index
-    : swing.index + CONFIG.SWING_RIGHT;
+  if (
+    !Number.isInteger(candleIndex) ||
+    candleIndex < 0 ||
+    !Number.isInteger(swing.index) ||
+    swing.index < 0
+  ) {
+    return false;
+  }
+
+  let confirmationIndex;
+
+  if (Number.isFinite(swing.confirmed_index)) {
+    confirmationIndex = swing.confirmed_index;
+  } else {
+    const swingRight = CONFIG.SWING_RIGHT;
+
+    if (!Number.isInteger(swingRight) || swingRight < 0) {
+      return false;
+    }
+
+    confirmationIndex = swing.index + swingRight;
+  }
+
+  if (
+    !Number.isInteger(confirmationIndex) ||
+    confirmationIndex < swing.index
+  ) {
+    return false;
+  }
 
   return confirmationIndex <= candleIndex;
 }
 
 export function buildConfirmedSwingTimeline(swings, candlesLength) {
-  const highs = swings.highs || [];
-  const lows = swings.lows || [];
+  if (
+    !Number.isInteger(candlesLength) ||
+    candlesLength <= 0
+  ) {
+    return {
+      highs: [],
+      lows: []
+    };
+  }
+
+  const rawHighs = Array.isArray(swings?.highs)
+    ? swings.highs
+    : [];
+
+  const rawLows = Array.isArray(swings?.lows)
+    ? swings.lows
+    : [];
+
+  const getConfirmationIndex = (swing) => {
+    if (!swing || !Number.isInteger(swing.index)) {
+      return Infinity;
+    }
+
+    if (Number.isFinite(swing.confirmed_index)) {
+      return swing.confirmed_index;
+    }
+
+    const swingRight = CONFIG.SWING_RIGHT;
+
+    if (!Number.isInteger(swingRight) || swingRight < 0) {
+      return Infinity;
+    }
+
+    return swing.index + swingRight;
+  };
+
+  const highs = rawHighs
+    .filter(
+      (s) =>
+        s &&
+        Number.isInteger(s.index) &&
+        s.index >= 0 &&
+        Number.isFinite(s.price) &&
+        Number.isFinite(getConfirmationIndex(s))
+    )
+    .slice()
+    .sort(
+      (a, b) =>
+        getConfirmationIndex(a) - getConfirmationIndex(b)
+    );
+
+  const lows = rawLows
+    .filter(
+      (s) =>
+        s &&
+        Number.isInteger(s.index) &&
+        s.index >= 0 &&
+        Number.isFinite(s.price) &&
+        Number.isFinite(getConfirmationIndex(s))
+    )
+    .slice()
+    .sort(
+      (a, b) =>
+        getConfirmationIndex(a) - getConfirmationIndex(b)
+    );
 
   const timelineHighs = new Array(candlesLength);
   const timelineLows = new Array(candlesLength);
@@ -879,8 +1010,13 @@ export function buildConfirmedSwingTimeline(swings, candlesLength) {
       lIdx++;
     }
 
-    timelineHighs[i] = cumulativeHighs;
-    timelineLows[i] = cumulativeLows;
+    timelineHighs[i] = cumulativeHighs
+      .slice()
+      .sort((a, b) => a.index - b.index);
+
+    timelineLows[i] = cumulativeLows
+      .slice()
+      .sort((a, b) => a.index - b.index);
   }
 
   return {
@@ -1727,29 +1863,93 @@ export function detectOrderBlocks(
   return candidates;
 }
 
-export function computeVolumeProfile(candles, startIndex, endIndex, binCount) {
-  if (!candles || candles.length === 0) return null;
-  if (startIndex < 0) startIndex = 0;
-  if (endIndex >= candles.length) endIndex = candles.length - 1;
-  if (startIndex >= endIndex) return null;
+export function computeVolumeProfile(
+  candles,
+  startIndex,
+  endIndex,
+  binCount
+) {
+  if (
+    !Array.isArray(candles) ||
+    candles.length === 0 ||
+    !Number.isInteger(startIndex) ||
+    !Number.isInteger(endIndex) ||
+    !Number.isInteger(binCount) ||
+    binCount <= 0
+  ) {
+    return null;
+  }
+
+  startIndex = Math.max(0, startIndex);
+  endIndex = Math.min(candles.length - 1, endIndex);
+
+  if (
+    startIndex >= candles.length ||
+    endIndex < 0 ||
+    startIndex > endIndex
+  ) {
+    return null;
+  }
 
   let minPrice = Infinity;
   let maxPrice = -Infinity;
 
+  const validCandles = [];
+
   for (let i = startIndex; i <= endIndex; i++) {
     const c = candles[i];
-    if (c.low < minPrice) minPrice = c.low;
-    if (c.high > maxPrice) maxPrice = c.high;
+
+    if (!c) continue;
+
+    const low = Number(c.low);
+    const high = Number(c.high);
+    const close = Number(c.close);
+    const volume = Number(c.volume || 0);
+
+    if (
+      !Number.isFinite(low) ||
+      !Number.isFinite(high) ||
+      !Number.isFinite(close) ||
+      low <= 0 ||
+      high < low ||
+      close < low ||
+      close > high
+    ) {
+      continue;
+    }
+
+    minPrice = Math.min(minPrice, low);
+    maxPrice = Math.max(maxPrice, high);
+
+    if (Number.isFinite(volume) && volume > 0) {
+      validCandles.push({
+        low,
+        high,
+        close,
+        volume
+      });
+    }
   }
 
-  if (!Number.isFinite(minPrice) || !Number.isFinite(maxPrice)) {
+  if (
+    !Number.isFinite(minPrice) ||
+    !Number.isFinite(maxPrice) ||
+    validCandles.length === 0
+  ) {
     return null;
   }
 
   const range = maxPrice - minPrice;
-  if (range <= 0) return null;
+
+  if (!Number.isFinite(range) || range <= 0) {
+    return null;
+  }
 
   const binSize = range / binCount;
+
+  if (!Number.isFinite(binSize) || binSize <= 0) {
+    return null;
+  }
 
   const bins = new Array(binCount).fill(0);
   const binLowPrices = new Array(binCount);
@@ -1760,43 +1960,57 @@ export function computeVolumeProfile(candles, startIndex, endIndex, binCount) {
     binHighPrices[b] = binLowPrices[b] + binSize;
   }
 
-  for (let i = startIndex; i <= endIndex; i++) {
-    const c = candles[i];
-    const cLowV = c.low;
-    const cHighV = c.high;
-    const cCloseV = c.close;
-    const cVolV = c.volume || 0;
+  for (const c of validCandles) {
+    let startBin = Math.floor(
+      (c.low - minPrice) / binSize
+    );
 
-    if (cVolV <= 0 || cHighV <= cLowV) continue;
+    let endBin = Math.floor(
+      (c.high - minPrice) / binSize
+    );
 
-    let startBin = Math.floor((cLowV - minPrice) / binSize);
-    let endBin = Math.floor((cHighV - minPrice) / binSize);
+    startBin = Math.max(0, Math.min(binCount - 1, startBin));
+    endBin = Math.max(0, Math.min(binCount - 1, endBin));
 
-    if (startBin < 0) startBin = 0;
-    if (endBin >= binCount) endBin = binCount - 1;
     if (startBin > endBin) continue;
 
-    let closeBin = Math.floor((cCloseV - minPrice) / binSize);
-    if (closeBin < 0) closeBin = 0;
-    if (closeBin >= binCount) closeBin = binCount - 1;
+    let closeBin = Math.floor(
+      (c.close - minPrice) / binSize
+    );
+
+    closeBin = Math.max(
+      startBin,
+      Math.min(endBin, closeBin)
+    );
 
     const touchedBins = endBin - startBin + 1;
 
     if (touchedBins === 1) {
-      bins[startBin] += cVolV;
+      bins[startBin] += c.volume;
       continue;
     }
 
     const closeWeight = 0.5;
-    const otherWeight = (1 - closeWeight) / (touchedBins - 1);
+    const otherWeight =
+      (1 - closeWeight) / (touchedBins - 1);
 
     for (let b = startBin; b <= endBin; b++) {
-      if (b === closeBin) {
-        bins[b] += cVolV * closeWeight;
-      } else {
-        bins[b] += cVolV * otherWeight;
-      }
+      bins[b] +=
+        c.volume *
+        (b === closeBin ? closeWeight : otherWeight);
     }
+  }
+
+  const totalVolume = bins.reduce(
+    (sum, volume) => sum + volume,
+    0
+  );
+
+  if (
+    !Number.isFinite(totalVolume) ||
+    totalVolume <= 0
+  ) {
+    return null;
   }
 
   let pocIndex = 0;
@@ -1809,8 +2023,21 @@ export function computeVolumeProfile(candles, startIndex, endIndex, binCount) {
     }
   }
 
-  const totalVolume = bins.reduce((a, b) => a + b, 0);
-  const valueAreaTarget = totalVolume * CONFIG.FRVP_VALUE_AREA;
+  if (pocVolume <= 0) {
+    return null;
+  }
+
+  const valueAreaRatio = CONFIG.FRVP_VALUE_AREA;
+
+  if (
+    !Number.isFinite(valueAreaRatio) ||
+    valueAreaRatio <= 0 ||
+    valueAreaRatio > 1
+  ) {
+    return null;
+  }
+
+  const valueAreaTarget = totalVolume * valueAreaRatio;
 
   let vaVolume = bins[pocIndex];
   let vaLow = pocIndex;
@@ -1820,15 +2047,26 @@ export function computeVolumeProfile(candles, startIndex, endIndex, binCount) {
     vaVolume < valueAreaTarget &&
     (vaLow > 0 || vaHigh < binCount - 1)
   ) {
-    const volBelow = vaLow > 0 ? bins[vaLow - 1] : -1;
-    const volAbove = vaHigh < binCount - 1 ? bins[vaHigh + 1] : -1;
+    const volBelow =
+      vaLow > 0 ? bins[vaLow - 1] : -1;
+
+    const volAbove =
+      vaHigh < binCount - 1
+        ? bins[vaHigh + 1]
+        : -1;
 
     if (volAbove > volBelow) {
       vaHigh++;
       vaVolume += volAbove;
-    } else if (volBelow > 0) {
+    } else if (volBelow > volAbove) {
       vaLow--;
       vaVolume += volBelow;
+    } else if (vaLow > 0) {
+      vaLow--;
+      vaVolume += volBelow;
+    } else if (vaHigh < binCount - 1) {
+      vaHigh++;
+      vaVolume += volAbove;
     } else {
       break;
     }
@@ -1842,33 +2080,94 @@ export function computeVolumeProfile(candles, startIndex, endIndex, binCount) {
     bins,
     binLowPrices,
     binHighPrices,
+
     poc: {
       index: pocIndex,
-      price: (binLowPrices[pocIndex] + binHighPrices[pocIndex]) / 2,
+      price:
+        (binLowPrices[pocIndex] +
+          binHighPrices[pocIndex]) / 2,
       volume: pocVolume
     },
+
     valueArea: {
       low: binLowPrices[vaLow],
       high: binHighPrices[vaHigh],
       volume: vaVolume
     },
+
     totalVolume,
     vaLowIndex: vaLow,
     vaHighIndex: vaHigh
   };
 }
 
-export function extractVolumeNodes(profile, hvnThreshold, lvnThreshold) {
-  if (!profile) return { hvn: [], lvn: [], poc: null };
+export function extractVolumeNodes(
+  profile,
+  hvnThreshold,
+  lvnThreshold
+) {
+  const emptyResult = {
+    hvn: [],
+    lvn: [],
+    poc: null
+  };
 
-  const { bins, binLowPrices, binHighPrices, poc } = profile;
-
-  let maxVol = 0;
-  for (let b = 0; b < bins.length; b++) {
-    if (bins[b] > maxVol) maxVol = bins[b];
+  if (!profile || typeof profile !== "object") {
+    return emptyResult;
   }
 
-  if (maxVol <= 0) return { hvn: [], lvn: [], poc };
+  const {
+    bins,
+    binLowPrices,
+    binHighPrices,
+    poc
+  } = profile;
+
+  if (
+    !Array.isArray(bins) ||
+    !Array.isArray(binLowPrices) ||
+    !Array.isArray(binHighPrices) ||
+    bins.length === 0 ||
+    bins.length !== binLowPrices.length ||
+    bins.length !== binHighPrices.length ||
+    !Number.isFinite(hvnThreshold) ||
+    !Number.isFinite(lvnThreshold) ||
+    hvnThreshold < 0 ||
+    hvnThreshold > 1 ||
+    lvnThreshold < 0 ||
+    lvnThreshold > 1
+  ) {
+    return emptyResult;
+  }
+
+  const validProfile = bins.every(
+    (vol, index) =>
+      Number.isFinite(vol) &&
+      vol >= 0 &&
+      Number.isFinite(binLowPrices[index]) &&
+      Number.isFinite(binHighPrices[index]) &&
+      binLowPrices[index] <= binHighPrices[index]
+  );
+
+  if (!validProfile) {
+    return emptyResult;
+  }
+
+  let maxVol = 0;
+
+  for (let b = 0; b < bins.length; b++) {
+    if (bins[b] > maxVol) {
+      maxVol = bins[b];
+    }
+  }
+
+  if (maxVol <= 0) {
+    return {
+      hvn: [],
+      lvn: [],
+      poc: null
+    };
+  }
 
   const hvn = [];
   const lvn = [];
@@ -1878,18 +2177,29 @@ export function extractVolumeNodes(profile, hvnThreshold, lvnThreshold) {
     const ratio = vol / maxVol;
 
     const neighbors = [];
-    if (b > 0) neighbors.push(bins[b - 1]);
-    if (b < bins.length - 1) neighbors.push(bins[b + 1]);
+
+    if (b > 0) {
+      neighbors.push(bins[b - 1]);
+    }
+
+    if (b < bins.length - 1) {
+      neighbors.push(bins[b + 1]);
+    }
 
     const avgNeighbor =
       neighbors.length > 0
-        ? neighbors.reduce((a, c) => a + c, 0) / neighbors.length
+        ? neighbors.reduce((a, c) => a + c, 0) /
+          neighbors.length
         : 0;
 
-    if (ratio >= hvnThreshold && vol >= avgNeighbor * 1.1) {
+    if (
+      ratio >= hvnThreshold &&
+      vol >= avgNeighbor * 1.1
+    ) {
       hvn.push({
         index: b,
-        price: (binLowPrices[b] + binHighPrices[b]) / 2,
+        price:
+          (binLowPrices[b] + binHighPrices[b]) / 2,
         low: binLowPrices[b],
         high: binHighPrices[b],
         volume: vol,
@@ -1897,10 +2207,14 @@ export function extractVolumeNodes(profile, hvnThreshold, lvnThreshold) {
       });
     }
 
-    if (ratio <= lvnThreshold && vol < avgNeighbor * 0.7) {
+    if (
+      ratio <= lvnThreshold &&
+      vol < avgNeighbor * 0.7
+    ) {
       lvn.push({
         index: b,
-        price: (binLowPrices[b] + binHighPrices[b]) / 2,
+        price:
+          (binLowPrices[b] + binHighPrices[b]) / 2,
         low: binLowPrices[b],
         high: binHighPrices[b],
         volume: vol,
@@ -1909,34 +2223,56 @@ export function extractVolumeNodes(profile, hvnThreshold, lvnThreshold) {
     }
   }
 
-  const mergeAdjacent = (nodes, maxGap) => {
-    if (nodes.length === 0) return [];
+  const mergeAdjacent = (nodes, maxGap = 1) => {
+    if (!nodes.length) return [];
 
     const merged = [];
-    let current = { ...nodes[0] };
+
+    let current = {
+      ...nodes[0]
+    };
 
     for (let i = 1; i < nodes.length; i++) {
       const n = nodes[i];
+
       if (n.index - current.index <= maxGap) {
         current.high = n.high;
-        current.volume = current.volume + n.volume;
-        current.ratio = Math.max(current.ratio, n.ratio);
-        current.price = (current.low + current.high) / 2;
+        current.volume += n.volume;
+        current.ratio = Math.max(
+          current.ratio,
+          n.ratio
+        );
+
+        current.price =
+          (current.low + current.high) / 2;
+
         current.index = n.index;
       } else {
         merged.push(current);
-        current = { ...n };
+
+        current = {
+          ...n
+        };
       }
     }
+
     merged.push(current);
 
     return merged;
   };
 
+  const validPoc =
+    poc &&
+    Number.isFinite(poc.price) &&
+    Number.isFinite(poc.volume) &&
+    poc.volume > 0
+      ? poc
+      : null;
+
   return {
-    hvn: mergeAdjacent(hvn, 1),
-    lvn: mergeAdjacent(lvn, 1),
-    poc
+    hvn: mergeAdjacent(hvn),
+    lvn: mergeAdjacent(lvn),
+    poc: validPoc
   };
 }
 
@@ -5848,9 +6184,27 @@ export function detectRangeTradeSetups(
   };
 }
 
-export function collectNearbyLevels(candles, swings, currentPrice, atrValue, count) {
-  if (!candles || candles.length < 10 || !atrValue || atrValue <= 0) {
-    return { bullish: [], bearish: [] };
+export function collectNearbyLevels(
+  candles,
+  swings,
+  currentPrice,
+  atrValue,
+  count
+) {
+  if (
+    !Array.isArray(candles) ||
+    candles.length < 10 ||
+    !Number.isFinite(currentPrice) ||
+    currentPrice <= 0 ||
+    !Number.isFinite(atrValue) ||
+    atrValue <= 0 ||
+    !Number.isInteger(count) ||
+    count <= 0
+  ) {
+    return {
+      bullish: [],
+      bearish: []
+    };
   }
 
   if (!swings) {
@@ -5875,8 +6229,19 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
 
   const maxLevelDistance = atrValue * 5;
 
-  const obBearish = (obs.bearish || [])
-    .filter((z) => z.low - currentPrice <= maxLevelDistance)
+  const isValidZone = (z) =>
+    z &&
+    Number.isFinite(z.low) &&
+    Number.isFinite(z.high) &&
+    z.low <= z.high;
+
+  const obBearish = (obs?.bearish || [])
+    .filter(isValidZone)
+    .filter(
+      (z) =>
+        z.low >= currentPrice &&
+        z.low - currentPrice <= maxLevelDistance
+    )
     .map((z) => ({
       direction: "bearish",
       low: z.low,
@@ -5886,8 +6251,13 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
       distance: z.low - currentPrice
     }));
 
-  const obBullish = (obs.bullish || [])
-    .filter((z) => currentPrice - z.high <= maxLevelDistance)
+  const obBullish = (obs?.bullish || [])
+    .filter(isValidZone)
+    .filter(
+      (z) =>
+        z.high <= currentPrice &&
+        currentPrice - z.high <= maxLevelDistance
+    )
     .map((z) => ({
       direction: "bullish",
       low: z.low,
@@ -5897,8 +6267,13 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
       distance: currentPrice - z.high
     }));
 
-  const frvpBearish = (frvp.bearish || [])
-    .filter((z) => z.low - currentPrice <= maxLevelDistance)
+  const frvpBearish = (frvp?.bearish || [])
+    .filter(isValidZone)
+    .filter(
+      (z) =>
+        z.low >= currentPrice &&
+        z.low - currentPrice <= maxLevelDistance
+    )
     .map((z) => ({
       direction: "bearish",
       low: z.low,
@@ -5911,8 +6286,13 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
       isPoc: z.isPoc || false
     }));
 
-  const frvpBullish = (frvp.bullish || [])
-    .filter((z) => currentPrice - z.high <= maxLevelDistance)
+  const frvpBullish = (frvp?.bullish || [])
+    .filter(isValidZone)
+    .filter(
+      (z) =>
+        z.high <= currentPrice &&
+        currentPrice - z.high <= maxLevelDistance
+    )
     .map((z) => ({
       direction: "bullish",
       low: z.low,
@@ -5944,19 +6324,33 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
   const isDuplicate = (list, item) => {
     for (const existing of list) {
       if (
-        Math.abs(existing.mid - item.mid) / Math.max(atrValue, 1e-12) < 0.5
+        Number.isFinite(existing.mid) &&
+        Number.isFinite(item.mid) &&
+        Math.abs(existing.mid - item.mid) / atrValue < 0.5
       ) {
         return true;
       }
     }
+
     return false;
   };
 
   if (bearish.length < count) {
-    const confirmed = getConfirmedSwings(swings, candles.length - 1);
+    const confirmed = getConfirmedSwings(
+      swings,
+      candles.length - 1
+    );
 
-    const swingHighs = (confirmed.highs || [])
-      .filter((h) => candles.length - 1 - h.index <= 100)
+    const swingHighs = (confirmed?.highs || [])
+      .filter(
+        (h) =>
+          Number.isFinite(h.price) &&
+          Number.isInteger(h.index) &&
+          h.index >= 0
+      )
+      .filter(
+        (h) => candles.length - 1 - h.index <= 100
+      )
       .filter(
         (h) =>
           h.price > currentPrice &&
@@ -5983,10 +6377,21 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
   }
 
   if (bullish.length < count) {
-    const confirmed = getConfirmedSwings(swings, candles.length - 1);
+    const confirmed = getConfirmedSwings(
+      swings,
+      candles.length - 1
+    );
 
-    const swingLows = (confirmed.lows || [])
-      .filter((l) => candles.length - 1 - l.index <= 100)
+    const swingLows = (confirmed?.lows || [])
+      .filter(
+        (l) =>
+          Number.isFinite(l.price) &&
+          Number.isInteger(l.index) &&
+          l.index >= 0
+      )
+      .filter(
+        (l) => candles.length - 1 - l.index <= 100
+      )
       .filter(
         (l) =>
           l.price < currentPrice &&
@@ -6019,8 +6424,8 @@ export function collectNearbyLevels(candles, swings, currentPrice, atrValue, cou
     bearish: bearish.slice(0, count),
     bullish: bullish.slice(0, count),
     frvp: {
-      poc: frvp.poc,
-      valueArea: frvp.valueArea
+      poc: frvp?.poc || null,
+      valueArea: frvp?.valueArea || null
     }
   };
 }
