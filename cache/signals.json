@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T00:03:32.849Z",
+  "lastUpdated": "2026-11-03T00:33:56.011Z",
   "signals": {
-    "AZTECUSDT:15m": {
-      "sentAt": "2026-11-02T12:30:59.686Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.014685,
-      "stop": 0.014437213024772492
-    },
-    "MUBUSDT:1h": {
-      "sentAt": "2026-11-02T12:31:01.504Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 905.0555235231932,
-      "stop": 886.6576
-    },
     "DOODUSDT:15m": {
       "sentAt": "2026-11-02T13:01:01.061Z",
       "symbol": "DOODUSDT",
@@ -234,6 +216,15 @@
       "score": 14,
       "entry": 0.05518396,
       "stop": 0.058386784976191354
+    },
+    "KITEUSDT:1h": {
+      "sentAt": "2026-11-03T00:33:54.508Z",
+      "symbol": "KITEUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.11664050299992884,
+      "stop": 0.12239640714336544
     }
   }
 }
