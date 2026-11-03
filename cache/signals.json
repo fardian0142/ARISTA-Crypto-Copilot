@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T10:04:00.771Z",
+  "lastUpdated": "2026-11-03T10:33:42.599Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -81,6 +81,24 @@
       "score": 14,
       "entry": 0.1106,
       "stop": 0.11533971928554772
+    },
+    "USELESSUSDT:15m": {
+      "sentAt": "2026-11-03T10:33:39.297Z",
+      "symbol": "USELESSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.12383,
+      "stop": 0.12050056174080243
+    },
+    "EDENUSDT:1h": {
+      "sentAt": "2026-11-03T10:33:41.098Z",
+      "symbol": "EDENUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.05518396,
+      "stop": 0.058339037773021185
     }
   }
 }
