@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T13:04:02.459Z",
+  "lastUpdated": "2026-11-03T13:33:41.891Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -216,6 +216,42 @@
       "score": 14,
       "entry": 0.349,
       "stop": 0.35913866954837564
+    },
+    "SPCXBUSDT:15m": {
+      "sentAt": "2026-11-03T13:33:35.014Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 137.17954298776928,
+      "stop": 134.945
+    },
+    "SPCXUSDT:30m": {
+      "sentAt": "2026-11-03T13:33:36.863Z",
+      "symbol": "SPCXUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 137.315,
+      "stop": 135.0829
+    },
+    "SANTOSUSDT:15m": {
+      "sentAt": "2026-11-03T13:33:38.630Z",
+      "symbol": "SANTOSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.40740094412475686,
+      "stop": 0.4161499999999999
+    },
+    "RAREUSDT:15m": {
+      "sentAt": "2026-11-03T13:33:40.390Z",
+      "symbol": "RAREUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01232534105201168,
+      "stop": 0.012114556474120354
     }
   }
 }
