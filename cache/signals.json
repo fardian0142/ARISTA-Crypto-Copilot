@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T21:47:08.694Z",
+  "lastUpdated": "2026-11-03T22:01:56.865Z",
   "signals": {
     "ZKPUSDT:1h": {
       "sentAt": "2026-11-03T10:03:52.099Z",
@@ -864,6 +864,15 @@
       "score": 14,
       "entry": 0.5717112201354657,
       "stop": 0.5552444999999999
+    },
+    "PIUSDT:1h": {
+      "sentAt": "2026-11-03T22:01:55.361Z",
+      "symbol": "PIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07661,
+      "stop": 0.0749782
     }
   }
 }
