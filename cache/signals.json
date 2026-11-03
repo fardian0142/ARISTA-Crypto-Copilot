@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T14:04:05.731Z",
+  "lastUpdated": "2026-11-03T14:33:53.821Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -324,6 +324,33 @@
       "score": 14,
       "entry": 388.04999999999995,
       "stop": 372.4864912892127
+    },
+    "ETHFIUSDT:15m": {
+      "sentAt": "2026-11-03T14:33:48.794Z",
+      "symbol": "ETHFIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.585311476871371,
+      "stop": 0.5684894509187786
+    },
+    "REDUSDT:15m": {
+      "sentAt": "2026-11-03T14:33:50.604Z",
+      "symbol": "REDUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1377224176652665,
+      "stop": 0.13486671834433472
+    },
+    "NOKBUSDT:30m": {
+      "sentAt": "2026-11-03T14:33:52.319Z",
+      "symbol": "NOKBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 8.53438,
+      "stop": 8.34295
     }
   }
 }
