@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T05:03:39.285Z",
+  "lastUpdated": "2026-11-03T05:33:43.964Z",
   "signals": {
     "ZHONGJIUSDT:1h": {
       "sentAt": "2026-11-02T18:40:32.223Z",
@@ -171,6 +171,33 @@
       "score": 14,
       "entry": 0.353,
       "stop": 0.3400124221225934
+    },
+    "UNITREEUSDT:30m": {
+      "sentAt": "2026-11-03T05:33:38.857Z",
+      "symbol": "UNITREEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 94.295,
+      "stop": 97.90646993771401
+    },
+    "WOOUSDT:30m": {
+      "sentAt": "2026-11-03T05:33:40.588Z",
+      "symbol": "WOOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.011418253332438996,
+      "stop": 0.011118190482578604
+    },
+    "FTTUSDT:15m": {
+      "sentAt": "2026-11-03T05:33:42.462Z",
+      "symbol": "FTTUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.23195,
+      "stop": 0.22674699999999998
     }
   }
 }
