@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T16:00:37.292Z",
+  "lastUpdated": "2026-11-03T16:13:25.886Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -504,6 +504,60 @@
       "score": 14,
       "entry": 248.59988656680247,
       "stop": 244.6598647247431
+    },
+    "SPCXBUSDT:2h": {
+      "sentAt": "2026-11-03T16:13:15.356Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 139.91,
+      "stop": 133.46516978224344
+    },
+    "DOTUSDT:30m": {
+      "sentAt": "2026-11-03T16:13:17.171Z",
+      "symbol": "DOTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.938,
+      "stop": 0.9200692702088676
+    },
+    "PENDLEUSDT:15m": {
+      "sentAt": "2026-11-03T16:13:18.960Z",
+      "symbol": "PENDLEUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.7585,
+      "stop": 1.7243044384199298
+    },
+    "DYDXUSDT:30m": {
+      "sentAt": "2026-11-03T16:13:20.780Z",
+      "symbol": "DYDXUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.10331970090345977,
+      "stop": 0.10066356497528736
+    },
+    "XAIUSDT:15m": {
+      "sentAt": "2026-11-03T16:13:22.602Z",
+      "symbol": "XAIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006805,
+      "stop": 0.00667436
+    },
+    "FLRUSDT:2h": {
+      "sentAt": "2026-11-03T16:13:24.383Z",
+      "symbol": "FLRUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.006004,
+      "stop": 0.005866070635332105
     }
   }
 }
