@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-03T21:32:20.295Z",
+  "lastUpdated": "2026-11-03T21:47:08.694Z",
   "signals": {
-    "INJUSDT:30m": {
-      "sentAt": "2026-11-03T09:33:55.163Z",
-      "symbol": "INJUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 7.082008,
-      "stop": 6.825917516728933
-    },
-    "SYRUPUSDT:15m": {
-      "sentAt": "2026-11-03T09:33:56.902Z",
-      "symbol": "SYRUPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15465,
-      "stop": 0.151887
-    },
     "ZKPUSDT:1h": {
       "sentAt": "2026-11-03T10:03:52.099Z",
       "symbol": "ZKPUSDT",
