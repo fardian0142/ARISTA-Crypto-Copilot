@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T12:34:07.038Z",
+  "lastUpdated": "2026-11-03T13:04:02.459Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -189,6 +189,33 @@
       "score": 14,
       "entry": 202.52499999999998,
       "stop": 199.1276
+    },
+    "OPUSDT:1h": {
+      "sentAt": "2026-11-03T13:03:57.448Z",
+      "symbol": "OPUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.113,
+      "stop": 0.11687029004139066
+    },
+    "NGUSDT:30m": {
+      "sentAt": "2026-11-03T13:03:59.166Z",
+      "symbol": "NGUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 2.8985000000000003,
+      "stop": 2.851575
+    },
+    "UMAUSDT:1h": {
+      "sentAt": "2026-11-03T13:04:00.956Z",
+      "symbol": "UMAUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.349,
+      "stop": 0.35913866954837564
     }
   }
 }
