@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T13:33:41.891Z",
+  "lastUpdated": "2026-11-03T14:04:05.731Z",
   "signals": {
     "DOLOUSDT:30m": {
       "sentAt": "2026-11-03T08:33:33.987Z",
@@ -252,6 +252,78 @@
       "score": 14,
       "entry": 0.01232534105201168,
       "stop": 0.012114556474120354
+    },
+    "PAXGUSDT:2h": {
+      "sentAt": "2026-11-03T14:03:53.866Z",
+      "symbol": "PAXGUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3943.3050000000003,
+      "stop": 3871.05985
+    },
+    "IOSTUSDT:15m": {
+      "sentAt": "2026-11-03T14:03:55.591Z",
+      "symbol": "IOSTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0007077531079194944,
+      "stop": 0.0007247099999999999
+    },
+    "MRNABUSDT:15m": {
+      "sentAt": "2026-11-03T14:03:57.323Z",
+      "symbol": "MRNABUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 221.72839492939144,
+      "stop": 217.9805
+    },
+    "MRNABUSDT:30m": {
+      "sentAt": "2026-11-03T14:03:57.323Z",
+      "symbol": "MRNABUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 221.36524858687125,
+      "stop": 217.1925
+    },
+    "CKBUSDT:15m": {
+      "sentAt": "2026-11-03T14:03:59.047Z",
+      "symbol": "CKBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0011845,
+      "stop": 0.00115836
+    },
+    "AIUSDT:1h": {
+      "sentAt": "2026-11-03T14:04:00.783Z",
+      "symbol": "AIUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.017750000000000002,
+      "stop": 0.01682526578082221
+    },
+    "MASKUSDT:2h": {
+      "sentAt": "2026-11-03T14:04:02.501Z",
+      "symbol": "MASKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3828509479017577,
+      "stop": 0.371345
+    },
+    "AMATBUSDT:2h": {
+      "sentAt": "2026-11-03T14:04:04.229Z",
+      "symbol": "AMATBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 388.04999999999995,
+      "stop": 372.4864912892127
     }
   }
 }
