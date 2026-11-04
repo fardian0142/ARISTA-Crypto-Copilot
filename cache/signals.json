@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T12:48:03.513Z",
+  "lastUpdated": "2026-11-04T13:03:05.665Z",
   "signals": {
-    "SPCXBUSDT:1h": {
-      "sentAt": "2026-11-04T01:02:03.217Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 138.72026,
-      "stop": 133.52935980638043
-    },
     "CTUSDT:30m": {
       "sentAt": "2026-11-04T02:01:53.587Z",
       "symbol": "CTUSDT",
