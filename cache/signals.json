@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T06:17:19.741Z",
+  "lastUpdated": "2026-11-04T06:32:14.108Z",
   "signals": {
-    "DEXEUSDT:15m": {
-      "sentAt": "2026-11-03T18:20:33.159Z",
-      "symbol": "DEXEUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.396,
-      "stop": 1.368165
-    },
     "AVAUSDT:15m": {
       "sentAt": "2026-11-03T18:49:55.712Z",
       "symbol": "AVAUSDT",
