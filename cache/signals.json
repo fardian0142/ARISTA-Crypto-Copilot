@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T22:48:06.402Z",
+  "lastUpdated": "2026-11-04T23:03:25.642Z",
   "signals": {
-    "POPCATUSDT:30m": {
-      "sentAt": "2026-11-04T11:03:02.714Z",
-      "symbol": "POPCATUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.03998,
-      "stop": 0.04128687490160636
-    },
     "CPUSDT:30m": {
       "sentAt": "2026-11-04T12:33:05.868Z",
       "symbol": "CPUSDT",
