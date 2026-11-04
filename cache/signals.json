@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T17:33:13.107Z",
+  "lastUpdated": "2026-11-04T17:48:06.692Z",
   "signals": {
     "POPCATUSDT:30m": {
       "sentAt": "2026-11-04T11:03:02.714Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.12081565300288281,
       "stop": 0.12373104997940844
+    },
+    "NILUSDT:15m": {
+      "sentAt": "2026-11-04T17:48:05.187Z",
+      "symbol": "NILUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.06413781968266284,
+      "stop": 0.061664402720032735
     }
   }
 }
