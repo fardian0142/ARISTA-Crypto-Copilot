@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T20:03:11.400Z",
+  "lastUpdated": "2026-11-04T20:18:07.338Z",
   "signals": {
     "POPCATUSDT:30m": {
       "sentAt": "2026-11-04T11:03:02.714Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 1.1880000000000002,
       "stop": 1.1206965217113751
+    },
+    "CROUSDT:2h": {
+      "sentAt": "2026-11-04T20:18:05.835Z",
+      "symbol": "CROUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.051570000000000005,
+      "stop": 0.04857590149626549
     }
   }
 }
