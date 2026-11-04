@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T07:47:25.404Z",
+  "lastUpdated": "2026-11-04T08:02:21.243Z",
   "signals": {
-    "SKHYBUSDT:30m": {
-      "sentAt": "2026-11-03T20:02:12.749Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 150.25,
-      "stop": 146.4669712316614
-    },
     "UNIUSDT:15m": {
       "sentAt": "2026-11-03T21:32:17.051Z",
       "symbol": "UNIUSDT",
