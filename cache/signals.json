@@ -1,42 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T01:32:16.801Z",
+  "lastUpdated": "2026-11-04T01:47:10.031Z",
   "signals": {
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-11-03T13:33:35.014Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 137.17954298776928,
-      "stop": 134.945
-    },
-    "SPCXUSDT:30m": {
-      "sentAt": "2026-11-03T13:33:36.863Z",
-      "symbol": "SPCXUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 137.315,
-      "stop": 135.0829
-    },
-    "SANTOSUSDT:15m": {
-      "sentAt": "2026-11-03T13:33:38.630Z",
-      "symbol": "SANTOSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.40740094412475686,
-      "stop": 0.4161499999999999
-    },
-    "RAREUSDT:15m": {
-      "sentAt": "2026-11-03T13:33:40.390Z",
-      "symbol": "RAREUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01232534105201168,
-      "stop": 0.012114556474120354
-    },
     "PAXGUSDT:2h": {
       "sentAt": "2026-11-03T14:03:53.866Z",
       "symbol": "PAXGUSDT",
