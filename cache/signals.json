@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T02:31:58.670Z",
+  "lastUpdated": "2026-11-04T02:47:23.360Z",
   "signals": {
-    "ETHFIUSDT:15m": {
-      "sentAt": "2026-11-03T14:33:48.794Z",
-      "symbol": "ETHFIUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.585311476871371,
-      "stop": 0.5684894509187786
-    },
-    "REDUSDT:15m": {
-      "sentAt": "2026-11-03T14:33:50.604Z",
-      "symbol": "REDUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1377224176652665,
-      "stop": 0.13486671834433472
-    },
-    "NOKBUSDT:30m": {
-      "sentAt": "2026-11-03T14:33:52.319Z",
-      "symbol": "NOKBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.53438,
-      "stop": 8.34295
-    },
     "SOXLUSDT:15m": {
       "sentAt": "2026-11-03T15:03:47.992Z",
       "symbol": "SOXLUSDT",
@@ -639,6 +612,15 @@
       "score": 14,
       "entry": 0.13113295072177553,
       "stop": 0.12470463770160332
+    },
+    "GRVTUSDT:30m": {
+      "sentAt": "2026-11-04T02:47:21.857Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.2265057801219265,
+      "stop": 0.21758442770052527
     }
   }
 }
