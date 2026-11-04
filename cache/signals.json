@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T20:18:07.338Z",
+  "lastUpdated": "2026-11-04T20:33:19.017Z",
   "signals": {
     "POPCATUSDT:30m": {
       "sentAt": "2026-11-04T11:03:02.714Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 0.051570000000000005,
       "stop": 0.04857590149626549
+    },
+    "WIFUSDT:30m": {
+      "sentAt": "2026-11-04T20:33:17.515Z",
+      "symbol": "WIFUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.17170246181012702,
+      "stop": 0.16347889877034005
     }
   }
 }
