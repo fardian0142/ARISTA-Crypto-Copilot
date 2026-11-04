@@ -61,6 +61,7 @@ export async function updateSignalStatus(signal) {
           stopHit = true;
           stopIndex = i;
           exitPrice = Math.min(stop, candle.open);
+          break;
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) {
           tp3Hit = true;
@@ -79,6 +80,7 @@ export async function updateSignalStatus(signal) {
           stopHit = true;
           stopIndex = i;
           exitPrice = Math.max(stop, candle.open);
+          break;
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) {
           tp3Hit = true;
@@ -95,37 +97,45 @@ export async function updateSignalStatus(signal) {
       }
     }
 
-    if (isBull) {
-      if (price <= stop && stopIndex === -1) {
-        stopHit = true;
-        stopIndex = signalCandles.length;
-        exitPrice = stop;
+    if (stopIndex === -1) {
+      if (isBull) {
+        if (price <= stop) {
+          stopHit = true;
+          stopIndex = signalCandles.length;
+          exitPrice = stop;
+        }
+      } else {
+        if (price >= stop) {
+          stopHit = true;
+          stopIndex = signalCandles.length;
+          exitPrice = stop;
+        }
       }
-      if (Number.isFinite(tp3) && price >= tp3 && tp3Index === -1) {
-        tp3Hit = true;
-        tp3Index = signalCandles.length;
-      } else if (Number.isFinite(tp2) && price >= tp2 && tp2Index === -1) {
-        tp2Hit = true;
-        tp2Index = signalCandles.length;
-      } else if (price >= tp1 && tp1Index === -1) {
-        tp1Hit = true;
-        tp1Index = signalCandles.length;
-      }
-    } else {
-      if (price >= stop && stopIndex === -1) {
-        stopHit = true;
-        stopIndex = signalCandles.length;
-        exitPrice = stop;
-      }
-      if (Number.isFinite(tp3) && price <= tp3 && tp3Index === -1) {
-        tp3Hit = true;
-        tp3Index = signalCandles.length;
-      } else if (Number.isFinite(tp2) && price <= tp2 && tp2Index === -1) {
-        tp2Hit = true;
-        tp2Index = signalCandles.length;
-      } else if (price <= tp1 && tp1Index === -1) {
-        tp1Hit = true;
-        tp1Index = signalCandles.length;
+    }
+
+    if (stopIndex === -1 && tp1Index === -1) {
+      if (isBull) {
+        if (Number.isFinite(tp3) && price >= tp3) {
+          tp3Hit = true;
+          tp3Index = signalCandles.length;
+        } else if (Number.isFinite(tp2) && price >= tp2) {
+          tp2Hit = true;
+          tp2Index = signalCandles.length;
+        } else if (price >= tp1) {
+          tp1Hit = true;
+          tp1Index = signalCandles.length;
+        }
+      } else {
+        if (Number.isFinite(tp3) && price <= tp3) {
+          tp3Hit = true;
+          tp3Index = signalCandles.length;
+        } else if (Number.isFinite(tp2) && price <= tp2) {
+          tp2Hit = true;
+          tp2Index = signalCandles.length;
+        } else if (price <= tp1) {
+          tp1Hit = true;
+          tp1Index = signalCandles.length;
+        }
       }
     }
 
