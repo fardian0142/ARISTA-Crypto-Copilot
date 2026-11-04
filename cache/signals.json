@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T09:54:49.300Z",
+  "lastUpdated": "2026-11-04T10:02:58.632Z",
   "signals": {
-    "PIUSDT:1h": {
-      "sentAt": "2026-11-03T22:01:55.361Z",
-      "symbol": "PIUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07661,
-      "stop": 0.0749782
-    },
     "NVDABUSDT:2h": {
       "sentAt": "2026-11-03T22:17:03.631Z",
       "symbol": "NVDABUSDT",
