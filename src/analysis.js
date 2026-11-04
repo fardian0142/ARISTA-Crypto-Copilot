@@ -546,19 +546,6 @@ export async function analyze(symbol, timeframe) {
             hasRealHtf &&
             result.range_setups.active
           ) {
-            const smcTrendFilter = detectSMCTrendFilter(htfCandles);
-            
-            if (smcTrendFilter && smcTrendFilter.blocked) {
-                result.range_setups.active = null;
-            } else if (smcTrendFilter && smcTrendFilter.trend !== "neutral" && smcTrendFilter.trend !== rangeDirection) {
-                result.range_setups.active = null;
-            }
-          }
-
-          if (
-            hasRealHtf &&
-            result.range_setups.active
-          ) {
             const htfHighs =
               Array.isArray(htfStructure.highs)
                 ? htfStructure.highs
