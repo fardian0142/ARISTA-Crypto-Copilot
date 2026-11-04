@@ -242,6 +242,8 @@ export async function analyze(symbol, timeframe) {
       result.strength = 0;
       result.risk = "HIGH";
       result._noTradeReason = reason;
+      
+      console.log(`[REJECT] ${symbol} ${timeframe}: ${reason}`);
 
       if (detail) {
         result.reasons.push(detail);
