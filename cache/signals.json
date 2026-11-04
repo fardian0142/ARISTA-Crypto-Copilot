@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T23:47:08.786Z",
+  "lastUpdated": "2026-11-04T00:02:12.202Z",
   "signals": {
     "BIGTIMEUSDT:1h": {
       "sentAt": "2026-11-03T12:03:58.681Z",
@@ -810,6 +810,15 @@
       "score": 14,
       "entry": 8.545,
       "stop": 8.373484999999999
+    },
+    "MSTRBUSDT:30m": {
+      "sentAt": "2026-11-04T00:02:10.699Z",
+      "symbol": "MSTRBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 135.81,
+      "stop": 138.5519297482102
     }
   }
 }
