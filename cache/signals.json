@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T12:33:07.371Z",
+  "lastUpdated": "2026-11-04T12:48:03.513Z",
   "signals": {
-    "MSTRBUSDT:15m": {
-      "sentAt": "2026-11-04T00:47:12.158Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 133.10737789721662,
-      "stop": 129.9609
-    },
     "SPCXBUSDT:1h": {
       "sentAt": "2026-11-04T01:02:03.217Z",
       "symbol": "SPCXBUSDT",
