@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T11:21:34.552Z",
+  "lastUpdated": "2026-11-04T11:32:58.994Z",
   "signals": {
-    "AVAXUSDT:30m": {
-      "sentAt": "2026-11-03T23:31:57.537Z",
-      "symbol": "AVAXUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 8.545,
-      "stop": 8.373484999999999
-    },
     "MSTRBUSDT:30m": {
       "sentAt": "2026-11-04T00:02:10.699Z",
       "symbol": "MSTRBUSDT",
