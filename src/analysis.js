@@ -875,50 +875,50 @@ export async function analyze(symbol, timeframe) {
 
     if (
       direction === "bullish" &&
-      htfTrend !== "bullish"
+      htfTrend === "bearish"
     ) {
       return fail(
         "مخالفت با تایم‌فریم بالاتر (HTF)",
         "ساختار تایم‌فریم بالاتر (" +
           (snapshot.htf || "HTF") +
-          ") صعودی نیست. ورود Long بدون تأیید روند ممنوع است."
+          ") نزولی است. ورود Long ممنوع است."
       );
     }
 
     if (
       direction === "bearish" &&
-      htfTrend !== "bearish"
+      htfTrend === "bullish"
     ) {
       return fail(
         "مخالفت با تایم‌فریم بالاتر (HTF)",
         "ساختار تایم‌فریم بالاتر (" +
           (snapshot.htf || "HTF") +
-          ") نزولی نیست. ورود Short بدون تأیید روند ممنوع است."
+          ") صعودی است. ورود Short ممنوع است."
       );
     }
 
     if (hasRealHtf2) {
       if (
         direction === "bullish" &&
-        htf2Trend !== "bullish"
+        htf2Trend === "bearish"
       ) {
         return fail(
           "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
           "ساختار تایم‌فریم بالاتر دوم (" +
             (snapshot.htf2 || "HTF2") +
-            ") صعودی نیست. ورود Long ممنوع است."
+            ") نزولی است. ورود Long ممنوع است."
         );
       }
 
       if (
         direction === "bearish" &&
-        htf2Trend !== "bearish"
+        htf2Trend === "bullish"
       ) {
         return fail(
           "مخالفت با تایم‌فریم بالاتر دوم (HTF2)",
           "ساختار تایم‌فریم بالاتر دوم (" +
             (snapshot.htf2 || "HTF2") +
-            ") نزولی نیست. ورود Short ممنوع است."
+            ") صعودی است. ورود Short ممنوع است."
         );
       }
     }
@@ -1159,7 +1159,8 @@ export async function analyze(symbol, timeframe) {
     if (profile.strictHTF) {
       if (
         isValidDirection(htfTrend) &&
-        htfTrend !== direction
+        htfTrend !== direction &&
+        htfTrend !== "neutral"
       ) {
         return fail(
           "ساختار تایم‌فریم بالاتر با جهت ستاپ مخالف است"
@@ -1169,7 +1170,8 @@ export async function analyze(symbol, timeframe) {
       if (
         hasRealHtf2 &&
         isValidDirection(htf2Trend) &&
-        htf2Trend !== direction
+        htf2Trend !== direction &&
+        htf2Trend !== "neutral"
       ) {
         return fail(
           "ساختار تایم‌فریم بالاتر دوم با جهت ستاپ مخالف است"
@@ -1533,7 +1535,8 @@ export async function analyze(symbol, timeframe) {
 
       if (
         isValidDirection(htfTrend) &&
-        htfTrend !== direction
+        htfTrend !== direction &&
+        htfTrend !== "neutral"
       ) {
         htfPenalty += profile.htfPenalty;
 
@@ -1547,7 +1550,8 @@ export async function analyze(symbol, timeframe) {
       if (
         hasRealHtf2 &&
         isValidDirection(htf2Trend) &&
-        htf2Trend !== direction
+        htf2Trend !== direction &&
+        htf2Trend !== "neutral"
       ) {
         htfPenalty += profile.htfPenalty;
 
