@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T11:48:01.278Z",
+  "lastUpdated": "2026-11-04T12:03:01.619Z",
   "signals": {
-    "MSTRBUSDT:30m": {
-      "sentAt": "2026-11-04T00:02:10.699Z",
-      "symbol": "MSTRBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 135.81,
-      "stop": 138.5519297482102
-    },
     "MSTRBUSDT:15m": {
       "sentAt": "2026-11-04T00:47:12.158Z",
       "symbol": "MSTRBUSDT",
