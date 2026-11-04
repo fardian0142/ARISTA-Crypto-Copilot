@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T10:51:00.601Z",
+  "lastUpdated": "2026-11-04T11:03:04.218Z",
   "signals": {
-    "SKHYBUSDT:1h": {
-      "sentAt": "2026-11-03T23:02:05.654Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 152.565,
-      "stop": 147.47329113303206
-    },
     "AVAXUSDT:30m": {
       "sentAt": "2026-11-03T23:31:57.537Z",
       "symbol": "AVAXUSDT",
@@ -72,6 +63,15 @@
       "score": 14,
       "entry": 1.1513,
       "stop": 1.1897325713315792
+    },
+    "POPCATUSDT:30m": {
+      "sentAt": "2026-11-04T11:03:02.714Z",
+      "symbol": "POPCATUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.03998,
+      "stop": 0.04128687490160636
     }
   }
 }
