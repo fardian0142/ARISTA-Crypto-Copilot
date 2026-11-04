@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T03:31:52.891Z",
+  "lastUpdated": "2026-11-04T03:46:54.771Z",
   "signals": {
-    "HOODBUSDT:15m": {
-      "sentAt": "2026-11-03T15:33:56.363Z",
-      "symbol": "HOODBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 84.61129650922135,
-      "stop": 82.84835
-    },
     "XAUTUSDT:2h": {
       "sentAt": "2026-11-03T16:00:32.271Z",
       "symbol": "XAUTUSDT",
