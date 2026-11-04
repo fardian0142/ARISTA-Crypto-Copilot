@@ -3566,12 +3566,7 @@ export function detectRangeTradeSetups(
       : 5;
 
   const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 1.0;
-  const tp2PlusMinRR = Number.isFinite(CONFIG.TP2_PLUS_MIN_RR)
-    ? CONFIG.TP2_PLUS_MIN_RR
-    : Number.isFinite(CONFIG.MIN_TP2_RR)
-      ? CONFIG.MIN_TP2_RR
-      : 1.5;
-
+  
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
     CONFIG.OBS_DISPLAY_COUNT > 0
