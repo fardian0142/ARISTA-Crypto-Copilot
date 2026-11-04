@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T01:02:04.719Z",
+  "lastUpdated": "2026-11-04T01:17:35.413Z",
   "signals": {
-    "OPUSDT:1h": {
-      "sentAt": "2026-11-03T13:03:57.448Z",
-      "symbol": "OPUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.113,
-      "stop": 0.11687029004139066
-    },
-    "NGUSDT:30m": {
-      "sentAt": "2026-11-03T13:03:59.166Z",
-      "symbol": "NGUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2.8985000000000003,
-      "stop": 2.851575
-    },
-    "UMAUSDT:1h": {
-      "sentAt": "2026-11-03T13:04:00.956Z",
-      "symbol": "UMAUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.349,
-      "stop": 0.35913866954837564
-    },
     "SPCXBUSDT:15m": {
       "sentAt": "2026-11-03T13:33:35.014Z",
       "symbol": "SPCXBUSDT",
