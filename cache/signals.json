@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T10:02:58.632Z",
+  "lastUpdated": "2026-11-04T10:17:58.253Z",
   "signals": {
-    "NVDABUSDT:2h": {
-      "sentAt": "2026-11-03T22:17:03.631Z",
-      "symbol": "NVDABUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 208.36731589121084,
-      "stop": 201.8663150627798
-    },
     "SKHYBUSDT:1h": {
       "sentAt": "2026-11-03T23:02:05.654Z",
       "symbol": "SKHYBUSDT",
