@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T12:18:07.721Z",
+  "lastUpdated": "2026-11-04T12:33:07.371Z",
   "signals": {
     "MSTRBUSDT:15m": {
       "sentAt": "2026-11-04T00:47:12.158Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 0.03998,
       "stop": 0.04128687490160636
+    },
+    "CPUSDT:30m": {
+      "sentAt": "2026-11-04T12:33:05.868Z",
+      "symbol": "CPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00762147145679553,
+      "stop": 0.007331918165746217
     }
   }
 }
