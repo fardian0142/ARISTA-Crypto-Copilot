@@ -4776,40 +4776,40 @@ export function detectRangeTradeSetups(
   }
 
   function applyTpFilters(targets) {
-    if (!targets || !targets.targets) {
-      return targets;
-    }
-
-    const filtered = targets.targets.filter((target, index) => {
-      if (index === 0) {
-        return target.rr >= tp1MinRR;
-      }
-      return target.rr >= tp2PlusMinRR;
-    });
-
-    if (filtered.length < minValidTPCount) {
-      return null;
-    }
-
-    const result = {
-      targets: filtered,
-      tp1: filtered[0] ? filtered[0].price : null,
-      tp2: filtered[1] ? filtered[1].price : null,
-      tp3: filtered[2] ? filtered[2].price : null,
-      tp4: filtered[3] ? filtered[3].price : null,
-      rr1: filtered[0] ? filtered[0].rr : 0,
-      rr2: filtered[1] ? filtered[1].rr : 0,
-      rr3: filtered[2] ? filtered[2].rr : 0,
-      rr4: filtered[3] ? filtered[3].rr : 0,
-      tp1Source: filtered[0] ? filtered[0].source : null,
-      tp2Source: filtered[1] ? filtered[1].source : null,
-      tp3Source: filtered[2] ? filtered[2].source : null,
-      tp4Source: filtered[3] ? filtered[3].source : null,
-      tpCount: filtered.length
-    };
-
-    return result;
+  if (!targets || !targets.targets) {
+    return targets;
   }
+
+  const filtered = targets.targets.filter((target, index) => {
+    if (index === 0) {
+      return target.rr >= tp1MinRR;
+    }
+    return target.rr >= CONFIG.TP2_PLUS_MIN_RR;
+  });
+
+  if (filtered.length < minValidTPCount) {
+    return null;
+  }
+
+  const result = {
+    targets: filtered,
+    tp1: filtered[0] ? filtered[0].price : null,
+    tp2: filtered[1] ? filtered[1].price : null,
+    tp3: filtered[2] ? filtered[2].price : null,
+    tp4: filtered[3] ? filtered[3].price : null,
+    rr1: filtered[0] ? filtered[0].rr : 0,
+    rr2: filtered[1] ? filtered[1].rr : 0,
+    rr3: filtered[2] ? filtered[2].rr : 0,
+    rr4: filtered[3] ? filtered[3].rr : 0,
+    tp1Source: filtered[0] ? filtered[0].source : null,
+    tp2Source: filtered[1] ? filtered[1].source : null,
+    tp3Source: filtered[2] ? filtered[2].source : null,
+    tp4Source: filtered[3] ? filtered[3].source : null,
+    tpCount: filtered.length
+  };
+
+  return result;
+}
 
   function buildBullishCandidate(zone, source) {
     if (!zone || !isInsideRange(zone.price)) {
