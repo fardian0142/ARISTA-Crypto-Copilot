@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T03:46:54.771Z",
+  "lastUpdated": "2026-11-04T04:01:25.471Z",
   "signals": {
-    "XAUTUSDT:2h": {
-      "sentAt": "2026-11-03T16:00:32.271Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3933.5148921318646,
-      "stop": 3852.14785
-    },
-    "FLNCBUSDT:30m": {
-      "sentAt": "2026-11-03T16:00:34.026Z",
-      "symbol": "FLNCBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 5.4519910014655775,
-      "stop": 5.1829214181030165
-    },
-    "IBMBUSDT:1h": {
-      "sentAt": "2026-11-03T16:00:35.790Z",
-      "symbol": "IBMBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 248.59988656680247,
-      "stop": 244.6598647247431
-    },
     "SPCXBUSDT:2h": {
       "sentAt": "2026-11-03T16:13:15.356Z",
       "symbol": "SPCXBUSDT",
