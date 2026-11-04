@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T20:48:14.691Z",
+  "lastUpdated": "2026-11-04T21:03:13.195Z",
   "signals": {
     "POPCATUSDT:30m": {
       "sentAt": "2026-11-04T11:03:02.714Z",
@@ -63,6 +63,15 @@
       "score": 14,
       "entry": 0.17170246181012702,
       "stop": 0.16347889877034005
+    },
+    "MRVLBUSDT:15m": {
+      "sentAt": "2026-11-04T21:03:11.692Z",
+      "symbol": "MRVLBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 159.36,
+      "stop": 152.3036752885281
     }
   }
 }
