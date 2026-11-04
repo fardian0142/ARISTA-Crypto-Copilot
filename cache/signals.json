@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T07:17:23.245Z",
+  "lastUpdated": "2026-11-04T07:32:28.125Z",
   "signals": {
-    "SPACEUSDT:15m": {
-      "sentAt": "2026-11-03T19:20:08.931Z",
-      "symbol": "SPACEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.00349,
-      "stop": 0.0035578500574585015
-    },
-    "CELOUSDT:15m": {
-      "sentAt": "2026-11-03T19:20:10.708Z",
-      "symbol": "CELOUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07221075740571163,
-      "stop": 0.0704931613877741
-    },
-    "KORUUSDT:15m": {
-      "sentAt": "2026-11-03T19:20:12.519Z",
-      "symbol": "KORUUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 10.89,
-      "stop": 10.568242811842218
-    },
-    "KORUBUSDT:15m": {
-      "sentAt": "2026-11-03T19:20:14.327Z",
-      "symbol": "KORUBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 10.879999999999999,
-      "stop": 10.58246965124561
-    },
-    "EWYBUSDT:15m": {
-      "sentAt": "2026-11-03T19:20:16.117Z",
-      "symbol": "EWYBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 154.71191889874873,
-      "stop": 152.01505
-    },
     "SKHYBUSDT:30m": {
       "sentAt": "2026-11-03T20:02:12.749Z",
       "symbol": "SKHYBUSDT",
