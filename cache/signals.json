@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T13:48:00.139Z",
+  "lastUpdated": "2026-11-04T14:03:03.210Z",
   "signals": {
-    "CTUSDT:30m": {
-      "sentAt": "2026-11-04T02:01:53.587Z",
-      "symbol": "CTUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.13113295072177553,
-      "stop": 0.12470463770160332
-    },
     "GRVTUSDT:30m": {
       "sentAt": "2026-11-04T02:47:21.857Z",
       "symbol": "GRVTUSDT",
