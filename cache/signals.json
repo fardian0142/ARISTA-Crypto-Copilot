@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T01:47:10.031Z",
+  "lastUpdated": "2026-11-04T02:01:55.090Z",
   "signals": {
     "PAXGUSDT:2h": {
       "sentAt": "2026-11-03T14:03:53.866Z",
@@ -702,6 +702,15 @@
       "score": 14,
       "entry": 138.72026,
       "stop": 133.52935980638043
+    },
+    "CTUSDT:30m": {
+      "sentAt": "2026-11-04T02:01:53.587Z",
+      "symbol": "CTUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.13113295072177553,
+      "stop": 0.12470463770160332
     }
   }
 }
