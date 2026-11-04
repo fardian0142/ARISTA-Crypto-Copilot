@@ -78,6 +78,48 @@ function isValidBosChochEvent(event, candlesLength) {
   );
 }
 
+function rangeCandidateToResult(rangeActive) {
+  const targets = [
+    rangeActive.tp1,
+    rangeActive.tp2,
+    rangeActive.tp3,
+    rangeActive.tp4,
+    rangeActive.tp5
+  ];
+
+  const rrs = [
+    rangeActive.rr1,
+    rangeActive.rr2,
+    rangeActive.rr3,
+    rangeActive.rr4,
+    rangeActive.rr5
+  ];
+
+  const built = [];
+
+  for (let i = 0; i < targets.length; i++) {
+    const price = targets[i];
+    if (Number.isFinite(price) && price > 0) {
+      built.push({
+        price,
+        rr: Number.isFinite(rrs[i]) ? rrs[i] : 0,
+        source: "range"
+      });
+    }
+  }
+
+  return {
+    targets: built,
+    entry_zone: {
+      low: rangeActive.zone_low,
+      high: rangeActive.zone_high,
+      mid: (rangeActive.zone_low + rangeActive.zone_high) / 2,
+      direction: rangeActive.direction,
+      width: rangeActive.zone_high - rangeActive.zone_low
+    }
+  };
+}
+
 export async function analyze(symbol, timeframe) {
   const result = {
     symbol,
@@ -619,7 +661,10 @@ export async function analyze(symbol, timeframe) {
           ) {
             const nearestResistance = result.nearby_obs.bearish[0].mid;
             const minDistance = currentAtr * rangeResistanceMinDistanceAtr;
-            if (Number.isFinite(nearestResistance) && (nearestResistance - currentPrice) < minDistance) {
+            if (
+              Number.isFinite(nearestResistance) &&
+              (nearestResistance - currentPrice) < minDistance
+            ) {
               result.range_setups.active = null;
             }
           }
@@ -633,7 +678,10 @@ export async function analyze(symbol, timeframe) {
           ) {
             const nearestSupport = result.nearby_obs.bullish[0].mid;
             const minDistance = currentAtr * rangeResistanceMinDistanceAtr;
-            if (Number.isFinite(nearestSupport) && (currentPrice - nearestSupport) < minDistance) {
+            if (
+              Number.isFinite(nearestSupport) &&
+              (currentPrice - nearestSupport) < minDistance
+            ) {
               result.range_setups.active = null;
             }
           }
@@ -643,10 +691,16 @@ export async function analyze(symbol, timeframe) {
             lastCandle &&
             lastCandle.incomplete
           ) {
-            if (rangeDirection === "bullish" && lastCandle.close < lastCandle.open) {
+            if (
+              rangeDirection === "bullish" &&
+              lastCandle.close < lastCandle.open
+            ) {
               result.range_setups.active = null;
             }
-            if (rangeDirection === "bearish" && lastCandle.close > lastCandle.open) {
+            if (
+              rangeDirection === "bearish" &&
+              lastCandle.close > lastCandle.open
+            ) {
               result.range_setups.active = null;
             }
           }
@@ -689,53 +743,19 @@ export async function analyze(symbol, timeframe) {
       Number.isFinite(rangeActive.entry) &&
       rangeActive.entry > 0 &&
       Number.isFinite(rangeActive.score) &&
-      rangeActive.score === CONFIG.MIN_RANGE_SETUP_SCORE
+      rangeActive.score >= CONFIG.MIN_RANGE_SETUP_SCORE
     );
 
     if (!hasValidEvent) {
       if (hasRangeSetup) {
         result.direction = rangeActive.direction;
-
         result.entry = rangeActive.entry;
         result.stop_loss = rangeActive.stop;
 
-        result.entry_zone = {
-          low: rangeActive.zone_low,
-          high: rangeActive.zone_high,
-          mid:
-            (rangeActive.zone_low +
-              rangeActive.zone_high) / 2,
-          direction: rangeActive.direction,
-          width:
-            rangeActive.zone_high -
-            rangeActive.zone_low
-        };
+        const built = rangeCandidateToResult(rangeActive);
 
-        result.targets = [
-          rangeActive.tp1,
-          rangeActive.tp2,
-          rangeActive.tp3,
-          rangeActive.tp4,
-          rangeActive.tp5
-        ]
-          .filter(
-            (p) =>
-              Number.isFinite(p) && p > 0
-          )
-          .map((price) => ({
-            price,
-            rr:
-              price === rangeActive.tp1
-                ? rangeActive.rr1
-                : price === rangeActive.tp2
-                  ? rangeActive.rr2
-                  : price === rangeActive.tp3
-                    ? rangeActive.rr3
-                    : price === rangeActive.tp4
-                      ? rangeActive.rr4
-                      : rangeActive.rr5,
-            source: "range"
-          }));
+        result.entry_zone = built.entry_zone;
+        result.targets = built.targets;
 
         result.rr1 = rangeActive.rr1 || 0;
         result.rr2 = rangeActive.rr2 || 0;
@@ -1484,7 +1504,7 @@ export async function analyze(symbol, timeframe) {
     let strength = strengthScore(
       direction,
       structure,
-      null,
+      htfStructure,
       event,
       sweep,
       displacement,
@@ -1492,7 +1512,7 @@ export async function analyze(symbol, timeframe) {
       currentVolumeRatio,
       currentRsi,
       rr2,
-      null,
+      emaTrend,
       fibOverlap,
       rsiDivergence
     );
