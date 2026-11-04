@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T14:48:19.192Z",
+  "lastUpdated": "2026-11-04T15:03:27.823Z",
   "signals": {
-    "PIEVERSEUSDT:15m": {
-      "sentAt": "2026-11-04T03:02:22.773Z",
-      "symbol": "PIEVERSEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1.1513,
-      "stop": 1.1897325713315792
-    },
     "POPCATUSDT:30m": {
       "sentAt": "2026-11-04T11:03:02.714Z",
       "symbol": "POPCATUSDT",
