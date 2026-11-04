@@ -546,16 +546,12 @@ export async function analyze(symbol, timeframe) {
             hasRealHtf &&
             result.range_setups.active
           ) {
-            const htfEma = emaTrendCalc(htfCandles);
-
-            if (
-              htfEma &&
-              htfEma.trend !== "neutral" &&
-              htfEma.trend !== rangeDirection &&
-              Number.isFinite(htfEma.distance_atr) &&
-              htfEma.distance_atr > 1.0
-            ) {
-              result.range_setups.active = null;
+            const smcTrendFilter = detectSMCTrendFilter(htfCandles);
+            
+            if (smcTrendFilter && smcTrendFilter.blocked) {
+                result.range_setups.active = null;
+            } else if (smcTrendFilter && smcTrendFilter.trend !== "neutral" && smcTrendFilter.trend !== rangeDirection) {
+                result.range_setups.active = null;
             }
           }
 
@@ -614,6 +610,47 @@ export async function analyze(symbol, timeframe) {
             rangeDirection === "bearish"
           ) {
             result.range_setups.active = null;
+          }
+
+          if (
+            result.range_setups.active &&
+            result.nearby_obs &&
+            result.nearby_obs.bearish &&
+            result.nearby_obs.bearish.length > 0 &&
+            rangeDirection === "bullish"
+          ) {
+              const nearestResistance = result.nearby_obs.bearish[0].mid;
+              const minDistance = currentAtr * 1.5;
+              if (Number.isFinite(nearestResistance) && (nearestResistance - currentPrice) < minDistance) {
+                  result.range_setups.active = null;
+              }
+          }
+
+          if (
+            result.range_setups.active &&
+            result.nearby_obs &&
+            result.nearby_obs.bullish &&
+            result.nearby_obs.bullish.length > 0 &&
+            rangeDirection === "bearish"
+          ) {
+              const nearestSupport = result.nearby_obs.bullish[0].mid;
+              const minDistance = currentAtr * 1.5;
+              if (Number.isFinite(nearestSupport) && (currentPrice - nearestSupport) < minDistance) {
+                  result.range_setups.active = null;
+              }
+          }
+
+          if (
+            result.range_setups.active &&
+            lastCandle &&
+            lastCandle.incomplete
+          ) {
+              if (rangeDirection === "bullish" && lastCandle.close < lastCandle.open) {
+                  result.range_setups.active = null;
+              }
+              if (rangeDirection === "bearish" && lastCandle.close > lastCandle.open) {
+                  result.range_setups.active = null;
+              }
           }
 
           if (!result.range_setups.active) {
