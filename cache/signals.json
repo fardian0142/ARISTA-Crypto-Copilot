@@ -1,51 +1,6 @@
 {
-  "lastUpdated": "2026-11-04T07:02:22.124Z",
+  "lastUpdated": "2026-11-04T07:17:23.245Z",
   "signals": {
-    "WETUSDT:30m": {
-      "sentAt": "2026-11-03T19:05:10.343Z",
-      "symbol": "WETUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.05498949706033818,
-      "stop": 0.0539386
-    },
-    "MORPHOUSDT:2h": {
-      "sentAt": "2026-11-03T19:05:12.077Z",
-      "symbol": "MORPHOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2.1695,
-      "stop": 2.0492027415108023
-    },
-    "CSOPSKHYNIX2LUSDT:15m": {
-      "sentAt": "2026-11-03T19:05:13.996Z",
-      "symbol": "CSOPSKHYNIX2LUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2.878,
-      "stop": 2.818085
-    },
-    "1000CHEEMSUSDT:15m": {
-      "sentAt": "2026-11-03T19:05:15.786Z",
-      "symbol": "1000CHEEMSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00038988945495272413,
-      "stop": 0.00038164675033768513
-    },
-    "ALLOUSDT:15m": {
-      "sentAt": "2026-11-03T19:05:17.536Z",
-      "symbol": "ALLOUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.16156008931026064,
-      "stop": 0.1651405
-    },
     "SPACEUSDT:15m": {
       "sentAt": "2026-11-03T19:20:08.931Z",
       "symbol": "SPACEUSDT",
