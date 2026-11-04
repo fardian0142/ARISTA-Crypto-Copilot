@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T00:47:13.660Z",
+  "lastUpdated": "2026-11-04T01:02:04.719Z",
   "signals": {
     "OPUSDT:1h": {
       "sentAt": "2026-11-03T13:03:57.448Z",
@@ -756,6 +756,15 @@
       "score": 14,
       "entry": 133.10737789721662,
       "stop": 129.9609
+    },
+    "SPCXBUSDT:1h": {
+      "sentAt": "2026-11-04T01:02:03.217Z",
+      "symbol": "SPCXBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 138.72026,
+      "stop": 133.52935980638043
     }
   }
 }
