@@ -1119,9 +1119,9 @@ export function marketStructure(candles, swings) {
   const { highLabels, lowLabels } = _labelSwings(swings);
 
   const checkCount = Math.max(
-  CONFIG.STRUCTURE_SWINGS_MIN,
-  Math.min(CONFIG.STRUCTURE_SWINGS, CONFIG.STRUCTURE_SWINGS_MAX)
-);
+    CONFIG.STRUCTURE_SWINGS_MIN,
+    Math.min(CONFIG.STRUCTURE_SWINGS, CONFIG.STRUCTURE_SWINGS_MAX)
+  );
 
   const bullish = _isUptrend(highLabels, lowLabels, checkCount);
   const bearish = _isDowntrend(highLabels, lowLabels, checkCount);
@@ -1485,7 +1485,6 @@ export function detectFvgs(
 
   for (let i = start; i < candles.length; i++) {
     const c1 = candles[i - 2];
-    const c2 = candles[i - 1];
     const c3 = candles[i];
 
     const bullishGap = cHigh(c1) < cLow(c3);
@@ -2005,7 +2004,7 @@ export function computeVolumeProfile(
 
     const closeWeight = CONFIG.VOLUME_PROFILE_CLOSE_WEIGHT;
     const otherWeight =
-    (1 - closeWeight) / (touchedBins - 1);
+      (1 - closeWeight) / (touchedBins - 1);
 
     for (let b = startBin; b <= endBin; b++) {
       bins[b] +=
@@ -2904,7 +2903,7 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
   }
 
   const profile = TIMEFRAME_PROFILES[timeframe] || TIMEFRAME_PROFILES["1h"];
-  const severe = warningLevel >= CONFIG.MOMENTUM_LOOKBACK_CANDLES && profile.strictHTF;
+  const severe = warningLevel >= CONFIG.MOMENTUM_SEVERE_LEVEL && profile.strictHTF;
 
   return {
     warning: true,
@@ -2916,19 +2915,19 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
 
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
   if (!candles || candles.length < CONFIG.COLLECT_TP_LEVELS_MIN_CANDLES || entry <= 0) {
-  return [];
-}
+    return [];
+  }
 
-const currentIndex = candles.length - 1;
-const lookbackBars = Math.min(
-  candles.length - CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
-  CONFIG.TP_STRUCTURE_LOOKBACK_BARS
-);
+  const currentIndex = candles.length - 1;
+  const lookbackBars = Math.min(
+    candles.length - CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
+    CONFIG.TP_STRUCTURE_LOOKBACK_BARS
+  );
 
-const start = Math.max(
-  CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
-  candles.length - lookbackBars
-);
+  const start = Math.max(
+    CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
+    candles.length - lookbackBars
+  );
   const minGap = Math.max(1, CONFIG.TP_MIN_STRUCTURE_GAP_BARS);
 
   const swings = detectSwings(candles);
@@ -3625,7 +3624,7 @@ export function detectRangeTradeSetups(
   }
 
   const rangePosition =
-  ((currentPrice - rangeLow) / rangeSize) * CONFIG.PERCENT_MULTIPLIER;
+    ((currentPrice - rangeLow) / rangeSize) * CONFIG.PERCENT_MULTIPLIER;
 
   const closeBuffer = Math.max(
     atrValue * CONFIG.RANGE_CLOSE_BUFFER_ATR_MULT,
@@ -4283,16 +4282,16 @@ export function detectRangeTradeSetups(
     const lowerWickRatio = lowerWick / range;
 
     return (
-  (
-    isBull(candle) &&
-    bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
-    closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
-  ) ||
-  (
-    lowerWickRatio >= CONFIG.REACTION_WICK_RATIO &&
-    closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
-     )
-   );
+      (
+        isBull(candle) &&
+        bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
+        closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
+      ) ||
+      (
+        lowerWickRatio >= CONFIG.REACTION_WICK_RATIO &&
+        closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
+      )
+    );
   }
 
   function detectBearishReaction(index) {
@@ -4329,16 +4328,16 @@ export function detectRangeTradeSetups(
     const upperWickRatio = upperWick / range;
 
     return (
-  (
-    isBear(candle) &&
-    bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
-    closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
-  ) ||
-  (
-    upperWickRatio >= CONFIG.REACTION_WICK_RATIO &&
-    closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
-     )
-   );
+      (
+        isBear(candle) &&
+        bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
+        closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
+      ) ||
+      (
+        upperWickRatio >= CONFIG.REACTION_WICK_RATIO &&
+        closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
+      )
+    );
   }
 
   function isValidDisplacement(candle, direction, index) {
@@ -4610,9 +4609,9 @@ export function detectRangeTradeSetups(
 
         if (Number.isFinite(range) && range > 0) {
           const reactionEntry =
-         direction === "bullish"
-            ? high - range * CONFIG.REACTION_ENTRY_RATIO
-            : low + range * CONFIG.REACTION_ENTRY_RATIO;
+            direction === "bullish"
+              ? high - range * CONFIG.REACTION_ENTRY_RATIO
+              : low + range * CONFIG.REACTION_ENTRY_RATIO;
 
           const reactionCandidate = candidates.find(
             candidate =>
@@ -4809,14 +4808,17 @@ export function detectRangeTradeSetups(
       tp2: filtered[1] ? filtered[1].price : null,
       tp3: filtered[2] ? filtered[2].price : null,
       tp4: filtered[3] ? filtered[3].price : null,
+      tp5: filtered[4] ? filtered[4].price : null,
       rr1: filtered[0] ? filtered[0].rr : 0,
       rr2: filtered[1] ? filtered[1].rr : 0,
       rr3: filtered[2] ? filtered[2].rr : 0,
       rr4: filtered[3] ? filtered[3].rr : 0,
+      rr5: filtered[4] ? filtered[4].rr : 0,
       tp1Source: filtered[0] ? filtered[0].source : null,
       tp2Source: filtered[1] ? filtered[1].source : null,
       tp3Source: filtered[2] ? filtered[2].source : null,
       tp4Source: filtered[3] ? filtered[3].source : null,
+      tp5Source: filtered[4] ? filtered[4].source : null,
       tpCount: filtered.length
     };
 
@@ -4869,7 +4871,10 @@ export function detectRangeTradeSetups(
 
       const distance = Math.abs(obPrice - price) / atrValue;
 
-      if (distance <= CONFIG.OB_MATCHING_DISTANCE_ATR && distance <               bestDistance) {
+      if (
+        distance <= CONFIG.OB_MATCHING_DISTANCE_ATR &&
+        distance < bestDistance
+      ) {
         best = ob;
         bestDistance = distance;
       }
@@ -5055,7 +5060,7 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop >= entry ||
-      risk / entry * 100 > maxStopPct
+      risk / entry * CONFIG.PERCENT_MULTIPLIER > maxStopPct
     ) {
       return null;
     }
@@ -5302,7 +5307,7 @@ export function detectRangeTradeSetups(
       !Number.isFinite(risk) ||
       risk <= 0 ||
       stop <= entry ||
-      risk / entry * 100 > maxStopPct
+      risk / entry * CONFIG.PERCENT_MULTIPLIER > maxStopPct
     ) {
       return null;
     }
@@ -6004,12 +6009,14 @@ export function structuralTargets(candles, direction, entry, swings, atrValue, m
   }
 
   if (!candles || candles.length < CONFIG.STRUCTURAL_TARGETS_MIN_CANDLES) {
-  return [];
-}
+    return [];
+  }
 
-const currentPrice = cClose(candles[candles.length - 1]);
+  const currentPrice = cClose(candles[candles.length - 1]);
 
-const risk = atrValue > 0 ? atrValue : entry * CONFIG.STRUCTURAL_TARGETS_RISK_PCT;
+  const risk = atrValue > 0
+    ? atrValue
+    : entry * CONFIG.STRUCTURAL_TARGETS_RISK_PCT;
 
   const stop = direction === "bullish"
     ? entry - risk
@@ -6232,9 +6239,9 @@ export function scenarioCalc(candles, timeframe, swings) {
   }
 
   const maxAge = Math.min(
-  CONFIG.BOS_LOOKBACK,
-  candles.length - CONFIG.SCENARIO_LOOKBACK_SAFETY_BARS
-);
+    CONFIG.BOS_LOOKBACK,
+    candles.length - CONFIG.SCENARIO_LOOKBACK_SAFETY_BARS
+  );
   const startIdx = Math.max(0, candles.length - maxAge);
 
   let highestHigh = -Infinity;
@@ -6548,7 +6555,9 @@ export function entryState(currentPrice, zone, atrValue, direction) {
     return "IN_ZONE";
   }
 
-  const tolerance = atrValue > 0 ? atrValue * CONFIG.                  ENTRY_STATE_TOLERANCE_ATR : 0;
+  const tolerance = atrValue > 0
+    ? atrValue * CONFIG.ENTRY_STATE_TOLERANCE_ATR
+    : 0;
 
   if (direction === "bullish") {
     if (currentPrice > high && currentPrice <= high + tolerance) {
@@ -6591,7 +6600,7 @@ export function fmtPercent(value) {
   if (value === null || value === undefined) return "-";
   const v = parseFloat(value);
   if (!Number.isFinite(v)) return "-";
-  return (v * 100).toFixed(2) + "%";
+  return (v * CONFIG.PERCENT_MULTIPLIER).toFixed(2) + "%";
 }
 
 export function detectSMCTrendFilter(
