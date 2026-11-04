@@ -343,6 +343,8 @@ export function rsiDivergenceCalc(candles, rsiValues, swings) {
   const minRsiDiff = CONFIG.RSI_DIV_MIN_RSI_DIFF;
   const minMidDrop = CONFIG.RSI_DIV_MIN_MIDDROP;
   const maxStrength = CONFIG.RSI_DIV_MAX_STRENGTH;
+  const swingGapMaxBars = CONFIG.SWING_GAP_MAX_BARS;
+  const hiddenWeight = CONFIG.RSI_DIV_HIDDEN_WEIGHT;
 
   const confirmedHighs = (swings.highs || []).filter((s) =>
     isSwingConfirmed(s, candlesLen - 1)
@@ -357,7 +359,7 @@ export function rsiDivergenceCalc(candles, rsiValues, swings) {
   const recentLows = confirmedLows.filter((s) => s.index >= lookbackStart);
 
   const hasMeaningfulMidDrop = (aIndex, bIndex) => {
-    if (bIndex - aIndex < 3) return 0;
+    if (bIndex - aIndex < swingGapMaxBars) return 0;
 
     let lowest = Infinity;
 
@@ -375,7 +377,7 @@ export function rsiDivergenceCalc(candles, rsiValues, swings) {
   };
 
   const hasMeaningfulMidRise = (aIndex, bIndex) => {
-    if (bIndex - aIndex < 3) return 0;
+    if (bIndex - aIndex < swingGapMaxBars) return 0;
 
     let highest = -Infinity;
 
@@ -569,7 +571,7 @@ export function rsiDivergenceCalc(candles, rsiValues, swings) {
     candidates.push({
       type: "hidden_bearish",
       data: bestHiddenBearish,
-      priority: bestHiddenBearish.strength * 0.7
+      priority: bestHiddenBearish.strength * hiddenWeight
     });
   }
 
@@ -577,7 +579,7 @@ export function rsiDivergenceCalc(candles, rsiValues, swings) {
     candidates.push({
       type: "hidden_bullish",
       data: bestHiddenBullish,
-      priority: bestHiddenBullish.strength * 0.7
+      priority: bestHiddenBullish.strength * hiddenWeight
     });
   }
 
@@ -1116,7 +1118,10 @@ export function marketStructure(candles, swings) {
 
   const { highLabels, lowLabels } = _labelSwings(swings);
 
-  const checkCount = Math.max(2, Math.min(CONFIG.STRUCTURE_SWINGS, 3));
+  const checkCount = Math.max(
+  CONFIG.STRUCTURE_SWINGS_MIN,
+  Math.min(CONFIG.STRUCTURE_SWINGS, CONFIG.STRUCTURE_SWINGS_MAX)
+);
 
   const bullish = _isUptrend(highLabels, lowLabels, checkCount);
   const bearish = _isDowntrend(highLabels, lowLabels, checkCount);
@@ -1141,7 +1146,7 @@ export function marketStructure(candles, swings) {
 }
 
 export function detectBosChoch(candles, swings, structure) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.BOS_CHOCH_MIN_CANDLES) {
     return null;
   }
 
@@ -1267,7 +1272,7 @@ export function detectBosChoch(candles, swings, structure) {
 }
 
 export function detectLiquiditySweeps(candles, swings, lookback = CONFIG.SWEEP_LOOKBACK) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.LIQUIDITY_SWEEP_MIN_CANDLES) {
     return [];
   }
 
@@ -1399,7 +1404,7 @@ export function detectDisplacement(candles, atrValue, index) {
   };
 }
 
-export function findEventDisplacement(candles, atrValue, event, sweep, lookback = 16) {
+export function findEventDisplacement(candles, atrValue, event, sweep, lookback = CONFIG.FIND_EVENT_DISPLACEMENT_LOOKBACK) {
   if (!event) {
     return null;
   }
@@ -1412,8 +1417,11 @@ export function findEventDisplacement(candles, atrValue, event, sweep, lookback 
     : eventIndex;
 
   const forwardWindow = Math.max(
-    3,
-    Math.min(Math.floor(lookback / 2), 6)
+    CONFIG.FIND_EVENT_DISPLACEMENT_MIN_WINDOW,
+    Math.min(
+      Math.floor(lookback / 2),
+      CONFIG.FIND_EVENT_DISPLACEMENT_MAX_WINDOW
+    )
   );
 
   const end = Math.min(
@@ -1459,11 +1467,14 @@ export function detectFvgs(
   displacement,
   lookback = CONFIG.FVG_LOOKBACK
 ) {
-  if (!candles || candles.length < 3) {
+  if (!candles || candles.length < CONFIG.FVG_MIN_CANDLES) {
     return [];
   }
 
-  const start = Math.max(2, candles.length - lookback);
+  const start = Math.max(
+    CONFIG.FVG_MIN_CANDLES - 1,
+    candles.length - lookback
+  );
 
   const eventIndex = structureEvent ? structureEvent.index : null;
   const eventDirection = structureEvent ? structureEvent.direction : null;
@@ -1507,7 +1518,7 @@ export function detectFvgs(
     if (displacementIndex !== null) {
       displacementMatch =
         i >= displacementIndex &&
-        i - displacementIndex <= 1 &&
+        i - displacementIndex <= CONFIG.FVG_DISPLACEMENT_MATCH_GAP &&
         direction === displacement.direction;
     }
 
@@ -1515,14 +1526,14 @@ export function detectFvgs(
     if (eventIndex !== null) {
       eventMatch =
         i >= eventIndex &&
-        i - eventIndex <= 3 &&
+        i - eventIndex <= CONFIG.FVG_EVENT_MATCH_GAP &&
         direction === eventDirection;
     }
 
     const sweepMatch =
       sweepIndex !== null &&
       sweepIndex < i &&
-      i - sweepIndex <= 8 &&
+      i - sweepIndex <= CONFIG.FVG_SWEEP_MATCH_GAP &&
       direction === sweep.direction;
 
     if (displacement && !displacementMatch) {
@@ -1571,12 +1582,14 @@ export function detectFvgs(
     if (status === "invalidated") continue;
 
     let quality = 0;
-    if (displacementMatch) quality += 5;
-    if (eventMatch) quality += 3;
-    if (sweepMatch) quality += 2;
-    if (eventDirection === direction) quality += 2;
-    if (atrValue > 0 && gapSize >= atrValue * 0.15) quality += 1;
-    if (status === "fresh") quality += 2;
+    if (displacementMatch) quality += CONFIG.FVG_QUALITY_DISPLACEMENT;
+    if (eventMatch) quality += CONFIG.FVG_QUALITY_EVENT;
+    if (sweepMatch) quality += CONFIG.FVG_QUALITY_SWEEP;
+    if (eventDirection === direction) quality += CONFIG.FVG_QUALITY_DIRECTION;
+    if (atrValue > 0 && gapSize >= atrValue * CONFIG.FVG_GAP_MIN_ATR) {
+      quality += CONFIG.FVG_QUALITY_GAP;
+    }
+    if (status === "fresh") quality += CONFIG.FVG_QUALITY_FRESH;
 
     result.push({
       index: i,
@@ -1613,7 +1626,7 @@ export function detectOrderBlocks(
   sweep,
   lookback = CONFIG.OB_LOOKBACK
 ) {
-  if (!candles || candles.length < 5 || !atrValue || atrValue <= 0) {
+  if (!candles || candles.length < CONFIG.OB_MIN_CANDLES || !atrValue || atrValue <= 0) {
     return [];
   }
 
@@ -1683,7 +1696,7 @@ export function detectOrderBlocks(
       return [];
     }
 
-    if (displacement.index > structureEvent.index + 6) {
+    if (displacement.index > structureEvent.index + CONFIG.OB_STRUCTURE_EVENT_GAP) {
       return [];
     }
   }
@@ -1693,7 +1706,7 @@ export function detectOrderBlocks(
       return [];
     }
 
-    if (displacement.index - sweep.index > 8) {
+    if (displacement.index - sweep.index > CONFIG.OB_SWEEP_GAP) {
       return [];
     }
   }
@@ -1711,10 +1724,10 @@ export function detectOrderBlocks(
 
     if (displacement) {
       const dist = referenceIndex - i;
-      if (dist < 1 || dist > 8) continue;
+      if (dist < 1 || dist > CONFIG.OB_MAX_REFERENCE_DISTANCE) continue;
     }
 
-    const maxForward = Math.min(candles.length - 1, i + 8);
+    const maxForward = Math.min(candles.length - 1, i + CONFIG.OB_FORWARD_WINDOW);
     let displacementIndex = null;
 
     for (let j = i + 1; j <= maxForward; j++) {
@@ -1751,13 +1764,13 @@ export function detectOrderBlocks(
 
     if (structureEvent) {
       if (displacementIndex < structureEvent.index) continue;
-      if (displacementIndex > structureEvent.index + 6) continue;
+      if (displacementIndex > structureEvent.index + CONFIG.OB_STRUCTURE_EVENT_GAP) continue;
     }
 
     if (sweep) {
       if (sweep.index >= displacementIndex) continue;
 
-      if (displacementIndex - sweep.index > 8) {
+      if (displacementIndex - sweep.index > CONFIG.OB_SWEEP_GAP) {
         continue;
       }
     }
@@ -1807,31 +1820,31 @@ export function detectOrderBlocks(
 
     let quality = 0;
 
-    if (structureEvent) quality += 4;
-    if (displacement) quality += 5;
+    if (structureEvent) quality += CONFIG.OB_QUALITY_STRUCTURE_EVENT;
+    if (displacement) quality += CONFIG.OB_QUALITY_DISPLACEMENT;
 
     if (
       sweep &&
       sweep.index < displacementIndex &&
-      displacementIndex - sweep.index <= 8
+      displacementIndex - sweep.index <= CONFIG.OB_SWEEP_GAP
     ) {
-      quality += 3;
+      quality += CONFIG.OB_QUALITY_SWEEP;
     }
 
     if (volumeRatio >= CONFIG.DISPLACEMENT_VOLUME) {
-      quality += 1;
+      quality += CONFIG.OB_QUALITY_VOLUME;
     }
 
-    if (freshness <= 12) {
-      quality += 1;
+    if (freshness <= CONFIG.FRESHNESS_SHORT_BARS) {
+      quality += CONFIG.OB_QUALITY_FRESHNESS;
     }
 
     if (displacementIndex === referenceIndex) {
-      quality += 2;
+      quality += CONFIG.OB_QUALITY_REFERENCE;
     }
 
     if (sweep && displacement && i <= sweep.index) {
-      quality += 1;
+      quality += CONFIG.OB_QUALITY_SWEEP_POSITION;
     }
 
     candidates.push({
@@ -1990,9 +2003,9 @@ export function computeVolumeProfile(
       continue;
     }
 
-    const closeWeight = 0.5;
+    const closeWeight = CONFIG.VOLUME_PROFILE_CLOSE_WEIGHT;
     const otherWeight =
-      (1 - closeWeight) / (touchedBins - 1);
+    (1 - closeWeight) / (touchedBins - 1);
 
     for (let b = startBin; b <= endBin; b++) {
       bins[b] +=
@@ -2194,7 +2207,7 @@ export function extractVolumeNodes(
 
     if (
       ratio >= hvnThreshold &&
-      vol >= avgNeighbor * 1.1
+      vol >= avgNeighbor * CONFIG.VOLUME_PROFILE_HVN_NEIGHBOR_MULT
     ) {
       hvn.push({
         index: b,
@@ -2209,7 +2222,7 @@ export function extractVolumeNodes(
 
     if (
       ratio <= lvnThreshold &&
-      vol < avgNeighbor * 0.7
+      vol < avgNeighbor * CONFIG.VOLUME_PROFILE_LVN_NEIGHBOR_MULT
     ) {
       lvn.push({
         index: b,
@@ -2277,7 +2290,7 @@ export function extractVolumeNodes(
 }
 
 export function volumeNodesToLevels(candles, currentPrice, atrValue, count, lookbackBars) {
-  if (!candles || candles.length < 50 || !atrValue || atrValue <= 0) {
+  if (!candles || candles.length < CONFIG.VOLUME_PROFILE_MIN_CANDLES || !atrValue || atrValue <= 0) {
     return { bullish: [], bearish: [], poc: null, valueArea: null };
   }
 
@@ -2359,7 +2372,7 @@ export function volumeNodesToLevels(candles, currentPrice, atrValue, count, look
     for (const item of arr) {
       let dup = false;
       for (const r of result) {
-        if (Math.abs(r.mid - item.mid) / atrValue < 0.4) {
+        if (Math.abs(r.mid - item.mid) / atrValue < CONFIG.VOLUME_PROFILE_DEDUPE_ATR) {
           dup = true;
           if (item.ratio > r.ratio) {
             Object.assign(r, item);
@@ -2388,7 +2401,7 @@ export function volumeNodesToLevels(candles, currentPrice, atrValue, count, look
 }
 
 export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue, count) {
-  if (!candles || candles.length < 10 || !atrValue || atrValue <= 0) {
+  if (!candles || candles.length < CONFIG.COLLECT_NEARBY_MIN_CANDLES || !atrValue || atrValue <= 0) {
     return { bullish: [], bearish: [] };
   }
 
@@ -2405,7 +2418,7 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
     const candle = candles[i];
 
     if (isBear(candle) && cBody(candle) > 0) {
-      const maxForward = Math.min(candles.length - 1, i + 10);
+      const maxForward = Math.min(candles.length - 1, i + CONFIG.COLLECT_NEARBY_MAX_FORWARD);
 
       for (let j = i + 1; j <= maxForward; j++) {
         const future = candles[j];
@@ -2450,20 +2463,20 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
         const distance = currentPrice - zoneHigh;
 
         let quality = 0;
-        if (volumeRatio >= 1.5) quality += 3;
-        else if (volumeRatio >= 1.0) quality += 2;
+        if (volumeRatio >= CONFIG.OB_QUALITY_VOLUME_HIGH) quality += 3;
+        else if (volumeRatio >= CONFIG.OB_QUALITY_VOLUME_MEDIUM) quality += 2;
         else quality += 1;
 
-        if (freshness <= 10) quality += 3;
-        else if (freshness <= 30) quality += 2;
+        if (freshness <= CONFIG.FRESHNESS_VERY_SHORT_BARS) quality += 3;
+        else if (freshness <= CONFIG.FRESHNESS_MEDIUM_BARS) quality += 2;
         else quality += 1;
 
-        if (futureVolumeRatio >= 1.5) quality += 2;
+        if (futureVolumeRatio >= CONFIG.OB_QUALITY_VOLUME_HIGH) quality += 2;
         else if (futureVolumeRatio >= 1.2) quality += 1;
 
         const distanceAtr = distance / atrValue;
-        if (distanceAtr <= 3) quality += 2;
-        else if (distanceAtr <= 5) quality += 1;
+        if (distanceAtr <= CONFIG.OB_QUALITY_DISTANCE_NEAR) quality += 2;
+        else if (distanceAtr <= CONFIG.OB_QUALITY_DISTANCE_MEDIUM) quality += 1;
 
         bullishZones.push({
           index: i,
@@ -2482,7 +2495,7 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
     }
 
     if (isBull(candle) && cBody(candle) > 0) {
-      const maxForward = Math.min(candles.length - 1, i + 10);
+      const maxForward = Math.min(candles.length - 1, i + CONFIG.COLLECT_NEARBY_MAX_FORWARD);
 
       for (let j = i + 1; j <= maxForward; j++) {
         const future = candles[j];
@@ -2527,20 +2540,20 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
         const distance = zoneLow - currentPrice;
 
         let quality = 0;
-        if (volumeRatio >= 1.5) quality += 3;
-        else if (volumeRatio >= 1.0) quality += 2;
+        if (volumeRatio >= CONFIG.OB_QUALITY_VOLUME_HIGH) quality += 3;
+        else if (volumeRatio >= CONFIG.OB_QUALITY_VOLUME_MEDIUM) quality += 2;
         else quality += 1;
 
-        if (freshness <= 10) quality += 3;
-        else if (freshness <= 30) quality += 2;
+        if (freshness <= CONFIG.FRESHNESS_VERY_SHORT_BARS) quality += 3;
+        else if (freshness <= CONFIG.FRESHNESS_MEDIUM_BARS) quality += 2;
         else quality += 1;
 
-        if (futureVolumeRatio >= 1.5) quality += 2;
+        if (futureVolumeRatio >= CONFIG.OB_QUALITY_VOLUME_HIGH) quality += 2;
         else if (futureVolumeRatio >= 1.2) quality += 1;
 
         const distanceAtr = distance / atrValue;
-        if (distanceAtr <= 3) quality += 2;
-        else if (distanceAtr <= 5) quality += 1;
+        if (distanceAtr <= CONFIG.OB_QUALITY_DISTANCE_NEAR) quality += 2;
+        else if (distanceAtr <= CONFIG.OB_QUALITY_DISTANCE_MEDIUM) quality += 1;
 
         bearishZones.push({
           index: i,
@@ -2566,7 +2579,7 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
 
       for (const r of result) {
         if (
-          Math.abs(r.mid - item.mid) / Math.max(atrValue, 1e-12) < 0.5
+          Math.abs(r.mid - item.mid) / Math.max(atrValue, 1e-12) < CONFIG.COLLECT_NEARBY_DEDUPE_ATR
         ) {
           dup = true;
           break;
@@ -2582,14 +2595,14 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
   const uniqueBearish = dedupe(bearishZones);
 
   uniqueBullish.sort((a, b) => {
-    if (Math.abs(a.distance - b.distance) > 0.5) {
+    if (Math.abs(a.distance - b.distance) > CONFIG.COLLECT_NEARBY_DISTANCE_SORT_TOLERANCE) {
       return a.distance - b.distance;
     }
     return b.quality - a.quality;
   });
 
   uniqueBearish.sort((a, b) => {
-    if (Math.abs(a.distance - b.distance) > 0.5) {
+    if (Math.abs(a.distance - b.distance) > CONFIG.COLLECT_NEARBY_DISTANCE_SORT_TOLERANCE) {
       return a.distance - b.distance;
     }
     return b.quality - a.quality;
@@ -2602,7 +2615,7 @@ export function collectNearbyOrderBlocks(candles, swings, currentPrice, atrValue
 }
 
 export function findNearestImportantNodeBelow(candles, currentPrice, swingLows, atrValue, maxLookback = CONFIG.SL_MARKET_STRUCTURE_LOOKBACK) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.NODE_MIN_CANDLES) {
     return null;
   }
 
@@ -2636,8 +2649,8 @@ export function findNearestImportantNodeBelow(candles, currentPrice, swingLows, 
     const volumeRatio = avgVol > 0 ? cVol(candle) / avgVol : 1;
 
     const isRejection =
-      (upperWickRatio >= 0.4 || lowerWickRatio >= 0.4) &&
-      bodyRatio >= 0.2;
+      (upperWickRatio >= CONFIG.NODE_REJECTION_WICK_RATIO || lowerWickRatio >= CONFIG.NODE_REJECTION_WICK_RATIO) &&
+      bodyRatio >= CONFIG.NODE_REJECTION_BODY_RATIO;
 
     const isDisplacement =
       range >= atrValue * CONFIG.DISPLACEMENT_ATR &&
@@ -2647,14 +2660,14 @@ export function findNearestImportantNodeBelow(candles, currentPrice, swingLows, 
     const isSwing =
       swingLows &&
       swingLows.some(
-        (s) => Math.abs(s.index - i) <= 2
+        (s) => Math.abs(s.index - i) <= CONFIG.SL_NODE_PROXIMITY_BARS
       );
 
     if (isRejection || isDisplacement || isSwing) {
       const strength =
         (upperWickRatio + lowerWickRatio) * volumeRatio +
-        (isDisplacement ? 2 : 0) +
-        (isSwing ? 1.5 : 0);
+        (isDisplacement ? CONFIG.NODE_DISPLACEMENT_STRENGTH_WEIGHT : 0) +
+        (isSwing ? CONFIG.NODE_SWING_STRENGTH_WEIGHT : 0);
 
       belowZones.push({
         index: i,
@@ -2686,7 +2699,7 @@ export function findNearestImportantNodeBelow(candles, currentPrice, swingLows, 
 }
 
 export function findNearestImportantNodeAbove(candles, currentPrice, swingHighs, atrValue, maxLookback = CONFIG.SL_MARKET_STRUCTURE_LOOKBACK) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.NODE_MIN_CANDLES) {
     return null;
   }
 
@@ -2720,8 +2733,8 @@ export function findNearestImportantNodeAbove(candles, currentPrice, swingHighs,
     const volumeRatio = avgVol > 0 ? cVol(candle) / avgVol : 1;
 
     const isRejection =
-      (upperWickRatio >= 0.4 || lowerWickRatio >= 0.4) &&
-      bodyRatio >= 0.2;
+      (upperWickRatio >= CONFIG.NODE_REJECTION_WICK_RATIO || lowerWickRatio >= CONFIG.NODE_REJECTION_WICK_RATIO) &&
+      bodyRatio >= CONFIG.NODE_REJECTION_BODY_RATIO;
 
     const isDisplacement =
       range >= atrValue * CONFIG.DISPLACEMENT_ATR &&
@@ -2731,14 +2744,14 @@ export function findNearestImportantNodeAbove(candles, currentPrice, swingHighs,
     const isSwing =
       swingHighs &&
       swingHighs.some(
-        (s) => Math.abs(s.index - i) <= 2
+        (s) => Math.abs(s.index - i) <= CONFIG.SL_NODE_PROXIMITY_BARS
       );
 
     if (isRejection || isDisplacement || isSwing) {
       const strength =
         (upperWickRatio + lowerWickRatio) * volumeRatio +
-        (isDisplacement ? 2 : 0) +
-        (isSwing ? 1.5 : 0);
+        (isDisplacement ? CONFIG.NODE_DISPLACEMENT_STRENGTH_WEIGHT : 0) +
+        (isSwing ? CONFIG.NODE_SWING_STRENGTH_WEIGHT : 0);
 
       aboveZones.push({
         index: i,
@@ -2780,10 +2793,10 @@ export function applyStructureBuffer(level, direction, atrValue, currentPrice) {
     return level;
   }
 
-  const atrBuffer = atrValue * CONFIG.TP_BUFFER_ATR_MULT;
-  const pctBuffer = currentPrice * CONFIG.TP_BUFFER_MIN_PCT;
+  const atrBuffer = atrValue * CONFIG.APPLY_STRUCTURE_BUFFER_ATR_MULT;
+  const pctBuffer = currentPrice * CONFIG.APPLY_STRUCTURE_BUFFER_MIN_PCT;
   const minBuffer = Math.max(atrBuffer, pctBuffer);
-  const maxBuffer = currentPrice * CONFIG.TP_BUFFER_MAX_PCT;
+  const maxBuffer = currentPrice * CONFIG.APPLY_STRUCTURE_BUFFER_MAX_PCT;
   const buffer = Math.min(minBuffer, maxBuffer);
 
   return direction === "bearish"
@@ -2800,7 +2813,7 @@ export function applyPipBuffer(level, direction, currentPrice) {
     return level;
   }
 
-  const pipBuffer = currentPrice * CONFIG.TP_PIP_BUFFER_PCT;
+  const pipBuffer = currentPrice * CONFIG.APPLY_PIP_BUFFER_PCT;
 
   if (direction === "bearish") {
     return level + pipBuffer;
@@ -2810,7 +2823,7 @@ export function applyPipBuffer(level, direction, currentPrice) {
 }
 
 export function detectCounterMomentum(candles, direction, currentIndex, currentPrice, timeframe) {
-  if (!candles || candles.length < 20 || !Number.isFinite(currentIndex)) {
+  if (!candles || candles.length < CONFIG.DETECT_COUNTER_MOMENTUM_MIN_CANDLES || !Number.isFinite(currentIndex)) {
     return { warning: false, reason: null, severe: false };
   }
 
@@ -2891,7 +2904,7 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
   }
 
   const profile = TIMEFRAME_PROFILES[timeframe] || TIMEFRAME_PROFILES["1h"];
-  const severe = warningLevel >= 3 && profile.strictHTF;
+  const severe = warningLevel >= CONFIG.MOMENTUM_LOOKBACK_CANDLES && profile.strictHTF;
 
   return {
     warning: true,
@@ -2902,17 +2915,20 @@ export function detectCounterMomentum(candles, direction, currentIndex, currentP
 }
 
 export function collectImportantLevelsForTP(candles, direction, entry, atrValue, maxLevels = 6) {
-  if (!candles || candles.length < 20 || entry <= 0) {
-    return [];
-  }
+  if (!candles || candles.length < CONFIG.COLLECT_TP_LEVELS_MIN_CANDLES || entry <= 0) {
+  return [];
+}
 
-  const currentIndex = candles.length - 1;
-  const lookbackBars = Math.min(
-    candles.length - 2,
-    CONFIG.TP_STRUCTURE_LOOKBACK_BARS
-  );
+const currentIndex = candles.length - 1;
+const lookbackBars = Math.min(
+  candles.length - CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
+  CONFIG.TP_STRUCTURE_LOOKBACK_BARS
+);
 
-  const start = Math.max(2, candles.length - lookbackBars);
+const start = Math.max(
+  CONFIG.COLLECT_TP_LEVELS_SAFETY_BARS,
+  candles.length - lookbackBars
+);
   const minGap = Math.max(1, CONFIG.TP_MIN_STRUCTURE_GAP_BARS);
 
   const swings = detectSwings(candles);
@@ -3319,7 +3335,7 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
       ? Math.max(0.3, CONFIG.SL_MIN_NODE_DISTANCE_ATR)
       : 0.5;
 
-  const minStopDistancePct = 0.015;
+  const minStopDistancePct = CONFIG.STOP_MIN_DISTANCE_PCT;
 
   if (direction === "bullish") {
     const node = findNearestImportantNodeBelow(
@@ -3427,7 +3443,7 @@ export function detectRangeTradeSetups(
 
   if (
     !Array.isArray(candles) ||
-    candles.length < 50 ||
+    candles.length < CONFIG.RANGE_MIN_CANDLES ||
     !Number.isFinite(currentPrice) ||
     currentPrice <= 0 ||
     !Number.isFinite(atrValue) ||
@@ -3566,14 +3582,15 @@ export function detectRangeTradeSetups(
       : 5;
 
   const tp1MinRR = Number.isFinite(CONFIG.TP1_MIN_RR) ? CONFIG.TP1_MIN_RR : 1.0;
-  
+  const tp2PlusMinRR = Number.isFinite(CONFIG.TP2_PLUS_MIN_RR) ? CONFIG.TP2_PLUS_MIN_RR : 1.5;
+
   const obsDisplayCount =
     Number.isFinite(CONFIG.OBS_DISPLAY_COUNT) &&
     CONFIG.OBS_DISPLAY_COUNT > 0
       ? Math.trunc(CONFIG.OBS_DISPLAY_COUNT)
       : 2;
 
-  const maxSetupAge = 100;
+  const maxSetupAge = CONFIG.RANGE_MAX_SETUP_AGE;
 
   const externalFreshness =
     Number.isFinite(CONFIG.RANGE_EXTERNAL_FRESHNESS)
@@ -3608,11 +3625,11 @@ export function detectRangeTradeSetups(
   }
 
   const rangePosition =
-    ((currentPrice - rangeLow) / rangeSize) * 100;
+  ((currentPrice - rangeLow) / rangeSize) * CONFIG.PERCENT_MULTIPLIER;
 
   const closeBuffer = Math.max(
-    atrValue * 0.02,
-    currentPrice * 0.0001
+    atrValue * CONFIG.RANGE_CLOSE_BUFFER_ATR_MULT,
+    currentPrice * CONFIG.RANGE_CLOSE_BUFFER_PCT_MULT
   );
 
   const bullishBreakConfirmed =
@@ -3701,8 +3718,8 @@ export function detectRangeTradeSetups(
       : [];
 
   const scenarioLookback = Math.max(
-    5,
-    Math.min(candles.length - 5, scenarioSwingLookback)
+    CONFIG.RANGE_MIN_LOOKBACK,
+    Math.min(candles.length - CONFIG.RANGE_MIN_LOOKBACK, scenarioSwingLookback)
   );
 
   const recentStart = Math.max(
@@ -3711,11 +3728,11 @@ export function detectRangeTradeSetups(
   );
 
   const sweepLookback = Math.max(
-    5,
+    CONFIG.RANGE_MIN_LOOKBACK,
     Math.min(candles.length - 2, sweepLookbackConfig)
   );
 
-  const displacementWindow = 5;
+  const displacementWindow = CONFIG.DISPLACEMENT_WINDOW;
 
   function distanceToAtr(price) {
     return Number.isFinite(price)
@@ -4266,16 +4283,16 @@ export function detectRangeTradeSetups(
     const lowerWickRatio = lowerWick / range;
 
     return (
-      (
-        isBull(candle) &&
-        bodyRatio >= 0.45 &&
-        closePosition >= 0.65
-      ) ||
-      (
-        lowerWickRatio >= 0.35 &&
-        closePosition >= 0.55
-      )
-    );
+  (
+    isBull(candle) &&
+    bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
+    closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
+  ) ||
+  (
+    lowerWickRatio >= CONFIG.REACTION_WICK_RATIO &&
+    closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
+     )
+   );
   }
 
   function detectBearishReaction(index) {
@@ -4312,16 +4329,16 @@ export function detectRangeTradeSetups(
     const upperWickRatio = upperWick / range;
 
     return (
-      (
-        isBear(candle) &&
-        bodyRatio >= 0.45 &&
-        closePosition >= 0.65
-      ) ||
-      (
-        upperWickRatio >= 0.35 &&
-        closePosition >= 0.55
-      )
-    );
+  (
+    isBear(candle) &&
+    bodyRatio >= CONFIG.REACTION_BODY_RATIO_MIN &&
+    closePosition >= CONFIG.REACTION_CLOSE_POSITION_STRONG
+  ) ||
+  (
+    upperWickRatio >= CONFIG.REACTION_WICK_RATIO &&
+    closePosition >= CONFIG.REACTION_CLOSE_POSITION_WEAK
+     )
+   );
   }
 
   function isValidDisplacement(candle, direction, index) {
@@ -4430,14 +4447,14 @@ export function detectRangeTradeSetups(
 
       const distance = Math.abs(price - zonePrice) / atrValue;
 
-      if (distance > 0.85) {
+      if (distance > CONFIG.ENTRY_CANDIDATE_MAX_DISTANCE_ATR) {
         return;
       }
 
       if (
         candidates.some(
           item =>
-            Math.abs(item.price - price) / atrValue < 0.05
+            Math.abs(item.price - price) / atrValue < CONFIG.ENTRY_CANDIDATE_MIN_GAP_ATR
         )
       ) {
         return;
@@ -4506,14 +4523,14 @@ export function detectRangeTradeSetups(
                   referencePrice,
                   Math.min(
                     confirmationClose,
-                    referencePrice + atrValue * 0.35
+                    referencePrice + atrValue * CONFIG.PRECISION_ENTRY_SWEEP_RECLAIM_ATR
                   )
                 )
               : Math.min(
                   referencePrice,
                   Math.max(
                     confirmationClose,
-                    referencePrice - atrValue * 0.35
+                    referencePrice - atrValue * CONFIG.PRECISION_ENTRY_SWEEP_RECLAIM_ATR
                   )
                 );
 
@@ -4539,8 +4556,8 @@ export function detectRangeTradeSetups(
         if (Number.isFinite(range) && range > 0) {
           addEntryCandidate(
             direction === "bullish"
-              ? high - range * 0.5
-              : low + range * 0.5,
+              ? high - range * CONFIG.PRECISION_ENTRY_DISPLACEMENT_RETEST_RATIO
+              : low + range * CONFIG.PRECISION_ENTRY_DISPLACEMENT_RETEST_RATIO,
             direction === "bullish"
               ? "bullish_displacement_retest"
               : "bearish_displacement_retest",
@@ -4549,8 +4566,8 @@ export function detectRangeTradeSetups(
 
           addEntryCandidate(
             direction === "bullish"
-              ? high - range * 0.618
-              : low + range * 0.618,
+              ? high - range * CONFIG.PRECISION_ENTRY_DISPLACEMENT_618_RATIO
+              : low + range * CONFIG.PRECISION_ENTRY_DISPLACEMENT_618_RATIO,
             direction === "bullish"
               ? "bullish_displacement_618"
               : "bearish_displacement_618",
@@ -4593,13 +4610,13 @@ export function detectRangeTradeSetups(
 
         if (Number.isFinite(range) && range > 0) {
           const reactionEntry =
-            direction === "bullish"
-              ? high - range * 0.5
-              : low + range * 0.5;
+         direction === "bullish"
+            ? high - range * CONFIG.REACTION_ENTRY_RATIO
+            : low + range * CONFIG.REACTION_ENTRY_RATIO;
 
           const reactionCandidate = candidates.find(
             candidate =>
-              Math.abs(candidate.price - reactionEntry) / atrValue < 0.3
+              Math.abs(candidate.price - reactionEntry) / atrValue < CONFIG.PRECISION_ENTRY_CANDIDATE_MATCH_ATR
           );
 
           if (reactionCandidate) {
@@ -4615,13 +4632,13 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const zoneBuffer = atrValue * 0.25;
+    const zoneBuffer = atrValue * CONFIG.ZONE_BUFFER_ATR;
 
     const zoneLow = Math.max(
       rangeLow,
       Math.min(
         zonePrice - zoneBuffer,
-        entry - atrValue * 0.15
+        entry - atrValue * CONFIG.ENTRY_BUFFER_ATR
       )
     );
 
@@ -4629,7 +4646,7 @@ export function detectRangeTradeSetups(
       rangeHigh,
       Math.max(
         zonePrice + zoneBuffer,
-        entry + atrValue * 0.15
+        entry + atrValue * CONFIG.ENTRY_BUFFER_ATR
       )
     );
 
@@ -4771,40 +4788,95 @@ export function detectRangeTradeSetups(
   }
 
   function applyTpFilters(targets) {
-  if (!targets || !targets.targets) {
-    return targets;
-  }
-
-  const filtered = targets.targets.filter((target, index) => {
-    if (index === 0) {
-      return target.rr >= tp1MinRR;
+    if (!targets || !targets.targets) {
+      return targets;
     }
-    return target.rr >= CONFIG.TP2_PLUS_MIN_RR;
-  });
 
-  if (filtered.length < minValidTPCount) {
-    return null;
+    const filtered = targets.targets.filter((target, index) => {
+      if (index === 0) {
+        return target.rr >= tp1MinRR;
+      }
+      return target.rr >= tp2PlusMinRR;
+    });
+
+    if (filtered.length < minValidTPCount) {
+      return null;
+    }
+
+    const result = {
+      targets: filtered,
+      tp1: filtered[0] ? filtered[0].price : null,
+      tp2: filtered[1] ? filtered[1].price : null,
+      tp3: filtered[2] ? filtered[2].price : null,
+      tp4: filtered[3] ? filtered[3].price : null,
+      rr1: filtered[0] ? filtered[0].rr : 0,
+      rr2: filtered[1] ? filtered[1].rr : 0,
+      rr3: filtered[2] ? filtered[2].rr : 0,
+      rr4: filtered[3] ? filtered[3].rr : 0,
+      tp1Source: filtered[0] ? filtered[0].source : null,
+      tp2Source: filtered[1] ? filtered[1].source : null,
+      tp3Source: filtered[2] ? filtered[2].source : null,
+      tp4Source: filtered[3] ? filtered[3].source : null,
+      tpCount: filtered.length
+    };
+
+    return result;
   }
 
-  const result = {
-    targets: filtered,
-    tp1: filtered[0] ? filtered[0].price : null,
-    tp2: filtered[1] ? filtered[1].price : null,
-    tp3: filtered[2] ? filtered[2].price : null,
-    tp4: filtered[3] ? filtered[3].price : null,
-    rr1: filtered[0] ? filtered[0].rr : 0,
-    rr2: filtered[1] ? filtered[1].rr : 0,
-    rr3: filtered[2] ? filtered[2].rr : 0,
-    rr4: filtered[3] ? filtered[3].rr : 0,
-    tp1Source: filtered[0] ? filtered[0].source : null,
-    tp2Source: filtered[1] ? filtered[1].source : null,
-    tp3Source: filtered[2] ? filtered[2].source : null,
-    tp4Source: filtered[3] ? filtered[3].source : null,
-    tpCount: filtered.length
-  };
+  function buildStopFromStructure(direction, zoneLow, zoneHigh) {
+    const entryZone = {
+      low: zoneLow,
+      high: zoneHigh
+    };
 
-  return result;
-}
+    const stop = computeUnifiedStop(
+      candles,
+      direction,
+      entryZone,
+      atrValue,
+      swingLows,
+      swingHighs,
+      currentPrice
+    );
+
+    if (Number.isFinite(stop)) {
+      return stop;
+    }
+
+    return direction === "bullish"
+      ? zoneLow - atrValue * slAtrBuffer
+      : zoneHigh + atrValue * slAtrBuffer;
+  }
+
+  function findMatchingOB(direction, price) {
+    const list = direction === "bullish"
+      ? bullishOBs
+      : bearishOBs;
+
+    let best = null;
+    let bestDistance = Infinity;
+
+    for (const ob of list) {
+      const obPrice = Number.isFinite(ob.mid)
+        ? ob.mid
+        : direction === "bullish"
+          ? ob.high
+          : ob.low;
+
+      if (!Number.isFinite(obPrice)) {
+        continue;
+      }
+
+      const distance = Math.abs(obPrice - price) / atrValue;
+
+      if (distance <= CONFIG.OB_MATCHING_DISTANCE_ATR && distance <               bestDistance) {
+        best = ob;
+        bestDistance = distance;
+      }
+    }
+
+    return best;
+  }
 
   function buildBullishCandidate(zone, source) {
     if (!zone || !isInsideRange(zone.price)) {
@@ -4813,11 +4885,11 @@ export function detectRangeTradeSetups(
 
     const distance_atr = distanceToAtr(zone.price);
 
-    if (!Number.isFinite(distance_atr) || distance_atr > 3.5) {
+    if (!Number.isFinite(distance_atr) || distance_atr > CONFIG.ENTRY_MAX_DISTANCE_ATR) {
       return null;
     }
 
-    if (rangePosition > 50) return null;
+    if (rangePosition > CONFIG.RANGE_MAX_POSITION_PCT) return null;
 
     const matchingOB = findMatchingOB("bullish", zone.price);
     const sweep = detectBullishSweep(zone.price);
@@ -4905,7 +4977,7 @@ export function detectRangeTradeSetups(
     score += 4;
     confirmations.push("bullish_displacement");
 
-    if (rangePosition <= 45) {
+    if (rangePosition <= CONFIG.RANGE_MAX_POSITION_PCT - CONFIG.RANGE_MIN_LOOKBACK) {
       score += 1;
       confirmations.push("lower_range");
     }
@@ -4965,7 +5037,7 @@ export function detectRangeTradeSetups(
     ) {
       const distanceToResistance = nearestResistance.price - entry;
 
-      if (distanceToResistance < atrValue * 1.5) {
+      if (distanceToResistance < atrValue * CONFIG.RANGE_RESISTANCE_MIN_DISTANCE_ATR) {
         return null;
       }
     }
@@ -5060,11 +5132,11 @@ export function detectRangeTradeSetups(
 
     const distance_atr = distanceToAtr(zone.price);
 
-    if (!Number.isFinite(distance_atr) || distance_atr > 3.5) {
+    if (!Number.isFinite(distance_atr) || distance_atr > CONFIG.ENTRY_MAX_DISTANCE_ATR) {
       return null;
     }
 
-    if (rangePosition < 50) return null;
+    if (rangePosition < CONFIG.RANGE_MIN_POSITION_PCT) return null;
 
     const matchingOB = findMatchingOB("bearish", zone.price);
     const sweep = detectBearishSweep(zone.price);
@@ -5152,7 +5224,7 @@ export function detectRangeTradeSetups(
     score += 4;
     confirmations.push("bearish_displacement");
 
-    if (rangePosition >= 55) {
+    if (rangePosition >= CONFIG.RANGE_MIN_POSITION_PCT + CONFIG.RANGE_MIN_LOOKBACK) {
       score += 1;
       confirmations.push("upper_range");
     }
@@ -5212,7 +5284,7 @@ export function detectRangeTradeSetups(
     ) {
       const distanceToSupport = entry - nearestSupport.price;
 
-      if (distanceToSupport < atrValue * 1.5) {
+      if (distanceToSupport < atrValue * CONFIG.RANGE_RESISTANCE_MIN_DISTANCE_ATR) {
         return null;
       }
     }
@@ -5369,7 +5441,7 @@ export function detectRangeTradeSetups(
 
   function dedupeCandidates(items) {
     const result = [];
-    const duplicateDistance = atrValue * 0.5;
+    const duplicateDistance = atrValue * CONFIG.DEDUPE_DISTANCE_ATR;
 
     for (const item of items) {
       if (!item) {
@@ -5389,13 +5461,13 @@ export function detectRangeTradeSetups(
       const existing = result[duplicateIndex];
 
       const itemRank =
-        item.score * 100 +
-        item.rr1 * 5 -
+        item.score * CONFIG.CANDIDATE_SCORE_MULT +
+        item.rr1 * CONFIG.CANDIDATE_RR_MULT -
         item.distance_atr;
 
       const existingRank =
-        existing.score * 100 +
-        existing.rr1 * 5 -
+        existing.score * CONFIG.CANDIDATE_SCORE_MULT +
+        existing.rr1 * CONFIG.CANDIDATE_RR_MULT -
         existing.distance_atr;
 
       if (itemRank > existingRank) {
@@ -5537,7 +5609,7 @@ export function collectNearbyLevels(
     CONFIG.FRVP_LOOKBACK_BARS
   );
 
-  const maxLevelDistance = atrValue * 5;
+  const maxLevelDistance = atrValue * CONFIG.RANGE_RESISTANCE_MIN_DISTANCE_ATR * 3;
 
   const isValidZone = (z) =>
     z &&
@@ -5636,7 +5708,7 @@ export function collectNearbyLevels(
       if (
         Number.isFinite(existing.mid) &&
         Number.isFinite(item.mid) &&
-        Math.abs(existing.mid - item.mid) / atrValue < 0.5
+        Math.abs(existing.mid - item.mid) / atrValue < CONFIG.DEDUPE_DISTANCE_ATR
       ) {
         return true;
       }
@@ -5659,7 +5731,7 @@ export function collectNearbyLevels(
           h.index >= 0
       )
       .filter(
-        (h) => candles.length - 1 - h.index <= 100
+        (h) => candles.length - 1 - h.index <= CONFIG.FRESHNESS_MAX_BARS
       )
       .filter(
         (h) =>
@@ -5700,7 +5772,7 @@ export function collectNearbyLevels(
           l.index >= 0
       )
       .filter(
-        (l) => candles.length - 1 - l.index <= 100
+        (l) => candles.length - 1 - l.index <= CONFIG.FRESHNESS_MAX_BARS
       )
       .filter(
         (l) =>
@@ -5747,7 +5819,7 @@ function mergeLevelsWithFrvp(obLevels, frvpLevels, atrValue, currentPrice, direc
     let matched = false;
 
     for (const ob of merged) {
-      if (Math.abs(ob.mid - frvp.mid) / atrValue < 1.0) {
+      if (Math.abs(ob.mid - frvp.mid) / atrValue < CONFIG.VOLUME_PROFILE_DEDUPE_ATR * 2.5) {
         ob.mid = (ob.mid + frvp.mid) / 2;
         ob.low = Math.min(ob.low, frvp.low);
         ob.high = Math.max(ob.high, frvp.high);
@@ -5833,14 +5905,14 @@ export function selectBestZone(orderBlocks, fvgs, direction, atrValue) {
 
       let score = (ob.quality || 0) + (fvg.quality || 0);
 
-      if (overlap) score += 6;
-      else if (atrValue > 0 && distance <= atrValue * 0.10) score += 3;
-      else score += 1;
+      if (overlap) score += CONFIG.SELECT_BEST_ZONE_OVERLAP_BONUS;
+      else if (atrValue > 0 && distance <= atrValue * CONFIG.SELECT_BEST_ZONE_NEAR_ATR) score += CONFIG.SELECT_BEST_ZONE_NEAR_BONUS;
+      else score += CONFIG.SELECT_BEST_ZONE_FAR_BONUS;
 
-      if (fvg.fresh) score += 2;
-      if (fvg.displacement_match) score += 2;
-      if (fvg.event_match) score += 1;
-      if (ob.displacement_index === fvg.index) score += 2;
+      if (fvg.fresh) score += CONFIG.SELECT_BEST_ZONE_FRESH_BONUS;
+      if (fvg.displacement_match) score += CONFIG.SELECT_BEST_ZONE_DISPLACEMENT_BONUS;
+      if (fvg.event_match) score += CONFIG.SELECT_BEST_ZONE_EVENT_BONUS;
+      if (ob.displacement_index === fvg.index) score += CONFIG.SELECT_BEST_ZONE_ALIGN_BONUS;
 
       candidates.push({
         direction,
@@ -5931,13 +6003,13 @@ export function structuralTargets(candles, direction, entry, swings, atrValue, m
     return [];
   }
 
-  if (!candles || candles.length < 20) {
-    return [];
-  }
+  if (!candles || candles.length < CONFIG.STRUCTURAL_TARGETS_MIN_CANDLES) {
+  return [];
+}
 
-  const currentPrice = cClose(candles[candles.length - 1]);
+const currentPrice = cClose(candles[candles.length - 1]);
 
-  const risk = atrValue > 0 ? atrValue : entry * 0.01;
+const risk = atrValue > 0 ? atrValue : entry * CONFIG.STRUCTURAL_TARGETS_RISK_PCT;
 
   const stop = direction === "bullish"
     ? entry - risk
@@ -5974,7 +6046,7 @@ export function calcRR(entry, stop, target) {
 }
 
 export function fibLevelsCalc(candles, direction) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.FIB_MIN_CANDLES) {
     return {
       low: null,
       high: null,
@@ -6098,11 +6170,8 @@ export function fibLevelsCalc(candles, direction) {
       ratio,
       price,
       label:
-        ratio === 0.5
-          ? "50%"
-          : ratio === 0.618
-            ? "61.8%"
-            : (ratio * 100).toFixed(1) + "%"
+        CONFIG.FIB_LEVEL_LABEL_MAP[ratio] ||
+        (ratio * CONFIG.PERCENT_MULTIPLIER).toFixed(1) + "%"
     });
   }
 
@@ -6152,7 +6221,7 @@ export function fibOverlapCheck(entryZone, fib) {
 }
 
 export function scenarioCalc(candles, timeframe, swings) {
-  if (!candles || candles.length < 10) {
+  if (!candles || candles.length < CONFIG.SCENARIO_MIN_CANDLES) {
     return null;
   }
 
@@ -6162,7 +6231,10 @@ export function scenarioCalc(candles, timeframe, swings) {
     return null;
   }
 
-  const maxAge = Math.min(CONFIG.BOS_LOOKBACK, candles.length - 3);
+  const maxAge = Math.min(
+  CONFIG.BOS_LOOKBACK,
+  candles.length - CONFIG.SCENARIO_LOOKBACK_SAFETY_BARS
+);
   const startIdx = Math.max(0, candles.length - maxAge);
 
   let highestHigh = -Infinity;
@@ -6207,21 +6279,10 @@ export function scenarioCalc(candles, timeframe, swings) {
     isSwingConfirmed(s, candles.length - 1)
   );
 
-  const MIN_SCENARIO_DISTANCE = {
-    "15m": 0.015,
-    "30m": 0.015,
-    "1h": 0.02,
-    "2h": 0.02,
-    "4h": 0.025,
-    "6h": 0.03,
-    "12h": 0.04,
-    "24h": 0.05
-  };
-
   const minScenarioDistance =
-    MIN_SCENARIO_DISTANCE[timeframe] !== undefined
-      ? MIN_SCENARIO_DISTANCE[timeframe]
-      : 0.02;
+    CONFIG.SCENARIO_MIN_DISTANCE_BY_TF[timeframe] !== undefined
+      ? CONFIG.SCENARIO_MIN_DISTANCE_BY_TF[timeframe]
+      : CONFIG.SCENARIO_DEFAULT_MIN_DISTANCE;
 
   let nearBullLevel = null;
   let nearBullIdx = null;
@@ -6318,45 +6379,45 @@ export function strengthScore(
 ) {
   let score = 0;
 
-  if (structure.trend === direction) score += 10;
+  if (structure.trend === direction) score += CONFIG.STRENGTH_SCORE_STRUCTURE_ALIGNED;
 
   if (event && event.direction === direction) {
-    if (event.type === "BOS") score += 14;
-    else if (event.type === "CHoCH") score += 12;
+    if (event.type === "BOS") score += CONFIG.STRENGTH_SCORE_BOS;
+    else if (event.type === "CHoCH") score += CONFIG.STRENGTH_SCORE_CHOCH;
   }
 
   if (sweep && sweep.direction === direction) {
     const r = sweep.rejection || 0;
 
-    if (r >= 0.60) score += 14;
-    else if (r >= 0.45) score += 12;
-    else if (r >= 0.30) score += 10;
-    else if (r >= 0.20) score += 7;
-    else score += 4;
+    if (r >= CONFIG.SWEEP_REJECTION_VERY_STRONG) score += CONFIG.STRENGTH_SCORE_SWEEP_STRONG;
+    else if (r >= CONFIG.SWEEP_REJECTION_STRONG) score += CONFIG.STRENGTH_SCORE_SWEEP_GOOD;
+    else if (r >= CONFIG.SWEEP_REJECTION_MEDIUM) score += CONFIG.STRENGTH_SCORE_SWEEP_MEDIUM;
+    else if (r >= CONFIG.SWEEP_REJECTION_WEAK) score += CONFIG.STRENGTH_SCORE_SWEEP_WEAK;
+    else score += CONFIG.STRENGTH_SCORE_SWEEP_MIN;
   }
 
   if (displacement && displacement.direction === direction) {
     const ds = displacement.range_ratio || 0;
 
-    if (ds >= 2.0) score += 14;
-    else if (ds >= 1.5) score += 12;
-    else score += 10;
+    if (ds >= CONFIG.DISPLACEMENT_STRONG_RATIO) score += CONFIG.STRENGTH_SCORE_DISPLACEMENT_STRONG;
+    else if (ds >= CONFIG.DISPLACEMENT_MEDIUM_RATIO) score += CONFIG.STRENGTH_SCORE_DISPLACEMENT_MEDIUM;
+    else score += CONFIG.STRENGTH_SCORE_DISPLACEMENT_WEAK;
   }
 
   if (zone) {
-    score += 12;
-    if (zone.overlap) score += 2;
-    if (zone.fvg && zone.fvg.fresh) score += 1;
-    if (zone.fvg && zone.fvg.displacement_match) score += 1;
-    if (zone.fvg && zone.fvg.event_match) score += 1;
+    score += CONFIG.STRENGTH_SCORE_ZONE;
+    if (zone.overlap) score += CONFIG.STRENGTH_SCORE_ZONE_OVERLAP;
+    if (zone.fvg && zone.fvg.fresh) score += CONFIG.STRENGTH_SCORE_FVG_FRESH;
+    if (zone.fvg && zone.fvg.displacement_match) score += CONFIG.STRENGTH_SCORE_FVG_DISPLACEMENT;
+    if (zone.fvg && zone.fvg.event_match) score += CONFIG.STRENGTH_SCORE_FVG_EVENT;
     if (
       zone.order_block &&
       zone.fvg &&
       zone.order_block.displacement_index === zone.fvg.index
-    ) score += 1;
+    ) score += CONFIG.STRENGTH_SCORE_OB_FVG_ALIGN;
   }
 
-  if (htfStructure && htfStructure.trend === direction) score += 10;
+  if (htfStructure && htfStructure.trend === direction) score += CONFIG.STRENGTH_SCORE_HTF_ALIGNED;
 
   if (
     emaTrend &&
@@ -6376,16 +6437,16 @@ export function strengthScore(
     score += CONFIG.FIB_SCORE;
   }
 
-  if (volumeValue >= 1.15) score += 5;
-  else if (volumeValue >= 1.0) score += 3;
-  else if (volumeValue >= 0.85) score += 1;
+  if (volumeValue >= CONFIG.VOLUME_RATIO_STRONG) score += CONFIG.STRENGTH_SCORE_VOLUME_STRONG;
+  else if (volumeValue >= CONFIG.VOLUME_RATIO_MEDIUM) score += CONFIG.STRENGTH_SCORE_VOLUME_MEDIUM;
+  else if (volumeValue >= CONFIG.VOLUME_RATIO_WEAK) score += CONFIG.STRENGTH_SCORE_VOLUME_WEAK;
 
   if (direction === "bullish") {
-    if (rsiValue >= 45 && rsiValue <= 68) score += 3;
-    else if (rsiValue >= 40 && rsiValue <= 72) score += 2;
+    if (rsiValue >= CONFIG.RSI_BULL_STRONG_MIN && rsiValue <= CONFIG.RSI_BULL_STRONG_MAX) score += CONFIG.STRENGTH_SCORE_RSI_BULL_STRONG;
+    else if (rsiValue >= CONFIG.RSI_BULL_MEDIUM_MIN && rsiValue <= CONFIG.RSI_BULL_MEDIUM_MAX) score += CONFIG.STRENGTH_SCORE_RSI_BULL_MEDIUM;
   } else {
-    if (rsiValue >= 32 && rsiValue <= 55) score += 3;
-    else if (rsiValue >= 28 && rsiValue <= 60) score += 2;
+    if (rsiValue >= CONFIG.RSI_BEAR_STRONG_MIN && rsiValue <= CONFIG.RSI_BEAR_STRONG_MAX) score += CONFIG.STRENGTH_SCORE_RSI_BEAR_STRONG;
+    else if (rsiValue >= CONFIG.RSI_BEAR_MEDIUM_MIN && rsiValue <= CONFIG.RSI_BEAR_MEDIUM_MAX) score += CONFIG.STRENGTH_SCORE_RSI_BEAR_MEDIUM;
   }
 
   if (rsiDivergence && rsiDivergence.detected) {
@@ -6393,9 +6454,9 @@ export function strengthScore(
     score += divEffect.scoreDelta;
   }
 
-  if (rr2 >= 3.0) score += 12;
-  else if (rr2 >= 2.0) score += 8;
-  else if (rr2 >= 1.5) score += 4;
+  if (rr2 >= CONFIG.RR2_STRONG) score += CONFIG.STRENGTH_SCORE_RR2_STRONG;
+  else if (rr2 >= CONFIG.RR2_MEDIUM) score += CONFIG.STRENGTH_SCORE_RR2_MEDIUM;
+  else if (rr2 >= CONFIG.RR2_WEAK) score += CONFIG.STRENGTH_SCORE_RR2_WEAK;
 
   return Math.max(0, Math.min(100, Math.floor(score)));
 }
@@ -6487,7 +6548,7 @@ export function entryState(currentPrice, zone, atrValue, direction) {
     return "IN_ZONE";
   }
 
-  const tolerance = atrValue > 0 ? atrValue * 0.25 : 0;
+  const tolerance = atrValue > 0 ? atrValue * CONFIG.                  ENTRY_STATE_TOLERANCE_ATR : 0;
 
   if (direction === "bullish") {
     if (currentPrice > high && currentPrice <= high + tolerance) {
@@ -6536,9 +6597,9 @@ export function fmtPercent(value) {
 export function detectSMCTrendFilter(
   candles,
   {
-    emaPeriod = 50,
-    swingLookback = 20,
-    swingStrength = 2
+    emaPeriod = CONFIG.SMC_TREND_FILTER_EMA_PERIOD,
+    swingLookback = CONFIG.SMC_TREND_FILTER_SWING_LOOKBACK,
+    swingStrength = CONFIG.SMC_TREND_FILTER_SWING_STRENGTH
   } = {}
 ) {
   const blocked = (reason) => ({
@@ -6551,7 +6612,7 @@ export function detectSMCTrendFilter(
 
   if (
     !Array.isArray(candles) ||
-    candles.length < emaPeriod + swingLookback + swingStrength * 2 + 5
+    candles.length < emaPeriod + swingLookback + swingStrength * 2 + CONFIG.SMC_TREND_FILTER_ADDITIONAL_BUFFER
   ) {
     return blocked("داده کافی برای تشخیص روند وجود ندارد");
   }
