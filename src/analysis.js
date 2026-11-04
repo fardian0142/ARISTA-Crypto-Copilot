@@ -372,20 +372,26 @@ export async function analyze(symbol, timeframe) {
 
     let momentumBlocked = false;
 
-    if (candles.length >= 3) {
-      const lastThree = candles.slice(-3);
+    const momentumLookback =
+      Number.isFinite(CONFIG.MOMENTUM_LOOKBACK_CANDLES) &&
+      CONFIG.MOMENTUM_LOOKBACK_CANDLES > 0
+        ? Math.trunc(CONFIG.MOMENTUM_LOOKBACK_CANDLES)
+        : 3;
 
-      const bullishCount = lastThree.filter(
+    if (candles.length >= momentumLookback) {
+      const lastCandles = candles.slice(-momentumLookback);
+
+      const bullishCount = lastCandles.filter(
         (c) => c.close > c.open
       ).length;
 
-      const bearishCount = lastThree.filter(
+      const bearishCount = lastCandles.filter(
         (c) => c.close < c.open
       ).length;
 
-      if (bearishCount === 3) {
+      if (bearishCount === momentumLookback) {
         momentumBlocked = "bearish";
-      } else if (bullishCount === 3) {
+      } else if (bullishCount === momentumLookback) {
         momentumBlocked = "bullish";
       }
     }
@@ -599,6 +605,11 @@ export async function analyze(symbol, timeframe) {
             result.range_setups.active = null;
           }
 
+          const rangeResistanceMinDistanceAtr =
+            Number.isFinite(CONFIG.RANGE_RESISTANCE_MIN_DISTANCE_ATR)
+              ? CONFIG.RANGE_RESISTANCE_MIN_DISTANCE_ATR
+              : 1.5;
+
           if (
             result.range_setups.active &&
             result.nearby_obs &&
@@ -606,11 +617,11 @@ export async function analyze(symbol, timeframe) {
             result.nearby_obs.bearish.length > 0 &&
             rangeDirection === "bullish"
           ) {
-              const nearestResistance = result.nearby_obs.bearish[0].mid;
-              const minDistance = currentAtr * 1.5;
-              if (Number.isFinite(nearestResistance) && (nearestResistance - currentPrice) < minDistance) {
-                  result.range_setups.active = null;
-              }
+            const nearestResistance = result.nearby_obs.bearish[0].mid;
+            const minDistance = currentAtr * rangeResistanceMinDistanceAtr;
+            if (Number.isFinite(nearestResistance) && (nearestResistance - currentPrice) < minDistance) {
+              result.range_setups.active = null;
+            }
           }
 
           if (
@@ -620,11 +631,11 @@ export async function analyze(symbol, timeframe) {
             result.nearby_obs.bullish.length > 0 &&
             rangeDirection === "bearish"
           ) {
-              const nearestSupport = result.nearby_obs.bullish[0].mid;
-              const minDistance = currentAtr * 1.5;
-              if (Number.isFinite(nearestSupport) && (currentPrice - nearestSupport) < minDistance) {
-                  result.range_setups.active = null;
-              }
+            const nearestSupport = result.nearby_obs.bullish[0].mid;
+            const minDistance = currentAtr * rangeResistanceMinDistanceAtr;
+            if (Number.isFinite(nearestSupport) && (currentPrice - nearestSupport) < minDistance) {
+              result.range_setups.active = null;
+            }
           }
 
           if (
@@ -632,12 +643,12 @@ export async function analyze(symbol, timeframe) {
             lastCandle &&
             lastCandle.incomplete
           ) {
-              if (rangeDirection === "bullish" && lastCandle.close < lastCandle.open) {
-                  result.range_setups.active = null;
-              }
-              if (rangeDirection === "bearish" && lastCandle.close > lastCandle.open) {
-                  result.range_setups.active = null;
-              }
+            if (rangeDirection === "bullish" && lastCandle.close < lastCandle.open) {
+              result.range_setups.active = null;
+            }
+            if (rangeDirection === "bearish" && lastCandle.close > lastCandle.open) {
+              result.range_setups.active = null;
+            }
           }
 
           if (!result.range_setups.active) {
@@ -673,13 +684,13 @@ export async function analyze(symbol, timeframe) {
         : null;
 
     const hasRangeSetup = !!(
-  rangeActive &&
-  isValidDirection(rangeActive.direction) &&
-  Number.isFinite(rangeActive.entry) &&
-  rangeActive.entry > 0 &&
-  Number.isFinite(rangeActive.score) &&
-  rangeActive.score === 14
-);
+      rangeActive &&
+      isValidDirection(rangeActive.direction) &&
+      Number.isFinite(rangeActive.entry) &&
+      rangeActive.entry > 0 &&
+      Number.isFinite(rangeActive.score) &&
+      rangeActive.score === CONFIG.MIN_RANGE_SETUP_SCORE
+    );
 
     if (!hasValidEvent) {
       if (hasRangeSetup) {
@@ -730,6 +741,12 @@ export async function analyze(symbol, timeframe) {
         result.rr2 = rangeActive.rr2 || 0;
         result.rr3 = rangeActive.rr3 || 0;
 
+        const scoreMax =
+          Number.isFinite(CONFIG.MIN_RANGE_SETUP_SCORE) &&
+          CONFIG.MIN_RANGE_SETUP_SCORE > 0
+            ? CONFIG.MIN_RANGE_SETUP_SCORE
+            : 14;
+
         result.strength = Number.isFinite(
           rangeActive.score
         )
@@ -737,7 +754,7 @@ export async function analyze(symbol, timeframe) {
               0,
               Math.min(
                 100,
-                Math.round(rangeActive.score * 7.14)
+                Math.round((rangeActive.score / scoreMax) * 100)
               )
             )
           : 0;
@@ -950,24 +967,35 @@ export async function analyze(symbol, timeframe) {
       }
     }
 
+    const chochMaxAge =
+      Number.isFinite(CONFIG.CHOCH_MAX_AGE_BARS) &&
+      CONFIG.CHOCH_MAX_AGE_BARS > 0
+        ? CONFIG.CHOCH_MAX_AGE_BARS
+        : 20;
+
     if (event.type === "CHoCH") {
       const eventAge =
         candles.length - 1 - event.index;
 
-      if (eventAge > 20) {
+      if (eventAge > chochMaxAge) {
         return fail(
           "CHoCH بسیار قدیمی است",
-          "آخرین CHoCH بیش از 20 کندل پیش رخ داده است."
+          "آخرین CHoCH بیش از " + chochMaxAge + " کندل پیش رخ داده است."
         );
       }
     }
+
+    const emaDistanceThreshold =
+      Number.isFinite(CONFIG.EMA_DISTANCE_ATR_THRESHOLD)
+        ? CONFIG.EMA_DISTANCE_ATR_THRESHOLD
+        : 1.0;
 
     if (
       emaTrend &&
       emaTrend.trend !== "neutral" &&
       emaTrend.trend !== direction &&
       Number.isFinite(emaTrend.distance_atr) &&
-      emaTrend.distance_atr > 1.0
+      emaTrend.distance_atr > emaDistanceThreshold
     ) {
       return fail(
         "EMA خلاف جهت ستاپ است",
@@ -981,7 +1009,7 @@ export async function analyze(symbol, timeframe) {
 
     const isVeryRecentEvent =
       Number.isInteger(event.index) &&
-      event.index >= candles.length - 5;
+      event.index >= candles.length - momentumLookback;
 
     if (
       isVeryRecentEvent &&
@@ -1295,17 +1323,31 @@ export async function analyze(symbol, timeframe) {
       );
     }
 
-    if (riskDistance / entry < 0.005) {
+    const stopMinDistancePctLimit =
+      Number.isFinite(CONFIG.STOP_MIN_DISTANCE_PCT_LIMIT)
+        ? CONFIG.STOP_MIN_DISTANCE_PCT_LIMIT
+        : 0.005;
+
+    const stopMaxDistancePct =
+      Number.isFinite(CONFIG.STOP_MAX_DISTANCE_PCT)
+        ? CONFIG.STOP_MAX_DISTANCE_PCT
+        : 0.1;
+
+    if (riskDistance / entry < stopMinDistancePctLimit) {
       return fail(
         "حد ضرر بسیار نزدیک است",
-        "فاصله حد ضرر تا ورود کمتر از 0.5% است."
+        "فاصله حد ضرر تا ورود کمتر از " +
+          (stopMinDistancePctLimit * 100).toFixed(2) +
+          "% است."
       );
     }
 
-    if (riskDistance / entry > 0.1) {
+    if (riskDistance / entry > stopMaxDistancePct) {
       return fail(
         "حد ضرر بسیار دور است",
-        "فاصله حد ضرر تا ورود بیشتر از 10% است."
+        "فاصله حد ضرر تا ورود بیشتر از " +
+          (stopMaxDistancePct * 100).toFixed(2) +
+          "% است."
       );
     }
 
