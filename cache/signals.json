@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T02:47:23.360Z",
+  "lastUpdated": "2026-11-04T03:02:24.275Z",
   "signals": {
     "SOXLUSDT:15m": {
       "sentAt": "2026-11-03T15:03:47.992Z",
@@ -621,6 +621,15 @@
       "score": 14,
       "entry": 0.2265057801219265,
       "stop": 0.21758442770052527
+    },
+    "PIEVERSEUSDT:15m": {
+      "sentAt": "2026-11-04T03:02:22.773Z",
+      "symbol": "PIEVERSEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1.1513,
+      "stop": 1.1897325713315792
     }
   }
 }
