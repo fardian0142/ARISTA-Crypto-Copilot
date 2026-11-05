@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T08:48:10.742Z",
+  "lastUpdated": "2026-11-05T09:03:20.274Z",
   "signals": {
-    "MRVLBUSDT:15m": {
-      "sentAt": "2026-11-04T21:03:11.692Z",
-      "symbol": "MRVLBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 159.36,
-      "stop": 152.3036752885281
-    },
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
       "symbol": "AXSUSDT",
