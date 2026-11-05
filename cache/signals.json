@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T09:48:10.197Z",
+  "lastUpdated": "2026-11-05T10:03:07.304Z",
   "signals": {
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 0.0180805,
       "stop": 0.01702197590718452
+    },
+    "SAGAUSDT:15m": {
+      "sentAt": "2026-11-05T10:03:05.802Z",
+      "symbol": "SAGAUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.01708854920522983,
+      "stop": 0.017489578240887156
     }
   }
 }
