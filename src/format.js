@@ -96,51 +96,6 @@ function calcLeverageLevels(stopPct) {
   return result;
 }
 
-function formatScoreBar(score, maxScore = 14) {
-  if (!Number.isFinite(score) || !Number.isFinite(maxScore) || maxScore <= 0) {
-    return {
-      percentage: 0,
-      bar: "▱▱▱▱▱▱▱▱▱▱",
-      icon: "🔴",
-      label: "ضعیف",
-      text: "🔴 0% ▱▱▱▱▱▱▱▱▱▱ (0/14)"
-    };
-  }
-
-  const safeScore = Math.max(0, Math.min(maxScore, score));
-  const percentage = Math.round((safeScore / maxScore) * 100);
-
-  const filled = Math.max(0, Math.min(10, Math.round((safeScore / maxScore) * 10)));
-  const empty = 10 - filled;
-
-  const bar = "▰".repeat(filled) + "▱".repeat(empty);
-
-  let icon;
-  let label;
-
-  if (percentage >= 90) {
-    icon = "🟢";
-    label = "عالی";
-  } else if (percentage >= 75) {
-    icon = "🟡";
-    label = "قوی";
-  } else if (percentage >= 60) {
-    icon = "🟠";
-    label = "متوسط";
-  } else {
-    icon = "🔴";
-    label = "ضعیف";
-  }
-
-  return {
-    percentage,
-    bar,
-    icon,
-    label,
-    text: `${icon} ${percentage}% ${bar} (${safeScore}/${maxScore})`
-  };
-}
-
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -425,12 +380,6 @@ export function formatAnalysis(r) {
       );
     }
 
-    const scoreInfo = formatScoreBar(rs.score, 14);
-
-    lines.push("");
-    lines.push("💎 امتیاز ستاپ: <b>" + scoreInfo.percentage + "%</b>");
-    lines.push(scoreInfo.icon + " " + scoreInfo.bar + " " + rs.score + "/14");
-
     if (
       rs.momentum_warning &&
       rs.momentum_reason
@@ -537,16 +486,6 @@ export function formatAnalysis(r) {
           ")"
         );
       }
-    }
-
-    if (
-      r.strength !== null &&
-      r.strength !== undefined &&
-      Number.isFinite(r.strength) &&
-      r.strength > 0
-    ) {
-      lines.push("");
-      lines.push("💎 قدرت ستاپ: <b>" + r.strength + "/100</b>");
     }
   } else {
     if (r.scenario) {
@@ -684,73 +623,6 @@ export function formatAnalysis(r) {
     }
   }
 
-  if (
-    r.nearby_obs &&
-    (r.nearby_obs.bullish.length > 0 ||
-      r.nearby_obs.bearish.length > 0)
-  ) {
-    lines.push("");
-    lines.push("🎯 <b>سطوح کلیدی:</b>");
-
-    let counter = 1;
-
-    for (const ob of r.nearby_obs.bearish) {
-      let tag = "";
-
-      if (ob.source && ob.source.indexOf("frvp") !== -1) {
-        tag += " 📊";
-      }
-
-      if (ob.isPoc) {
-        tag += " 🎯POC";
-      }
-
-      if (ob.confluence) {
-        tag += " ⚡";
-      }
-
-      lines.push(
-        "   🔴 مقاومت " +
-        counter +
-        ": <b>" +
-        fmtPrice(ob.mid) +
-        "</b>" +
-        tag
-      );
-
-      counter++;
-    }
-
-    counter = 1;
-
-    for (const ob of r.nearby_obs.bullish) {
-      let tag = "";
-
-      if (ob.source && ob.source.indexOf("frvp") !== -1) {
-        tag += " 📊";
-      }
-
-      if (ob.isPoc) {
-        tag += " 🎯POC";
-      }
-
-      if (ob.confluence) {
-        tag += " ⚡";
-      }
-
-      lines.push(
-        "   🟢 حمایت " +
-        counter +
-        ": <b>" +
-        fmtPrice(ob.mid) +
-        "</b>" +
-        tag
-      );
-
-      counter++;
-    }
-  }
-
   const activeSetupForLeverage =
   (rangeActive && r.range_setups.active) ||
   null;
@@ -816,7 +688,7 @@ if (
   }
 
   lines.push("");
-  lines.push("⚠️ این خروجی تحلیل الگوریتمی است و تضمین سود نیست.");
+  lines.push("<b>⚠️ این خروجی تحلیل الگوریتمی است و تضمین سود نیست.</b>");
 
   return lines.join("\n");
 }
@@ -960,67 +832,4 @@ export function formatTradeClosed(sig, lastTpHit, totalR, maxR) {
     resultText + "\n\n" +
     "💡 مدیریت سرمایه را رعایت کنید. منتظر سیگنال بعدی باشید."
   );
-}
-
-export function formatWeeklyReport(stats) {
-  const { allTime, byTimeframe, byDirection, weekly } = stats;
-  const lines = [];
-
-  lines.push("📊 <b>گزارش عملکرد هفتگی ربات</b>");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("📅 بازه: <b>" + escapeHtml(weekly.startDate) + " تا " + escapeHtml(weekly.endDate) + "</b>");
-  lines.push("");
-  lines.push("📈 <b>آمار هفته گذشته:</b>");
-  lines.push("   📤 کل سیگنال: <b>" + weekly.total + "</b>");
-  lines.push("   🥇 رسیده به TP1: <b>" + weekly.tp1Hit + "</b>");
-  lines.push("   🥈 رسیده به TP2: <b>" + weekly.tp2Hit + "</b>");
-  lines.push("   🥉 رسیده به TP3: <b>" + weekly.tp3Hit + "</b>");
-  lines.push("   🛑 استاپ خورده: <b>" + weekly.stopped + "</b>");
-  lines.push("   ⏳ در جریان: <b>" + weekly.active + "</b>");
-
-  if (weekly.bestTrade) {
-    lines.push("");
-    lines.push("🏆 بهترین معامله: <b>" + escapeHtml(weekly.bestTrade.symbol) + "</b> [" + escapeHtml(weekly.bestTrade.timeframe) + "] با <b>" + weekly.bestTrade.rr + "R</b>");
-  }
-
-  const totalDone = allTime.total - allTime.active;
-  if (totalDone > 0) {
-    lines.push("");
-    lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-    lines.push("📊 <b>آمار کل (از ابتدا):</b>");
-    lines.push("   📤 کل سیگنال: <b>" + allTime.total + "</b>");
-    lines.push("");
-    lines.push("🎯 <b>نرخ موفقیت:</b>");
-    lines.push("   🥇 TP1: <b>" + allTime.tp1Rate + "%</b> (" + allTime.tp1Hit + "/" + totalDone + ")");
-    lines.push("   🥈 TP2: <b>" + allTime.tp2Rate + "%</b> (" + allTime.tp2Hit + "/" + totalDone + ")");
-    lines.push("   🥉 TP3: <b>" + allTime.tp3Rate + "%</b> (" + allTime.tp3Hit + "/" + totalDone + ")");
-    lines.push("   🛑 Stop: <b>" + allTime.stopRate + "%</b> (" + allTime.stopped + "/" + totalDone + ")");
-  }
-
-  lines.push("");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("⏱ <b>عملکرد به تفکیک تایم‌فریم:</b>");
-  for (const tf of ["15m", "30m", "1h", "2h"]) {
-    const t = byTimeframe[tf];
-    if (t && t.total > 0) {
-      lines.push("   <b>" + tf + "</b> → " + t.total + " سیگنال | TP1: <b>" + t.tp1Rate + "%</b>");
-    }
-  }
-
-  lines.push("");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("📊 <b>عملکرد به تفکیک جهت:</b>");
-  for (const dir of ["bullish", "bearish"]) {
-    const d = byDirection[dir];
-    if (d && d.total > 0) {
-      const label = dir === "bullish" ? "🟢 Long" : "🔴 Short";
-      lines.push("   " + label + " → " + d.total + " سیگنال | TP1: <b>" + d.tp1Rate + "%</b>");
-    }
-  }
-
-  lines.push("");
-  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
-  lines.push("⚠️ آمار بر اساس تحلیل الگوریتمی است و تضمین سود نیست.");
-
-  return lines.join("\n");
 }
