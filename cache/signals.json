@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T08:18:03.233Z",
+  "lastUpdated": "2026-11-05T08:33:13.524Z",
   "signals": {
-    "CROUSDT:2h": {
-      "sentAt": "2026-11-04T20:18:05.835Z",
-      "symbol": "CROUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.051570000000000005,
-      "stop": 0.04857590149626549
-    },
     "WIFUSDT:30m": {
       "sentAt": "2026-11-04T20:33:17.515Z",
       "symbol": "WIFUSDT",
