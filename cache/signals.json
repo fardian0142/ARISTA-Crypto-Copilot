@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T14:33:57.420Z",
+  "lastUpdated": "2026-11-05T14:48:36.905Z",
   "signals": {
-    "AXSUSDT:2h": {
-      "sentAt": "2026-11-05T02:48:08.535Z",
-      "symbol": "AXSUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.87,
-      "stop": 0.8233725665476213
-    },
     "RLSUSDT:15m": {
       "sentAt": "2026-11-05T03:03:17.107Z",
       "symbol": "RLSUSDT",
