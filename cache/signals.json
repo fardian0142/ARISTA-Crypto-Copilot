@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T16:03:52.206Z",
+  "lastUpdated": "2026-11-05T16:18:35.421Z",
   "signals": {
     "TRUTHUSDT:1h": {
       "sentAt": "2026-11-05T07:33:06.437Z",
@@ -63,6 +63,15 @@
       "score": 14,
       "entry": 0.07577629027045177,
       "stop": 0.07723135
+    },
+    "ATOMUSDT:1h": {
+      "sentAt": "2026-11-05T16:18:33.918Z",
+      "symbol": "ATOMUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.436,
+      "stop": 1.3947138000000001
     }
   }
 }
