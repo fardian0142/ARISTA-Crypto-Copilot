@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T03:18:08.748Z",
+  "lastUpdated": "2026-11-05T03:33:16.454Z",
   "signals": {
     "NILUSDT:15m": {
       "sentAt": "2026-11-04T17:48:05.187Z",
@@ -63,6 +63,15 @@
       "score": 14,
       "entry": 0.002100842,
       "stop": 0.002039663806233069
+    },
+    "SPYBUSDT:30m": {
+      "sentAt": "2026-11-05T03:33:14.952Z",
+      "symbol": "SPYBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 766.4765523943772,
+      "stop": 779.4997
     }
   }
 }
