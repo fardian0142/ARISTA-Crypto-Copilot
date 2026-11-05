@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T08:33:13.524Z",
+  "lastUpdated": "2026-11-05T08:48:10.742Z",
   "signals": {
-    "WIFUSDT:30m": {
-      "sentAt": "2026-11-04T20:33:17.515Z",
-      "symbol": "WIFUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.17170246181012702,
-      "stop": 0.16347889877034005
-    },
     "MRVLBUSDT:15m": {
       "sentAt": "2026-11-04T21:03:11.692Z",
       "symbol": "MRVLBUSDT",
