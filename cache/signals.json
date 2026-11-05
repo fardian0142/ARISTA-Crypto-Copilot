@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T07:48:16.872Z",
+  "lastUpdated": "2026-11-05T08:03:16.672Z",
   "signals": {
-    "GRAMUSDT:2h": {
-      "sentAt": "2026-11-04T20:03:09.896Z",
-      "symbol": "GRAMUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.1880000000000002,
-      "stop": 1.1206965217113751
-    },
     "CROUSDT:2h": {
       "sentAt": "2026-11-04T20:18:05.835Z",
       "symbol": "CROUSDT",
