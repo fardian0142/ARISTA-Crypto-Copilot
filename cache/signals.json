@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T19:18:25.185Z",
+  "lastUpdated": "2026-11-05T19:33:21.861Z",
   "signals": {
-    "TRUTHUSDT:1h": {
-      "sentAt": "2026-11-05T07:33:06.437Z",
-      "symbol": "TRUTHUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0180805,
-      "stop": 0.01702197590718452
-    },
     "SAGAUSDT:15m": {
       "sentAt": "2026-11-05T10:03:05.802Z",
       "symbol": "SAGAUSDT",
