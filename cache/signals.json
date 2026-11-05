@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T01:04:23.044Z",
+  "lastUpdated": "2026-11-05T01:18:20.304Z",
   "signals": {
-    "FARTCOINUSDT:15m": {
-      "sentAt": "2026-11-04T13:18:10.915Z",
-      "symbol": "FARTCOINUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.12081565300288281,
-      "stop": 0.12373104997940844
-    },
     "NILUSDT:15m": {
       "sentAt": "2026-11-04T17:48:05.187Z",
       "symbol": "NILUSDT",
