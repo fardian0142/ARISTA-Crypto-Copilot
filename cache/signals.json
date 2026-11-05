@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T14:18:23.209Z",
+  "lastUpdated": "2026-11-05T14:33:57.420Z",
   "signals": {
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
@@ -81,6 +81,15 @@
       "score": 14,
       "entry": 714.6804013804871,
       "stop": 725.8772499999999
+    },
+    "DOGEUSDT:15m": {
+      "sentAt": "2026-11-05T14:33:55.918Z",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07577629027045177,
+      "stop": 0.07723135
     }
   }
 }
