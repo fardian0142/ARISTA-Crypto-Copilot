@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T02:33:01.228Z",
+  "lastUpdated": "2026-11-05T02:48:10.039Z",
   "signals": {
     "NILUSDT:15m": {
       "sentAt": "2026-11-04T17:48:05.187Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 159.36,
       "stop": 152.3036752885281
+    },
+    "AXSUSDT:2h": {
+      "sentAt": "2026-11-05T02:48:08.535Z",
+      "symbol": "AXSUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.87,
+      "stop": 0.8233725665476213
     }
   }
 }
