@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T15:18:48.936Z",
+  "lastUpdated": "2026-11-05T15:33:41.537Z",
   "signals": {
-    "SPYBUSDT:30m": {
-      "sentAt": "2026-11-05T03:33:14.952Z",
-      "symbol": "SPYBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 766.4765523943772,
-      "stop": 779.4997
-    },
     "TRUTHUSDT:1h": {
       "sentAt": "2026-11-05T07:33:06.437Z",
       "symbol": "TRUTHUSDT",
