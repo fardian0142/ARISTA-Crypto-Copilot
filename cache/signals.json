@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T12:33:20.893Z",
+  "lastUpdated": "2026-11-05T12:48:18.648Z",
   "signals": {
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
@@ -72,6 +72,15 @@
       "score": 14,
       "entry": 0.2737893877401217,
       "stop": 0.2796325
+    },
+    "BNBUSDT:30m": {
+      "sentAt": "2026-11-05T12:48:17.147Z",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 714.6804013804871,
+      "stop": 725.8772499999999
     }
   }
 }
