@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T18:48:21.510Z",
+  "lastUpdated": "2026-11-05T19:03:17.474Z",
   "signals": {
     "TRUTHUSDT:1h": {
       "sentAt": "2026-11-05T07:33:06.437Z",
@@ -72,6 +72,15 @@
       "score": 14,
       "entry": 1.436,
       "stop": 1.3947138000000001
+    },
+    "PIUSDT:30m": {
+      "sentAt": "2026-11-05T19:03:15.972Z",
+      "symbol": "PIUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.07602500000000001,
+      "stop": 0.07851256447743535
     }
   }
 }
