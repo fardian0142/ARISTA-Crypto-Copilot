@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T14:48:36.905Z",
+  "lastUpdated": "2026-11-05T15:03:35.063Z",
   "signals": {
-    "RLSUSDT:15m": {
-      "sentAt": "2026-11-05T03:03:17.107Z",
-      "symbol": "RLSUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.002100842,
-      "stop": 0.002039663806233069
-    },
     "SPYBUSDT:30m": {
       "sentAt": "2026-11-05T03:33:14.952Z",
       "symbol": "SPYBUSDT",
