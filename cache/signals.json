@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T10:18:18.499Z",
+  "lastUpdated": "2026-11-05T10:33:00.304Z",
   "signals": {
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 0.01708854920522983,
       "stop": 0.017489578240887156
+    },
+    "UNIUSDT:15m": {
+      "sentAt": "2026-11-05T10:32:58.802Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 7.552086700362546,
+      "stop": 7.733399711178177
     }
   }
 }
