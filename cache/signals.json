@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T02:48:10.039Z",
+  "lastUpdated": "2026-11-05T03:03:18.609Z",
   "signals": {
     "NILUSDT:15m": {
       "sentAt": "2026-11-04T17:48:05.187Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 0.87,
       "stop": 0.8233725665476213
+    },
+    "RLSUSDT:15m": {
+      "sentAt": "2026-11-05T03:03:17.107Z",
+      "symbol": "RLSUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.002100842,
+      "stop": 0.002039663806233069
     }
   }
 }
