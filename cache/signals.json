@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-05T05:33:10.034Z",
+  "lastUpdated": "2026-11-05T05:48:24.223Z",
   "signals": {
-    "NILUSDT:15m": {
-      "sentAt": "2026-11-04T17:48:05.187Z",
-      "symbol": "NILUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06413781968266284,
-      "stop": 0.061664402720032735
-    },
     "GRAMUSDT:2h": {
       "sentAt": "2026-11-04T20:03:09.896Z",
       "symbol": "GRAMUSDT",
