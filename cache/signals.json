@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T12:18:11.712Z",
+  "lastUpdated": "2026-11-05T12:33:20.893Z",
   "signals": {
     "AXSUSDT:2h": {
       "sentAt": "2026-11-05T02:48:08.535Z",
@@ -54,6 +54,24 @@
       "score": 14,
       "entry": 7.552086700362546,
       "stop": 7.733399711178177
+    },
+    "LTCUSDT:15m": {
+      "sentAt": "2026-11-05T12:33:17.600Z",
+      "symbol": "LTCUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 55.535,
+      "stop": 56.687749999999994
+    },
+    "CRVUSDT:15m": {
+      "sentAt": "2026-11-05T12:33:19.391Z",
+      "symbol": "CRVUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.2737893877401217,
+      "stop": 0.2796325
     }
   }
 }
