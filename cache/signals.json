@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T07:18:03.237Z",
+  "lastUpdated": "2026-11-05T07:33:07.939Z",
   "signals": {
     "GRAMUSDT:2h": {
       "sentAt": "2026-11-04T20:03:09.896Z",
@@ -63,6 +63,15 @@
       "score": 14,
       "entry": 766.4765523943772,
       "stop": 779.4997
+    },
+    "TRUTHUSDT:1h": {
+      "sentAt": "2026-11-05T07:33:06.437Z",
+      "symbol": "TRUTHUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0180805,
+      "stop": 0.01702197590718452
     }
   }
 }
