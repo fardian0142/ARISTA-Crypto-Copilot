@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-06T20:18:10.111Z",
+  "lastUpdated": "2026-11-06T20:33:08.003Z",
   "signals": {
-    "ZETAUSDT:15m": {
-      "sentAt": "2026-11-06T08:18:18.332Z",
-      "symbol": "ZETAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03486,
-      "stop": 0.03406942907803664
-    },
-    "ACUUSDT:30m": {
-      "sentAt": "2026-11-06T08:18:20.135Z",
-      "symbol": "ACUUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.11902493742859786,
-      "stop": 0.11420339346916111
-    },
     "JTOUSDT:30m": {
       "sentAt": "2026-11-06T08:48:18.930Z",
       "symbol": "JTOUSDT",
@@ -108,6 +90,15 @@
       "score": 14,
       "entry": 0.03765200909906488,
       "stop": 0.03588849343658671
+    },
+    "ZETAUSDT:30m": {
+      "sentAt": "2026-11-06T20:33:06.501Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.035835,
+      "stop": 0.03435386244764607
     }
   }
 }
