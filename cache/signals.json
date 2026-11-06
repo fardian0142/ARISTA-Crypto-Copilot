@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T14:33:10.811Z",
+  "lastUpdated": "2026-11-06T14:48:52.993Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -72,6 +72,24 @@
       "score": 14,
       "entry": 0.005486492,
       "stop": 0.005281127201229371
+    },
+    "CASHCATUSDT:15m": {
+      "sentAt": "2026-11-06T14:48:49.692Z",
+      "symbol": "CASHCATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09510796678450523,
+      "stop": 0.09131742756138374
+    },
+    "TSLABUSDT:30m": {
+      "sentAt": "2026-11-06T14:48:51.491Z",
+      "symbol": "TSLABUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 351.03999999999996,
+      "stop": 340.96573693289815
     }
   }
 }
