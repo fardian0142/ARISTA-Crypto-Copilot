@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T09:03:20.423Z",
+  "lastUpdated": "2026-11-06T09:18:17.465Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 0.33685,
       "stop": 0.32208468699341597
+    },
+    "HOODBUSDT:15m": {
+      "sentAt": "2026-11-06T09:18:15.963Z",
+      "symbol": "HOODBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 80.32303909549341,
+      "stop": 78.17537918148501
     }
   }
 }
