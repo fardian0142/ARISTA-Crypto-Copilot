@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-06T22:33:13.127Z",
+  "lastUpdated": "2026-11-06T22:48:11.944Z",
   "signals": {
-    "ZENUSDT:15m": {
-      "sentAt": "2026-11-06T10:33:32.193Z",
-      "symbol": "ZENUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 5.119122945997148,
-      "stop": 5.013231891453016
-    },
     "DGAIUSDT:15m": {
       "sentAt": "2026-11-06T11:48:22.232Z",
       "symbol": "DGAIUSDT",
