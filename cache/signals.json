@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-06T21:18:03.148Z",
+  "lastUpdated": "2026-11-06T21:33:06.734Z",
   "signals": {
-    "HOODBUSDT:15m": {
-      "sentAt": "2026-11-06T09:18:15.963Z",
-      "symbol": "HOODBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 80.32303909549341,
-      "stop": 78.17537918148501
-    },
     "ZENUSDT:15m": {
       "sentAt": "2026-11-06T10:33:32.193Z",
       "symbol": "ZENUSDT",
