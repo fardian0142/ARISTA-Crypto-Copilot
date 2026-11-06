@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-06T07:33:17.233Z",
-  "signals": {}
+  "lastUpdated": "2026-11-06T07:48:26.674Z",
+  "signals": {
+    "UNIUSDT:15m": {
+      "sentAt": "2026-11-06T07:48:25.170Z",
+      "symbol": "UNIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.96,
+      "stop": 6.770504935391923
+    }
+  }
 }
