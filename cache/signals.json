@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-06T04:18:24.982Z",
+  "lastUpdated": "2026-11-06T04:33:26.013Z",
   "signals": {
-    "ATOMUSDT:1h": {
-      "sentAt": "2026-11-05T16:18:33.918Z",
-      "symbol": "ATOMUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.436,
-      "stop": 1.3947138000000001
-    },
     "PIUSDT:30m": {
       "sentAt": "2026-11-05T19:03:15.972Z",
       "symbol": "PIUSDT",
