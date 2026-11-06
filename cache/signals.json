@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T08:03:26.407Z",
+  "lastUpdated": "2026-11-06T08:18:21.636Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -9,6 +9,24 @@
       "score": 14,
       "entry": 6.96,
       "stop": 6.770504935391923
+    },
+    "ZETAUSDT:15m": {
+      "sentAt": "2026-11-06T08:18:18.332Z",
+      "symbol": "ZETAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.03486,
+      "stop": 0.03406942907803664
+    },
+    "ACUUSDT:30m": {
+      "sentAt": "2026-11-06T08:18:20.135Z",
+      "symbol": "ACUUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.11902493742859786,
+      "stop": 0.11420339346916111
     }
   }
 }
