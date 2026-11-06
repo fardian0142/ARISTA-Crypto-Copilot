@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T08:33:22.364Z",
+  "lastUpdated": "2026-11-06T08:48:20.432Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.11902493742859786,
       "stop": 0.11420339346916111
+    },
+    "JTOUSDT:30m": {
+      "sentAt": "2026-11-06T08:48:18.930Z",
+      "symbol": "JTOUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.33685,
+      "stop": 0.32208468699341597
     }
   }
 }
