@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T18:18:12.651Z",
+  "lastUpdated": "2026-11-06T18:33:25.248Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -90,6 +90,15 @@
       "score": 14,
       "entry": 351.03999999999996,
       "stop": 340.96573693289815
+    },
+    "SPYBUSDT:30m": {
+      "sentAt": "2026-11-06T18:33:23.745Z",
+      "symbol": "SPYBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 739.38,
+      "stop": 725.42295
     }
   }
 }
