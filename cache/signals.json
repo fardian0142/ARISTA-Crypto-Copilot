@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T11:33:27.122Z",
+  "lastUpdated": "2026-11-06T11:48:23.735Z",
   "signals": {
     "UNIUSDT:15m": {
       "sentAt": "2026-11-06T07:48:25.170Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 5.119122945997148,
       "stop": 5.013231891453016
+    },
+    "DGAIUSDT:15m": {
+      "sentAt": "2026-11-06T11:48:22.232Z",
+      "symbol": "DGAIUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.7632173628195195,
+      "stop": 0.7355940329755477
     }
   }
 }
