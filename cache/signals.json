@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-06T06:48:31.073Z",
-  "signals": {
-    "PIUSDT:30m": {
-      "sentAt": "2026-11-05T19:03:15.972Z",
-      "symbol": "PIUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.07602500000000001,
-      "stop": 0.07851256447743535
-    }
-  }
+  "lastUpdated": "2026-11-06T07:03:29.515Z",
+  "signals": {}
 }
