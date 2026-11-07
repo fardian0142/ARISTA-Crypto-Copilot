@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T02:48:05.259Z",
+  "lastUpdated": "2026-11-07T03:03:03.342Z",
   "signals": {
-    "CASHCATUSDT:15m": {
-      "sentAt": "2026-11-06T14:48:49.692Z",
-      "symbol": "CASHCATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.09510796678450523,
-      "stop": 0.09131742756138374
-    },
-    "TSLABUSDT:30m": {
-      "sentAt": "2026-11-06T14:48:51.491Z",
-      "symbol": "TSLABUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 351.03999999999996,
-      "stop": 340.96573693289815
-    },
     "SPYBUSDT:30m": {
       "sentAt": "2026-11-06T18:33:23.745Z",
       "symbol": "SPYBUSDT",
