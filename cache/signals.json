@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T22:32:40.385Z",
+  "lastUpdated": "2026-11-07T22:47:34.695Z",
   "signals": {
     "ZAMAUSDT:15m": {
       "sentAt": "2026-11-07T11:02:51.994Z",
@@ -81,6 +81,15 @@
       "score": 14,
       "entry": 1.7755176,
       "stop": 1.7276887834055794
+    },
+    "RECALLUSDT:15m": {
+      "sentAt": "2026-11-07T22:47:33.193Z",
+      "symbol": "RECALLUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.030365935583752206,
+      "stop": 0.029786399999999998
     }
   }
 }
