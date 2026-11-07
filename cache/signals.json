@@ -1,24 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T21:32:30.522Z",
+  "lastUpdated": "2026-11-07T21:47:44.456Z",
   "signals": {
-    "SNXXUSDT:15m": {
-      "sentAt": "2026-11-07T09:32:51.137Z",
-      "symbol": "SNXXUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3.291779010025175,
-      "stop": 3.2023227712127835
-    },
-    "SNDKUSDT:15m": {
-      "sentAt": "2026-11-07T09:32:52.890Z",
-      "symbol": "SNDKUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 840.9,
-      "stop": 824.7405
-    },
     "ZAMAUSDT:15m": {
       "sentAt": "2026-11-07T11:02:51.994Z",
       "symbol": "ZAMAUSDT",
@@ -90,6 +72,15 @@
       "score": 14,
       "entry": 197.04099761742597,
       "stop": 185.52716327920587
+    },
+    "RAYUSDT:15m": {
+      "sentAt": "2026-11-07T21:47:42.953Z",
+      "symbol": "RAYUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.7755176,
+      "stop": 1.7276887834055794
     }
   }
 }
