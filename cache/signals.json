@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T15:02:49.349Z",
+  "lastUpdated": "2026-11-07T15:17:51.647Z",
   "signals": {
     "PYTHUSDT:15m": {
       "sentAt": "2026-11-07T04:02:56.714Z",
@@ -108,6 +108,15 @@
       "score": 14,
       "entry": 692.3310777470757,
       "stop": 675.83805
+    },
+    "EWYBUSDT:30m": {
+      "sentAt": "2026-11-07T15:17:50.145Z",
+      "symbol": "EWYBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 137.83315189066906,
+      "stop": 135.57539999999997
     }
   }
 }
