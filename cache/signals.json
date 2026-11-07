@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T07:47:57.137Z",
+  "lastUpdated": "2026-11-07T08:03:00.311Z",
   "signals": {
-    "CHIPUSDT:15m": {
-      "sentAt": "2026-11-06T19:48:10.849Z",
-      "symbol": "CHIPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.03765200909906488,
-      "stop": 0.03588849343658671
-    },
     "ZETAUSDT:30m": {
       "sentAt": "2026-11-06T20:33:06.501Z",
       "symbol": "ZETAUSDT",
