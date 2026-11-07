@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T14:47:37.701Z",
+  "lastUpdated": "2026-11-07T15:02:49.349Z",
   "signals": {
     "PYTHUSDT:15m": {
       "sentAt": "2026-11-07T04:02:56.714Z",
@@ -99,6 +99,15 @@
       "score": 14,
       "entry": 0.042022716730517405,
       "stop": 0.03960814230985082
+    },
+    "MUBUSDT:30m": {
+      "sentAt": "2026-11-07T15:02:47.846Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 692.3310777470757,
+      "stop": 675.83805
     }
   }
 }
