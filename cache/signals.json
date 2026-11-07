@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T12:47:45.667Z",
+  "lastUpdated": "2026-11-07T13:02:43.872Z",
   "signals": {
     "PYTHUSDT:15m": {
       "sentAt": "2026-11-07T04:02:56.714Z",
@@ -81,6 +81,15 @@
       "score": 14,
       "entry": 0.01336593316564114,
       "stop": 0.013611149999999999
+    },
+    "SOXSUSDT:30m": {
+      "sentAt": "2026-11-07T13:02:42.369Z",
+      "symbol": "SOXSUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 71.05400187943482,
+      "stop": 73.1612
     }
   }
 }
