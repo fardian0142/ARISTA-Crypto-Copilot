@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T11:02:53.496Z",
+  "lastUpdated": "2026-11-07T11:17:58.832Z",
   "signals": {
     "PYTHUSDT:15m": {
       "sentAt": "2026-11-07T04:02:56.714Z",
@@ -72,6 +72,15 @@
       "score": 14,
       "entry": 0.06939942,
       "stop": 0.06775815
+    },
+    "PIPPINUSDT:15m": {
+      "sentAt": "2026-11-07T11:17:57.330Z",
+      "symbol": "PIPPINUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.01336593316564114,
+      "stop": 0.013611149999999999
     }
   }
 }
