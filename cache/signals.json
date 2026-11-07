@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T07:18:01.823Z",
+  "lastUpdated": "2026-11-07T07:32:59.209Z",
   "signals": {
     "CHIPUSDT:15m": {
       "sentAt": "2026-11-06T19:48:10.849Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 5.176769245113477,
       "stop": 5.280029999999999
+    },
+    "ZILUSDT:15m": {
+      "sentAt": "2026-11-07T07:32:57.706Z",
+      "symbol": "ZILUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0017591765076646695,
+      "stop": 0.001716855
     }
   }
 }
