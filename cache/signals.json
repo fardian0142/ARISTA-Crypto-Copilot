@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T21:17:35.702Z",
+  "lastUpdated": "2026-11-07T21:32:30.522Z",
   "signals": {
-    "PIPPINUSDT:30m": {
-      "sentAt": "2026-11-07T09:18:01.530Z",
-      "symbol": "PIPPINUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.013485281718539584,
-      "stop": 0.013781870983946424
-    },
     "SNXXUSDT:15m": {
       "sentAt": "2026-11-07T09:32:51.137Z",
       "symbol": "SNXXUSDT",
