@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T19:32:34.229Z",
+  "lastUpdated": "2026-11-07T19:47:39.698Z",
   "signals": {
-    "ZILUSDT:15m": {
-      "sentAt": "2026-11-07T07:32:57.706Z",
-      "symbol": "ZILUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0017591765076646695,
-      "stop": 0.001716855
-    },
     "PIPPINUSDT:30m": {
       "sentAt": "2026-11-07T09:18:01.530Z",
       "symbol": "PIPPINUSDT",
