@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T17:32:36.882Z",
+  "lastUpdated": "2026-11-07T17:47:36.661Z",
   "signals": {
-    "ZENUSDT:15m": {
-      "sentAt": "2026-11-07T05:32:53.405Z",
-      "symbol": "ZENUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 5.176769245113477,
-      "stop": 5.280029999999999
-    },
     "ZILUSDT:15m": {
       "sentAt": "2026-11-07T07:32:57.706Z",
       "symbol": "ZILUSDT",
