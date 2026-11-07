@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T04:32:50.983Z",
+  "lastUpdated": "2026-11-07T04:47:57.021Z",
   "signals": {
     "SPYBUSDT:30m": {
       "sentAt": "2026-11-06T18:33:23.745Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 0.06490357001599772,
       "stop": 0.06646368557716237
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-11-07T04:47:55.518Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 8.68944e-9,
+      "stop": 8.871099999999998e-9
     }
   }
 }
