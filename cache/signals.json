@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T05:17:56.277Z",
+  "lastUpdated": "2026-11-07T05:32:54.908Z",
   "signals": {
     "SPYBUSDT:30m": {
       "sentAt": "2026-11-06T18:33:23.745Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 8.68944e-9,
       "stop": 8.871099999999998e-9
+    },
+    "ZENUSDT:15m": {
+      "sentAt": "2026-11-07T05:32:53.405Z",
+      "symbol": "ZENUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 5.176769245113477,
+      "stop": 5.280029999999999
     }
   }
 }
