@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T23:02:38.534Z",
+  "lastUpdated": "2026-11-07T23:17:35.503Z",
   "signals": {
-    "ZAMAUSDT:15m": {
-      "sentAt": "2026-11-07T11:02:51.994Z",
-      "symbol": "ZAMAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.06939942,
-      "stop": 0.06775815
-    },
     "PIPPINUSDT:15m": {
       "sentAt": "2026-11-07T11:17:57.330Z",
       "symbol": "PIPPINUSDT",
