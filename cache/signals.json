@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-07T07:02:58.079Z",
+  "lastUpdated": "2026-11-07T07:18:01.823Z",
   "signals": {
-    "ATOMUSDT:15m": {
-      "sentAt": "2026-11-06T19:03:10.030Z",
-      "symbol": "ATOMUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.4119040456412202,
-      "stop": 1.3801081802181134
-    },
     "CHIPUSDT:15m": {
       "sentAt": "2026-11-06T19:48:10.849Z",
       "symbol": "CHIPUSDT",
