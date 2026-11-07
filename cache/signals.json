@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T17:47:36.661Z",
+  "lastUpdated": "2026-11-07T18:02:34.597Z",
   "signals": {
     "ZILUSDT:15m": {
       "sentAt": "2026-11-07T07:32:57.706Z",
@@ -99,6 +99,15 @@
       "score": 14,
       "entry": 134.91266851098365,
       "stop": 137.01871532953686
+    },
+    "QNTUSDT:1h": {
+      "sentAt": "2026-11-07T18:02:33.094Z",
+      "symbol": "QNTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 197.04099761742597,
+      "stop": 185.52716327920587
     }
   }
 }
