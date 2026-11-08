@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T09:47:39.458Z",
+  "lastUpdated": "2026-11-08T10:03:29.698Z",
   "signals": {
-    "RAYUSDT:15m": {
-      "sentAt": "2026-11-07T21:47:42.953Z",
-      "symbol": "RAYUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 1.7755176,
-      "stop": 1.7276887834055794
-    },
     "RECALLUSDT:15m": {
       "sentAt": "2026-11-07T22:47:33.193Z",
       "symbol": "RECALLUSDT",
