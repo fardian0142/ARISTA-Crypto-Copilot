@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T10:47:27.833Z",
+  "lastUpdated": "2026-11-08T11:02:25.257Z",
   "signals": {
-    "RECALLUSDT:15m": {
-      "sentAt": "2026-11-07T22:47:33.193Z",
-      "symbol": "RECALLUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.030365935583752206,
-      "stop": 0.029786399999999998
-    },
     "CNPYUSDT:1h": {
       "sentAt": "2026-11-08T03:32:37.587Z",
       "symbol": "CNPYUSDT",
