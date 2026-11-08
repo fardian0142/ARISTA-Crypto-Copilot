@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T13:47:24.361Z",
+  "lastUpdated": "2026-11-08T14:02:35.431Z",
   "signals": {
     "CNPYUSDT:1h": {
       "sentAt": "2026-11-08T03:32:37.587Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 1.3857,
       "stop": 1.4502537283272914
+    },
+    "AAVEUSDT:30m": {
+      "sentAt": "2026-11-08T14:02:33.928Z",
+      "symbol": "AAVEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 129.9,
+      "stop": 133.29485189331737
     }
   }
 }

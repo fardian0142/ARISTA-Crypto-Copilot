@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T13:47:24.363Z",
+  "lastUpdated": "2026-11-08T14:02:35.432Z",
   "allTime": {
     "total": 0,
     "tp1Hit": 0,
@@ -64,6 +64,41 @@
       "tp1Rate": 0
     }
   },
-  "recentSignals": [],
-  "processedSignals": {}
+  "recentSignals": [
+    {
+      "symbol": "AAVEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "entry": 129.9,
+      "stop": 133.29485189331737,
+      "tp1": 124.48577399999999,
+      "tp2": null,
+      "tp3": null,
+      "rr1": 1.594834228455653,
+      "rr2": 0,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-08T14:02:33.928Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-11-08T14:02:33.928Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    }
+  ],
+  "processedSignals": {
+    "AAVEUSDT:30m:2026-11-08T14:02:33.928Z": {
+      "symbol": "AAVEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "status": "pending",
+      "sentAt": "2026-11-08T14:02:33.928Z"
+    }
+  }
 }
