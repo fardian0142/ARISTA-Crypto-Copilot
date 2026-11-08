@@ -109,17 +109,18 @@ function createEmptyStats() {
       stopRate: 0
     },
     byTimeframe: {
-      "15m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
-      "30m": { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
-      "1h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
-      "2h":  { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
+      "15m": { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 },
+      "30m": { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 },
+      "1h":  { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 },
+      "2h":  { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 }
     },
     byDirection: {
-      bullish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 },
-      bearish: { total: 0, tp1Hit: 0, stopped: 0, tp1Rate: 0 }
+      bullish: { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 },
+      bearish: { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 }
     },
     weekly: null,
-    recentSignals: []
+    recentSignals: [],
+    processedSignals: {}
   };
 }
 
@@ -131,6 +132,10 @@ export async function readStats() {
 
     if (!data || typeof data !== "object") {
       return createEmptyStats();
+    }
+
+    if (!data.processedSignals || typeof data.processedSignals !== "object") {
+      data.processedSignals = {};
     }
 
     return data;
