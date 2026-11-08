@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T06:17:37.261Z",
+  "lastUpdated": "2026-11-08T06:32:36.636Z",
   "signals": {
     "RAYUSDT:15m": {
       "sentAt": "2026-11-07T21:47:42.953Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.1648067188346052,
       "stop": 0.15498526713195543
+    },
+    "PIEVERSEUSDT:30m": {
+      "sentAt": "2026-11-08T06:32:35.133Z",
+      "symbol": "PIEVERSEUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1.3857,
+      "stop": 1.4502537283272914
     }
   }
 }
