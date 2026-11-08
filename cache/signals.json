@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T03:02:35.008Z",
+  "lastUpdated": "2026-11-08T03:17:31.794Z",
   "signals": {
-    "MUBUSDT:30m": {
-      "sentAt": "2026-11-07T15:02:47.846Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 692.3310777470757,
-      "stop": 675.83805
-    },
     "EWYBUSDT:30m": {
       "sentAt": "2026-11-07T15:17:50.145Z",
       "symbol": "EWYBUSDT",
