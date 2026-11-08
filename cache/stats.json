@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T18:32:23.008Z",
+  "lastUpdated": "2026-11-08T18:47:33.037Z",
   "allTime": {
     "total": 0,
     "tp1Hit": 0,
@@ -81,8 +81,34 @@
       "sentAt": "2026-11-08T14:02:33.928Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-08T18:31:06.592Z",
+      "statusUpdatedAt": "2026-11-08T18:46:05.416Z",
       "maxR": 0.38,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "STABLEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "entry": 0.026172533575191337,
+      "stop": 0.02505801763102215,
+      "tp1": 0.027414692,
+      "tp2": null,
+      "tp3": null,
+      "rr1": 1.1145272809305815,
+      "rr2": 0,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-08T18:47:31.533Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-11-08T18:47:31.533Z",
+      "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
       "tp3Reached": false,
@@ -99,6 +125,13 @@
       "direction": "bearish",
       "status": "pending",
       "sentAt": "2026-11-08T14:02:33.928Z"
+    },
+    "STABLEUSDT:2h:2026-11-08T18:47:31.533Z": {
+      "symbol": "STABLEUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "status": "pending",
+      "sentAt": "2026-11-08T18:47:31.533Z"
     }
   }
 }
