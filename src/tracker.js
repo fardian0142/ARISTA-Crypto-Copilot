@@ -36,10 +36,13 @@ export async function updateSignalStatus(signal) {
     const sentTime = signal.sentAt ? new Date(signal.sentAt).getTime() : 0;
 
     const allCandles = Array.isArray(analysis._candles) ? analysis._candles : (analysis._lastCandle ? [analysis._lastCandle] : []);
-    const signalCandles = allCandles.filter(c => c && c.time >= sentTime);
+    
+    const signalCandles = allCandles
+      .filter(c => c && c.time >= sentTime && !c.incomplete)
+      .slice(-200);
 
-    if (signalCandles.length === 0 && analysis._lastCandle) {
-      signalCandles.push(analysis._lastCandle);
+    if (signalCandles.length === 0) {
+      return { status: signal.status || "active", maxR: signal.maxR || 0, activated: true, events: [], tp1Reached: signal.tp1Reached || false, tp2Reached: signal.tp2Reached || false, tp3Reached: signal.tp3Reached || false, exitPrice: null };
     }
 
     let stopHit = false;
@@ -54,13 +57,12 @@ export async function updateSignalStatus(signal) {
 
     for (let i = 0; i < signalCandles.length; i++) {
       const candle = signalCandles[i];
-      if (!candle) continue;
 
       if (isBull) {
         if (Number.isFinite(candle.low) && candle.low <= stop && stopIndex === -1) {
           stopHit = true;
           stopIndex = i;
-          exitPrice = Math.min(stop, candle.open);
+          exitPrice = stop;
           break;
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.high) && candle.high >= tp3 && tp3Index === -1) {
@@ -79,7 +81,7 @@ export async function updateSignalStatus(signal) {
         if (Number.isFinite(candle.high) && candle.high >= stop && stopIndex === -1) {
           stopHit = true;
           stopIndex = i;
-          exitPrice = Math.max(stop, candle.open);
+          exitPrice = stop;
           break;
         }
         if (Number.isFinite(tp3) && Number.isFinite(candle.low) && candle.low <= tp3 && tp3Index === -1) {
