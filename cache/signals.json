@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T03:47:33.216Z",
+  "lastUpdated": "2026-11-08T04:02:36.545Z",
   "signals": {
-    "SPCXBUSDT:15m": {
-      "sentAt": "2026-11-07T15:47:37.641Z",
-      "symbol": "SPCXBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 134.91266851098365,
-      "stop": 137.01871532953686
-    },
     "QNTUSDT:1h": {
       "sentAt": "2026-11-07T18:02:33.094Z",
       "symbol": "QNTUSDT",
