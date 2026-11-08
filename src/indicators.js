@@ -2314,7 +2314,7 @@ export function volumeNodesToLevels(candles, currentPrice, atrValue, count, look
   );
 
   const maxDistance = atrValue * CONFIG.FRVP_MAX_DISTANCE_ATR;
-  const minDistance = atrValue * CONFIG.FRV_P_MIN_DISTANCE_ATR;
+  const minDistance = atrValue * CONFIG.FRVP_MIN_DISTANCE_ATR;
 
   const supports = [];
   const resistances = [];
@@ -4925,14 +4925,6 @@ export function detectRangeTradeSetups(
       return null;
     }
 
-    const c1 = candles[currentIndex - 1];
-    const c2 = candles[currentIndex - 2];
-    if (c1 && c2) {
-      if (isBear(c1) && isBear(c2) && cBody(c1) > cRange(c1) * CONFIG.MOMENTUM_BODY_RATIO && cBody(c2) > cRange(c2) * CONFIG.MOMENTUM_BODY_RATIO) {
-        return null;
-      }
-    }
-
     if (
       matchingOB &&
       Number.isFinite(matchingOB.index) &&
@@ -5178,14 +5170,6 @@ export function detectRangeTradeSetups(
 
     if (!displacement) {
       return null;
-    }
-
-    const c1 = candles[currentIndex - 1];
-    const c2 = candles[currentIndex - 2];
-    if (c1 && c2) {
-      if (isBull(c1) && isBull(c2) && cBody(c1) > cRange(c1) * CONFIG.MOMENTUM_BODY_RATIO && cBody(c2) > cRange(c2) * CONFIG.MOMENTUM_BODY_RATIO) {
-        return null;
-      }
     }
 
     if (
