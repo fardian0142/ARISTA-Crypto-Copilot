@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T01:02:28.430Z",
+  "lastUpdated": "2026-11-08T01:17:36.467Z",
   "signals": {
-    "SOXSUSDT:30m": {
-      "sentAt": "2026-11-07T13:02:42.369Z",
-      "symbol": "SOXSUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 71.05400187943482,
-      "stop": 73.1612
-    },
     "MUBARAKUSDT:1h": {
       "sentAt": "2026-11-07T13:47:54.228Z",
       "symbol": "MUBARAKUSDT",
