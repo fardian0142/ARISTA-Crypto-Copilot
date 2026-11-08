@@ -11,7 +11,7 @@ import { CONFIG } from "./config.js";
 import { getTopSymbols } from "./exchanges.js";
 import { analyze } from "./analysis.js";
 import { formatAnalysis, formatSignalResult, formatTradeClosed } from "./format.js";
-import { updateSignalStatus, computeStats } from "./tracker.js";
+import { updateSignalStatus } from "./tracker.js";
 
 const SCAN_TIMEFRAMES = ["15m", "30m", "1h", "2h"];
 const PRIMARY_TIMEFRAME = "1h";
@@ -281,6 +281,66 @@ function markNotified(sig, eventType) {
   else if (eventType === "stopped") sig._stoppedNotified = true;
 }
 
+function updateLifetimeStats(stats, sigKey, oldStatus, newStatus) {
+  if (!stats.allTime) stats.allTime = { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, active: 0, tp1Rate: 0, tp2Rate: 0, tp3Rate: 0, stopRate: 0 };
+  if (!stats.byTimeframe) stats.byTimeframe = {};
+  if (!stats.byDirection) stats.byDirection = {};
+  if (!stats.processedSignals) stats.processedSignals = {};
+
+  const sig = stats.processedSignals[sigKey];
+  if (!sig) return;
+
+  const tf = sig.timeframe;
+  const dir = sig.direction;
+
+  if (!stats.byTimeframe[tf]) stats.byTimeframe[tf] = { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 };
+  if (!stats.byDirection[dir]) stats.byDirection[dir] = { total: 0, tp1Hit: 0, tp2Hit: 0, tp3Hit: 0, stopped: 0, tp1Rate: 0 };
+
+  const statuses = ["active", "tp1_hit", "tp2_hit", "tp3_hit", "stopped"];
+  const getIndex = (st) => statuses.indexOf(st);
+
+  const oldIdx = getIndex(oldStatus);
+  const newIdx = getIndex(newStatus);
+
+  if (newIdx <= oldIdx) return;
+
+  const diff = newIdx - oldIdx;
+
+  const addToStats = (target) => {
+    if (oldStatus === "pending" || oldStatus === "active") target.total++;
+    
+    if (newIdx >= 1) target.tp1Hit += (oldIdx < 1 ? 1 : 0);
+    if (newIdx >= 2) target.tp2Hit += (oldIdx < 2 ? 1 : 0);
+    if (newIdx >= 3) target.tp3Hit += (oldIdx < 3 ? 1 : 0);
+    if (newStatus === "stopped") target.stopped += (oldStatus !== "stopped" ? 1 : 0);
+    
+    if (oldStatus === "active" || oldStatus === "pending") {
+      if (newStatus === "active" || newStatus === "pending") target.active++;
+      else target.active = Math.max(0, target.active - 1);
+    } else if (newStatus === "active" || newStatus === "pending") {
+      target.active++;
+    }
+  };
+
+  addToStats(stats.allTime);
+  addToStats(stats.byTimeframe[tf]);
+  addToStats(stats.byDirection[dir]);
+
+  const recalcRates = (target) => {
+    const finished = target.total - target.active;
+    if (finished > 0) {
+      target.tp1Rate = Math.round((target.tp1Hit / finished) * 1000) / 10;
+      if (target.tp2Rate !== undefined) target.tp2Rate = Math.round((target.tp2Hit / finished) * 1000) / 10;
+      if (target.tp3Rate !== undefined) target.tp3Rate = Math.round((target.tp3Hit / finished) * 1000) / 10;
+      if (target.stopRate !== undefined) target.stopRate = Math.round((target.stopped / finished) * 1000) / 10;
+    }
+  };
+
+  recalcRates(stats.allTime);
+  recalcRates(stats.byTimeframe[tf]);
+  recalcRates(stats.byDirection[dir]);
+}
+
 async function main() {
   const startTime = Date.now();
 
@@ -319,6 +379,8 @@ async function main() {
 
   let stats = await readStats();
 
+  if (!stats.processedSignals) stats.processedSignals = {};
+
   console.log(
     "📥 Loaded cache: " + Object.keys(cache.signals).length + " active signal(s)"
   );
@@ -351,6 +413,19 @@ async function main() {
     if (!r || r.skipped) continue;
     const sig = stats.recentSignals[r.idx];
     if (!sig) continue;
+
+    const oldStatus = sig.status;
+    const newStatus = r.status;
+    
+    if (oldStatus !== newStatus) {
+      const sigKey = sig.symbol + ":" + sig.timeframe + ":" + sig.sentAt;
+      updateLifetimeStats(stats, sigKey, oldStatus, newStatus);
+      summary.tracked++;
+      console.log(
+        "   📊 " + sig.symbol + " [" + sig.timeframe + "] → " + newStatus +
+        (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
+      );
+    }
 
     if (Number.isFinite(r.exitPrice)) {
       sig.exitPrice = r.exitPrice;
@@ -416,15 +491,7 @@ async function main() {
       }
     }
 
-    if (sig.status !== r.status) {
-      summary.tracked++;
-      console.log(
-        "   📊 " + sig.symbol + " [" + sig.timeframe + "] → " + r.status +
-        (Number.isFinite(r.maxR) ? " (maxR: " + r.maxR.toFixed(2) + ")" : "")
-      );
-    }
-
-    sig.status = r.status;
+    sig.status = newStatus;
     if (typeof r.activated === "boolean") sig.activated = r.activated;
     if (Number.isFinite(r.maxR)) sig.maxR = Math.round(r.maxR * 100) / 100;
     if (Number.isFinite(r.exitPrice)) sig.exitPrice = r.exitPrice;
@@ -660,6 +727,9 @@ async function main() {
 
       await sendTelegramMessage(token, chatId, text);
 
+      const sentAt = new Date().toISOString();
+      const sigKey = symbol + ":" + timeframe + ":" + sentAt;
+
       cache.signals = addSignal(cache.signals, symbol, timeframe, {
         direction: active.direction,
         score: active.score,
@@ -697,6 +767,14 @@ async function main() {
         else if (!isBullish && currentPrice >= active.entry) isActivatedNow = true;
       }
 
+      stats.processedSignals[sigKey] = {
+        symbol,
+        timeframe,
+        direction: active.direction,
+        status: isActivatedNow ? "active" : "pending",
+        sentAt
+      };
+
       stats.recentSignals.push({
         symbol,
         timeframe,
@@ -710,7 +788,7 @@ async function main() {
         rr2: active.rr2,
         rr3: active.rr3,
         score: active.score,
-        sentAt: new Date().toISOString(),
+        sentAt: sentAt,
         status: isActivatedNow ? "active" : "pending",
         activated: isActivatedNow,
         statusUpdatedAt: new Date().toISOString(),
@@ -723,6 +801,8 @@ async function main() {
         _tp3Notified: false,
         _stoppedNotified: false
       });
+
+      updateLifetimeStats(stats, sigKey, "none", isActivatedNow ? "active" : "pending");
 
       try {
         await writeCache(cache);
@@ -764,11 +844,6 @@ async function main() {
   if (stats.recentSignals.length > MAX_RECENT_SIGNALS) {
     stats.recentSignals = stats.recentSignals.slice(-MAX_RECENT_SIGNALS);
   }
-
-  const computed = computeStats(stats.recentSignals);
-  stats.allTime = computed.allTime;
-  stats.byTimeframe = computed.byTimeframe;
-  stats.byDirection = computed.byDirection;
 
   try {
     await writeCache(cache);
