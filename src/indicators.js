@@ -3413,6 +3413,40 @@ export function computeUnifiedStop(candles, direction, entryZone, atrValue, swin
   return stopPrice;
 }
 
+function hasStructureBreak(candles, direction, currentIndex) {
+  if (!candles || currentIndex < 2) {
+    return false;
+  }
+
+  const c1 = candles[currentIndex - 1];
+  const c2 = candles[currentIndex - 2];
+  
+  if (!c1 || !c2) return false;
+  if (c1.incomplete) return false; 
+
+  const c1Range = cRange(c1);
+  if (c1Range <= 0) return false;
+  
+  const c1BodyRatio = cBody(c1) / c1Range;
+  const requiredRatio = CONFIG.STRUCTURE_BREAK_BODY_RATIO;
+
+  if (direction === "bearish") {
+    if (isBear(c1) && c1BodyRatio >= requiredRatio) {
+      if (cClose(c1) < cHigh(c2)) {
+        return true;
+      }
+    }
+  } else if (direction === "bullish") {
+    if (isBull(c1) && c1BodyRatio >= requiredRatio) {
+      if (cClose(c1) > cLow(c2)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 export function detectRangeTradeSetups(
   candles,
   currentPrice,
@@ -4895,6 +4929,8 @@ export function detectRangeTradeSetups(
     }
 
     if (rangePosition > CONFIG.RANGE_MAX_POSITION_PCT) return null;
+    
+    if (!hasStructureBreak(candles, "bullish", currentIndex)) return null;
 
     const matchingOB = findMatchingOB("bullish", zone.price);
     const sweep = detectBullishSweep(zone.price);
@@ -5142,6 +5178,8 @@ export function detectRangeTradeSetups(
     }
 
     if (rangePosition < CONFIG.RANGE_MIN_POSITION_PCT) return null;
+    
+    if (!hasStructureBreak(candles, "bearish", currentIndex)) return null;
 
     const matchingOB = findMatchingOB("bearish", zone.price);
     const sweep = detectBearishSweep(zone.price);
