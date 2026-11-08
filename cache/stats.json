@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-11-08T21:47:21.958Z",
+  "lastUpdated": "2026-11-08T22:02:35.586Z",
   "allTime": {
-    "total": 0,
-    "tp1Hit": 0,
+    "total": 1,
+    "tp1Hit": 1,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
     "active": 0,
-    "tp1Rate": 0,
+    "tp1Rate": 100,
     "tp2Rate": 0,
     "tp3Rate": 0,
     "stopRate": 0
@@ -22,12 +22,13 @@
       "tp1Rate": 0
     },
     "30m": {
-      "total": 0,
-      "tp1Hit": 0,
+      "total": 1,
+      "tp1Hit": 1,
       "tp2Hit": 0,
       "tp3Hit": 0,
       "stopped": 0,
-      "tp1Rate": 0
+      "tp1Rate": 0,
+      "active": null
     },
     "1h": {
       "total": 0,
@@ -56,12 +57,13 @@
       "tp1Rate": 0
     },
     "bearish": {
-      "total": 0,
-      "tp1Hit": 0,
+      "total": 1,
+      "tp1Hit": 1,
       "tp2Hit": 0,
       "tp3Hit": 0,
       "stopped": 0,
-      "tp1Rate": 0
+      "tp1Rate": 0,
+      "active": null
     }
   },
   "recentSignals": [
@@ -79,14 +81,14 @@
       "rr3": 0,
       "score": 14,
       "sentAt": "2026-11-08T14:02:33.928Z",
-      "status": "pending",
+      "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-08T21:46:05.427Z",
-      "maxR": 0.43,
-      "tp1Reached": false,
+      "statusUpdatedAt": "2026-11-08T22:01:08.668Z",
+      "maxR": 1.15,
+      "tp1Reached": true,
       "tp2Reached": false,
       "tp3Reached": false,
-      "_tp1Notified": false,
+      "_tp1Notified": true,
       "_tp2Notified": false,
       "_tp3Notified": false,
       "_stoppedNotified": false
@@ -107,7 +109,7 @@
       "sentAt": "2026-11-08T18:47:31.533Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-11-08T21:46:05.427Z",
+      "statusUpdatedAt": "2026-11-08T22:01:08.669Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
