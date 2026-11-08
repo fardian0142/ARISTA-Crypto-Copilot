@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T05:47:35.072Z",
+  "lastUpdated": "2026-11-08T06:02:35.106Z",
   "signals": {
-    "QNTUSDT:1h": {
-      "sentAt": "2026-11-07T18:02:33.094Z",
-      "symbol": "QNTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 197.04099761742597,
-      "stop": 185.52716327920587
-    },
     "RAYUSDT:15m": {
       "sentAt": "2026-11-07T21:47:42.953Z",
       "symbol": "RAYUSDT",
