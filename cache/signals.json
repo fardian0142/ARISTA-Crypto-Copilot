@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-08T01:47:32.901Z",
+  "lastUpdated": "2026-11-08T02:02:28.537Z",
   "signals": {
-    "MUBARAKUSDT:1h": {
-      "sentAt": "2026-11-07T13:47:54.228Z",
-      "symbol": "MUBARAKUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.042022716730517405,
-      "stop": 0.03960814230985082
-    },
     "MUBUSDT:30m": {
       "sentAt": "2026-11-07T15:02:47.846Z",
       "symbol": "MUBUSDT",
