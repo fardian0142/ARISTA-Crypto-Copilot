@@ -1183,20 +1183,6 @@ export async function analyze(symbol, timeframe) {
         ? emaTrend.trend
         : "neutral";
 
-    if (
-      emaDirection !== "neutral" &&
-      emaDirection !== direction &&
-      profile.strictHTF
-    ) {
-      return fail(
-        "EMA " +
-          emaFastLabel +
-          "/" +
-          emaSlowLabel +
-          " خلاف جهت ستاپ است"
-      );
-    }
-
     const fvgs = detectFvgs(
       candles,
       currentAtr,
