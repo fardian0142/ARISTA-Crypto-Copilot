@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-09T15:33:08.188Z",
+  "lastUpdated": "2026-11-09T15:48:02.287Z",
   "signals": {
-    "WBETHUSDT:15m": {
-      "sentAt": "2026-11-09T03:47:37.956Z",
-      "symbol": "WBETHUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 2385.923026217671,
-      "stop": 2321.914
-    },
     "LSKUSDT:30m": {
       "sentAt": "2026-11-09T09:17:51.864Z",
       "symbol": "LSKUSDT",
