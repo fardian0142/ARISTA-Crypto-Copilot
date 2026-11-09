@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-09T13:02:52.600Z",
+  "lastUpdated": "2026-11-09T13:17:54.100Z",
   "signals": {
-    "ETHFIUSDT:15m": {
-      "sentAt": "2026-11-09T01:17:35.721Z",
-      "symbol": "ETHFIUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.58485,
-      "stop": 0.606696
-    },
     "WBETHUSDT:15m": {
       "sentAt": "2026-11-09T03:47:37.956Z",
       "symbol": "WBETHUSDT",
