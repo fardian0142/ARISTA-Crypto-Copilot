@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-11-09T01:02:31.108Z",
+  "lastUpdated": "2026-11-09T01:17:37.224Z",
   "allTime": {
     "total": 1,
     "tp1Hit": 1,
     "tp2Hit": 0,
     "tp3Hit": 0,
     "stopped": 0,
-    "active": 0,
+    "active": 1,
     "tp1Rate": 100,
     "tp2Rate": 0,
     "tp3Rate": 0,
@@ -19,7 +19,8 @@
       "tp2Hit": 0,
       "tp3Hit": 0,
       "stopped": 0,
-      "tp1Rate": 0
+      "tp1Rate": 0,
+      "active": null
     },
     "30m": {
       "total": 1,
@@ -63,7 +64,7 @@
       "tp3Hit": 0,
       "stopped": 0,
       "tp1Rate": 0,
-      "active": null
+      "active": 1
     }
   },
   "recentSignals": [
@@ -83,7 +84,7 @@
       "sentAt": "2026-11-08T14:02:33.928Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-09T01:01:06.523Z",
+      "statusUpdatedAt": "2026-11-09T01:16:07.051Z",
       "maxR": 1.37,
       "tp1Reached": true,
       "tp2Reached": false,
@@ -109,7 +110,33 @@
       "sentAt": "2026-11-08T18:47:31.533Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-11-09T01:01:06.523Z",
+      "statusUpdatedAt": "2026-11-09T01:16:07.051Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "ETHFIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 0.58485,
+      "stop": 0.606696,
+      "tp1": 0.55951776,
+      "tp2": null,
+      "tp3": null,
+      "rr1": 1.1595825322713527,
+      "rr2": 0,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-09T01:17:35.721Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-11-09T01:17:35.721Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -134,6 +161,13 @@
       "direction": "bullish",
       "status": "pending",
       "sentAt": "2026-11-08T18:47:31.533Z"
+    },
+    "ETHFIUSDT:15m:2026-11-09T01:17:35.721Z": {
+      "symbol": "ETHFIUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "status": "active",
+      "sentAt": "2026-11-09T01:17:35.721Z"
     }
   }
 }
