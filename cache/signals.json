@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-09T17:03:05.011Z",
+  "lastUpdated": "2026-11-09T17:18:06.964Z",
   "signals": {
     "LSKUSDT:30m": {
       "sentAt": "2026-11-09T09:17:51.864Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.17185,
       "stop": 0.16366630337166752
+    },
+    "CAPUSDT:15m": {
+      "sentAt": "2026-11-09T17:18:05.462Z",
+      "symbol": "CAPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.10127,
+      "stop": 0.0980686
     }
   }
 }

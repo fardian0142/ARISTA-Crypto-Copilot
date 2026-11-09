@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-09T17:03:05.012Z",
+  "lastUpdated": "2026-11-09T17:18:06.965Z",
   "allTime": {
     "total": 4,
     "tp1Hit": 4,
@@ -86,7 +86,7 @@
       "sentAt": "2026-11-08T18:47:31.533Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-09T17:01:05.917Z",
+      "statusUpdatedAt": "2026-11-09T17:16:08.377Z",
       "maxR": 0.69,
       "tp1Reached": true,
       "tp2Reached": false,
@@ -112,8 +112,34 @@
       "sentAt": "2026-11-09T09:17:51.864Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-09T17:01:05.917Z",
+      "statusUpdatedAt": "2026-11-09T17:16:08.378Z",
       "maxR": 0.54,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "CAPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "entry": 0.10127,
+      "stop": 0.0980686,
+      "tp1": 0.105859544,
+      "tp2": 0.108564544,
+      "tp3": null,
+      "rr1": 1.4336052976822673,
+      "rr2": 2.2785481351908587,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-09T17:18:05.462Z",
+      "status": "pending",
+      "activated": false,
+      "statusUpdatedAt": "2026-11-09T17:18:05.462Z",
+      "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
       "tp3Reached": false,
@@ -158,6 +184,13 @@
       "direction": "bullish",
       "status": "pending",
       "sentAt": "2026-11-09T09:17:51.864Z"
+    },
+    "CAPUSDT:15m:2026-11-09T17:18:05.462Z": {
+      "symbol": "CAPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "status": "pending",
+      "sentAt": "2026-11-09T17:18:05.462Z"
     }
   }
 }
