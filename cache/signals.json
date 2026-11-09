@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-09T01:47:30.441Z",
+  "lastUpdated": "2026-11-09T02:02:39.195Z",
   "signals": {
-    "AAVEUSDT:30m": {
-      "sentAt": "2026-11-08T14:02:33.928Z",
-      "symbol": "AAVEUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 129.9,
-      "stop": 133.29485189331737
-    },
     "STABLEUSDT:2h": {
       "sentAt": "2026-11-08T18:47:31.533Z",
       "symbol": "STABLEUSDT",
