@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-10T14:47:57.469Z",
+  "lastUpdated": "2026-11-10T15:03:15.064Z",
   "signals": {
-    "TSMBUSDT:30m": {
-      "sentAt": "2026-11-10T03:03:10.538Z",
-      "symbol": "TSMBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 389.26,
-      "stop": 398.6466
-    },
     "GRVTUSDT:15m": {
       "sentAt": "2026-11-10T05:32:56.625Z",
       "symbol": "GRVTUSDT",
@@ -108,6 +99,15 @@
       "score": 14,
       "entry": 643.7390186783733,
       "stop": 658.869
+    },
+    "AAPLBUSDT:30m": {
+      "sentAt": "2026-11-10T15:03:13.562Z",
+      "symbol": "AAPLBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 351.03777711419,
+      "stop": 358.23436151798506
     }
   }
 }
