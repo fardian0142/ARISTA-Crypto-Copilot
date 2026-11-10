@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-10T17:17:57.859Z",
+  "lastUpdated": "2026-11-10T17:32:57.755Z",
   "signals": {
-    "GRVTUSDT:15m": {
-      "sentAt": "2026-11-10T05:32:56.625Z",
-      "symbol": "GRVTUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.20169991273938404,
-      "stop": 0.206958
-    },
     "CXMTUSDT:1h": {
       "sentAt": "2026-11-10T09:18:08.273Z",
       "symbol": "CXMTUSDT",
