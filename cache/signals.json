@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T01:02:57.527Z",
+  "lastUpdated": "2026-11-10T01:18:08.897Z",
   "signals": {
     "CAPUSDT:15m": {
       "sentAt": "2026-11-09T17:18:05.462Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.10127,
       "stop": 0.0980686
+    },
+    "EWYBUSDT:30m": {
+      "sentAt": "2026-11-10T01:18:07.395Z",
+      "symbol": "EWYBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 142.115,
+      "stop": 145.74779999999998
     }
   }
 }
