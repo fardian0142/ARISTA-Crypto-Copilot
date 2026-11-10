@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-11-10T05:17:53.615Z",
+  "lastUpdated": "2026-11-10T05:32:58.129Z",
   "allTime": {
     "total": 4,
     "tp1Hit": 4,
     "tp2Hit": 3,
     "tp3Hit": 3,
     "stopped": 3,
-    "active": 0,
-    "tp1Rate": 100,
-    "tp2Rate": 75,
-    "tp3Rate": 75,
-    "stopRate": 75
+    "active": 1,
+    "tp1Rate": 133.3,
+    "tp2Rate": 100,
+    "tp3Rate": 100,
+    "stopRate": 100
   },
   "byTimeframe": {
     "15m": {
@@ -19,8 +19,8 @@
       "tp2Hit": 2,
       "tp3Hit": 2,
       "stopped": 2,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 200,
+      "active": 1
     },
     "30m": {
       "total": 1,
@@ -65,8 +65,8 @@
       "tp2Hit": 2,
       "tp3Hit": 2,
       "stopped": 2,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 200,
+      "active": 1
     }
   },
   "recentSignals": [
@@ -86,7 +86,7 @@
       "sentAt": "2026-11-08T18:47:31.533Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
       "maxR": 4.07,
       "tp1Reached": true,
       "tp2Reached": false,
@@ -112,7 +112,7 @@
       "sentAt": "2026-11-09T09:17:51.864Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
       "maxR": 0.54,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -138,8 +138,8 @@
       "sentAt": "2026-11-09T17:18:05.462Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
-      "maxR": 0.02,
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
+      "maxR": 0.19,
       "tp1Reached": false,
       "tp2Reached": false,
       "tp3Reached": false,
@@ -164,7 +164,7 @@
       "sentAt": "2026-11-10T01:18:07.395Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -190,7 +190,7 @@
       "sentAt": "2026-11-10T01:48:07.001Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -216,7 +216,33 @@
       "sentAt": "2026-11-10T03:03:10.538Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-10T05:16:08.733Z",
+      "statusUpdatedAt": "2026-11-10T05:31:08.571Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "entry": 0.20169991273938404,
+      "stop": 0.206958,
+      "tp1": 0.19561039,
+      "tp2": 0.19416039000000002,
+      "tp3": null,
+      "rr1": 1.1581250819087152,
+      "rr2": 1.4338907602116875,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-10T05:32:56.625Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-11-10T05:32:56.625Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -290,6 +316,13 @@
       "direction": "bearish",
       "status": "pending",
       "sentAt": "2026-11-10T03:03:10.538Z"
+    },
+    "GRVTUSDT:15m:2026-11-10T05:32:56.625Z": {
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "status": "active",
+      "sentAt": "2026-11-10T05:32:56.625Z"
     }
   }
 }

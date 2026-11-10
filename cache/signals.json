@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-10T05:17:53.614Z",
+  "lastUpdated": "2026-11-10T05:32:58.129Z",
   "signals": {
-    "CAPUSDT:15m": {
-      "sentAt": "2026-11-09T17:18:05.462Z",
-      "symbol": "CAPUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.10127,
-      "stop": 0.0980686
-    },
     "EWYBUSDT:30m": {
       "sentAt": "2026-11-10T01:18:07.395Z",
       "symbol": "EWYBUSDT",
@@ -36,6 +27,15 @@
       "score": 14,
       "entry": 389.26,
       "stop": 398.6466
+    },
+    "GRVTUSDT:15m": {
+      "sentAt": "2026-11-10T05:32:56.625Z",
+      "symbol": "GRVTUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.20169991273938404,
+      "stop": 0.206958
     }
   }
 }
