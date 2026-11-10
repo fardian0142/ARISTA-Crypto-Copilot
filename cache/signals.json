@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-10T13:48:03.686Z",
+  "lastUpdated": "2026-11-10T14:03:01.537Z",
   "signals": {
-    "KGENUSDT:15m": {
-      "sentAt": "2026-11-10T01:48:07.001Z",
-      "symbol": "KGENUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.06563690702035543,
-      "stop": 0.067524
-    },
     "TSMBUSDT:30m": {
       "sentAt": "2026-11-10T03:03:10.538Z",
       "symbol": "TSMBUSDT",
