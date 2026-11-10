@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T12:18:01.364Z",
+  "lastUpdated": "2026-11-10T12:33:10.236Z",
   "signals": {
     "EWYBUSDT:30m": {
       "sentAt": "2026-11-10T01:18:07.395Z",
@@ -45,6 +45,33 @@
       "score": 14,
       "entry": 6.122235417070466,
       "stop": 5.9486
+    },
+    "SKHYBUSDT:15m": {
+      "sentAt": "2026-11-10T12:33:05.166Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 132.1869137215945,
+      "stop": 135.46620000000001
+    },
+    "TSLABUSDT:15m": {
+      "sentAt": "2026-11-10T12:33:07.018Z",
+      "symbol": "TSLABUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 375.98,
+      "stop": 384.24047262517524
+    },
+    "BEBUSDT:30m": {
+      "sentAt": "2026-11-10T12:33:08.734Z",
+      "symbol": "BEBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 190.89735354734805,
+      "stop": 197.00279999999998
     }
   }
 }
