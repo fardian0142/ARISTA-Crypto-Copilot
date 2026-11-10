@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T02:48:00.621Z",
+  "lastUpdated": "2026-11-10T03:03:12.040Z",
   "signals": {
     "CAPUSDT:15m": {
       "sentAt": "2026-11-09T17:18:05.462Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.06563690702035543,
       "stop": 0.067524
+    },
+    "TSMBUSDT:30m": {
+      "sentAt": "2026-11-10T03:03:10.538Z",
+      "symbol": "TSMBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 389.26,
+      "stop": 398.6466
     }
   }
 }
