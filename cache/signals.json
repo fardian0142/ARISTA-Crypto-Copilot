@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-10T21:17:55.306Z",
+  "lastUpdated": "2026-11-10T21:33:04.461Z",
   "signals": {
-    "CXMTUSDT:1h": {
-      "sentAt": "2026-11-10T09:18:08.273Z",
-      "symbol": "CXMTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 6.122235417070466,
-      "stop": 5.9486
-    },
     "SKHYBUSDT:15m": {
       "sentAt": "2026-11-10T12:33:05.166Z",
       "symbol": "SKHYBUSDT",
