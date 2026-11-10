@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T22:03:08.122Z",
+  "lastUpdated": "2026-11-10T22:18:05.076Z",
   "signals": {
     "SKHYBUSDT:15m": {
       "sentAt": "2026-11-10T12:33:05.166Z",
@@ -90,6 +90,15 @@
       "score": 14,
       "entry": 351.03777711419,
       "stop": 358.23436151798506
+    },
+    "XPLUSDT:1h": {
+      "sentAt": "2026-11-10T22:18:03.573Z",
+      "symbol": "XPLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.053110000000000004,
+      "stop": 0.05022678806786946
     }
   }
 }
