@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T14:03:01.537Z",
+  "lastUpdated": "2026-11-10T14:18:02.428Z",
   "signals": {
     "TSMBUSDT:30m": {
       "sentAt": "2026-11-10T03:03:10.538Z",
@@ -99,6 +99,15 @@
       "score": 14,
       "entry": 722.6361529403291,
       "stop": 744.1511999999999
+    },
+    "METABUSDT:1h": {
+      "sentAt": "2026-11-10T14:18:00.926Z",
+      "symbol": "METABUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 643.7390186783733,
+      "stop": 658.869
     }
   }
 }
