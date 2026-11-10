@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T12:33:10.236Z",
+  "lastUpdated": "2026-11-10T12:48:04.379Z",
   "signals": {
     "EWYBUSDT:30m": {
       "sentAt": "2026-11-10T01:18:07.395Z",
@@ -72,6 +72,24 @@
       "score": 14,
       "entry": 190.89735354734805,
       "stop": 197.00279999999998
+    },
+    "LITEBUSDT:15m": {
+      "sentAt": "2026-11-10T12:48:01.029Z",
+      "symbol": "LITEBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 580.02,
+      "stop": 598.3218
+    },
+    "MUUBUSDT:15m": {
+      "sentAt": "2026-11-10T12:48:02.877Z",
+      "symbol": "MUUBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 15.05,
+      "stop": 15.5856
     }
   }
 }
