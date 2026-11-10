@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T09:03:00.636Z",
+  "lastUpdated": "2026-11-10T09:18:09.776Z",
   "signals": {
     "EWYBUSDT:30m": {
       "sentAt": "2026-11-10T01:18:07.395Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 0.20169991273938404,
       "stop": 0.206958
+    },
+    "CXMTUSDT:1h": {
+      "sentAt": "2026-11-10T09:18:08.273Z",
+      "symbol": "CXMTUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 6.122235417070466,
+      "stop": 5.9486
     }
   }
 }
