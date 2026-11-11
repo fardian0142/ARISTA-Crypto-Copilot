@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T12:18:06.804Z",
+  "lastUpdated": "2026-11-11T12:32:54.313Z",
   "signals": {
     "HAEDALUSDT:1h": {
       "sentAt": "2026-11-11T04:18:09.193Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.07630285327107339,
       "stop": 0.0736372
+    },
+    "AMZNBUSDT:30m": {
+      "sentAt": "2026-11-11T12:32:52.810Z",
+      "symbol": "AMZNBUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 271.05,
+      "stop": 277.4196
     }
   }
 }
