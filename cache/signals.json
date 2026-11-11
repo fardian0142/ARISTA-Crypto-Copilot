@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T00:03:05.513Z",
+  "lastUpdated": "2026-11-11T00:18:07.412Z",
   "signals": {
     "SKHYBUSDT:15m": {
       "sentAt": "2026-11-10T12:33:05.166Z",
@@ -99,6 +99,15 @@
       "score": 14,
       "entry": 0.053110000000000004,
       "stop": 0.05022678806786946
+    },
+    "ENAUSDT:15m": {
+      "sentAt": "2026-11-11T00:18:05.907Z",
+      "symbol": "ENAUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.15055000000000002,
+      "stop": 0.147
     }
   }
 }
