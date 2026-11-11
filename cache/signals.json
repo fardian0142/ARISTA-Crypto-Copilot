@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T03:02:53.507Z",
+  "lastUpdated": "2026-11-11T03:17:54.528Z",
   "signals": {
-    "AAPLBUSDT:30m": {
-      "sentAt": "2026-11-10T15:03:13.562Z",
-      "symbol": "AAPLBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 351.03777711419,
-      "stop": 358.23436151798506
-    },
     "XPLUSDT:1h": {
       "sentAt": "2026-11-10T22:18:03.573Z",
       "symbol": "XPLUSDT",
