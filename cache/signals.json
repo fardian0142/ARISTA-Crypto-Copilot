@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T01:17:48.310Z",
+  "lastUpdated": "2026-11-11T01:32:58.807Z",
   "signals": {
-    "MUBUSDT:15m": {
-      "sentAt": "2026-11-10T13:18:10.947Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 722.139751127988,
-      "stop": 742.5702
-    },
-    "AZTECUSDT:1h": {
-      "sentAt": "2026-11-10T13:18:12.691Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.013005,
-      "stop": 0.012462487001204885
-    },
-    "XMUUSDT:15m": {
-      "sentAt": "2026-11-10T13:18:14.550Z",
-      "symbol": "XMUUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 722.6361529403291,
-      "stop": 744.1511999999999
-    },
     "METABUSDT:1h": {
       "sentAt": "2026-11-10T14:18:00.926Z",
       "symbol": "METABUSDT",
