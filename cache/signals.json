@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T23:33:03.536Z",
+  "lastUpdated": "2026-11-11T23:48:02.945Z",
   "signals": {
-    "BEATUSDT:15m": {
-      "sentAt": "2026-11-11T11:48:00.566Z",
-      "symbol": "BEATUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.07630285327107339,
-      "stop": 0.0736372
-    },
     "AMZNBUSDT:30m": {
       "sentAt": "2026-11-11T12:32:52.810Z",
       "symbol": "AMZNBUSDT",
@@ -27,6 +18,15 @@
       "score": 14,
       "entry": 1.0639528095935074,
       "stop": 1.0360559999999999
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-11-11T23:48:01.443Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01251,
+      "stop": 0.0121716
     }
   }
 }
