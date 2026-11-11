@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T17:33:05.611Z",
+  "lastUpdated": "2026-11-11T17:47:58.458Z",
   "signals": {
-    "XAUUSDT:30m": {
-      "sentAt": "2026-11-11T05:47:57.976Z",
-      "symbol": "XAUUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 4056.6,
-      "stop": 3968.0591999999997
-    },
     "BEATUSDT:15m": {
       "sentAt": "2026-11-11T11:48:00.566Z",
       "symbol": "BEATUSDT",
