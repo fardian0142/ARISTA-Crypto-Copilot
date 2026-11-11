@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-11-11T20:02:45.431Z",
+  "lastUpdated": "2026-11-11T20:18:03.235Z",
   "allTime": {
     "total": 21,
     "tp1Hit": 21,
     "tp2Hit": 28,
     "tp3Hit": 18,
     "stopped": 16,
-    "active": 1,
-    "tp1Rate": 105,
-    "tp2Rate": 140,
-    "tp3Rate": 90,
-    "stopRate": 80
+    "active": 2,
+    "tp1Rate": 110.5,
+    "tp2Rate": 147.4,
+    "tp3Rate": 94.7,
+    "stopRate": 84.2
   },
   "byTimeframe": {
     "15m": {
@@ -19,8 +19,8 @@
       "tp2Hit": 21,
       "tp3Hit": 11,
       "stopped": 10,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 108.3,
+      "active": 1
     },
     "30m": {
       "total": 5,
@@ -57,8 +57,8 @@
       "tp2Hit": 15,
       "tp3Hit": 6,
       "stopped": 4,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 114.3,
+      "active": 1
     },
     "bearish": {
       "total": 13,
@@ -87,7 +87,7 @@
       "sentAt": "2026-11-08T18:47:31.533Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 4.07,
       "tp1Reached": true,
       "tp2Reached": false,
@@ -113,7 +113,7 @@
       "sentAt": "2026-11-10T05:32:56.625Z",
       "status": "tp2_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 3.13,
       "tp1Reached": true,
       "tp2Reached": true,
@@ -139,8 +139,8 @@
       "sentAt": "2026-11-10T14:18:00.926Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
-      "maxR": 0.55,
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
+      "maxR": 0.56,
       "tp1Reached": false,
       "tp2Reached": false,
       "tp3Reached": false,
@@ -165,7 +165,7 @@
       "sentAt": "2026-11-10T15:03:13.562Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -191,7 +191,7 @@
       "sentAt": "2026-11-10T22:18:03.573Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 0.42,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -217,7 +217,7 @@
       "sentAt": "2026-11-11T00:18:05.907Z",
       "status": "tp2_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 1.35,
       "tp1Reached": true,
       "tp2Reached": true,
@@ -243,7 +243,7 @@
       "sentAt": "2026-11-11T04:18:09.193Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 0.68,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -269,7 +269,7 @@
       "sentAt": "2026-11-11T05:47:57.976Z",
       "status": "pending",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 0.04,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -295,8 +295,34 @@
       "sentAt": "2026-11-11T12:32:52.810Z",
       "status": "active",
       "activated": true,
-      "statusUpdatedAt": "2026-11-11T20:01:07.424Z",
+      "statusUpdatedAt": "2026-11-11T20:16:06.426Z",
       "maxR": 0.78,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "entry": 1.0639528095935074,
+      "stop": 1.0360559999999999,
+      "tp1": 1.10308736,
+      "tp2": null,
+      "tp3": null,
+      "rr1": 1.4028324735600057,
+      "rr2": 0,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-11T20:18:01.733Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-11-11T20:18:01.733Z",
+      "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
       "tp3Reached": false,
@@ -495,6 +521,13 @@
       "direction": "bearish",
       "status": "active",
       "sentAt": "2026-11-11T12:32:52.810Z"
+    },
+    "XRPUSDT:15m:2026-11-11T20:18:01.733Z": {
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "status": "active",
+      "sentAt": "2026-11-11T20:18:01.733Z"
     }
   }
 }

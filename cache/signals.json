@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T20:02:45.430Z",
+  "lastUpdated": "2026-11-11T20:18:03.234Z",
   "signals": {
     "BEATUSDT:15m": {
       "sentAt": "2026-11-11T11:48:00.566Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 271.05,
       "stop": 277.4196
+    },
+    "XRPUSDT:15m": {
+      "sentAt": "2026-11-11T20:18:01.733Z",
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 1.0639528095935074,
+      "stop": 1.0360559999999999
     }
   }
 }
