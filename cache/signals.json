@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T12:03:05.117Z",
+  "lastUpdated": "2026-11-11T12:18:06.804Z",
   "signals": {
-    "ENAUSDT:15m": {
-      "sentAt": "2026-11-11T00:18:05.907Z",
-      "symbol": "ENAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.15055000000000002,
-      "stop": 0.147
-    },
     "HAEDALUSDT:1h": {
       "sentAt": "2026-11-11T04:18:09.193Z",
       "symbol": "HAEDALUSDT",
