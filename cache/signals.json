@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T10:17:59.355Z",
+  "lastUpdated": "2026-11-11T10:32:58.034Z",
   "signals": {
-    "XPLUSDT:1h": {
-      "sentAt": "2026-11-10T22:18:03.573Z",
-      "symbol": "XPLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.053110000000000004,
-      "stop": 0.05022678806786946
-    },
     "ENAUSDT:15m": {
       "sentAt": "2026-11-11T00:18:05.907Z",
       "symbol": "ENAUSDT",
