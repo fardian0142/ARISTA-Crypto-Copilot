@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T16:17:43.467Z",
+  "lastUpdated": "2026-11-11T16:33:01.789Z",
   "signals": {
-    "HAEDALUSDT:1h": {
-      "sentAt": "2026-11-11T04:18:09.193Z",
-      "symbol": "HAEDALUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.025061229186717167,
-      "stop": 0.02370939275402599
-    },
     "XAUUSDT:30m": {
       "sentAt": "2026-11-11T05:47:57.976Z",
       "symbol": "XAUUSDT",
