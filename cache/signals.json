@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-11T02:17:55.945Z",
+  "lastUpdated": "2026-11-11T02:32:54.539Z",
   "signals": {
-    "METABUSDT:1h": {
-      "sentAt": "2026-11-10T14:18:00.926Z",
-      "symbol": "METABUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 643.7390186783733,
-      "stop": 658.869
-    },
     "AAPLBUSDT:30m": {
       "sentAt": "2026-11-10T15:03:13.562Z",
       "symbol": "AAPLBUSDT",
