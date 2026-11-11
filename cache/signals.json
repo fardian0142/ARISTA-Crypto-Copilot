@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T11:33:09.310Z",
+  "lastUpdated": "2026-11-11T11:48:02.068Z",
   "signals": {
     "ENAUSDT:15m": {
       "sentAt": "2026-11-11T00:18:05.907Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 4056.6,
       "stop": 3968.0591999999997
+    },
+    "BEATUSDT:15m": {
+      "sentAt": "2026-11-11T11:48:00.566Z",
+      "symbol": "BEATUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.07630285327107339,
+      "stop": 0.0736372
     }
   }
 }
