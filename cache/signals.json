@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T18:17:59.863Z",
+  "lastUpdated": "2026-11-12T18:33:03.400Z",
   "signals": {
     "AXISUSDT:15m": {
       "sentAt": "2026-11-12T10:02:50.012Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 43.37,
       "stop": 44.53582824261982
+    },
+    "BOMEUSDT:30m": {
+      "sentAt": "2026-11-12T18:33:01.897Z",
+      "symbol": "BOMEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0005611500000000001,
+      "stop": 0.0005373726564843792
     }
   }
 }
