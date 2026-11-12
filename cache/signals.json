@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T13:33:05.045Z",
+  "lastUpdated": "2026-11-12T13:47:54.091Z",
   "signals": {
     "AXISUSDT:15m": {
       "sentAt": "2026-11-12T10:02:50.012Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 0.25290000061770934,
       "stop": 0.24598
+    },
+    "DRAMBUSDT:1h": {
+      "sentAt": "2026-11-12T13:47:52.588Z",
+      "symbol": "DRAMBUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 43.37,
+      "stop": 44.53582824261982
     }
   }
 }
