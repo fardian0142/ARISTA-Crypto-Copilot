@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-12T00:32:52.300Z",
+  "lastUpdated": "2026-11-12T00:47:58.313Z",
   "signals": {
-    "AMZNBUSDT:30m": {
-      "sentAt": "2026-11-11T12:32:52.810Z",
-      "symbol": "AMZNBUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 271.05,
-      "stop": 277.4196
-    },
     "XRPUSDT:15m": {
       "sentAt": "2026-11-11T20:18:01.733Z",
       "symbol": "XRPUSDT",
