@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T09:47:54.448Z",
+  "lastUpdated": "2026-11-12T10:02:51.514Z",
   "signals": {
     "AZTECUSDT:15m": {
       "sentAt": "2026-11-11T23:48:01.443Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.01251,
       "stop": 0.0121716
+    },
+    "AXISUSDT:15m": {
+      "sentAt": "2026-11-12T10:02:50.012Z",
+      "symbol": "AXISUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.09757300000000001,
+      "stop": 0.09408
     }
   }
 }
