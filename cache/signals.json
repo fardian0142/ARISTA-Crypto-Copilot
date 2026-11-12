@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T12:48:04.748Z",
+  "lastUpdated": "2026-11-12T13:03:07.771Z",
   "signals": {
     "AXISUSDT:15m": {
       "sentAt": "2026-11-12T10:02:50.012Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.09757300000000001,
       "stop": 0.09408
+    },
+    "CYBERUSDT:15m": {
+      "sentAt": "2026-11-12T13:03:06.268Z",
+      "symbol": "CYBERUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.25290000061770934,
+      "stop": 0.24598
     }
   }
 }
