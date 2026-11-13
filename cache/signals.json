@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-13T14:48:03.951Z",
-  "signals": {}
+  "lastUpdated": "2026-11-13T15:03:11.417Z",
+  "signals": {
+    "XQQQUSDT:1h": {
+      "sentAt": "2026-11-13T15:03:09.915Z",
+      "symbol": "XQQQUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 686.81,
+      "stop": 701.7192
+    }
+  }
 }
