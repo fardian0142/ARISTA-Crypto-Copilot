@@ -1,23 +1,4 @@
 {
-  "lastUpdated": "2026-11-13T06:32:58.447Z",
-  "signals": {
-    "BOMEUSDT:30m": {
-      "sentAt": "2026-11-12T18:33:01.897Z",
-      "symbol": "BOMEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0005611500000000001,
-      "stop": 0.0005373726564843792
-    },
-    "ETHWUSDT:30m": {
-      "sentAt": "2026-11-12T18:48:00.208Z",
-      "symbol": "ETHWUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.2027606,
-      "stop": 0.196
-    }
-  }
+  "lastUpdated": "2026-11-13T06:48:07.317Z",
+  "signals": {}
 }
