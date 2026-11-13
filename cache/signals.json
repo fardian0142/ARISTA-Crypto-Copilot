@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-13T01:32:47.706Z",
+  "lastUpdated": "2026-11-13T01:47:56.174Z",
   "signals": {
-    "DRAMBUSDT:1h": {
-      "sentAt": "2026-11-12T13:47:52.588Z",
-      "symbol": "DRAMBUSDT",
-      "timeframe": "1h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 43.37,
-      "stop": 44.53582824261982
-    },
     "BOMEUSDT:30m": {
       "sentAt": "2026-11-12T18:33:01.897Z",
       "symbol": "BOMEUSDT",
