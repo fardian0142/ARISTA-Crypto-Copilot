@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-13T01:02:48.341Z",
+  "lastUpdated": "2026-11-13T01:18:03.864Z",
   "signals": {
-    "CYBERUSDT:15m": {
-      "sentAt": "2026-11-12T13:03:06.268Z",
-      "symbol": "CYBERUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.25290000061770934,
-      "stop": 0.24598
-    },
     "DRAMBUSDT:1h": {
       "sentAt": "2026-11-12T13:47:52.588Z",
       "symbol": "DRAMBUSDT",
