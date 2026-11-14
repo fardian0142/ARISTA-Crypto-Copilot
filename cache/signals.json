@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-14T12:32:53.052Z",
-  "signals": {
-    "BASEDUSDT:15m": {
-      "sentAt": "2026-11-14T00:33:09.948Z",
-      "symbol": "BASEDUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.03998,
-      "stop": 0.04131
-    }
-  }
+  "lastUpdated": "2026-11-14T12:47:44.729Z",
+  "signals": {}
 }
