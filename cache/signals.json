@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-14T05:02:45.267Z",
+  "lastUpdated": "2026-11-14T05:17:58.538Z",
   "signals": {
-    "XQQQUSDT:2h": {
-      "sentAt": "2026-11-13T17:03:03.549Z",
-      "symbol": "XQQQUSDT",
-      "timeframe": "2h",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 682.25,
-      "stop": 704.1774
-    },
     "BASEDUSDT:15m": {
       "sentAt": "2026-11-14T00:33:09.948Z",
       "symbol": "BASEDUSDT",
