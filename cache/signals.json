@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T22:02:46.351Z",
+  "lastUpdated": "2026-11-15T22:17:59.037Z",
   "signals": {
     "HBARUSDT:30m": {
       "sentAt": "2026-11-15T19:02:56.254Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.05847928949727856,
       "stop": 0.056555799999999996
+    },
+    "BNCBUSDT:15m": {
+      "sentAt": "2026-11-15T22:17:57.121Z",
+      "symbol": "BNCBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3.7944561067429303,
+      "stop": 3.7043999999999997
     }
   }
 }
