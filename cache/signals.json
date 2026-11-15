@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-15T18:47:59.585Z",
-  "signals": {}
+  "lastUpdated": "2026-11-15T19:02:57.758Z",
+  "signals": {
+    "HBARUSDT:30m": {
+      "sentAt": "2026-11-15T19:02:56.254Z",
+      "symbol": "HBARUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.05847928949727856,
+      "stop": 0.056555799999999996
+    }
+  }
 }
