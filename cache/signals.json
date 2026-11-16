@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T20:48:05.523Z",
+  "lastUpdated": "2026-11-16T21:03:03.957Z",
   "signals": {
-    "GIGGLEUSDT:15m": {
-      "sentAt": "2026-11-16T09:02:50.923Z",
-      "symbol": "GIGGLEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 22.545,
-      "stop": 23.04308357128791
-    },
     "JUPUSDT:30m": {
       "sentAt": "2026-11-16T09:32:48.963Z",
       "symbol": "JUPUSDT",
