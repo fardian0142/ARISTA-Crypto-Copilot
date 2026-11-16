@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T22:48:08.357Z",
+  "lastUpdated": "2026-11-16T23:02:58.753Z",
   "signals": {
-    "CHIPUSDT:30m": {
-      "sentAt": "2026-11-16T11:02:49.113Z",
-      "symbol": "CHIPUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.027295,
-      "stop": 0.0265972
-    },
     "SLPUSDT:15m": {
       "sentAt": "2026-11-16T17:03:02.990Z",
       "symbol": "SLPUSDT",
