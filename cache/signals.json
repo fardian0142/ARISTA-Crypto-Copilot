@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T11:02:50.616Z",
+  "lastUpdated": "2026-11-16T11:17:53.004Z",
   "signals": {
-    "BRETTUSDT:1h": {
-      "sentAt": "2026-11-15T23:17:49.954Z",
-      "symbol": "BRETTUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0033376615360747146,
-      "stop": 0.0032091692430443242
-    },
     "POLUSDT:15m": {
       "sentAt": "2026-11-16T05:47:58.198Z",
       "symbol": "POLUSDT",
