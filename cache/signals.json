@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T08:17:52.176Z",
+  "lastUpdated": "2026-11-16T08:32:51.439Z",
   "signals": {
     "BNCBUSDT:15m": {
       "sentAt": "2026-11-15T22:17:57.121Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.07988166908049671,
       "stop": 0.0817632
+    },
+    "STETHUSDT:15m": {
+      "sentAt": "2026-11-16T08:32:49.935Z",
+      "symbol": "STETHUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 1806.1304417802162,
+      "stop": 1848.0462
     }
   }
 }
