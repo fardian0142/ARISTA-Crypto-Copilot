@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T08:47:58.903Z",
+  "lastUpdated": "2026-11-16T09:02:52.426Z",
   "signals": {
     "BNCBUSDT:15m": {
       "sentAt": "2026-11-15T22:17:57.121Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 1806.1304417802162,
       "stop": 1848.0462
+    },
+    "GIGGLEUSDT:15m": {
+      "sentAt": "2026-11-16T09:02:50.923Z",
+      "symbol": "GIGGLEUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 22.545,
+      "stop": 23.04308357128791
     }
   }
 }
