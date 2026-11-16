@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T21:18:02.755Z",
+  "lastUpdated": "2026-11-16T21:32:57.347Z",
   "signals": {
-    "JUPUSDT:30m": {
-      "sentAt": "2026-11-16T09:32:48.963Z",
-      "symbol": "JUPUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.25899420055474315,
-      "stop": 0.26724000000000003
-    },
     "CHIPUSDT:30m": {
       "sentAt": "2026-11-16T11:02:49.113Z",
       "symbol": "CHIPUSDT",
