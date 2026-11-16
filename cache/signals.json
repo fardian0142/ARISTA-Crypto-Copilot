@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T20:18:01.401Z",
+  "lastUpdated": "2026-11-16T20:33:06.321Z",
   "signals": {
-    "STETHUSDT:15m": {
-      "sentAt": "2026-11-16T08:32:49.935Z",
-      "symbol": "STETHUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 1806.1304417802162,
-      "stop": 1848.0462
-    },
     "GIGGLEUSDT:15m": {
       "sentAt": "2026-11-16T09:02:50.923Z",
       "symbol": "GIGGLEUSDT",
