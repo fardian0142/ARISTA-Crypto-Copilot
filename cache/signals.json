@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T10:47:42.649Z",
+  "lastUpdated": "2026-11-16T11:02:50.616Z",
   "signals": {
     "BRETTUSDT:1h": {
       "sentAt": "2026-11-15T23:17:49.954Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 0.25899420055474315,
       "stop": 0.26724000000000003
+    },
+    "CHIPUSDT:30m": {
+      "sentAt": "2026-11-16T11:02:49.113Z",
+      "symbol": "CHIPUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.027295,
+      "stop": 0.0265972
     }
   }
 }
