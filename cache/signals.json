@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-16T10:17:48.277Z",
+  "lastUpdated": "2026-11-16T10:32:52.840Z",
   "signals": {
-    "BNCBUSDT:15m": {
-      "sentAt": "2026-11-15T22:17:57.121Z",
-      "symbol": "BNCBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3.7944561067429303,
-      "stop": 3.7043999999999997
-    },
     "BRETTUSDT:1h": {
       "sentAt": "2026-11-15T23:17:49.954Z",
       "symbol": "BRETTUSDT",
