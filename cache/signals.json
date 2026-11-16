@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T16:47:58.009Z",
+  "lastUpdated": "2026-11-16T17:03:04.493Z",
   "signals": {
     "POLUSDT:15m": {
       "sentAt": "2026-11-16T05:47:58.198Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 0.027295,
       "stop": 0.0265972
+    },
+    "SLPUSDT:15m": {
+      "sentAt": "2026-11-16T17:03:02.990Z",
+      "symbol": "SLPUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00042,
+      "stop": 0.00040964
     }
   }
 }
