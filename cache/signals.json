@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-17T23:03:04.773Z",
+  "lastUpdated": "2026-11-17T23:17:52.017Z",
   "signals": {
     "AVGOBUSDT:15m": {
       "sentAt": "2026-11-17T11:17:57.602Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 733.2249999999999,
       "stop": 717.6719856237245
+    },
+    "QQQBUSDT:1h": {
+      "sentAt": "2026-11-17T23:17:50.515Z",
+      "symbol": "QQQBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 662.7149999999999,
+      "stop": 647.1038
     }
   }
 }
