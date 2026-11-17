@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-17T21:03:04.525Z",
+  "lastUpdated": "2026-11-17T21:18:04.412Z",
   "signals": {
     "AVGOBUSDT:15m": {
       "sentAt": "2026-11-17T11:17:57.602Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 332.4607152577729,
       "stop": 324.3604
+    },
+    "MEWUSDT:2h": {
+      "sentAt": "2026-11-17T21:18:02.911Z",
+      "symbol": "MEWUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.0003049267635621032,
+      "stop": 0.00028980521596632633
     }
   }
 }
