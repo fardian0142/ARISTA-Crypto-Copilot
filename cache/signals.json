@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-18T09:33:07.628Z",
+  "lastUpdated": "2026-11-18T09:48:04.355Z",
   "signals": {
-    "SPYBUSDT:15m": {
-      "sentAt": "2026-11-17T21:33:09.091Z",
-      "symbol": "SPYBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 733.2249999999999,
-      "stop": 717.6719856237245
-    },
     "QQQBUSDT:1h": {
       "sentAt": "2026-11-17T23:17:50.515Z",
       "symbol": "QQQBUSDT",
