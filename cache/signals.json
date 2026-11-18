@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T17:18:02.694Z",
+  "lastUpdated": "2026-11-18T17:33:04.392Z",
   "signals": {
     "ZKUSDT:2h": {
       "sentAt": "2026-11-18T08:32:55.024Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 0.0014381508508383687,
       "stop": 0.0013685450165181264
+    },
+    "SNDKBUSDT:15m": {
+      "sentAt": "2026-11-18T17:33:02.890Z",
+      "symbol": "SNDKBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 780.42,
+      "stop": 745.2020043901248
     }
   }
 }
