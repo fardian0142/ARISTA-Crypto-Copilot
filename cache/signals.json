@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T08:17:53.286Z",
+  "lastUpdated": "2026-11-18T08:32:56.525Z",
   "signals": {
     "MEWUSDT:2h": {
       "sentAt": "2026-11-17T21:18:02.911Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 662.7149999999999,
       "stop": 647.1038
+    },
+    "ZKUSDT:2h": {
+      "sentAt": "2026-11-18T08:32:55.024Z",
+      "symbol": "ZKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.00803,
+      "stop": 0.007552477729178696
     }
   }
 }
