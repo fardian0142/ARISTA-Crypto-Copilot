@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-18T09:18:08.702Z",
+  "lastUpdated": "2026-11-18T09:33:07.628Z",
   "signals": {
-    "QNTUSDT:15m": {
-      "sentAt": "2026-11-17T21:33:07.387Z",
-      "symbol": "QNTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 153.22,
-      "stop": 149.6362
-    },
     "SPYBUSDT:15m": {
       "sentAt": "2026-11-17T21:33:09.091Z",
       "symbol": "SPYBUSDT",
