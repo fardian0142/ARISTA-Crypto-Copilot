@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-18T20:17:46.260Z",
+  "lastUpdated": "2026-11-18T20:32:58.183Z",
   "signals": {
-    "ZKUSDT:2h": {
-      "sentAt": "2026-11-18T08:32:55.024Z",
-      "symbol": "ZKUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00803,
-      "stop": 0.007552477729178696
-    },
     "DOODUSDT:2h": {
       "sentAt": "2026-11-18T13:33:13.360Z",
       "symbol": "DOODUSDT",
