@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-18T11:03:07.024Z",
+  "lastUpdated": "2026-11-18T11:17:55.641Z",
   "signals": {
-    "QQQBUSDT:1h": {
-      "sentAt": "2026-11-17T23:17:50.515Z",
-      "symbol": "QQQBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 662.7149999999999,
-      "stop": 647.1038
-    },
     "ZKUSDT:2h": {
       "sentAt": "2026-11-18T08:32:55.024Z",
       "symbol": "ZKUSDT",
