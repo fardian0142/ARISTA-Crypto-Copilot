@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-19T05:32:54.759Z",
+  "lastUpdated": "2026-11-19T05:47:51.390Z",
   "signals": {
-    "SNDKBUSDT:15m": {
-      "sentAt": "2026-11-18T17:33:02.890Z",
-      "symbol": "SNDKBUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 780.42,
-      "stop": 745.2020043901248
-    },
     "XAUTUSDT:15m": {
       "sentAt": "2026-11-19T00:47:54.574Z",
       "symbol": "XAUTUSDT",
