@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-19T01:32:53.660Z",
+  "lastUpdated": "2026-11-19T01:47:58.826Z",
   "signals": {
-    "DOODUSDT:2h": {
-      "sentAt": "2026-11-18T13:33:13.360Z",
-      "symbol": "DOODUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.0014381508508383687,
-      "stop": 0.0013685450165181264
-    },
     "SNDKBUSDT:15m": {
       "sentAt": "2026-11-18T17:33:02.890Z",
       "symbol": "SNDKBUSDT",
@@ -27,6 +18,15 @@
       "score": 14,
       "entry": 3737.19,
       "stop": 3656.1154
+    },
+    "DOODUSDT:1h": {
+      "sentAt": "2026-11-19T01:47:57.324Z",
+      "symbol": "DOODUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.001444,
+      "stop": 0.0013842555962307412
     }
   }
 }
