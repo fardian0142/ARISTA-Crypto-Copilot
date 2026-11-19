@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-19T12:32:47.942Z",
+  "lastUpdated": "2026-11-19T12:48:00.444Z",
   "signals": {
-    "XAUTUSDT:15m": {
-      "sentAt": "2026-11-19T00:47:54.574Z",
-      "symbol": "XAUTUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3737.19,
-      "stop": 3656.1154
-    },
     "DOODUSDT:1h": {
       "sentAt": "2026-11-19T01:47:57.324Z",
       "symbol": "DOODUSDT",
