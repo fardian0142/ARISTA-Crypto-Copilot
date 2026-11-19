@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-19T17:18:06.722Z",
+  "lastUpdated": "2026-11-19T17:32:59.911Z",
   "signals": {
     "WLFIUSDT:1h": {
       "sentAt": "2026-11-19T13:48:04.941Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.0462,
       "stop": 0.044884
+    },
+    "AZTECUSDT:15m": {
+      "sentAt": "2026-11-19T17:32:58.409Z",
+      "symbol": "AZTECUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.01004,
+      "stop": 0.009751000000000001
     }
   }
 }
