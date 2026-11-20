@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-20T10:33:08.762Z",
-  "signals": {}
+  "lastUpdated": "2026-11-20T10:48:15.199Z",
+  "signals": {
+    "GOOGLBUSDT:30m": {
+      "sentAt": "2026-11-20T10:48:13.697Z",
+      "symbol": "GOOGLBUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 273.505,
+      "stop": 266.96180000000004
+    }
+  }
 }
