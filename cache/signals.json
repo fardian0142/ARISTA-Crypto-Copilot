@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-20T05:32:56.991Z",
-  "signals": {
-    "AZTECUSDT:15m": {
-      "sentAt": "2026-11-19T17:32:58.409Z",
-      "symbol": "AZTECUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.01004,
-      "stop": 0.009751000000000001
-    }
-  }
+  "lastUpdated": "2026-11-20T05:48:10.951Z",
+  "signals": {}
 }
