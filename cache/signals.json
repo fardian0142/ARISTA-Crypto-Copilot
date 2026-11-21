@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T07:18:21.663Z",
+  "lastUpdated": "2026-11-21T07:33:21.799Z",
   "signals": {
     "TQQQBUSDT:15m": {
       "sentAt": "2026-11-21T01:48:04.199Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 42.87407405624581,
       "stop": 41.59119999999999
+    },
+    "TRXUSDT:1h": {
+      "sentAt": "2026-11-21T07:33:20.296Z",
+      "symbol": "TRXUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.3014364253390202,
+      "stop": 0.2952243981898513
     }
   }
 }
