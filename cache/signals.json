@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-21T19:33:04.545Z",
-  "signals": {
-    "TRXUSDT:1h": {
-      "sentAt": "2026-11-21T07:33:20.296Z",
-      "symbol": "TRXUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.3014364253390202,
-      "stop": 0.2952243981898513
-    }
-  }
+  "lastUpdated": "2026-11-21T19:48:07.043Z",
+  "signals": {}
 }
