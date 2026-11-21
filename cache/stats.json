@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-11-21T01:33:24.899Z",
+  "lastUpdated": "2026-11-21T01:48:05.702Z",
   "allTime": {
     "total": 59,
     "tp1Hit": 59,
     "tp2Hit": 66,
     "tp3Hit": 57,
     "stopped": 49,
-    "active": 0,
-    "tp1Rate": 100,
-    "tp2Rate": 111.9,
-    "tp3Rate": 96.6,
-    "stopRate": 83.1
+    "active": 1,
+    "tp1Rate": 101.7,
+    "tp2Rate": 113.8,
+    "tp3Rate": 98.3,
+    "stopRate": 84.5
   },
   "byTimeframe": {
     "15m": {
@@ -19,8 +19,8 @@
       "tp2Hit": 37,
       "tp3Hit": 28,
       "stopped": 25,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 103.6,
+      "active": 1
     },
     "30m": {
       "total": 14,
@@ -57,8 +57,8 @@
       "tp2Hit": 44,
       "tp3Hit": 36,
       "stopped": 32,
-      "tp1Rate": 100,
-      "active": 0
+      "tp1Rate": 102.9,
+      "active": 1
     },
     "bearish": {
       "total": 23,
@@ -87,7 +87,7 @@
       "sentAt": "2026-11-10T05:32:56.625Z",
       "status": "tp2_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-21T01:31:08.159Z",
+      "statusUpdatedAt": "2026-11-21T01:46:06.545Z",
       "maxR": 9.43,
       "tp1Reached": true,
       "tp2Reached": true,
@@ -113,7 +113,7 @@
       "sentAt": "2026-11-11T12:32:52.810Z",
       "status": "tp1_hit",
       "activated": true,
-      "statusUpdatedAt": "2026-11-21T01:31:08.159Z",
+      "statusUpdatedAt": "2026-11-21T01:46:06.545Z",
       "maxR": 3.83,
       "tp1Reached": true,
       "tp2Reached": false,
@@ -139,7 +139,33 @@
       "sentAt": "2026-11-13T15:03:09.914Z",
       "status": "pending",
       "activated": false,
-      "statusUpdatedAt": "2026-11-21T01:31:08.159Z",
+      "statusUpdatedAt": "2026-11-21T01:46:06.545Z",
+      "maxR": 0,
+      "tp1Reached": false,
+      "tp2Reached": false,
+      "tp3Reached": false,
+      "_tp1Notified": false,
+      "_tp2Notified": false,
+      "_tp3Notified": false,
+      "_stoppedNotified": false
+    },
+    {
+      "symbol": "TQQQBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "entry": 42.87407405624581,
+      "stop": 41.59119999999999,
+      "tp1": 44.441448,
+      "tp2": null,
+      "tp3": null,
+      "rr1": 1.2217675898294575,
+      "rr2": 0,
+      "rr3": 0,
+      "score": 14,
+      "sentAt": "2026-11-21T01:48:04.199Z",
+      "status": "active",
+      "activated": true,
+      "statusUpdatedAt": "2026-11-21T01:48:04.199Z",
       "maxR": 0,
       "tp1Reached": false,
       "tp2Reached": false,
@@ -570,6 +596,13 @@
       "direction": "bullish",
       "status": "pending",
       "sentAt": "2026-11-20T10:48:13.697Z"
+    },
+    "TQQQBUSDT:15m:2026-11-21T01:48:04.199Z": {
+      "symbol": "TQQQBUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "status": "active",
+      "sentAt": "2026-11-21T01:48:04.199Z"
     }
   }
 }
