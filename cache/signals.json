@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22T10:32:43.676Z",
+  "lastUpdated": "2026-11-22T10:47:44.890Z",
   "signals": {
     "SOLUSDT:15m": {
       "sentAt": "2026-11-22T02:32:47.904Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 108.92806,
       "stop": 105.399
+    },
+    "BILLUSDT:1h": {
+      "sentAt": "2026-11-22T10:47:43.386Z",
+      "symbol": "BILLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.004038,
+      "stop": 0.0038036414917382542
     }
   }
 }
