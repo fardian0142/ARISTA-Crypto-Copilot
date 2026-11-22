@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-22T22:17:40.198Z",
+  "lastUpdated": "2026-11-22T22:32:43.326Z",
   "signals": {
-    "SKHYBUSDT:1h": {
-      "sentAt": "2026-11-22T10:17:52.313Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 108.92806,
-      "stop": 105.399
-    },
     "BILLUSDT:1h": {
       "sentAt": "2026-11-22T10:47:43.386Z",
       "symbol": "BILLUSDT",
