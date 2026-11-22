@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22T20:17:40.039Z",
+  "lastUpdated": "2026-11-22T20:32:45.173Z",
   "signals": {
     "SKHYBUSDT:1h": {
       "sentAt": "2026-11-22T10:17:52.313Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.13916079047224592,
       "stop": 0.143106
+    },
+    "PEPEUSDT:30m": {
+      "sentAt": "2026-11-22T20:32:43.671Z",
+      "symbol": "PEPEUSDT",
+      "timeframe": "30m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000003435,
+      "stop": 0.0000033222
     }
   }
 }
