@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-22T22:47:41.448Z",
+  "lastUpdated": "2026-11-22T23:02:38.478Z",
   "signals": {
-    "BILLUSDT:1h": {
-      "sentAt": "2026-11-22T10:47:43.386Z",
-      "symbol": "BILLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.004038,
-      "stop": 0.0038036414917382542
-    },
     "KITEUSDT:15m": {
       "sentAt": "2026-11-22T15:17:39.054Z",
       "symbol": "KITEUSDT",
