@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22T02:18:00.030Z",
+  "lastUpdated": "2026-11-22T02:32:49.407Z",
   "signals": {
     "ATHUSDT:15m": {
       "sentAt": "2026-11-21T20:33:17.147Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.0035989999999999998,
       "stop": 0.00349566
+    },
+    "SOLUSDT:15m": {
+      "sentAt": "2026-11-22T02:32:47.904Z",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 70.16510905648016,
+      "stop": 71.7672
     }
   }
 }
