@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T11:32:56.438Z",
+  "lastUpdated": "2026-11-23T11:47:52.428Z",
   "signals": {
     "GRAMUSDT:15m": {
       "sentAt": "2026-11-23T02:32:53.014Z",
@@ -63,6 +63,15 @@
       "score": 14,
       "entry": 35.87002615606665,
       "stop": 33.74413251446679
+    },
+    "LDOUSDT:2h": {
+      "sentAt": "2026-11-23T11:47:50.924Z",
+      "symbol": "LDOUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.24186934769053794,
+      "stop": 0.23179382066970636
     }
   }
 }
