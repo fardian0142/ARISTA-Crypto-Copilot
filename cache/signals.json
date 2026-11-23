@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-23T21:33:21.706Z",
+  "lastUpdated": "2026-11-23T21:48:12.156Z",
   "signals": {
-    "SOXLUSDT:1h": {
-      "sentAt": "2026-11-23T09:47:53.601Z",
-      "symbol": "SOXLUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 35.87002615606665,
-      "stop": 33.74413251446679
-    },
     "LDOUSDT:2h": {
       "sentAt": "2026-11-23T11:47:50.924Z",
       "symbol": "LDOUSDT",
