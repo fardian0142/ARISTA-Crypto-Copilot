@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-23T03:17:36.982Z",
+  "lastUpdated": "2026-11-23T03:32:42.554Z",
   "signals": {
-    "KITEUSDT:15m": {
-      "sentAt": "2026-11-22T15:17:39.054Z",
-      "symbol": "KITEUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.13916079047224592,
-      "stop": 0.143106
-    },
     "PEPEUSDT:30m": {
       "sentAt": "2026-11-22T20:32:43.671Z",
       "symbol": "PEPEUSDT",
