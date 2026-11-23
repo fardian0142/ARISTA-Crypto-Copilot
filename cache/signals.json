@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-23T23:33:06.542Z",
-  "signals": {
-    "LDOUSDT:2h": {
-      "sentAt": "2026-11-23T11:47:50.924Z",
-      "symbol": "LDOUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.24186934769053794,
-      "stop": 0.23179382066970636
-    }
-  }
+  "lastUpdated": "2026-11-23T23:48:13.594Z",
+  "signals": {}
 }
