@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T05:47:50.935Z",
+  "lastUpdated": "2026-11-23T06:02:56.300Z",
   "signals": {
     "PEPEUSDT:30m": {
       "sentAt": "2026-11-22T20:32:43.671Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 627.33,
       "stop": 606.62
+    },
+    "MUBUSDT:2h": {
+      "sentAt": "2026-11-23T06:02:54.798Z",
+      "symbol": "MUBUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 630.585,
+      "stop": 602.5394889340535
     }
   }
 }
