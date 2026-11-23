@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T08:47:52.363Z",
+  "lastUpdated": "2026-11-23T09:02:53.257Z",
   "signals": {
     "GRAMUSDT:15m": {
       "sentAt": "2026-11-23T02:32:53.014Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 0.000002123847291642656,
       "stop": 0.0000020087853572663396
+    },
+    "DRAMBUSDT:1h": {
+      "sentAt": "2026-11-23T09:02:51.754Z",
+      "symbol": "DRAMBUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 36.2,
+      "stop": 35.27035141991678
     }
   }
 }
