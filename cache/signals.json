@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-23T16:33:06.118Z",
+  "lastUpdated": "2026-11-23T16:48:07.718Z",
   "signals": {
-    "GRAMUSDT:2h": {
-      "sentAt": "2026-11-23T04:47:43.581Z",
-      "symbol": "GRAMUSDT",
-      "timeframe": "2h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.9735,
-      "stop": 0.9387811294014187
-    },
     "MUBUSDT:1h": {
       "sentAt": "2026-11-23T05:32:50.472Z",
       "symbol": "MUBUSDT",
