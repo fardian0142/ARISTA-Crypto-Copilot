@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T09:32:44.833Z",
+  "lastUpdated": "2026-11-23T09:47:55.108Z",
   "signals": {
     "GRAMUSDT:15m": {
       "sentAt": "2026-11-23T02:32:53.014Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 36.2,
       "stop": 35.27035141991678
+    },
+    "SOXLUSDT:1h": {
+      "sentAt": "2026-11-23T09:47:53.601Z",
+      "symbol": "SOXLUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 35.87002615606665,
+      "stop": 33.74413251446679
     }
   }
 }
