@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-23T08:17:48.665Z",
+  "lastUpdated": "2026-11-23T08:32:45.897Z",
   "signals": {
-    "PEPEUSDT:30m": {
-      "sentAt": "2026-11-22T20:32:43.671Z",
-      "symbol": "PEPEUSDT",
-      "timeframe": "30m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.000003435,
-      "stop": 0.0000033222
-    },
     "GRAMUSDT:15m": {
       "sentAt": "2026-11-23T02:32:53.014Z",
       "symbol": "GRAMUSDT",
