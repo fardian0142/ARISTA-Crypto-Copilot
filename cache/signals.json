@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-23T17:18:15.906Z",
+  "lastUpdated": "2026-11-23T17:33:27.164Z",
   "signals": {
-    "MUBUSDT:1h": {
-      "sentAt": "2026-11-23T05:32:50.472Z",
-      "symbol": "MUBUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 627.33,
-      "stop": 606.62
-    },
     "MUBUSDT:2h": {
       "sentAt": "2026-11-23T06:02:54.798Z",
       "symbol": "MUBUSDT",
