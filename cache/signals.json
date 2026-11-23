@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T07:47:43.361Z",
+  "lastUpdated": "2026-11-23T08:02:55.545Z",
   "signals": {
     "PEPEUSDT:30m": {
       "sentAt": "2026-11-22T20:32:43.671Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 630.585,
       "stop": 602.5394889340535
+    },
+    "BONKUSDT:2h": {
+      "sentAt": "2026-11-23T08:02:54.042Z",
+      "symbol": "BONKUSDT",
+      "timeframe": "2h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.000002123847291642656,
+      "stop": 0.0000020087853572663396
     }
   }
 }
