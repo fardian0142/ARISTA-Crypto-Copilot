@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T15:03:11.674Z",
+  "lastUpdated": "2026-11-24T15:18:22.877Z",
   "signals": {
     "SKHYBUSDT:15m": {
       "sentAt": "2026-11-24T06:18:19.889Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 380.505,
       "stop": 391.6698
+    },
+    "JELLYJELLYUSDT:30m": {
+      "sentAt": "2026-11-24T15:18:21.375Z",
+      "symbol": "JELLYJELLYUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.038635,
+      "stop": 0.0394944
     }
   }
 }
