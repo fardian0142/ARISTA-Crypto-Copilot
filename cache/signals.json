@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T08:48:24.507Z",
+  "lastUpdated": "2026-11-24T09:03:24.789Z",
   "signals": {
     "JSTUSDT:1h": {
       "sentAt": "2026-11-24T02:33:21.739Z",
@@ -45,6 +45,15 @@
       "score": 14,
       "entry": 3.549,
       "stop": 3.4741
+    },
+    "TSLABUSDT:15m": {
+      "sentAt": "2026-11-24T09:03:23.287Z",
+      "symbol": "TSLABUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 385.4,
+      "stop": 394.6788
     }
   }
 }
