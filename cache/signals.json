@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T06:03:19.770Z",
+  "lastUpdated": "2026-11-24T06:18:21.392Z",
   "signals": {
     "JSTUSDT:1h": {
       "sentAt": "2026-11-24T02:33:21.739Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 60939.7,
       "stop": 62760.283800000005
+    },
+    "SKHYBUSDT:15m": {
+      "sentAt": "2026-11-24T06:18:19.889Z",
+      "symbol": "SKHYBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 122.73,
+      "stop": 126.4086
     }
   }
 }
