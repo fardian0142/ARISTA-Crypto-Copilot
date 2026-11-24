@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-24T19:18:06.781Z",
+  "lastUpdated": "2026-11-24T19:33:08.320Z",
   "signals": {
-    "NGUSDT:15m": {
-      "sentAt": "2026-11-24T07:18:26.094Z",
-      "symbol": "NGUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 3.549,
-      "stop": 3.4741
-    },
     "TSLABUSDT:15m": {
       "sentAt": "2026-11-24T09:03:23.287Z",
       "symbol": "TSLABUSDT",
