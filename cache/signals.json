@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T09:48:14.924Z",
+  "lastUpdated": "2026-11-24T10:03:17.838Z",
   "signals": {
     "JSTUSDT:1h": {
       "sentAt": "2026-11-24T02:33:21.739Z",
@@ -54,6 +54,15 @@
       "score": 14,
       "entry": 385.4,
       "stop": 394.6788
+    },
+    "METABUSDT:15m": {
+      "sentAt": "2026-11-24T10:03:16.336Z",
+      "symbol": "METABUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 593.9449022530371,
+      "stop": 606.8643712156444
     }
   }
 }
