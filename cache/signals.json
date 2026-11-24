@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-24T02:18:20.163Z",
-  "signals": {}
+  "lastUpdated": "2026-11-24T02:33:23.242Z",
+  "signals": {
+    "JSTUSDT:1h": {
+      "sentAt": "2026-11-24T02:33:21.739Z",
+      "symbol": "JSTUSDT",
+      "timeframe": "1h",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.1454440757050246,
+      "stop": 0.14972580000000002
+    }
+  }
 }
