@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-24T18:18:17.792Z",
+  "lastUpdated": "2026-11-24T18:32:56.592Z",
   "signals": {
-    "SKHYBUSDT:15m": {
-      "sentAt": "2026-11-24T06:18:19.889Z",
-      "symbol": "SKHYBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 122.73,
-      "stop": 126.4086
-    },
     "NGUSDT:15m": {
       "sentAt": "2026-11-24T07:18:26.094Z",
       "symbol": "NGUSDT",
