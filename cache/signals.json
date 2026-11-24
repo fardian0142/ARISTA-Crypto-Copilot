@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T07:03:07.612Z",
+  "lastUpdated": "2026-11-24T07:18:27.596Z",
   "signals": {
     "JSTUSDT:1h": {
       "sentAt": "2026-11-24T02:33:21.739Z",
@@ -36,6 +36,15 @@
       "score": 14,
       "entry": 122.73,
       "stop": 126.4086
+    },
+    "NGUSDT:15m": {
+      "sentAt": "2026-11-24T07:18:26.094Z",
+      "symbol": "NGUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 3.549,
+      "stop": 3.4741
     }
   }
 }
