@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-24T23:18:11.792Z",
+  "lastUpdated": "2026-11-24T23:33:12.008Z",
   "signals": {
-    "TSLABUSDT:30m": {
-      "sentAt": "2026-11-24T11:18:22.771Z",
-      "symbol": "TSLABUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 380.505,
-      "stop": 391.6698
-    },
     "JELLYJELLYUSDT:30m": {
       "sentAt": "2026-11-24T15:18:21.375Z",
       "symbol": "JELLYJELLYUSDT",
