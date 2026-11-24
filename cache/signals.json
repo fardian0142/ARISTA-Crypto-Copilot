@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-24T21:03:10.427Z",
+  "lastUpdated": "2026-11-24T21:18:12.744Z",
   "signals": {
-    "TSLABUSDT:15m": {
-      "sentAt": "2026-11-24T09:03:23.287Z",
-      "symbol": "TSLABUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 385.4,
-      "stop": 394.6788
-    },
     "METABUSDT:15m": {
       "sentAt": "2026-11-24T10:03:16.336Z",
       "symbol": "METABUSDT",
