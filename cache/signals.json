@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-25T18:18:09.093Z",
+  "lastUpdated": "2026-11-25T18:33:21.385Z",
   "signals": {
     "ONEUSDT:15m": {
       "sentAt": "2026-11-25T08:03:16.518Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.000956,
       "stop": 0.00092414
+    },
+    "AEONUSDT:15m": {
+      "sentAt": "2026-11-25T18:33:19.882Z",
+      "symbol": "AEONUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.018404999999999998,
+      "stop": 0.017618864726348493
     }
   }
 }
