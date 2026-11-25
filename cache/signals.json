@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-11-25T03:18:04.146Z",
+  "lastUpdated": "2026-11-25T03:33:09.087Z",
   "signals": {
-    "JELLYJELLYUSDT:30m": {
-      "sentAt": "2026-11-24T15:18:21.375Z",
-      "symbol": "JELLYJELLYUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
+    "OFCUSDT:15m": {
+      "sentAt": "2026-11-25T03:33:07.584Z",
+      "symbol": "OFCUSDT",
+      "timeframe": "15m",
+      "direction": "bullish",
       "score": 14,
-      "entry": 0.038635,
-      "stop": 0.0394944
+      "entry": 0.003165,
+      "stop": 0.00308014
     }
   }
 }
