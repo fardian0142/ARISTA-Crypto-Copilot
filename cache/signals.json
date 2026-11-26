@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-26T22:47:49.453Z",
+  "lastUpdated": "2026-11-26T23:02:42.225Z",
   "signals": {
-    "ASTERUSDT:15m": {
-      "sentAt": "2026-11-26T10:48:01.190Z",
-      "symbol": "ASTERUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.4968,
-      "stop": 0.50847
-    },
     "ARBUSDT:15m": {
       "sentAt": "2026-11-26T13:03:02.504Z",
       "symbol": "ARBUSDT",
