@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T10:33:10.505Z",
+  "lastUpdated": "2026-11-26T10:48:02.692Z",
   "signals": {
     "BEBUSDT:15m": {
       "sentAt": "2026-11-26T08:18:13.040Z",
@@ -18,6 +18,15 @@
       "score": 14,
       "entry": 3.0458763898239374,
       "stop": 3.1212
+    },
+    "ASTERUSDT:15m": {
+      "sentAt": "2026-11-26T10:48:01.190Z",
+      "symbol": "ASTERUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.4968,
+      "stop": 0.50847
     }
   }
 }
