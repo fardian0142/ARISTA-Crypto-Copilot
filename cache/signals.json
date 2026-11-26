@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-26T21:17:39.797Z",
+  "lastUpdated": "2026-11-26T21:32:47.894Z",
   "signals": {
-    "BNCBUSDT:15m": {
-      "sentAt": "2026-11-26T09:18:07.557Z",
-      "symbol": "BNCBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 3.0458763898239374,
-      "stop": 3.1212
-    },
     "ASTERUSDT:15m": {
       "sentAt": "2026-11-26T10:48:01.190Z",
       "symbol": "ASTERUSDT",
