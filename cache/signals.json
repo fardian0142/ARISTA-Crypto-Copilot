@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T15:02:56.953Z",
+  "lastUpdated": "2026-11-26T15:17:50.891Z",
   "signals": {
     "BEBUSDT:15m": {
       "sentAt": "2026-11-26T08:18:13.040Z",
@@ -72,6 +72,15 @@
       "score": 14,
       "entry": 0.39795,
       "stop": 0.407796
+    },
+    "BCHUSDT:30m": {
+      "sentAt": "2026-11-26T15:17:49.388Z",
+      "symbol": "BCHUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 208.08189856348147,
+      "stop": 213.078
     }
   }
 }
