@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T12:48:00.109Z",
+  "lastUpdated": "2026-11-26T13:03:04.007Z",
   "signals": {
     "BEBUSDT:15m": {
       "sentAt": "2026-11-26T08:18:13.040Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.4968,
       "stop": 0.50847
+    },
+    "ARBUSDT:15m": {
+      "sentAt": "2026-11-26T13:03:02.504Z",
+      "symbol": "ARBUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.11419497232498767,
+      "stop": 0.116892
     }
   }
 }
