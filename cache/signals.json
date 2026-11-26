@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-26T06:33:02.457Z",
-  "signals": {
-    "AEONUSDT:15m": {
-      "sentAt": "2026-11-25T18:33:19.882Z",
-      "symbol": "AEONUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.018404999999999998,
-      "stop": 0.017618864726348493
-    }
-  }
+  "lastUpdated": "2026-11-26T06:48:10.155Z",
+  "signals": {}
 }
