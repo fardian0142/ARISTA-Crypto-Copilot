@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-27T01:02:38.008Z",
+  "lastUpdated": "2026-11-27T01:17:38.043Z",
   "signals": {
-    "ARBUSDT:15m": {
-      "sentAt": "2026-11-26T13:03:02.504Z",
-      "symbol": "ARBUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.11419497232498767,
-      "stop": 0.116892
-    },
     "PUMPUSDT:15m": {
       "sentAt": "2026-11-26T14:48:11.247Z",
       "symbol": "PUMPUSDT",
