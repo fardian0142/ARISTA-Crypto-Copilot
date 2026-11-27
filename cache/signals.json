@@ -1,14 +1,4 @@
 {
-  "lastUpdated": "2026-11-27T03:17:48.185Z",
-  "signals": {
-    "BCHUSDT:30m": {
-      "sentAt": "2026-11-26T15:17:49.388Z",
-      "symbol": "BCHUSDT",
-      "timeframe": "30m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 208.08189856348147,
-      "stop": 213.078
-    }
-  }
+  "lastUpdated": "2026-11-27T03:32:44.206Z",
+  "signals": {}
 }
