@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-27T02:47:36.824Z",
+  "lastUpdated": "2026-11-27T03:02:45.908Z",
   "signals": {
-    "PUMPUSDT:15m": {
-      "sentAt": "2026-11-26T14:48:11.247Z",
-      "symbol": "PUMPUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.002613574,
-      "stop": 0.00269688
-    },
     "SUIUSDT:15m": {
       "sentAt": "2026-11-26T15:02:51.910Z",
       "symbol": "SUIUSDT",
