@@ -1,33 +1,6 @@
 {
-  "lastUpdated": "2026-11-27T03:02:45.908Z",
+  "lastUpdated": "2026-11-27T03:17:48.185Z",
   "signals": {
-    "SUIUSDT:15m": {
-      "sentAt": "2026-11-26T15:02:51.910Z",
-      "symbol": "SUIUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.6631,
-      "stop": 0.68085
-    },
-    "CROUSDT:15m": {
-      "sentAt": "2026-11-26T15:02:53.697Z",
-      "symbol": "CROUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.039545,
-      "stop": 0.040596
-    },
-    "AEROUSDT:15m": {
-      "sentAt": "2026-11-26T15:02:55.451Z",
-      "symbol": "AEROUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 0.39795,
-      "stop": 0.407796
-    },
     "BCHUSDT:30m": {
       "sentAt": "2026-11-26T15:17:49.388Z",
       "symbol": "BCHUSDT",
