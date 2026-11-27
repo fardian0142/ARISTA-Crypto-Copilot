@@ -1,4 +1,14 @@
 {
-  "lastUpdated": "2026-11-27T06:02:43.833Z",
-  "signals": {}
+  "lastUpdated": "2026-11-27T06:17:42.727Z",
+  "signals": {
+    "FLOCKUSDT:1h": {
+      "sentAt": "2026-11-27T06:17:41.225Z",
+      "symbol": "FLOCKUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.030125,
+      "stop": 0.029371936104081696
+    }
+  }
 }
