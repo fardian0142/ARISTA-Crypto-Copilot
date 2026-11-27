@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-27T16:02:39.760Z",
+  "lastUpdated": "2026-11-27T16:12:46.578Z",
   "signals": {
     "FLOCKUSDT:1h": {
       "sentAt": "2026-11-27T06:17:41.225Z",
@@ -9,6 +9,15 @@
       "score": 14,
       "entry": 0.030125,
       "stop": 0.029371936104081696
+    },
+    "CRVUSDT:1h": {
+      "sentAt": "2026-11-27T16:12:45.075Z",
+      "symbol": "CRVUSDT",
+      "timeframe": "1h",
+      "direction": "bullish",
+      "score": 14,
+      "entry": 0.1696,
+      "stop": 0.16450271670691607
     }
   }
 }
