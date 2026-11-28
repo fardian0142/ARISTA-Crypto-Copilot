@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-28T11:52:31.979Z",
+  "lastUpdated": "2026-11-28T12:02:24.979Z",
   "signals": {
     "MANTRAUSDT:15m": {
       "sentAt": "2026-11-28T01:22:46.600Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.0000021499999999999997,
       "stop": 0.0000022032
+    },
+    "USD1USDT:30m": {
+      "sentAt": "2026-11-28T12:02:23.476Z",
+      "symbol": "USD1USDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.99771,
+      "stop": 1.0209894
     }
   }
 }
