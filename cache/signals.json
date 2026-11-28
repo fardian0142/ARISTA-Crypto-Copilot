@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-28T02:52:38.139Z",
+  "lastUpdated": "2026-11-28T03:02:31.605Z",
   "signals": {
     "CRVUSDT:1h": {
       "sentAt": "2026-11-27T16:12:45.075Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 0.00226,
       "stop": 0.0021918307832482346
+    },
+    "SATSUSDT:15m": {
+      "sentAt": "2026-11-28T03:02:30.102Z",
+      "symbol": "SATSUSDT",
+      "timeframe": "15m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 7.385e-9,
+      "stop": 7.55208e-9
     }
   }
 }
