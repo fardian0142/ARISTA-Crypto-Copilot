@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-28T04:12:31.829Z",
+  "lastUpdated": "2026-11-28T04:22:30.916Z",
   "signals": {
-    "CRVUSDT:1h": {
-      "sentAt": "2026-11-27T16:12:45.075Z",
-      "symbol": "CRVUSDT",
-      "timeframe": "1h",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.1696,
-      "stop": 0.16450271670691607
-    },
     "KITEUSDT:15m": {
       "sentAt": "2026-11-27T17:02:48.710Z",
       "symbol": "KITEUSDT",
