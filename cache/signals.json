@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-28T15:02:24.667Z",
+  "lastUpdated": "2026-11-28T15:12:17.593Z",
   "signals": {
-    "SATSUSDT:15m": {
-      "sentAt": "2026-11-28T03:02:30.102Z",
-      "symbol": "SATSUSDT",
-      "timeframe": "15m",
-      "direction": "bearish",
-      "score": 14,
-      "entry": 7.385e-9,
-      "stop": 7.55208e-9
-    },
     "BONKUSDT:30m": {
       "sentAt": "2026-11-28T05:02:46.406Z",
       "symbol": "BONKUSDT",
