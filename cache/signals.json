@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-28T04:52:31.160Z",
+  "lastUpdated": "2026-11-28T05:02:47.908Z",
   "signals": {
     "KITEUSDT:15m": {
       "sentAt": "2026-11-27T17:02:48.710Z",
@@ -27,6 +27,15 @@
       "score": 14,
       "entry": 7.385e-9,
       "stop": 7.55208e-9
+    },
+    "BONKUSDT:30m": {
+      "sentAt": "2026-11-28T05:02:46.406Z",
+      "symbol": "BONKUSDT",
+      "timeframe": "30m",
+      "direction": "bearish",
+      "score": 14,
+      "entry": 0.0000021499999999999997,
+      "stop": 0.0000022032
     }
   }
 }
