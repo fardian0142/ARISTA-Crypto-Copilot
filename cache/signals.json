@@ -1,15 +1,6 @@
 {
-  "lastUpdated": "2026-11-28T13:22:40.251Z",
+  "lastUpdated": "2026-11-28T13:32:25.312Z",
   "signals": {
-    "MANTRAUSDT:15m": {
-      "sentAt": "2026-11-28T01:22:46.600Z",
-      "symbol": "MANTRAUSDT",
-      "timeframe": "15m",
-      "direction": "bullish",
-      "score": 14,
-      "entry": 0.00226,
-      "stop": 0.0021918307832482346
-    },
     "SATSUSDT:15m": {
       "sentAt": "2026-11-28T03:02:30.102Z",
       "symbol": "SATSUSDT",
